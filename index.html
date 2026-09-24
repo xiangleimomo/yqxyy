@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>English Story Learning</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#/home" aria-label="首页">
+        <span class="brand-mark">SF</span>
+        <span>
+          <strong>Story Fox English</strong>
+          <small>和动画故事一起快乐学英语</small>
+        </span>
+      </a>
+      <nav class="utility-nav" aria-label="学习工具">
+        <a href="#/records">📈 学习记录</a>
+        <a href="#/checkin">📅 签到</a>
+        <a href="#/bookshelf">⭐ 书架</a>
+        <a href="#/wordbank">📘 单词表</a>
+        <a href="#/writing">📝 英文写作</a>
+        <a href="#/account" id="accountLink">👤 注册 / 登录</a>
+        <a href="#/rewards" id="navRewards">🎁 积分奖励 <span class="nav-points-badge">0</span></a>
+      </nav>
+    </div>
+    <div class="main-nav">
+      <div class="main-nav-inner">
+        <a class="main-tab active" href="#/home">📖 动画故事</a>
+        <div class="search-box">
+          <input id="globalSearch" type="search" placeholder="搜索故事、单词或集数" />
+          <button id="searchBtn" type="button" aria-label="搜索">🔍</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="app" class="app-shell"></main>
+
+  <footer class="footer">
+    <div>Story Fox English · Local learning platform</div>
+    <div>Watch · Listen and Read · Words · Quiz</div>
+  </footer>
+
+  <div id="accountDialog" class="account-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="accountTitle">
+    <section class="account-box">
+      <div class="account-bar"><strong id="accountTitle">Story Fox · 我的账户</strong><button type="button" id="accountClose" aria-label="关闭">×</button></div>
+      <p id="syncState" class="account-sync">游客模式 · 记录仅在本设备</p>
+      <div id="accountNotice" class="account-notice" role="status" aria-live="polite"></div>
+      <div class="account-modes"><button type="button" id="accountLogin" data-auth-mode="login">登录</button><button type="button" id="accountSignup" data-auth-mode="signup">注册</button><button type="button" id="accountReset" data-auth-mode="reset">忘记密码</button></div>
+      <form id="accountForm">
+        <div id="authEmailRow"><label for="accountEmail">邮箱</label><input id="accountEmail" type="email" autocomplete="email" required placeholder="you@example.com"></div>
+        <div id="authPasswordRow"><label for="accountPassword">密码</label><input id="accountPassword" type="password" minlength="8" autocomplete="current-password" placeholder="至少 8 位"></div>
+        <button class="account-primary" id="accountSubmit" type="submit">登录</button>
+      </form>
+      <div id="accountActions" hidden><p id="accountEmailLabel"></p><button type="button" id="accountSync">立即同步</button><button type="button" id="accountImport">导入本设备游客记录</button><button type="button" id="accountLogout">退出账户</button></div>
+      <small class="account-footnote">登录后同步学习进度、测验、收藏和积分；未登录仍可作为游客学习。</small>
+    </section>
+  </div>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/cloud-account.js"></script>
+  <script src="js/app.js"></script>
+<div id="readingPopup" class="reading-popup"></div>
+</body>
+</html>
