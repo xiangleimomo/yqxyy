@@ -121,14 +121,15 @@ async renderSeries(seriesId){
         <h3>课程列表</h3>
         <div class="episode-side-list">
           ${episodes.map(e=>{
-            const unlocked=this.isEpisodeUnlocked(seriesId,e.episodeId);
+            const available=e.status==='published';
+            const unlocked=available && this.isEpisodeUnlocked(seriesId,e.episodeId);
             const prog=this.episodeProgress(seriesId,e.episodeId);
             const done=!!(prog.modules.quiz);
             return `
-            <button class="episode-side-item ${Number(e.episodeId)===1?'active':''} ${unlocked?'':'locked'}" data-ep="${e.episodeId}" ${unlocked?'':'disabled'}>
+            <button class="episode-side-item ${Number(e.episodeId)===1?'active':''} ${unlocked?'':'locked'}" data-ep="${e.episodeId}" data-available="${available}" ${unlocked?'':'disabled'}>
               <span class="num">${e.episodeId}</span>
               <span>${e.title}${done?' ✓':''}</span>
-              <small>${unlocked?(done?'已完成':'可学习'):'🔒 未解锁'}</small>
+              <small>${!available?'即将上线':(unlocked?(done?'已完成':'可学习'):'🔒 未解锁')}</small>
             </button>`;
           }).join('')}
         </div>
@@ -481,6 +482,7 @@ bindLessonPanel(tab,d){
       document.getElementById('quizResult').innerHTML=`<div class="quiz-result">得分：${score}/${qs.length}</div>`;
       this.saveQuizScore(d.seriesId,d.episodeId,score,qs.length);
       this.markComplete(d.seriesId,d.episodeId,'quiz');
+      if(score/qs.length>=0.8) this.unlockNextEpisode(d.seriesId,d.episodeId);
     });
   }
 },
@@ -693,6 +695,17 @@ addPoints(n=1){
   },
   saveQuizScore(seriesId, episodeId, score, total){
     const q=this.storage('quizScores') || {}; q[`${seriesId}:${episodeId}`]={score,total,date:new Date().toISOString()}; this.storage('quizScores',q);
+  },
+  unlockNextEpisode(seriesId, episodeId){
+    const nextId=Number(episodeId)+1;
+    const next=document.querySelector(`.episode-side-item[data-ep="${nextId}"]`);
+    if(!next || next.dataset.available!=='true' || !this.isEpisodeUnlocked(seriesId,nextId)) return;
+    next.disabled=false;
+    next.classList.remove('locked');
+    const label=next.querySelector('small');
+    if(label) label.textContent='可学习';
+    const result=document.getElementById('quizResult');
+    if(result) result.insertAdjacentHTML('beforeend','<p>🎉 已通过！下一课现已解锁。</p>');
   },
   saveWord(item){
     const arr=this.storage('wordbank') || []; const id=`${item.type}:${item.seriesId}:${item.episodeId}:${item.word}`;

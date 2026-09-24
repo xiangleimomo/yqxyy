@@ -1048,3 +1048,70 @@ body.series-fixed-page .footer{
 #accountEmailLabel{width:100%;overflow-wrap:anywhere}
 .account-footnote{display:block;color:#64748b;line-height:1.6;margin-top:18px}
 @media(max-width:800px){.utility-nav{gap:8px}.utility-nav a{font-size:13px}.account-overlay{padding:8px}.account-box{border-radius:12px;padding:16px}}
+
+/* Mobile layout: keep the desktop workspace unchanged, but make every learning view fit a phone screen. */
+@media (max-width:800px){
+  .topbar-inner{padding-left:14px;padding-right:14px;gap:10px}
+  .brand{min-width:0;width:100%}
+  .brand strong{font-size:16px}
+  .utility-nav{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+  .utility-nav a{min-height:34px;padding:7px 8px;border:1px solid #e0ebf7;border-radius:8px;white-space:normal}
+  .main-nav-inner{padding-left:14px;padding-right:14px}
+  .main-tab{padding:0;font-size:16px}
+  .app-shell{padding:18px 12px 34px}
+  .hero,.series-hero,.episode-sidebar,.episode-workspace,.content-panel{border-radius:14px;padding:16px}
+  .hero h1,.series-hero h1{font-size:23px}
+  .hero-badge{white-space:normal;padding:9px 12px}
+  .section-head{align-items:flex-start;flex-direction:column;margin-top:18px}
+  .filters{padding:10px;gap:7px}
+  .filter-btn{padding:7px 11px}
+  .episode-card{padding:13px;gap:10px}
+  .episode-no{width:46px;height:46px;border-radius:13px}
+  .episode-action{width:100%}
+  .episode-action .btn{width:100%;justify-content:center}
+  .lesson-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tab{padding:10px 8px;font-size:13px}
+  .read-paragraph{font-size:16px;text-indent:1.5em}
+  .book-reader{padding:18px;min-height:0}
+  .word-search{flex-direction:column}
+  .word-search .btn{justify-content:center}
+  .calendar{gap:4px}
+  .day{height:38px;font-size:11px}
+  .footer{padding:18px 14px 28px}
+
+  /* Desktop windows become a single, touch-friendly full-screen view on phones. */
+  #windowLayer{z-index:2147482000}
+  .floating-window{
+    position:fixed!important;
+    left:0!important;
+    top:0!important;
+    width:100vw!important;
+    height:100dvh!important;
+    min-width:0!important;
+    min-height:0!important;
+    border:0;
+    border-radius:0;
+    resize:none;
+  }
+  .floating-header{height:54px;padding:0 14px;cursor:default;font-size:16px}
+  .floating-close{min-width:42px;min-height:42px;font-size:30px}
+  .floating-content{padding:14px;overflow:auto!important;-webkit-overflow-scrolling:touch}
+  .floating-watch .floating-content,.floating-listenRead .floating-content,.floating-words .floating-content{overflow:auto!important}
+  .floating-watch .video-wrap{flex:initial;min-height:auto}
+  .floating-watch .video-wrap iframe,.floating-watch iframe{min-height:0!important}
+  .floating-listenRead .read-only-window{padding:4px 0;overflow:auto}
+  .floating-words .floating-content{padding:14px}
+  .module-grid{gap:12px;margin-top:18px}
+  .module-card{height:118px}
+}
+
+@media (max-width:420px){
+  .brand-mark{width:52px;height:30px}
+  .brand small{font-size:11px}
+  .utility-nav a{font-size:12px}
+  .main-tab{font-size:15px}
+  .series-card{padding:12px}
+  .personal-card{padding:14px}
+  .practice-box{padding:14px}
+  .letter-box{width:36px;height:38px;font-size:20px}
+}

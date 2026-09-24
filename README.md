@@ -14,13 +14,17 @@
 
 2. Romance of the Three Kingdoms / 三国演义
    - 当前配置 8 集
-   - Episode 1–3 已完整开放
-   - Episode 4–6 为 preparing
+   - Episode 1–6 已完整开放
+   - Episode 4–6 已配置各自独立的视频链接
    - Episode 7–8 为 coming
 
-## 部署到 Netlify
+## 发布流程
 
-直接把本文件夹压缩包上传到 Netlify 即可。
+本项目由 GitHub 管理代码，并由 Netlify 从 `main` 分支自动部署。
+
+1. 修改并提交网站文件到 GitHub。
+2. 推送到 `main` 分支。
+3. Netlify 自动构建并发布到线上网站。
 
 入口文件：`index.html`
 
@@ -29,7 +33,7 @@
 1. 新建 `data/series-id/`
 2. 放入标准 JSON 文件
 3. 在 `data/series-list.json` 增加系列记录
-4. 重新部署 Netlify
+4. 提交并推送到 GitHub；Netlify 会自动部署
 
 ## 后续更新某一集
 

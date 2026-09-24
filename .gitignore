@@ -1,0 +1,9 @@
+# Local archives and operating-system files
+*.zip
+.DS_Store
+Thumbs.db
+
+# Never commit private environment files or credentials
+.env
+.env.*
+!.env.example
