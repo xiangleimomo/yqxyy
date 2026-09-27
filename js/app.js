@@ -289,6 +289,7 @@ async renderLesson(seriesId, episodeId){
     return `<section class="local-video-panel" data-series="${d.seriesId}" data-episode="${d.episodeId}">
       <h2>本地视频</h2>
       <p class="muted">可为这一课保存电脑中的视频。视频仅保存在当前浏览器和设备中；下次打开网站时仍可直接播放。</p>
+      <p class="local-video-contact">想要更多的本地视频资源可添加微信 min258614。</p>
       <div class="local-video-actions">
         <label class="btn small local-video-upload">选择并保存视频<input class="local-video-input" type="file" accept="video/*" hidden></label>
         <button class="btn small local-video-play" type="button" disabled>▶ 播放本地视频</button>
