@@ -1001,6 +1001,11 @@ body.series-fixed-page .footer{
 }
 .app-shell.series-page-shell .module-grid{
   margin-top:22px;
+  grid-template-columns:repeat(3,minmax(140px,1fr));
+  gap:14px;
+}
+.app-shell.series-page-shell .module-card{
+  height:126px;
 }
 .app-shell.series-page-shell .episode-side-list::-webkit-scrollbar{
   width:8px;
@@ -1108,6 +1113,7 @@ body.series-fixed-page .footer{
   .floating-listenRead .read-only-window{padding:4px 0;overflow:auto}
   .floating-words .floating-content{padding:14px}
   .module-grid{gap:12px;margin-top:18px}
+  .app-shell.series-page-shell .module-grid{grid-template-columns:1fr}
   .module-card{height:118px}
 }
 
