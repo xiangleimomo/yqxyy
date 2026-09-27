@@ -481,7 +481,15 @@ phrasesPanel(d){
   quizPanel(d){
     const quiz=d.quiz;
     if(!quiz || !quiz.questions || !quiz.questions.length) return `<div class="empty">本集 Quiz 暂未添加。</div>`;
-    return `<h2>${quiz.title || 'Quiz'}</h2><form id="quizForm">${quiz.questions.map((q,i)=>`<div class="quiz-question"><h3>${i+1}. ${q.question}</h3><div class="quiz-options">${(q.options||[]).map(o=>`<label><input type="radio" name="q${i}" value="${o.key}"><span><strong>${o.key}.</strong> ${o.text}</span></label>`).join('')}</div><div class="muted quiz-explain" id="explain-${i}" style="display:none;margin-top:8px">${q.explanation || ''}</div></div>`).join('')}<button class="btn" type="submit">提交答案</button> ${this.completeButton(d,'quiz')}<div id="quizResult"></div></form>`;
+    return `<h2>${quiz.title || 'Quiz'}</h2><form id="quizForm">${quiz.questions.map((q,i)=>`<div class="quiz-question"><h3>${i+1}. ${q.question}</h3><div class="quiz-options">${this.shuffleQuizOptions(q.options||[]).map((o,index)=>`<label><input type="radio" name="q${i}" value="${o.key}"><span><strong>${String.fromCharCode(65+index)}.</strong> ${o.text}</span></label>`).join('')}</div><div class="muted quiz-explain" id="explain-${i}" style="display:none;margin-top:8px">${q.explanation || ''}</div></div>`).join('')}<button class="btn" type="submit">提交答案</button> ${this.completeButton(d,'quiz')}<div id="quizResult"></div></form>`;
+  },
+  shuffleQuizOptions(options){
+    const shuffled=[...options];
+    for(let i=shuffled.length-1;i>0;i--){
+      const j=Math.floor(Math.random()*(i+1));
+      [shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]];
+    }
+    return shuffled;
   },
   reviewPanel(d){
     const r=d.review || {};
