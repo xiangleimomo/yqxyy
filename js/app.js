@@ -291,6 +291,7 @@ async renderLesson(seriesId, episodeId){
       <p class="muted">可为这一课保存电脑中的视频。视频仅保存在当前浏览器和设备中；下次打开网站时仍可直接播放。</p>
       <div class="local-video-actions">
         <label class="btn small local-video-upload">选择并保存视频<input class="local-video-input" type="file" accept="video/*" hidden></label>
+        <button class="btn small local-video-play" type="button" disabled>▶ 播放本地视频</button>
         <button class="btn small secondary local-video-remove" type="button" hidden>删除已保存视频</button>
       </div>
       <p class="local-video-status muted" aria-live="polite">正在读取已保存的视频…</p>
@@ -341,12 +342,15 @@ async renderLesson(seriesId, episodeId){
     const empty=panel.querySelector('.local-video-empty');
     const status=panel.querySelector('.local-video-status');
     const remove=panel.querySelector('.local-video-remove');
+    const play=panel.querySelector('.local-video-play');
     if(panel._localVideoUrl) URL.revokeObjectURL(panel._localVideoUrl);
     panel._localVideoUrl=URL.createObjectURL(entry.blob);
     player.src=panel._localVideoUrl;
+    player.load();
     player.hidden=false;
     empty.hidden=true;
     remove.hidden=false;
+    play.disabled=false;
     status.textContent=`已保存：${entry.name}（${(entry.size/1024/1024).toFixed(1)} MB）`;
   },
   listenReadPanel(d){
@@ -493,6 +497,7 @@ bindLessonPanel(tab,d){
     const input=panel.querySelector('.local-video-input');
     const status=panel.querySelector('.local-video-status');
     const remove=panel.querySelector('.local-video-remove');
+    const play=panel.querySelector('.local-video-play');
     this.getLocalVideo(seriesId,episodeId).then(entry=>{
       if(entry) this.showLocalVideo(panel,entry);
       else status.textContent='还没有为这一课保存本地视频。';
@@ -508,6 +513,17 @@ bindLessonPanel(tab,d){
         status.textContent=`保存失败：${err.message}`;
       }finally{input.value='';}
     });
+    play.addEventListener('click',async()=>{
+      const player=panel.querySelector('.local-video-player');
+      try{
+        await player.play();
+      }catch(err){
+        status.textContent='暂时无法播放该文件。请确认视频格式为浏览器支持的 MP4（H.264/AAC）或 WebM。';
+      }
+    });
+    panel.querySelector('.local-video-player').addEventListener('error',()=>{
+      status.textContent='该视频格式无法在当前浏览器播放。请使用 MP4（H.264/AAC）或 WebM 格式。';
+    });
     remove.addEventListener('click',async()=>{
       try{
         await this.removeLocalVideo(seriesId,episodeId);
@@ -517,6 +533,7 @@ bindLessonPanel(tab,d){
         player.pause(); player.removeAttribute('src'); player.load(); player.hidden=true;
         panel.querySelector('.local-video-empty').hidden=false;
         remove.hidden=true;
+        play.disabled=true;
         status.textContent='已删除这一课保存的本地视频。';
       }catch(err){status.textContent=`删除失败：${err.message}`;}
     });
