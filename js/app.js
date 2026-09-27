@@ -150,6 +150,7 @@ async renderSeries(seriesId){
         <p class="muted">${ep.titleZh || ''}</p>
         <div class="module-grid">
           <button class="module-card" data-go="watch">🎬<b>Watch</b><span>看动画</span></button>
+          <button class="module-card" data-go="localVideo">📁<b>Local Video</b><span>本地视频</span></button>
           <button class="module-card" data-go="listenRead">🎧<b>Listen and Read</b><span>听读</span></button>
           <button class="module-card" data-go="words">🔤<b>Words</b><span>单词</span></button>
           <button class="module-card" data-go="quiz">✅<b>Quiz</b><span>测验</span></button>
@@ -206,7 +207,7 @@ async renderLesson(seriesId, episodeId){
         <h1>Episode ${episodeId} · ${ep.title}</h1>
         <div class="muted">${ep.titleZh || ''} · ${series.seriesTitleZh || ''}</div>
         <div class="lesson-tabs">
-          ${['watch','listenRead','words','quiz'].map(t=>`<button class="tab ${tab===t?'active':''}" data-tab="${t}">${this.tabText(t)}</button>`).join('')}
+          ${['watch','localVideo','listenRead','words','quiz'].map(t=>`<button class="tab ${tab===t?'active':''}" data-tab="${t}">${this.tabText(t)}</button>`).join('')}
         </div>
       </section>
       <section id="lessonPanel" class="content-panel"></section>`;
@@ -269,9 +270,10 @@ async renderLesson(seriesId, episodeId){
 
     this.bindLessonPanel(tab,d);
   },
-  tabText(t){return {watch:'Watch 看动画',listenRead:'Listen and Read 听读',words:'Words 单词',quiz:'Quiz 测验'}[t]||t},
+  tabText(t){return {watch:'Watch 看动画',localVideo:'Local Video 本地视频',listenRead:'Listen and Read 听读',words:'Words 单词',quiz:'Quiz 测验'}[t]||t},
   lessonPanel(tab,d){
     if(tab==='watch') return this.watchPanel(d);
+    if(tab==='localVideo') return this.localVideoPanel(d);
     if(tab==='listenRead') return this.listenReadPanel(d);
     if(tab==='words') return this.wordsPanel(d);
     if(tab==='quiz') return this.quizPanel(d);
@@ -282,6 +284,70 @@ async renderLesson(seriesId, episodeId){
     const v=d.ep.video || {};
     if(!v.embedUrl) return `<div class="empty">本集视频暂未添加。</div>`;
     return `<div class="video-wrap"><iframe src="${v.embedUrl}" allowfullscreen="allowfullscreen" scrolling="no"></iframe></div><p class="muted"></p>${this.completeButton(d,'watch')}`;
+  },
+  localVideoPanel(d){
+    return `<section class="local-video-panel" data-series="${d.seriesId}" data-episode="${d.episodeId}">
+      <h2>本地视频</h2>
+      <p class="muted">可为这一课保存电脑中的视频。视频仅保存在当前浏览器和设备中；下次打开网站时仍可直接播放。</p>
+      <div class="local-video-actions">
+        <label class="btn small local-video-upload">选择并保存视频<input class="local-video-input" type="file" accept="video/*" hidden></label>
+        <button class="btn small secondary local-video-remove" type="button" hidden>删除已保存视频</button>
+      </div>
+      <p class="local-video-status muted" aria-live="polite">正在读取已保存的视频…</p>
+      <div class="video-wrap local-video-wrap">
+        <video class="local-video-player" controls playsinline hidden></video>
+        <div class="local-video-empty">选择一个本地视频后，即可在这里播放。</div>
+      </div>
+    </section>${this.completeButton(d,'localVideo')}`;
+  },
+  async localVideoDatabase(){
+    if(this._localVideoDatabase) return this._localVideoDatabase;
+    this._localVideoDatabase = new Promise((resolve,reject)=>{
+      const request=indexedDB.open('storyfox-local-videos',1);
+      request.onupgradeneeded=()=>request.result.createObjectStore('videos',{keyPath:'id'});
+      request.onsuccess=()=>resolve(request.result);
+      request.onerror=()=>reject(request.error || new Error('无法打开本地视频存储'));
+    });
+    return this._localVideoDatabase;
+  },
+  localVideoId(seriesId,episodeId){return `${seriesId}:${episodeId}`;},
+  async getLocalVideo(seriesId,episodeId){
+    const db=await this.localVideoDatabase();
+    return new Promise((resolve,reject)=>{
+      const request=db.transaction('videos','readonly').objectStore('videos').get(this.localVideoId(seriesId,episodeId));
+      request.onsuccess=()=>resolve(request.result || null);
+      request.onerror=()=>reject(request.error || new Error('读取本地视频失败'));
+    });
+  },
+  async saveLocalVideo(seriesId,episodeId,file){
+    const db=await this.localVideoDatabase();
+    const entry={id:this.localVideoId(seriesId,episodeId),name:file.name,type:file.type,size:file.size,updatedAt:Date.now(),blob:file};
+    return new Promise((resolve,reject)=>{
+      const request=db.transaction('videos','readwrite').objectStore('videos').put(entry);
+      request.onsuccess=()=>resolve(entry);
+      request.onerror=()=>reject(request.error || new Error('保存本地视频失败；请确认浏览器有足够存储空间'));
+    });
+  },
+  async removeLocalVideo(seriesId,episodeId){
+    const db=await this.localVideoDatabase();
+    return new Promise((resolve,reject)=>{
+      const request=db.transaction('videos','readwrite').objectStore('videos').delete(this.localVideoId(seriesId,episodeId));
+      request.onsuccess=()=>resolve();
+      request.onerror=()=>reject(request.error || new Error('删除本地视频失败'));
+    });
+  },
+  showLocalVideo(panel,entry){
+    const player=panel.querySelector('.local-video-player');
+    const empty=panel.querySelector('.local-video-empty');
+    const status=panel.querySelector('.local-video-status');
+    const remove=panel.querySelector('.local-video-remove');
+    if(panel._localVideoUrl) URL.revokeObjectURL(panel._localVideoUrl);
+    panel._localVideoUrl=URL.createObjectURL(entry.blob);
+    player.src=panel._localVideoUrl;
+    player.hidden=false;
+    empty.hidden=true;
+    remove.hidden=false;
+    status.textContent=`已保存：${entry.name}（${(entry.size/1024/1024).toFixed(1)} MB）`;
   },
   listenReadPanel(d){
     return `
@@ -419,6 +485,42 @@ phrasesPanel(d){
   
 bindLessonPanel(tab,d){
   document.querySelectorAll('.mark-complete').forEach(btn=>btn.addEventListener('click', e=>{e.preventDefault(); this.markComplete(btn.dataset.series, btn.dataset.episode, btn.dataset.module); btn.textContent='已完成 ✓';}));
+  document.querySelectorAll('.local-video-panel').forEach(panel=>{
+    if(panel.dataset.bound) return;
+    panel.dataset.bound='1';
+    const seriesId=panel.dataset.series;
+    const episodeId=panel.dataset.episode;
+    const input=panel.querySelector('.local-video-input');
+    const status=panel.querySelector('.local-video-status');
+    const remove=panel.querySelector('.local-video-remove');
+    this.getLocalVideo(seriesId,episodeId).then(entry=>{
+      if(entry) this.showLocalVideo(panel,entry);
+      else status.textContent='还没有为这一课保存本地视频。';
+    }).catch(err=>{status.textContent=`本地视频不可用：${err.message}`;});
+    input.addEventListener('change',async()=>{
+      const file=input.files && input.files[0];
+      if(!file) return;
+      status.textContent='正在保存视频，请勿关闭页面…';
+      try{
+        const entry=await this.saveLocalVideo(seriesId,episodeId,file);
+        this.showLocalVideo(panel,entry);
+      }catch(err){
+        status.textContent=`保存失败：${err.message}`;
+      }finally{input.value='';}
+    });
+    remove.addEventListener('click',async()=>{
+      try{
+        await this.removeLocalVideo(seriesId,episodeId);
+        if(panel._localVideoUrl) URL.revokeObjectURL(panel._localVideoUrl);
+        panel._localVideoUrl='';
+        const player=panel.querySelector('.local-video-player');
+        player.pause(); player.removeAttribute('src'); player.load(); player.hidden=true;
+        panel.querySelector('.local-video-empty').hidden=false;
+        remove.hidden=true;
+        status.textContent='已删除这一课保存的本地视频。';
+      }catch(err){status.textContent=`删除失败：${err.message}`;}
+    });
+  });
   document.querySelectorAll('.save-word').forEach(btn=>btn.addEventListener('click',()=>{this.saveWord(JSON.parse(decodeURIComponent(btn.dataset.word))); btn.textContent='已加入 ✓';}));
   document.querySelectorAll('.save-sentence').forEach(btn=>btn.addEventListener('click',()=>{this.saveSentence({seriesId:d.seriesId,episodeId:d.episodeId,sentence:decodeURIComponent(btn.dataset.sentence)}); btn.textContent='已收藏 ✓';}));
   const filter=document.getElementById('lessonWordFilter');
