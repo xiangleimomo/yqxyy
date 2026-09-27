@@ -295,8 +295,8 @@ async renderLesson(seriesId, episodeId){
         <button class="btn small secondary local-video-remove" type="button" hidden>删除已保存视频</button>
       </div>
       <p class="local-video-status muted" aria-live="polite">正在读取已保存的视频…</p>
-      <div class="video-wrap local-video-wrap">
-        <video class="local-video-player" controls playsinline hidden></video>
+      <div class="local-video-frame">
+        <video class="local-video-player" controls playsinline preload="metadata" hidden></video>
         <div class="local-video-empty">选择一个本地视频后，即可在这里播放。</div>
       </div>
     </section>${this.completeButton(d,'localVideo')}`;
@@ -521,7 +521,11 @@ bindLessonPanel(tab,d){
         status.textContent='暂时无法播放该文件。请确认视频格式为浏览器支持的 MP4（H.264/AAC）或 WebM。';
       }
     });
-    panel.querySelector('.local-video-player').addEventListener('error',()=>{
+    const localPlayer=panel.querySelector('.local-video-player');
+    localPlayer.addEventListener('loadedmetadata',()=>{
+      status.textContent='本地视频已载入，可使用下方的原生播放、暂停、进度和音量控件。';
+    });
+    localPlayer.addEventListener('error',()=>{
       status.textContent='该视频格式无法在当前浏览器播放。请使用 MP4（H.264/AAC）或 WebM 格式。';
     });
     remove.addEventListener('click',async()=>{

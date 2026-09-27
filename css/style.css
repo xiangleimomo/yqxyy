@@ -109,8 +109,9 @@ button{font-family:inherit}
 .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .local-video-actions{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
 .local-video-upload{display:inline-flex;align-items:center;cursor:pointer}
-.local-video-wrap{margin-top:12px}
-.local-video-player{position:absolute;inset:0;width:100%;height:100%;background:#10233d}
+.local-video-frame{position:relative;width:100%;aspect-ratio:16/9;min-height:260px;margin-top:12px;overflow:hidden;border-radius:14px;background:#10233d}
+.local-video-player{position:relative!important;z-index:2;display:block!important;width:100%!important;height:100%!important;min-height:260px;background:#10233d;object-fit:contain}
+.local-video-player[hidden]{display:none!important}
 .local-video-empty{position:absolute;inset:0;display:grid;place-items:center;padding:24px;text-align:center;color:#dcecff;background:#10233d}
 .read-paragraph{border-bottom:1px solid #eef2f7;padding:14px 0;line-height:1.85;font-size:17px}
 .read-paragraph:last-child{border-bottom:0}
