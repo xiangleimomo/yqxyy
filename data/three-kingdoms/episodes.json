@@ -148,16 +148,16 @@
     "title": "A Brief Celebration",
     "titleZh": "短暂的庆祝",
     "releaseDate": "2026-09-23",
-    "status": "coming",
-    "sourceType": "official-title-only",
+    "status": "published",
+    "sourceType": "official-text-inspired-learning-materials",
     "video": null,
     "modules": {
       "watch": false,
-      "read": false,
-      "vocabulary": false,
+      "read": true,
+      "vocabulary": true,
       "phrases": false,
       "grammar": false,
-      "quiz": false,
+      "quiz": true,
       "review": false
     }
   },
