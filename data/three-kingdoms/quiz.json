@@ -735,5 +735,16 @@
       {"id":"q4","type":"single-choice","category":"vocabulary","question":"In a battle story, what does “close in on” most nearly mean?","options":[{"key":"A","text":"move nearer to surround"},{"key":"B","text":"move away quietly"},{"key":"C","text":"celebrate a victory"}],"answer":"A","explanation":"close in on 表示逐渐逼近，并常带有包围的意思。","source":"custom-learning-material"},
       {"id":"q5","type":"single-choice","category":"story","question":"What unusual event changes the battle near the end of the episode?","options":[{"key":"A","text":"A powerful wind disrupts the imperial soldiers."},{"key":"B","text":"A messenger brings a peace treaty."},{"key":"C","text":"The rebel army leaves its banners behind."}],"answer":"A","explanation":"战场上出现强风，令帝国军队陷入混乱。","source":"custom-learning-material"}
     ]
+  },
+  "8": {
+    "episodeId": 8,
+    "title": "The Battle for Guangzong Quiz",
+    "questions": [
+      {"id":"q1","type":"single-choice","category":"story","question":"How do Liu Bei's soldiers move through the powerful wind?","options":[{"key":"A","text":"They lock arms and stay low."},{"key":"B","text":"They ride horses around the valley."},{"key":"C","text":"They wait safely behind the wall."}],"answer":"A","explanation":"关羽让士兵挽住手臂并压低身体，顶着强风前进。","source":"user-provided-transcript"},
+      {"id":"q2","type":"single-choice","category":"story","question":"What happens to the arrows fired by the imperial archers?","options":[{"key":"A","text":"They turn around and fly back at the archers."},{"key":"B","text":"They break the city gate."},{"key":"C","text":"They disappear in the wind."}],"answer":"A","explanation":"箭在击中目标前调头，飞回朝廷弓箭手那里。","source":"user-provided-transcript"},
+      {"id":"q3","type":"single-choice","category":"character","question":"Why does Liu Bei believe the unarmed man is Zhang Jue?","options":[{"key":"A","text":"The man is motioning upward with his arms during the strange magic."},{"key":"B","text":"The man is carrying the Green Dragon Crescent Blade."},{"key":"C","text":"The man opens the city gate for Dong Zhuo."}],"answer":"A","explanation":"刘备在混乱中看到那人没有武器，却在向上挥动手臂，因此认出他是张角。","source":"user-provided-transcript"},
+      {"id":"q4","type":"single-choice","category":"vocabulary","question":"What is a “rung”?","options":[{"key":"A","text":"A horizontal bar on a ladder."},{"key":"B","text":"A weapon used by an archer."},{"key":"C","text":"A strong wind in a valley."}],"answer":"A","explanation":"rung 指梯子上的一根横档。","source":"user-provided-transcript"},
+      {"id":"q5","type":"single-choice","category":"story","question":"How does Zhang Fei stop the Yellow Turbans from climbing the wall?","options":[{"key":"A","text":"He pulls a ladder away from the wall."},{"key":"B","text":"He asks Dong Zhuo to open the gate."},{"key":"C","text":"He fires arrows from the wall."}],"answer":"A","explanation":"张飞抓住梯子并用尽全力把它拉离城墙，阻止黄巾军攀爬。","source":"user-provided-transcript"}
+    ]
   }
 }
