@@ -291,7 +291,7 @@ async renderLesson(seriesId, episodeId){
   directVideoPanel(d){
     const url=d.ep.video?.directUrl;
     if(!url) return `<div class="empty">本集暂未提供直链视频。</div>`;
-    return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>直链播放</h2><p class="muted">备用播放方式，无需跳转到 B站。</p></div>${d.ep.video?.embedUrl?`<button class="btn secondary small open-bilibili-video" type="button">切换到 B站播放</button>`:''}</div><div class="video-wrap"><video class="direct-video-player" controls playsinline preload="metadata" referrerpolicy="no-referrer" src="${this.escapeHtml(url)}"></video></div></section>${this.completeButton(d,'directVideo')}`;
+    return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>直链播放</h2><p class="muted">备用播放方式。已启用无来源请求以兼容源站的防盗链规则。</p></div>${d.ep.video?.embedUrl?`<button class="btn secondary small open-bilibili-video" type="button">切换到 B站播放</button>`:''}</div><div class="video-wrap"><video class="direct-video-player" controls playsinline preload="metadata" src="${this.escapeHtml(url)}"></video></div><p class="muted direct-video-help">若播放器仍无法读取，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">在新页面播放直链</a>，或切换到 B站播放。</p></section>${this.completeButton(d,'directVideo')}`;
   },
   localVideoPanel(d){
     return `<section class="local-video-panel" data-series="${d.seriesId}" data-episode="${d.episodeId}">
