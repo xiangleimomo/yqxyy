@@ -59,6 +59,13 @@ button{font-family:inherit}
 .filters{display:flex;align-items:center;gap:10px;background:#e7f1fd;border-radius:12px;padding:14px;margin-bottom:18px;flex-wrap:wrap}
 .filter-btn{border:1px solid #8fc7fb;background:white;color:#0b78d0;border-radius:999px;padding:8px 14px;cursor:pointer;font-weight:700}
 .filter-btn.active,.filter-btn:hover{background:#21a0ed;color:white;border-color:#21a0ed}
+.level-filters{margin-top:-8px}
+.filter-label{font-weight:800;color:#35516f;margin-right:2px}
+.level-groups{display:flex;flex-direction:column;gap:28px}
+.level-group{min-width:0}
+.level-group-head{display:flex;align-items:baseline;gap:10px;margin:0 0 12px}
+.level-group-head h3{margin:0;font-size:20px;color:#173f72}
+.level-group-head span{color:#718096;font-size:13px}
 .series-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 .series-card{background:white;border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;gap:16px;box-shadow:var(--shadow);transition:.18s ease;align-items:stretch}
 .series-card:hover{transform:translateY(-2px);border-color:#95caff}

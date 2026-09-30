@@ -55,9 +55,16 @@ const App = {
       console.error(err);
     }
   },
-  async renderHome(filter='all'){
+  async renderHome(statusFilter='all', levelFilter='all'){
     const list = await this.getJSON('data/series-list.json');
     const total = list.length;
+    const levels = [...new Set(list.map(s=>Number(s.level ?? 0)))].sort((a,b)=>a-b);
+    const visible = list.filter(s=>(statusFilter==='all'||s.status===statusFilter) && (levelFilter==='all'||Number(s.level ?? 0)===Number(levelFilter)));
+    const grouped = (levelFilter==='all' ? levels : [Number(levelFilter)]).map(level=>{
+      const series = visible.filter(s=>Number(s.level ?? 0)===level);
+      if(!series.length) return '';
+      return `<section class="level-group"><div class="level-group-head"><h3>Level ${level}</h3><span>${series.length} 个系列</span></div><div class="series-grid">${series.map(s=>this.seriesCard(s)).join('')}</div></section>`;
+    }).join('');
     this.el().innerHTML = `
       <section class="hero">
         <div>
@@ -70,12 +77,18 @@ const App = {
         <h2>所有动画故事 <span class="meta">（${total} 个系列）</span></h2>
       </div>
       <div class="filters" id="homeFilters">
-        ${['all','completed','serializing','coming'].map(x=>`<button class="filter-btn ${filter===x?'active':''}" data-filter="${x}">${x==='all'?'全部':this.statusText(x)}</button>`).join('')}
+        ${['all','completed','serializing','coming'].map(x=>`<button class="filter-btn ${statusFilter===x?'active':''}" data-status="${x}">${x==='all'?'全部':this.statusText(x)}</button>`).join('')}
       </div>
-      <div class="series-grid">
-        ${list.filter(s=>filter==='all'||s.status===filter).map(s=>this.seriesCard(s)).join('')}
+      <div class="filters level-filters" id="levelFilters" aria-label="按等级筛选">
+        <span class="filter-label">分级</span>
+        <button class="filter-btn ${levelFilter==='all'?'active':''}" data-level="all">全部等级</button>
+        ${levels.map(level=>`<button class="filter-btn ${Number(levelFilter)===level?'active':''}" data-level="${level}">Level ${level}</button>`).join('')}
+      </div>
+      <div class="level-groups">
+        ${grouped || '<div class="empty">当前筛选条件下没有系列。</div>'}
       </div>`;
-    document.querySelectorAll('#homeFilters .filter-btn').forEach(btn=>btn.addEventListener('click',()=>this.renderHome(btn.dataset.filter)));
+    document.querySelectorAll('#homeFilters .filter-btn').forEach(btn=>btn.addEventListener('click',()=>this.renderHome(btn.dataset.status, levelFilter)));
+    document.querySelectorAll('#levelFilters .filter-btn').forEach(btn=>btn.addEventListener('click',()=>this.renderHome(statusFilter, btn.dataset.level)));
   },
   seriesCard(s){
     const disabled = s.status === 'coming' || s.status === 'locked';
@@ -84,7 +97,7 @@ const App = {
       <div class="series-info">
         <h3>${s.title}</h3>
         <div class="zh">${s.titleZh || ''}</div>
-        <div class="badges"><span class="badge">Level ${s.level || ''}</span><span class="badge ${this.statusClass(s.status)}">${this.statusText(s.status)}</span><span class="badge">${s.readyEpisodes || 0}/${s.episodeCount || 0} Ready</span></div>
+        <div class="badges"><span class="badge">Level ${s.level ?? 0}</span><span class="badge ${this.statusClass(s.status)}">${this.statusText(s.status)}</span><span class="badge">${s.readyEpisodes || 0}/${s.episodeCount || 0} Ready</span></div>
         
         <div style="margin-top:12px"><a class="btn ${disabled?'secondary':''}" href="${disabled?'#/home':'#/series/'+s.seriesId}">${disabled?'Coming Soon':'Start Learning'}</a></div>
       </div>
@@ -112,7 +125,7 @@ async renderSeries(seriesId){
       <img class="cover" src="${series.coverImage || `assets/covers/${seriesId}.svg`}" alt="${series.seriesTitle}">
       <div>
         <h1>${series.seriesTitle}</h1>
-        <div class="sub">${series.seriesTitleZh || ''} · Level ${series.level || ''} · ${this.statusText(series.status)}</div>
+        <div class="sub">${series.seriesTitleZh || ''} · Level ${series.level ?? 0} · ${this.statusText(series.status)}</div>
         <p class="sub">${series.description || ''}</p>
       </div>
     </section>
