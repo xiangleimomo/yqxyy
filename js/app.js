@@ -149,7 +149,8 @@ async renderSeries(seriesId){
         <h2>Episode ${ep.episodeId} · ${ep.title}</h2>
         <p class="muted">${ep.titleZh || ''}</p>
         <div class="module-grid">
-          <button class="module-card" data-go="watch">🎬<b>Watch</b><span>看动画</span></button>
+          <button class="module-card" data-go="watch">🎬<b>在线视频</b><span>B站播放</span></button>
+          <button class="module-card direct-video-card" data-go="directVideo">▶️<b>直链播放</b><span>备用视频在线播放</span></button>
           <button class="module-card" data-go="localVideo">📁<b>Local Video</b><span>本地视频</span></button>
           <button class="module-card" data-go="listenRead">🎧<b>Listen and Read</b><span>听读</span></button>
           <button class="module-card" data-go="words">🔤<b>Words</b><span>单词</span></button>
@@ -270,7 +271,7 @@ async renderLesson(seriesId, episodeId){
 
     this.bindLessonPanel(tab,d);
   },
-  tabText(t){return {watch:'Watch 看动画',directVideo:'Direct Video 直链播放',localVideo:'Local Video 本地视频',listenRead:'Listen and Read 听读',words:'Words 单词',quiz:'Quiz 测验'}[t]||t},
+  tabText(t){return {watch:'在线视频 · B站',directVideo:'直链播放 · 备用',localVideo:'Local Video 本地视频',listenRead:'Listen and Read 听读',words:'Words 单词',quiz:'Quiz 测验'}[t]||t},
   lessonPanel(tab,d){
     if(tab==='watch') return this.watchPanel(d);
     if(tab==='directVideo') return this.directVideoPanel(d);
@@ -283,13 +284,14 @@ async renderLesson(seriesId, episodeId){
   completeButton(d,module){return `<button class="btn small mark-complete" data-series="${d.seriesId}" data-episode="${d.episodeId}" data-module="${module}">完成本模块</button>`},
   watchPanel(d){
     const v=d.ep.video || {};
-    if(!v.embedUrl) return `<div class="empty">本集视频暂未添加。</div>`;
-    return `<div class="video-wrap"><iframe src="${v.embedUrl}" allowfullscreen="allowfullscreen" scrolling="no"></iframe></div><p class="muted"></p>${this.completeButton(d,'watch')}`;
+    if(!v.embedUrl && !v.directUrl) return `<div class="empty">本集视频暂未添加。</div>`;
+    if(!v.embedUrl) return this.directVideoPanel(d);
+    return `<section class="online-video-panel"><div class="video-source-head"><div><h2>在线视频</h2><p class="muted">当前播放源：B站。遇到加载问题时，可使用下方的直链播放。</p></div>${v.directUrl?`<button class="btn secondary small open-direct-video" type="button">▶ 使用直链播放</button>`:''}</div><div class="video-wrap"><iframe src="${v.embedUrl}" allowfullscreen="allowfullscreen" scrolling="no"></iframe></div></section>${this.completeButton(d,'watch')}`;
   },
   directVideoPanel(d){
     const url=d.ep.video?.directUrl;
     if(!url) return `<div class="empty">本集暂未提供直链视频。</div>`;
-    return `<section class="direct-video-panel"><h2>直链播放</h2><p class="muted">这是备用播放方式。若源站链接过期或无法加载，请使用 Watch 中的 B 站播放源。</p><div class="video-wrap"><video class="direct-video-player" controls playsinline preload="metadata" referrerpolicy="no-referrer" src="${this.escapeHtml(url)}"></video></div></section>${this.completeButton(d,'directVideo')}`;
+    return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>直链播放</h2><p class="muted">备用播放方式，无需跳转到 B站。</p></div>${d.ep.video?.embedUrl?`<button class="btn secondary small open-bilibili-video" type="button">切换到 B站播放</button>`:''}</div><div class="video-wrap"><video class="direct-video-player" controls playsinline preload="metadata" referrerpolicy="no-referrer" src="${this.escapeHtml(url)}"></video></div></section>${this.completeButton(d,'directVideo')}`;
   },
   localVideoPanel(d){
     return `<section class="local-video-panel" data-series="${d.seriesId}" data-episode="${d.episodeId}">
@@ -504,6 +506,8 @@ phrasesPanel(d){
   
 bindLessonPanel(tab,d){
   document.querySelectorAll('.mark-complete').forEach(btn=>btn.addEventListener('click', e=>{e.preventDefault(); this.markComplete(btn.dataset.series, btn.dataset.episode, btn.dataset.module); btn.textContent='已完成 ✓';}));
+  document.querySelectorAll('.open-direct-video').forEach(btn=>btn.addEventListener('click',()=>{this.activeLessonTab='directVideo'; this.renderLesson(d.seriesId,d.episodeId);}));
+  document.querySelectorAll('.open-bilibili-video').forEach(btn=>btn.addEventListener('click',()=>{this.activeLessonTab='watch'; this.renderLesson(d.seriesId,d.episodeId);}));
   document.querySelectorAll('.local-video-panel').forEach(panel=>{
     if(panel.dataset.bound) return;
     panel.dataset.bound='1';
