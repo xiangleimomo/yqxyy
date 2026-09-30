@@ -177,7 +177,10 @@
     "releaseDate": "2026-09-30",
     "status": "published",
     "sourceType": "user-provided-transcript-learning-materials",
-    "video": null,
+    "video": {
+      "source": "direct-mp4",
+      "directUrl": "https://sns-bak-v11.xhscdn.com/stream/79/110/259/01eabcede992c92e01037003a0f20208c3_259.mp4"
+    },
     "modules": {
       "watch": false,
       "read": true,
