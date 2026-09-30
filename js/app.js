@@ -207,7 +207,7 @@ async renderLesson(seriesId, episodeId){
         <h1>Episode ${episodeId} · ${ep.title}</h1>
         <div class="muted">${ep.titleZh || ''} · ${series.seriesTitleZh || ''}</div>
         <div class="lesson-tabs">
-          ${['watch','localVideo','listenRead','words','quiz'].map(t=>`<button class="tab ${tab===t?'active':''}" data-tab="${t}">${this.tabText(t)}</button>`).join('')}
+          ${['watch','directVideo','localVideo','listenRead','words','quiz'].map(t=>`<button class="tab ${tab===t?'active':''}" data-tab="${t}">${this.tabText(t)}</button>`).join('')}
         </div>
       </section>
       <section id="lessonPanel" class="content-panel"></section>`;
@@ -270,9 +270,10 @@ async renderLesson(seriesId, episodeId){
 
     this.bindLessonPanel(tab,d);
   },
-  tabText(t){return {watch:'Watch 看动画',localVideo:'Local Video 本地视频',listenRead:'Listen and Read 听读',words:'Words 单词',quiz:'Quiz 测验'}[t]||t},
+  tabText(t){return {watch:'Watch 看动画',directVideo:'Direct Video 直链播放',localVideo:'Local Video 本地视频',listenRead:'Listen and Read 听读',words:'Words 单词',quiz:'Quiz 测验'}[t]||t},
   lessonPanel(tab,d){
     if(tab==='watch') return this.watchPanel(d);
+    if(tab==='directVideo') return this.directVideoPanel(d);
     if(tab==='localVideo') return this.localVideoPanel(d);
     if(tab==='listenRead') return this.listenReadPanel(d);
     if(tab==='words') return this.wordsPanel(d);
@@ -284,6 +285,11 @@ async renderLesson(seriesId, episodeId){
     const v=d.ep.video || {};
     if(!v.embedUrl) return `<div class="empty">本集视频暂未添加。</div>`;
     return `<div class="video-wrap"><iframe src="${v.embedUrl}" allowfullscreen="allowfullscreen" scrolling="no"></iframe></div><p class="muted"></p>${this.completeButton(d,'watch')}`;
+  },
+  directVideoPanel(d){
+    const url=d.ep.video?.directUrl;
+    if(!url) return `<div class="empty">本集暂未提供直链视频。</div>`;
+    return `<section class="direct-video-panel"><h2>直链播放</h2><p class="muted">这是备用播放方式。若源站链接过期或无法加载，请使用 Watch 中的 B 站播放源。</p><div class="video-wrap"><video class="direct-video-player" controls playsinline preload="metadata" referrerpolicy="no-referrer" src="${this.escapeHtml(url)}"></video></div></section>${this.completeButton(d,'directVideo')}`;
   },
   localVideoPanel(d){
     return `<section class="local-video-panel" data-series="${d.seriesId}" data-episode="${d.episodeId}">

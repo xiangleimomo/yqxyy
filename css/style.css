@@ -107,6 +107,7 @@ button{font-family:inherit}
 .content-panel{background:white;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:20px}
 .video-wrap{position:relative;width:100%;padding-top:56.25%;border-radius:14px;overflow:hidden;background:#10233d}
 .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.direct-video-player{position:absolute;inset:0;width:100%;height:100%;background:#10233d;object-fit:contain}
 .local-video-actions{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
 .local-video-upload{display:inline-flex;align-items:center;cursor:pointer}
 .local-video-frame{position:relative;width:100%;aspect-ratio:16/9;min-height:260px;margin-top:12px;overflow:hidden;border-radius:14px;background:#10233d}
