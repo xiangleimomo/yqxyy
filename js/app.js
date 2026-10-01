@@ -115,6 +115,11 @@ async renderSeries(seriesId){
   if(!seriesId) return this.renderHome();
   const [bundle] = await Promise.all([this.loadSeries(seriesId)]);
   const {series, episodes} = bundle;
+  const episodeGroups = Array.from({length:Math.ceil(episodes.length / 10)}, (_, index)=>{
+    const start=index * 10 + 1;
+    return {start, end:Math.min(start + 9, episodes.length)};
+  });
+  let activeEpisodeId=1;
   this.el().classList.add('series-page-shell');
   document.body.classList.add('series-fixed-page');
   document.documentElement.classList.add('series-fixed-page');
@@ -132,31 +137,49 @@ async renderSeries(seriesId){
     <section class="learning-map">
       <aside class="episode-sidebar">
         <h3>课程列表</h3>
-        <div class="episode-side-list">
-          ${episodes.map(e=>{
-            const available=e.status==='published';
-            const unlocked=available && (e.unlockRequiresQuiz===false || this.isEpisodeUnlocked(seriesId,e.episodeId));
-            const prog=this.episodeProgress(seriesId,e.episodeId);
-            const done=!!(prog.modules.quiz);
-            return `
-            <button class="episode-side-item ${Number(e.episodeId)===1?'active':''} ${unlocked?'':'locked'}" data-ep="${e.episodeId}" data-available="${available}" ${unlocked?'':'disabled'}>
-              <span class="num">${e.episodeId}</span>
-              <span>${e.title}${done?' ✓':''}</span>
-              <small>${!available?'即将上线':(unlocked?(done?'已完成':'可学习'):'🔒 未解锁')}</small>
-            </button>`;
-          }).join('')}
+        <div class="episode-filter-bar">
+          <input id="episodeTitleSearch" type="search" placeholder="搜索课程标题" aria-label="搜索课程标题">
+          <select id="episodeRangeFilter" aria-label="按集数筛选">
+            <option value="all">全部 ${episodes.length} 集</option>
+            ${episodeGroups.map(group=>`<option value="${group.start}-${group.end}">${group.start}–${group.end} 集</option>`).join('')}
+          </select>
         </div>
+        <div class="episode-side-list" id="episodeSideList"></div>
       </aside>
       <main class="episode-workspace" id="episodeWorkspace"></main>
     </section>
     </div>`;
 
+    const renderEpisodeList=()=>{
+      const query=(document.getElementById('episodeTitleSearch')?.value || '').trim().toLowerCase();
+      const range=(document.getElementById('episodeRangeFilter')?.value || 'all').split('-').map(Number);
+      const [start,end]=range;
+      const visible=episodes.filter(ep=>{
+        const inRange=Number.isNaN(start) || (Number(ep.episodeId)>=start && Number(ep.episodeId)<=end);
+        const title=`${ep.title || ''} ${ep.titleZh || ''}`.toLowerCase();
+        return inRange && (!query || title.includes(query) || String(ep.episodeId)===query);
+      });
+      const list=document.getElementById('episodeSideList');
+      list.innerHTML=visible.length ? visible.map(e=>{
+        const available=e.status==='published';
+        const unlocked=available && (e.unlockRequiresQuiz===false || this.isEpisodeUnlocked(seriesId,e.episodeId));
+        const prog=this.episodeProgress(seriesId,e.episodeId);
+        const done=!!(prog.modules.quiz);
+        return `<button class="episode-side-item ${Number(e.episodeId)===activeEpisodeId?'active':''} ${unlocked?'':'locked'}" data-ep="${e.episodeId}" data-available="${available}" ${unlocked?'':'disabled'}>
+          <span class="num">${e.episodeId}</span>
+          <span>${e.title}${done?' ✓':''}</span>
+          <small>${!available?'即将上线':(unlocked?(done?'已完成':'可学习'):'🔒 未解锁')}</small>
+        </button>`;
+      }).join('') : '<div class="episode-filter-empty">没有找到匹配课程</div>';
+      document.querySelectorAll('.episode-side-item').forEach(btn=>btn.onclick=()=>openEpisode(btn.dataset.ep));
+    };
     const openEpisode = (id)=>{
       const ep=episodes.find(e=>Number(e.episodeId)===Number(id)) || episodes[0];
       if(ep.unlockRequiresQuiz!==false && !this.isEpisodeUnlocked(seriesId, ep.episodeId)){
         alert('🔒 请先完成上一集 Quiz（正确率80%以上）后解锁本集。');
         return;
       }
+      activeEpisodeId=Number(ep.episodeId);
       document.querySelectorAll('.episode-side-item').forEach(x=>x.classList.toggle('active', Number(x.dataset.ep)===Number(ep.episodeId)));
       document.getElementById('episodeWorkspace').innerHTML=`
         <h2>Episode ${ep.episodeId} · ${ep.title}</h2>
@@ -174,8 +197,10 @@ async renderSeries(seriesId){
         btn.onclick=()=>{ this.openLearningModal(btn.dataset.go, seriesId, ep.episodeId); };
       });
     };
+    document.getElementById('episodeTitleSearch').addEventListener('input',renderEpisodeList);
+    document.getElementById('episodeRangeFilter').addEventListener('change',renderEpisodeList);
+    renderEpisodeList();
     openEpisode(1);
-    document.querySelectorAll('.episode-side-item').forEach(btn=>btn.onclick=()=>openEpisode(btn.dataset.ep));
 },
 episodeCard(seriesId,e,review={}){
   const isReady = e.status === 'published';
@@ -425,21 +450,25 @@ async renderLesson(seriesId, episodeId){
   readPanel(d){
     const paras=(d.reading && d.reading.paragraphs) || [];
     if(!paras.length) return `<div class="empty">本集阅读内容暂未添加。</div>`;
-    const vocabMap={};
-    (d.vocab||[]).forEach(w=>vocabMap[(w.word||'').toLowerCase()]=w);
+    const vocabTerms=new Map();
+    (d.vocab||[]).forEach((word,index)=>{
+      const term=String(word.word||'').replace(/[（(].*$/, '').trim();
+      if(term && /[A-Za-z]/.test(term)) vocabTerms.set(term.toLowerCase(), {term,index});
+    });
     const renderText=(text)=>{
-      let html=this.escapeHtml(text || '');
-      const shownWords=new Set();
-      Object.keys(vocabMap).sort((a,b)=>b.length-a.length).forEach(word=>{
-        const safeWord=word.replace(/[.*+?^${}()|[\\]/g, '\\$&');
-        const reg=new RegExp('\\b('+safeWord+')\\b','gi');
-        html=html.replace(reg,(match)=>{
-          if(shownWords.has(word.toLowerCase())) return match;
-          shownWords.add(word.toLowerCase());
-          return `<span class="reading-word" data-word="${word}">${match}</span>`;
-        });
-      });
-      return html;
+      const terms=Array.from(vocabTerms.values()).sort((a,b)=>b.term.length-a.term.length);
+      if(!terms.length) return this.escapeHtml(text || '');
+      const escaped=terms.map(item=>item.term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+      const matcher=new RegExp(`\\b(${escaped.join('|')})\\b`, 'gi');
+      const source=String(text || '');
+      let html='', lastIndex=0, match;
+      while((match=matcher.exec(source)) !== null){
+        const item=vocabTerms.get(match[0].toLowerCase());
+        html+=this.escapeHtml(source.slice(lastIndex, match.index));
+        html+=`<span class="reading-word" data-word-index="${item.index}">${this.escapeHtml(match[0])}</span>`;
+        lastIndex=match.index + match[0].length;
+      }
+      return html + this.escapeHtml(source.slice(lastIndex));
     };
     return `<div class="book-reader">
     ${paras.map((p)=>`<div class="read-paragraph"><div class="selectable-sentence">${renderText(p.text || p)}</div>${p.translation?`<div class="translation hidden-translation">${p.translation}</div>`:''}</div>`).join('')}
@@ -625,7 +654,7 @@ bindLessonPanel(tab,d){
   document.querySelectorAll('.speak-word').forEach(btn=>btn.addEventListener('click',e=>{e.stopPropagation(); this.speakText(btn.dataset.text);}));
   document.querySelectorAll('.reading-word').forEach(span=>{
     const showTip=()=>{
-      const w=d.vocab.find(x=>(x.word||'').toLowerCase()===span.dataset.word);
+      const w=d.vocab[Number(span.dataset.wordIndex)];
       const pop=document.getElementById('readingPopup'); const hint=span.closest('.floating-window')?.querySelector('.read-header-hint');
       const reader=span.closest('.book-reader') || span.closest('.read-content') || span.parentElement;
       if(pop && w && reader){

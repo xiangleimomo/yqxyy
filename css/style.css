@@ -1009,6 +1009,29 @@ body.series-fixed-page .footer{
   margin-bottom:14px;
   flex:0 0 auto;
 }
+.episode-filter-bar{
+  display:flex;
+  gap:8px;
+  margin:0 0 12px;
+  padding:10px;
+  background:#f5f9fd;
+  border:1px solid #d7e4f1;
+  border-radius:10px;
+}
+.episode-filter-bar input,
+.episode-filter-bar select{
+  min-width:0;
+  height:38px;
+  border:1px solid #cbd8e6;
+  border-radius:8px;
+  background:#fff;
+  color:#2d3a4f;
+  font:inherit;
+  padding:0 10px;
+}
+.episode-filter-bar input{flex:1 1 auto; width:100%;}
+.episode-filter-bar select{flex:0 0 112px;}
+.episode-filter-empty{padding:18px 8px;color:#718198;text-align:center;font-size:14px;}
 .app-shell.series-page-shell .episode-side-list{
   flex:1 1 auto;
   min-height:0;
@@ -1033,6 +1056,17 @@ body.series-fixed-page .footer{
   background:#c6d8ef;
   border-radius:999px;
 }
+
+/* Course-word markers in the reading text. */
+.book-reader .reading-word{
+  color:#075fb5;
+  font-weight:800;
+  background:#fff3a6;
+  border-bottom:2px solid #edb72d !important;
+  border-radius:3px;
+  padding:0 1px;
+}
+.book-reader .reading-word:hover{background:#ffe178;color:#003f88;}
 @media(max-width:800px){
   html.series-fixed-page,
   body.series-fixed-page{
