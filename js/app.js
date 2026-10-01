@@ -452,6 +452,8 @@ async renderLesson(seriesId, episodeId){
       const term=String(word.word||'').replace(/[（(].*$/, '').trim();
       if(term && /[A-Za-z]/.test(term)) vocabTerms.set(term.toLowerCase(), {term,index});
     });
+    // A word is marked only on its first appearance in the full lesson.
+    const shownTerms=new Set();
     const renderText=(text)=>{
       const terms=Array.from(vocabTerms.values()).sort((a,b)=>b.term.length-a.term.length);
       if(!terms.length) return this.escapeHtml(text || '');
@@ -462,7 +464,9 @@ async renderLesson(seriesId, episodeId){
       while((match=matcher.exec(source)) !== null){
         const item=vocabTerms.get(match[0].toLowerCase());
         html+=this.escapeHtml(source.slice(lastIndex, match.index));
-        html+=`<span class="reading-word" data-word-index="${item.index}">${this.escapeHtml(match[0])}</span>`;
+        const key=item.term.toLowerCase();
+        html+=shownTerms.has(key) ? this.escapeHtml(match[0]) : `<span class="reading-word" data-word-index="${item.index}">${this.escapeHtml(match[0])}</span>`;
+        shownTerms.add(key);
         lastIndex=match.index + match[0].length;
       }
       return html + this.escapeHtml(source.slice(lastIndex));
@@ -525,6 +529,7 @@ wordsPanel(d){
 },
 
 wordCard(w,d){
+  const meaning=w.meaningZh || w.meaning || '中文释义待补充';
   const payload=encodeURIComponent(JSON.stringify({type:'word',seriesId:d.seriesId,episodeId:d.episodeId,word:w.word,meaning:w.meaningZh || w.meaning,example:w.example}));
   return `<article class="flip-card word-card" data-text="${(w.word+' '+(w.meaningZh||'')+' '+(w.definitionEn||'')).toLowerCase()}">
     <div class="flip-card-inner">
@@ -538,7 +543,7 @@ wordCard(w,d){
       </div>
       <div class="flip-card-face flip-card-back">
         <div class="flash-label">中文</div>
-        <div class="meaning">${w.meaningZh || w.meaning || ''}</div>
+        <div class="meaning">${this.escapeHtml(meaning)}</div>
         ${w.exampleZh?`<div class="example chinese-example">${w.exampleZh}</div>`:''}
         <p><button class="btn ghost small save-word" data-word="${payload}">加入单词表</button></p>
       </div>
@@ -655,7 +660,8 @@ bindLessonPanel(tab,d){
       const pop=document.getElementById('readingPopup'); const hint=span.closest('.floating-window')?.querySelector('.read-header-hint');
       const reader=span.closest('.book-reader') || span.closest('.read-content') || span.parentElement;
       if(pop && w && reader){
-        const content=`<span class="popup-word">${w.word}</span><span class="popup-meaning">${w.meaningZh||w.meaning||''}</span>`; if(hint){hint.innerHTML=content; hint.style.display='inline-flex';} if(pop) pop.innerHTML=content;
+        const meaning=w.meaningZh || w.meaning || '中文释义待补充';
+        const content=`<span class="popup-word">${this.escapeHtml(w.word)}</span><span class="popup-meaning">${this.escapeHtml(meaning)}</span>`; if(hint){hint.innerHTML=content; hint.style.display='inline-flex';} if(pop) pop.innerHTML=content;
         pop.style.display='block';
         const r=span.getBoundingClientRect();
         const cr=reader.getBoundingClientRect();
