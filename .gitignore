@@ -2,6 +2,8 @@
 *.zip
 .DS_Store
 Thumbs.db
+__pycache__/
+*.pyc
 
 # Never commit private environment files or credentials
 .env
