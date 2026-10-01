@@ -189,6 +189,7 @@ async renderSeries(seriesId){
           ${ep.modules?.read?'<button class="module-card" data-go="listenRead">🎧<b>Listen and Read</b><span>听读</span></button>':''}
           ${(ep.modules?.words || ep.modules?.vocabulary)?'<button class="module-card" data-go="words">🔤<b>Words</b><span>单词</span></button>':''}
           ${ep.modules?.quiz?'<button class="module-card" data-go="quiz">✅<b>Quiz</b><span>测验</span></button>':''}
+          ${ep.modules?.storyBook && ep.storyBook?.url?'<button class="module-card story-book-card" data-go="storyBook">📖<b>Story Book</b><span>绘本</span></button>':''}
         </div>`;
       document.querySelectorAll('.module-card').forEach(btn=>{
         btn.onclick=()=>{ this.openLearningModal(btn.dataset.go, seriesId, ep.episodeId); };
@@ -325,9 +326,10 @@ async renderLesson(seriesId, episodeId){
     if(ep.modules?.read) tabs.push('listenRead');
     if(ep.modules?.words || ep.modules?.vocabulary) tabs.push('words');
     if(ep.modules?.quiz) tabs.push('quiz');
+    if(ep.modules?.storyBook && ep.storyBook?.url) tabs.push('storyBook');
     return tabs.map(t=>`<button class="tab ${active===t?'active':''}" data-tab="${t}">${this.tabText(t)}</button>`).join('');
   },
-  tabText(t){return {watch:'Watch 看视频',hlsVideo:'HLS 播放',directVideo:'直链播放 · 备用',localVideo:'Local Video 本地视频',listenRead:'Listen and Read 听读',words:'Words 单词',quiz:'Quiz 测验'}[t]||t},
+  tabText(t){return {watch:'Watch 看视频',hlsVideo:'HLS 播放',directVideo:'直链播放 · 备用',localVideo:'Local Video 本地视频',listenRead:'Listen and Read 听读',words:'Words 单词',quiz:'Quiz 测验',storyBook:'Story Book 绘本'}[t]||t},
   lessonPanel(tab,d){
     if(tab==='watch') return this.watchPanel(d);
     if(tab==='hlsVideo') return this.hlsVideoPanel(d);
@@ -336,7 +338,13 @@ async renderLesson(seriesId, episodeId){
     if(tab==='listenRead') return this.listenReadPanel(d);
     if(tab==='words') return this.wordsPanel(d);
     if(tab==='quiz') return this.quizPanel(d);
+    if(tab==='storyBook') return this.storyBookPanel(d);
     return '';
+  },
+  storyBookPanel(d){
+    const book=d.ep.storyBook || {};
+    if(!book.url) return `<div class="empty">本集绘本暂未添加。</div>`;
+    return `<section class="story-book-panel"><div class="story-book-icon">📖</div><div><h2>${this.escapeHtml(book.title || 'Story Book')}</h2><p>${this.escapeHtml(book.description || '点击下方按钮，在夸克网盘中在线预览本集绘本。')}</p><p class="muted">夸克分享页禁止嵌入本站，因此会在新页面打开预览。</p><a class="btn story-book-open" href="${this.escapeHtml(book.url)}" target="_blank" rel="noreferrer noopener">在夸克中打开绘本 ↗</a></div></section>`;
   },
   completeButton(d,module){return `<button class="btn small mark-complete" data-series="${d.seriesId}" data-episode="${d.episodeId}" data-module="${module}">完成本模块</button>`},
   watchPanel(d){
