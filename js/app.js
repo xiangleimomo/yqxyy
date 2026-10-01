@@ -162,7 +162,7 @@ async renderSeries(seriesId){
       const list=document.getElementById('episodeSideList');
       list.innerHTML=visible.length ? visible.map(e=>{
         const available=e.status==='published';
-        const unlocked=available && (e.unlockRequiresQuiz===false || this.isEpisodeUnlocked(seriesId,e.episodeId));
+        const unlocked=available && this.isEpisodeUnlocked(seriesId,e.episodeId);
         const prog=this.episodeProgress(seriesId,e.episodeId);
         const done=!!(prog.modules.quiz);
         return `<button class="episode-side-item ${Number(e.episodeId)===activeEpisodeId?'active':''} ${unlocked?'':'locked'}" data-ep="${e.episodeId}" data-available="${available}" ${unlocked?'':'disabled'}>
@@ -175,7 +175,7 @@ async renderSeries(seriesId){
     };
     const openEpisode = (id)=>{
       const ep=episodes.find(e=>Number(e.episodeId)===Number(id)) || episodes[0];
-      if(ep.unlockRequiresQuiz!==false && !this.isEpisodeUnlocked(seriesId, ep.episodeId)){
+      if(!this.isEpisodeUnlocked(seriesId, ep.episodeId)){
         alert('🔒 请先完成上一集 Quiz（正确率80%以上）后解锁本集。');
         return;
       }
@@ -196,6 +196,7 @@ async renderSeries(seriesId){
     };
     document.getElementById('episodeTitleSearch').addEventListener('input',renderEpisodeList);
     document.getElementById('episodeRangeFilter').addEventListener('change',renderEpisodeList);
+    this.episodeListRefresh={seriesId,render:renderEpisodeList};
     renderEpisodeList();
     openEpisode(1);
 },
@@ -227,6 +228,10 @@ async renderLesson(seriesId, episodeId){
     if(ep.status !== 'published'){
       this.el().innerHTML = `<div class="breadcrumb"><a href="#/home">动画故事</a><span>›</span><a href="#/series/${seriesId}">${series.seriesTitle}</a></div><div class="empty"><h2>${ep.title}</h2><p>${this.statusText(ep.status)}</p><p>这一集还没有完整开放。</p><a class="btn" href="#/series/${seriesId}">返回系列页</a></div>`; return;
     }
+    if(!this.isEpisodeUnlocked(seriesId,episodeId)){
+      this.el().innerHTML=`<div class="empty"><h2>🔒 本集尚未解锁</h2><p>请先完成上一集 Quiz，正确率达到 80% 后自动解锁。</p><a class="btn" href="#/series/${this.escapeHtml(seriesId)}">返回课程列表</a></div>`;
+      return;
+    }
     const data = await Promise.all([
       this.getJSON(`data/${seriesId}/reading-lessons.json`).catch(()=>({})),
       this.getJSON(`data/${seriesId}/vocabulary.json`).catch(()=>({})),
@@ -257,6 +262,10 @@ async renderLesson(seriesId, episodeId){
     const [bundle] = await Promise.all([this.loadSeries(seriesId)]);
     const {series, episodes} = bundle;
     const ep = episodes.find(e=>Number(e.episodeId)===Number(episodeId));
+    if(!ep || ep.status!=='published' || !this.isEpisodeUnlocked(seriesId,episodeId)){
+      alert('🔒 请先完成上一集 Quiz（正确率80%以上）后解锁本集。');
+      return;
+    }
     const [reading, vocab, phrases, grammar, quiz, review] = await Promise.all([
       this.getJSON(`data/${seriesId}/reading-lessons.json`).catch(()=>({})),
       this.getJSON(`data/${seriesId}/vocabulary.json`).catch(()=>({})),
@@ -306,7 +315,7 @@ async renderLesson(seriesId, episodeId){
     });
     document.addEventListener('mouseup',()=>dragging=false);
 
-    this.bindLessonPanel(tab,d);
+    this.bindLessonPanel(tab,d,win);
   },
   lessonTabs(ep, active){
     const tabs=[];
@@ -588,7 +597,7 @@ phrasesPanel(d){
     return `<h2>Review</h2><div class="review-block"><div class="review-box"><h3>一分钟复习</h3><p>${r.summaryZh || '本集复习内容正在整理。'}</p><p class="muted">${r.summaryEn || ''}</p></div><div class="review-box"><h3>Key Words</h3><div class="pill-row">${(r.keyWords||[]).map(x=>`<span class="pill">${x}</span>`).join('')}</div><h3>Key Phrases</h3><div class="pill-row">${(r.keyPhrases||[]).map(x=>`<span class="pill">${x}</span>`).join('')}</div></div></div><div class="review-box" style="margin-top:16px"><h3>Key Sentences</h3>${(r.keySentences||[]).map(s=>`<p><strong>${s.sentence}</strong>${s.translation?`<br><span class="muted">${s.translation}</span>`:''}</p>`).join('')}</div>${this.completeButton(d,'review')}`;
   },
   
-bindLessonPanel(tab,d){
+bindLessonPanel(tab,d,root=document){
   document.querySelectorAll('.hls-video-player').forEach(player=>this.initializeHlsVideo(player));
   document.querySelectorAll('.mark-complete').forEach(btn=>btn.addEventListener('click', e=>{e.preventDefault(); this.markComplete(btn.dataset.series, btn.dataset.episode, btn.dataset.module); btn.textContent='已完成 ✓';}));
   document.querySelectorAll('.open-direct-video').forEach(btn=>btn.addEventListener('click',()=>{this.activeLessonTab='directVideo'; this.renderLesson(d.seriesId,d.episodeId);}));
@@ -701,16 +710,17 @@ bindLessonPanel(tab,d){
     this.initWordCardNav(d.vocab,d);
     this.initWordPractice(d.vocab, d.seriesId, d.episodeId);
   }
-  const form=document.getElementById('quizForm');
+  const form=root.querySelector('#quizForm');
   if(form){
     form.addEventListener('submit', e=>{
       e.preventDefault();
       let score=0; const qs=d.quiz.questions;
-      qs.forEach((q,i)=>{const ans=(new FormData(form)).get('q'+i); if(ans===q.answer) score++; const ex=document.getElementById('explain-'+i); if(ex) ex.style.display='block';});
-      document.getElementById('quizResult').innerHTML=`<div class="quiz-result">得分：${score}/${qs.length}</div>`;
+      qs.forEach((q,i)=>{const ans=(new FormData(form)).get('q'+i); if(ans===q.answer) score++; const ex=form.querySelector('#explain-'+i); if(ex) ex.style.display='block';});
+      const result=form.querySelector('#quizResult');
+      result.innerHTML=`<div class="quiz-result">得分：${score}/${qs.length}</div>`;
       this.saveQuizScore(d.seriesId,d.episodeId,score,qs.length);
       this.markComplete(d.seriesId,d.episodeId,'quiz');
-      if(score/qs.length>=0.8) this.unlockNextEpisode(d.seriesId,d.episodeId);
+      if(score/qs.length>=0.8) this.unlockNextEpisode(d.seriesId,d.episodeId,result);
     });
   }
 },
@@ -903,7 +913,7 @@ addPoints(n=1){
     const prev=p[`${seriesId}:${id-1}`];
     const q=this.storage('quizScores') || {};
     const quiz=q[`${seriesId}:${id-1}`];
-    return !!(prev && prev.modules && prev.modules.quiz && quiz && Number(quiz.score)/Number(quiz.total)>=0.8);
+    return !!(prev && prev.modules && prev.modules.quiz && quiz && Number(quiz.total)>0 && Number(quiz.score)/Number(quiz.total)>=0.8);
   },
   episodeProgress(seriesId, episodeId){
     const p=this.storage('progress') || {};
@@ -922,18 +932,16 @@ addPoints(n=1){
     const dates=new Set(this.storage('checkins')||[]);dates.add(ds);this.storage('checkins',[...dates].sort());
   },
   saveQuizScore(seriesId, episodeId, score, total){
-    const q=this.storage('quizScores') || {}; q[`${seriesId}:${episodeId}`]={score,total,date:new Date().toISOString()}; this.storage('quizScores',q);
+    const q=this.storage('quizScores') || {}, key=`${seriesId}:${episodeId}`, old=q[key];
+    if(old && Number(old.total)>0 && Number(old.score)/Number(old.total)>Number(score)/Number(total)) return;
+    q[key]={score,total,date:new Date().toISOString()}; this.storage('quizScores',q);
   },
-  unlockNextEpisode(seriesId, episodeId){
-    const nextId=Number(episodeId)+1;
-    const next=document.querySelector(`.episode-side-item[data-ep="${nextId}"]`);
-    if(!next || next.dataset.available!=='true' || !this.isEpisodeUnlocked(seriesId,nextId)) return;
-    next.disabled=false;
-    next.classList.remove('locked');
-    const label=next.querySelector('small');
-    if(label) label.textContent='可学习';
-    const result=document.getElementById('quizResult');
-    if(result) result.insertAdjacentHTML('beforeend','<p>🎉 已通过！下一课现已解锁。</p>');
+  unlockNextEpisode(seriesId, episodeId, result){
+    const [page,currentSeries]=this.route();
+    if(page==='series' && currentSeries===seriesId && this.episodeListRefresh?.seriesId===seriesId){
+      this.episodeListRefresh.render();
+    }
+    if(result) result.insertAdjacentHTML('beforeend','<p>🎉 已通过！后续已发布课程将按顺序解锁。</p>');
   },
   saveWord(item){
     const arr=this.storage('wordbank') || []; const id=`${item.type}:${item.seriesId}:${item.episodeId}:${item.word}`;
