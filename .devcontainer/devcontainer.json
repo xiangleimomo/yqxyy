@@ -1,0 +1,20 @@
+{
+  "name": "Story Fox English",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "Story Fox preview",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "redhat.vscode-json-reveal"
+      ]
+    }
+  },
+  "postCreateCommand": "git config --local core.autocrlf input"
+}

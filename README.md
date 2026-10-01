@@ -44,6 +44,18 @@ Read 顶部可关闭内置词典，偏好保存到本机；不会取消原生文
 
 入口文件：`index.html`
 
+## 云端开发（GitHub Codespaces）
+
+不需要保留本机开发环境。项目已由 GitHub 托管，Netlify 会在 `main` 分支更新后自动上线；通过 Codespaces 可直接在浏览器中开发。
+
+1. 打开 GitHub 仓库，点击 **Code → Codespaces → Create codespace on main**。
+2. 等待云端工作区初始化完成后，在终端运行：`python3 -m http.server 8000`。
+3. 在 Ports 面板打开 `8000` 的预览链接，即可查看网站。
+4. 修改文件后，在 Source Control 中提交并同步；或者在终端执行 `git add`、`git commit`、`git push`。
+5. 推送到 `main` 后，Netlify 会自动发布，无需打开本机电脑。
+
+项目已提供 `.devcontainer/devcontainer.json`，Codespaces 会自动使用 Node.js 22 并转发预览端口。请勿把 `.env`、令牌或数据库密钥提交到仓库。
+
 ## 后续新增系列
 
 1. 新建 `data/series-id/`
