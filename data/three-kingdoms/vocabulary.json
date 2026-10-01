@@ -1684,29 +1684,249 @@
     }
   ],
   "7": [
-    {"id":"v1","word":"stony","partOfSpeech":"adjective","meaningZh":"冷峻的；毫无表情的","definitionEn":"showing no emotion","example":"He kept a stony face even when the situation became dangerous.","exampleZh":"即使情况危险，他仍保持冷峻的表情。","source":"custom-learning-material","phonetic":"/ˈstoʊni/"},
-    {"id":"v2","word":"grip","partOfSpeech":"verb","meaningZh":"紧握；抓牢","definitionEn":"to hold something tightly","example":"The soldier gripped his weapon before the attack.","exampleZh":"士兵在进攻前紧紧握住武器。","source":"custom-learning-material","phonetic":"/ɡrɪp/"},
-    {"id":"v3","word":"rumble","partOfSpeech":"noun","meaningZh":"隆隆声；低沉的连续声响","definitionEn":"a deep, continuous sound","example":"A rumble of horses came from across the field.","exampleZh":"战场另一边传来马匹的隆隆声。","source":"custom-learning-material","phonetic":"/ˈrʌmbəl/"},
-    {"id":"v4","word":"charge","partOfSpeech":"verb","meaningZh":"冲锋；猛冲","definitionEn":"to move forward quickly in an attack","example":"The riders charged toward the enemy line.","exampleZh":"骑兵向敌军阵线冲锋。","source":"custom-learning-material","phonetic":"/tʃɑːrdʒ/"},
-    {"id":"v5","word":"close in on","partOfSpeech":"phrasal verb","meaningZh":"从四周逼近；包围","definitionEn":"to move nearer to surround someone or something","example":"The two groups closed in on the rebels from opposite sides.","exampleZh":"两队人马从相反方向向叛军逼近。","source":"custom-learning-material","phonetic":"/kloʊz ɪn ɑːn/"},
-    {"id":"v6","word":"defeat","partOfSpeech":"verb","meaningZh":"击败；战胜","definitionEn":"to win against someone in a fight or competition","example":"The army defeated its opponents with a surprise attack.","exampleZh":"军队以突袭击败了对手。","source":"custom-learning-material","phonetic":"/dɪˈfiːt/"},
-    {"id":"v7","word":"oath brother","partOfSpeech":"noun","meaningZh":"结义兄弟","definitionEn":"a brother by a sworn promise rather than by family","example":"The three oath brothers promised to support one another.","exampleZh":"三位结义兄弟承诺彼此扶持。","source":"custom-learning-material","phonetic":"/oʊθ ˈbrʌðər/"},
-    {"id":"v8","word":"assault","partOfSpeech":"noun","meaningZh":"进攻；袭击","definitionEn":"a strong attack","example":"The commander led the assault on the city.","exampleZh":"指挥官率领部队进攻城池。","source":"custom-learning-material","phonetic":"/əˈsɔːlt/"},
-    {"id":"v9","word":"arrogant","partOfSpeech":"adjective","meaningZh":"傲慢的；自大的","definitionEn":"acting as if you are better than other people","example":"His arrogant manner made cooperation difficult.","exampleZh":"他傲慢的态度让合作变得困难。","source":"custom-learning-material","phonetic":"/ˈærəɡənt/"},
-    {"id":"v10","word":"scoff","partOfSpeech":"verb","meaningZh":"嘲笑；嗤之以鼻","definitionEn":"to speak or react with scorn","example":"He scoffed at the idea that help was needed.","exampleZh":"他对需要帮助这个想法嗤之以鼻。","source":"custom-learning-material","phonetic":"/skɔːf/"},
-    {"id":"v11","word":"squint","partOfSpeech":"verb","meaningZh":"眯着眼看","definitionEn":"to look with the eyes partly closed","example":"She squinted to see the banner in the distance.","exampleZh":"她眯起眼睛看远处的旗帜。","source":"custom-learning-material","phonetic":"/skwɪnt/"},
-    {"id":"v12","word":"swirl","partOfSpeech":"verb","meaningZh":"盘旋；打转","definitionEn":"to move around quickly in a circular way","example":"Dust swirled across the battlefield in the strong wind.","exampleZh":"强风中尘土在战场上盘旋。","source":"custom-learning-material","phonetic":"/swɜːrl/"}
+    {
+      "id": "v1",
+      "word": "stony",
+      "partOfSpeech": "adjective",
+      "meaningZh": "冷峻的；毫无表情的",
+      "definitionEn": "showing no emotion",
+      "example": "He kept a stony face even when the situation became dangerous.",
+      "exampleZh": "即使情况危险，他仍保持冷峻的表情。",
+      "source": "custom-learning-material",
+      "phonetic": "/ˈstoʊni/"
+    },
+    {
+      "id": "v2",
+      "word": "grip",
+      "partOfSpeech": "verb",
+      "meaningZh": "紧握；抓牢",
+      "definitionEn": "to hold something tightly",
+      "example": "The soldier gripped his weapon before the attack.",
+      "exampleZh": "士兵在进攻前紧紧握住武器。",
+      "source": "custom-learning-material",
+      "phonetic": "/ɡrɪp/"
+    },
+    {
+      "id": "v3",
+      "word": "rumble",
+      "partOfSpeech": "noun",
+      "meaningZh": "隆隆声；低沉的连续声响",
+      "definitionEn": "a deep, continuous sound",
+      "example": "A rumble of horses came from across the field.",
+      "exampleZh": "战场另一边传来马匹的隆隆声。",
+      "source": "custom-learning-material",
+      "phonetic": "/ˈrʌmbəl/"
+    },
+    {
+      "id": "v4",
+      "word": "charge",
+      "partOfSpeech": "verb",
+      "meaningZh": "冲锋；猛冲",
+      "definitionEn": "to move forward quickly in an attack",
+      "example": "The riders charged toward the enemy line.",
+      "exampleZh": "骑兵向敌军阵线冲锋。",
+      "source": "custom-learning-material",
+      "phonetic": "/tʃɑːrdʒ/"
+    },
+    {
+      "id": "v5",
+      "word": "close in on",
+      "partOfSpeech": "phrasal verb",
+      "meaningZh": "从四周逼近；包围",
+      "definitionEn": "to move nearer to surround someone or something",
+      "example": "The two groups closed in on the rebels from opposite sides.",
+      "exampleZh": "两队人马从相反方向向叛军逼近。",
+      "source": "custom-learning-material",
+      "phonetic": "/kloʊz ɪn ɑːn/"
+    },
+    {
+      "id": "v6",
+      "word": "defeat",
+      "partOfSpeech": "verb",
+      "meaningZh": "击败；战胜",
+      "definitionEn": "to win against someone in a fight or competition",
+      "example": "The army defeated its opponents with a surprise attack.",
+      "exampleZh": "军队以突袭击败了对手。",
+      "source": "custom-learning-material",
+      "phonetic": "/dɪˈfiːt/"
+    },
+    {
+      "id": "v7",
+      "word": "oath brother",
+      "partOfSpeech": "noun",
+      "meaningZh": "结义兄弟",
+      "definitionEn": "a brother by a sworn promise rather than by family",
+      "example": "The three oath brothers promised to support one another.",
+      "exampleZh": "三位结义兄弟承诺彼此扶持。",
+      "source": "custom-learning-material",
+      "phonetic": "/oʊθ ˈbrʌðər/"
+    },
+    {
+      "id": "v8",
+      "word": "assault",
+      "partOfSpeech": "noun",
+      "meaningZh": "进攻；袭击",
+      "definitionEn": "a strong attack",
+      "example": "The commander led the assault on the city.",
+      "exampleZh": "指挥官率领部队进攻城池。",
+      "source": "custom-learning-material",
+      "phonetic": "/əˈsɔːlt/"
+    },
+    {
+      "id": "v9",
+      "word": "arrogant",
+      "partOfSpeech": "adjective",
+      "meaningZh": "傲慢的；自大的",
+      "definitionEn": "acting as if you are better than other people",
+      "example": "His arrogant manner made cooperation difficult.",
+      "exampleZh": "他傲慢的态度让合作变得困难。",
+      "source": "custom-learning-material",
+      "phonetic": "/ˈærəɡənt/"
+    },
+    {
+      "id": "v10",
+      "word": "scoff",
+      "partOfSpeech": "verb",
+      "meaningZh": "嘲笑；嗤之以鼻",
+      "definitionEn": "to speak or react with scorn",
+      "example": "He scoffed at the idea that help was needed.",
+      "exampleZh": "他对需要帮助这个想法嗤之以鼻。",
+      "source": "custom-learning-material",
+      "phonetic": "/skɔːf/"
+    },
+    {
+      "id": "v11",
+      "word": "squint",
+      "partOfSpeech": "verb",
+      "meaningZh": "眯着眼看",
+      "definitionEn": "to look with the eyes partly closed",
+      "example": "She squinted to see the banner in the distance.",
+      "exampleZh": "她眯起眼睛看远处的旗帜。",
+      "source": "custom-learning-material",
+      "phonetic": "/skwɪnt/"
+    },
+    {
+      "id": "v12",
+      "word": "swirl",
+      "partOfSpeech": "verb",
+      "meaningZh": "盘旋；打转",
+      "definitionEn": "to move around quickly in a circular way",
+      "example": "Dust swirled across the battlefield in the strong wind.",
+      "exampleZh": "强风中尘土在战场上盘旋。",
+      "source": "custom-learning-material",
+      "phonetic": "/swɜːrl/"
+    }
   ],
   "8": [
-    {"id":"v1","word":"whip","partOfSpeech":"verb","meaningZh":"猛烈抽打；呼啸而过","definitionEn":"to move or strike quickly and forcefully","example":"The wind whipped through the valley.","exampleZh":"风猛烈地穿过山谷。","source":"user-provided-transcript","phonetic":"/wɪp/"},
-    {"id":"v2","word":"crouch","partOfSpeech":"verb","meaningZh":"蹲下；弯低身体","definitionEn":"to bend low with your knees close to your body","example":"The soldiers crouched low in the wind.","exampleZh":"士兵们在风中压低身体。","source":"user-provided-transcript","phonetic":"/kraʊtʃ/"},
-    {"id":"v3","word":"inch","partOfSpeech":"verb","meaningZh":"一点一点地移动","definitionEn":"to move very slowly in small amounts","example":"They inched closer to the city wall.","exampleZh":"他们一点一点靠近城墙。","source":"user-provided-transcript","phonetic":"/ɪntʃ/"},
-    {"id":"v4","word":"archer","partOfSpeech":"noun","meaningZh":"弓箭手","definitionEn":"a person who shoots arrows with a bow","example":"The imperial archers fired from the wall.","exampleZh":"朝廷弓箭手从城墙上射箭。","source":"user-provided-transcript","phonetic":"/ˈɑːrtʃər/"},
-    {"id":"v5","word":"gasp","partOfSpeech":"verb","meaningZh":"倒吸一口气；喘气","definitionEn":"to take a quick breath because of surprise or shock","example":"Liu Bei gasped when the arrows turned around.","exampleZh":"箭调头时，刘备倒吸了一口气。","source":"user-provided-transcript","phonetic":"/ɡæsp/"},
-    {"id":"v6","word":"narrow","partOfSpeech":"verb","meaningZh":"眯起；缩小","definitionEn":"to make your eyes partly closed to see or show suspicion","example":"Liu Bei narrowed his eyes to see clearly.","exampleZh":"刘备眯起眼睛看清楚。","source":"user-provided-transcript","phonetic":"/ˈnæroʊ/"},
-    {"id":"v7","word":"barrel","partOfSpeech":"noun","meaningZh":"大桶","definitionEn":"a large round container, often made of wood or metal","example":"Dong Zhuo hid behind a barrel.","exampleZh":"董卓躲在一个大桶后面。","source":"user-provided-transcript","phonetic":"/ˈbærəl/"},
-    {"id":"v8","word":"scuffle","partOfSpeech":"noun","meaningZh":"混战；短暂扭打","definitionEn":"a short and confused fight","example":"They fought their way through the scuffle.","exampleZh":"他们在混战中杀出一条路。","source":"user-provided-transcript","phonetic":"/ˈskʌfəl/"},
-    {"id":"v9","word":"rung","partOfSpeech":"noun","meaningZh":"梯子的横档","definitionEn":"one of the horizontal bars on a ladder","example":"Zhang Fei grabbed a rung of the ladder.","exampleZh":"张飞抓住梯子的一个横档。","source":"user-provided-transcript","phonetic":"/rʌŋ/"},
-    {"id":"v10","word":"flee","partOfSpeech":"verb","meaningZh":"逃跑；逃离","definitionEn":"to run away from danger","example":"Some rebels dropped their weapons and fled.","exampleZh":"一些叛军丢下武器逃跑了。","source":"user-provided-transcript","phonetic":"/fliː/"}
+    {
+      "id": "v1",
+      "word": "whip",
+      "partOfSpeech": "verb",
+      "meaningZh": "猛烈抽打；呼啸而过",
+      "definitionEn": "to move or strike quickly and forcefully",
+      "example": "The wind whipped through the valley.",
+      "exampleZh": "风猛烈地穿过山谷。",
+      "source": "user-provided-transcript",
+      "phonetic": "/wɪp/"
+    },
+    {
+      "id": "v2",
+      "word": "crouch",
+      "partOfSpeech": "verb",
+      "meaningZh": "蹲下；弯低身体",
+      "definitionEn": "to bend low with your knees close to your body",
+      "example": "The soldiers crouched low in the wind.",
+      "exampleZh": "士兵们在风中压低身体。",
+      "source": "user-provided-transcript",
+      "phonetic": "/kraʊtʃ/"
+    },
+    {
+      "id": "v3",
+      "word": "inch",
+      "partOfSpeech": "verb",
+      "meaningZh": "一点一点地移动",
+      "definitionEn": "to move very slowly in small amounts",
+      "example": "They inched closer to the city wall.",
+      "exampleZh": "他们一点一点靠近城墙。",
+      "source": "user-provided-transcript",
+      "phonetic": "/ɪntʃ/"
+    },
+    {
+      "id": "v4",
+      "word": "archer",
+      "partOfSpeech": "noun",
+      "meaningZh": "弓箭手",
+      "definitionEn": "a person who shoots arrows with a bow",
+      "example": "The imperial archers fired from the wall.",
+      "exampleZh": "朝廷弓箭手从城墙上射箭。",
+      "source": "user-provided-transcript",
+      "phonetic": "/ˈɑːrtʃər/"
+    },
+    {
+      "id": "v5",
+      "word": "gasp",
+      "partOfSpeech": "verb",
+      "meaningZh": "倒吸一口气；喘气",
+      "definitionEn": "to take a quick breath because of surprise or shock",
+      "example": "Liu Bei gasped when the arrows turned around.",
+      "exampleZh": "箭调头时，刘备倒吸了一口气。",
+      "source": "user-provided-transcript",
+      "phonetic": "/ɡæsp/"
+    },
+    {
+      "id": "v6",
+      "word": "narrow",
+      "partOfSpeech": "verb",
+      "meaningZh": "眯起；缩小",
+      "definitionEn": "to make your eyes partly closed to see or show suspicion",
+      "example": "Liu Bei narrowed his eyes to see clearly.",
+      "exampleZh": "刘备眯起眼睛看清楚。",
+      "source": "user-provided-transcript",
+      "phonetic": "/ˈnæroʊ/"
+    },
+    {
+      "id": "v7",
+      "word": "barrel",
+      "partOfSpeech": "noun",
+      "meaningZh": "大桶",
+      "definitionEn": "a large round container, often made of wood or metal",
+      "example": "Dong Zhuo hid behind a barrel.",
+      "exampleZh": "董卓躲在一个大桶后面。",
+      "source": "user-provided-transcript",
+      "phonetic": "/ˈbærəl/"
+    },
+    {
+      "id": "v8",
+      "word": "scuffle",
+      "partOfSpeech": "noun",
+      "meaningZh": "混战；短暂扭打",
+      "definitionEn": "a short and confused fight",
+      "example": "They fought their way through the scuffle.",
+      "exampleZh": "他们在混战中杀出一条路。",
+      "source": "user-provided-transcript",
+      "phonetic": "/ˈskʌfəl/"
+    },
+    {
+      "id": "v9",
+      "word": "rung",
+      "partOfSpeech": "noun",
+      "meaningZh": "梯子的横档",
+      "definitionEn": "one of the horizontal bars on a ladder",
+      "example": "Zhang Fei grabbed a rung of the ladder.",
+      "exampleZh": "张飞抓住梯子的一个横档。",
+      "source": "user-provided-transcript",
+      "phonetic": "/rʌŋ/"
+    },
+    {
+      "id": "v10",
+      "word": "flee",
+      "partOfSpeech": "verb",
+      "meaningZh": "逃跑；逃离",
+      "definitionEn": "to run away from danger",
+      "example": "Some rebels dropped their weapons and fled.",
+      "exampleZh": "一些叛军丢下武器逃跑了。",
+      "source": "user-provided-transcript",
+      "phonetic": "/fliː/"
+    }
   ]
 }

@@ -1,1 +1,7082 @@
-{}
+{
+  "1": {
+    "episodeId": 1,
+    "title": "A Man in the Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What is the chapter mainly about?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip's decision to leave home"
+          },
+          {
+            "key": "B",
+            "text": "Pip's search for food"
+          },
+          {
+            "key": "C",
+            "text": "Pip's memory of meeting a convict D. Pip's relationship with his family"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is true about Pip?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He wants to become a blacksmith."
+          },
+          {
+            "key": "B",
+            "text": "He likes to visit the prison ships."
+          },
+          {
+            "key": "C",
+            "text": "He gets along well with his older sister. D. He has never seen his parents."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who did Pip live with?",
+        "options": [
+          {
+            "key": "A",
+            "text": "his parents"
+          },
+          {
+            "key": "B",
+            "text": "the minister"
+          },
+          {
+            "key": "C",
+            "text": "a criminal D. his older sister"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What happened when the man turned Pip upside down?",
+        "options": [
+          {
+            "key": "A",
+            "text": "A piece of bread fell out."
+          },
+          {
+            "key": "B",
+            "text": "Coins fell onto the grass."
+          },
+          {
+            "key": "C",
+            "text": "Another man shouted at Pip. D. There was a booming sound."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the man want Pip to bring to him?",
+        "options": [
+          {
+            "key": "A",
+            "text": "water"
+          },
+          {
+            "key": "B",
+            "text": "a file"
+          },
+          {
+            "key": "C",
+            "text": "clothes D. a gun"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip's sister do when she found Pip behind the door?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She shouted angrily at Joe."
+          },
+          {
+            "key": "B",
+            "text": "She hit him."
+          },
+          {
+            "key": "C",
+            "text": "She hugged him. D. She fainted."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Tickler?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a toy"
+          },
+          {
+            "key": "B",
+            "text": "a rock"
+          },
+          {
+            "key": "C",
+            "text": "a whip D. a cane"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why didn't Pip eat his slice of bread?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He wanted to save it for the man."
+          },
+          {
+            "key": "B",
+            "text": "He was afraid it was poisoned."
+          },
+          {
+            "key": "C",
+            "text": "He wasn't very hungry. D. He wanted to give it to Joe."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did the prison ships fire a warning?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Someone had found a convict."
+          },
+          {
+            "key": "B",
+            "text": "A new convict had been put in jail."
+          },
+          {
+            "key": "C",
+            "text": "The prison ships were in trouble. D. A convict had escaped."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "When did Pip run toward the marshes again?",
+        "options": [
+          {
+            "key": "A",
+            "text": "when his sister chased him"
+          },
+          {
+            "key": "B",
+            "text": "while Joe was working in his forge"
+          },
+          {
+            "key": "C",
+            "text": "in the middle of the night D. early in the morning"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "2": {
+    "episodeId": 2,
+    "title": "Chasing the Convicts Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which was not true about Pip's convict?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He didn't get along with the younger convict."
+          },
+          {
+            "key": "B",
+            "text": "He didn't want Pip to be in trouble."
+          },
+          {
+            "key": "C",
+            "text": "He was angry at Pip for returning with soldiers. D. He had escaped from the prison ships."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which happened first?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip thought the soldiers came to arrest him."
+          },
+          {
+            "key": "B",
+            "text": "Pip brought food to his convict."
+          },
+          {
+            "key": "C",
+            "text": "Pip's sister discovered that the pie was missing. D. Pip met the younger convict."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip's convict want to do when he heard about the other convict?",
+        "options": [
+          {
+            "key": "A",
+            "text": "chase after the other convict"
+          },
+          {
+            "key": "B",
+            "text": "find the constable"
+          },
+          {
+            "key": "C",
+            "text": "go with Pip to Joe's house D. return to the prison ships"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the convict use the file to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "to make a weapon"
+          },
+          {
+            "key": "B",
+            "text": "to sharpen his sword"
+          },
+          {
+            "key": "C",
+            "text": "to free himself from his leg iron D. to trim his overgrown nails"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who was Mr. Pumblechook?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the church clerk"
+          },
+          {
+            "key": "B",
+            "text": "Joe's uncle"
+          },
+          {
+            "key": "C",
+            "text": "a wheel maker D. the constable"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Joe comfort Pip during dinner?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He poured gravy onto Pip's plate."
+          },
+          {
+            "key": "B",
+            "text": "He gave Pip an extra piece of pie."
+          },
+          {
+            "key": "C",
+            "text": "He said Pip was a good boy. D. He slipped some money into Pip's hand."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did the soldiers come to Joe's house?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They wanted to ask for something to eat."
+          },
+          {
+            "key": "B",
+            "text": "They wanted Pip to help them find the convict."
+          },
+          {
+            "key": "C",
+            "text": "They wanted to take Pip to the prison ships. D. They wanted Joe to fix a pair of handcuffs."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip think the convict would do when he saw Pip again?",
+        "options": [
+          {
+            "key": "A",
+            "text": "assume that Pip had brought the soldiers"
+          },
+          {
+            "key": "B",
+            "text": "tell Joe that Pip stole the food from the kitchen"
+          },
+          {
+            "key": "C",
+            "text": "return Joe's file to Pip D. pretend that he didn't know Pip"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What were the two convicts doing when Pip saw them together?",
+        "options": [
+          {
+            "key": "A",
+            "text": "sleeping peacefully"
+          },
+          {
+            "key": "B",
+            "text": "filing their leg irons"
+          },
+          {
+            "key": "C",
+            "text": "fighting with each other D. eating stolen food"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the convict do to help keep Pip from getting into trouble?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He secretly put Joe's file into Joe's pocket."
+          },
+          {
+            "key": "B",
+            "text": "He told Joe that Pip was a good boy."
+          },
+          {
+            "key": "C",
+            "text": "He offered to give Pip a lot of money. D. He said that he was the one who stole the food."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "3": {
+    "episodeId": 3,
+    "title": "Meeting Miss Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is the most important event in the story?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip's sister gives Pip a bath."
+          },
+          {
+            "key": "B",
+            "text": "Pip explores an abandoned brewery."
+          },
+          {
+            "key": "C",
+            "text": "Uncle Pumblechook isn't allowed to meet Miss Havisham. D. Miss Havisham watches Pip and Estella play together."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which describes Miss Havisham's house?",
+        "options": [
+          {
+            "key": "A",
+            "text": "small but cozy"
+          },
+          {
+            "key": "B",
+            "text": "big and gloomy"
+          },
+          {
+            "key": "C",
+            "text": "new and fancy D. old but welcoming"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who made the arrangements for Pip to see Miss Havisham?",
+        "options": [
+          {
+            "key": "A",
+            "text": "an anonymous person"
+          },
+          {
+            "key": "B",
+            "text": "Uncle Pumblechook"
+          },
+          {
+            "key": "C",
+            "text": "Pip's sister D. Joe"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip's sister hope Pip would gain from going to Miss Havisham's?",
+        "options": [
+          {
+            "key": "A",
+            "text": "an education"
+          },
+          {
+            "key": "B",
+            "text": "wealth"
+          },
+          {
+            "key": "C",
+            "text": "wisdom D. a friend"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Miss Havisham dressed as?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a bride"
+          },
+          {
+            "key": "B",
+            "text": "a princess"
+          },
+          {
+            "key": "C",
+            "text": "a witch D. a little girl"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Miss Havisham want Pip to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "read a book to her"
+          },
+          {
+            "key": "B",
+            "text": "clean her room"
+          },
+          {
+            "key": "C",
+            "text": "go to sleep D. play cards"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Estella act toward Pip?",
+        "options": [
+          {
+            "key": "A",
+            "text": "mean and insultingly"
+          },
+          {
+            "key": "B",
+            "text": "kind and warmly"
+          },
+          {
+            "key": "C",
+            "text": "cold and silently D. friendly and excitedly"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "When did Miss Havisham want Pip to return?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the next day"
+          },
+          {
+            "key": "B",
+            "text": "the next week"
+          },
+          {
+            "key": "C",
+            "text": "never again D. once a year"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Miss Havisham ask Estella to do for Pip?",
+        "options": [
+          {
+            "key": "A",
+            "text": "teach him how to play cards"
+          },
+          {
+            "key": "B",
+            "text": "give him new clothes"
+          },
+          {
+            "key": "C",
+            "text": "give him some food D. walk him home"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip want to do because he was so humiliated and angry?",
+        "options": [
+          {
+            "key": "A",
+            "text": "cry"
+          },
+          {
+            "key": "B",
+            "text": "scream"
+          },
+          {
+            "key": "C",
+            "text": "hit something D. fall asleep"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "4": {
+    "episodeId": 4,
+    "title": "A Stranger Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Estella say to Pip that changed the way Pip saw his life?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She said that he was very lucky."
+          },
+          {
+            "key": "B",
+            "text": "She said that he was coarse and common."
+          },
+          {
+            "key": "C",
+            "text": "She said that Miss Havisham didn't like him. D. She said that Miss Havisham wanted to make him rich."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Whose file did the man at the pub have?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Joe's"
+          },
+          {
+            "key": "B",
+            "text": "Miss Havisham's"
+          },
+          {
+            "key": "C",
+            "text": "Biddy's D. Pip's"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip do when his sister and Mr. Pumblechook bothered him to tell them about his visit?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He told them things that weren't true."
+          },
+          {
+            "key": "B",
+            "text": "He became angry and shouted at them."
+          },
+          {
+            "key": "C",
+            "text": "He didn't say anything and walked away. D. He pretended to be sick and went to bed."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip say he, Estella, and Miss Havisham played with?",
+        "options": [
+          {
+            "key": "A",
+            "text": "plates"
+          },
+          {
+            "key": "B",
+            "text": "dogs"
+          },
+          {
+            "key": "C",
+            "text": "flags D. cards"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip tell Joe in the forge after Mr. Pumblechook had left?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Everything he had said about Estella was true."
+          },
+          {
+            "key": "B",
+            "text": "He was the one who stole the file to give to the convict."
+          },
+          {
+            "key": "C",
+            "text": "Everything he had said about Miss Havisham's was a lie. D. He wanted to become the smartest scholar in England."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip think Estella would think of Joe?",
+        "options": [
+          {
+            "key": "A",
+            "text": "that Joe was not a good blacksmith"
+          },
+          {
+            "key": "B",
+            "text": "that Joe was a good friend"
+          },
+          {
+            "key": "C",
+            "text": "that Joe was kind D. that Joe was not refined"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Pip want Biddy to teach him everything she knew?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He thought Biddy was a better teacher than the one at school."
+          },
+          {
+            "key": "B",
+            "text": "He wanted to see if Biddy was smarter than him."
+          },
+          {
+            "key": "C",
+            "text": "He wanted to spend more time with her. D. He thought it would help him become less common."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did the stranger at the pub convey a message to Pip?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He scratched his leg twice."
+          },
+          {
+            "key": "B",
+            "text": "He ordered a special beverage."
+          },
+          {
+            "key": "C",
+            "text": "He used a file to stir his drink. D. He gave Pip a pair of handcuffs."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the convict use to wrap the shilling?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a handwritten note"
+          },
+          {
+            "key": "B",
+            "text": "two bills"
+          },
+          {
+            "key": "C",
+            "text": "an old map D. two pages from a book"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Pip's sister hide the money?",
+        "options": [
+          {
+            "key": "A",
+            "text": "on top of a cabinet"
+          },
+          {
+            "key": "B",
+            "text": "in the forge"
+          },
+          {
+            "key": "C",
+            "text": "under her pillow D. in a teapot"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "5": {
+    "episodeId": 5,
+    "title": "The Pale Young Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which happens first?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Miss Havisham says it is her birthday."
+          },
+          {
+            "key": "B",
+            "text": "Pip and Estella play six games of cards."
+          },
+          {
+            "key": "C",
+            "text": "Pip walks Miss Havisham around the room. D. Estella gives Pip something to eat."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who did Pip meet on the stairs going to Miss Havisham's room?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Miss Havisham's younger brother"
+          },
+          {
+            "key": "B",
+            "text": "his sister and Mr. Pumblechook"
+          },
+          {
+            "key": "C",
+            "text": "a man whose hand smelled like scented soap D. a young man who had pale skin"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Estella do after she asked Pip if she was pretty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She kissed him."
+          },
+          {
+            "key": "B",
+            "text": "She slapped him."
+          },
+          {
+            "key": "C",
+            "text": "She said he was handsome. D. She called him mean names."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was in the center of the table in the room across the passage?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a pile of clothes"
+          },
+          {
+            "key": "B",
+            "text": "a meal prepared for Pip"
+          },
+          {
+            "key": "C",
+            "text": "a dead body D. an old wedding cake"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Miss Havisham want Pip to notice as he played cards?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Estella's beauty"
+          },
+          {
+            "key": "B",
+            "text": "Miss Havisham's sadness"
+          },
+          {
+            "key": "C",
+            "text": "a pile of jewels D. a giant spider"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was the pale young gentleman doing when Pip first saw him?",
+        "options": [
+          {
+            "key": "A",
+            "text": "playing cards"
+          },
+          {
+            "key": "B",
+            "text": "eating"
+          },
+          {
+            "key": "C",
+            "text": "gardening D. studying"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did the pale young gentleman butt his head into Pip's stomach?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He was told to do it by Miss Havisham."
+          },
+          {
+            "key": "B",
+            "text": "He wanted to fight with Pip."
+          },
+          {
+            "key": "C",
+            "text": "He was trying to protect Estella. D. He accidentally tripped and fell."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Pip surprised during the fight?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He saw Estella and Miss Havisham cheering him on."
+          },
+          {
+            "key": "B",
+            "text": "He knocked down the pale young gentleman many times."
+          },
+          {
+            "key": "C",
+            "text": "The pale young gentleman was stronger than he looked. D. The pale young gentleman ran away from Pip."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip think of the pale young gentleman?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He thought he was mean."
+          },
+          {
+            "key": "B",
+            "text": "He envied him."
+          },
+          {
+            "key": "C",
+            "text": "He thought he was a coward. D. He respected him."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Estella say Pip could do after the fight?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She said he could have more food."
+          },
+          {
+            "key": "B",
+            "text": "She said he could kiss her."
+          },
+          {
+            "key": "C",
+            "text": "She said he could go back to see Miss Havisham. D. She said he could play another game of cards with her."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "6": {
+    "episodeId": 6,
+    "title": "Joe's Apprentice Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What is the main event in the chapter?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip becomes Joe's apprentice."
+          },
+          {
+            "key": "B",
+            "text": "Pip plays cards with Estella."
+          },
+          {
+            "key": "C",
+            "text": "Pip looks for the pale young gentleman. D. Pip thinks Estella becomes more beautiful."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How long did Pip make visits to Miss Havisham's house?",
+        "options": [
+          {
+            "key": "A",
+            "text": "eight to ten months"
+          },
+          {
+            "key": "B",
+            "text": "one to two months"
+          },
+          {
+            "key": "C",
+            "text": "five weeks D. three years"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Pip push Miss Havisham in the garden chair?",
+        "options": [
+          {
+            "key": "A",
+            "text": "around her house"
+          },
+          {
+            "key": "B",
+            "text": "in the garden"
+          },
+          {
+            "key": "C",
+            "text": "near the brewery D. in the town"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who did Pip tell about what happened at Miss Havisham's?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Biddy"
+          },
+          {
+            "key": "B",
+            "text": "Mrs. Gargery"
+          },
+          {
+            "key": "C",
+            "text": "Joe D. Mr. Pumblechook"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Miss Havisham ask Pip to bring her his indenture papers?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She thought he should be apprenticed soon."
+          },
+          {
+            "key": "B",
+            "text": "She wanted to make Pip a rich man."
+          },
+          {
+            "key": "C",
+            "text": "She wanted to meet Joe. D. She thought he would be a bad blacksmith."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip's sister do while Pip and Joe went to Miss Havisham's?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She went to Mr. Pumblechook's house."
+          },
+          {
+            "key": "B",
+            "text": "She stayed at home and cried."
+          },
+          {
+            "key": "C",
+            "text": "She hid in Miss Havisham's yard and spied on them. D. She cooked dinner and washed the clothes."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Joe do when he met Miss Havisham?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He didn't talk to her, but instead talked to Pip."
+          },
+          {
+            "key": "B",
+            "text": "He asked her to give Pip a lot of money."
+          },
+          {
+            "key": "C",
+            "text": "He asked her if he could bring his wife to see her. D. He bowed and thanked her."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Miss Havisham give to Pip before he left?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a bag of money"
+          },
+          {
+            "key": "B",
+            "text": "a piece of her wedding cake"
+          },
+          {
+            "key": "C",
+            "text": "a picture of Estella D. a deck of cards"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who did Joe say Miss Havisham gave money to?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip's family"
+          },
+          {
+            "key": "B",
+            "text": "Pip"
+          },
+          {
+            "key": "C",
+            "text": "Mr. Pumblechook D. Biddy"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Pip feel about becoming a blacksmith?",
+        "options": [
+          {
+            "key": "A",
+            "text": "ashamed"
+          },
+          {
+            "key": "B",
+            "text": "proud"
+          },
+          {
+            "key": "C",
+            "text": "excited D. bored"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "7": {
+    "episodeId": 7,
+    "title": "At the Forge Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which happened first?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip and Mr. Wopsle went to Mr. Pumblechook's for tea."
+          },
+          {
+            "key": "B",
+            "text": "Pip and Mr. Wopsle met Orlick outside at night."
+          },
+          {
+            "key": "C",
+            "text": "Pip heard the prison ships firing their guns. D. Pip found out someone broke into his house."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is true about Pip's sister and Orlick?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They openly dislike each other."
+          },
+          {
+            "key": "B",
+            "text": "They secretly love each other."
+          },
+          {
+            "key": "C",
+            "text": "They never speak to each other. D. They both want to become blacksmiths."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Pip try to teach Joe what he learned from Biddy?",
+        "options": [
+          {
+            "key": "A",
+            "text": "so that Joe would not be scorned by Estella"
+          },
+          {
+            "key": "B",
+            "text": "so that Joe could get a better job"
+          },
+          {
+            "key": "C",
+            "text": "so that Joe would agree to pay for Pip's education D. so that Joe could impress his wife"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Pip want to take a half-day off from work?",
+        "options": [
+          {
+            "key": "A",
+            "text": "to go to Miss Havisham's house"
+          },
+          {
+            "key": "B",
+            "text": "to learn new things from Biddy"
+          },
+          {
+            "key": "C",
+            "text": "to help his sister with the chores D. to rest in his room at home"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why didn't Orlick like Pip being Joe's apprentice?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He was afraid that Pip would replace him one day."
+          },
+          {
+            "key": "B",
+            "text": "He received less money because Pip had to be paid too."
+          },
+          {
+            "key": "C",
+            "text": "He had to take care of Pip whenever Joe was gone. D. He thought Pip was lazy and stupid."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Orlick do when he found out Pip had a half-day off?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He asked for a half-day off too."
+          },
+          {
+            "key": "B",
+            "text": "He threatened to quit working at the forge."
+          },
+          {
+            "key": "C",
+            "text": "He gave Pip some money to spend. D. He promised that he would do Pip's work."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Joe and Orlick fight?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Orlick insulted Pip's sister."
+          },
+          {
+            "key": "B",
+            "text": "Orlick tried to steal money from Joe's house."
+          },
+          {
+            "key": "C",
+            "text": "Orlick tried to hurt Pip. D. Orlick claimed he was a better blacksmith than Joe."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "When did Miss Havisham tell Pip to visit her?",
+        "options": [
+          {
+            "key": "A",
+            "text": "on his birthday"
+          },
+          {
+            "key": "B",
+            "text": "on her birthday"
+          },
+          {
+            "key": "C",
+            "text": "every Christmas D. every day"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip do at Mr. Pumblechook's house?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He listened to Mr. Wopsle read a book."
+          },
+          {
+            "key": "B",
+            "text": "He learned how to be a gentleman."
+          },
+          {
+            "key": "C",
+            "text": "He listened to a story about Miss Havisham. D. He sat in a corner by himself."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was on the floor beside Pip's sister?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a convict's leg iron"
+          },
+          {
+            "key": "B",
+            "text": "a large hammer"
+          },
+          {
+            "key": "C",
+            "text": "Joe's file D. Orlick's coat"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "8": {
+    "episodeId": 8,
+    "title": "A Walk with Biddy Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What could be another title for this chapter?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Biddy and Pip on the Marshes"
+          },
+          {
+            "key": "B",
+            "text": "A Birthday Gift from Miss Havisham"
+          },
+          {
+            "key": "C",
+            "text": "Estella Visits the Forge D. The Mysterious Orlick"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not a way Pip's sister was different after her injury?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She became meaner."
+          },
+          {
+            "key": "B",
+            "text": "She was more patient."
+          },
+          {
+            "key": "C",
+            "text": "She could not speak. D. She wanted to be around Orlick."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who did Pip think was responsible for attacking his sister?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Orlick"
+          },
+          {
+            "key": "B",
+            "text": "Pip's convict"
+          },
+          {
+            "key": "C",
+            "text": "Mr. Pumblechook D. Miss Havisham"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who took care of Pip's sister?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Biddy"
+          },
+          {
+            "key": "B",
+            "text": "Pip"
+          },
+          {
+            "key": "C",
+            "text": "Joe D. Orlick"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Biddy realize the \"T\" on the slate meant?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Orlick"
+          },
+          {
+            "key": "B",
+            "text": "toast"
+          },
+          {
+            "key": "C",
+            "text": "Joe D. tub"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Pip's sister act toward Orlick?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She acted like he was her favorite."
+          },
+          {
+            "key": "B",
+            "text": "She acted spitefully toward him."
+          },
+          {
+            "key": "C",
+            "text": "She was indifferent about him. D. She was in love with him."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Miss Havisham give Pip each year on his birthday?",
+        "options": [
+          {
+            "key": "A",
+            "text": "money"
+          },
+          {
+            "key": "B",
+            "text": "a card from Estella"
+          },
+          {
+            "key": "C",
+            "text": "a book D. new clothes"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip think Biddy had become?",
+        "options": [
+          {
+            "key": "A",
+            "text": "more pleasant"
+          },
+          {
+            "key": "B",
+            "text": "dirtier"
+          },
+          {
+            "key": "C",
+            "text": "less smart D. as beautiful as Estella"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip tell Biddy he wanted to be?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a gentleman"
+          },
+          {
+            "key": "B",
+            "text": "the best blacksmith in England"
+          },
+          {
+            "key": "C",
+            "text": "a convict D. the handsomest man in England"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why doesn't Biddy like Orlick?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She thinks he might like her."
+          },
+          {
+            "key": "B",
+            "text": "She thinks he's the one who hurt Pip's sister."
+          },
+          {
+            "key": "C",
+            "text": "She thinks he's ugly and mean. D. She thinks he doesn't treat Pip well."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "9": {
+    "episodeId": 9,
+    "title": "Surprising News Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who does Pip think is his benefactor?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Miss Havisham"
+          },
+          {
+            "key": "B",
+            "text": "Mr. Pumblechook"
+          },
+          {
+            "key": "C",
+            "text": "a stranger D. a rich uncle"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true about Mr. Jaggers?",
+        "options": [
+          {
+            "key": "A",
+            "text": "His son is a tutor."
+          },
+          {
+            "key": "B",
+            "text": "He is a lawyer in London."
+          },
+          {
+            "key": "C",
+            "text": "He is fairly famous. D. His hands smell like scented soap."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Pip first meet Mr. Jaggers?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Miss Havisham's house"
+          },
+          {
+            "key": "B",
+            "text": "the pub"
+          },
+          {
+            "key": "C",
+            "text": "the forge D. Mr. Pumblechook's house"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What does Pip's benefactor desire for Pip?",
+        "options": [
+          {
+            "key": "A",
+            "text": "that he be brought up as a gentleman"
+          },
+          {
+            "key": "B",
+            "text": "that he continue to work at the forge"
+          },
+          {
+            "key": "C",
+            "text": "that he change his name to Matthew Pocket D. that he give half his money to Joe"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How does Pip's benefactor want Pip to discover his or her name?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The benefactor will tell him the name directly."
+          },
+          {
+            "key": "B",
+            "text": "Pip will try to guess the name to Mr. Jaggers."
+          },
+          {
+            "key": "C",
+            "text": "Pip should look at the name on the bank account. D. The benefactor will send a messenger in two days."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who would be Pip's tutor?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Matthew Pocket"
+          },
+          {
+            "key": "B",
+            "text": "Matthew Pocket's son"
+          },
+          {
+            "key": "C",
+            "text": "Mr. Jaggers D. Biddy"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Mr. Jaggers want Pip to buy first?",
+        "options": [
+          {
+            "key": "A",
+            "text": "new clothes"
+          },
+          {
+            "key": "B",
+            "text": "new books"
+          },
+          {
+            "key": "C",
+            "text": "food D. a horse"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is true about Joe?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He doesn't want anything from Pip's benefactor."
+          },
+          {
+            "key": "B",
+            "text": "He asks Mr. Jaggers for compensation money."
+          },
+          {
+            "key": "C",
+            "text": "He asks Mr. Jaggers to help Mrs. Gargery. D. He wants to go with Pip to London."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What does Pip ask Mr. Jaggers if he can do before going to London?",
+        "options": [
+          {
+            "key": "A",
+            "text": "visit someone who lives uptown"
+          },
+          {
+            "key": "B",
+            "text": "secretly leave Joe some money"
+          },
+          {
+            "key": "C",
+            "text": "buy a new hammer for Joe D. find Orlick a new job"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Pip feel at night when Biddy and Joe were talking outside?",
+        "options": [
+          {
+            "key": "A",
+            "text": "lonely"
+          },
+          {
+            "key": "B",
+            "text": "excited"
+          },
+          {
+            "key": "C",
+            "text": "ashamed D. proud"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "10": {
+    "episodeId": 10,
+    "title": "Leaving Home Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What is the main event in the chapter?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip says good-bye to Joe and Biddy and goes to London."
+          },
+          {
+            "key": "B",
+            "text": "Pip visits Miss Havisham for the last time."
+          },
+          {
+            "key": "C",
+            "text": "Pip thinks about what it will be like to leave home. D. Pip and Biddy get into an argument."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which happened first?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip took his last walk on the marshes."
+          },
+          {
+            "key": "B",
+            "text": "Pip talked to Biddy near a black currant bush."
+          },
+          {
+            "key": "C",
+            "text": "Pip visits Miss Havisham. D. Pip eats his last dinner with Joe and Biddy."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip and Joe do with Pip's indenture papers?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They burned the papers in the fire."
+          },
+          {
+            "key": "B",
+            "text": "They framed the papers and hung it up."
+          },
+          {
+            "key": "C",
+            "text": "They buried the papers in the ground. D. They sent the papers to Miss Havisham."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip ask Biddy to do for Joe?",
+        "options": [
+          {
+            "key": "A",
+            "text": "help him with his education and manners"
+          },
+          {
+            "key": "B",
+            "text": "become his new apprentice"
+          },
+          {
+            "key": "C",
+            "text": "continue to take care of Pip's sister D. find a way to get rid of Orlick"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How does Pip think Biddy feels?",
+        "options": [
+          {
+            "key": "A",
+            "text": "jealous of Pip's unexpected fortune"
+          },
+          {
+            "key": "B",
+            "text": "sorry for Joe and his poor manners"
+          },
+          {
+            "key": "C",
+            "text": "disgusted with her life at the forge D. unappreciated for everything she does"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Pip have his new clothes delivered to?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Mr. Pumblechook's house"
+          },
+          {
+            "key": "B",
+            "text": "the forge"
+          },
+          {
+            "key": "C",
+            "text": "Miss Havisham's house D. London"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How were Joe, Biddy, and Pip during dinner?",
+        "options": [
+          {
+            "key": "A",
+            "text": "sad"
+          },
+          {
+            "key": "B",
+            "text": "happy"
+          },
+          {
+            "key": "C",
+            "text": "angry D. annoyed"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why didn't Pip want Joe to accompany him to the coach?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He was embarrassed to be seen with Joe."
+          },
+          {
+            "key": "B",
+            "text": "He didn't want Joe to get tired."
+          },
+          {
+            "key": "C",
+            "text": "He wanted to visit Miss Havisham first. D. He didn't want Joe to see him sad."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Joe and Biddy throw shoes at Pip?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They wanted to wish him good luck."
+          },
+          {
+            "key": "B",
+            "text": "They were angry with him for leaving."
+          },
+          {
+            "key": "C",
+            "text": "They realized he forgot to pack them. D. They wanted to play a game."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "When did Pip begin to cry?",
+        "options": [
+          {
+            "key": "A",
+            "text": "when he walked into the village"
+          },
+          {
+            "key": "B",
+            "text": "when he ate breakfast with Joe and Biddy"
+          },
+          {
+            "key": "C",
+            "text": "when he got hit by a shoe D. when he got into the coach"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "11": {
+    "episodeId": 11,
+    "title": "Herbert Pocket Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Whose story does Pip learn about most in this chapter?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Miss Havisham's"
+          },
+          {
+            "key": "B",
+            "text": "Herbert's"
+          },
+          {
+            "key": "C",
+            "text": "Estella's D. Mr. Jaggers'"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true about Miss Havisham's past?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She had two brothers who stole all her money."
+          },
+          {
+            "key": "B",
+            "text": "She lived near Pip's neighborhood."
+          },
+          {
+            "key": "C",
+            "text": "She was almost married to a man. D. She grew up without a mother."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Mr. Jaggers tell Pip to stay when he arrived in London?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Herbert's house"
+          },
+          {
+            "key": "B",
+            "text": "Matthew Pocket's house"
+          },
+          {
+            "key": "C",
+            "text": "the local hotel D. Mr. Jaggers' house"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Herbert and Pip meet before?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Miss Havisham's house"
+          },
+          {
+            "key": "B",
+            "text": "Joe's forge"
+          },
+          {
+            "key": "C",
+            "text": "the marshes D. the pub"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What does Herbert think of Estella?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He doesn't like her very much."
+          },
+          {
+            "key": "B",
+            "text": "He is madly in love with her."
+          },
+          {
+            "key": "C",
+            "text": "He is angry with her. D. He thinks she is very kind."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Pip like Herbert?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Herbert was charming and nice."
+          },
+          {
+            "key": "B",
+            "text": "Herbert came from a wealthy family."
+          },
+          {
+            "key": "C",
+            "text": "Herbert was related to Miss Havisham. D. Herbert had many friends in London."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Miss Havisham's father disinherit his son?",
+        "options": [
+          {
+            "key": "A",
+            "text": "His son was wasteful with his money."
+          },
+          {
+            "key": "B",
+            "text": "His son committed a terrible crime."
+          },
+          {
+            "key": "C",
+            "text": "His son was mean to Miss Havisham. D. His son wanted to marry a poor girl."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Miss Havisham order Matthew Pocket out of her house?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He warned her about doing too much for her fiancé."
+          },
+          {
+            "key": "B",
+            "text": "He was acting with her half-brother to steal her money."
+          },
+          {
+            "key": "C",
+            "text": "He asked if he could borrow some of her money. D. He got into a fight with her fiancé and hurt him."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What happened at twenty minutes to nine on Miss Havisham's wedding day?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Miss Havisham received a letter breaking off the marriage."
+          },
+          {
+            "key": "B",
+            "text": "Miss Havisham's father passed away suddenly."
+          },
+          {
+            "key": "C",
+            "text": "Miss Havisham's brother stole all the family money. D. Miss Havisham told her fiancé that she didn't want to marry him."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who did Herbert promise to never mention?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip's benefactor"
+          },
+          {
+            "key": "B",
+            "text": "Estella"
+          },
+          {
+            "key": "C",
+            "text": "Pip's convict D. Miss Havisham"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "12": {
+    "episodeId": 12,
+    "title": "Mr. Jaggers' Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who is not introduced for the first time in this chapter?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Mr. Pocket"
+          },
+          {
+            "key": "B",
+            "text": "Wemmick"
+          },
+          {
+            "key": "C",
+            "text": "Molly D. Startop"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Jaggers did not like Drummle."
+          },
+          {
+            "key": "B",
+            "text": "Pip can walk from London to Hammersmith."
+          },
+          {
+            "key": "C",
+            "text": "Jaggers allowed Pip to get money to buy furniture. D. Herbert was Pip's closest friend."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Herbert work?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a counting house"
+          },
+          {
+            "key": "B",
+            "text": "an insurance company"
+          },
+          {
+            "key": "C",
+            "text": "in the West Indies D. in the East Indies"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who did Pip meet at Mr. Pocket's house?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Drummle and Startop"
+          },
+          {
+            "key": "B",
+            "text": "Joe and Mrs. Gargery"
+          },
+          {
+            "key": "C",
+            "text": "Mr. Jaggers and Wemmick D. Miss Havisham and Estella"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Pip decide to live?",
+        "options": [
+          {
+            "key": "A",
+            "text": "in London with Herbert"
+          },
+          {
+            "key": "B",
+            "text": "in Hammersmith with Mr. Pocket"
+          },
+          {
+            "key": "C",
+            "text": "near the marshes with Joe D. with Miss Havisham"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Wemmick tell Pip to do when he dined with Jaggers?",
+        "options": [
+          {
+            "key": "A",
+            "text": "look at Jaggers' housekeeper"
+          },
+          {
+            "key": "B",
+            "text": "ask to use Jaggers' boat"
+          },
+          {
+            "key": "C",
+            "text": "play with Jaggers' pet D. try a cup of Jaggers' wine"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Pip prefer Startop to Drummle?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Startop was more pleasant to be with."
+          },
+          {
+            "key": "B",
+            "text": "Startop was richer than Drummle."
+          },
+          {
+            "key": "C",
+            "text": "Startop reminded him of Joe. D. Startop taught Pip many things about rowing."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who was not invited to dine at Mr. Jaggers' with Pip?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Wemmick"
+          },
+          {
+            "key": "B",
+            "text": "Herbert"
+          },
+          {
+            "key": "C",
+            "text": "Drummle D. Startop"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Jaggers ask Molly to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "show her wrists to his guests"
+          },
+          {
+            "key": "B",
+            "text": "serve more fish to Drummle"
+          },
+          {
+            "key": "C",
+            "text": "leave the room and stay upstairs D. talk to the cook about the fish"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Drummle almost do to Startop?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He almost threw a large glass at Startop."
+          },
+          {
+            "key": "B",
+            "text": "He almost punched Startop."
+          },
+          {
+            "key": "C",
+            "text": "He almost pushed Startop's face into the food. D. He almost kicked Startop out of the house."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "13": {
+    "episodeId": 13,
+    "title": "A Visit from Joe Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why does Pip go back to the marshes?",
+        "options": [
+          {
+            "key": "A",
+            "text": "to see Estella"
+          },
+          {
+            "key": "B",
+            "text": "to apologize to Joe"
+          },
+          {
+            "key": "C",
+            "text": "to talk to Pumblechook D. to find his convict"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip doesn't want to stay with Joe when he visits home."
+          },
+          {
+            "key": "B",
+            "text": "Pip is proud to introduce Joe to Herbert."
+          },
+          {
+            "key": "C",
+            "text": "Pip arrives near the marshes in the morning. D. Pip's convict from the marshes is on the coach with Pip."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Biddy let Pip know that Joe was coming to visit?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She wrote him a letter."
+          },
+          {
+            "key": "B",
+            "text": "She asked Herbert to tell Pip."
+          },
+          {
+            "key": "C",
+            "text": "She visited London. D. She met Pip at Mr. Pocket's."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Pip feel about Joe coming to visit?",
+        "options": [
+          {
+            "key": "A",
+            "text": "unhappy"
+          },
+          {
+            "key": "B",
+            "text": "excited"
+          },
+          {
+            "key": "C",
+            "text": "indifferent D. angry"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Joe's message from Miss Havisham?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Estella was home and wanted to see Pip."
+          },
+          {
+            "key": "B",
+            "text": "Miss Havisham wanted to give Pip money."
+          },
+          {
+            "key": "C",
+            "text": "Estella wanted Pip to come to her wedding. D. Miss Havisham wanted to give Joe money."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why does Joe leave soon after he delivers his message?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He knows it is strange for him to be seen with Pip in London."
+          },
+          {
+            "key": "B",
+            "text": "Pip tells Joe to leave before Herbert comes home."
+          },
+          {
+            "key": "C",
+            "text": "He feels insulted because Pip treats him unkindly. D. He needs to run some errands in London before going home."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What kind of passengers did the afternoon coach often carry?",
+        "options": [
+          {
+            "key": "A",
+            "text": "convicts"
+          },
+          {
+            "key": "B",
+            "text": "policemen"
+          },
+          {
+            "key": "C",
+            "text": "wealthy men D. ladies"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who was on the coach with Pip?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the man who stirred his drink with the file"
+          },
+          {
+            "key": "B",
+            "text": "Estella on her way home from London"
+          },
+          {
+            "key": "C",
+            "text": "Mr. Wopsle who became an actor in London D. Herbert who wanted to visit Joe"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What were the two convicts discussing?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a convict and his two one-pound notes"
+          },
+          {
+            "key": "B",
+            "text": "the best way to steal from Miss Havisham"
+          },
+          {
+            "key": "C",
+            "text": "methods of escaping from jail D. when to rob the other passengers on the coach"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "When did Pip get off the coach?",
+        "options": [
+          {
+            "key": "A",
+            "text": "as soon as he reached town"
+          },
+          {
+            "key": "B",
+            "text": "as soon as he recognized the convicts"
+          },
+          {
+            "key": "C",
+            "text": "after he had passed through town D. after the convicts got off the coach"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "14": {
+    "episodeId": 14,
+    "title": "Return to Miss Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What could be another title for this chapter?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Estella Again"
+          },
+          {
+            "key": "B",
+            "text": "Pumblechook and Friends"
+          },
+          {
+            "key": "C",
+            "text": "Orlick's Secret D. Miss Havisham in Trouble"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is true about Estella?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She did not remember making Pip cry near the brewery."
+          },
+          {
+            "key": "B",
+            "text": "She was going to leave for France in a few days."
+          },
+          {
+            "key": "C",
+            "text": "She thought Pip was even more coarse and common than before. D. She thought of herself as the kindest person in the world."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Pip eat his dinner on the night he arrived?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the Blue Boar Inn"
+          },
+          {
+            "key": "B",
+            "text": "Joe's forge"
+          },
+          {
+            "key": "C",
+            "text": "Miss Havisham's D. Pumblechook's"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who did the old newspaper state as Pip's benefactor?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pumblechook"
+          },
+          {
+            "key": "B",
+            "text": "Jaggers"
+          },
+          {
+            "key": "C",
+            "text": "Miss Havisham D. Matthew Pocket"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip think Miss Havisham intended for him and Estella to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "get married"
+          },
+          {
+            "key": "B",
+            "text": "start a business together"
+          },
+          {
+            "key": "C",
+            "text": "find Miss Havisham's old fiancé D. study abroad in France"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Orlick doing at Miss Havisham's?",
+        "options": [
+          {
+            "key": "A",
+            "text": "working as the porter"
+          },
+          {
+            "key": "B",
+            "text": "trying to steal money"
+          },
+          {
+            "key": "C",
+            "text": "trying to win Estella's love D. doing work for Joe"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was hanging above Orlick's fireplace?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a loaded gun"
+          },
+          {
+            "key": "B",
+            "text": "a hammer"
+          },
+          {
+            "key": "C",
+            "text": "a sword D. a picture"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How had Estella changed since Pip last saw her?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She had become a beautiful, elegant lady."
+          },
+          {
+            "key": "B",
+            "text": "She was meaner and more cunning."
+          },
+          {
+            "key": "C",
+            "text": "She was kinder to Miss Havisham. D. She had become a thin, cruel woman."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Pip and Estella go for a walk?",
+        "options": [
+          {
+            "key": "A",
+            "text": "outside on Miss Havisham's property"
+          },
+          {
+            "key": "B",
+            "text": "around the room with the old wedding cake"
+          },
+          {
+            "key": "C",
+            "text": "through town near the Blue Boar Inn D. through the marshes near Joe's forge"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Miss Havisham tell Pip to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "love Estella even if she hurts him"
+          },
+          {
+            "key": "B",
+            "text": "be cruel to Estella if she is cruel to him"
+          },
+          {
+            "key": "C",
+            "text": "marry Estella as soon as possible D. return to London and never come back"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "15": {
+    "episodeId": 15,
+    "title": "Estella Comes to Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What could be another title for the chapter?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Estella Goes to Richmond"
+          },
+          {
+            "key": "B",
+            "text": "Estella Meets the Pockets"
+          },
+          {
+            "key": "C",
+            "text": "Estella Dines with Pip D. Estella Buys a Carriage"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip visited Joe before he returned to London."
+          },
+          {
+            "key": "B",
+            "text": "Clara has an invalid father."
+          },
+          {
+            "key": "C",
+            "text": "Estella asked Pip to meet her coach in London. D. Estella allowed Pip to kiss her on the cheek."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Miss Havisham never let anyone do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "see her eat or drink"
+          },
+          {
+            "key": "B",
+            "text": "walk with her"
+          },
+          {
+            "key": "C",
+            "text": "play cards with her D. talk to her"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Mr. Jaggers say he would do to Orlick?",
+        "options": [
+          {
+            "key": "A",
+            "text": "dismiss him from Miss Havisham's"
+          },
+          {
+            "key": "B",
+            "text": "promote him to a better job"
+          },
+          {
+            "key": "C",
+            "text": "force him to return to the forge D. send him to jail"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Herbert want Pip to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "forget Estella"
+          },
+          {
+            "key": "B",
+            "text": "propose to Estella"
+          },
+          {
+            "key": "C",
+            "text": "talk to Biddy D. marry Biddy"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "When did Herbert hope to marry Clara?",
+        "options": [
+          {
+            "key": "A",
+            "text": "when he had enough money"
+          },
+          {
+            "key": "B",
+            "text": "when her father wasn't ill anymore"
+          },
+          {
+            "key": "C",
+            "text": "when she moved to London D. when she was old enough"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How was Estella when Pip first met her in London?",
+        "options": [
+          {
+            "key": "A",
+            "text": "charming"
+          },
+          {
+            "key": "B",
+            "text": "rude"
+          },
+          {
+            "key": "C",
+            "text": "ecstatic D. frustrated"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Estella going to do in Richmond?",
+        "options": [
+          {
+            "key": "A",
+            "text": "meet many new people"
+          },
+          {
+            "key": "B",
+            "text": "prepare to return to France"
+          },
+          {
+            "key": "C",
+            "text": "visit Miss Havisham's relatives D. study with Mr. Matthew Pocket"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip point out to Estella on the way to Richmond?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the place where Mr. Matthew Pocket lived"
+          },
+          {
+            "key": "B",
+            "text": "the river where he often went boating"
+          },
+          {
+            "key": "C",
+            "text": "the house where Mr. Jaggers lived D. the place where Herbert worked"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How was Pip whenever he was with Estella?",
+        "options": [
+          {
+            "key": "A",
+            "text": "miserable"
+          },
+          {
+            "key": "B",
+            "text": "happy"
+          },
+          {
+            "key": "C",
+            "text": "angry D. bored"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "16": {
+    "episodeId": 16,
+    "title": "Sad News Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip's sister spoke a few words before she died."
+          },
+          {
+            "key": "B",
+            "text": "Pip and Herbert are good at paying their bills."
+          },
+          {
+            "key": "C",
+            "text": "Biddy is going to marry Orlick. D. Pip heard about his sister's death from Estella."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not a place that Pip usually visited during the week?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the marshes"
+          },
+          {
+            "key": "B",
+            "text": "London"
+          },
+          {
+            "key": "C",
+            "text": "Richmond D. Hammersmith"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip write on his memorandum?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a list of his debts"
+          },
+          {
+            "key": "B",
+            "text": "a list of things to buy"
+          },
+          {
+            "key": "C",
+            "text": "a list of Estella's suitors D. a list of presents to send Joe"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Pip feel when he found out his sister was dead?",
+        "options": [
+          {
+            "key": "A",
+            "text": "anger toward the person who assaulted her"
+          },
+          {
+            "key": "B",
+            "text": "bitterness toward his sister for the way she treated him"
+          },
+          {
+            "key": "C",
+            "text": "sadness for Joe who no longer had a wife D. annoyance that he had to go to the marshes"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Pip, Joe, and Biddy eat dinner after the funeral?",
+        "options": [
+          {
+            "key": "A",
+            "text": "in the best parlor"
+          },
+          {
+            "key": "B",
+            "text": "at the forge"
+          },
+          {
+            "key": "C",
+            "text": "in the kitchen D. at the inn"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Biddy plan to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "be a teacher"
+          },
+          {
+            "key": "B",
+            "text": "continue studying"
+          },
+          {
+            "key": "C",
+            "text": "move to London D. stay at Joe's"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who did Biddy think she saw in the garden?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Orlick"
+          },
+          {
+            "key": "B",
+            "text": "Miss Havisham"
+          },
+          {
+            "key": "C",
+            "text": "the convict D. Joe"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Biddy respond when Pip said he would visit Joe often?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She said nothing."
+          },
+          {
+            "key": "B",
+            "text": "She was grateful."
+          },
+          {
+            "key": "C",
+            "text": "She ran to tell Joe. D. She became angry at Pip."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Pip sleep the night of the funeral?",
+        "options": [
+          {
+            "key": "A",
+            "text": "his bedroom at home"
+          },
+          {
+            "key": "B",
+            "text": "the inn"
+          },
+          {
+            "key": "C",
+            "text": "Miss Havisham's D. Mr. Jaggers'"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "When did Pip leave home after the funeral?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the next morning"
+          },
+          {
+            "key": "B",
+            "text": "during the night"
+          },
+          {
+            "key": "C",
+            "text": "after lunch D. a week later"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "17": {
+    "episodeId": 17,
+    "title": "Pip Helps a Friend Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What is the main event of this chapter?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip and Wemmick find Clarriker, who hires Herbert."
+          },
+          {
+            "key": "B",
+            "text": "Pip visits Wemmick's house and meets Wemmick's father."
+          },
+          {
+            "key": "C",
+            "text": "Miss Skiffins' brother helps Pip. D. Herbert and Pip want to find out more about Pip's benefactor."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip knew exactly how much he spent each month."
+          },
+          {
+            "key": "B",
+            "text": "Wemmick lived with his father."
+          },
+          {
+            "key": "C",
+            "text": "Pip went to Jaggers' office on his birthday. D. Herbert didn't know that Pip helped him get a job."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Jaggers give Pip for his birthday?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a bank note for five hundred pounds"
+          },
+          {
+            "key": "B",
+            "text": "more information about Pip's benefactor"
+          },
+          {
+            "key": "C",
+            "text": "a meeting with Pip's benefactor D. a list of Pip's debts"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Wemmick tell Pip in the office about giving money to a friend?",
+        "options": [
+          {
+            "key": "A",
+            "text": "It is the same thing as losing your money."
+          },
+          {
+            "key": "B",
+            "text": "It is a very kind thing to do."
+          },
+          {
+            "key": "C",
+            "text": "It will be beneficial in the long run. D. It is only good when the friend is trustworthy."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Wemmick's house look like?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a small and unusual castle"
+          },
+          {
+            "key": "B",
+            "text": "a large medieval fortress"
+          },
+          {
+            "key": "C",
+            "text": "a plain English country house D. a cottage in the forest"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Pip and Wemmick's father know that Wemmick had come home?",
+        "options": [
+          {
+            "key": "A",
+            "text": "A flap with Wemmick's name opened on the wall."
+          },
+          {
+            "key": "B",
+            "text": "They heard Wemmick's voice outside."
+          },
+          {
+            "key": "C",
+            "text": "Miss Skiffins told them he was coming. D. A messenger brought them a note."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Wemmick have a garden and livestock?",
+        "options": [
+          {
+            "key": "A",
+            "text": "so he could survive if his house were besieged"
+          },
+          {
+            "key": "B",
+            "text": "because he enjoyed taking care of things"
+          },
+          {
+            "key": "C",
+            "text": "so he could avoid going to the market to buy food D. because his father was a picky eater"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip ask Wemmick to advise him about?",
+        "options": [
+          {
+            "key": "A",
+            "text": "how to help Herbert"
+          },
+          {
+            "key": "B",
+            "text": "how to find his benefactor"
+          },
+          {
+            "key": "C",
+            "text": "how to win Estella's love D. how to send Joe money"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip arrange to buy for Herbert in the future?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a partnership"
+          },
+          {
+            "key": "B",
+            "text": "a house"
+          },
+          {
+            "key": "C",
+            "text": "a ship D. a horse"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Pip feel when Herbert told him a shipping broker was interested in him?",
+        "options": [
+          {
+            "key": "A",
+            "text": "triumphant"
+          },
+          {
+            "key": "B",
+            "text": "exasperated"
+          },
+          {
+            "key": "C",
+            "text": "bewildered D. serene"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "18": {
+    "episodeId": 18,
+    "title": "At the Richmond Ball Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What could be another title for the chapter?",
+        "options": [
+          {
+            "key": "A",
+            "text": "A Toast to Estella"
+          },
+          {
+            "key": "B",
+            "text": "Pip's First Dance"
+          },
+          {
+            "key": "C",
+            "text": "Drummle's Proposal D. Joe's Forge"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip was always happy when he was with Estella."
+          },
+          {
+            "key": "B",
+            "text": "Estella asked Pip to accompany her to see Miss Havisham."
+          },
+          {
+            "key": "C",
+            "text": "Estella wrote a note saying she has danced with Drummle. D. Drummle is rich and has a good family name."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who did Estella live with?",
+        "options": [
+          {
+            "key": "A",
+            "text": "an old friend of Miss Havisham's"
+          },
+          {
+            "key": "B",
+            "text": "a rich great-aunt"
+          },
+          {
+            "key": "C",
+            "text": "Mr. Matthew Pocket D. Jaggers"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip think Miss Havisham wanted Estella to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "attract admirers and torment them"
+          },
+          {
+            "key": "B",
+            "text": "find the richest man and marry him"
+          },
+          {
+            "key": "C",
+            "text": "bring Miss Havisham to London D. live with Miss Havisham for the rest of her life"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Miss Havisham upset when Estella came to visit?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Estella acted cold and unfeeling to Miss Havisham."
+          },
+          {
+            "key": "B",
+            "text": "Estella was being too kind to Pip."
+          },
+          {
+            "key": "C",
+            "text": "Estella forgot it was Miss Havisham's birthday. D. Estella wanted to marry Drummle."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the Finches of the Grove do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They ate twice a month at an expensive hotel."
+          },
+          {
+            "key": "B",
+            "text": "They attended parties with well-known people."
+          },
+          {
+            "key": "C",
+            "text": "They helped each other find wives. D. They attended concerts."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Pip upset with Drummle one evening?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Drummle made a toast to Estella."
+          },
+          {
+            "key": "B",
+            "text": "Drummle laughed when Pip toasted to Estella."
+          },
+          {
+            "key": "C",
+            "text": "Drummle insulted Estella. D. Drummle threatened to hurt Estella."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Estella treat Drummle?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She was both kind and mean to him."
+          },
+          {
+            "key": "B",
+            "text": "She was always mean to him."
+          },
+          {
+            "key": "C",
+            "text": "She was always kind to him. D. She was neither kind nor mean to him."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip do to try to keep Drummle from Estella?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He talked to Estella during the ball."
+          },
+          {
+            "key": "B",
+            "text": "He wrote a fake note to Drummle."
+          },
+          {
+            "key": "C",
+            "text": "He introduced Drummle to a different girl. D. He asked Miss Havisham for help."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Estella treat Pip differently from other men?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She didn't lie to him or try to entrap him."
+          },
+          {
+            "key": "B",
+            "text": "She was especially mean to him."
+          },
+          {
+            "key": "C",
+            "text": "She thought of him as her brother. D. She planned to marry him."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "19": {
+    "episodeId": 19,
+    "title": "A Nighttime Visitor Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who does Pip meet in this chapter?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the convict he gave food to on the marshes"
+          },
+          {
+            "key": "B",
+            "text": "the man who gave Pip two one-pound notes"
+          },
+          {
+            "key": "C",
+            "text": "the younger convict that was on the marshes D. a new convict from the ships"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not an emotion Pip felt when he met the convict again?",
+        "options": [
+          {
+            "key": "A",
+            "text": "happy"
+          },
+          {
+            "key": "B",
+            "text": "scared"
+          },
+          {
+            "key": "C",
+            "text": "shocked D. responsible"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where was Herbert and Pip's new house?",
+        "options": [
+          {
+            "key": "A",
+            "text": "by the river"
+          },
+          {
+            "key": "B",
+            "text": "next to Miss Havisham's"
+          },
+          {
+            "key": "C",
+            "text": "across from Jaggers' D. near the convict ships"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "When did the convict come to visit Pip?",
+        "options": [
+          {
+            "key": "A",
+            "text": "at night"
+          },
+          {
+            "key": "B",
+            "text": "in the morning"
+          },
+          {
+            "key": "C",
+            "text": "during lunchtime D. while Pip was visiting Estella"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the convict do for a living?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He was a sheep farmer and stock breeder."
+          },
+          {
+            "key": "B",
+            "text": "He stole sheep and sold them at a higher price."
+          },
+          {
+            "key": "C",
+            "text": "He traveled for a shipping company. D. He worked at a prison in Australia."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the convict do when Pip gave him two pounds?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He burned the notes in the lamp."
+          },
+          {
+            "key": "B",
+            "text": "He put the notes in his pocket."
+          },
+          {
+            "key": "C",
+            "text": "He gave the two pounds back to Pip. D. He shouted angrily at Pip."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not someone or something the convict mentioned?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Estella"
+          },
+          {
+            "key": "B",
+            "text": "Pip's income"
+          },
+          {
+            "key": "C",
+            "text": "Pip's guardian D. Wemmick"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why had the convict been sent to Australia?",
+        "options": [
+          {
+            "key": "A",
+            "text": "to serve a life sentence"
+          },
+          {
+            "key": "B",
+            "text": "to visit a relative"
+          },
+          {
+            "key": "C",
+            "text": "to help a friend commit crimes D. to hide from the police"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did the convict stay during the night?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Herbert's room"
+          },
+          {
+            "key": "B",
+            "text": "Pip's room"
+          },
+          {
+            "key": "C",
+            "text": "the inn D. jail"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip do during the night?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He locked the convict in Herbert's room."
+          },
+          {
+            "key": "B",
+            "text": "He ran away from the house."
+          },
+          {
+            "key": "C",
+            "text": "He called the police. D. He wrote a letter to Herbert."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "20": {
+    "episodeId": 20,
+    "title": "Pip's Benefactor Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What could be another title for this chapter?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Uncle Provis"
+          },
+          {
+            "key": "B",
+            "text": "The Trial"
+          },
+          {
+            "key": "C",
+            "text": "Pip's Two Benefactors D. Provis' Capture"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which happens first?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip decides to tell people that Provis is his uncle."
+          },
+          {
+            "key": "B",
+            "text": "Pip finds lodging for Provis."
+          },
+          {
+            "key": "C",
+            "text": "Provis changes into his new clothes. D. Pip goes to see Mr. Jaggers."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Pip go down to the watchman's room during the night?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He needed a light because his room was dark."
+          },
+          {
+            "key": "B",
+            "text": "He wanted to have the convict arrested."
+          },
+          {
+            "key": "C",
+            "text": "He wanted to check if Herbert was home yet. D. He needed help fighting Provis."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip stumble across on his way to the watchman's room?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a man"
+          },
+          {
+            "key": "B",
+            "text": "the convict"
+          },
+          {
+            "key": "C",
+            "text": "a lamp D. his uncle"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How had Provis met Mr. Jaggers?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Mr. Jaggers had been Provis' lawyer."
+          },
+          {
+            "key": "B",
+            "text": "Mr. Jaggers was Provis' uncle."
+          },
+          {
+            "key": "C",
+            "text": "They both were in prison together. D. They both lived in Australia a few years ago."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "When did Provis say he would leave London?",
+        "options": [
+          {
+            "key": "A",
+            "text": "never"
+          },
+          {
+            "key": "B",
+            "text": "the next day"
+          },
+          {
+            "key": "C",
+            "text": "in a week D. in a year"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip buy for Provis?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a new set of clothes"
+          },
+          {
+            "key": "B",
+            "text": "a ticket to Australia"
+          },
+          {
+            "key": "C",
+            "text": "a set of books to study D. a carriage"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Pip go to see Mr. Jaggers?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He wanted to make sure that Provis was his benefactor."
+          },
+          {
+            "key": "B",
+            "text": "He wanted to pay Mr. Jaggers for his help."
+          },
+          {
+            "key": "C",
+            "text": "He wanted to run away from London. D. He wanted to find a way to send Provis back to Australia."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Mr. Jaggers think Provis was?",
+        "options": [
+          {
+            "key": "A",
+            "text": "in Australia"
+          },
+          {
+            "key": "B",
+            "text": "in London"
+          },
+          {
+            "key": "C",
+            "text": "at Miss Havisham's D. at the forge"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Pip feel toward Provis?",
+        "options": [
+          {
+            "key": "A",
+            "text": "afraid"
+          },
+          {
+            "key": "B",
+            "text": "grateful"
+          },
+          {
+            "key": "C",
+            "text": "angry D. sad"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "21": {
+    "episodeId": 21,
+    "title": "Arthur Compeyson Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who is Compeyson?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Miss Havisham's fiance"
+          },
+          {
+            "key": "B",
+            "text": "Pip's real benefactor"
+          },
+          {
+            "key": "C",
+            "text": "Miss Havisham's half brother D. Provis' brother"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Provis wanted Pip to run away from London."
+          },
+          {
+            "key": "B",
+            "text": "Pip and Herbert wanted to get Provis out of England."
+          },
+          {
+            "key": "C",
+            "text": "Pip didn't want to accept any more money from Provis. D. Herbert didn't know about Pip's involvement with Clarriker."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Provis make Herbert do when he first came back?",
+        "options": [
+          {
+            "key": "A",
+            "text": "swear to keep everything secret"
+          },
+          {
+            "key": "B",
+            "text": "write his name in a small black book"
+          },
+          {
+            "key": "C",
+            "text": "prove that he was really Pip's friend D. empty his pockets"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What is one reason Pip thought he might become a soldier?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He had a lot of debt."
+          },
+          {
+            "key": "B",
+            "text": "He could fight very well."
+          },
+          {
+            "key": "C",
+            "text": "He knew the general of an army. D. He wanted to run away from Provis."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why couldn't Pip cut Provis out of his life?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip felt he would be responsible if Provis were captured."
+          },
+          {
+            "key": "B",
+            "text": "Provis would hunt down Pip and try to kill him."
+          },
+          {
+            "key": "C",
+            "text": "Pip needed more of Provis' money. D. Provis threatened to hurt Herbert if Pip tried to run away."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Herbert want Pip to do with Provis?",
+        "options": [
+          {
+            "key": "A",
+            "text": "take him out of England"
+          },
+          {
+            "key": "B",
+            "text": "hide him at the forge"
+          },
+          {
+            "key": "C",
+            "text": "bring him to Mr. Jaggers D. make him a partner at Clarriker's"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How were Provis and Compeyson related?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They were business partners."
+          },
+          {
+            "key": "B",
+            "text": "They were in-laws."
+          },
+          {
+            "key": "C",
+            "text": "They were cousins. D. They were schoolmates."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Compeyson like?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He was handsome and seemed like a gentleman."
+          },
+          {
+            "key": "B",
+            "text": "He was poor and rugged-looking."
+          },
+          {
+            "key": "C",
+            "text": "He was ugly but very rich. D. He was sickly and often bedridden."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Arthur see the night before he died?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a woman wearing white"
+          },
+          {
+            "key": "B",
+            "text": "a man wearing white"
+          },
+          {
+            "key": "C",
+            "text": "the murder of his wife D. the murder of Compeyson"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What happened each time Provis and Compeyson were put on trial?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Compeyson got the lighter sentence."
+          },
+          {
+            "key": "B",
+            "text": "Compeyson tried to protect Provis."
+          },
+          {
+            "key": "C",
+            "text": "Compeyson tried to kill Provis. D. Compeyson pretended he was insane."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "22": {
+    "episodeId": 22,
+    "title": "A Warning from Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What could be another title for this chapter?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Estella's Marriage Plan"
+          },
+          {
+            "key": "B",
+            "text": "Wemmick Saves the Day"
+          },
+          {
+            "key": "C",
+            "text": "Compeyson Finds Provis D. Herbert's Benefactor"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Miss Havisham was forcing Estella to marry Drummle."
+          },
+          {
+            "key": "B",
+            "text": "Miss Havisham looked at Pip with pity and remorse when he left."
+          },
+          {
+            "key": "C",
+            "text": "Pip was not happy to see Drummle at the Blue Boar Inn. D. Estella showed no emotion when Pip said he loved her."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Pip want to take Provis abroad as soon as possible?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Compeyson would turn Provis over to the police."
+          },
+          {
+            "key": "B",
+            "text": "Wemmick wrote him a note telling him to do so."
+          },
+          {
+            "key": "C",
+            "text": "Provis was threatening to hurt Pip. D. The police were looking for Provis in London."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Pip return to the marshes?",
+        "options": [
+          {
+            "key": "A",
+            "text": "to see Estella and Miss Havisham"
+          },
+          {
+            "key": "B",
+            "text": "to say goodbye to Joe and Biddy"
+          },
+          {
+            "key": "C",
+            "text": "to try to find Compeyson D. to find a place for Provis to hide"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who did Pip talk to at the Blue Boar Inn?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Bentley Drummle"
+          },
+          {
+            "key": "B",
+            "text": "Orlick"
+          },
+          {
+            "key": "C",
+            "text": "Mr. Pumblechook D. Estella"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip ask Miss Havisham to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "give Herbert money"
+          },
+          {
+            "key": "B",
+            "text": "convince Estella to marry him"
+          },
+          {
+            "key": "C",
+            "text": "hide Provis in her house D. contact Mr. Jaggers for him"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip confess to Estella?",
+        "options": [
+          {
+            "key": "A",
+            "text": "that he loved her"
+          },
+          {
+            "key": "B",
+            "text": "that Provis was his benefactor"
+          },
+          {
+            "key": "C",
+            "text": "that he didn't like Miss Havisham D. that he didn't love her anymore"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who did Estella say she would marry?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Drummle"
+          },
+          {
+            "key": "B",
+            "text": "Herbert"
+          },
+          {
+            "key": "C",
+            "text": "Pip D. Mr. Pumblechook"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Pip get back to London?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He walked."
+          },
+          {
+            "key": "B",
+            "text": "He took a carriage."
+          },
+          {
+            "key": "C",
+            "text": "He took a boat. D. He rode a horse."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Wemmick's note tell Pip to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "to not go home"
+          },
+          {
+            "key": "B",
+            "text": "to go back to Miss Havisham's"
+          },
+          {
+            "key": "C",
+            "text": "to run away with Provis D. to not meet Provis"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "23": {
+    "episodeId": 23,
+    "title": "Rowing on the River Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What do Pip and Herbert plan to do with Provis?",
+        "options": [
+          {
+            "key": "A",
+            "text": "take him out of England"
+          },
+          {
+            "key": "B",
+            "text": "turn him in to the police"
+          },
+          {
+            "key": "C",
+            "text": "hand him over to Compeyson D. hide him at the forge"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip slept at Wemmick's house after he got his note."
+          },
+          {
+            "key": "B",
+            "text": "Pip thought Clara was pretty."
+          },
+          {
+            "key": "C",
+            "text": "Clara's father made loud growling noises. D. Wemmick had warned Pip to not go home."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Pip go to see Wemmick?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Wemmick's house"
+          },
+          {
+            "key": "B",
+            "text": "Mr. Jaggers' office"
+          },
+          {
+            "key": "C",
+            "text": "Mr. Jaggers' house D. Covent Garden"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What had Wemmick heard about at Newgate Prison?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Provis' leaving Australia and Pip being watched"
+          },
+          {
+            "key": "B",
+            "text": "Compeyson's history with Miss Havisham"
+          },
+          {
+            "key": "C",
+            "text": "Provis giving money to Pip D. Compeyson and Provis' history"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Wemmick know about Compeyson?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Compeyson was in London."
+          },
+          {
+            "key": "B",
+            "text": "Compeyson was dead."
+          },
+          {
+            "key": "C",
+            "text": "Compeyson was in Australia. D. Compeyson was at Miss Havisham's."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Herbert take Provis?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Mrs. Whimple's"
+          },
+          {
+            "key": "B",
+            "text": "Miss Havisham's"
+          },
+          {
+            "key": "C",
+            "text": "Joe's D. Wemmick's"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who did Clara have to take care of?",
+        "options": [
+          {
+            "key": "A",
+            "text": "her father"
+          },
+          {
+            "key": "B",
+            "text": "Mrs. Whimple"
+          },
+          {
+            "key": "C",
+            "text": "Provis D. Wemmick"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What could Provis see from his window?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the river"
+          },
+          {
+            "key": "B",
+            "text": "Wemmick's house"
+          },
+          {
+            "key": "C",
+            "text": "the jail D. Pip's house"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Pip and Herbert plan to take Provis down the river?",
+        "options": [
+          {
+            "key": "A",
+            "text": "by rowing him in a boat"
+          },
+          {
+            "key": "B",
+            "text": "by walking along the shore"
+          },
+          {
+            "key": "C",
+            "text": "by hiding in a boat D. by hiring a boatman"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Pip often feel?",
+        "options": [
+          {
+            "key": "A",
+            "text": "watched"
+          },
+          {
+            "key": "B",
+            "text": "depressed"
+          },
+          {
+            "key": "C",
+            "text": "excited D. angry"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "24": {
+    "episodeId": 24,
+    "title": "Molly's Secret Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What is the main idea?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip thinks Molly is related to Estella."
+          },
+          {
+            "key": "B",
+            "text": "Molly tells her secret to Pip."
+          },
+          {
+            "key": "C",
+            "text": "Provis secretly follows Pip. D. Pip realizes he is in debt."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Provis was captured again while Pip was out."
+          },
+          {
+            "key": "B",
+            "text": "Wemmick told Molly's story to Pip."
+          },
+          {
+            "key": "C",
+            "text": "Molly had a young daughter at the time of her trial. D. Miss Havisham's note said she wanted to see Pip."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip do to get money?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He sold some jewelry for cash."
+          },
+          {
+            "key": "B",
+            "text": "He asked Provis for more money."
+          },
+          {
+            "key": "C",
+            "text": "He borrowed money from Herbert. D. He asked Provis for tips on stealing money."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip think Estella had done?",
+        "options": [
+          {
+            "key": "A",
+            "text": "gotten married"
+          },
+          {
+            "key": "B",
+            "text": "moved to London"
+          },
+          {
+            "key": "C",
+            "text": "abandoned Miss Havisham D. committed a crime"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Mr. Wopsle keep doing during his performance?",
+        "options": [
+          {
+            "key": "A",
+            "text": "staring in Pip's direction"
+          },
+          {
+            "key": "B",
+            "text": "shouting Pip's name"
+          },
+          {
+            "key": "C",
+            "text": "pointing at Pip D. throwing things at Pip"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who was sitting behind Pip at the play?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Compeyson"
+          },
+          {
+            "key": "B",
+            "text": "Miss Havisham"
+          },
+          {
+            "key": "C",
+            "text": "Estella D. Provis"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Wemmick give Pip at Mr. Jaggers' house?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a note from Miss Havisham"
+          },
+          {
+            "key": "B",
+            "text": "a boat to take Provis in"
+          },
+          {
+            "key": "C",
+            "text": "a bag of money D. a letter from Estella"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who did Pip think Molly was?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Estella's mother"
+          },
+          {
+            "key": "B",
+            "text": "Miss Havisham's sister"
+          },
+          {
+            "key": "C",
+            "text": "Mr. Jaggers' wife D. Compeyson's accomplice"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Molly accused of doing many years ago?",
+        "options": [
+          {
+            "key": "A",
+            "text": "killing another woman"
+          },
+          {
+            "key": "B",
+            "text": "killing her husband"
+          },
+          {
+            "key": "C",
+            "text": "kidnapping a child D. robbing a woman"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Mr. Jaggers' role at Molly's trial?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Molly's lawyer"
+          },
+          {
+            "key": "B",
+            "text": "Molly's husband"
+          },
+          {
+            "key": "C",
+            "text": "the judge D. the victim"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "25": {
+    "episodeId": 25,
+    "title": "A Great Flaming Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What could be another name for the chapter?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Miss Havisham on Fire"
+          },
+          {
+            "key": "B",
+            "text": "Fire in the Woods"
+          },
+          {
+            "key": "C",
+            "text": "The Fireplace D. Pip's Accident"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip refused to forgive Miss Havisham."
+          },
+          {
+            "key": "B",
+            "text": "Pip's hands were burned at the end of the chapter."
+          },
+          {
+            "key": "C",
+            "text": "Miss Havisham wanted to help Estella at first. D. Miss Havisham gave Pip money to help Herbert."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What new expression did Pip see on Miss Havisham's face?",
+        "options": [
+          {
+            "key": "A",
+            "text": "fear"
+          },
+          {
+            "key": "B",
+            "text": "hatred"
+          },
+          {
+            "key": "C",
+            "text": "envy D. bitterness"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip want Miss Havisham's money for?",
+        "options": [
+          {
+            "key": "A",
+            "text": "to finish buying Herbert's partnership"
+          },
+          {
+            "key": "B",
+            "text": "to travel to Paris to find Estella"
+          },
+          {
+            "key": "C",
+            "text": "to pay off his debts D. to pay back Provis"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Miss Havisham want Pip to write under her name?",
+        "options": [
+          {
+            "key": "A",
+            "text": "\"I forgive her\""
+          },
+          {
+            "key": "B",
+            "text": "\"I hate her\""
+          },
+          {
+            "key": "C",
+            "text": "\"I love her\" D. \"I fear her\""
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Miss Havisham say about Estella?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She is married and living in Paris."
+          },
+          {
+            "key": "B",
+            "text": "She is unmarried and living in London."
+          },
+          {
+            "key": "C",
+            "text": "She is returning home to see Pip. D. She is still living with Miss Havisham."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Miss Havisham feel sorry to Pip?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She made him feel how she once felt."
+          },
+          {
+            "key": "B",
+            "text": "She didn't have enough money to help him."
+          },
+          {
+            "key": "C",
+            "text": "She didn't know anything about Estella's past. D. She told Estella not to marry him."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Mr. Jaggers bring Estella to Miss Havisham when she was a child?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Miss Havisham wanted a child to raise."
+          },
+          {
+            "key": "B",
+            "text": "Miss Havisham was related to Estella's mother."
+          },
+          {
+            "key": "C",
+            "text": "Miss Havisham was related to Estella's father. D. Miss Havisham wanted a servant girl."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who did Pip think was Estella's real parent?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Molly"
+          },
+          {
+            "key": "B",
+            "text": "Miss Havisham"
+          },
+          {
+            "key": "C",
+            "text": "Mr. Jaggers D. Joe"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Miss Havisham become burned?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Her dress caught on fire."
+          },
+          {
+            "key": "B",
+            "text": "She jumped into the fire."
+          },
+          {
+            "key": "C",
+            "text": "She tried to cook something. D. She knocked over a candlestick."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "26": {
+    "episodeId": 26,
+    "title": "Estella's Mother Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What could be another title for the chapter?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Estella's Parents"
+          },
+          {
+            "key": "B",
+            "text": "Estella Meets Molly"
+          },
+          {
+            "key": "C",
+            "text": "Provis and Molly Together Again D. Provis and Compeyson"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Provis had been very fond of his daughter."
+          },
+          {
+            "key": "B",
+            "text": "Provis was present at his wife's trial."
+          },
+          {
+            "key": "C",
+            "text": "Provis knew his daughter was alive. D. Provis hid his daughter from his wife."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who took care of Pip's burns?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Herbert"
+          },
+          {
+            "key": "B",
+            "text": "Provis"
+          },
+          {
+            "key": "C",
+            "text": "Estella D. Joe"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What kind of woman had Provis been married to?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a revengeful and jealous one"
+          },
+          {
+            "key": "B",
+            "text": "a kind and understanding one"
+          },
+          {
+            "key": "C",
+            "text": "a quiet and submissive one D. an annoying and talkative one"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What had Provis' wife sworn she would do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "destroy Provis' child"
+          },
+          {
+            "key": "B",
+            "text": "return Provis' child to him"
+          },
+          {
+            "key": "C",
+            "text": "give Provis' child to Mr. Jaggers D. take Provis' child to Australia"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Provis go into hiding during his wife's murder trial?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He didn't want to testify about his child."
+          },
+          {
+            "key": "B",
+            "text": "He didn't want to see his wife at the trial."
+          },
+          {
+            "key": "C",
+            "text": "He wanted his wife to be sentenced to death. D. He wanted take his child to Miss Havisham."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who did Pip think was Estella's father?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Provis"
+          },
+          {
+            "key": "B",
+            "text": "Mr. Jaggers"
+          },
+          {
+            "key": "C",
+            "text": "Compeyson D. Wemmick"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Pip get Miss Havisham's money for Herbert?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He gave a note to Mr. Jaggers."
+          },
+          {
+            "key": "B",
+            "text": "He sent Herbert to Miss Havisham."
+          },
+          {
+            "key": "C",
+            "text": "He visited the bank in London. D. He went to Wemmick's house."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What happened to all the other children Mr. Jaggers knew?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They were neglected and abused."
+          },
+          {
+            "key": "B",
+            "text": "They found safe, comfortable homes."
+          },
+          {
+            "key": "C",
+            "text": "They became friends with criminals. D. They were sent out of the country."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Mr. Jaggers think Pip should do with his knowledge of Estella's parents?",
+        "options": [
+          {
+            "key": "A",
+            "text": "not tell anyone"
+          },
+          {
+            "key": "B",
+            "text": "tell Estella"
+          },
+          {
+            "key": "C",
+            "text": "go to the police D. write to Provis"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "27": {
+    "episodeId": 27,
+    "title": "A Mysterious Letter Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who wrote the mysterious letter to Pip?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Orlick"
+          },
+          {
+            "key": "B",
+            "text": "Provis"
+          },
+          {
+            "key": "C",
+            "text": "Compeyson D. Estella"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip's arms healed completely."
+          },
+          {
+            "key": "B",
+            "text": "Pip stayed at the Blue Boar."
+          },
+          {
+            "key": "C",
+            "text": "Pumblechook was Pip's benefector. D. Orlick planned to kill Pip."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Pip complete Herbert's partnership?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He gave Clarriker nine hundred pounds."
+          },
+          {
+            "key": "B",
+            "text": "He wrote Clarriker a letter about Miss Havisham."
+          },
+          {
+            "key": "C",
+            "text": "He told Clarriker that he will work for him. D. He made a fake document saying Herbert was a partner."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Clarriker plan to send Herbert?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Egypt"
+          },
+          {
+            "key": "B",
+            "text": "Germany"
+          },
+          {
+            "key": "C",
+            "text": "the marshes D. the Blue Boar"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Wemmick tell Pip to do after he read his note?",
+        "options": [
+          {
+            "key": "A",
+            "text": "burn the note"
+          },
+          {
+            "key": "B",
+            "text": "go to Mr. Jaggers"
+          },
+          {
+            "key": "C",
+            "text": "eat the note D. go to Provis"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Herbert suggest they do to row the boat?",
+        "options": [
+          {
+            "key": "A",
+            "text": "ask Startop to help them"
+          },
+          {
+            "key": "B",
+            "text": "hire a waterman"
+          },
+          {
+            "key": "C",
+            "text": "bandage Pip's hand D. get more oars"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Pip return to the marshes?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He received a note mentioning Provis."
+          },
+          {
+            "key": "B",
+            "text": "He wanted to say good-bye to Joe and Biddy."
+          },
+          {
+            "key": "C",
+            "text": "He wanted to talk to Mr. Pumblechook. D. He heard that Compeyson was hiding there."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who was waiting for Pip at the house by the kiln?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Orlick"
+          },
+          {
+            "key": "B",
+            "text": "Miss Havisham"
+          },
+          {
+            "key": "C",
+            "text": "Estella D. Herbert"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which was not a reason Orlick was angry with Pip?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip became rich and lived in London."
+          },
+          {
+            "key": "B",
+            "text": "Pip cost Orlick his job at Miss Havisham's."
+          },
+          {
+            "key": "C",
+            "text": "Pip came between Orlick and Biddy. D. Pip was always in Orlick's way."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Orlick confess he did?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He struck down Pip's sister."
+          },
+          {
+            "key": "B",
+            "text": "He married Estella."
+          },
+          {
+            "key": "C",
+            "text": "He was Pip's benefector. D. He loved Pip's sister."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "28": {
+    "episodeId": 28,
+    "title": "The Hamburg Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why couldn't Provis and Pip escape out of England?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Compeyson found Provis and stopped him from boarding the steamer."
+          },
+          {
+            "key": "B",
+            "text": "The pub owner recognized Provis and called the police."
+          },
+          {
+            "key": "C",
+            "text": "The captain of the steamer discovered them while they were hiding. D. Startop betrayed Pip and told Compeyson where Provis was."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who was not in the rowboat with Provis?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Wemmick"
+          },
+          {
+            "key": "B",
+            "text": "Pip"
+          },
+          {
+            "key": "C",
+            "text": "Herbert D. Startop"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How had Herbert and Startop known where Pip was?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They found the letter that Pip dropped."
+          },
+          {
+            "key": "B",
+            "text": "They followed Pip secretly."
+          },
+          {
+            "key": "C",
+            "text": "Pip told them where he was going. D. Pip left a note for Herbert and Startop."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why didn't Pip try to get Orlick arrested?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He didn't want to endanger Provis."
+          },
+          {
+            "key": "B",
+            "text": "He was afraid Orlick would become angry."
+          },
+          {
+            "key": "C",
+            "text": "He decided to forgive Orlick. D. He thought the police would catch Orlick."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Provis disguise his identity when he was in the rowboat?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He wore a seaman's cloak."
+          },
+          {
+            "key": "B",
+            "text": "He had on a wig."
+          },
+          {
+            "key": "C",
+            "text": "He wore a dress. D. He put on a mask."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the pub owner say he saw going up and down the river all afternoon?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a galley with two passengers"
+          },
+          {
+            "key": "B",
+            "text": "a steamer headed for Hamburg"
+          },
+          {
+            "key": "C",
+            "text": "a team of policemen D. a convict ship"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What happened just as Pip and Provis neared the steamer?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Two men in another boat tried to arrest Provis."
+          },
+          {
+            "key": "B",
+            "text": "The captain of the steamer recognized Provis."
+          },
+          {
+            "key": "C",
+            "text": "The pub owner shouted at them from the shore. D. Provis fell out of the boat and drowned."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who was in the galley?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Compeyson"
+          },
+          {
+            "key": "B",
+            "text": "Wemmick"
+          },
+          {
+            "key": "C",
+            "text": "Mr. Jaggers D. Startop"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Magwitch get wounded?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He fought with Compeyson in the water."
+          },
+          {
+            "key": "B",
+            "text": "He tried to run away from the police."
+          },
+          {
+            "key": "C",
+            "text": "He was bitten by a snake. D. He got caught under the steamer."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip promise Magwitch at the end?",
+        "options": [
+          {
+            "key": "A",
+            "text": "to never leave his side"
+          },
+          {
+            "key": "B",
+            "text": "to pay back all the money"
+          },
+          {
+            "key": "C",
+            "text": "to find out where Compeyson was D. to help Magwitch escape prison"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "29": {
+    "episodeId": 29,
+    "title": "Magwitch's Trial Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What could be another title for the chapter?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Magwitch's End"
+          },
+          {
+            "key": "B",
+            "text": "Pip Goes to Cairo"
+          },
+          {
+            "key": "C",
+            "text": "Magwitch and Estella D. Pip in Hiding"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which character is not mentioned in this chapter?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Compeyson"
+          },
+          {
+            "key": "B",
+            "text": "Estella"
+          },
+          {
+            "key": "C",
+            "text": "Mr. Jaggers D. Joe"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What will happen to Magwitch's money after his conviction?",
+        "options": [
+          {
+            "key": "A",
+            "text": "It will be taken by the government."
+          },
+          {
+            "key": "B",
+            "text": "It will be given to Estella."
+          },
+          {
+            "key": "C",
+            "text": "It will be used to pay off Pip's debts. D. It will be sent back to Australia."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Herbert leave England?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He had the opportunity to work in Cairo."
+          },
+          {
+            "key": "B",
+            "text": "He didn't want to see Magwitch die."
+          },
+          {
+            "key": "C",
+            "text": "He liked Egypt better than England. D. He wanted to travel and see the world."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Herbert want Pip to do in Egypt?",
+        "options": [
+          {
+            "key": "A",
+            "text": "work as a clerk for Clarriker's"
+          },
+          {
+            "key": "B",
+            "text": "set up a new business"
+          },
+          {
+            "key": "C",
+            "text": "raise sheep like Magwitch did D. try to find Estella"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Magwitch moved to the infirmary?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He had broken two ribs in the boating accident."
+          },
+          {
+            "key": "B",
+            "text": "He was too dangerous to keep in the common prison."
+          },
+          {
+            "key": "C",
+            "text": "He became sick while he was in prison. D. He wanted Pip to come and see him more often."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip do after Magwitch was sentenced to death?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He wrote petitions to people who might help Magwitch."
+          },
+          {
+            "key": "B",
+            "text": "He spoke to the judge and asked how Magwitch could be freed."
+          },
+          {
+            "key": "C",
+            "text": "He wrote newspaper articles about Magwitch's story. D. He ran away from London and hid in the country."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip tell Magwitch before he died?",
+        "options": [
+          {
+            "key": "A",
+            "text": "that Estella was alive and that he loved her"
+          },
+          {
+            "key": "B",
+            "text": "that all of Magwitch's money was gone"
+          },
+          {
+            "key": "C",
+            "text": "that he liked Magwitch only for his money D. that he would spend Magwitch's money wisely"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Pip under arrest for in his vision?",
+        "options": [
+          {
+            "key": "A",
+            "text": "debt"
+          },
+          {
+            "key": "B",
+            "text": "murder"
+          },
+          {
+            "key": "C",
+            "text": "robbery D. arson"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who took care of Pip while he was sick?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Joe"
+          },
+          {
+            "key": "B",
+            "text": "Herbert"
+          },
+          {
+            "key": "C",
+            "text": "Estella D. Clara"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "30": {
+    "episodeId": 30,
+    "title": "The Woman in the Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was the chapter mainly about?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip and Estella meeting again"
+          },
+          {
+            "key": "B",
+            "text": "Pip's life in Cairo"
+          },
+          {
+            "key": "C",
+            "text": "Joe's kindness to Pip D. Herbert and Clara's story"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Estella did not get any of Miss Havisham's property."
+          },
+          {
+            "key": "B",
+            "text": "Pip became a partner at Clarriker's in Cairo."
+          },
+          {
+            "key": "C",
+            "text": "Joe and Biddy got married and had two children. D. Orlick was arrested for robbing Pumblechook's house."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who had paid for Pip's debt?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Joe"
+          },
+          {
+            "key": "B",
+            "text": "Estella"
+          },
+          {
+            "key": "C",
+            "text": "Herbert D. Mr. Jaggers"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Pip return to the forge?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He wanted to ask Biddy to marry him."
+          },
+          {
+            "key": "B",
+            "text": "He wanted to repay Joe."
+          },
+          {
+            "key": "C",
+            "text": "He wanted to meet Estella. D. He wanted to visit Miss Havisham's grave."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "On what day did Pip return to the forge?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Joe and Biddy's wedding day"
+          },
+          {
+            "key": "B",
+            "text": "the day of Miss Havisham's funeral"
+          },
+          {
+            "key": "C",
+            "text": "Herbert and Clara's wedding day D. the day of Estella's arrival"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Pip do while he was in Cairo?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He worked as a clerk and later a partner."
+          },
+          {
+            "key": "B",
+            "text": "He started a new business."
+          },
+          {
+            "key": "C",
+            "text": "He searched for Estella. D. He traveled around Egypt."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Joe and Biddy name their son?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Pip"
+          },
+          {
+            "key": "B",
+            "text": "Herbert"
+          },
+          {
+            "key": "C",
+            "text": "Pumblechook D. Provis"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What had Pip heard about Estella?",
+        "options": [
+          {
+            "key": "A",
+            "text": "that she was abused by her husband"
+          },
+          {
+            "key": "B",
+            "text": "that she was wealthy and happily married"
+          },
+          {
+            "key": "C",
+            "text": "that she was cold and heartless as ever D. that she was no longer beautiful"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Pip meet Estella?",
+        "options": [
+          {
+            "key": "A",
+            "text": "in Miss Havisham's garden"
+          },
+          {
+            "key": "B",
+            "text": "at the Blue Boar Inn"
+          },
+          {
+            "key": "C",
+            "text": "at the forge D. in London"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Estella say helped her become a better person?",
+        "options": [
+          {
+            "key": "A",
+            "text": "suffering"
+          },
+          {
+            "key": "B",
+            "text": "riches"
+          },
+          {
+            "key": "C",
+            "text": "traveling D. losing Miss Havisham"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  }
+}

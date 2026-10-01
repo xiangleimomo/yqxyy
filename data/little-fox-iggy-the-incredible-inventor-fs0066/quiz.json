@@ -1,1 +1,7331 @@
-{}
+{
+  "1": {
+    "episodeId": 1,
+    "title": "My First Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Mrs. Romano make the students do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "color maps"
+          },
+          {
+            "key": "B",
+            "text": "draw maps"
+          },
+          {
+            "key": "C",
+            "text": "look for maps"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why do Iggy and Molly have to climb a lot of stairs?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They live on the fifth floor."
+          },
+          {
+            "key": "B",
+            "text": "Their school has five floors."
+          },
+          {
+            "key": "C",
+            "text": "They're not allowed on the elevator."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Tate yell at Iggy?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Iggy's backpack went over the chalk line."
+          },
+          {
+            "key": "B",
+            "text": "Iggy stepped over the chalk line."
+          },
+          {
+            "key": "C",
+            "text": "Iggy erased the chalk line."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy borrow from Josh?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a hamster toy"
+          },
+          {
+            "key": "B",
+            "text": "a dog toy"
+          },
+          {
+            "key": "C",
+            "text": "a toy car"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What does Mr. Calabria have in his workroom?",
+        "options": [
+          {
+            "key": "A",
+            "text": "wood"
+          },
+          {
+            "key": "B",
+            "text": "plastic"
+          },
+          {
+            "key": "C",
+            "text": "fabric"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "2": {
+    "episodeId": 2,
+    "title": "Another Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who sneezes a lot?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Jenny"
+          },
+          {
+            "key": "B",
+            "text": "Josh"
+          },
+          {
+            "key": "C",
+            "text": "Iggy"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was wrong with Iggy's coloring machines?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They were hard to use."
+          },
+          {
+            "key": "B",
+            "text": "They ripped the paper."
+          },
+          {
+            "key": "C",
+            "text": "They couldn't hold crayons."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy do with the coloring machines?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He threw them in his closet."
+          },
+          {
+            "key": "B",
+            "text": "He threw them in the garbage."
+          },
+          {
+            "key": "C",
+            "text": "He gave them to his friends."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What does Caswell look for?",
+        "options": [
+          {
+            "key": "A",
+            "text": "treasure"
+          },
+          {
+            "key": "B",
+            "text": "food"
+          },
+          {
+            "key": "C",
+            "text": "cats"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What gave Iggy an idea for finding Caswell?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a cat"
+          },
+          {
+            "key": "B",
+            "text": "a dog"
+          },
+          {
+            "key": "C",
+            "text": "a hamster"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "3": {
+    "episodeId": 3,
+    "title": "The Awful Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where was Caswell?",
+        "options": [
+          {
+            "key": "A",
+            "text": "under the stairs"
+          },
+          {
+            "key": "B",
+            "text": "on the roof"
+          },
+          {
+            "key": "C",
+            "text": "in the basement"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy get from the box of Christmas ornaments?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a bell"
+          },
+          {
+            "key": "B",
+            "text": "a string"
+          },
+          {
+            "key": "C",
+            "text": "a light"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Iggy's mom doing in the kitchen?",
+        "options": [
+          {
+            "key": "A",
+            "text": "talking on the phone"
+          },
+          {
+            "key": "B",
+            "text": "making a nice dinner"
+          },
+          {
+            "key": "C",
+            "text": "working on the computer"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What does Iggy think his mom is going to rob?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a bank"
+          },
+          {
+            "key": "B",
+            "text": "a store"
+          },
+          {
+            "key": "C",
+            "text": "a museum"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What happened when Iggy told Molly about his mom?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She didn't believe him."
+          },
+          {
+            "key": "B",
+            "text": "She called the police."
+          },
+          {
+            "key": "C",
+            "text": "She invited him to dinner."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "4": {
+    "episodeId": 4,
+    "title": "The Greatest Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Iggy's mom thinking about?",
+        "options": [
+          {
+            "key": "A",
+            "text": "bills"
+          },
+          {
+            "key": "B",
+            "text": "food"
+          },
+          {
+            "key": "C",
+            "text": "dogs"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Iggy wake up early?",
+        "options": [
+          {
+            "key": "A",
+            "text": "to walk to school with Josh"
+          },
+          {
+            "key": "B",
+            "text": "to make breakfast for his mom"
+          },
+          {
+            "key": "C",
+            "text": "to get to school before Molly"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How does Josh's dad make extra money?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He performs magic."
+          },
+          {
+            "key": "B",
+            "text": "He washes dishes."
+          },
+          {
+            "key": "C",
+            "text": "He cooks food."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What would happen if Iggy invented a money printing machine?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He could go to jail."
+          },
+          {
+            "key": "B",
+            "text": "He could become rich."
+          },
+          {
+            "key": "C",
+            "text": "He could lose money."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Iggy and Josh spend their money?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a candy store"
+          },
+          {
+            "key": "B",
+            "text": "a food store"
+          },
+          {
+            "key": "C",
+            "text": "a magic store"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "5": {
+    "episodeId": 5,
+    "title": "Mrs. Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What kind of pet did Kristin want?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a monkey"
+          },
+          {
+            "key": "B",
+            "text": "a hamster"
+          },
+          {
+            "key": "C",
+            "text": "a poodle"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What's first prize in the Invention Convention?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a ribbon and money"
+          },
+          {
+            "key": "B",
+            "text": "a trophy and money"
+          },
+          {
+            "key": "C",
+            "text": "a medal and money"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who asked how the magic thinking box works?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Molly"
+          },
+          {
+            "key": "B",
+            "text": "Jenny"
+          },
+          {
+            "key": "C",
+            "text": "Caswell"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Tate yell at Iggy?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Iggy's backpack was on Tate's side."
+          },
+          {
+            "key": "B",
+            "text": "Iggy's backpack was under Tate's bed."
+          },
+          {
+            "key": "C",
+            "text": "Iggy's backpack was near Tate's desk."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who owns a one-way mirror?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Mr. Chen"
+          },
+          {
+            "key": "B",
+            "text": "Mrs. O'Donnell"
+          },
+          {
+            "key": "C",
+            "text": "Mr. Calabria"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "6": {
+    "episodeId": 6,
+    "title": "Mr. Chen's Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where was Mr. Chen's magic room?",
+        "options": [
+          {
+            "key": "A",
+            "text": "off the hall"
+          },
+          {
+            "key": "B",
+            "text": "in the basement"
+          },
+          {
+            "key": "C",
+            "text": "on the fifth floor"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What does a person in a bright room see in a one- way mirror?",
+        "options": [
+          {
+            "key": "A",
+            "text": "himself"
+          },
+          {
+            "key": "B",
+            "text": "the other person"
+          },
+          {
+            "key": "C",
+            "text": "nobody"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which did Iggy use to make his magic thinking box?",
+        "options": [
+          {
+            "key": "A",
+            "text": "scissors"
+          },
+          {
+            "key": "B",
+            "text": "tape"
+          },
+          {
+            "key": "C",
+            "text": "string"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who tried the magic thinking box first?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Molly"
+          },
+          {
+            "key": "B",
+            "text": "Josh"
+          },
+          {
+            "key": "C",
+            "text": "Jenny"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Molly thinking?",
+        "options": [
+          {
+            "key": "A",
+            "text": "that she wanted Iggy to put the box on"
+          },
+          {
+            "key": "B",
+            "text": "that she might need to rob a bank"
+          },
+          {
+            "key": "C",
+            "text": "that she was hungry for dinner"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "7": {
+    "episodeId": 7,
+    "title": "The Magic Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Whose thoughts did Iggy want to read?",
+        "options": [
+          {
+            "key": "A",
+            "text": "his mother's thoughts"
+          },
+          {
+            "key": "B",
+            "text": "Josh's thoughts"
+          },
+          {
+            "key": "C",
+            "text": "Molly's thoughts"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Tate thinking?",
+        "options": [
+          {
+            "key": "A",
+            "text": "that the magic box was dumb."
+          },
+          {
+            "key": "B",
+            "text": "that the magic box was great."
+          },
+          {
+            "key": "C",
+            "text": "that the magic box worked well."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Iggy's mom doing in the kitchen?",
+        "options": [
+          {
+            "key": "A",
+            "text": "baking cookies"
+          },
+          {
+            "key": "B",
+            "text": "baking a cake"
+          },
+          {
+            "key": "C",
+            "text": "baking bread"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Iggy's mom thinking about?",
+        "options": [
+          {
+            "key": "A",
+            "text": "money"
+          },
+          {
+            "key": "B",
+            "text": "books"
+          },
+          {
+            "key": "C",
+            "text": "music"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy think takes a lot of planning?",
+        "options": [
+          {
+            "key": "A",
+            "text": "robbing a bank"
+          },
+          {
+            "key": "B",
+            "text": "robbing a store"
+          },
+          {
+            "key": "C",
+            "text": "robbing a museum"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "8": {
+    "episodeId": 8,
+    "title": "The Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Iggy get out of bed?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He was looking for the bell."
+          },
+          {
+            "key": "B",
+            "text": "He wanted to get a drink."
+          },
+          {
+            "key": "C",
+            "text": "He wanted to wake up Tate."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Josh invent?",
+        "options": [
+          {
+            "key": "A",
+            "text": "an alarm"
+          },
+          {
+            "key": "B",
+            "text": "a crayon holder"
+          },
+          {
+            "key": "C",
+            "text": "a bath"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the girl's glasses have painted on them?",
+        "options": [
+          {
+            "key": "A",
+            "text": "wide-open eyes"
+          },
+          {
+            "key": "B",
+            "text": "cat's eyes"
+          },
+          {
+            "key": "C",
+            "text": "closed eyes"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What made the one judge sneeze?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Sparky"
+          },
+          {
+            "key": "B",
+            "text": "the soap"
+          },
+          {
+            "key": "C",
+            "text": "crayons"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Iggy think his luck was running out?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He didn't know what the judge was thinking."
+          },
+          {
+            "key": "B",
+            "text": "The judges didn't want to try his box."
+          },
+          {
+            "key": "C",
+            "text": "The judge was frowning."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "9": {
+    "episodeId": 9,
+    "title": "The Blue Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What happened when the judge sneezed?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The box flew off her head."
+          },
+          {
+            "key": "B",
+            "text": "Sparky flew out of his cage."
+          },
+          {
+            "key": "C",
+            "text": "She knocked over a bicycle."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who was stuck under the box?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Sparky"
+          },
+          {
+            "key": "B",
+            "text": "Jenny"
+          },
+          {
+            "key": "C",
+            "text": "the judge"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who won first prize?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Jenny"
+          },
+          {
+            "key": "B",
+            "text": "Josh"
+          },
+          {
+            "key": "C",
+            "text": "Susie"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Iggy sad?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He wasn't a good inventor."
+          },
+          {
+            "key": "B",
+            "text": "Josh wasn't a good inventor."
+          },
+          {
+            "key": "C",
+            "text": "Tate wasn't a good inventor."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Iggy's mom shocked?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Iggy said she would rob a bank."
+          },
+          {
+            "key": "B",
+            "text": "Iggy said he won first prize."
+          },
+          {
+            "key": "C",
+            "text": "Iggy said Tate might rob a bank."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "10": {
+    "episodeId": 10,
+    "title": "My Real Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What had Iggy's mom been looking for?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a new apartment"
+          },
+          {
+            "key": "B",
+            "text": "a new car"
+          },
+          {
+            "key": "C",
+            "text": "a new bank"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What kind of food did Iggy's mom order?",
+        "options": [
+          {
+            "key": "A",
+            "text": "pizza"
+          },
+          {
+            "key": "B",
+            "text": "sandwiches"
+          },
+          {
+            "key": "C",
+            "text": "ice cream"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "When did Iggy hear the bell?",
+        "options": [
+          {
+            "key": "A",
+            "text": "When he was walking upstairs."
+          },
+          {
+            "key": "B",
+            "text": "When he was walking around the block."
+          },
+          {
+            "key": "C",
+            "text": "When he went downstairs."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who pried open the door?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Mr. Calabria"
+          },
+          {
+            "key": "B",
+            "text": "Mrs. O'Donnell"
+          },
+          {
+            "key": "C",
+            "text": "Iggy's mom"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy's mom want to turn the little room into?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a bedroom"
+          },
+          {
+            "key": "B",
+            "text": "a bathroom"
+          },
+          {
+            "key": "C",
+            "text": "a guest room"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "11": {
+    "episodeId": 11,
+    "title": "The Healthy Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Iggy have a smile on his face?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He was moving into his new room."
+          },
+          {
+            "key": "B",
+            "text": "He was moving into Tate's room."
+          },
+          {
+            "key": "C",
+            "text": "Tate was moving out of his room."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Tate find under his desk?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a piece of crayon"
+          },
+          {
+            "key": "B",
+            "text": "a piece of paper"
+          },
+          {
+            "key": "C",
+            "text": "a piece of food"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy need frozen vegetables for?",
+        "options": [
+          {
+            "key": "A",
+            "text": "healthy candy"
+          },
+          {
+            "key": "B",
+            "text": "healthy cookies"
+          },
+          {
+            "key": "C",
+            "text": "healthy cake"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was stuck together?",
+        "options": [
+          {
+            "key": "A",
+            "text": "broccoli"
+          },
+          {
+            "key": "B",
+            "text": "candy"
+          },
+          {
+            "key": "C",
+            "text": "carrots"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Caswell do with the syrup?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He got it all over everything."
+          },
+          {
+            "key": "B",
+            "text": "He got it all over the floor."
+          },
+          {
+            "key": "C",
+            "text": "He got it all over the bed."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "12": {
+    "episodeId": 12,
+    "title": "Strawberry Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What tasted awful?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the chocolate-covered lima bean"
+          },
+          {
+            "key": "B",
+            "text": "the chocolate-covered string bean"
+          },
+          {
+            "key": "C",
+            "text": "the chocolate-covered green bean"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who sent Molly money?",
+        "options": [
+          {
+            "key": "A",
+            "text": "her aunt"
+          },
+          {
+            "key": "B",
+            "text": "her uncle"
+          },
+          {
+            "key": "C",
+            "text": "her grandmother"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Josh's bad news?",
+        "options": [
+          {
+            "key": "A",
+            "text": "His dad lost his job."
+          },
+          {
+            "key": "B",
+            "text": "His dad was moving to Ohio."
+          },
+          {
+            "key": "C",
+            "text": "His grandmother lost her job."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Molly buy for Caswell?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a lollipop"
+          },
+          {
+            "key": "B",
+            "text": "a cupcake"
+          },
+          {
+            "key": "C",
+            "text": "a candy bar"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who was the last raffle ticket for?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Bunch"
+          },
+          {
+            "key": "B",
+            "text": "Caswell"
+          },
+          {
+            "key": "C",
+            "text": "Iggy"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "13": {
+    "episodeId": 13,
+    "title": "The Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy's mom make for breakfast?",
+        "options": [
+          {
+            "key": "A",
+            "text": "pancakes"
+          },
+          {
+            "key": "B",
+            "text": "waffles"
+          },
+          {
+            "key": "C",
+            "text": "oatmeal"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who won the raffle?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Bunch"
+          },
+          {
+            "key": "B",
+            "text": "Molly"
+          },
+          {
+            "key": "C",
+            "text": "Iggy"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who did Iggy's mom talk to on the phone?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Mr. Chen"
+          },
+          {
+            "key": "B",
+            "text": "Molly's mom"
+          },
+          {
+            "key": "C",
+            "text": "Mr. Calabria"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Molly plan to bring on the getaway?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a sleeping bag"
+          },
+          {
+            "key": "B",
+            "text": "a backpack"
+          },
+          {
+            "key": "C",
+            "text": "an invention"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy borrow from Josh?",
+        "options": [
+          {
+            "key": "A",
+            "text": "hamster pellets"
+          },
+          {
+            "key": "B",
+            "text": "food coloring"
+          },
+          {
+            "key": "C",
+            "text": "a backpack"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "14": {
+    "episodeId": 14,
+    "title": "Mountain Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was in Iggy's backpack?",
+        "options": [
+          {
+            "key": "A",
+            "text": "clothes"
+          },
+          {
+            "key": "B",
+            "text": "books"
+          },
+          {
+            "key": "C",
+            "text": "games"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Mr. Chen going to do at Shadow Lake Lodge?",
+        "options": [
+          {
+            "key": "A",
+            "text": "practice magic tricks"
+          },
+          {
+            "key": "B",
+            "text": "practice singing"
+          },
+          {
+            "key": "C",
+            "text": "practice juggling"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did the tunnel go?",
+        "options": [
+          {
+            "key": "A",
+            "text": "under a river"
+          },
+          {
+            "key": "B",
+            "text": "through a mountain"
+          },
+          {
+            "key": "C",
+            "text": "under a city"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What were Molly and Jenny going to be like?",
+        "options": [
+          {
+            "key": "A",
+            "text": "princesses"
+          },
+          {
+            "key": "B",
+            "text": "explorers"
+          },
+          {
+            "key": "C",
+            "text": "magicians"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy want to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "hike to the lookout tower"
+          },
+          {
+            "key": "B",
+            "text": "go to a fancy ball"
+          },
+          {
+            "key": "C",
+            "text": "look at gold curtains"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "15": {
+    "episodeId": 15,
+    "title": "The Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What color does Bunch hate?",
+        "options": [
+          {
+            "key": "A",
+            "text": "red"
+          },
+          {
+            "key": "B",
+            "text": "green"
+          },
+          {
+            "key": "C",
+            "text": "blue"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why didn't Mr. Chen hike to the lookout tower?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Caswell fell asleep."
+          },
+          {
+            "key": "B",
+            "text": "Mr. Chen fell asleep."
+          },
+          {
+            "key": "C",
+            "text": "Caswell refused to go."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Iggy invent the pellets?",
+        "options": [
+          {
+            "key": "A",
+            "text": "So he and his friends wouldn't get lost."
+          },
+          {
+            "key": "B",
+            "text": "So he and his friends could have a snack."
+          },
+          {
+            "key": "C",
+            "text": "So he and his friends could find the tower."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What happened to Josh's bag of pellets?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The pellets fell out."
+          },
+          {
+            "key": "B",
+            "text": "Someone took it."
+          },
+          {
+            "key": "C",
+            "text": "The bag fell on the trail."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Mr. Scary upset?",
+        "options": [
+          {
+            "key": "A",
+            "text": "His vegetables disappeared."
+          },
+          {
+            "key": "B",
+            "text": "Someone stole his money."
+          },
+          {
+            "key": "C",
+            "text": "Soup spilled on the floor."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "16": {
+    "episodeId": 16,
+    "title": "The Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What were one hundred people coming to see?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a parade"
+          },
+          {
+            "key": "B",
+            "text": "a movie"
+          },
+          {
+            "key": "C",
+            "text": "a contest"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Mr. Chen borrow from Mr. Scary?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a chicken"
+          },
+          {
+            "key": "B",
+            "text": "a turkey"
+          },
+          {
+            "key": "C",
+            "text": "a pigeon"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the woman in a blue hat want to learn to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "make vegetable soup"
+          },
+          {
+            "key": "B",
+            "text": "bake chocolate cake"
+          },
+          {
+            "key": "C",
+            "text": "make chicken soup"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy think was more exciting?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a magic show"
+          },
+          {
+            "key": "B",
+            "text": "a vegetable parade"
+          },
+          {
+            "key": "C",
+            "text": "a chicken parade"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Mr. Chen going to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "pull the chicken's head off"
+          },
+          {
+            "key": "B",
+            "text": "make the chicken disappear"
+          },
+          {
+            "key": "C",
+            "text": "make the chicken march"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "17": {
+    "episodeId": 17,
+    "title": "Bunch Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Brandy cry?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She thought Mr. Chen took off the chicken's head."
+          },
+          {
+            "key": "B",
+            "text": "She thought the magic show was over."
+          },
+          {
+            "key": "C",
+            "text": "She wanted to eat vegetables instead."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Mr. Chen slide the box?",
+        "options": [
+          {
+            "key": "A",
+            "text": "under a tablecloth"
+          },
+          {
+            "key": "B",
+            "text": "into a closet"
+          },
+          {
+            "key": "C",
+            "text": "behind a chair"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why couldn't Molly get Caswell?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She didn't want to interrupt the show."
+          },
+          {
+            "key": "B",
+            "text": "She didn't want to get Caswell in trouble."
+          },
+          {
+            "key": "C",
+            "text": "She didn't want to miss the trick."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Mr. Chen tell everyone to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "say the magic words"
+          },
+          {
+            "key": "B",
+            "text": "look for Bunch"
+          },
+          {
+            "key": "C",
+            "text": "sing some songs"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Mr. Chen use to cut the string?",
+        "options": [
+          {
+            "key": "A",
+            "text": "scissors"
+          },
+          {
+            "key": "B",
+            "text": "a knife"
+          },
+          {
+            "key": "C",
+            "text": "his teeth"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "18": {
+    "episodeId": 18,
+    "title": "Mr. Chen's Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Bunch escape?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Caswell let him out."
+          },
+          {
+            "key": "B",
+            "text": "He bit off the lock."
+          },
+          {
+            "key": "C",
+            "text": "Molly let him out."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What color pellets were left?",
+        "options": [
+          {
+            "key": "A",
+            "text": "red"
+          },
+          {
+            "key": "B",
+            "text": "yellow"
+          },
+          {
+            "key": "C",
+            "text": "blue"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who did Iggy think should look for Bunch?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the audience"
+          },
+          {
+            "key": "B",
+            "text": "Mr. Chen"
+          },
+          {
+            "key": "C",
+            "text": "Caswell"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where was Bunch?",
+        "options": [
+          {
+            "key": "A",
+            "text": "near the tower"
+          },
+          {
+            "key": "B",
+            "text": "in the hotel room"
+          },
+          {
+            "key": "C",
+            "text": "next to a river"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who was staring at Mr. Chen?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Mr. Scary"
+          },
+          {
+            "key": "B",
+            "text": "Brandy"
+          },
+          {
+            "key": "C",
+            "text": "Molly"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "19": {
+    "episodeId": 19,
+    "title": "Caswell's Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Jenny want to collect?",
+        "options": [
+          {
+            "key": "A",
+            "text": "leaves"
+          },
+          {
+            "key": "B",
+            "text": "sticks"
+          },
+          {
+            "key": "C",
+            "text": "stones"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Mr. Chen need to look for?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a new job"
+          },
+          {
+            "key": "B",
+            "text": "magic supplies"
+          },
+          {
+            "key": "C",
+            "text": "some vegetables"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where were the rotten vegetables?",
+        "options": [
+          {
+            "key": "A",
+            "text": "in Caswell's backpack"
+          },
+          {
+            "key": "B",
+            "text": "under Iggy's bed"
+          },
+          {
+            "key": "C",
+            "text": "behind the bathroom door"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Caswell afraid to eat?",
+        "options": [
+          {
+            "key": "A",
+            "text": "vegetable soup"
+          },
+          {
+            "key": "B",
+            "text": "chicken soup"
+          },
+          {
+            "key": "C",
+            "text": "pumpkin pie"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who offered to pay for the vegetables?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Mr. Chen"
+          },
+          {
+            "key": "B",
+            "text": "Iggy"
+          },
+          {
+            "key": "C",
+            "text": "Caswell"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "20": {
+    "episodeId": 20,
+    "title": "The Best Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Mr. Scary glad the vegetables were stolen?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The magic show was terrific."
+          },
+          {
+            "key": "B",
+            "text": "He didn't like vegetables."
+          },
+          {
+            "key": "C",
+            "text": "The parade was better without them."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Mr. Scary offer Mr. Chen?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a job"
+          },
+          {
+            "key": "B",
+            "text": "vegetables"
+          },
+          {
+            "key": "C",
+            "text": "a new dog"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Jenny want a room without red curtains?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Bunch hates red."
+          },
+          {
+            "key": "B",
+            "text": "Caswell hates red."
+          },
+          {
+            "key": "C",
+            "text": "Jenny hates red."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Mr. Scary think was funny?",
+        "options": [
+          {
+            "key": "A",
+            "text": "hiding vegetables under the bed"
+          },
+          {
+            "key": "B",
+            "text": "throwing vegetables in the trash"
+          },
+          {
+            "key": "C",
+            "text": "barking at the red curtains"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Iggy feel like a genius?",
+        "options": [
+          {
+            "key": "A",
+            "text": "His invention helped Mr. Chen get a job."
+          },
+          {
+            "key": "B",
+            "text": "He figured out who stole the vegetables."
+          },
+          {
+            "key": "C",
+            "text": "He was able to get Mr. Scary to laugh."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "21": {
+    "episodeId": 21,
+    "title": "Molly's Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Tate upset?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Iggy left things in his closet."
+          },
+          {
+            "key": "B",
+            "text": "Iggy took some of his things."
+          },
+          {
+            "key": "C",
+            "text": "Iggy's room was a mess."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who was Lucy?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Molly's babysitter"
+          },
+          {
+            "key": "B",
+            "text": "Iggy's teacher"
+          },
+          {
+            "key": "C",
+            "text": "Molly's aunt"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why couldn't Molly sleep at night?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She was scared of monsters."
+          },
+          {
+            "key": "B",
+            "text": "She was scared of school."
+          },
+          {
+            "key": "C",
+            "text": "She was scared of Lucy."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Molly keep doing during school?",
+        "options": [
+          {
+            "key": "A",
+            "text": "yawning"
+          },
+          {
+            "key": "B",
+            "text": "tripping"
+          },
+          {
+            "key": "C",
+            "text": "sneezing"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What does the store where Mr. Chen works sell?",
+        "options": [
+          {
+            "key": "A",
+            "text": "bath soap"
+          },
+          {
+            "key": "B",
+            "text": "bubble gum"
+          },
+          {
+            "key": "C",
+            "text": "bathtubs"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "22": {
+    "episodeId": 22,
+    "title": "The Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What could Iggy hear coming from Molly's TV?",
+        "options": [
+          {
+            "key": "A",
+            "text": "roars"
+          },
+          {
+            "key": "B",
+            "text": "howls"
+          },
+          {
+            "key": "C",
+            "text": "explosions"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What type of bubble bath soap did Iggy make for Molly?",
+        "options": [
+          {
+            "key": "A",
+            "text": "cherry"
+          },
+          {
+            "key": "B",
+            "text": "banana"
+          },
+          {
+            "key": "C",
+            "text": "apple"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What is Tate's favorite food?",
+        "options": [
+          {
+            "key": "A",
+            "text": "granola bars"
+          },
+          {
+            "key": "B",
+            "text": "peanut butter"
+          },
+          {
+            "key": "C",
+            "text": "sugar cookies"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why does Tate call Iggy \"Piggy?\"",
+        "options": [
+          {
+            "key": "A",
+            "text": "to get Iggy mad"
+          },
+          {
+            "key": "B",
+            "text": "to make Iggy laugh"
+          },
+          {
+            "key": "C",
+            "text": "to confuse Iggy"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was wrong with the bubble bath Iggy made?",
+        "options": [
+          {
+            "key": "A",
+            "text": "It made Molly itchy."
+          },
+          {
+            "key": "B",
+            "text": "It made Molly sneeze."
+          },
+          {
+            "key": "C",
+            "text": "It made Molly sleepy. Iggy the Incredible Inventor 23: Brainstorming"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Iggy finished with?",
+        "options": [
+          {
+            "key": "A",
+            "text": "making bubble bath soaps"
+          },
+          {
+            "key": "B",
+            "text": "inventing things"
+          },
+          {
+            "key": "C",
+            "text": "going to school"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy tell Molly she should do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "not think about monsters"
+          },
+          {
+            "key": "B",
+            "text": "not think about bubble baths"
+          },
+          {
+            "key": "C",
+            "text": "not think about the TV"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q8",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Ruby ask?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She asked if their books would be in the bookstore."
+          },
+          {
+            "key": "B",
+            "text": "She asked if their books would be in the library."
+          },
+          {
+            "key": "C",
+            "text": "She asked if their books would be on the internet."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q9",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Iggy draw a funny monster?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He was trying to cheer up Molly."
+          },
+          {
+            "key": "B",
+            "text": "He was trying to scare Molly."
+          },
+          {
+            "key": "C",
+            "text": "He was trying to scare Mrs. Romano."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q10",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy wish he had?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a big machine"
+          },
+          {
+            "key": "B",
+            "text": "a new bubble bath soap"
+          },
+          {
+            "key": "C",
+            "text": "a different teacher"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "23": {
+    "episodeId": 23,
+    "title": "Brainstorming Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which word appears in this lesson?",
+        "options": [
+          {
+            "key": "A",
+            "text": "formulate"
+          },
+          {
+            "key": "B",
+            "text": "disaster"
+          },
+          {
+            "key": "C",
+            "text": "for now"
+          }
+        ],
+        "answer": "A",
+        "explanation": "请根据本集阅读内容作答。",
+        "source": "generated-from-reading"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which word appears in this lesson?",
+        "options": [
+          {
+            "key": "A",
+            "text": "disaster"
+          },
+          {
+            "key": "B",
+            "text": "formulate"
+          },
+          {
+            "key": "C",
+            "text": "for now"
+          }
+        ],
+        "answer": "A",
+        "explanation": "请根据本集阅读内容作答。",
+        "source": "generated-from-reading"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which word appears in this lesson?",
+        "options": [
+          {
+            "key": "A",
+            "text": "for now"
+          },
+          {
+            "key": "B",
+            "text": "formulate"
+          },
+          {
+            "key": "C",
+            "text": "disaster"
+          }
+        ],
+        "answer": "A",
+        "explanation": "请根据本集阅读内容作答。",
+        "source": "generated-from-reading"
+      }
+    ]
+  },
+  "24": {
+    "episodeId": 24,
+    "title": "A Surprise Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why couldn't the giant vacuum cleaner suck up the whole world in the story?",
+        "options": [
+          {
+            "key": "A",
+            "text": "There would be nothing left for the story."
+          },
+          {
+            "key": "B",
+            "text": "The story would not be interesting."
+          },
+          {
+            "key": "C",
+            "text": "Vacuum cleaners can't really do that."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Mrs. Romano tell the students to bounce?",
+        "options": [
+          {
+            "key": "A",
+            "text": "ideas"
+          },
+          {
+            "key": "B",
+            "text": "grapes"
+          },
+          {
+            "key": "C",
+            "text": "balls"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where was the Author Story Hour?",
+        "options": [
+          {
+            "key": "A",
+            "text": "at a new bookstore"
+          },
+          {
+            "key": "B",
+            "text": "at Iggy's school"
+          },
+          {
+            "key": "C",
+            "text": "at the town library"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the teachers in the Wicky Wacky School turn into?",
+        "options": [
+          {
+            "key": "A",
+            "text": "monkeys"
+          },
+          {
+            "key": "B",
+            "text": "bananas"
+          },
+          {
+            "key": "C",
+            "text": "gorillas"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Matilda Mackey say Iggy and Molly needed to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "ask what their character wants"
+          },
+          {
+            "key": "B",
+            "text": "come up with a good name"
+          },
+          {
+            "key": "C",
+            "text": "buy all of her books"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "25": {
+    "episodeId": 25,
+    "title": "The Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Caswell want for dinner?",
+        "options": [
+          {
+            "key": "A",
+            "text": "pizza"
+          },
+          {
+            "key": "B",
+            "text": "chicken"
+          },
+          {
+            "key": "C",
+            "text": "hamburgers"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Mrs. Romano say about everyone's desks?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They were messy."
+          },
+          {
+            "key": "B",
+            "text": "They were neat."
+          },
+          {
+            "key": "C",
+            "text": "They were cozy."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What would Iggy's Amazing Mess-Pusher do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "clean a room instantly"
+          },
+          {
+            "key": "B",
+            "text": "make a mess instantly"
+          },
+          {
+            "key": "C",
+            "text": "move a mess instantly"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What were the kids practicing in gym class?",
+        "options": [
+          {
+            "key": "A",
+            "text": "rope-climbing"
+          },
+          {
+            "key": "B",
+            "text": "basketball"
+          },
+          {
+            "key": "C",
+            "text": "running and jumping"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who said Iggy should push his mess out the window?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Tate"
+          },
+          {
+            "key": "B",
+            "text": "Molly"
+          },
+          {
+            "key": "C",
+            "text": "Iggy's mom"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "26": {
+    "episodeId": 26,
+    "title": "Molly's Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Iggy and Molly push the stuff on Molly's floor?",
+        "options": [
+          {
+            "key": "A",
+            "text": "under Molly's bed"
+          },
+          {
+            "key": "B",
+            "text": "out Molly's window"
+          },
+          {
+            "key": "C",
+            "text": "into Molly's closet"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Caswell do when Molly asked him a question?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He growled."
+          },
+          {
+            "key": "B",
+            "text": "He cried."
+          },
+          {
+            "key": "C",
+            "text": "He laughed."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who threw out stuff from Molly's room?",
+        "options": [
+          {
+            "key": "A",
+            "text": "her mom"
+          },
+          {
+            "key": "B",
+            "text": "her brother"
+          },
+          {
+            "key": "C",
+            "text": "her babysitter"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was in Iggy's room when he got home?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a garbage bag"
+          },
+          {
+            "key": "B",
+            "text": "a new invention"
+          },
+          {
+            "key": "C",
+            "text": "new bubble bath soap"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What caused the plot list to get thrown out?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the Amazing Mess-Pusher"
+          },
+          {
+            "key": "B",
+            "text": "a giant talking vacuum cleaner"
+          },
+          {
+            "key": "C",
+            "text": "Iggy's temper"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "27": {
+    "episodeId": 27,
+    "title": "The Plot Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What made the papers slimy?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a banana peel"
+          },
+          {
+            "key": "B",
+            "text": "an orange peel"
+          },
+          {
+            "key": "C",
+            "text": "an apple core"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy put on the pieces of paper?",
+        "options": [
+          {
+            "key": "A",
+            "text": "words"
+          },
+          {
+            "key": "B",
+            "text": "pictures"
+          },
+          {
+            "key": "C",
+            "text": "circles"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy cut from the magazines?",
+        "options": [
+          {
+            "key": "A",
+            "text": "pictures"
+          },
+          {
+            "key": "B",
+            "text": "words"
+          },
+          {
+            "key": "C",
+            "text": "advertisements"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy take for breakfast?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a chocolate granola bar"
+          },
+          {
+            "key": "B",
+            "text": "some cold spaghetti"
+          },
+          {
+            "key": "C",
+            "text": "a cherry breakfast bar"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Mrs. Romano say about Iggy's plot inventor?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She said it was clever."
+          },
+          {
+            "key": "B",
+            "text": "She said it was silly."
+          },
+          {
+            "key": "C",
+            "text": "She said it wouldn't work."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "28": {
+    "episodeId": 28,
+    "title": "The Giant Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What's the first thing you do when using the plot inventor?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Shake the box."
+          },
+          {
+            "key": "B",
+            "text": "Turn the box over."
+          },
+          {
+            "key": "C",
+            "text": "Read the words."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Gina's story about?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a fox and a hunter"
+          },
+          {
+            "key": "B",
+            "text": "a hunter and a vacuum"
+          },
+          {
+            "key": "C",
+            "text": "a frog and a hunter"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What didn't Molly want the vacuum to seem like?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a monster"
+          },
+          {
+            "key": "B",
+            "text": "a person"
+          },
+          {
+            "key": "C",
+            "text": "a dinosaur"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is something the vacuum sucked up?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a computer"
+          },
+          {
+            "key": "B",
+            "text": "the world"
+          },
+          {
+            "key": "C",
+            "text": "a car"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Evan suggest doing?",
+        "options": [
+          {
+            "key": "A",
+            "text": "smashing the vacuum"
+          },
+          {
+            "key": "B",
+            "text": "yelling at the vacuum"
+          },
+          {
+            "key": "C",
+            "text": "sucking up the vacuum"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "29": {
+    "episodeId": 29,
+    "title": "A Good Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Iggy's building is really old."
+          },
+          {
+            "key": "B",
+            "text": "Iggy's building has no fireplaces."
+          },
+          {
+            "key": "C",
+            "text": "Iggy has a fireplace in his bedroom."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What woke Molly up?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The smoke detector woke her up."
+          },
+          {
+            "key": "B",
+            "text": "Iggy and Josh woke her up."
+          },
+          {
+            "key": "C",
+            "text": "Her mom woke her up."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What happened to Molly's TV?",
+        "options": [
+          {
+            "key": "A",
+            "text": "It exploded."
+          },
+          {
+            "key": "B",
+            "text": "It melted."
+          },
+          {
+            "key": "C",
+            "text": "It fell."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What caused the fire?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the lightning"
+          },
+          {
+            "key": "B",
+            "text": "a monster"
+          },
+          {
+            "key": "C",
+            "text": "a heater"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Molly's parents put the TV?",
+        "options": [
+          {
+            "key": "A",
+            "text": "on the curb"
+          },
+          {
+            "key": "B",
+            "text": "in a dumpster"
+          },
+          {
+            "key": "C",
+            "text": "in a trashcan"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "30": {
+    "episodeId": 30,
+    "title": "Just Ask Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Iggy trying to reach in the cupboard?",
+        "options": [
+          {
+            "key": "A",
+            "text": "cereal"
+          },
+          {
+            "key": "B",
+            "text": "snacks"
+          },
+          {
+            "key": "C",
+            "text": "bread"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Tate say Iggy needed to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "ask"
+          },
+          {
+            "key": "B",
+            "text": "yell"
+          },
+          {
+            "key": "C",
+            "text": "whisper"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Molly love?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Iggy's idea for the story."
+          },
+          {
+            "key": "B",
+            "text": "Iggy's idea for a movie."
+          },
+          {
+            "key": "C",
+            "text": "Iggy's idea for a TV show."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is something Lucy did with the kids?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She made a pizza with them."
+          },
+          {
+            "key": "B",
+            "text": "She took them to the movies."
+          },
+          {
+            "key": "C",
+            "text": "She went to a museum with them."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who read Iggy and Molly's book?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a little girl"
+          },
+          {
+            "key": "B",
+            "text": "an older boy"
+          },
+          {
+            "key": "C",
+            "text": "a teacher"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "31": {
+    "episodeId": 31,
+    "title": "The Not- Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Tate mad at Iggy?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Iggy squeezed out all the toothpaste."
+          },
+          {
+            "key": "B",
+            "text": "Iggy ate all the cereal."
+          },
+          {
+            "key": "C",
+            "text": "Iggy left toothpaste in Tate's room."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy's mom bake?",
+        "options": [
+          {
+            "key": "A",
+            "text": "muffins"
+          },
+          {
+            "key": "B",
+            "text": "brownies"
+          },
+          {
+            "key": "C",
+            "text": "cookies"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What do Aunt Julie and Uncle John have?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a swimming pool"
+          },
+          {
+            "key": "B",
+            "text": "a tennis court"
+          },
+          {
+            "key": "C",
+            "text": "a movie theater"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why doesn't Iggy like Oliver?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Oliver is always complaining."
+          },
+          {
+            "key": "B",
+            "text": "Oliver is always stealing."
+          },
+          {
+            "key": "C",
+            "text": "Oliver is always lying."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which room is Oliver going to stay in?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Iggy's room"
+          },
+          {
+            "key": "B",
+            "text": "Tate's room"
+          },
+          {
+            "key": "C",
+            "text": "the living room"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "32": {
+    "episodeId": 32,
+    "title": "Big Trouble Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What kind of day was Molly having?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a mental health day"
+          },
+          {
+            "key": "B",
+            "text": "a very busy day"
+          },
+          {
+            "key": "C",
+            "text": "a horrible day"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where are Iggy's aunt and uncle going?",
+        "options": [
+          {
+            "key": "A",
+            "text": "on a cruise"
+          },
+          {
+            "key": "B",
+            "text": "on a safari"
+          },
+          {
+            "key": "C",
+            "text": "on a train ride"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "When do Iggy and his friends have a powwow?",
+        "options": [
+          {
+            "key": "A",
+            "text": "when someone has a big problem"
+          },
+          {
+            "key": "B",
+            "text": "when someone has exciting news"
+          },
+          {
+            "key": "C",
+            "text": "when someone is very tired"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did the kids go back inside?",
+        "options": [
+          {
+            "key": "A",
+            "text": "An icy rain was falling."
+          },
+          {
+            "key": "B",
+            "text": "The traffic was too loud."
+          },
+          {
+            "key": "C",
+            "text": "It was too hot outside."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Josh say Iggy would be like to Oliver?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a big brother"
+          },
+          {
+            "key": "B",
+            "text": "a father"
+          },
+          {
+            "key": "C",
+            "text": "a little brother"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "33": {
+    "episodeId": 33,
+    "title": "Oliver Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Molly's pillow shaped like?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a frog"
+          },
+          {
+            "key": "B",
+            "text": "a turtle"
+          },
+          {
+            "key": "C",
+            "text": "a bird"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Iggy planning to share with Oliver?",
+        "options": [
+          {
+            "key": "A",
+            "text": "his marble run"
+          },
+          {
+            "key": "B",
+            "text": "his remote control car"
+          },
+          {
+            "key": "C",
+            "text": "his bicycle"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Molly say Caswell's face was a mess?",
+        "options": [
+          {
+            "key": "A",
+            "text": "It was covered in tomato sauce."
+          },
+          {
+            "key": "B",
+            "text": "It was covered in chocolate."
+          },
+          {
+            "key": "C",
+            "text": "It was covered in toothpaste."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which did not drive by Iggy's building?",
+        "options": [
+          {
+            "key": "A",
+            "text": "an army truck"
+          },
+          {
+            "key": "B",
+            "text": "a moving van"
+          },
+          {
+            "key": "C",
+            "text": "an ambulance"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How was the weather on Saturday?",
+        "options": [
+          {
+            "key": "A",
+            "text": "cold and wet"
+          },
+          {
+            "key": "B",
+            "text": "sunny and hot"
+          },
+          {
+            "key": "C",
+            "text": "warm and windy"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "34": {
+    "episodeId": 34,
+    "title": "Big Brother Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Oliver's parents do when he screamed?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They ignored him."
+          },
+          {
+            "key": "B",
+            "text": "They told him to stop."
+          },
+          {
+            "key": "C",
+            "text": "They screamed too."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who told Oliver that hot dogs are bad for you?",
+        "options": [
+          {
+            "key": "A",
+            "text": "his mom"
+          },
+          {
+            "key": "B",
+            "text": "his dad"
+          },
+          {
+            "key": "C",
+            "text": "his aunt"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy point to in his room?",
+        "options": [
+          {
+            "key": "A",
+            "text": "his skylight"
+          },
+          {
+            "key": "B",
+            "text": "his inventions"
+          },
+          {
+            "key": "C",
+            "text": "his desk"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Oliver have to brush his teeth in the kitchen?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The bathroom didn't have a sink."
+          },
+          {
+            "key": "B",
+            "text": "The bathroom sink was broken."
+          },
+          {
+            "key": "C",
+            "text": "Tate was using the bathroom."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Oliver say he hated?",
+        "options": [
+          {
+            "key": "A",
+            "text": "frogs"
+          },
+          {
+            "key": "B",
+            "text": "skylights"
+          },
+          {
+            "key": "C",
+            "text": "inventions"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "35": {
+    "episodeId": 35,
+    "title": "The Shoe- Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Josh want Iggy to invent?",
+        "options": [
+          {
+            "key": "A",
+            "text": "something to keep feet warm"
+          },
+          {
+            "key": "B",
+            "text": "something to make Oliver happy"
+          },
+          {
+            "key": "C",
+            "text": "something to melt ice"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy want to use to warm the shoes?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a blow dryer"
+          },
+          {
+            "key": "B",
+            "text": "a small heater"
+          },
+          {
+            "key": "C",
+            "text": "a candle"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why didn't Iggy's mom let him use the blow dryer?",
+        "options": [
+          {
+            "key": "A",
+            "text": "It was brand new."
+          },
+          {
+            "key": "B",
+            "text": "It was too old."
+          },
+          {
+            "key": "C",
+            "text": "It didn't work."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy do with the poker?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He put Oliver's shoe on it."
+          },
+          {
+            "key": "B",
+            "text": "He poked a hole in Oliver's shoe."
+          },
+          {
+            "key": "C",
+            "text": "He poked the fire."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Jenny think of Tate's joke?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She thought it was disgusting."
+          },
+          {
+            "key": "B",
+            "text": "She thought it was really funny."
+          },
+          {
+            "key": "C",
+            "text": "She didn't understand it."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "36": {
+    "episodeId": 36,
+    "title": "Dial-a-Joke Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Iggy's mom send Iggy to his room?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He ruined Oliver's shoe."
+          },
+          {
+            "key": "B",
+            "text": "He stole Oliver's shoe."
+          },
+          {
+            "key": "C",
+            "text": "He yelled at Oliver."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Iggy think Tate had a bad attitude?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Tate said Iggy messed up."
+          },
+          {
+            "key": "B",
+            "text": "Tate threw Iggy's shoe in the fire."
+          },
+          {
+            "key": "C",
+            "text": "Tate complained about Oliver."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why wouldn't Oliver take off his shoe?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He didn't want to get a splinter."
+          },
+          {
+            "key": "B",
+            "text": "His shoe was too comfortable."
+          },
+          {
+            "key": "C",
+            "text": "The floor was too cold."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was the best attitude adjuster for Iggy?",
+        "options": [
+          {
+            "key": "A",
+            "text": "an idea for a new invention"
+          },
+          {
+            "key": "B",
+            "text": "time alone in his room"
+          },
+          {
+            "key": "C",
+            "text": "a warm fire in winter"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who got Oliver to laugh?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Tate"
+          },
+          {
+            "key": "B",
+            "text": "Iggy"
+          },
+          {
+            "key": "C",
+            "text": "Molly"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "37": {
+    "episodeId": 37,
+    "title": "Oliver and Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What happened to Oliver's shoe overnight?",
+        "options": [
+          {
+            "key": "A",
+            "text": "It had shrunk even more."
+          },
+          {
+            "key": "B",
+            "text": "It had burnt completely."
+          },
+          {
+            "key": "C",
+            "text": "It had disappeared."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why couldn't Oliver go to the school playground?",
+        "options": [
+          {
+            "key": "A",
+            "text": "His shoes were ruined."
+          },
+          {
+            "key": "B",
+            "text": "His shoes were stolen."
+          },
+          {
+            "key": "C",
+            "text": "The playground was dangerous."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Oliver complain about Iggy's boots?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They were too big."
+          },
+          {
+            "key": "B",
+            "text": "They were too small."
+          },
+          {
+            "key": "C",
+            "text": "They were too old."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did they eat lunch?",
+        "options": [
+          {
+            "key": "A",
+            "text": "at a cafeteria"
+          },
+          {
+            "key": "B",
+            "text": "at Iggy's home"
+          },
+          {
+            "key": "C",
+            "text": "at Molly's home"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy want to borrow from Molly?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a toy telephone"
+          },
+          {
+            "key": "B",
+            "text": "a pair of shoes"
+          },
+          {
+            "key": "C",
+            "text": "a joke book"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "38": {
+    "episodeId": 38,
+    "title": "Do You Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Oliver say about the radiators in Iggy's building?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They were too loud."
+          },
+          {
+            "key": "B",
+            "text": "They were too hot."
+          },
+          {
+            "key": "C",
+            "text": "They didn't work."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Oliver think Iggy needed a new TV?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The TV was too small."
+          },
+          {
+            "key": "B",
+            "text": "The TV was too big."
+          },
+          {
+            "key": "C",
+            "text": "The TV was broken."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Iggy need to yell at Tate?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Tate was listening to music on earphones."
+          },
+          {
+            "key": "B",
+            "text": "Tate was asleep in his room."
+          },
+          {
+            "key": "C",
+            "text": "Tate was covering his ears and ignoring Iggy."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy ask his mom if he could do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "knock on people's doors"
+          },
+          {
+            "key": "B",
+            "text": "play with Oliver"
+          },
+          {
+            "key": "C",
+            "text": "go to the library"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Oliver bored?",
+        "options": [
+          {
+            "key": "A",
+            "text": "His TV show ended."
+          },
+          {
+            "key": "B",
+            "text": "His toys were all broken."
+          },
+          {
+            "key": "C",
+            "text": "The TV stopped working."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "39": {
+    "episodeId": 39,
+    "title": "The Big Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who went with Iggy to knock on doors?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Molly"
+          },
+          {
+            "key": "B",
+            "text": "Tate"
+          },
+          {
+            "key": "C",
+            "text": "Josh"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Iggy think Oliver would complain a lot when he woke up?",
+        "options": [
+          {
+            "key": "A",
+            "text": "There was no heat."
+          },
+          {
+            "key": "B",
+            "text": "There was no food."
+          },
+          {
+            "key": "C",
+            "text": "There was no cold water."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Oliver think not having heat was like?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He thought it was like being a pioneer."
+          },
+          {
+            "key": "B",
+            "text": "He thought it was like being a pirate."
+          },
+          {
+            "key": "C",
+            "text": "He thought it was like being a soldier."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who is Pioneer Pete?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a character on a TV show"
+          },
+          {
+            "key": "B",
+            "text": "a character in a book"
+          },
+          {
+            "key": "C",
+            "text": "one of Iggy's neighbors"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Iggy in a bad mood?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Nobody would need his Amazing Attitude Adjuster."
+          },
+          {
+            "key": "B",
+            "text": "Oliver was complaining more than ever."
+          },
+          {
+            "key": "C",
+            "text": "Everybody was complaining about the cold."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "40": {
+    "episodeId": 40,
+    "title": "Iggy's Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Iggy yell at Oliver?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Oliver was singing."
+          },
+          {
+            "key": "B",
+            "text": "Oliver was screaming."
+          },
+          {
+            "key": "C",
+            "text": "Oliver was stealing food."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who did Molly think they should try the Amazing Attitude Adjuster on?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Iggy"
+          },
+          {
+            "key": "B",
+            "text": "Oliver"
+          },
+          {
+            "key": "C",
+            "text": "Jenny"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What made Iggy feel better?",
+        "options": [
+          {
+            "key": "A",
+            "text": "playing with his invention"
+          },
+          {
+            "key": "B",
+            "text": "huddling in front of the fire"
+          },
+          {
+            "key": "C",
+            "text": "listening to Oliver complain"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Oliver say about his shoes getting burned and the furnace breaking?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He said it was fun."
+          },
+          {
+            "key": "B",
+            "text": "He said it was terrible."
+          },
+          {
+            "key": "C",
+            "text": "He said it was sad."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What happened with Iggy's invention?",
+        "options": [
+          {
+            "key": "A",
+            "text": "It got an honorable mention."
+          },
+          {
+            "key": "B",
+            "text": "It got into the Inventors' Hall of Fame."
+          },
+          {
+            "key": "C",
+            "text": "It got lost outside."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "41": {
+    "episodeId": 41,
+    "title": "Molly's Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was on Molly's headband?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a pink flower"
+          },
+          {
+            "key": "B",
+            "text": "a red leaf"
+          },
+          {
+            "key": "C",
+            "text": "a purple star"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "From whom did Molly hear the phrase \"fallow time\"?",
+        "options": [
+          {
+            "key": "A",
+            "text": "her father"
+          },
+          {
+            "key": "B",
+            "text": "Iggy's mom"
+          },
+          {
+            "key": "C",
+            "text": "Mrs. Romano"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Evan do to Molly's flower?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He stepped on it."
+          },
+          {
+            "key": "B",
+            "text": "He knocked it off her head."
+          },
+          {
+            "key": "C",
+            "text": "He ate it."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was the book Mrs. Romano was reading about?",
+        "options": [
+          {
+            "key": "A",
+            "text": "aliens in a zoo"
+          },
+          {
+            "key": "B",
+            "text": "animals in space"
+          },
+          {
+            "key": "C",
+            "text": "people in a park"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Mrs. Romano lose?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She lost her glasses."
+          },
+          {
+            "key": "B",
+            "text": "She lost her headband."
+          },
+          {
+            "key": "C",
+            "text": "She lost her flower."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "42": {
+    "episodeId": 42,
+    "title": "The Bumpy Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What were all the kids excited about?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the bumpy slide"
+          },
+          {
+            "key": "B",
+            "text": "Iggy's invention"
+          },
+          {
+            "key": "C",
+            "text": "Molly's flower"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why didn't Iggy and Molly run around at recess?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They were waiting in line for the bumpy slide."
+          },
+          {
+            "key": "B",
+            "text": "They were too busy talking about inventions."
+          },
+          {
+            "key": "C",
+            "text": "Iggy hurt his leg and couldn't run."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who is Mr. Bright?",
+        "options": [
+          {
+            "key": "A",
+            "text": "an inventor"
+          },
+          {
+            "key": "B",
+            "text": "a teacher"
+          },
+          {
+            "key": "C",
+            "text": "a truck driver"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Whose friend is moving away?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Jenny's friend"
+          },
+          {
+            "key": "B",
+            "text": "Josh's friend"
+          },
+          {
+            "key": "C",
+            "text": "Molly's friend"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Jenny trip over?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a dog's leash"
+          },
+          {
+            "key": "B",
+            "text": "a small cat"
+          },
+          {
+            "key": "C",
+            "text": "Iggy's foot"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "43": {
+    "episodeId": 43,
+    "title": "Jenny Takes Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What happened to Jenny when she tripped?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She skinned her knee."
+          },
+          {
+            "key": "B",
+            "text": "She cut her elbow."
+          },
+          {
+            "key": "C",
+            "text": "She broke her foot."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Tate doing when Iggy got home?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He was using the computer."
+          },
+          {
+            "key": "B",
+            "text": "He was helping to make dinner."
+          },
+          {
+            "key": "C",
+            "text": "He was watching TV."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy realize?",
+        "options": [
+          {
+            "key": "A",
+            "text": "His mom never loses her glasses."
+          },
+          {
+            "key": "B",
+            "text": "His brother had new glasses."
+          },
+          {
+            "key": "C",
+            "text": "He couldn't find Molly's flower."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Iggy hide his mom's glasses?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He wanted to test his invention."
+          },
+          {
+            "key": "B",
+            "text": "He wanted to make her mad."
+          },
+          {
+            "key": "C",
+            "text": "He wanted to find out if she could see without them."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Iggy put his mom's glasses?",
+        "options": [
+          {
+            "key": "A",
+            "text": "on a chair"
+          },
+          {
+            "key": "B",
+            "text": "under a bed"
+          },
+          {
+            "key": "C",
+            "text": "on a table"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "44": {
+    "episodeId": 44,
+    "title": "Iggy's New Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What happened when Mrs. Romano fed the fish?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The flower fell in the water."
+          },
+          {
+            "key": "B",
+            "text": "The fish tank fell over."
+          },
+          {
+            "key": "C",
+            "text": "Mrs. Romano got splashed."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did they dry the flower?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They put it on a windowsill."
+          },
+          {
+            "key": "B",
+            "text": "They put it outside in the sun."
+          },
+          {
+            "key": "C",
+            "text": "They put it in the dryer."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the flower stem get stuck in?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Ruby's sweater"
+          },
+          {
+            "key": "B",
+            "text": "Lauren's shirt"
+          },
+          {
+            "key": "C",
+            "text": "Kristin's hair"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did everyone write down for Mr. Bright?",
+        "options": [
+          {
+            "key": "A",
+            "text": "invention ideas"
+          },
+          {
+            "key": "B",
+            "text": "story ideas"
+          },
+          {
+            "key": "C",
+            "text": "math problems"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Molly write about?",
+        "options": [
+          {
+            "key": "A",
+            "text": "using socks for hand-warmers"
+          },
+          {
+            "key": "B",
+            "text": "using socks to find glasses"
+          },
+          {
+            "key": "C",
+            "text": "using socks to feed fish"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "45": {
+    "episodeId": 45,
+    "title": "Jenny's Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How were the kids in line for the slide acting?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They were wild."
+          },
+          {
+            "key": "B",
+            "text": "They were calm."
+          },
+          {
+            "key": "C",
+            "text": "They were asleep."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Jenny busy last night?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She was studying for two tests."
+          },
+          {
+            "key": "B",
+            "text": "She was out at a restaurant."
+          },
+          {
+            "key": "C",
+            "text": "She was getting ready for a party."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Mr. Chen upset?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Jenny failed her spelling test."
+          },
+          {
+            "key": "B",
+            "text": "Jenny lost her books."
+          },
+          {
+            "key": "C",
+            "text": "Jenny didn't do her homework."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Mr. Chen practicing?",
+        "options": [
+          {
+            "key": "A",
+            "text": "cutting people in half"
+          },
+          {
+            "key": "B",
+            "text": "ripping books in half"
+          },
+          {
+            "key": "C",
+            "text": "making chickens disappear"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Molly want to do to Jenny?",
+        "options": [
+          {
+            "key": "A",
+            "text": "hypnotize her"
+          },
+          {
+            "key": "B",
+            "text": "help her study"
+          },
+          {
+            "key": "C",
+            "text": "make her dinner"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "46": {
+    "episodeId": 46,
+    "title": "Right Under Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy swing in front of Jenny?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a necklace"
+          },
+          {
+            "key": "B",
+            "text": "a bracelet"
+          },
+          {
+            "key": "C",
+            "text": "a string"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the swinging heart do to Jenny's eyes?",
+        "options": [
+          {
+            "key": "A",
+            "text": "It made them blurry."
+          },
+          {
+            "key": "B",
+            "text": "It made them focus."
+          },
+          {
+            "key": "C",
+            "text": "It swung into them."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who was pushing and shoving?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the kids in line for the slide"
+          },
+          {
+            "key": "B",
+            "text": "Iggy's friends"
+          },
+          {
+            "key": "C",
+            "text": "the kids in Mrs. Romano's class"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Molly say Jenny's hair clip was?",
+        "options": [
+          {
+            "key": "A",
+            "text": "right under her nose"
+          },
+          {
+            "key": "B",
+            "text": "right behind the door"
+          },
+          {
+            "key": "C",
+            "text": "right above her head"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the people in the bakery have?",
+        "options": [
+          {
+            "key": "A",
+            "text": "numbered tickets"
+          },
+          {
+            "key": "B",
+            "text": "lots of money"
+          },
+          {
+            "key": "C",
+            "text": "fancy hats"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "47": {
+    "episodeId": 47,
+    "title": "The Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What inspired Iggy's new invention?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the ticket machine at the bakery"
+          },
+          {
+            "key": "B",
+            "text": "tickets for movies at the theater"
+          },
+          {
+            "key": "C",
+            "text": "chocolate chip cookies at the bakery"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Josh hear Mr. Dalmati say?",
+        "options": [
+          {
+            "key": "A",
+            "text": "No one was getting much exercise at recess."
+          },
+          {
+            "key": "B",
+            "text": "Kids were running around too much."
+          },
+          {
+            "key": "C",
+            "text": "The bumpy slide was too dangerous."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who baked cookies?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Lucy"
+          },
+          {
+            "key": "B",
+            "text": "Iggy's mom"
+          },
+          {
+            "key": "C",
+            "text": "Josh"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Iggy want to buy cheap toys?",
+        "options": [
+          {
+            "key": "A",
+            "text": "so kids could play with them while waiting for the slide"
+          },
+          {
+            "key": "B",
+            "text": "so he could play with them while calling out numbers"
+          },
+          {
+            "key": "C",
+            "text": "so kids could play with them during class"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Iggy buy two bags?",
+        "options": [
+          {
+            "key": "A",
+            "text": "One was for toys, and the other was for tickets."
+          },
+          {
+            "key": "B",
+            "text": "One was for new toys, and the other was for broken toys."
+          },
+          {
+            "key": "C",
+            "text": "One was for new tickets, and the other was for used tickets."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "48": {
+    "episodeId": 48,
+    "title": "Me, Iggy, Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Mrs. Romano think of Iggy's invention?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She said it sounded like a great idea."
+          },
+          {
+            "key": "B",
+            "text": "She said it was a terrible idea."
+          },
+          {
+            "key": "C",
+            "text": "She said he can't use it."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why could kids go on the slide without waiting long?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Only three numbers were called at a time."
+          },
+          {
+            "key": "B",
+            "text": "Most kids chose not to go on it."
+          },
+          {
+            "key": "C",
+            "text": "Mr. Dalmati made the line go fast."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy do after recess?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He wrote about his Pick-a-Number invention."
+          },
+          {
+            "key": "B",
+            "text": "He bought more toys for the invention."
+          },
+          {
+            "key": "C",
+            "text": "He wrote extra tickets for the invention."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Jenny upset?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She got a D on her math test."
+          },
+          {
+            "key": "B",
+            "text": "She didn't get a turn calling out numbers."
+          },
+          {
+            "key": "C",
+            "text": "She couldn't think of an idea for an invention."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What does Iggy pretend?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He pretends that the stars are his friends."
+          },
+          {
+            "key": "B",
+            "text": "He pretends that his friends traveled in space."
+          },
+          {
+            "key": "C",
+            "text": "He pretends that he can visit the stars."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "49": {
+    "episodeId": 49,
+    "title": "Right Under Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy have when he woke up the next morning?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the answer to Jenny's problem"
+          },
+          {
+            "key": "B",
+            "text": "a bad stomachache"
+          },
+          {
+            "key": "C",
+            "text": "an idea for another great invention"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Jenny get a few months ago?",
+        "options": [
+          {
+            "key": "A",
+            "text": "new glasses"
+          },
+          {
+            "key": "B",
+            "text": "new shoes"
+          },
+          {
+            "key": "C",
+            "text": "new books"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Jenny and Sara take off their glasses when saying good-bye?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They were both crying."
+          },
+          {
+            "key": "B",
+            "text": "They wanted to compare them."
+          },
+          {
+            "key": "C",
+            "text": "They couldn't see with them."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Mr. Chen ask Jenny to read?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a newspaper"
+          },
+          {
+            "key": "B",
+            "text": "a book"
+          },
+          {
+            "key": "C",
+            "text": "a sign"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Mr. Bright invent?",
+        "options": [
+          {
+            "key": "A",
+            "text": "an umbrella for a dog"
+          },
+          {
+            "key": "B",
+            "text": "a jacket for a cat"
+          },
+          {
+            "key": "C",
+            "text": "an umbrella for big people"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "50": {
+    "episodeId": 50,
+    "title": "Mr. Bright Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who did Mr. Bright choose as a winner?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Evan"
+          },
+          {
+            "key": "B",
+            "text": "Iggy"
+          },
+          {
+            "key": "C",
+            "text": "Molly"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Evan thank Iggy?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Iggy inspired Evan to invent something."
+          },
+          {
+            "key": "B",
+            "text": "Iggy fed Evan's fish for him."
+          },
+          {
+            "key": "C",
+            "text": "Iggy picked Evan to be the winner."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Mr. Bright say about Iggy's Fabulous Glasses-Finder?",
+        "options": [
+          {
+            "key": "A",
+            "text": "It wasn't easy to use."
+          },
+          {
+            "key": "B",
+            "text": "It was a bad idea."
+          },
+          {
+            "key": "C",
+            "text": "It was very easy to use."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy's invention work well on?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a bicycle"
+          },
+          {
+            "key": "B",
+            "text": "a pair of shoes"
+          },
+          {
+            "key": "C",
+            "text": "small objects"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What happens sometimes when someone invents something?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Someone else finds another use for it."
+          },
+          {
+            "key": "B",
+            "text": "Someone else turns it into a bicycle."
+          },
+          {
+            "key": "C",
+            "text": "Someone else puts a flower on it."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "51": {
+    "episodeId": 51,
+    "title": "The Hottest Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why couldn't Iggy get an air conditioner in his room?",
+        "options": [
+          {
+            "key": "A",
+            "text": "His room was too small."
+          },
+          {
+            "key": "B",
+            "text": "His mom couldn't afford it."
+          },
+          {
+            "key": "C",
+            "text": "He couldn't lift the air conditioner."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Tate say about Iggy's brain?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He said it was melting."
+          },
+          {
+            "key": "B",
+            "text": "He said it was too small."
+          },
+          {
+            "key": "C",
+            "text": "He said it was growing bigger."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Caswell ask Iggy if he was going swimming?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Iggy was wearing a bathing suit."
+          },
+          {
+            "key": "B",
+            "text": "Iggy had a beach towel."
+          },
+          {
+            "key": "C",
+            "text": "Iggy was walking toward the pool."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy get for Bunch?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a bowl of water"
+          },
+          {
+            "key": "B",
+            "text": "a can of dog food"
+          },
+          {
+            "key": "C",
+            "text": "a toy to play with"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Iggy going to put an ice pack on his head?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He needed to cool off his brain."
+          },
+          {
+            "key": "B",
+            "text": "He had a bump on his head."
+          },
+          {
+            "key": "C",
+            "text": "He had a bad fever."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "52": {
+    "episodeId": 52,
+    "title": "An Icy Idea Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Whose ice pack was it?",
+        "options": [
+          {
+            "key": "A",
+            "text": "It was Tate's ice pack."
+          },
+          {
+            "key": "B",
+            "text": "It was Iggy's ice pack."
+          },
+          {
+            "key": "C",
+            "text": "It was Josh's ice pack."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Josh think his dad wouldn't let him go to the movies?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Josh went to the movies last week."
+          },
+          {
+            "key": "B",
+            "text": "His dad never let him go to the movies."
+          },
+          {
+            "key": "C",
+            "text": "Jenny was scared of movies."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Iggy going to see if anyone needed help with chores?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He needed money for the movies."
+          },
+          {
+            "key": "B",
+            "text": "He would stay cool if he did chores."
+          },
+          {
+            "key": "C",
+            "text": "His mom told him to see if anyone needed help."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the kids do for Mr. Calabria?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They swept the front steps."
+          },
+          {
+            "key": "B",
+            "text": "They scrubbed his floor."
+          },
+          {
+            "key": "C",
+            "text": "They walked his dog."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How much money did they earn?",
+        "options": [
+          {
+            "key": "A",
+            "text": "enough for two people to go to the movies"
+          },
+          {
+            "key": "B",
+            "text": "enough for everyone in the building to go to the movies"
+          },
+          {
+            "key": "C",
+            "text": "enough to buy a new air conditioner"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "53": {
+    "episodeId": 53,
+    "title": "Woolly's Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was wrong with the bus?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Its air conditioner was broken."
+          },
+          {
+            "key": "B",
+            "text": "Its tires were flat."
+          },
+          {
+            "key": "C",
+            "text": "Its air conditioner was too powerful."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was the movie about?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a girl in Alaska"
+          },
+          {
+            "key": "B",
+            "text": "people at the beach"
+          },
+          {
+            "key": "C",
+            "text": "a boy in a jungle"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the men need to do to Iggy's building?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They had to put in a lot of new wires."
+          },
+          {
+            "key": "B",
+            "text": "They had to put in new air conditioners."
+          },
+          {
+            "key": "C",
+            "text": "They had to put in new pipes."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Josh tell Molly to throw away her ice pop?",
+        "options": [
+          {
+            "key": "A",
+            "text": "A bee was chasing her."
+          },
+          {
+            "key": "B",
+            "text": "She didn't like it."
+          },
+          {
+            "key": "C",
+            "text": "It was too cold for her."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Molly stumble and fall?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She jumped down the steps."
+          },
+          {
+            "key": "B",
+            "text": "She tripped on a step."
+          },
+          {
+            "key": "C",
+            "text": "She slid on her ice pop."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "54": {
+    "episodeId": 54,
+    "title": "Molly's Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Molly's mom say when Molly tried to get up?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She told Molly not to stand on her foot."
+          },
+          {
+            "key": "B",
+            "text": "She told Molly to stop a taxi."
+          },
+          {
+            "key": "C",
+            "text": "She told Molly to take Caswell to the hospital."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Aunt Lydia give Tufty to Josh and Jenny?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She couldn't take him to California."
+          },
+          {
+            "key": "B",
+            "text": "He was too noisy and poorly-behaved."
+          },
+          {
+            "key": "C",
+            "text": "She didn't get along with him anymore."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "When can Molly stop wearing the boot?",
+        "options": [
+          {
+            "key": "A",
+            "text": "when her foot is healed"
+          },
+          {
+            "key": "B",
+            "text": "when she gets tired of wearing it"
+          },
+          {
+            "key": "C",
+            "text": "when someone else needs it"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What will happen if Molly's foot doesn't heal?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She'll need an operation."
+          },
+          {
+            "key": "B",
+            "text": "She'll need a cast."
+          },
+          {
+            "key": "C",
+            "text": "She'll need a new foot."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What will help Molly's foot to heal more quickly?",
+        "options": [
+          {
+            "key": "A",
+            "text": "keeping her spirits up"
+          },
+          {
+            "key": "B",
+            "text": "scratching her foot"
+          },
+          {
+            "key": "C",
+            "text": "worrying about her foot"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "55": {
+    "episodeId": 55,
+    "title": "Josh's Idea Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Iggy able to use his fan again?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The fan ran on batteries."
+          },
+          {
+            "key": "B",
+            "text": "The power was back on."
+          },
+          {
+            "key": "C",
+            "text": "He got a new motor for it."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Molly sad?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Her whole summer was ruined."
+          },
+          {
+            "key": "B",
+            "text": "Her foot still hurt a lot."
+          },
+          {
+            "key": "C",
+            "text": "She didn't like the color of the boot."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Josh and Jenny do for Molly?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They gave Tufty to her."
+          },
+          {
+            "key": "B",
+            "text": "They made dinner for her."
+          },
+          {
+            "key": "C",
+            "text": "They bought her a new ice pop."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is Molly's mom NOT allergic to?",
+        "options": [
+          {
+            "key": "A",
+            "text": "birds"
+          },
+          {
+            "key": "B",
+            "text": "dogs"
+          },
+          {
+            "key": "C",
+            "text": "cats"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What type of sound did Tufty make?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the sound of a subway"
+          },
+          {
+            "key": "B",
+            "text": "the sound of a car horn"
+          },
+          {
+            "key": "C",
+            "text": "the sound of a cow"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "56": {
+    "episodeId": 56,
+    "title": "Frying Eggs Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Tufty learn to make subway sounds?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Aunt Lydia lived near a subway."
+          },
+          {
+            "key": "B",
+            "text": "Aunt Lydia took him on the subway."
+          },
+          {
+            "key": "C",
+            "text": "Aunt Lydia was a subway operator."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Molly's mom take out of the cooler?",
+        "options": [
+          {
+            "key": "A",
+            "text": "eggs"
+          },
+          {
+            "key": "B",
+            "text": "carrots"
+          },
+          {
+            "key": "C",
+            "text": "soda"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Caswell dropping eggs out of the window?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He wanted to fry them on the sidewalk."
+          },
+          {
+            "key": "B",
+            "text": "He wanted to get rid of them."
+          },
+          {
+            "key": "C",
+            "text": "He wanted to see if they'd break."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who helped the kids clean up the eggs?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Mr. Calabria"
+          },
+          {
+            "key": "B",
+            "text": "Molly's mom"
+          },
+          {
+            "key": "C",
+            "text": "Iggy's mom"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where was the train whistle coming from?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Molly's apartment"
+          },
+          {
+            "key": "B",
+            "text": "the train station"
+          },
+          {
+            "key": "C",
+            "text": "someone's TV set"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "57": {
+    "episodeId": 57,
+    "title": "Iggy to the Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Molly knock on Iggy's door the next morning?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She had a big problem."
+          },
+          {
+            "key": "B",
+            "text": "She was bored."
+          },
+          {
+            "key": "C",
+            "text": "She needed to borrow something."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Tufty tired from?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He was tired from making loud sounds."
+          },
+          {
+            "key": "B",
+            "text": "He was tired from flying around."
+          },
+          {
+            "key": "C",
+            "text": "He was tired from talking and singing."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What were all the neighbors doing?",
+        "options": [
+          {
+            "key": "A",
+            "text": "complaining to Molly's mom"
+          },
+          {
+            "key": "B",
+            "text": "asking to borrow Tufty"
+          },
+          {
+            "key": "C",
+            "text": "sending flowers to Molly"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Bunch do whenever Tufty made the train whistle noise?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He howled."
+          },
+          {
+            "key": "B",
+            "text": "He hid under the bed."
+          },
+          {
+            "key": "C",
+            "text": "He scratched the door."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Iggy need to go into solitary confinement?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He needed to be alone to think."
+          },
+          {
+            "key": "B",
+            "text": "He was in trouble."
+          },
+          {
+            "key": "C",
+            "text": "He needed to get some sleep."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "58": {
+    "episodeId": 58,
+    "title": "Teaching Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why couldn't anyone turn on air conditioners yet?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The men needed to put in special wiring."
+          },
+          {
+            "key": "B",
+            "text": "The building was already too cold."
+          },
+          {
+            "key": "C",
+            "text": "They needed to save electricity."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Molly make the recording?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She was Tufty's owner."
+          },
+          {
+            "key": "B",
+            "text": "She had the nicest voice."
+          },
+          {
+            "key": "C",
+            "text": "It was her computer."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Molly wake up Tufty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They wanted him to hear the recording."
+          },
+          {
+            "key": "B",
+            "text": "It was time for his lunch."
+          },
+          {
+            "key": "C",
+            "text": "They wanted to hear the subway sound."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What kind of message did Molly record?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a calming message"
+          },
+          {
+            "key": "B",
+            "text": "an exciting message"
+          },
+          {
+            "key": "C",
+            "text": "a frightening message"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Tufty do when he woke up?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He made the sound of a car horn."
+          },
+          {
+            "key": "B",
+            "text": "He made a train whistle sound."
+          },
+          {
+            "key": "C",
+            "text": "He talked about being calm."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "59": {
+    "episodeId": 59,
+    "title": "The Magic Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What were the two boys squirting each other with?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a hose"
+          },
+          {
+            "key": "B",
+            "text": "water pistols"
+          },
+          {
+            "key": "C",
+            "text": "spray bottles"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Mrs. Carroll giving away the DVDs?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Her son didn't watch them anymore."
+          },
+          {
+            "key": "B",
+            "text": "They were all broken."
+          },
+          {
+            "key": "C",
+            "text": "She didn't have room for them."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Iggy think the movie would do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "keep Tufty quiet"
+          },
+          {
+            "key": "B",
+            "text": "keep Tufty awake"
+          },
+          {
+            "key": "C",
+            "text": "keep Tufty excited"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the movie have?",
+        "options": [
+          {
+            "key": "A",
+            "text": "lots of great songs"
+          },
+          {
+            "key": "B",
+            "text": "lots of funny jokes"
+          },
+          {
+            "key": "C",
+            "text": "lots of cool characters"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Tufty get out of the apartment?",
+        "options": [
+          {
+            "key": "A",
+            "text": "through Iggy's skylight"
+          },
+          {
+            "key": "B",
+            "text": "through the living room window"
+          },
+          {
+            "key": "C",
+            "text": "through the front door"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "60": {
+    "episodeId": 60,
+    "title": "The End of Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Molly think she'd never see Tufty again?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Nobody would know Tufty belonged to her."
+          },
+          {
+            "key": "B",
+            "text": "Tufty flew far away from the building."
+          },
+          {
+            "key": "C",
+            "text": "Somebody else would want to keep him instead."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why didn't Molly go to the roof?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Her mom didn't want her to go."
+          },
+          {
+            "key": "B",
+            "text": "She was too scared of heights."
+          },
+          {
+            "key": "C",
+            "text": "She was too tired to climb."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did a policewoman come to the building?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She was returning Tufty."
+          },
+          {
+            "key": "B",
+            "text": "There was a robbery."
+          },
+          {
+            "key": "C",
+            "text": "She was looking for Tufty too."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did the policewoman know where Tufty lived?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Tufty sang Molly's phone number."
+          },
+          {
+            "key": "B",
+            "text": "She recognized his subway sounds."
+          },
+          {
+            "key": "C",
+            "text": "Mr. Calabria told her where the bird lived."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Tufty like to peck at?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Molly's boot"
+          },
+          {
+            "key": "B",
+            "text": "Molly's head"
+          },
+          {
+            "key": "C",
+            "text": "Molly's door"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  }
+}

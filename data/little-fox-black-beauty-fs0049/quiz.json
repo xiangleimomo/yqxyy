@@ -1,1 +1,5847 @@
-{}
+{
+  "1": {
+    "episodeId": 1,
+    "title": "My First Home Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What is the main idea?",
+        "options": [
+          {
+            "key": "A",
+            "text": "A horse fights with his mother."
+          },
+          {
+            "key": "B",
+            "text": "A horse learns about racing."
+          },
+          {
+            "key": "C",
+            "text": "A horse remembers his childhood. D. A horse thinks about the future."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is true about the horse?",
+        "options": [
+          {
+            "key": "A",
+            "text": "His favorite human is Dick."
+          },
+          {
+            "key": "B",
+            "text": "He likes to play with the other colts."
+          },
+          {
+            "key": "C",
+            "text": "He is Farmer Grey's only horse. D. He loves hunting."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where was the horse born?",
+        "options": [
+          {
+            "key": "A",
+            "text": "in a barn"
+          },
+          {
+            "key": "B",
+            "text": "in a field"
+          },
+          {
+            "key": "C",
+            "text": "on a boat D. in a house"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Duchess want her son to be?",
+        "options": [
+          {
+            "key": "A",
+            "text": "gentle and good"
+          },
+          {
+            "key": "B",
+            "text": "strong and fierce"
+          },
+          {
+            "key": "C",
+            "text": "fast and bold D. carefree and wild"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Dick do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He sang to the horses."
+          },
+          {
+            "key": "B",
+            "text": "He trained the horses."
+          },
+          {
+            "key": "C",
+            "text": "He threw things at the horses. D. He brought the horses apples."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did the hounds howl?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The horses scared them."
+          },
+          {
+            "key": "B",
+            "text": "Dick hurt them."
+          },
+          {
+            "key": "C",
+            "text": "Wolves were near. D. There was a hunt."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who died while crossing the stream?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Farmer Grey"
+          },
+          {
+            "key": "B",
+            "text": "George Gordon"
+          },
+          {
+            "key": "C",
+            "text": "Dick D. Duchess"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "2": {
+    "episodeId": 2,
+    "title": "Being Trained Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What could be another title?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The Scary Train"
+          },
+          {
+            "key": "B",
+            "text": "Training Days"
+          },
+          {
+            "key": "C",
+            "text": "The Training Failure D. The Terrible Trainer"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The horse never got used to trains."
+          },
+          {
+            "key": "B",
+            "text": "Squire Gordon helped with the training."
+          },
+          {
+            "key": "C",
+            "text": "The horse couldn't get used to the crupper. D. Squire Gordon thought the horse was perfect."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "When did Squire Gordon want the horse by?",
+        "options": [
+          {
+            "key": "A",
+            "text": "after training"
+          },
+          {
+            "key": "B",
+            "text": "before the horse was born"
+          },
+          {
+            "key": "C",
+            "text": "in ten years D. during training"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Farmer Grey help the horse like training?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He designed special equipment for the horse."
+          },
+          {
+            "key": "B",
+            "text": "He fed the horse only apples."
+          },
+          {
+            "key": "C",
+            "text": "He gave the horse grain and patted him. D. He let the horse run free in the fields."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Farmer Grey put the crupper?",
+        "options": [
+          {
+            "key": "A",
+            "text": "around the horse's neck"
+          },
+          {
+            "key": "B",
+            "text": "under the horse's tail"
+          },
+          {
+            "key": "C",
+            "text": "in the horse's mouth D. on the horse's hoof"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Farmer Grey put the horse in a field by trains?",
+        "options": [
+          {
+            "key": "A",
+            "text": "so the horse would learn not to go near trains"
+          },
+          {
+            "key": "B",
+            "text": "so the horse could be admired by passengers"
+          },
+          {
+            "key": "C",
+            "text": "so the horse wouldn't be afraid of sheep and cows D. so the horse wouldn't be afraid of trains"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did the horse's mother want the horse to behave well?",
+        "options": [
+          {
+            "key": "A",
+            "text": "so he would never be sold"
+          },
+          {
+            "key": "B",
+            "text": "so other horses would be jealous"
+          },
+          {
+            "key": "C",
+            "text": "so humans would treat him kindly D. so he could be sold to a rich man"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "3": {
+    "episodeId": 3,
+    "title": "New Friends and a New Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What could be another title?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Ginger Makes a Friend"
+          },
+          {
+            "key": "B",
+            "text": "Squire Gordon's Story"
+          },
+          {
+            "key": "C",
+            "text": "A Sad Farewell D. Black Beauty at Birtwick Park"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who gives Black Beauty his name?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Farmer Grey"
+          },
+          {
+            "key": "B",
+            "text": "Squire Gordon and his wife"
+          },
+          {
+            "key": "C",
+            "text": "Merrylegs and Ginger D. John"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who brought Black Beauty to Birtwick Park?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Squire Gordon"
+          },
+          {
+            "key": "B",
+            "text": "Merrylegs"
+          },
+          {
+            "key": "C",
+            "text": "James D. Farmer Grey"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why didn't Merrylegs like living next to Ginger?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She smelled bad."
+          },
+          {
+            "key": "B",
+            "text": "She bit."
+          },
+          {
+            "key": "C",
+            "text": "She snored. D. She talked a lot."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Ginger upset with Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He was in her old stall."
+          },
+          {
+            "key": "B",
+            "text": "He ate her grain."
+          },
+          {
+            "key": "C",
+            "text": "He was the squire's new favorite. D. He saw her kick Merrylegs."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Merrylegs say about Ginger?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She was kind to children."
+          },
+          {
+            "key": "B",
+            "text": "She had a terrible disease."
+          },
+          {
+            "key": "C",
+            "text": "She had been treated badly. D. She was an ugly horse."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did John think of Black Beauty after riding him?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He was a fine horse."
+          },
+          {
+            "key": "B",
+            "text": "He needed more training."
+          },
+          {
+            "key": "C",
+            "text": "He was too big. D. He was too young."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "4": {
+    "episodeId": 4,
+    "title": "Getting Used to Things Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What happens in this chapter?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Black Beauty gets in trouble at Birtwick Park."
+          },
+          {
+            "key": "B",
+            "text": "Black Beauty learns how to be a racehorse."
+          },
+          {
+            "key": "C",
+            "text": "Black Beauty has to stop working. D. Black Beauty adjusts to life at Birtwick Park."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which of the following is true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Black Beauty doesn't like to be in the orchard."
+          },
+          {
+            "key": "B",
+            "text": "James, John, and the squire treat Black Beauty badly."
+          },
+          {
+            "key": "C",
+            "text": "Ginger is a lazy worker. D. Black Beauty and Ginger become friends."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who was Black Beauty hitched with?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Justice"
+          },
+          {
+            "key": "B",
+            "text": "Sir Oliver"
+          },
+          {
+            "key": "C",
+            "text": "Ginger D. Merrylegs"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the squire's daughters love to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "ride Merrylegs"
+          },
+          {
+            "key": "B",
+            "text": "play with Ginger"
+          },
+          {
+            "key": "C",
+            "text": "stand in the orchard D. talk to Black Beauty"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was the hardest change for Black Beauty at Birtwick Park?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He spent most of the time standing in his stall."
+          },
+          {
+            "key": "B",
+            "text": "He needed to stay outside all the time."
+          },
+          {
+            "key": "C",
+            "text": "He wasn't allowed to work with other horses. D. He was forced to eat different kinds of food."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did John do for Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He gave Black Beauty a massage."
+          },
+          {
+            "key": "B",
+            "text": "He took Black Beauty out for exercise."
+          },
+          {
+            "key": "C",
+            "text": "He fed Black Beauty apples. D. He let Black Beauty rest in his stall."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Black Beauty get to know the others better?",
+        "options": [
+          {
+            "key": "A",
+            "text": "sharing his food with them"
+          },
+          {
+            "key": "B",
+            "text": "exercising with them"
+          },
+          {
+            "key": "C",
+            "text": "talking with them in the orchard D. visiting their stalls"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "5": {
+    "episodeId": 5,
+    "title": "Ginger's Story Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is true about Ginger?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She had kind and loving masters."
+          },
+          {
+            "key": "B",
+            "text": "She liked living in the city better."
+          },
+          {
+            "key": "C",
+            "text": "She had a fun and exciting life. D. She was mistreated by humans."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where are Ginger and Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the orchard"
+          },
+          {
+            "key": "B",
+            "text": "the stable"
+          },
+          {
+            "key": "C",
+            "text": "Farmer Grey's pasture D. London"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How was Ginger's life different from Black Beauty's?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Black Beauty had a big family and Ginger had a small one."
+          },
+          {
+            "key": "B",
+            "text": "Ginger was treated well and Black Beauty wasn't."
+          },
+          {
+            "key": "C",
+            "text": "Black Beauty was treated well and Ginger wasn't. D. Ginger lived in the country and Black Beauty lived in the city."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did the men treat Ginger during her training?",
+        "options": [
+          {
+            "key": "A",
+            "text": "jealously"
+          },
+          {
+            "key": "B",
+            "text": "roughly"
+          },
+          {
+            "key": "C",
+            "text": "kindly D. gently"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why didn't Ginger like the checkrein?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Her driver put it under her tail."
+          },
+          {
+            "key": "B",
+            "text": "It made her legs hurt."
+          },
+          {
+            "key": "C",
+            "text": "It made her hold up her head. D. Her driver hit her with it."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Ginger do to humans after a while?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She bit them."
+          },
+          {
+            "key": "B",
+            "text": "She jumped on them."
+          },
+          {
+            "key": "C",
+            "text": "She licked them. D. She pushed them."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How was Ginger at Birtwick Park?",
+        "options": [
+          {
+            "key": "A",
+            "text": "calmer"
+          },
+          {
+            "key": "B",
+            "text": "wilder"
+          },
+          {
+            "key": "C",
+            "text": "angrier D. sleepier"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "6": {
+    "episodeId": 6,
+    "title": "A Lesson From Merrylegs Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What lesson does Merrylegs teach the boys?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Only one person at a time should ride a horse or pony."
+          },
+          {
+            "key": "B",
+            "text": "Orchards are not good places to ride a horse or pony."
+          },
+          {
+            "key": "C",
+            "text": "Boys should always let girls ride first. D. Riders shouldn't treat their horses and ponies roughly."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "James was angry with Merrylegs."
+          },
+          {
+            "key": "B",
+            "text": "The horses listen to Merrylegs' story in the stable."
+          },
+          {
+            "key": "C",
+            "text": "Merrlylegs kicked the squire's daughters. D. The squire's daughters made a whip."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How does Merrylegs treat Jessie and Flora?",
+        "options": [
+          {
+            "key": "A",
+            "text": "angrily"
+          },
+          {
+            "key": "B",
+            "text": "coldly"
+          },
+          {
+            "key": "C",
+            "text": "lovingly D. roughly"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the boys do as they rode Merrylegs?",
+        "options": [
+          {
+            "key": "A",
+            "text": "whipped him with a stick"
+          },
+          {
+            "key": "B",
+            "text": "sang loudly in his ear"
+          },
+          {
+            "key": "C",
+            "text": "threw apples at him D. pulled out his hair"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Merrylegs teach the boys a lesson?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He kicked them."
+          },
+          {
+            "key": "B",
+            "text": "He jumped over fences."
+          },
+          {
+            "key": "C",
+            "text": "He ran as fast as he could. D. He tipped them off his back."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why does the squire trust Merrylegs?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Merrylegs doesn't have teeth to bite with."
+          },
+          {
+            "key": "B",
+            "text": "Merrylegs doesn't hurt the children."
+          },
+          {
+            "key": "C",
+            "text": "Merrylegs is smaller than a horse. D. Merrylegs can run very quickly."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did the horses at Birtwick Park feel about their home?",
+        "options": [
+          {
+            "key": "A",
+            "text": "happy"
+          },
+          {
+            "key": "B",
+            "text": "scared"
+          },
+          {
+            "key": "C",
+            "text": "angry D. nervous"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "7": {
+    "episodeId": 7,
+    "title": "Horse Talk and Human Talk Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What could be another title?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Ginger's Fear"
+          },
+          {
+            "key": "B",
+            "text": "Kindness to Animals"
+          },
+          {
+            "key": "C",
+            "text": "The Dreaded Blinkers D. Fashionable Mr. Sawyer"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Mr. Sawyer has never been to Birtwick Park."
+          },
+          {
+            "key": "B",
+            "text": "Sir Oliver can't flick away flies."
+          },
+          {
+            "key": "C",
+            "text": "Ginger is jealous of Black Beauty. D. The squire doesn't like checkreins."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who usually rode Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Flora"
+          },
+          {
+            "key": "B",
+            "text": "Jessie"
+          },
+          {
+            "key": "C",
+            "text": "the squire's wife D. the squire"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What happened to Sir Oliver's tail?",
+        "options": [
+          {
+            "key": "A",
+            "text": "It was cut off during a battle."
+          },
+          {
+            "key": "B",
+            "text": "His original owner cut it off."
+          },
+          {
+            "key": "C",
+            "text": "It was burned by a fire. D. Another horse bit it."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How do horses wear blinkers?",
+        "options": [
+          {
+            "key": "A",
+            "text": "over their backs"
+          },
+          {
+            "key": "B",
+            "text": "on their necks"
+          },
+          {
+            "key": "C",
+            "text": "on their heads D. under their tails"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the squire always try to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "follow the latest fashion"
+          },
+          {
+            "key": "B",
+            "text": "show off his horses to other people"
+          },
+          {
+            "key": "C",
+            "text": "make his horses go as fast as they could D. keep people from mistreating animals"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Mr. Sawyer beating his pony?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The pony made a wrong turn."
+          },
+          {
+            "key": "B",
+            "text": "The pony kicked the cart over."
+          },
+          {
+            "key": "C",
+            "text": "The pony was moving too fast. D. The pony kept biting Mr. Sawyer."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "8": {
+    "episodeId": 8,
+    "title": "Danger in the Storm Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What could be another title?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The Stable"
+          },
+          {
+            "key": "B",
+            "text": "The Bridge"
+          },
+          {
+            "key": "C",
+            "text": "The Fallen Tree D. The Toll Keeper"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Black Beauty was hitched to a cart."
+          },
+          {
+            "key": "B",
+            "text": "The storm got worse on the way home."
+          },
+          {
+            "key": "C",
+            "text": "The squire got hurt during the storm. D. Black Beauty got a treat at the end."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Black Beauty, John, and the squire go on a trip?",
+        "options": [
+          {
+            "key": "A",
+            "text": "John wanted to get more food for the horses."
+          },
+          {
+            "key": "B",
+            "text": "The squire had business to take care of."
+          },
+          {
+            "key": "C",
+            "text": "There was a storm at Birtwick Park. D. The squire wanted to sell Black Beauty."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Black Beauty do when the tree limb fell?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He stood still."
+          },
+          {
+            "key": "B",
+            "text": "He ran away."
+          },
+          {
+            "key": "C",
+            "text": "He fainted. D. He kicked."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why didn't Black Beauty want to cross the bridge?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He knew it was the wrong direction."
+          },
+          {
+            "key": "B",
+            "text": "He wanted to make the squire angry."
+          },
+          {
+            "key": "C",
+            "text": "He was afraid of the water. D. He knew something was wrong with it."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the toll keeper say was wrong with the bridge?",
+        "options": [
+          {
+            "key": "A",
+            "text": "It was struck by lightning."
+          },
+          {
+            "key": "B",
+            "text": "It was floating down the river."
+          },
+          {
+            "key": "C",
+            "text": "It was crowded with many people. D. It was broken in the middle."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How was Black Beauty when he returned to Birtwick Park?",
+        "options": [
+          {
+            "key": "A",
+            "text": "sad"
+          },
+          {
+            "key": "B",
+            "text": "tired"
+          },
+          {
+            "key": "C",
+            "text": "energetic D. angry"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "9": {
+    "episodeId": 9,
+    "title": "A Naughty Boy Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What is the main idea?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Boys should never ride ponies."
+          },
+          {
+            "key": "B",
+            "text": "Fathers should discipline their sons."
+          },
+          {
+            "key": "C",
+            "text": "People should treat animals kindly. D. Ponies should be ridden by older boys."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The boy's father became angry at John."
+          },
+          {
+            "key": "B",
+            "text": "The pony threw the boy into a hedge."
+          },
+          {
+            "key": "C",
+            "text": "The pony returned home without the boy. D. The boy asked John for help."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was the boy trying to make the pony do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "jump over a gate"
+          },
+          {
+            "key": "B",
+            "text": "run faster"
+          },
+          {
+            "key": "C",
+            "text": "go to Birtwick Park D. walk slowly"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why didn't John help the boy?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He didn't want to get hurt by the thorns."
+          },
+          {
+            "key": "B",
+            "text": "He wanted the boy to learn a lesson."
+          },
+          {
+            "key": "C",
+            "text": "He saw the boy's parents running to help. D. He didn't want to leave Black Beauty alone."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did John go after the pony ran away?",
+        "options": [
+          {
+            "key": "A",
+            "text": "to a hospital"
+          },
+          {
+            "key": "B",
+            "text": "to a nearby barn"
+          },
+          {
+            "key": "C",
+            "text": "to Birtwick Park D. to the boy's parents' house"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did John say about the boy to Farmer Bushby?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The boy was a fine rider."
+          },
+          {
+            "key": "B",
+            "text": "The boy was extremely hurt."
+          },
+          {
+            "key": "C",
+            "text": "The boy was mistreating the pony. D. The boy was on his way home."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who did John talk to when he returned home?",
+        "options": [
+          {
+            "key": "A",
+            "text": "James"
+          },
+          {
+            "key": "B",
+            "text": "the squire"
+          },
+          {
+            "key": "C",
+            "text": "Merrylegs D. the squire's wife"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "10": {
+    "episodeId": 10,
+    "title": "Changes Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What could be another title?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Trouble for Black Beauty"
+          },
+          {
+            "key": "B",
+            "text": "What Merrylegs Saw"
+          },
+          {
+            "key": "C",
+            "text": "A New Job for James D. The Carriage Ride"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where does the squire talk with John about James?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the squire's friend's house"
+          },
+          {
+            "key": "B",
+            "text": "the squire's brother's house"
+          },
+          {
+            "key": "C",
+            "text": "the carriage D. the stable yard"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the squire ask John about?",
+        "options": [
+          {
+            "key": "A",
+            "text": "James' education and wealth"
+          },
+          {
+            "key": "B",
+            "text": "James' work and character"
+          },
+          {
+            "key": "C",
+            "text": "James' family and past D. James' friends and hobbies"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was the squire so serious?",
+        "options": [
+          {
+            "key": "A",
+            "text": "to get John's honest thoughts"
+          },
+          {
+            "key": "B",
+            "text": "to make John scared"
+          },
+          {
+            "key": "C",
+            "text": "to gain John's respect D. to make John laugh"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was the letter about?",
+        "options": [
+          {
+            "key": "A",
+            "text": "James wanted to find another job."
+          },
+          {
+            "key": "B",
+            "text": "Someone gave James a lot of money."
+          },
+          {
+            "key": "C",
+            "text": "The squire's brother needed a groom. D. Someone said bad things about James."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Merrylegs figure out?",
+        "options": [
+          {
+            "key": "A",
+            "text": "James was leaving Birtwick Park soon."
+          },
+          {
+            "key": "B",
+            "text": "The squire was angry with James."
+          },
+          {
+            "key": "C",
+            "text": "John wasn't a good friend to James. D. Not many people liked James."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did James have to do before he left?",
+        "options": [
+          {
+            "key": "A",
+            "text": "apologize to people"
+          },
+          {
+            "key": "B",
+            "text": "learn how to drive a carriage"
+          },
+          {
+            "key": "C",
+            "text": "buy the squire a new horse D. improve his grooming skills"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "11": {
+    "episodeId": 11,
+    "title": "At the Hotel Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What could be another title?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Horse on Fire"
+          },
+          {
+            "key": "B",
+            "text": "The Smoking Groom"
+          },
+          {
+            "key": "C",
+            "text": "Black Beauty Messes Up D. In the Hotel Stable"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "James slept in the stable with the horses."
+          },
+          {
+            "key": "B",
+            "text": "The old man wasn't a good groom."
+          },
+          {
+            "key": "C",
+            "text": "Ginger was in the stall next to Black Beauty. D. The squire was traveling by himself."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How was James as a driver?",
+        "options": [
+          {
+            "key": "A",
+            "text": "impatient"
+          },
+          {
+            "key": "B",
+            "text": "thoughtful"
+          },
+          {
+            "key": "C",
+            "text": "inexperienced D. sad"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who groomed Black Beauty at the hotel?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the squire"
+          },
+          {
+            "key": "B",
+            "text": "the hotel groom"
+          },
+          {
+            "key": "C",
+            "text": "James D. John"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the hotel groom say about Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He was finely bred and kindly treated."
+          },
+          {
+            "key": "B",
+            "text": "He needed to be groomed better."
+          },
+          {
+            "key": "C",
+            "text": "He would make a good race horse. D. He needed a bigger stall."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Fowler bring into the stable?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a match"
+          },
+          {
+            "key": "B",
+            "text": "a pipe"
+          },
+          {
+            "key": "C",
+            "text": "a pile of hay D. a horse"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Black Beauty and Ginger cough during the night?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The hotel was on fire."
+          },
+          {
+            "key": "B",
+            "text": "Something smelled stinky."
+          },
+          {
+            "key": "C",
+            "text": "They caught a cold. D. There was a fire in the stable."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "12": {
+    "episodeId": 12,
+    "title": "Fire! Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What is the main topic?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a fire in the hotel stable"
+          },
+          {
+            "key": "B",
+            "text": "the heroic old hotel groom"
+          },
+          {
+            "key": "C",
+            "text": "Ginger's fear of fire D. different ways to put out a fire"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Black Beauty got burned from the fire."
+          },
+          {
+            "key": "B",
+            "text": "The horses weren't scared of the fire."
+          },
+          {
+            "key": "C",
+            "text": "The smoke made the horses feel hungry. D. Some of the horses died in the fire."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the horses do when the first worker came?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They hid under the hay."
+          },
+          {
+            "key": "B",
+            "text": "They refused to leave the stable."
+          },
+          {
+            "key": "C",
+            "text": "They rushed out the stable doors. D. They ran into each others' stalls."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How was the old man different from the first worker?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He was calmer."
+          },
+          {
+            "key": "B",
+            "text": "He was stronger."
+          },
+          {
+            "key": "C",
+            "text": "He was shorter. D. He was smarter."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did James do to help Black Beauty get out?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He saddled Black Beauty."
+          },
+          {
+            "key": "B",
+            "text": "He threw water on Black Beauty's face."
+          },
+          {
+            "key": "C",
+            "text": "He put a scarf over Black Beauty's eyes. D. He whipped Black Beauty."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "When did Ginger decide to follow James outside?",
+        "options": [
+          {
+            "key": "A",
+            "text": "when she felt like she couldn't breathe"
+          },
+          {
+            "key": "B",
+            "text": "when she heard Black Beauty whinny"
+          },
+          {
+            "key": "C",
+            "text": "when she saw the fire around her D. when she remembered Birtwick Park"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What probably caused the fire?",
+        "options": [
+          {
+            "key": "A",
+            "text": "neighborhood children"
+          },
+          {
+            "key": "B",
+            "text": "a candle"
+          },
+          {
+            "key": "C",
+            "text": "a lit pipe D. lightning from a storm"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "13": {
+    "episodeId": 13,
+    "title": "The New Stable Boy Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What could be another title?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The New Plan"
+          },
+          {
+            "key": "B",
+            "text": "Little Joe's Mistake"
+          },
+          {
+            "key": "C",
+            "text": "A Hello and a Goodbye D. Helping Merrylegs"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "James did not like Little Joe."
+          },
+          {
+            "key": "B",
+            "text": "Merrylegs is glad that James is leaving."
+          },
+          {
+            "key": "C",
+            "text": "Black Beauty is James' favorite horse. D. James says he will miss Birtwick Park."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did James have to leave Birtwick Park?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He was going to school."
+          },
+          {
+            "key": "B",
+            "text": "He got a new job."
+          },
+          {
+            "key": "C",
+            "text": "He had to go home to his family. D. He was in trouble with the squire."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true about Little Joe?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He is small and young."
+          },
+          {
+            "key": "B",
+            "text": "He knows a lot about working in a stable."
+          },
+          {
+            "key": "C",
+            "text": "He is cheerful and kindhearted. D. He never complains about his work."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did James teach Little Joe how to groom?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He told Little Joe to groom Merrylegs."
+          },
+          {
+            "key": "B",
+            "text": "He gave Little Joe a doll to practice on."
+          },
+          {
+            "key": "C",
+            "text": "He gave Little Joe a book about grooming. D. He told Little Joe to groom Black Beauty."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How was everyone when James left?",
+        "options": [
+          {
+            "key": "A",
+            "text": "jealous"
+          },
+          {
+            "key": "B",
+            "text": "angry"
+          },
+          {
+            "key": "C",
+            "text": "sad D. happy"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did John do to cheer up Merrylegs?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He gave Merrylegs some medicine."
+          },
+          {
+            "key": "B",
+            "text": "He let Merrylegs go with James."
+          },
+          {
+            "key": "C",
+            "text": "He fed Merrylegs more. D. He exercised Merrylegs more."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "14": {
+    "episodeId": 14,
+    "title": "Riding for the Doctor Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did John and Black Beauty ride for the doctor?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The squire was sick."
+          },
+          {
+            "key": "B",
+            "text": "John was sick."
+          },
+          {
+            "key": "C",
+            "text": "The squire's wife was sick. D. Ginger was sick."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "John was a better rider than Dr. White."
+          },
+          {
+            "key": "B",
+            "text": "Dr. White lived in a town."
+          },
+          {
+            "key": "C",
+            "text": "Black Beauty had to run as fast as he could. D. Little Joe came with John to Dr. White's."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did John have to deliver to Dr. White?",
+        "options": [
+          {
+            "key": "A",
+            "text": "books"
+          },
+          {
+            "key": "B",
+            "text": "a note"
+          },
+          {
+            "key": "C",
+            "text": "medicine D. a picture"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is true about the ride to Dr. White's?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Black Beauty got hurt."
+          },
+          {
+            "key": "B",
+            "text": "John got lost."
+          },
+          {
+            "key": "C",
+            "text": "Black Beauty went very fast. D. Black Beauty went slowly."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Dr. White want to ride Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Black Beauty could carry more than his horse."
+          },
+          {
+            "key": "B",
+            "text": "His horse was sleeping."
+          },
+          {
+            "key": "C",
+            "text": "Black Beauty was faster than his horse. D. His son took his horse."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How was the ride back to Birtwick Park for Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "more comfortable than the ride to Dr. White's"
+          },
+          {
+            "key": "B",
+            "text": "more difficult than the ride to Dr. White's"
+          },
+          {
+            "key": "C",
+            "text": "annoying and frustrating D. uncomfortable and awkward"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who took Black Beauty when Dr. White reached Birtwick Park?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Little Joe"
+          },
+          {
+            "key": "B",
+            "text": "the squire"
+          },
+          {
+            "key": "C",
+            "text": "John D. Dr. White"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "15": {
+    "episodeId": 15,
+    "title": "A Bad Decision and a Good Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What is this chapter about?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the squire's past and present"
+          },
+          {
+            "key": "B",
+            "text": "John's hatred and love"
+          },
+          {
+            "key": "C",
+            "text": "Little Joe's mistake and good deed D. Black Beauty's illness and recovery"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "John doesn't trust Little Joe ever again."
+          },
+          {
+            "key": "B",
+            "text": "Black Beauty never fully recovers from his sickness."
+          },
+          {
+            "key": "C",
+            "text": "The brickmaker became angry at Little Joe. D. Black Beauty helped save the squire's wife's life."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why didn't Little Joe put a blanket on Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He thought Black Beauty would kick him."
+          },
+          {
+            "key": "B",
+            "text": "He thought Black Beauty wouldn't like it."
+          },
+          {
+            "key": "C",
+            "text": "He didn't want to get the blanket dirty. D. He couldn't find the blanket."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which did not happen while Black Beauty was sick?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Black Beauty didn't know how many days passed."
+          },
+          {
+            "key": "B",
+            "text": "John moved the other horses away."
+          },
+          {
+            "key": "C",
+            "text": "The squire told Little Joe to leave Birtwick Park. D. The vet came every day."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "When did Little Joe see the driver beating his horses?",
+        "options": [
+          {
+            "key": "A",
+            "text": "after delivering the squire's note"
+          },
+          {
+            "key": "B",
+            "text": "while he was at the brickmaker's house"
+          },
+          {
+            "key": "C",
+            "text": "while Black Beauty was still sick D. before delivering the squire's note"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Little Joe do to stop the driver from beating the horses?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He told the squire about it."
+          },
+          {
+            "key": "B",
+            "text": "He unhitched the horses from the cart."
+          },
+          {
+            "key": "C",
+            "text": "He shouted angrily at the driver. D. He told the brickmaker about it."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How was Little Joe after the incident with the driver?",
+        "options": [
+          {
+            "key": "A",
+            "text": "more cheerful"
+          },
+          {
+            "key": "B",
+            "text": "more mature"
+          },
+          {
+            "key": "C",
+            "text": "more angry D. more fearful"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "16": {
+    "episodeId": 16,
+    "title": "More Changes Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What is the main idea?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the horses' terrible treatment"
+          },
+          {
+            "key": "B",
+            "text": "the end of life at Birtwick Park"
+          },
+          {
+            "key": "C",
+            "text": "the beginning of life at the minister's D. the squire's family's sadness"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The squire's wife was sick often."
+          },
+          {
+            "key": "B",
+            "text": "Merrylegs was going to live at the minister's."
+          },
+          {
+            "key": "C",
+            "text": "Little Joe was sad the squire's family was leaving. D. Black Beauty was glad to leave Birtwick Park."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did the squire's family have to move?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The squire's wife wanted a new house."
+          },
+          {
+            "key": "B",
+            "text": "The squire's wife needed to be in a warmer place."
+          },
+          {
+            "key": "C",
+            "text": "The squire's daughters needed to go to school. D. The squire wanted to find a new job."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who left first?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Miss Jessie and Miss Flora"
+          },
+          {
+            "key": "B",
+            "text": "the squire and his wife"
+          },
+          {
+            "key": "C",
+            "text": "Merrylegs and Little Joe D. Black Beauty and Ginger"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What would happen to Black Beauty and Ginger?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They would stay at Birtwick Park with John."
+          },
+          {
+            "key": "B",
+            "text": "They would go with Merrylegs and Little Joe."
+          },
+          {
+            "key": "C",
+            "text": "They would go with the squire's family. D. They would be sold to the squire's friend."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did John decide to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "become a carriage driver"
+          },
+          {
+            "key": "B",
+            "text": "go with the squire's family"
+          },
+          {
+            "key": "C",
+            "text": "become a horse trainer D. live at Birtwick Park"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did John take the squire's family at the end?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the doctor's house"
+          },
+          {
+            "key": "B",
+            "text": "the minister's house"
+          },
+          {
+            "key": "C",
+            "text": "the railroad station D. the hospital"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "17": {
+    "episodeId": 17,
+    "title": "A New Home Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What could be another title?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The Stable"
+          },
+          {
+            "key": "B",
+            "text": "The Minister"
+          },
+          {
+            "key": "C",
+            "text": "Earlshall Park D. Mr. York"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Ginger doesn't like the check rein."
+          },
+          {
+            "key": "B",
+            "text": "The earl doesn't like Black Beauty."
+          },
+          {
+            "key": "C",
+            "text": "The stable at Earlshall Park is large. D. York prefers not to use the check rein."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How was Earlshall Park?",
+        "options": [
+          {
+            "key": "A",
+            "text": "wealthy-looking"
+          },
+          {
+            "key": "B",
+            "text": "small but cozy"
+          },
+          {
+            "key": "C",
+            "text": "noisy D. dirty"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What does John tell Mr. York about Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He likes to stay inside."
+          },
+          {
+            "key": "B",
+            "text": "He has been treated well."
+          },
+          {
+            "key": "C",
+            "text": "He is often nervous. D. He doesn't eat much."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why will the horses have to wear check reins?",
+        "options": [
+          {
+            "key": "A",
+            "text": "John wants York to use them."
+          },
+          {
+            "key": "B",
+            "text": "York wants to punish the horses."
+          },
+          {
+            "key": "C",
+            "text": "The earl doesn't like horses. D. The lady wants to be stylish."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How does the earl tell York to use check reins?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Keep them tight from the beginning."
+          },
+          {
+            "key": "B",
+            "text": "Start with them loose, then tighten them."
+          },
+          {
+            "key": "C",
+            "text": "Start with them tight, then loosen them. D. Never tighten them."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How was the lady when she saw the horses?",
+        "options": [
+          {
+            "key": "A",
+            "text": "disapproving"
+          },
+          {
+            "key": "B",
+            "text": "excited"
+          },
+          {
+            "key": "C",
+            "text": "angry D. sad"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "18": {
+    "episodeId": 18,
+    "title": "Ginger's Rebellion Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Ginger unhappy?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She didn't like the food at Earlshall Park."
+          },
+          {
+            "key": "B",
+            "text": "She thought Black Beauty was rebelling too."
+          },
+          {
+            "key": "C",
+            "text": "She didn't like the short checkrein. D. She thought York was going to whip her."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is true about Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He loves the lady at Earlshall Park."
+          },
+          {
+            "key": "B",
+            "text": "He likes to wear the checkrein."
+          },
+          {
+            "key": "C",
+            "text": "He gets a serious injury from Ginger. D. He is hitched with Max at the end."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who wanted the checkreins shortened?",
+        "options": [
+          {
+            "key": "A",
+            "text": "York"
+          },
+          {
+            "key": "B",
+            "text": "Black Beauty"
+          },
+          {
+            "key": "C",
+            "text": "the lady D. the earl"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "When did Black Beauty understand why Ginger hated the checkrein?",
+        "options": [
+          {
+            "key": "A",
+            "text": "when he tried to go up a hill"
+          },
+          {
+            "key": "B",
+            "text": "when he saw the lady of the house"
+          },
+          {
+            "key": "C",
+            "text": "when he had to move quickly D. when he was whipped by York"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Ginger do to rebel?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She refused to eat."
+          },
+          {
+            "key": "B",
+            "text": "She kicked and reared."
+          },
+          {
+            "key": "C",
+            "text": "She hurt Black Beauty. D. She kicked the lady."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Black Beauty do when Ginger rebelled?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He kicked and reared up."
+          },
+          {
+            "key": "B",
+            "text": "He stood quietly."
+          },
+          {
+            "key": "C",
+            "text": "He ran as fast as he could. D. He bit Ginger."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What happened to Ginger after her rebellion?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She had to go without food for a week."
+          },
+          {
+            "key": "B",
+            "text": "She was sold to another man."
+          },
+          {
+            "key": "C",
+            "text": "She had to wear the checkrein all day. D. She was used as a riding horse."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "19": {
+    "episodeId": 19,
+    "title": "Lady Anne's Plan Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What is the main event?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The earl and his wife leave Earlshall Park."
+          },
+          {
+            "key": "B",
+            "text": "Lady Anne rides Lizzie instead of Black Beauty."
+          },
+          {
+            "key": "C",
+            "text": "Lady Harriet asks a servant to deliver a note. D. Black Beauty feels hurt because Lady Anne rides Lizzie."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Blantyre rides Black Beauty."
+          },
+          {
+            "key": "B",
+            "text": "Blantyre takes the note in to Dr. Ashley."
+          },
+          {
+            "key": "C",
+            "text": "A boy chases some horses with a whip. D. Lady Anne is not a good rider."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did the earl and his wife leave Earlshall Park?",
+        "options": [
+          {
+            "key": "A",
+            "text": "to do business in London"
+          },
+          {
+            "key": "B",
+            "text": "to help his wife recover from an illness"
+          },
+          {
+            "key": "C",
+            "text": "to visit family in London D. to find a new home for Black Beauty"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How was Lady Anne different from Lady Harriet?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She was healthy and loved to be outside."
+          },
+          {
+            "key": "B",
+            "text": "She was taller and more beautiful."
+          },
+          {
+            "key": "C",
+            "text": "She preferred to stay inside and sew. D. She wanted to move to London."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Lady Anne want to ride Lizzie?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She wanted to impress Blantyre."
+          },
+          {
+            "key": "B",
+            "text": "Blantyre said good things about Lizzie."
+          },
+          {
+            "key": "C",
+            "text": "She didn't like Black Beauty anymore. D. Black Beauty was sick and couldn't be ridden."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did a servant ask Lady Anne and Blantyre to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "find a missing horse"
+          },
+          {
+            "key": "B",
+            "text": "bring home the earl"
+          },
+          {
+            "key": "C",
+            "text": "buy some wood D. deliver a note"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "When did Lizzie start galloping?",
+        "options": [
+          {
+            "key": "A",
+            "text": "when a colt bumped into her"
+          },
+          {
+            "key": "B",
+            "text": "when Lady Anne tried to ride her"
+          },
+          {
+            "key": "C",
+            "text": "when she saw Blantyre D. when Black Beauty accidentally kicked her"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "20": {
+    "episodeId": 20,
+    "title": "Runaway Rescue Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Blantyre do when he saw Lizzie galloping off with Lady Anne?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He gave Black Beauty free reign to catch them."
+          },
+          {
+            "key": "B",
+            "text": "He went back to Earlshall Park to get help."
+          },
+          {
+            "key": "C",
+            "text": "He asked his neighbors to help him catch them. D. He tried to run after them."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Black Beauty know which way to go where the road split?",
+        "options": [
+          {
+            "key": "A",
+            "text": "A woman at her garden gate told him."
+          },
+          {
+            "key": "B",
+            "text": "A man on a cart told him."
+          },
+          {
+            "key": "C",
+            "text": "A farmer walking by told him. D. A group of children told him."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did the road worker tell them to go?",
+        "options": [
+          {
+            "key": "A",
+            "text": "an open area with lots of weeds and holes"
+          },
+          {
+            "key": "B",
+            "text": "a thick forest"
+          },
+          {
+            "key": "C",
+            "text": "a farmer's field D. on the other side of a river"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Lady Anne doing that wasn't any good?",
+        "options": [
+          {
+            "key": "A",
+            "text": "pulling on the reigns"
+          },
+          {
+            "key": "B",
+            "text": "trying to jump off Lizzie"
+          },
+          {
+            "key": "C",
+            "text": "yelling for help D. getting Lizzie to go faster"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "When was Lady Anne flung to the ground?",
+        "options": [
+          {
+            "key": "A",
+            "text": "when Lizzie leaped across a ditch"
+          },
+          {
+            "key": "B",
+            "text": "when Lizzie tripped on the root of a tree"
+          },
+          {
+            "key": "C",
+            "text": "when Blantyre tried to grab Lizzie D. when Black Beauty pushed Lizzie"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did the man agree to help even though he couldn't ride well?",
+        "options": [
+          {
+            "key": "A",
+            "text": "because Lady Anne had always been kind to his family"
+          },
+          {
+            "key": "B",
+            "text": "because Blantyre promised to let him keep the horse"
+          },
+          {
+            "key": "C",
+            "text": "because he knew that Lady Anne's father would give a reward D. because he was in love with Lady Anne"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What happened to Lady Anne?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She will be fine in a week or two."
+          },
+          {
+            "key": "B",
+            "text": "She never woke up."
+          },
+          {
+            "key": "C",
+            "text": "She broke several bones. D. She will never be able to walk."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "21": {
+    "episodeId": 21,
+    "title": "Scarred Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Rueben leave the cart in town?",
+        "options": [
+          {
+            "key": "A",
+            "text": "It needed some repairs."
+          },
+          {
+            "key": "B",
+            "text": "He completely forgot about it."
+          },
+          {
+            "key": "C",
+            "text": "He was too tired to bring it home. D. Its wheels were all missing."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Rueben swaying back and forth?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He had been drinking."
+          },
+          {
+            "key": "B",
+            "text": "He was listening to music."
+          },
+          {
+            "key": "C",
+            "text": "He was falling asleep. D. Black Beauty was tired."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why couldn't Black Beauty run fast?",
+        "options": [
+          {
+            "key": "A",
+            "text": "His shoe was loose."
+          },
+          {
+            "key": "B",
+            "text": "His leg was broken."
+          },
+          {
+            "key": "C",
+            "text": "Rueben weighed too much. D. The road was muddy."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Black Beauty slip on?",
+        "options": [
+          {
+            "key": "A",
+            "text": "stones"
+          },
+          {
+            "key": "B",
+            "text": "ice"
+          },
+          {
+            "key": "C",
+            "text": "mud D. sand"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What healed quickly?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Black Beauty's foot"
+          },
+          {
+            "key": "B",
+            "text": "Black Beauty's knees"
+          },
+          {
+            "key": "C",
+            "text": "Rueben's knees D. Rueben's foot"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Ginger need to rest?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The earl's son rode her too hard."
+          },
+          {
+            "key": "B",
+            "text": "Rueben rode her too hard."
+          },
+          {
+            "key": "C",
+            "text": "She had an injured foot. D. Her legs had been broken."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did the earl decide to get rid of Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Black Beauty had scars."
+          },
+          {
+            "key": "B",
+            "text": "Black Beauty couldn't walk."
+          },
+          {
+            "key": "C",
+            "text": "Black Beauty was too old. D. Black Beauty was unfriendly."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "22": {
+    "episodeId": 22,
+    "title": "Horse for Hire Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Black Beauty travel to his new home?",
+        "options": [
+          {
+            "key": "A",
+            "text": "by train"
+          },
+          {
+            "key": "B",
+            "text": "by boat"
+          },
+          {
+            "key": "C",
+            "text": "by car D. by foot"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did being a livery horse mean?",
+        "options": [
+          {
+            "key": "A",
+            "text": "being hired out to people"
+          },
+          {
+            "key": "B",
+            "text": "working in the fields"
+          },
+          {
+            "key": "C",
+            "text": "racing for money D. traveling around the world"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did the master hire Black Beauty out to people who preferred to drive themselves?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He knew Black Beauty was steady and reliable."
+          },
+          {
+            "key": "B",
+            "text": "He didn't like working with Black Beauty."
+          },
+          {
+            "key": "C",
+            "text": "He knew the people who hired Black Beauty were good drivers. D. He didn't think that he could trust Black Beauty."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Black Beauty miss, especially while going downhill?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the steadying hand of a driver"
+          },
+          {
+            "key": "B",
+            "text": "an airy place to live"
+          },
+          {
+            "key": "C",
+            "text": "his old friends D. being groomed properly"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which type of driver wore Black Beauty out the quickest?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the ones who cared about speed"
+          },
+          {
+            "key": "B",
+            "text": "the ones who let the reigns loose"
+          },
+          {
+            "key": "C",
+            "text": "the ones who kept a tight reign D. the ones who kept a steady hand"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Peggy's walk odd?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She had trouble keeping up with Black Beauty's longer legs."
+          },
+          {
+            "key": "B",
+            "text": "She had hurt her legs in an accident several years ago."
+          },
+          {
+            "key": "C",
+            "text": "She never learned how to walk properly when pulling something. D. She didn't like to work and would try to make trouble."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who did the gentleman want to buy Black Beauty for?",
+        "options": [
+          {
+            "key": "A",
+            "text": "his friend"
+          },
+          {
+            "key": "B",
+            "text": "his wife"
+          },
+          {
+            "key": "C",
+            "text": "his son D. himself"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "23": {
+    "episodeId": 23,
+    "title": "Another New Owner Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Mr. Barry want to try riding?",
+        "options": [
+          {
+            "key": "A",
+            "text": "His doctor advised him to get more exercise."
+          },
+          {
+            "key": "B",
+            "text": "His friend challenged him to a race."
+          },
+          {
+            "key": "C",
+            "text": "He always loved spending time with horses. D. He wanted to spend more time with his friends."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Black Beauty miss the grain?",
+        "options": [
+          {
+            "key": "A",
+            "text": "It gave him the energy he needed for work."
+          },
+          {
+            "key": "B",
+            "text": "It was his favorite food to eat."
+          },
+          {
+            "key": "C",
+            "text": "It was only available during the fall. D. It helped him look prettier."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who told Mr. Barry to look into who was eating his grain?",
+        "options": [
+          {
+            "key": "A",
+            "text": "his farmer friend"
+          },
+          {
+            "key": "B",
+            "text": "Filcher"
+          },
+          {
+            "key": "C",
+            "text": "the policeman D. his daughter"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Filcher send his son to steal the grain?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He was using it to feed their rabbits."
+          },
+          {
+            "key": "B",
+            "text": "He was using it to grow in their fields."
+          },
+          {
+            "key": "C",
+            "text": "He was selling it to the other farmers. D. He was bringing it home for his family to eat."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What does Smirk say is dangerous to use in a horse's stall?",
+        "options": [
+          {
+            "key": "A",
+            "text": "water"
+          },
+          {
+            "key": "B",
+            "text": "hay"
+          },
+          {
+            "key": "C",
+            "text": "soap D. fire"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Black Beauty catch a disease?",
+        "options": [
+          {
+            "key": "A",
+            "text": "by standing in wet, dirty stalls"
+          },
+          {
+            "key": "B",
+            "text": "by going out in the cold"
+          },
+          {
+            "key": "C",
+            "text": "by working too often D. by getting too close to other horses"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Mr. Barry decide to sell Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He thought having his own horse was too much trouble."
+          },
+          {
+            "key": "B",
+            "text": "He thought that Black Beauty misbehaved too often."
+          },
+          {
+            "key": "C",
+            "text": "He thought that Black Beauty was too slow. D. He thought he could make more money by selling Black Beauty."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "24": {
+    "episodeId": 24,
+    "title": "At the Horse Sale Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What could be another title?",
+        "options": [
+          {
+            "key": "A",
+            "text": "A Bargain"
+          },
+          {
+            "key": "B",
+            "text": "The Cruel Man"
+          },
+          {
+            "key": "C",
+            "text": "Longing for Home D. Saving Black Beauty"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "There were many horses at the horse sale."
+          },
+          {
+            "key": "B",
+            "text": "Mr. Barry went to the horse sale."
+          },
+          {
+            "key": "C",
+            "text": "Shoppers looked at Black Beauty's legs. D. The hard-faced man wanted Black Beauty."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How were the horses at the horse sale?",
+        "options": [
+          {
+            "key": "A",
+            "text": "young and wild"
+          },
+          {
+            "key": "B",
+            "text": "old and thin"
+          },
+          {
+            "key": "C",
+            "text": "all different kinds D. all healthy and strong"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did all shoppers do to Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They patted him."
+          },
+          {
+            "key": "B",
+            "text": "They threw things at him."
+          },
+          {
+            "key": "C",
+            "text": "They fed him. D. They examined him."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Black Beauty think the gray-eyed man was?",
+        "options": [
+          {
+            "key": "A",
+            "text": "mean"
+          },
+          {
+            "key": "B",
+            "text": "kind"
+          },
+          {
+            "key": "C",
+            "text": "a thief D. a liar"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What happened when the gray-eyed man came back?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The hard-faced man stole Black Beauty."
+          },
+          {
+            "key": "B",
+            "text": "The horse dealer took Black Beauty away."
+          },
+          {
+            "key": "C",
+            "text": "The hard-faced man bought Black Beauty. D. The gray-eyed man bought Black Beauty."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where was Black Beauty at the end?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a livery stable"
+          },
+          {
+            "key": "B",
+            "text": "Earlshall Park"
+          },
+          {
+            "key": "C",
+            "text": "London D. a train station"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "25": {
+    "episodeId": 25,
+    "title": "Life in London Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the family decide to call Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Jack"
+          },
+          {
+            "key": "B",
+            "text": "Harry"
+          },
+          {
+            "key": "C",
+            "text": "Duke D. Blackie"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What kind of stories did Captain tell Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "about the war"
+          },
+          {
+            "key": "B",
+            "text": "about life in the city"
+          },
+          {
+            "key": "C",
+            "text": "about the Barkers D. about working for the king"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did people hire Jerry to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "drive them places in his cab"
+          },
+          {
+            "key": "B",
+            "text": "help them at their farms"
+          },
+          {
+            "key": "C",
+            "text": "teach them how to ride a horse D. take care of their horses"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the Governor say about Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "that he was worth it"
+          },
+          {
+            "key": "B",
+            "text": "that he would be trouble"
+          },
+          {
+            "key": "C",
+            "text": "that he was too expensive D. that he was not big enough"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Black Beauty feel about his new job at first?",
+        "options": [
+          {
+            "key": "A",
+            "text": "anxious"
+          },
+          {
+            "key": "B",
+            "text": "excited"
+          },
+          {
+            "key": "C",
+            "text": "happy D. angry"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "When did Jerry use the whip on Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "to gently ask him to move on"
+          },
+          {
+            "key": "B",
+            "text": "to punish him for misbehaving"
+          },
+          {
+            "key": "C",
+            "text": "to make him go faster D. to teach him a lesson"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was the best thing that Jerry did for the horses?",
+        "options": [
+          {
+            "key": "A",
+            "text": "gave them Sundays off"
+          },
+          {
+            "key": "B",
+            "text": "made them bran mash"
+          },
+          {
+            "key": "C",
+            "text": "gave them treats D. let them run in a field"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "26": {
+    "episodeId": 26,
+    "title": "Jerry's Rule Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What is the main idea?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Sometimes rules can be broken."
+          },
+          {
+            "key": "B",
+            "text": "Rules should never be broken."
+          },
+          {
+            "key": "C",
+            "text": "Money is the most important thing. D. A good horse is one that obeys."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Mrs. Briggs was one of Jerry's best customers."
+          },
+          {
+            "key": "B",
+            "text": "Polly agreed that Jerry should drive Dinah."
+          },
+          {
+            "key": "C",
+            "text": "Polly didn't like it when Jerry worked on Sundays. D. Black Beauty didn't like going to the country."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Mr. Briggs ask Jerry to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "become a servant at his house"
+          },
+          {
+            "key": "B",
+            "text": "find a cab driver to drive him to church"
+          },
+          {
+            "key": "C",
+            "text": "drive him and his wife to a new church D. take his wife shopping on Sundays"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why doesn't Jerry work on Sundays?",
+        "options": [
+          {
+            "key": "A",
+            "text": "to spend time with his family"
+          },
+          {
+            "key": "B",
+            "text": "to avoid the traffic"
+          },
+          {
+            "key": "C",
+            "text": "to go to church D. to take his wife shopping"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "When did Mrs. Briggs hire Jerry again?",
+        "options": [
+          {
+            "key": "A",
+            "text": "after she tried other drivers"
+          },
+          {
+            "key": "B",
+            "text": "when she felt sorry for him"
+          },
+          {
+            "key": "C",
+            "text": "when Jerry said he'd drive on Sundays D. after Jerry begged her to hire him again"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Dinah have to go to the country?",
+        "options": [
+          {
+            "key": "A",
+            "text": "to look for a horse"
+          },
+          {
+            "key": "B",
+            "text": "to visit Mrs. Briggs"
+          },
+          {
+            "key": "C",
+            "text": "to go to a new church D. to visit her dying mother"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Black Beauty get to do at Dinah's farm?",
+        "options": [
+          {
+            "key": "A",
+            "text": "meet a new friend"
+          },
+          {
+            "key": "B",
+            "text": "sleep in the stable"
+          },
+          {
+            "key": "C",
+            "text": "spend time in a field D. rescue a cow"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "27": {
+    "episodeId": 27,
+    "title": "True Gentlemen Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What does Jerry think makes a man a \"true gentleman\"?",
+        "options": [
+          {
+            "key": "A",
+            "text": "kindness"
+          },
+          {
+            "key": "B",
+            "text": "fashion"
+          },
+          {
+            "key": "C",
+            "text": "wealth D. knowledge"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which did not happen in this chapter?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Jerry ate soup."
+          },
+          {
+            "key": "B",
+            "text": "Mr. Wright's friend went shopping."
+          },
+          {
+            "key": "C",
+            "text": "Jerry thought Mr. Wright was wrong. D. Mr. Wright hired Jerry regularly."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Polly do to help Jerry through the cold?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She drove the cab in the afternoon."
+          },
+          {
+            "key": "B",
+            "text": "She bought him a warm coat."
+          },
+          {
+            "key": "C",
+            "text": "She sent Dolly to bring him hot food. D. She found a job so he could work less."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why was Mr. Wright a \"true gentleman\"?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He showed care for Jerry."
+          },
+          {
+            "key": "B",
+            "text": "He dressed fashionably."
+          },
+          {
+            "key": "C",
+            "text": "He knew a lot about horses. D. He didn't complain about the cold."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "When did Mr. Wright see the man beating his horses?",
+        "options": [
+          {
+            "key": "A",
+            "text": "while Mr. Wright was inside his house"
+          },
+          {
+            "key": "B",
+            "text": "while Mr. Wright was walking down the street"
+          },
+          {
+            "key": "C",
+            "text": "while Mr. Wright was riding in the cab D. while Mr. Wright was waiting for his friend"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Mr. Wright write down the man's cab number?",
+        "options": [
+          {
+            "key": "A",
+            "text": "to steal the man's horses"
+          },
+          {
+            "key": "B",
+            "text": "to tell the man's boss about what happened"
+          },
+          {
+            "key": "C",
+            "text": "to find the man later at night and scare him D. to report the man to the police"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where did Mr. Wright and his friend go at the end?",
+        "options": [
+          {
+            "key": "A",
+            "text": "to the wine seller's"
+          },
+          {
+            "key": "B",
+            "text": "to the police station"
+          },
+          {
+            "key": "C",
+            "text": "to the stable D. to the train station"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "28": {
+    "episodeId": 28,
+    "title": "Ginger's Fate Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How were most of Ginger's masters after Earlshall Park?",
+        "options": [
+          {
+            "key": "A",
+            "text": "gentle"
+          },
+          {
+            "key": "B",
+            "text": "rich"
+          },
+          {
+            "key": "C",
+            "text": "cruel D. happy"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is true about Ginger?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She couldn't work hard because of her health."
+          },
+          {
+            "key": "B",
+            "text": "She still stood up for herself when she was mistreated."
+          },
+          {
+            "key": "C",
+            "text": "She was a different color from before. D. She enjoyed being a cab horse."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Where was Black Beauty when he saw Ginger?",
+        "options": [
+          {
+            "key": "A",
+            "text": "near the park"
+          },
+          {
+            "key": "B",
+            "text": "at the cab stand"
+          },
+          {
+            "key": "C",
+            "text": "in Jerry's stable D. in the country"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why didn't Black Beauty recognize Ginger at first?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She was rebellious."
+          },
+          {
+            "key": "B",
+            "text": "She was thin and unhealthy."
+          },
+          {
+            "key": "C",
+            "text": "She was full of energy. D. She was so fat and lazy."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Ginger get sold?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She tried to run away."
+          },
+          {
+            "key": "B",
+            "text": "She fought with the other horses."
+          },
+          {
+            "key": "C",
+            "text": "She broke her leg. D. She had breathing problems."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How does Ginger's current driver treat Ginger?",
+        "options": [
+          {
+            "key": "A",
+            "text": "kindly"
+          },
+          {
+            "key": "B",
+            "text": "roughly"
+          },
+          {
+            "key": "C",
+            "text": "jealously D. lazily"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Black Beauty believe about Ginger at the end?",
+        "options": [
+          {
+            "key": "A",
+            "text": "that she died peacefully"
+          },
+          {
+            "key": "B",
+            "text": "that she ran away from the cab driver"
+          },
+          {
+            "key": "C",
+            "text": "that she found a good master D. that she would never be a good horse"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "29": {
+    "episodeId": 29,
+    "title": "Election Day Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What does Jerry do in this chapter?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He and Polly visit Polly's friend in the country."
+          },
+          {
+            "key": "B",
+            "text": "He votes for the wrong candidate in the election."
+          },
+          {
+            "key": "C",
+            "text": "He helps a woman instead of working for a candidate. D. He and Black Beauty are busy driving candidates."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What is Election Day for?",
+        "options": [
+          {
+            "key": "A",
+            "text": "visiting the city"
+          },
+          {
+            "key": "B",
+            "text": "refusing to walk"
+          },
+          {
+            "key": "C",
+            "text": "building hospitals D. choosing leaders"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Black Beauty feel about Election Day?",
+        "options": [
+          {
+            "key": "A",
+            "text": "excited"
+          },
+          {
+            "key": "B",
+            "text": "confused"
+          },
+          {
+            "key": "C",
+            "text": "bitter D. sad"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How were the streets on Election Day?",
+        "options": [
+          {
+            "key": "A",
+            "text": "dark"
+          },
+          {
+            "key": "B",
+            "text": "wet"
+          },
+          {
+            "key": "C",
+            "text": "busy D. quiet"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did the woman want to go to the hospital?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She was going to have a baby."
+          },
+          {
+            "key": "B",
+            "text": "Her son wanted to meet a candidate."
+          },
+          {
+            "key": "C",
+            "text": "Her son couldn't walk well. D. She wanted to vote in the election."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Jerry do when the two gentlemen got in his cab?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He refused to drive them."
+          },
+          {
+            "key": "B",
+            "text": "He asked them for more money."
+          },
+          {
+            "key": "C",
+            "text": "He told them to carry the woman's son. D. He shouted at the woman."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was the well-dressed lady concerned about?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the election"
+          },
+          {
+            "key": "B",
+            "text": "her horse"
+          },
+          {
+            "key": "C",
+            "text": "Polly's health D. Jerry's health"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "30": {
+    "episodeId": 30,
+    "title": "Old Horse, New Horse Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Jerry get Hotspur?",
+        "options": [
+          {
+            "key": "A",
+            "text": "to help a friend"
+          },
+          {
+            "key": "B",
+            "text": "to impress the other cabbies"
+          },
+          {
+            "key": "C",
+            "text": "to train Hotspur and then sell him D. to replace Captain"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Black Beauty saw Captain get hurt."
+          },
+          {
+            "key": "B",
+            "text": "The vet told Jerry to put Captain down."
+          },
+          {
+            "key": "C",
+            "text": "Hotspur was a poorly-bred horse. D. Black Beauty told Hotspur about Jerry."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Captain get hurt?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He walked into a wall."
+          },
+          {
+            "key": "B",
+            "text": "A customer kicked him."
+          },
+          {
+            "key": "C",
+            "text": "A cart crashed into him. D. He tripped over a stone."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why didn't Jerry want to sell Captain?",
+        "options": [
+          {
+            "key": "A",
+            "text": "to please the vet"
+          },
+          {
+            "key": "B",
+            "text": "to keep him in the stable"
+          },
+          {
+            "key": "C",
+            "text": "to be kind to him D. to make more money"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true about Hotspur?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He is young."
+          },
+          {
+            "key": "B",
+            "text": "He is handsome."
+          },
+          {
+            "key": "C",
+            "text": "He is polite. D. He is mean."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What helped Hotspur calm down?",
+        "options": [
+          {
+            "key": "A",
+            "text": "working with Jerry"
+          },
+          {
+            "key": "B",
+            "text": "wearing a check rein"
+          },
+          {
+            "key": "C",
+            "text": "not exercising D. using a harsh bit"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How was Hotspur at the end?",
+        "options": [
+          {
+            "key": "A",
+            "text": "excited"
+          },
+          {
+            "key": "B",
+            "text": "thankful"
+          },
+          {
+            "key": "C",
+            "text": "disappointed D. depressed"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "31": {
+    "episodeId": 31,
+    "title": "New Year's Eve Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why does Jerry get sick again?",
+        "options": [
+          {
+            "key": "A",
+            "text": "from breathing the city air"
+          },
+          {
+            "key": "B",
+            "text": "from worrying about Black Beauty"
+          },
+          {
+            "key": "C",
+            "text": "from being out in the cold D. from being around his sick child"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not a reason the holiday season is busy for cab drivers?",
+        "options": [
+          {
+            "key": "A",
+            "text": "parties"
+          },
+          {
+            "key": "B",
+            "text": "balls"
+          },
+          {
+            "key": "C",
+            "text": "cold weather D. illness"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What kind of party did the two men attend?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a dance party"
+          },
+          {
+            "key": "B",
+            "text": "a card party"
+          },
+          {
+            "key": "C",
+            "text": "a birthday party D. a Christmas party"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why were Harry and Dolly worried?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Hotspur wasn't eating enough."
+          },
+          {
+            "key": "B",
+            "text": "Black Beauty was restless."
+          },
+          {
+            "key": "C",
+            "text": "Polly wasn't home. D. Jerry was very sick."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the Governor offer to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "feed Black Beauty and Hotspur some warm mash"
+          },
+          {
+            "key": "B",
+            "text": "walk Black Beauty up and down the street"
+          },
+          {
+            "key": "C",
+            "text": "drive Hotspur and give Jerry half the money D. take care of Harry and Dolly at his house"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was Fairstowe?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the hospital where Jerry went"
+          },
+          {
+            "key": "B",
+            "text": "the place where Polly used to work"
+          },
+          {
+            "key": "C",
+            "text": "the farm where Hotspur was from D. the place where Black Beauty was sold"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why did Black Beauty and Hotspur have to be sold?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Jerry and his family were moving."
+          },
+          {
+            "key": "B",
+            "text": "Jerry's illness was dangerous to horses."
+          },
+          {
+            "key": "C",
+            "text": "The Governor paid a lot of money for them. D. Polly thought Jerry was sick because of them."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "32": {
+    "episodeId": 32,
+    "title": "Another Change Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What is this chapter mainly about?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Jerry's life in the country."
+          },
+          {
+            "key": "B",
+            "text": "Black Beauty's life as a cart horse."
+          },
+          {
+            "key": "C",
+            "text": "A young woman who is kind to Black Beauty. D. The use of checkreins on horses."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The foreman often drove Black Beauty."
+          },
+          {
+            "key": "B",
+            "text": "Jerry and his family were sad to leave the horses."
+          },
+          {
+            "key": "C",
+            "text": "The Governor bought Hotspur. D. Black Beauty was tired by the heavy loads."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who was Black Beauty sold to?",
+        "options": [
+          {
+            "key": "A",
+            "text": "the Governor"
+          },
+          {
+            "key": "B",
+            "text": "a baker"
+          },
+          {
+            "key": "C",
+            "text": "a young lady D. Jakes"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What made work difficult with Jakes?",
+        "options": [
+          {
+            "key": "A",
+            "text": "heavy loads"
+          },
+          {
+            "key": "B",
+            "text": "a harsh bit"
+          },
+          {
+            "key": "C",
+            "text": "Jakes' poor driving skill D. the loose checkrein"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the lady tell Jakes to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "loosen the checkrein"
+          },
+          {
+            "key": "B",
+            "text": "pull the cart for Black Beauty"
+          },
+          {
+            "key": "C",
+            "text": "get a new horse D. take a different road"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Jakes do differently after the lady spoke to him?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He never drove up a hill again."
+          },
+          {
+            "key": "B",
+            "text": "He dressed more fashionably."
+          },
+          {
+            "key": "C",
+            "text": "He lightened the load. D. He loosened the checkrein."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is true about the end?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Black Beauty ran away from the baker."
+          },
+          {
+            "key": "B",
+            "text": "Another horse was going to replace Black Beauty."
+          },
+          {
+            "key": "C",
+            "text": "The lady asked to buy Black Beauty. D. Black Beauty was hurt after a cart crashed into him."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "33": {
+    "episodeId": 33,
+    "title": "Hard Work Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What is the main event?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Skinner was hard on his men."
+          },
+          {
+            "key": "B",
+            "text": "Grace feels sorry for Black Beauty."
+          },
+          {
+            "key": "C",
+            "text": "Black Beauty falls to the ground. D. Black Beauty goes to the train station."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is true about Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He didn't have to work on Saturdays."
+          },
+          {
+            "key": "B",
+            "text": "He didn't like being at Skinner's company."
+          },
+          {
+            "key": "C",
+            "text": "He was rebellious and didn't obey his driver. D. He was mean to small children."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What kind of company did Skinner have?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a train company"
+          },
+          {
+            "key": "B",
+            "text": "a cab company"
+          },
+          {
+            "key": "C",
+            "text": "a bread company D. a luggage company"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Grace think Black Beauty looked?",
+        "options": [
+          {
+            "key": "A",
+            "text": "weak and tired"
+          },
+          {
+            "key": "B",
+            "text": "strong and energetic"
+          },
+          {
+            "key": "C",
+            "text": "young and wild D. lazy and fat"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "When did Black Beauty fall to the ground?",
+        "options": [
+          {
+            "key": "A",
+            "text": "when he was at the train station"
+          },
+          {
+            "key": "B",
+            "text": "when he tried to climb up a hill"
+          },
+          {
+            "key": "C",
+            "text": "when he reached the stable D. when he tried to run away"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the vet say about Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He was too sick to live."
+          },
+          {
+            "key": "B",
+            "text": "He shouldn't be allowed to rest."
+          },
+          {
+            "key": "C",
+            "text": "He was too old to be a cab horse. D. He worked too much."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Skinner decide to do with Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "sell him at the next horse sale"
+          },
+          {
+            "key": "B",
+            "text": "feed him to the dogs"
+          },
+          {
+            "key": "C",
+            "text": "leave him at the train station D. send him as a present to Grace"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "34": {
+    "episodeId": 34,
+    "title": "The Farmer's Grandson Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not true about Willie's grandpa?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He was a farmer and was good with horses."
+          },
+          {
+            "key": "B",
+            "text": "He bought Black Beauty because Willie wanted to."
+          },
+          {
+            "key": "C",
+            "text": "He decided to keep Black Beauty forever. D. He helped Black Beauty become healthy again."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What was different about this horse sale for Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He was in the front with the strong horses."
+          },
+          {
+            "key": "B",
+            "text": "He was in the back with the old horses."
+          },
+          {
+            "key": "C",
+            "text": "He could lie down and rest on a pile of hay. D. He could walk around freely."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Willie's grandpa think of Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "that he was a poorly-bred horse"
+          },
+          {
+            "key": "B",
+            "text": "that he looked hungry"
+          },
+          {
+            "key": "C",
+            "text": "that he was a well-bred horse D. that he looked too sick"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Willie want his grandpa to do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "give Black Beauty an apple"
+          },
+          {
+            "key": "B",
+            "text": "become a cab driver"
+          },
+          {
+            "key": "C",
+            "text": "shout at Skinner D. buy Black Beauty"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which is not something Willie did?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He fed Black Beauty."
+          },
+          {
+            "key": "B",
+            "text": "He spent time with Black Beauty."
+          },
+          {
+            "key": "C",
+            "text": "He gave Black Beauty a name. D. He put a checkrein on Black Beauty."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did Willie's grandpa want to find for Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a new fashion"
+          },
+          {
+            "key": "B",
+            "text": "a home"
+          },
+          {
+            "key": "C",
+            "text": "a friend D. a better carriage"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "How did Willie and his grandpa get Black Beauty fit again?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They let him spend all his time in the field."
+          },
+          {
+            "key": "B",
+            "text": "They made him pull a cart of bricks up a hill."
+          },
+          {
+            "key": "C",
+            "text": "They hitched him to a carriage and drove around. D. They made him run around in circles in the field."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  },
+  "35": {
+    "episodeId": 35,
+    "title": "My Last Home Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who is not a character in this chapter?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Miss Blomefield"
+          },
+          {
+            "key": "B",
+            "text": "the farmer"
+          },
+          {
+            "key": "C",
+            "text": "Ginger D. Mrs. Gordon"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "When did Little Joe recognize Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "when he first saw Black Beauty"
+          },
+          {
+            "key": "B",
+            "text": "while he was grooming Black Beauty"
+          },
+          {
+            "key": "C",
+            "text": "after the three sisters bought Black Beauty D. while Black Beauty was in the field"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Why didn't Miss Lavinia like Black Beauty at first?",
+        "options": [
+          {
+            "key": "A",
+            "text": "She missed her old horse."
+          },
+          {
+            "key": "B",
+            "text": "She didn't like the color of his coat."
+          },
+          {
+            "key": "C",
+            "text": "She didn't like that he'd fallen down before. D. She thought he was too skinny."
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the farmer say he would let the sisters do?",
+        "options": [
+          {
+            "key": "A",
+            "text": "take Black Beauty on trial"
+          },
+          {
+            "key": "B",
+            "text": "have Black Beauty for free"
+          },
+          {
+            "key": "C",
+            "text": "visit Black Beauty at his farm D. drive Black Beauty once"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Which did not help Little Joe recognize Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a white star on the forehead"
+          },
+          {
+            "key": "B",
+            "text": "one white foot"
+          },
+          {
+            "key": "C",
+            "text": "a little knot on the neck D. scarred knees"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q6",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "Who did Miss Ellen say she'd write to about Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Mrs. Gordon"
+          },
+          {
+            "key": "B",
+            "text": "John Manly"
+          },
+          {
+            "key": "C",
+            "text": "the earl of Earlshall Park D. Skinner"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      },
+      {
+        "id": "q7",
+        "type": "single-choice",
+        "category": "reading",
+        "question": "What did the ladies promise Black Beauty?",
+        "options": [
+          {
+            "key": "A",
+            "text": "to give him a friend"
+          },
+          {
+            "key": "B",
+            "text": "to never sell him"
+          },
+          {
+            "key": "C",
+            "text": "to give him a lot of work D. to return him to Mrs. Gordon"
+          }
+        ],
+        "answer": "A",
+        "explanation": "根据本集故事内容选择正确答案。",
+        "source": "local-pdf"
+      }
+    ]
+  }
+}
