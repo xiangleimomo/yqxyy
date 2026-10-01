@@ -4,31 +4,36 @@
       "word": "hello",
       "meaningZh": "嗨，哈罗",
       "example": "Hello!",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "哈啰!"
     },
     {
       "word": "you",
       "meaningZh": "你，你们",
       "example": "How are you?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "你好吗?"
     },
     {
       "word": "how",
       "meaningZh": "怎么，如何",
       "example": "How are you?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "你好吗?"
     },
     {
       "word": "fine",
       "meaningZh": "好的，不错的",
       "example": "I’m fine, thank you.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "我很好,谢谢。"
     },
     {
       "word": "thank",
       "meaningZh": "感谢，谢谢",
       "example": "I’m fine, thank you.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "我很好,谢谢。"
     }
   ],
   "2": [
@@ -36,37 +41,43 @@
       "word": "name",
       "meaningZh": "名字",
       "example": "What’s your name?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "为何你叫这个名字?"
     },
     {
       "word": "minwoo",
-      "meaningZh": "待补充",
+      "meaningZh": "分钟",
       "example": "My name is Minwoo.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "我叫敏宇,我叫敏宇,你叫敏宇吗?"
     },
     {
       "word": "sally",
-      "meaningZh": "待补充",
+      "meaningZh": "萨利",
       "example": "My name is Sally.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "我叫莎莉,我叫莎莉,我叫莎莉,我叫莎莉,我叫莎莉,我叫莎莉,我叫莎莉"
     },
     {
       "word": "nice",
       "meaningZh": "好的，美好的",
       "example": "Nice to meet you, Minwoo.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "幸会了,敏宇"
     },
     {
       "word": "meet",
       "meaningZh": "遇见，见⾯，认识",
       "example": "Nice to meet you, Minwoo.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "幸会了,敏宇"
     },
     {
       "word": "you",
       "meaningZh": "你，你们",
       "example": "Nice to meet you, Minwoo.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "幸会了,敏宇"
     }
   ],
   "3": [
@@ -74,13 +85,15 @@
       "word": "book",
       "meaningZh": "书",
       "example": "It’s a book.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "书写着:"
     },
     {
       "word": "bag",
       "meaningZh": "⼥⽤包包",
       "example": "It’s a bag.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "是个袋子。"
     }
   ],
   "4": [
@@ -88,81 +101,94 @@
       "word": "play",
       "meaningZh": "玩耍，游戏",
       "example": "Play, play, let’s play.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "玩,玩,玩,玩。"
     },
     {
       "word": "sing",
       "meaningZh": "唱歌",
       "example": "Sing, sing, let’s sing.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "唱吧,唱吧,唱吧,唱吧"
     },
     {
       "word": "let",
       "meaningZh": "让，允许",
       "example": "Play, play, let’s play.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "玩,玩,玩,玩。"
     },
     {
       "word": "game",
       "meaningZh": "游戏",
       "example": "Let’s play a game.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "来玩个游戏吧。"
     },
     {
       "word": "song",
-      "meaningZh": "待补充",
+      "meaningZh": "歌曲",
       "example": "Let’s sing a song.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "让我们唱一首歌。"
     }
   ],
   "5": [
     {
       "word": "sally",
-      "meaningZh": "待补充",
+      "meaningZh": "萨利",
       "example": "Sally, Sally, Sally, Sally, Sally, sit down!",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "莎莉,莎莉,莎莉,莎莉,坐下来!"
     },
     {
       "word": "peter",
-      "meaningZh": "待补充",
+      "meaningZh": "彼得语Name",
       "example": "Peter, Peter, Peter, Peter, Peter, clean up!",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "彼得,彼得,彼得,彼得,清理干净!"
     },
     {
       "word": "sit",
       "meaningZh": "坐",
       "example": "Sally, Sally, Sally, Sally, Sally, sit down!",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "莎莉,莎莉,莎莉,莎莉,坐下来!"
     },
     {
       "word": "down",
       "meaningZh": "向下，在下⾯",
       "example": "Sally, Sally, Sally, Sally, Sally, sit down!",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "莎莉,莎莉,莎莉,莎莉,坐下来!"
     },
     {
       "word": "yes",
       "meaningZh": "是的",
       "example": "Yes, Mrs.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "是的,夫人,我需要你帮忙,你需要我帮忙吗?"
     },
     {
       "word": "mrs",
-      "meaningZh": "待补充",
+      "meaningZh": "夫人",
       "example": "Yes, Mrs.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "是的,夫人,我需要你帮忙,你需要我帮忙吗?"
     },
     {
       "word": "kelly",
-      "meaningZh": "待补充",
+      "meaningZh": "凯利",
       "example": "Kelly!",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "凯莉!"
     },
     {
       "word": "clean",
       "meaningZh": "打扫，清扫",
       "example": "Peter, Peter, Peter, Peter, Peter, clean up!",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "彼得,彼得,彼得,彼得,清理干净!"
     }
   ],
   "6": [
@@ -170,31 +196,36 @@
       "word": "blue",
       "meaningZh": "蓝⾊的",
       "example": "It’s blue, it’s blue.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "蓝的,蓝的。"
     },
     {
       "word": "green",
       "meaningZh": "绿⾊的",
       "example": "It’s green, it’s green.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "绿色,绿色。"
     },
     {
       "word": "color",
       "meaningZh": "颜⾊",
       "example": "What color is this?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "这是什么颜色?"
     },
     {
       "word": "boom",
       "meaningZh": "1. ⽤低沉洪亮的声⾳说话，(2. 隆隆声)",
       "example": "Boom!",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "轰!"
     },
     {
       "word": "great",
       "meaningZh": "厉害的，优秀的，很棒的",
       "example": "Great!",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "不错!"
     }
   ],
   "7": [
@@ -202,49 +233,57 @@
       "word": "old",
       "meaningZh": "⽼的，上了年纪的",
       "example": "How old are you, Peter?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "你多大了,彼得?"
     },
     {
       "word": "how",
       "meaningZh": "怎么，如何",
       "example": "How old are you, Peter?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "你多大了,彼得?"
     },
     {
       "word": "you",
       "meaningZh": "你，你们",
       "example": "How old are you, Peter?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "你多大了,彼得?"
     },
     {
       "word": "peter",
-      "meaningZh": "待补充",
+      "meaningZh": "彼得语Name",
       "example": "How old are you, Peter?",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "你多大了,彼得?"
     },
     {
       "word": "years",
-      "meaningZh": "待补充",
+      "meaningZh": "年份",
       "example": "I’m six years old.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "也因为我已六岁。"
     },
     {
       "word": "minwoo",
-      "meaningZh": "待补充",
+      "meaningZh": "分钟",
       "example": "How old are you, Minwoo?",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "你几岁了,敏宇?"
     },
     {
       "word": "six",
       "meaningZh": "六，",
       "example": "I’m six years old.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "也因为我已六岁。"
     },
     {
       "word": "five",
       "meaningZh": "五，",
       "example": "I’m five years old.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "我今年五岁。"
     }
   ],
   "8": [
@@ -252,49 +291,57 @@
       "word": "who",
       "meaningZh": "谁",
       "example": "Who is she?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "她是谁?"
     },
     {
       "word": "mother",
       "meaningZh": "妈妈，母亲",
       "example": "My mother, my mother, She's my mother.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "母出自\"出自\" my\"."
     },
     {
       "word": "mom",
       "meaningZh": "妈妈",
       "example": "Mom!",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "妈妈!"
     },
     {
       "word": "father",
       "meaningZh": "爸爸，⽗亲",
       "example": "My father, my father, He's my father.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "父相相相从."
     },
     {
       "word": "dad",
       "meaningZh": "爸爸",
       "example": "Dad!",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "爸爸! 父亲!"
     },
     {
       "word": "she",
       "meaningZh": "她",
       "example": "Who is she?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "她是谁?"
     },
     {
       "word": "she's",
-      "meaningZh": "待补充",
+      "meaningZh": "琌",
       "example": "My mother, my mother, She's my mother.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "母出自\"出自\" my\"."
     },
     {
       "word": "he's",
-      "meaningZh": "待补充",
+      "meaningZh": "琌",
       "example": "My father, my father, He's my father.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "父相相相从."
     }
   ],
   "9": [
@@ -302,61 +349,71 @@
       "word": "good-bye",
       "meaningZh": "再见",
       "example": "Good-bye, Peter!",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "再见,彼得!"
     },
     {
       "word": "bye",
       "meaningZh": "拜拜，再⾒",
       "example": "Good-bye, Peter!",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "再见,彼得!"
     },
     {
       "word": "peter",
-      "meaningZh": "待补充",
+      "meaningZh": "彼得语Name",
       "example": "Good-bye, Peter!",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "再见,彼得!"
     },
     {
       "word": "sally",
-      "meaningZh": "待补充",
+      "meaningZh": "萨利",
       "example": "Good-bye, Sally!",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "再见,莎莉!"
     },
     {
       "word": "minwoo",
-      "meaningZh": "待补充",
+      "meaningZh": "分钟",
       "example": "Good-bye, Minwoo!",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "再见了,敏宇!"
     },
     {
       "word": "friend",
       "meaningZh": "朋友",
       "example": "Good-bye, friend!",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "再见,朋友!"
     },
     {
       "word": "teacher",
       "meaningZh": "⽼师",
       "example": "Good-bye, teacher!",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "再见,老师!"
     },
     {
       "word": "see",
       "meaningZh": "看见",
       "example": "See you tomorrow!",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "明天见!"
     },
     {
       "word": "you",
       "meaningZh": "你，你们",
       "example": "See you tomorrow!",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "明天见!"
     },
     {
       "word": "tomorrow",
       "meaningZh": "明天",
       "example": "See you tomorrow!",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "明天见!"
     }
   ],
   "10": [
@@ -364,99 +421,115 @@
       "word": "mom",
       "meaningZh": "妈妈",
       "example": "Mom!",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "妈妈!"
     },
     {
       "word": "peter",
-      "meaningZh": "待补充",
+      "meaningZh": "彼得语Name",
       "example": "Peter!",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "彼得,别这样"
     },
     {
       "word": "you",
       "meaningZh": "你，你们",
       "example": "How are you?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "你好吗?"
     },
     {
       "word": "i'm",
       "meaningZh": "我是",
       "example": "I'm good.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "我没事"
     },
     {
       "word": "good",
       "meaningZh": "好的",
       "example": "I'm good.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "我没事"
     },
     {
       "word": "home",
       "meaningZh": "在家，回家",
       "example": "I am home.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "我回来了"
     },
     {
       "word": "how",
       "meaningZh": "怎么，如何",
       "example": "How are you?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "你好吗?"
     },
     {
       "word": "please",
       "meaningZh": "拜托",
       "example": "Water, please.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "水,请。"
     },
     {
       "word": "thank",
       "meaningZh": "感谢，谢谢",
       "example": "Thank you.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "谢谢"
     },
     {
       "word": "water",
       "meaningZh": "⽔位(江河湖海⽔的⾼度)",
       "example": "Water, please.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "水,请。"
     }
   ],
   "11": [
     {
       "word": "eek",
-      "meaningZh": "待补充",
+      "meaningZh": "爱克",
       "example": "Eek, eek, eek.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "E克."
     },
     {
       "word": "you",
       "meaningZh": "你，你们",
       "example": "What do you like?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "你喜欢什么?"
     },
     {
       "word": "don't",
       "meaningZh": "不",
       "example": "I don't like spiders.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "我不喜欢蜘蛛"
     },
     {
       "word": "spiders",
-      "meaningZh": "待补充",
+      "meaningZh": "蜘蛛",
       "example": "I don't like spiders.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "我不喜欢蜘蛛"
     },
     {
       "word": "cats",
-      "meaningZh": "待补充",
+      "meaningZh": "猫",
       "example": "I like cats.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "我喜欢猫"
     },
     {
       "word": "dogs",
-      "meaningZh": "待补充",
+      "meaningZh": "狗头",
       "example": "I like dogs.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "我喜欢狗。"
     }
   ],
   "12": [
@@ -464,131 +537,152 @@
       "word": "dog",
       "meaningZh": "狗",
       "example": "This is my dog, Spike.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "这是我的狗,斯派克。"
     },
     {
       "word": "spike",
       "meaningZh": "⼤钉，",
       "example": "This is my dog, Spike.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "这是我的狗,斯派克。"
     },
     {
       "word": "run",
       "meaningZh": "跑",
       "example": "He can run.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "他能跑,他能跑,他能跑,他能跑,他能跑,他能跑,他能跑,他能跑"
     },
     {
       "word": "catch",
       "meaningZh": "接住，抓住",
       "example": "He can catch.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "他能赶上来"
     }
   ],
   "13": [
     {
       "word": "woof",
-      "meaningZh": "待补充",
+      "meaningZh": "呜f",
       "example": "Woof, woof, woof, I'm hungry.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "呜呼,呜呼,我饿了。"
     },
     {
       "word": "mommy",
       "meaningZh": "妈咪",
       "example": "Mommy, Mommy, Mommy, I'm hungry.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "妈妈 妈妈 我饿了"
     },
     {
       "word": "i'm",
       "meaningZh": "我是",
       "example": "Mommy, Mommy, Mommy, I'm hungry.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "妈妈 妈妈 我饿了"
     },
     {
       "word": "hungry",
       "meaningZh": "肚⼦饿的",
       "example": "Mommy, Mommy, Mommy, I'm hungry.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "妈妈 妈妈 我饿了"
     },
     {
       "word": "honey",
-      "meaningZh": "待补充",
+      "meaningZh": "亲爱的",
       "example": "Honey, Honey, Honey, I'm hungry.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "亲爱的,亲爱的,亲爱的,我饿了。"
     },
     {
       "word": "yummy",
       "meaningZh": "好吃的，美味的",
       "example": "Yummy, yummy, yummy, I like salad.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "好吃,好吃,我喜欢沙拉"
     },
     {
       "word": "salad",
       "meaningZh": "沙拉",
       "example": "Yummy, yummy, yummy, I like salad.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "好吃,好吃,我喜欢沙拉"
     },
     {
       "word": "yum",
       "meaningZh": "好吃（想到好吃的东西时发出的声⾳）",
       "example": "Yum, yum, yum, I like salad.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "好吃,好吃,我喜欢沙拉"
     },
     {
       "word": "dinner",
       "meaningZh": "晚餐",
       "example": "Dinner is ready.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "晚餐准备好了。"
     },
     {
       "word": "ready",
       "meaningZh": "准备好的",
       "example": "Dinner is ready.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "晚餐准备好了。"
     }
   ],
   "14": [
     {
       "word": "peter",
-      "meaningZh": "待补充",
+      "meaningZh": "彼得语Name",
       "example": "Peter, Peter, wash your face.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "彼得,彼得,洗个脸"
     },
     {
       "word": "wash",
       "meaningZh": "洗",
       "example": "Peter, Peter, wash your face.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "彼得,彼得,洗个脸"
     },
     {
       "word": "face",
       "meaningZh": "脸",
       "example": "Peter, Peter, wash your face.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "彼得,彼得,洗个脸"
     },
     {
       "word": "feet",
       "meaningZh": "脚",
       "example": "Peter, Peter, wash your feet.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "彼等取出洗脚."
     },
     {
       "word": "it's",
       "meaningZh": "它是，是",
       "example": "It's bath time.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "时已沐浴."
     },
     {
       "word": "bath",
       "meaningZh": "沐浴，洗澡",
       "example": "It's bath time.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "时已沐浴."
     },
     {
       "word": "time",
       "meaningZh": "时间，时刻",
       "example": "It's bath time.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "时已沐浴."
     }
   ],
   "15": [
@@ -596,43 +690,50 @@
       "word": "you",
       "meaningZh": "你，你们",
       "example": "Yes, you can.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "是的,你可以的。"
     },
     {
       "word": "yes",
       "meaningZh": "是的",
       "example": "Yes, you can.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "是的,你可以的。"
     },
     {
       "word": "read",
       "meaningZh": "阅读",
       "example": "Can I read?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "我能读吗?"
     },
     {
       "word": "play",
       "meaningZh": "玩耍，游戏",
       "example": "Can I play?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "我能玩吗?"
     },
     {
       "word": "watch",
       "meaningZh": "注视，观看",
       "example": "Can I watch TV, please?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "我能看电视吗?"
     },
     {
       "word": "please",
       "meaningZh": "拜托",
       "example": "Can I watch TV, please?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "我能看电视吗?"
     },
     {
       "word": "can't",
       "meaningZh": "不能，⽆法",
       "example": "No, no, no, no, you can't.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "不,不,不,你不能这么做。"
     }
   ],
   "16": [
@@ -640,37 +741,43 @@
       "word": "it's",
       "meaningZh": "它是，是",
       "example": "It's time to wake up.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "时已起起."
     },
     {
       "word": "time",
       "meaningZh": "时间，时刻",
       "example": "It's time to wake up.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "时已起起."
     },
     {
       "word": "wake",
       "meaningZh": "叫醒，醒来",
       "example": "It's time to wake up.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "时已起起."
     },
     {
       "word": "line",
       "meaningZh": "线，绳",
       "example": "It's time to line up.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "时行相接."
     },
     {
       "word": "peter",
-      "meaningZh": "待补充",
+      "meaningZh": "彼得语Name",
       "example": "Peter!",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "彼得,别这样"
     },
     {
       "word": "lisa",
-      "meaningZh": "待补充",
+      "meaningZh": "丽莎",
       "example": "Lisa!",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "丽莎!"
     }
   ],
   "17": [
@@ -678,37 +785,43 @@
       "word": "here",
       "meaningZh": "这边，往这边，在这边",
       "example": "Here it is.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "给"
     },
     {
       "word": "where",
       "meaningZh": "在哪⾥，哪⾥",
       "example": "Where is my sock?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "我的袜子呢?"
     },
     {
       "word": "t-shirt",
-      "meaningZh": "待补充",
+      "meaningZh": "T恤衫",
       "example": "Where is my T-shirt?",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "我的T恤呢? ! ! ! ! ! ! ! ! ! 我的T恤呢? ! ! ! !"
     },
     {
       "word": "sock",
-      "meaningZh": "待补充",
+      "meaningZh": "袜子",
       "example": "Where is my sock?",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "我的袜子呢?"
     },
     {
       "word": "shirt",
       "meaningZh": "衬衫",
       "example": "Where is my shirt?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "我的衬衫呢?"
     },
     {
       "word": "yellow",
       "meaningZh": "黄⾊的",
       "example": "Your yellow T-shirt.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "你的黄色T恤"
     }
   ],
   "18": [
@@ -716,131 +829,152 @@
       "word": "juice",
       "meaningZh": "果汁",
       "example": "Milk or juice, milk or juice, What do you want?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "牛奶或果汁,牛奶或果汁,你想怎样?"
     },
     {
       "word": "milk",
       "meaningZh": "⽜奶",
       "example": "Milk or juice, milk or juice, What do you want?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "牛奶或果汁,牛奶或果汁,你想怎样?"
     },
     {
       "word": "want",
       "meaningZh": "要，想要",
       "example": "Milk or juice, milk or juice, What do you want?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "牛奶或果汁,牛奶或果汁,你想怎样?"
     },
     {
       "word": "you",
       "meaningZh": "你，你们",
       "example": "Milk or juice, milk or juice, What do you want?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "牛奶或果汁,牛奶或果汁,你想怎样?"
     }
   ],
   "19": [
     {
       "word": "how's",
-      "meaningZh": "待补充",
+      "meaningZh": "怎么样",
       "example": "How's the weather?",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "天气怎么样?"
     },
     {
       "word": "weather",
       "meaningZh": "天⽓",
       "example": "How's the weather?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "天气怎么样?"
     },
     {
       "word": "it's",
       "meaningZh": "它是，是",
       "example": "It's sunny.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "阳光灿烂"
     },
     {
       "word": "sunny",
-      "meaningZh": "待补充",
+      "meaningZh": "阳光",
       "example": "It's sunny.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "阳光灿烂"
     },
     {
       "word": "cloudy",
       "meaningZh": "多云的，阴天的",
       "example": "It's cloudy.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "经云."
     },
     {
       "word": "rainy",
       "meaningZh": "下⾬的，多⾬的",
       "example": "It's rainy.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "雨来相接."
     },
     {
       "word": "snowy",
       "meaningZh": "下雪的",
       "example": "It's snowy.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "雪来相去."
     }
   ],
   "20": [
     {
       "word": "what's",
-      "meaningZh": "待补充",
+      "meaningZh": "这是什么",
       "example": "Baa, baa, What's this?",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "baa,baa, 这是什么?"
     },
     {
       "word": "it's",
       "meaningZh": "它是，是",
       "example": "It's a sheep.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "羊相会."
     },
     {
       "word": "baa",
       "meaningZh": "咩",
       "example": "Baa, baa, What's this?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "baa,baa, 这是什么?"
     },
     {
       "word": "moo",
       "meaningZh": "哞",
       "example": "Moo, moo, What's that?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "穆,穆,这是什么?"
     },
     {
       "word": "oink",
-      "meaningZh": "待补充",
+      "meaningZh": "摇摆",
       "example": "Oink, oink, What's this?",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "欧克,欧克,这是什么?"
     },
     {
       "word": "quack",
       "meaningZh": "嘎嘎",
       "example": "Quack, quack, What's that?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "夸克,夸克,那是什么?"
     },
     {
       "word": "sheep",
       "meaningZh": "绵⽺",
       "example": "It's a sheep.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "羊相会."
     },
     {
       "word": "cow",
       "meaningZh": "母⽜",
       "example": "It's a cow.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "作是说已."
     },
     {
       "word": "pig",
       "meaningZh": "猪",
       "example": "It's a pig.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "生猪相."
     },
     {
       "word": "duck",
       "meaningZh": "鸭⼦",
       "example": "It's a duck.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "鸭子出."
     }
   ],
   "21": [
@@ -848,37 +982,43 @@
       "word": "yes",
       "meaningZh": "是的",
       "example": "Yes, it is.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "是的,这是。"
     },
     {
       "word": "isn't",
       "meaningZh": "不是",
       "example": "No, it isn't.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "不,它不是。 是这样的。"
     },
     {
       "word": "carrot",
       "meaningZh": "胡萝⼘",
       "example": "Is this a carrot?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "这是胡萝卜吗?"
     },
     {
       "word": "cabbage",
       "meaningZh": "卷⼼菜，洋⽩菜",
       "example": "Is this cabbage?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "这是小白菜吗?"
     },
     {
       "word": "pumpkin",
       "meaningZh": "南⽠",
       "example": "Is this a pumpkin?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "这是南瓜吗?"
     },
     {
       "word": "tomato",
-      "meaningZh": "待补充",
+      "meaningZh": "西红柿",
       "example": "Is this a tomato?",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "这是番茄吗?"
     }
   ],
   "22": [
@@ -886,37 +1026,43 @@
       "word": "mitt",
       "meaningZh": "棒球⼿套",
       "example": "This is my mitt, mitt, mitt, mitt.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "这是我的手套,手套,手套,手套。"
     },
     {
       "word": "bat",
       "meaningZh": "蝙蝠",
       "example": "This is your bat, bat, bat, bat.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "这是你的球棒,球棒,球棒,球棒"
     },
     {
       "word": "ball",
       "meaningZh": "球",
       "example": "This is my ball, ball, ball, ball.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "这是我的球,球,球,球,球。"
     },
     {
       "word": "let's",
       "meaningZh": "让我们",
       "example": "Let's play together.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "一起玩吧,我们一起玩吧"
     },
     {
       "word": "play",
       "meaningZh": "玩耍，游戏",
       "example": "Let's play together.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "一起玩吧,我们一起玩吧"
     },
     {
       "word": "together",
       "meaningZh": "⼀起",
       "example": "Let's play together.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "一起玩吧,我们一起玩吧"
     }
   ],
   "23": [
@@ -924,105 +1070,122 @@
       "word": "you",
       "meaningZh": "你，你们",
       "example": "Can you ride a bike?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "你会骑自行车吗?"
     },
     {
       "word": "yes",
       "meaningZh": "是的",
       "example": "Yes, I can.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "是的,我可以的。 \\ N"
     },
     {
       "word": "ride",
       "meaningZh": "骑，乘",
       "example": "Can you ride a bike?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "你会骑自行车吗?"
     },
     {
       "word": "bike",
       "meaningZh": "⾃⾏车，",
       "example": "Can you ride a bike?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "你会骑自行车吗?"
     },
     {
       "word": "fly",
       "meaningZh": "飞",
       "example": "Can you fly a kite?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "你能放风筝吗?"
     },
     {
       "word": "kite",
-      "meaningZh": "待补充",
+      "meaningZh": "风筝",
       "example": "Can you fly a kite?",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "你能放风筝吗?"
     },
     {
       "word": "can't",
       "meaningZh": "不能，⽆法",
       "example": "No, no, no, I can't.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "不,不,不,我不能这样做。"
     }
   ],
   "24": [
     {
       "word": "ants",
-      "meaningZh": "待补充",
+      "meaningZh": "蚂蚁",
       "example": "Two ants.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "二蚁相."
     },
     {
       "word": "little",
       "meaningZh": "⼩的",
       "example": "Three little ants.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "三小蚁."
     },
     {
       "word": "one",
       "meaningZh": "彼此，互相",
       "example": "One ant.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "一只蚂蚁。"
     },
     {
       "word": "ant",
       "meaningZh": "蚂蚁",
       "example": "One ant.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "一只蚂蚁。"
     },
     {
       "word": "two",
-      "meaningZh": "待补充",
+      "meaningZh": "两个",
       "example": "Two ants.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "二蚁相."
     },
     {
       "word": "three",
       "meaningZh": "三，",
       "example": "Three little ants.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "三小蚁."
     },
     {
       "word": "four",
       "meaningZh": "四，",
       "example": "Four ants.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "四蚁相出."
     },
     {
       "word": "five",
       "meaningZh": "五，",
       "example": "Five ants.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "五蚁相取."
     },
     {
       "word": "six",
       "meaningZh": "六，",
       "example": "Six little ants.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "六小蚁."
     },
     {
       "word": "seven",
       "meaningZh": "七，",
       "example": "Seven ants.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "七蚁相."
     }
   ],
   "25": [
@@ -1030,25 +1193,29 @@
       "word": "they're",
       "meaningZh": "他们是",
       "example": "They're grapes.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "他们是葡萄。"
     },
     {
       "word": "grapes",
-      "meaningZh": "待补充",
+      "meaningZh": "葡萄",
       "example": "They're grapes.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "他们是葡萄。"
     },
     {
       "word": "apples",
-      "meaningZh": "待补充",
+      "meaningZh": "苹果",
       "example": "They're apples.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "他们是苹果。"
     },
     {
       "word": "lemons",
-      "meaningZh": "待补充",
+      "meaningZh": "柠檬",
       "example": "They're lemons.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "柠檬"
     }
   ],
   "26": [
@@ -1056,31 +1223,36 @@
       "word": "big",
       "meaningZh": "⼤的",
       "example": "They are big.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "它们是大个子。"
     },
     {
       "word": "small",
       "meaningZh": "⼩的",
       "example": "They are small.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "它们是小的。"
     },
     {
       "word": "heavy",
       "meaningZh": "重的",
       "example": "It's heavy.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "重相从来."
     },
     {
       "word": "light",
       "meaningZh": "灯",
       "example": "It's light.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "相轻相轻."
     },
     {
       "word": "it's",
       "meaningZh": "它是，是",
       "example": "It's heavy.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "重相从来."
     }
   ],
   "27": [
@@ -1088,43 +1260,50 @@
       "word": "where",
       "meaningZh": "在哪⾥，哪⾥",
       "example": "Where is the watermelon?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "西瓜在哪? 来点西瓜吧"
     },
     {
       "word": "watermelon",
       "meaningZh": "西⽠",
       "example": "Where is the watermelon?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "西瓜在哪? 来点西瓜吧"
     },
     {
       "word": "bananas",
-      "meaningZh": "待补充",
+      "meaningZh": "香蕉类",
       "example": "Where are the bananas?",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "香蕉呢? 香蕉呢? 香蕉呢? 香蕉呢? 香蕉呢? 香蕉呢? 香蕉呢?"
     },
     {
       "word": "table",
       "meaningZh": "桌⼦，餐桌",
       "example": "It's under the table.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "入于座下."
     },
     {
       "word": "it's",
       "meaningZh": "它是，是",
       "example": "It's under the table.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "入于座下."
     },
     {
       "word": "under",
       "meaningZh": "在",
       "example": "It's under the table.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "入于座下."
     },
     {
       "word": "they're",
       "meaningZh": "他们是",
       "example": "They're on the table.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "师入座."
     }
   ],
   "28": [
@@ -1132,55 +1311,64 @@
       "word": "how",
       "meaningZh": "怎么，如何",
       "example": "How many snakes are there?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "有多少蛇? 有多少蛇? 有多少蛇? 有多少蛇?"
     },
     {
       "word": "many",
       "meaningZh": "很多的",
       "example": "How many snakes are there?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "有多少蛇? 有多少蛇? 有多少蛇? 有多少蛇?"
     },
     {
       "word": "snakes",
-      "meaningZh": "待补充",
+      "meaningZh": "蛇头",
       "example": "How many snakes are there?",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "有多少蛇? 有多少蛇? 有多少蛇? 有多少蛇?"
     },
     {
       "word": "tigers",
-      "meaningZh": "待补充",
+      "meaningZh": "老虎们",
       "example": "How many tigers are there?",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "到底有多少个老虎?"
     },
     {
       "word": "three",
       "meaningZh": "三，",
       "example": "There are three snakes on the rock.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "有三蛇入岩上. 师曰."
     },
     {
       "word": "rock",
       "meaningZh": "岩⽯，⽯头",
       "example": "There are three snakes on the rock.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "有三蛇入岩上. 师曰."
     },
     {
       "word": "one",
       "meaningZh": "彼此，互相",
       "example": "There is one tiger on the truck.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "卡车上有一只老虎"
     },
     {
       "word": "tiger",
       "meaningZh": "⽼虎",
       "example": "There is one tiger on the truck.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "卡车上有一只老虎"
     },
     {
       "word": "truck",
       "meaningZh": "卡车，货车",
       "example": "There is one tiger on the truck.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "卡车上有一只老虎"
     }
   ],
   "29": [
@@ -1188,25 +1376,29 @@
       "word": "yogurt",
       "meaningZh": "酸奶，优酪乳",
       "example": "I have yogurt.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "我有酸奶,我还有酸奶"
     },
     {
       "word": "you",
       "meaningZh": "你，你们",
       "example": "What do you have?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "还有什么?"
     },
     {
       "word": "it's",
       "meaningZh": "它是，是",
       "example": "Yogurt, yogurt, it's my favorite.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "酸奶,酸奶,这是我最喜欢的。"
     },
     {
       "word": "favorite",
       "meaningZh": "最喜欢的",
       "example": "Yogurt, yogurt, it's my favorite.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "酸奶,酸奶,这是我最喜欢的。"
     }
   ],
   "30": [
@@ -1214,49 +1406,57 @@
       "word": "line",
       "meaningZh": "线，绳",
       "example": "Line up, line up.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "排好队,排好队"
     },
     {
       "word": "home",
       "meaningZh": "在家，回家",
       "example": "Go home, go home.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "回家,回家去,我们回家去。"
     },
     {
       "word": "time",
       "meaningZh": "时间，时刻",
       "example": "What time is it?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "几点了?"
     },
     {
       "word": "it's",
       "meaningZh": "它是，是",
       "example": "It's one o'clock.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "即一时出."
     },
     {
       "word": "o'clock",
-      "meaningZh": "待补充",
+      "meaningZh": "时间",
       "example": "It's one o'clock.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "即一时出."
     },
     {
       "word": "let's",
       "meaningZh": "让我们",
       "example": "Let's line up!",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "排好队!"
     },
     {
       "word": "one",
       "meaningZh": "彼此，互相",
       "example": "It's one o'clock.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "即一时出."
     },
     {
       "word": "four",
       "meaningZh": "四，",
       "example": "It's four o'clock.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "出四时相."
     }
   ],
   "31": [
@@ -1264,37 +1464,43 @@
       "word": "day",
       "meaningZh": "天，⽇⼦",
       "example": "What day is it today?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "今天是几号?"
     },
     {
       "word": "today",
       "meaningZh": "今天",
       "example": "What day is it today?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "今天是几号?"
     },
     {
       "word": "monday",
       "meaningZh": "星期⼀",
       "example": "Monday, Monday!",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "星期一,星期一,我说,我..."
     },
     {
       "word": "it's",
       "meaningZh": "它是，是",
       "example": "It's Monday.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "周一来."
     },
     {
       "word": "wednesday",
       "meaningZh": "星期三",
       "example": "Wednesday, Wednesday!",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "星期三,星期三,我们去"
     },
     {
       "word": "friday",
       "meaningZh": "星期五",
       "example": "Friday, Friday!",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "星期五,星期五, 星期五, 星期五, 星期五, 星期五, 星期五!"
     }
   ],
   "32": [
@@ -1302,49 +1508,57 @@
       "word": "you",
       "meaningZh": "你，你们",
       "example": "What do you do on Mondays?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "你周一做什么的? 周一的时候你做什么的?"
     },
     {
       "word": "play",
       "meaningZh": "玩耍，游戏",
       "example": "I play badminton.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "我打羽毛球,我打羽毛球,我打羽毛球"
     },
     {
       "word": "mondays",
-      "meaningZh": "待补充",
+      "meaningZh": "星期一",
       "example": "What do you do on Mondays?",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "你周一做什么的? 周一的时候你做什么的?"
     },
     {
       "word": "tuesdays",
-      "meaningZh": "待补充",
+      "meaningZh": "礼拜",
       "example": "What do you do on Tuesdays?",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "你星期二做什么的? 周二,你来做什么?"
     },
     {
       "word": "badminton",
       "meaningZh": "⽻⽑球",
       "example": "I play badminton.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "我打羽毛球,我打羽毛球,我打羽毛球"
     },
     {
       "word": "ping-pong",
       "meaningZh": "桌球，乒乓球",
       "example": "I play ping-pong.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "我打乒乓球,我打乒乓球,我打乒乓球"
     },
     {
       "word": "basketball",
       "meaningZh": "篮球",
       "example": "I play basketball.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "我打篮球。"
     },
     {
       "word": "soccer",
       "meaningZh": "⾜球",
       "example": "I play soccer.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "我踢足球,我踢足球,我踢足球,我踢足球"
     }
   ],
   "33": [
@@ -1352,49 +1566,57 @@
       "word": "whose",
       "meaningZh": "谁的",
       "example": "Whose comic book is this?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "这是谁的漫画书?"
     },
     {
       "word": "comic",
       "meaningZh": "连环漫画的",
       "example": "Whose comic book is this?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "这是谁的漫画书?"
     },
     {
       "word": "book",
       "meaningZh": "书",
       "example": "Whose comic book is this?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "这是谁的漫画书?"
     },
     {
       "word": "it's",
       "meaningZh": "它是，是",
       "example": "It's Sally's comic book.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "这是莎莉的漫画."
     },
     {
       "word": "computer",
       "meaningZh": "电脑",
       "example": "Whose computer game is this?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "这是谁的电脑游戏?"
     },
     {
       "word": "game",
       "meaningZh": "游戏",
       "example": "Whose computer game is this?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "这是谁的电脑游戏?"
     },
     {
       "word": "sally's",
-      "meaningZh": "待补充",
+      "meaningZh": "萨利的",
       "example": "It's Sally's comic book.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "这是莎莉的漫画."
     },
     {
       "word": "her",
-      "meaningZh": "待补充",
+      "meaningZh": "",
       "example": "It's her computer game.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "这是她的电脑游戏。"
     }
   ],
   "34": [
@@ -1402,81 +1624,94 @@
       "word": "window",
       "meaningZh": "窗户",
       "example": "Open the window.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "打开窗户"
     },
     {
       "word": "turn",
       "meaningZh": "旋转，转",
       "example": "Turn on the TV.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "打开电视"
     },
     {
       "word": "open",
       "meaningZh": "打开",
       "example": "Open the window.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "打开窗户"
     },
     {
       "word": "close",
       "meaningZh": "1. 惊险的，⽞乎的，(2. 近的，接近的，3. 关闭)",
       "example": "Close the window.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "关上窗户"
     },
     {
       "word": "off",
       "meaningZh": "远离，离去",
       "example": "Turn off the TV.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "关掉电视"
     }
   ],
   "35": [
     {
       "word": "he's",
-      "meaningZh": "待补充",
+      "meaningZh": "琌",
       "example": "He's a bus driver.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "他是公交车司机."
     },
     {
       "word": "she",
       "meaningZh": "她",
       "example": "What does she do?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "她做什么的? 做错什么了?"
     },
     {
       "word": "she's",
-      "meaningZh": "待补充",
+      "meaningZh": "琌",
       "example": "She's a doctor.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "'为大夫."
     },
     {
       "word": "bus",
       "meaningZh": "公车",
       "example": "He's a bus driver.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "他是公交车司机."
     },
     {
       "word": "driver",
       "meaningZh": "司机",
       "example": "He's a bus driver.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "他是公交车司机."
     },
     {
       "word": "doctor",
       "meaningZh": "医⽣",
       "example": "She's a doctor.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "'为大夫."
     },
     {
       "word": "dentist",
       "meaningZh": "⽛医",
       "example": "He's a dentist.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "他是牙医"
     },
     {
       "word": "shopkeeper",
       "meaningZh": "店主",
       "example": "She's a shopkeeper.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "'为店主."
     }
   ],
   "36": [
@@ -1484,55 +1719,64 @@
       "word": "want",
       "meaningZh": "要，想要",
       "example": "What do you want?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "你想怎样?"
     },
     {
       "word": "you",
       "meaningZh": "你，你们",
       "example": "What do you like?",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "你喜欢什么?"
     },
     {
       "word": "don't",
       "meaningZh": "不",
       "example": "I don't like salad.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "我不喜欢沙拉"
     },
     {
       "word": "chicken",
-      "meaningZh": "待补充",
+      "meaningZh": "鸡肉",
       "example": "I like chicken.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "我喜欢吃鸡肉"
     },
     {
       "word": "noodles",
-      "meaningZh": "待补充",
+      "meaningZh": "面条",
       "example": "I want noodles.",
-      "source": "generated-from-reading"
+      "source": "machine-translated-from-reading",
+      "exampleZh": "我要面条。"
     },
     {
       "word": "salad",
       "meaningZh": "沙拉",
       "example": "I don't like salad.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "我不喜欢沙拉"
     },
     {
       "word": "soup",
       "meaningZh": "汤",
       "example": "I don't like soup.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "入不入汤."
     },
     {
       "word": "bread",
       "meaningZh": "⾯包",
       "example": "I don't want bread.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "我不想吃面包,我不喜欢面包"
     },
     {
       "word": "spaghetti",
       "meaningZh": "意⼤利⾯",
       "example": "I don't want spaghetti.",
-      "source": "synced-local-vocabulary"
+      "source": "synced-local-vocabulary",
+      "exampleZh": "我不想吃意大利面条"
     }
   ]
 }
