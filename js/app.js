@@ -185,10 +185,7 @@ async renderSeries(seriesId){
         <h2>Episode ${ep.episodeId} · ${ep.title}</h2>
         <p class="muted">${ep.titleZh || ''}</p>
         <div class="module-grid">
-          ${ep.video?.embedUrl?'<button class="module-card" data-go="watch">🎬<b>在线视频</b><span>B站播放</span></button>':''}
-          ${ep.video?.hlsUrl?'<button class="module-card direct-video-card" data-go="hlsVideo">▶️<b>HLS 播放</b><span>站内视频源</span></button>':''}
-          ${ep.video?.directUrl?'<button class="module-card direct-video-card" data-go="directVideo">▶️<b>直链播放</b><span>备用视频在线播放</span></button>':''}
-          <button class="module-card" data-go="localVideo">📁<b>Local Video</b><span>本地视频</span></button>
+          ${ep.video?.hlsUrl?'<button class="module-card direct-video-card" data-go="watch">▶️<b>Watch</b><span>看视频</span></button>':''}
           ${ep.modules?.read?'<button class="module-card" data-go="listenRead">🎧<b>Listen and Read</b><span>听读</span></button>':''}
           ${(ep.modules?.words || ep.modules?.vocabulary)?'<button class="module-card" data-go="words">🔤<b>Words</b><span>单词</span></button>':''}
           ${ep.modules?.quiz?'<button class="module-card" data-go="quiz">✅<b>Quiz</b><span>测验</span></button>':''}
@@ -240,7 +237,8 @@ async renderLesson(seriesId, episodeId){
     ]);
     const [reading, vocab, phrases, grammar, quiz, review] = data;
     const lessonData = {seriesId, episodeId, series, ep, reading:reading[String(episodeId)], vocab:vocab[String(episodeId)]||[], phrases:phrases[String(episodeId)]||[], grammar:grammar[String(episodeId)]||[], quiz:quiz[String(episodeId)], review:review[String(episodeId)]};
-    const tab = this.activeLessonTab || 'watch';
+    const visibleTabs=['watch','listenRead','words','quiz'];
+    const tab = visibleTabs.includes(this.activeLessonTab) ? this.activeLessonTab : 'watch';
     this.el().innerHTML = `
       <div class="breadcrumb"><a href="#/home">动画故事</a><span>›</span><a href="#/series/${seriesId}">${series.seriesTitle}</a><span>›</span><span>Episode ${episodeId}</span></div>
       <section class="lesson-head">
@@ -312,16 +310,15 @@ async renderLesson(seriesId, episodeId){
   },
   lessonTabs(ep, active){
     const tabs=[];
-    if(ep.video?.embedUrl) tabs.push('watch');
-    if(ep.video?.hlsUrl) tabs.push('hlsVideo');
-    if(ep.video?.directUrl) tabs.push('directVideo');
-    tabs.push('localVideo');
+    // HLS is the current primary source. The Bilibili, direct, and local modules
+    // remain implemented below as fallbacks, but are intentionally hidden.
+    if(ep.video?.hlsUrl) tabs.push('watch');
     if(ep.modules?.read) tabs.push('listenRead');
     if(ep.modules?.words || ep.modules?.vocabulary) tabs.push('words');
     if(ep.modules?.quiz) tabs.push('quiz');
     return tabs.map(t=>`<button class="tab ${active===t?'active':''}" data-tab="${t}">${this.tabText(t)}</button>`).join('');
   },
-  tabText(t){return {watch:'在线视频 · B站',hlsVideo:'HLS 播放',directVideo:'直链播放 · 备用',localVideo:'Local Video 本地视频',listenRead:'Listen and Read 听读',words:'Words 单词',quiz:'Quiz 测验'}[t]||t},
+  tabText(t){return {watch:'Watch 看视频',hlsVideo:'HLS 播放',directVideo:'直链播放 · 备用',localVideo:'Local Video 本地视频',listenRead:'Listen and Read 听读',words:'Words 单词',quiz:'Quiz 测验'}[t]||t},
   lessonPanel(tab,d){
     if(tab==='watch') return this.watchPanel(d);
     if(tab==='hlsVideo') return this.hlsVideoPanel(d);
@@ -336,7 +333,7 @@ async renderLesson(seriesId, episodeId){
   watchPanel(d){
     const v=d.ep.video || {};
     if(!v.embedUrl && !v.directUrl && !v.hlsUrl) return `<div class="empty">本集视频暂未添加。</div>`;
-    if(!v.embedUrl && v.hlsUrl) return this.hlsVideoPanel(d);
+    if(v.hlsUrl) return this.hlsVideoPanel(d, 'watch');
     if(!v.embedUrl) return this.directVideoPanel(d);
     return `<section class="online-video-panel"><div class="video-source-head"><div><h2>在线视频</h2><p class="muted">当前播放源：B站。遇到加载问题时，可使用下方的直链播放。</p></div>${v.directUrl?`<button class="btn secondary small open-direct-video" type="button">▶ 使用直链播放</button>`:''}</div><div class="video-wrap"><iframe src="${v.embedUrl}" allowfullscreen="allowfullscreen" scrolling="no"></iframe></div></section>${this.completeButton(d,'watch')}`;
   },
@@ -345,10 +342,10 @@ async renderLesson(seriesId, episodeId){
     if(!url) return `<div class="empty">本集暂未提供直链视频。</div>`;
     return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>直链播放</h2><p class="muted">备用播放方式。已启用无来源请求以兼容源站的防盗链规则。</p></div>${d.ep.video?.embedUrl?`<button class="btn secondary small open-bilibili-video" type="button">切换到 B站播放</button>`:''}</div><div class="video-wrap"><video class="direct-video-player" controls playsinline preload="metadata" src="${this.escapeHtml(url)}"></video></div><p class="muted direct-video-help">若播放器仍无法读取，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">在新页面播放直链</a>，或切换到 B站播放。</p></section>${this.completeButton(d,'directVideo')}`;
   },
-  hlsVideoPanel(d){
+  hlsVideoPanel(d, completionModule='hlsVideo'){
     const url=d.ep.video?.hlsUrl;
     if(!url) return `<div class="empty">本集 HLS 视频源暂未添加。</div>`;
-    return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>HLS 播放</h2><p class="muted">站内视频源。播放器会自动适配支持 HLS 的浏览器。</p></div>${d.ep.video?.embedUrl?`<button class="btn secondary small open-bilibili-video" type="button">切换到 B站播放</button>`:''}</div><div class="video-wrap"><video class="hls-video-player" controls playsinline preload="metadata" data-hls-src="${this.escapeHtml(url)}"></video></div><p class="muted direct-video-help">若当前浏览器无法播放，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">在新页面打开视频源</a>。</p></section>${this.completeButton(d,'hlsVideo')}`;
+    return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>Watch 看视频</h2><p class="muted">当前使用 HLS 播放源，播放器会自动适配支持 HLS 的浏览器。</p></div></div><div class="video-wrap"><video class="hls-video-player" controls playsinline preload="metadata" data-hls-src="${this.escapeHtml(url)}"></video></div><p class="muted direct-video-help">若当前浏览器无法播放，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">在新页面打开视频源</a>。</p></section>${this.completeButton(d,completionModule)}`;
   },
   async initializeHlsVideo(player){
     if(player.dataset.ready) return;
