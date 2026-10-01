@@ -377,6 +377,27 @@ async renderLesson(seriesId, episodeId){
       player.closest('.direct-video-panel')?.querySelector('.direct-video-help')?.insertAdjacentHTML('beforeend',' 当前浏览器无法载入 HLS 播放器。');
     }
   },
+  async initializeHlsAudio(player){
+    if(player.dataset.ready) return;
+    player.dataset.ready='1';
+    const source=player.dataset.hlsSrc;
+    if(player.canPlayType('application/vnd.apple.mpegurl')) { player.src=source; return; }
+    try{
+      if(!window.Hls){
+        await new Promise((resolve,reject)=>{
+          const script=document.createElement('script');
+          script.src='https://cdn.jsdelivr.net/npm/hls.js@1.5.20/dist/hls.min.js';
+          script.onload=resolve; script.onerror=reject; document.head.appendChild(script);
+        });
+      }
+      if(window.Hls && window.Hls.isSupported()){
+        const hls=new window.Hls();
+        hls.loadSource(source); hls.attachMedia(player); player._hls=hls;
+      }else throw new Error('HLS is not supported');
+    }catch(err){
+      player.closest('.audio-player-card')?.insertAdjacentHTML('beforeend','<p class="muted audio-player-help">当前浏览器无法载入本集音频。</p>');
+    }
+  },
   localVideoPanel(d){
     return `<section class="local-video-panel" data-series="${d.seriesId}" data-episode="${d.episodeId}">
       <h2>本地视频</h2>
@@ -447,11 +468,18 @@ async renderLesson(seriesId, episodeId){
     status.textContent=`已保存：${entry.name}（${(entry.size/1024/1024).toFixed(1)} MB）`;
   },
   listenReadPanel(d){
+    const audio=this.hlsAudioPanel(d);
     return `
     <div class="read-only-window">
+      ${audio}
       ${this.readPanel(d).replace('<h2>Read</h2>','').replace(/<button class="btn small mark-complete"[^>]*data-module="read"[^>]*>完成本模块<\/button>/,'')}
     </div>
     ${this.completeButton(d,'read')}`;
+  },
+  hlsAudioPanel(d){
+    const url=d.ep.video?.hlsUrl;
+    if(!url) return `<section class="listen-header"><span class="audio-icon">🎧</span><div><h3>Listen and Read</h3><p>本集暂未添加音频播放源，可先阅读下方原文。</p></div></section>`;
+    return `<section class="listen-read-audio" aria-label="本集音频播放"><div class="listen-header"><span class="audio-icon">🎧</span><div><h3>Listen and Read</h3><p>播放本集原声，同时阅读下方英文文本；此处只播放音频，不显示视频。</p></div></div><div class="audio-player-card"><div class="audio-player-label">本集音频</div><audio class="hls-audio-player" controls preload="metadata" data-hls-src="${this.escapeHtml(url)}">当前浏览器不支持音频播放。</audio></div></section>`;
   },
   readPanel(d){
     const paras=(d.reading && d.reading.paragraphs) || [];
@@ -599,6 +627,7 @@ phrasesPanel(d){
   
 bindLessonPanel(tab,d,root=document){
   document.querySelectorAll('.hls-video-player').forEach(player=>this.initializeHlsVideo(player));
+  document.querySelectorAll('.hls-audio-player').forEach(player=>this.initializeHlsAudio(player));
   document.querySelectorAll('.mark-complete').forEach(btn=>btn.addEventListener('click', e=>{e.preventDefault(); this.markComplete(btn.dataset.series, btn.dataset.episode, btn.dataset.module); btn.textContent='已完成 ✓';}));
   document.querySelectorAll('.open-direct-video').forEach(btn=>btn.addEventListener('click',()=>{this.activeLessonTab='directVideo'; this.renderLesson(d.seriesId,d.episodeId);}));
   document.querySelectorAll('.open-bilibili-video').forEach(btn=>btn.addEventListener('click',()=>{this.activeLessonTab='watch'; this.renderLesson(d.seriesId,d.episodeId);}));
