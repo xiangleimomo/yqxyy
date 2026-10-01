@@ -69,7 +69,7 @@ const App = {
       <section class="hero">
         <div>
           <h1>动画故事</h1>
-          <p>选择一个故事系列开始学习。每一集按 Watch → Listen and Read → Words → Quiz 的顺序完成，完成所有 Quiz 任务解锁下一集。</p>
+          <p>选择一个故事系列开始学习。Level 0–2 可自由选课；Level 3 及以上完成本集 Quiz，正确率达到 80% 后解锁下一集。</p>
         </div>
         <div class="hero-badge">Story · Level · Progress</div>
       </section>
@@ -906,7 +906,13 @@ addPoints(n=1){
     window.SFCloud?.schedule();
   },
 
+  requiresQuizUnlock(seriesId){
+    // Every learning entry loads series.json before checking access.
+    const level=Number(this.cache[`data/${seriesId}/series.json`]?.level);
+    return !Number.isFinite(level) || level>=3;
+  },
   isEpisodeUnlocked(seriesId, episodeId){
+    if(!this.requiresQuizUnlock(seriesId)) return true;
     const id=Number(episodeId);
     if(id<=1) return true;
     const p=this.storage('progress') || {};
@@ -941,7 +947,7 @@ addPoints(n=1){
     if(page==='series' && currentSeries===seriesId && this.episodeListRefresh?.seriesId===seriesId){
       this.episodeListRefresh.render();
     }
-    if(result) result.insertAdjacentHTML('beforeend','<p>🎉 已通过！后续已发布课程将按顺序解锁。</p>');
+    if(result) result.insertAdjacentHTML('beforeend',this.requiresQuizUnlock(seriesId)?'<p>🎉 已通过！后续已发布课程将按顺序解锁。</p>':'<p>🎉 已通过！本系列可自由选择已发布课程。</p>');
   },
   saveWord(item){
     const arr=this.storage('wordbank') || []; const id=`${item.type}:${item.seriesId}:${item.episodeId}:${item.word}`;
