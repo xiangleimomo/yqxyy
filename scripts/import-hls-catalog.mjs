@@ -64,7 +64,7 @@ function urlCategory(name){ return name.replace(/^L(\d+)英语动画$/, 'Level $
 
 function existingMatch(project){
   const name=normalized(project.name);
-  if(name.includes('journeytothewest')) return 'journey-to-the-west';
+  if(name === normalized('Journey to the West')) return 'journey-to-the-west';
   if(name.includes('threekingdom') || name.includes('romanceofthethreekingdom')) return 'three-kingdoms';
   return null;
 }
