@@ -1,0 +1,9 @@
+.read-dictionary-tools{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;padding:10px 12px;color:#52627a;font-size:14px;line-height:1.5}
+.read-dictionary-tools label{cursor:pointer;display:flex;align-items:center;gap:6px}
+.read-dictionary-card{position:fixed;z-index:2147483647;width:340px;max-width:calc(100vw - 16px);max-height:calc(100vh - 16px);overflow:auto;box-sizing:border-box;padding:16px;background:#fff;color:#183153;border:1px solid #cfe3ff;border-radius:14px;box-shadow:0 8px 28px #0003;font-size:15px;line-height:1.6;text-indent:0}
+.read-dictionary-card[hidden]{display:none}
+.read-dictionary-head{display:flex;justify-content:space-between;gap:12px;overflow-wrap:anywhere}
+.read-dictionary-card button{cursor:pointer;border:1px solid #d8e1ec;background:#f8fbff;color:#183153;border-radius:8px;padding:6px 10px}
+.read-dictionary-head button{align-self:flex-start}
+.read-dictionary-body{overflow-wrap:anywhere}
+.read-dictionary-actions{display:flex;gap:8px;flex-wrap:wrap}

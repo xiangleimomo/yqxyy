@@ -471,7 +471,7 @@ async renderLesson(seriesId, episodeId){
       }
       return html + this.escapeHtml(source.slice(lastIndex));
     };
-    return `<div class="book-reader">
+    return `${window.ReadDictionary.controls()}<div class="book-reader" data-dictionary-reader data-series="${this.escapeHtml(d.seriesId)}" data-episode="${d.episodeId}">
     ${paras.map((p)=>`<div class="read-paragraph"><div class="selectable-sentence">${renderText(p.text || p)}</div>${p.translation?`<div class="translation hidden-translation">${p.translation}</div>`:''}</div>`).join('')}
     </div>${this.completeButton(d,'read')}`;
   },
@@ -961,7 +961,7 @@ addPoints(n=1){
   },
   renderWordbank(){
     const arr=this.storage('wordbank') || [];
-    this.el().innerHTML=`<section class="hero"><div><h1>单词表</h1><p>这里收集你在各集课程中收藏的单词和短语。</p></div></section><div class="cards-grid">${arr.length?arr.map(w=>`<article class="mini-card"><h3>${w.word}</h3><div class="meaning">${w.meaning||''}</div>${w.example?`<div class="example">${w.example}</div>`:''}<p class="muted">${w.seriesId} · Episode ${w.episodeId}</p></article>`).join(''):'<div class="empty">还没有收藏单词或短语。</div>'}</div>`;
+    this.el().innerHTML=`<section class="hero"><div><h1>单词表</h1><p>这里收集你在各集课程中收藏的单词和短语。</p></div></section><div class="cards-grid">${arr.length?arr.map(w=>`<article class="mini-card"><h3>${this.escapeHtml(w.word)}</h3><div class="meaning">${this.escapeHtml(w.meaning||'')}</div>${w.example?`<div class="example">${this.escapeHtml(w.example)}</div>`:''}<p class="muted">${this.escapeHtml(w.seriesId)} · Episode ${Number(w.episodeId)}</p></article>`).join(''):'<div class="empty">还没有收藏单词或短语。</div>'}</div>`;
   },
   renderWriting(){
     const arr=this.storage('sentences') || [];

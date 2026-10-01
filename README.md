@@ -1,5 +1,13 @@
 # Story Fox English V16
 
+## Read 内置划词词典 V1
+
+所有课程共用 `readPanel`，由 `js/read-dictionary.js` 和 `css/read-dictionary.css` 提供划词词典。双击英文单词或划选文字查询；单词使用 Free Dictionary API，中文翻译使用 MyMemory，多词片段只请求翻译。接口发音不可用时回退到浏览器英文朗读。词卡可加入已有单词表，沿用账户收藏同步。
+
+Read 顶部可关闭内置词典，偏好保存到本机；不会取消原生文字选择或拦截第三方翻译插件事件。课程重点词原有提示继续保留。点击别处、Escape、滚动、关闭来源窗口时关闭词卡。缓存最多 100 条成功查询，保留 30 天；失败结果不缓存。查询片段最多 500 UTF-8 字节，外部接口超时或不可用时显示提示并可重试。选中文字会发送至上述外部服务。
+
+验证：本地 Chromium 中检查原生双击、单词与句子分流、缓存命中、生词本、接口文本安全显示、开关、关闭、网络失败，以及西游记/三国共享 Read 窗口。成功响应使用模拟接口；当前环境真实接口探测遇到 HTTP 403，在线服务可用性需在实际网络中确认。
+
 # Story Fox English / Little Fox Learning Platform
 
 这是根据“Little Fox Learning Platform 标准化工作流 V1.0”重构的可部署静态网站。
