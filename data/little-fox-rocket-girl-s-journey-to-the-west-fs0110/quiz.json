@@ -6,7 +6,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "Where are Meg and Daryl working?",
         "options": [
           {
@@ -23,13 +23,13 @@
           }
         ],
         "answer": "A",
-        "explanation": "正确答案：Shopwell Supermarket。请结合本集正文核对。",
+        "explanation": "开头说明 Meg 和 Daryl 正在 Shopwell Supermarket 补充货架上的商品。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "What steps out of the damaged bakery?",
         "options": [
           {
@@ -46,76 +46,76 @@
           }
         ],
         "answer": "B",
-        "explanation": "正确答案：A large pig。请结合本集正文核对。",
+        "explanation": "面包店正面炸开后，一头大猪走出，Roxy 因而发现小偷的身份。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"aisle\" mean in this episode?",
+        "category": "story",
+        "question": "Why does Meg suggest stacking the tomatoes near the cash registers?",
         "options": [
           {
             "key": "A",
-            "text": "碎屑"
+            "text": "The customers have already bought them."
           },
           {
             "key": "B",
-            "text": "包装纸"
+            "text": "Daryl wants to eat them."
           },
           {
             "key": "C",
-            "text": "过道"
+            "text": "There is not enough room on the shelf."
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：过道。请结合本集正文核对。",
+        "explanation": "货架放不下多余的番茄罐头，因此 Meg 建议将它们堆在收银台附近。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"crumbs\" mean in this episode?",
+        "category": "story",
+        "question": "Why does Miss Apricot give Jack a stern look?",
         "options": [
           {
             "key": "A",
-            "text": "碎屑"
+            "text": "He leaves school to fight the thief."
           },
           {
             "key": "B",
-            "text": "过道"
+            "text": "He is searching for his pencil instead of reading."
           },
           {
             "key": "C",
-            "text": "包装纸"
+            "text": "He refuses to eat his lunch."
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：碎屑。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "Jack 在地上找铅笔，没有按要求安静阅读。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"wrappers\" mean in this episode?",
+        "category": "inference",
+        "question": "Why is the food thief a bigger problem than Roxy first expects?",
         "options": [
           {
             "key": "A",
-            "text": "碎屑"
+            "text": "He has eaten the food at several businesses."
           },
           {
             "key": "B",
-            "text": "包装纸"
+            "text": "He has stolen only one sandwich."
           },
           {
             "key": "C",
-            "text": "过道"
+            "text": "He has hidden the mayor’s lunch."
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：包装纸。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "市长说明小偷吃光了超市、其他食品店和餐馆的食物，事情比一顿饭未付款严重得多。",
         "source": "original-learning-material-from-user-text"
       }
     ]
@@ -127,7 +127,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "What weapon does Zhu Bajie carry?",
         "options": [
           {
@@ -144,13 +144,13 @@
           }
         ],
         "answer": "B",
-        "explanation": "正确答案：A rake。请结合本集正文核对。",
+        "explanation": "原文中 Detective Smith 指出猪拿着一把耙子，八戒也用它抵挡激光。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "Where does Roxy find Bajie asleep?",
         "options": [
           {
@@ -167,76 +167,76 @@
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：In the school equipment shed。请结合本集正文核对。",
+        "explanation": "Roxy 循着鼾声来到学校器材室，发现八戒睡在体育垫上。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"rake\" mean in this episode?",
+        "category": "story",
+        "question": "Which ability does Bajie use to escape from Roxy?",
         "options": [
           {
             "key": "A",
-            "text": "耙子"
+            "text": "Freezing the sidewalk"
           },
           {
             "key": "B",
-            "text": "抱怨"
+            "text": "Flying away on a cloud"
           },
           {
             "key": "C",
-            "text": "突然转向"
+            "text": "Shooting laser beams"
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：耙子。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "Detective Smith 看到猪乘云飞走，这是八戒逃离现场时使用的能力。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"complained\" mean in this episode?",
+        "category": "story",
+        "question": "Why does Roxy stop chasing Bajie after he throws the sign?",
         "options": [
           {
             "key": "A",
-            "text": "突然转向"
+            "text": "She goes to check on the truck driver."
           },
           {
             "key": "B",
-            "text": "抱怨"
+            "text": "She decides Bajie is harmless."
           },
           {
             "key": "C",
-            "text": "耙子"
+            "text": "She goes back to finish lunch."
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：抱怨。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "标牌击中经过的卡车并造成事故，Roxy 先去查看司机状况。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"swerved\" mean in this episode?",
+        "category": "inference",
+        "question": "How does Roxy finally catch Bajie?",
         "options": [
           {
             "key": "A",
-            "text": "耙子"
+            "text": "She takes his rake while he is eating."
           },
           {
             "key": "B",
-            "text": "抱怨"
+            "text": "She follows him onto his cloud."
           },
           {
             "key": "C",
-            "text": "突然转向"
+            "text": "She carries him away while he is sleeping."
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：突然转向。请结合本集正文核对。",
+        "explanation": "Roxy 听到鼾声，找到睡在体育垫上的八戒，然后轻轻将他带走。",
         "source": "original-learning-material-from-user-text"
       }
     ]
@@ -248,7 +248,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "Where do Wukong and his companions wake up?",
         "options": [
           {
@@ -265,13 +265,13 @@
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：In a meadow。请结合本集正文核对。",
+        "explanation": "开头写悟空和同伴在草地上醒来，周围有蜜蜂、鸟鸣与微风。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "What surprises Wukong when he returns to the ground?",
         "options": [
           {
@@ -288,76 +288,76 @@
           }
         ],
         "answer": "A",
-        "explanation": "正确答案：The village has disappeared。请结合本集正文核对。",
+        "explanation": "悟空回到地面时发现整个村庄不见了，因此惊呼。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"meadow\" mean in this episode?",
+        "category": "story",
+        "question": "How does the meadow seem at the beginning?",
         "options": [
           {
             "key": "A",
-            "text": "微风"
+            "text": "Peaceful and pleasant"
           },
           {
             "key": "B",
-            "text": "草地"
+            "text": "Crowded and dangerous"
           },
           {
             "key": "C",
-            "text": "同伴"
+            "text": "Cold and silent"
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：草地。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "蜜蜂、鸟鸣和轻柔的微风使开头的草地显得平静宜人。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"companions\" mean in this episode?",
+        "category": "story",
+        "question": "What do the demons hope to gain by eating the Tang Monk?",
         "options": [
           {
             "key": "A",
-            "text": "草地"
+            "text": "A way to enter Metro City"
           },
           {
             "key": "B",
-            "text": "微风"
+            "text": "A new iron bar"
           },
           {
             "key": "C",
-            "text": "同伴"
+            "text": "The ability to live forever"
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：同伴。请结合本集正文核对。",
+        "explanation": "妖怪认为吃掉唐僧就能长生不老。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"breeze\" mean in this episode?",
+        "category": "inference",
+        "question": "Why does Wukong think the demons’ rain plan is foolish?",
         "options": [
           {
             "key": "A",
-            "text": "微风"
+            "text": "He thinks the village has no food."
           },
           {
             "key": "B",
-            "text": "草地"
+            "text": "He thinks rain will not hurt his master."
           },
           {
             "key": "C",
-            "text": "同伴"
+            "text": "He knows Bajie controls the rain."
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：微风。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "悟空当时认为下雨不会伤害师父，因此觉得妖怪的计划愚蠢。",
         "source": "original-learning-material-from-user-text"
       }
     ]
@@ -369,7 +369,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "Why do the demons want to eat the Tang Monk?",
         "options": [
           {
@@ -386,13 +386,13 @@
           }
         ],
         "answer": "A",
-        "explanation": "正确答案：They believe it will let them live forever。请结合本集正文核对。",
+        "explanation": "妖怪相信吃唐僧能够长生不老，这是他们绑架他的动机。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "How does Bajie enter the other world?",
         "options": [
           {
@@ -409,76 +409,76 @@
           }
         ],
         "answer": "B",
-        "explanation": "正确答案：He trips and stumbles through a portal。请结合本集正文核对。",
+        "explanation": "八戒冲进王座厅时被碗绊倒，跌进传送门；门随后关闭。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"column\" mean in this episode?",
+        "category": "story",
+        "question": "What do the captured travelers regret?",
         "options": [
           {
             "key": "A",
-            "text": "绳索"
+            "text": "Not bringing enough food"
           },
           {
             "key": "B",
-            "text": "绑架"
+            "text": "Not asking the mayor for help"
           },
           {
             "key": "C",
-            "text": "柱子"
+            "text": "Not listening to Wukong’s warning"
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：柱子。请结合本集正文核对。",
+        "explanation": "被绑住后，唐僧和悟净意识到应该听悟空的警告。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"ropes\" mean in this episode?",
+        "category": "story",
+        "question": "Why do some demons become afraid to eat the Tang Monk?",
         "options": [
           {
             "key": "A",
-            "text": "绳索"
+            "text": "They hear police approaching."
           },
           {
             "key": "B",
-            "text": "柱子"
+            "text": "They fear Wukong will attack them."
           },
           {
             "key": "C",
-            "text": "绑架"
+            "text": "They think the monk is another demon."
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：绳索。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "妖怪听说悟空很强大，担心吃掉唐僧后遭到他的攻击。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"kidnap\" mean in this episode?",
+        "category": "inference",
+        "question": "What does Swift Wing say the spell can do?",
         "options": [
           {
             "key": "A",
-            "text": "绳索"
+            "text": "Open a portal to another world"
           },
           {
             "key": "B",
-            "text": "绑架"
+            "text": "Make the Tang Monk invisible"
           },
           {
             "key": "C",
-            "text": "柱子"
+            "text": "Turn the demon into a goddess"
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：绑架。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "Swift Wing 解释咒语能够打开通往另一个世界的传送门。",
         "source": "original-learning-material-from-user-text"
       }
     ]
@@ -490,7 +490,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "Why does Bajie say he ate the food?",
         "options": [
           {
@@ -507,13 +507,13 @@
           }
         ],
         "answer": "B",
-        "explanation": "正确答案：He was hungry。请结合本集正文核对。",
+        "explanation": "八戒接受询问时直接解释自己吃食物是因为饥饿。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "Who tells Wukong she knows where his friend is?",
         "options": [
           {
@@ -530,76 +530,76 @@
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：A bird demon。请结合本集正文核对。",
+        "explanation": "悟空拦住的鸟妖告诉他，她知道他的朋友在哪里。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"cell\" mean in this episode?",
+        "category": "story",
+        "question": "What does Wukong demand at the mountain door?",
         "options": [
           {
             "key": "A",
-            "text": "牢房"
+            "text": "That Bajie return his cloud"
           },
           {
             "key": "B",
-            "text": "山坡"
+            "text": "That the demons release his master"
           },
           {
             "key": "C",
-            "text": "重击"
+            "text": "That the demons give him food"
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：牢房。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "悟空在山门前要求妖怪立即释放师父。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"slopes\" mean in this episode?",
+        "category": "story",
+        "question": "What do the travelers think Bajie has gone to do?",
         "options": [
           {
             "key": "A",
-            "text": "重击"
+            "text": "Find food"
           },
           {
             "key": "B",
-            "text": "山坡"
+            "text": "Warn the Jade Emperor"
           },
           {
             "key": "C",
-            "text": "牢房"
+            "text": "Look for Rocket Girl"
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：山坡。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "唐僧认为八戒一直抱怨饿，可能去找食物了。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"pounded\" mean in this episode?",
+        "category": "inference",
+        "question": "Why does Wukong stop the bird demon?",
         "options": [
           {
             "key": "A",
-            "text": "牢房"
+            "text": "He sees her attack Detective Smith."
           },
           {
             "key": "B",
-            "text": "山坡"
+            "text": "He wants her to teach him to fly."
           },
           {
             "key": "C",
-            "text": "重击"
+            "text": "He notices her trying to sneak past him."
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：重击。请结合本集正文核对。",
+        "explanation": "悟空听到脚步声，察觉鸟妖想偷偷经过，便挡住了她。",
         "source": "original-learning-material-from-user-text"
       }
     ]
@@ -611,7 +611,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "Why does Wukong enter the portal?",
         "options": [
           {
@@ -628,13 +628,13 @@
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：To find Bajie。请结合本集正文核对。",
+        "explanation": "唐僧提醒悟空必须找到八戒，悟空随后跳入传送门寻找他。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "Who appears again before the Tang Monk at the end?",
         "options": [
           {
@@ -651,76 +651,76 @@
           }
         ],
         "answer": "A",
-        "explanation": "正确答案：The Demon of Black Rain。请结合本集正文核对。",
+        "explanation": "悟净离开后，唐僧睁眼看到的并非悟净，而是再次出现的黑雨妖。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"cliff\" mean in this episode?",
+        "category": "story",
+        "question": "Why is the Demon of Black Rain upset at the beginning?",
         "options": [
           {
             "key": "A",
-            "text": "欺负"
+            "text": "Wukong forced him to flee his mountain."
           },
           {
             "key": "B",
-            "text": "悬崖"
+            "text": "Bajie ate his dinner in Metro City."
           },
           {
             "key": "C",
-            "text": "逃走"
+            "text": "Swift Wing destroyed his portal."
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：悬崖。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "妖怪说悟空突然袭击，迫使他逃离自己的山。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"flee\" mean in this episode?",
+        "category": "story",
+        "question": "How does Wukong react to the claim that a goddess could defeat him?",
         "options": [
           {
             "key": "A",
-            "text": "悬崖"
+            "text": "He asks the goddess to become his teacher."
           },
           {
             "key": "B",
-            "text": "欺负"
+            "text": "He agrees to stop using his powers."
           },
           {
             "key": "C",
-            "text": "逃走"
+            "text": "He angrily insists nobody can defeat him."
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：逃走。请结合本集正文核对。",
+        "explanation": "悟空握拳叫喊无人能打败他，表现出愤怒和自负。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"bully\" mean in this episode?",
+        "category": "inference",
+        "question": "Why does Wujing leave the resting Tang Monk?",
         "options": [
           {
             "key": "A",
-            "text": "欺负"
+            "text": "To bring the demon some dinner"
           },
           {
             "key": "B",
-            "text": "悬崖"
+            "text": "To check on the horse outside"
           },
           {
             "key": "C",
-            "text": "逃走"
+            "text": "To search for Bajie in Metro City"
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：欺负。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "悟净让师父休息，自己出去查看马。",
         "source": "original-learning-material-from-user-text"
       }
     ]
@@ -732,7 +732,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "What are Roxy and her friends doing in Jack’s backyard?",
         "options": [
           {
@@ -749,13 +749,13 @@
           }
         ],
         "answer": "A",
-        "explanation": "正确答案：Playing catch。请结合本集正文核对。",
+        "explanation": "本集开头 Roxy 与朋友到 Jack 后院玩接球游戏。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "How does Roxy help the falling car’s driver?",
         "options": [
           {
@@ -772,76 +772,76 @@
           }
         ],
         "answer": "B",
-        "explanation": "正确答案：She catches the car and puts it down。请结合本集正文核对。",
+        "explanation": "Roxy 在汽车落地前接住它，并小心放下，救了司机。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"backyard\" mean in this episode?",
+        "category": "story",
+        "question": "Why does Terrell think the pig is a villain?",
         "options": [
           {
             "key": "A",
-            "text": "显然"
+            "text": "The pig stole his schoolbook."
           },
           {
             "key": "B",
-            "text": "混凝土"
+            "text": "The mayor told him the pig was a demon."
           },
           {
             "key": "C",
-            "text": "后院"
+            "text": "He saw the pig attacking Rocket Girl."
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：后院。请结合本集正文核对。",
+        "explanation": "Terrell 根据猪攻击 Rocket Girl 的行为判断它是坏人。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"obviously\" mean in this episode?",
+        "category": "story",
+        "question": "What shows that people downtown are frightened?",
         "options": [
           {
             "key": "A",
-            "text": "显然"
+            "text": "They are cheering for Wukong."
           },
           {
             "key": "B",
-            "text": "后院"
+            "text": "They are running in every direction."
           },
           {
             "key": "C",
-            "text": "混凝土"
+            "text": "They are waiting calmly for a bus."
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：显然。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "Roxy 到达市中心时看到人们四处奔逃，说明他们十分害怕。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"concrete\" mean in this episode?",
+        "category": "inference",
+        "question": "How does Wukong misunderstand the approaching bus?",
         "options": [
           {
             "key": "A",
-            "text": "显然"
+            "text": "He thinks it is trying to attack him."
           },
           {
             "key": "B",
-            "text": "混凝土"
+            "text": "He thinks it will take him to school."
           },
           {
             "key": "C",
-            "text": "后院"
+            "text": "He thinks Bajie is driving it."
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：混凝土。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "悟空面对公交车喊不要攻击他，误将车辆当成攻击者。",
         "source": "original-learning-material-from-user-text"
       }
     ]
@@ -853,7 +853,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "What does Wukong strike with his iron bar?",
         "options": [
           {
@@ -870,13 +870,13 @@
           }
         ],
         "answer": "B",
-        "explanation": "正确答案：A bus。请结合本集正文核对。",
+        "explanation": "悟空用铁棒击打公交车，车辆撞上垃圾桶，乘客惊慌逃离。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "Who does Wukong believe Roxy is?",
         "options": [
           {
@@ -893,76 +893,76 @@
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：The goddess Swift Wing described。请结合本集正文核对。",
+        "explanation": "悟空把 Roxy 当成 Swift Wing 所说、会帮助黑雨妖的女神。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"brakes\" mean in this episode?",
+        "category": "story",
+        "question": "Why do the passengers hurry off the bus?",
         "options": [
           {
             "key": "A",
-            "text": "刹车"
+            "text": "The driver has reached their stop."
           },
           {
             "key": "B",
-            "text": "乘客"
+            "text": "Wukong has struck it with his iron bar."
           },
           {
             "key": "C",
-            "text": "仓促行动"
+            "text": "Rocket Girl asks them to play catch."
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：刹车。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "悟空击打公交车后，乘客惊叫着逃下车。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"passengers\" mean in this episode?",
+        "category": "story",
+        "question": "What makes Wukong decide he needs more of his powers?",
         "options": [
           {
             "key": "A",
-            "text": "仓促行动"
+            "text": "He realizes Roxy is stronger than he expected."
           },
           {
             "key": "B",
-            "text": "乘客"
+            "text": "He discovers his iron bar is missing."
           },
           {
             "key": "C",
-            "text": "刹车"
+            "text": "He thinks Roxy cannot fly."
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：乘客。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "悟空原以为 Roxy 只是小妖，交手后意识到需要使用更多神通。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"scrambled\" mean in this episode?",
+        "category": "inference",
+        "question": "Why is Wukong angry when he thinks Roxy is the goddess?",
         "options": [
           {
             "key": "A",
-            "text": "刹车"
+            "text": "He believes she has eaten Bajie’s food."
           },
           {
             "key": "B",
-            "text": "乘客"
+            "text": "He believes she wants his iron bar."
           },
           {
             "key": "C",
-            "text": "仓促行动"
+            "text": "He believes she plans to help destroy him."
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：仓促行动。请结合本集正文核对。",
+        "explanation": "Swift Wing 的说法让悟空以为她将帮助黑雨妖消灭自己。",
         "source": "original-learning-material-from-user-text"
       }
     ]
@@ -974,7 +974,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "What happens after Wukong falls backward on the mountain?",
         "options": [
           {
@@ -991,13 +991,13 @@
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：An avalanche rushes downward。请结合本集正文核对。",
+        "explanation": "Roxy 将悟空击倒后山体震动，引发雪崩，积雪向下奔涌。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "How does Wukong get Roxy out of his way?",
         "options": [
           {
@@ -1014,76 +1014,76 @@
           }
         ],
         "answer": "A",
-        "explanation": "正确答案：He makes her fly through the portal and closes it。请结合本集正文核对。",
+        "explanation": "悟空引诱 Roxy 冲向自己，在她面前打开传送门，再将门关闭。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"avalanche\" mean in this episode?",
+        "category": "story",
+        "question": "What surprises Roxy about Wukong’s size?",
         "options": [
           {
             "key": "A",
-            "text": "仔细思考"
+            "text": "He can grow taller than the buildings."
           },
           {
             "key": "B",
-            "text": "雪崩"
+            "text": "He becomes smaller than her watch."
           },
           {
             "key": "C",
-            "text": "护林员"
+            "text": "He cannot change his size."
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：雪崩。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "悟空不断变大，高过城市建筑，让 Roxy 大吃一惊。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"ranger\" mean in this episode?",
+        "category": "story",
+        "question": "Why does Wukong change his approach near the end?",
         "options": [
           {
             "key": "A",
-            "text": "雪崩"
+            "text": "He has lost all his super powers."
           },
           {
             "key": "B",
-            "text": "仔细思考"
+            "text": "He learns that Bajie is the mayor."
           },
           {
             "key": "C",
-            "text": "护林员"
+            "text": "He realizes neither fighter can destroy the other."
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：护林员。请结合本集正文核对。",
+        "explanation": "悟空意识到双方都无法消灭对方，因此另想办法摆脱 Roxy。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"contemplating\" mean in this episode?",
+        "category": "inference",
+        "question": "What happens immediately after the tiny Wukongs return?",
         "options": [
           {
             "key": "A",
-            "text": "仔细思考"
+            "text": "Bajie opens the cave door."
           },
           {
             "key": "B",
-            "text": "雪崩"
+            "text": "Roxy chases them toward the real Wukong."
           },
           {
             "key": "C",
-            "text": "护林员"
+            "text": "The ranger arrests them all."
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：仔细思考。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "小悟空返回后，Roxy 追着他们冲向真正的悟空，落入传送门计策。",
         "source": "original-learning-material-from-user-text"
       }
     ]
@@ -1095,7 +1095,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "What has disappeared from Roxy’s surroundings?",
         "options": [
           {
@@ -1112,13 +1112,13 @@
           }
         ],
         "answer": "A",
-        "explanation": "正确答案：Metro City。请结合本集正文核对。",
+        "explanation": "Roxy 环顾四周发现只有荒野，熟悉的 Metro City 已消失。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "What does the squire ask Roxy about?",
         "options": [
           {
@@ -1135,76 +1135,76 @@
           }
         ],
         "answer": "B",
-        "explanation": "正确答案：Whether she comes from another world。请结合本集正文核对。",
+        "explanation": "乡绅凑近询问 Roxy 是否来自另一个世界。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"wilderness\" mean in this episode?",
+        "category": "story",
+        "question": "Why does Roxy feel lost?",
         "options": [
           {
             "key": "A",
-            "text": "周围环境"
+            "text": "Her teacher has changed the classroom."
           },
           {
             "key": "B",
-            "text": "棍棒"
+            "text": "Her friends refuse to speak to her."
           },
           {
             "key": "C",
-            "text": "荒野"
+            "text": "Her familiar city is gone and she does not know where she is."
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：荒野。请结合本集正文核对。",
+        "explanation": "Roxy 发现周围变成陌生的荒野，Metro City 也不见了。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"surroundings\" mean in this episode?",
+        "category": "story",
+        "question": "Why do the men decide to run away?",
         "options": [
           {
             "key": "A",
-            "text": "周围环境"
+            "text": "They see the Tang Monk approaching."
           },
           {
             "key": "B",
-            "text": "荒野"
+            "text": "They believe Roxy is a spirit."
           },
           {
             "key": "C",
-            "text": "棍棒"
+            "text": "They hear Detective Smith’s siren."
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：周围环境。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "那些人见识了 Roxy 的力量，以为她是神灵，害怕地逃走。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"club\" mean in this episode?",
+        "category": "inference",
+        "question": "How does Roxy describe her home to the squire?",
         "options": [
           {
             "key": "A",
-            "text": "周围环境"
+            "text": "It is very different from this place."
           },
           {
             "key": "B",
-            "text": "棍棒"
+            "text": "It is on the same dirt road."
           },
           {
             "key": "C",
-            "text": "荒野"
+            "text": "It is inside the nearby mountain."
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：棍棒。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "Roxy 说自己的家与这里很不一样，呼应她来自另一个世界。",
         "source": "original-learning-material-from-user-text"
       }
     ]
@@ -1216,7 +1216,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "Why is Roxy suspicious of the squire’s explanation?",
         "options": [
           {
@@ -1233,13 +1233,13 @@
           }
         ],
         "answer": "B",
-        "explanation": "正确答案：She did not see his servants until after the fight。请结合本集正文核对。",
+        "explanation": "Roxy 记得打斗结束后才见到仆人，因此怀疑他们目击打斗的说法。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "Which place is being robbed?",
         "options": [
           {
@@ -1256,76 +1256,76 @@
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：True Savings Bank。请结合本集正文核对。",
+        "explanation": "市长接到电话后说明 True Savings Bank 正遭抢劫。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"suspicious\" mean in this episode?",
+        "category": "story",
+        "question": "How does the squire explain knowing about Roxy’s powers?",
         "options": [
           {
             "key": "A",
-            "text": "怀疑的"
+            "text": "He says he saw her on television."
           },
           {
             "key": "B",
-            "text": "仆人"
+            "text": "He says his servants told him."
           },
           {
             "key": "C",
-            "text": "误会"
+            "text": "He says Mayor Bloom sent a letter."
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：怀疑的。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "乡绅称仆人告诉了他关于 Roxy 超能力的事。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"servants\" mean in this episode?",
+        "category": "story",
+        "question": "How does Wukong explain the trouble he caused yesterday?",
         "options": [
           {
             "key": "A",
-            "text": "误会"
+            "text": "He calls it a misunderstanding."
           },
           {
             "key": "B",
-            "text": "仆人"
+            "text": "He says he was following the mayor’s orders."
           },
           {
             "key": "C",
-            "text": "怀疑的"
+            "text": "He admits he wanted to rob the bank."
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：仆人。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "悟空将昨天的冲突解释为一场大误会。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"misunderstanding\" mean in this episode?",
+        "category": "inference",
+        "question": "Why does Wukong offer to go to the bank?",
         "options": [
           {
             "key": "A",
-            "text": "怀疑的"
+            "text": "Bajie is working there."
           },
           {
             "key": "B",
-            "text": "仆人"
+            "text": "Detective Smith asks him to open an account."
           },
           {
             "key": "C",
-            "text": "误会"
+            "text": "Rocket Girl does not answer the mayor’s call."
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：误会。请结合本集正文核对。",
+        "explanation": "市长联系不上 Rocket Girl，悟空主动表示可以赶去帮忙。",
         "source": "original-learning-material-from-user-text"
       }
     ]
@@ -1337,7 +1337,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "How does Wukong frighten the bank robbers?",
         "options": [
           {
@@ -1354,13 +1354,13 @@
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：He grows tall and his eyes turn red。请结合本集正文核对。",
+        "explanation": "悟空变大、双眼变红，令 Dwight 和 Earl 惊叫着跑出银行。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "What does Roxy hear while staying with the squire?",
         "options": [
           {
@@ -1377,76 +1377,76 @@
           }
         ],
         "answer": "A",
-        "explanation": "正确答案：Someone crying。请结合本集正文核对。",
+        "explanation": "Roxy 在乡绅家中用超级听力听到有人哭泣，于是开始留意。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"uniforms\" mean in this episode?",
+        "category": "story",
+        "question": "Why does Wukong initially ask about demons at the bank?",
         "options": [
           {
             "key": "A",
-            "text": "令人着迷的"
+            "text": "He assumes the robbers may be demons."
           },
           {
             "key": "B",
-            "text": "制服"
+            "text": "He already knows Earl is a demon."
           },
           {
             "key": "C",
-            "text": "找到"
+            "text": "He has seen Black Rain hiding there."
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：制服。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "悟空用自己熟悉的世界理解事件，问抢银行的是不是妖怪。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"locate\" mean in this episode?",
+        "category": "story",
+        "question": "How do Dwight and Earl react before Wukong grows tall?",
         "options": [
           {
             "key": "A",
-            "text": "制服"
+            "text": "They immediately surrender."
           },
           {
             "key": "B",
-            "text": "令人着迷的"
+            "text": "They ask him to protect the bank."
           },
           {
             "key": "C",
-            "text": "找到"
+            "text": "They laugh at him."
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：找到。请结合本集正文核对。",
+        "explanation": "两人先大笑，悟空变大后他们才惊叫逃跑。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"fascinating\" mean in this episode?",
+        "category": "inference",
+        "question": "Why is Roxy anxious despite enjoying her stay?",
         "options": [
           {
             "key": "A",
-            "text": "令人着迷的"
+            "text": "She thinks the squire cannot cook."
           },
           {
             "key": "B",
-            "text": "制服"
+            "text": "She worries Wukong may be damaging Metro City."
           },
           {
             "key": "C",
-            "text": "找到"
+            "text": "She wants to finish her school lunch."
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：令人着迷的。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "Roxy 担心悟空在她不在时给 Metro City 造成破坏。",
         "source": "original-learning-material-from-user-text"
       }
     ]
@@ -1458,7 +1458,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "How does Roxy see the prisoners through the walls?",
         "options": [
           {
@@ -1475,13 +1475,13 @@
           }
         ],
         "answer": "A",
-        "explanation": "正确答案：With her x-ray vision。请结合本集正文核对。",
+        "explanation": "Roxy 用透视能力看穿墙壁，在暗室中发现被捆的唐僧和悟净。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "How does Wukong recognize Bajie in jail?",
         "options": [
           {
@@ -1498,76 +1498,76 @@
           }
         ],
         "answer": "B",
-        "explanation": "正确答案：By his snoring。请结合本集正文核对。",
+        "explanation": "悟空听到熟悉的鼾声，因此认出牢房里熟睡的大猪就是八戒。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"peered\" mean in this episode?",
+        "category": "story",
+        "question": "Why could Wujing not protect the horse and return safely?",
         "options": [
           {
             "key": "A",
-            "text": "人影"
+            "text": "He fell asleep in the jail."
           },
           {
             "key": "B",
-            "text": "捆住"
+            "text": "He lost his way in Metro City."
           },
           {
             "key": "C",
-            "text": "仔细看"
+            "text": "Too many demons attacked him."
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：仔细看。请结合本集正文核对。",
+        "explanation": "悟净说查看马时遭到大量妖怪攻击，无法全部击退。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"figures\" mean in this episode?",
+        "category": "story",
+        "question": "Why is the Tang Monk crying?",
         "options": [
           {
             "key": "A",
-            "text": "人影"
+            "text": "He thinks Roxy stole his horse."
           },
           {
             "key": "B",
-            "text": "仔细看"
+            "text": "He fears they will be eaten and never reach their destination."
           },
           {
             "key": "C",
-            "text": "捆住"
+            "text": "He has lost his picnic sandwiches."
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：人影。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "唐僧担心无法到达西天，而且即将被妖怪吃掉。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"bound\" mean in this episode?",
+        "category": "inference",
+        "question": "What surprises Dwight and Earl about the squirrel?",
         "options": [
           {
             "key": "A",
-            "text": "人影"
+            "text": "It can talk and change shape."
           },
           {
             "key": "B",
-            "text": "捆住"
+            "text": "It carries a police notebook."
           },
           {
             "key": "C",
-            "text": "仔细看"
+            "text": "It eats all the bank’s food."
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：捆住。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "两人听到松鼠说话，随后看到它改变形态。",
         "source": "original-learning-material-from-user-text"
       }
     ]
@@ -1579,7 +1579,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "What news alert does Mara receive?",
         "options": [
           {
@@ -1596,13 +1596,13 @@
           }
         ],
         "answer": "B",
-        "explanation": "正确答案：The pig has escaped jail with help from a talking monkey。请结合本集正文核对。",
+        "explanation": "Mara 的手机通知说那头猪越狱了，一只会说话的猴子帮助了他。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "What drives Roxy out of the cave?",
         "options": [
           {
@@ -1619,76 +1619,76 @@
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：The demon’s wind and rain。请结合本集正文核对。",
+        "explanation": "妖怪的风雨卷起 Roxy，将她撞向洞壁并抛出洞外。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"cot\" mean in this episode?",
+        "category": "story",
+        "question": "How does Bajie react when Wukong wakes him?",
         "options": [
           {
             "key": "A",
-            "text": "简易床"
+            "text": "He refuses to open his eyes."
           },
           {
             "key": "B",
-            "text": "消息通知"
+            "text": "He falls off his cot."
           },
           {
             "key": "C",
-            "text": "囚犯"
+            "text": "He attacks Wukong with a sword."
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：简易床。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "八戒被叫醒时猛地坐起，从简易床上摔下来。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"alert\" mean in this episode?",
+        "category": "story",
+        "question": "Why does Roxy rush toward the door in the cave?",
         "options": [
           {
             "key": "A",
-            "text": "囚犯"
+            "text": "She wants to free the prisoners."
           },
           {
             "key": "B",
-            "text": "消息通知"
+            "text": "She wants to hide from the mountain’s spirit."
           },
           {
             "key": "C",
-            "text": "简易床"
+            "text": "She wants to steal the demon’s jar."
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：消息通知。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "Roxy 明确表示要立即解救囚犯，然后冲向门口。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"prisoners\" mean in this episode?",
+        "category": "inference",
+        "question": "What happens after the wind throws Roxy outside?",
         "options": [
           {
             "key": "A",
-            "text": "简易床"
+            "text": "Wukong carries her back to jail."
           },
           {
             "key": "B",
-            "text": "消息通知"
+            "text": "The demon asks her to return for dinner."
           },
           {
             "key": "C",
-            "text": "囚犯"
+            "text": "The cave door slams shut."
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：囚犯。请结合本集正文核对。",
+        "explanation": "风雨把 Roxy 抛出洞穴后，洞门猛地关上。",
         "source": "original-learning-material-from-user-text"
       }
     ]
@@ -1700,7 +1700,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "Why does Wukong plan to visit Fruit and Flower Mountain?",
         "options": [
           {
@@ -1717,13 +1717,13 @@
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：To get an army to take over the kingdom。请结合本集正文核对。",
+        "explanation": "悟空准备返回花果山召集军队，以便夺取这个王国。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "Who warns Roxy not to return up the mountain?",
         "options": [
           {
@@ -1740,76 +1740,76 @@
           }
         ],
         "answer": "A",
-        "explanation": "正确答案：An old woman。请结合本集正文核对。",
+        "explanation": "Roxy 想再次上山时，一名老妇出现，警告她不要返回。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"drifting\" mean in this episode?",
+        "category": "story",
+        "question": "How does Bajie feel about Wukong finding him?",
         "options": [
           {
             "key": "A",
-            "text": "王国"
+            "text": "Relieved that he is not alone in the strange world"
           },
           {
             "key": "B",
-            "text": "缓缓飘动"
+            "text": "Angry that he must leave the bakery"
           },
           {
             "key": "C",
-            "text": "草地"
+            "text": "Certain that he can defeat Roxy by himself"
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：缓缓飘动。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "八戒说自己曾害怕独自困在这个世界，因此很高兴悟空找到他。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"meadow\" mean in this episode?",
+        "category": "story",
+        "question": "What does Bajie want to do before returning to their master?",
         "options": [
           {
             "key": "A",
-            "text": "缓缓飘动"
+            "text": "Become a police officer"
           },
           {
             "key": "B",
-            "text": "王国"
+            "text": "Visit Roxy’s classroom"
           },
           {
             "key": "C",
-            "text": "草地"
+            "text": "Take a nap"
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：草地。请结合本集正文核对。",
+        "explanation": "八戒躺下，表示先小睡，再回到师父身边。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"kingdom\" mean in this episode?",
+        "category": "inference",
+        "question": "Why does Roxy still need another plan against the demon?",
         "options": [
           {
             "key": "A",
-            "text": "王国"
+            "text": "He has turned her into a monkey."
           },
           {
             "key": "B",
-            "text": "缓缓飘动"
+            "text": "His wind and rain keep throwing her away."
           },
           {
             "key": "C",
-            "text": "草地"
+            "text": "He has stolen her watch."
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：王国。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "Roxy 的攻击再次被妖怪的风雨打断，并被卷下山，说明现有方法无效。",
         "source": "original-learning-material-from-user-text"
       }
     ]
@@ -1821,7 +1821,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "Who does the old woman say she is?",
         "options": [
           {
@@ -1838,13 +1838,13 @@
           }
         ],
         "answer": "A",
-        "explanation": "正确答案：The mountain’s spirit。请结合本集正文核对。",
+        "explanation": "老妇明确说明自己是这座山的山神。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "What has taken over Metro City?",
         "options": [
           {
@@ -1861,76 +1861,76 @@
           }
         ],
         "answer": "B",
-        "explanation": "正确答案：An army of monkeys and apes。请结合本集正文核对。",
+        "explanation": "市长跑来报告，猴子和猿组成的军队已经占领 Metro City。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"spirit\" mean in this episode?",
+        "category": "story",
+        "question": "What is the Tang Monk hoping to receive from Buddha?",
         "options": [
           {
             "key": "A",
-            "text": "经文"
+            "text": "A throne for Metro City"
           },
           {
             "key": "B",
-            "text": "成功"
+            "text": "A new rake for Bajie"
           },
           {
             "key": "C",
-            "text": "神灵"
+            "text": "The True Scriptures"
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：神灵。请结合本集正文核对。",
+        "explanation": "山神解释唐僧西行是为了向佛祖求取真经。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"scriptures\" mean in this episode?",
+        "category": "story",
+        "question": "Why are the scriptures important to the Tang Empire?",
         "options": [
           {
             "key": "A",
-            "text": "经文"
+            "text": "They will give the emperor Roxy’s powers."
           },
           {
             "key": "B",
-            "text": "神灵"
+            "text": "They will help people learn to be good."
           },
           {
             "key": "C",
-            "text": "成功"
+            "text": "They will turn everyone into a spirit."
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：经文。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "原文说明真经能够帮助唐朝的人们向善。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"succeed\" mean in this episode?",
+        "category": "inference",
+        "question": "Why is Mayor Bloom out of breath?",
         "options": [
           {
             "key": "A",
-            "text": "经文"
+            "text": "He ran from City Hall to police headquarters."
           },
           {
             "key": "B",
-            "text": "成功"
+            "text": "He fought Wukong in the mountains."
           },
           {
             "key": "C",
-            "text": "神灵"
+            "text": "He carried Bajie to jail."
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：成功。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "市长说自己从市政厅一路跑来，因此上气不接下气。",
         "source": "original-learning-material-from-user-text"
       }
     ]
@@ -1942,7 +1942,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "What does Mayor Bloom report about Wukong?",
         "options": [
           {
@@ -1959,13 +1959,13 @@
           }
         ],
         "answer": "B",
-        "explanation": "正确答案：He has taken over City Hall as king。请结合本集正文核对。",
+        "explanation": "市长描述悟空走进办公室坐在他的桌旁，并被宣布为城市的王。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "What does the spirit tell the demon the goddess plans to do?",
         "options": [
           {
@@ -1982,76 +1982,76 @@
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：Rescue the Tang Monk。请结合本集正文核对。",
+        "explanation": "山神告诉妖怪，女神将上山营救唐僧。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"armor\" mean in this episode?",
+        "category": "story",
+        "question": "What makes the invading monkeys look like an army?",
         "options": [
           {
             "key": "A",
-            "text": "盔甲"
+            "text": "They bring food for a picnic."
           },
           {
             "key": "B",
-            "text": "长矛"
+            "text": "They wear armor and carry weapons."
           },
           {
             "key": "C",
-            "text": "斧头"
+            "text": "They carry schoolbooks and pencils."
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：盔甲。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "市长描述猴子和猿穿盔甲，并拿着矛、斧头和剑。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"spears\" mean in this episode?",
+        "category": "story",
+        "question": "What does Bajie order the guards to do?",
         "options": [
           {
             "key": "A",
-            "text": "斧头"
+            "text": "Put the man in jail"
           },
           {
             "key": "B",
-            "text": "长矛"
+            "text": "Bring Rocket Girl a meal"
           },
           {
             "key": "C",
-            "text": "盔甲"
+            "text": "Return the mayor’s phone"
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：长矛。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "八戒对卫兵下令把这个人关进监狱。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"axes\" mean in this episode?",
+        "category": "inference",
+        "question": "How does the demon react to the warning about the goddess?",
         "options": [
           {
             "key": "A",
-            "text": "盔甲"
+            "text": "He immediately frees the Tang Monk."
           },
           {
             "key": "B",
-            "text": "长矛"
+            "text": "He abandons the mountain without a fight."
           },
           {
             "key": "C",
-            "text": "斧头"
+            "text": "He says he will be ready for her."
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：斧头。请结合本集正文核对。",
+        "explanation": "妖怪并未释放唐僧，而是表示将做好迎战准备。",
         "source": "original-learning-material-from-user-text"
       }
     ]
@@ -2063,7 +2063,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "How does Roxy trap the demon temporarily?",
         "options": [
           {
@@ -2080,13 +2080,13 @@
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：She freezes his rain into ice around him。请结合本集正文核对。",
+        "explanation": "Roxy 用冰冻气息冻住妖怪的雨，让妖怪被封在冰中。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "What do the travelers reveal about the horse?",
         "options": [
           {
@@ -2103,76 +2103,76 @@
           }
         ],
         "answer": "A",
-        "explanation": "正确答案：It is actually a dragon。请结合本集正文核对。",
+        "explanation": "悟净解释，同行的那匹马实际上是一条龙。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"weapons\" mean in this episode?",
+        "category": "story",
+        "question": "Why does the demon question the spirit’s help?",
         "options": [
           {
             "key": "A",
-            "text": "消失"
+            "text": "He knows he took over her mountain."
           },
           {
             "key": "B",
-            "text": "武器"
+            "text": "He thinks she comes from Metro City."
           },
           {
             "key": "C",
-            "text": "包裹住"
+            "text": "He has already freed her friends."
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：武器。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "妖怪觉得自己霸占了她的山，因此奇怪她为什么还帮助自己。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"encasing\" mean in this episode?",
+        "category": "story",
+        "question": "Why must Roxy act quickly after freezing the rain?",
         "options": [
           {
             "key": "A",
-            "text": "武器"
+            "text": "The Tang Monk wants to have a picnic."
           },
           {
             "key": "B",
-            "text": "消失"
+            "text": "The horse is about to fly away."
           },
           {
             "key": "C",
-            "text": "包裹住"
+            "text": "The ice will not hold the demon for long."
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：包裹住。请结合本集正文核对。",
+        "explanation": "山神提醒妖怪的雨不会被冻结很久，Roxy 必须抓紧时间。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"vanished\" mean in this episode?",
+        "category": "inference",
+        "question": "What suggests the danger is not over after the rescue?",
         "options": [
           {
             "key": "A",
-            "text": "消失"
+            "text": "Wujing explains that the horse is a dragon."
           },
           {
             "key": "B",
-            "text": "武器"
+            "text": "Dark clouds form and wind comes down the mountain."
           },
           {
             "key": "C",
-            "text": "包裹住"
+            "text": "The travelers stop to rest."
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：消失。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "众人离山后出现阴云与山风，预示妖怪还可能追来。",
         "source": "original-learning-material-from-user-text"
       }
     ]
@@ -2184,7 +2184,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "Why must Roxy and the travelers hurry away?",
         "options": [
           {
@@ -2201,13 +2201,13 @@
           }
         ],
         "answer": "A",
-        "explanation": "正确答案：The spirit cannot hold the powerful demon back for long。请结合本集正文核对。",
+        "explanation": "山神说明妖怪很强，她无法长时间阻挡他，众人必须赶快逃走。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "Where is Mount Potalaka said to be?",
         "options": [
           {
@@ -2224,76 +2224,76 @@
           }
         ],
         "answer": "B",
-        "explanation": "正确答案：In the South Sea。请结合本集正文核对。",
+        "explanation": "悟净明确指出普陀山位于南海，并告诉 Roxy 如何寻找。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"control\" mean in this episode?",
+        "category": "story",
+        "question": "How does the mountain’s spirit help the group escape?",
         "options": [
           {
             "key": "A",
-            "text": "大陆"
+            "text": "She turns everyone into birds."
           },
           {
             "key": "B",
-            "text": "整个的"
+            "text": "She takes them to Metro City in a taxi."
           },
           {
             "key": "C",
-            "text": "控制"
+            "text": "She holds back the demon for a short time."
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：控制。请结合本集正文核对。",
+        "explanation": "山神利用对山中事物的控制暂时阻挡妖怪，让众人逃离。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"continent\" mean in this episode?",
+        "category": "story",
+        "question": "Why is Roxy worried about returning home?",
         "options": [
           {
             "key": "A",
-            "text": "大陆"
+            "text": "She thinks Bajie has eaten her watch."
           },
           {
             "key": "B",
-            "text": "控制"
+            "text": "She does not know how to defeat Wukong."
           },
           {
             "key": "C",
-            "text": "整个的"
+            "text": "She has forgotten where her school is."
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：大陆。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "Roxy 认为悟空与自己一样强大，不知道回城后如何对付他。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"entire\" mean in this episode?",
+        "category": "inference",
+        "question": "How does Roxy feel after flying over the whole sea?",
         "options": [
           {
             "key": "A",
-            "text": "大陆"
+            "text": "Frustrated because she has not found the mountain"
           },
           {
             "key": "B",
-            "text": "整个的"
+            "text": "Pleased because Wukong is waiting there"
           },
           {
             "key": "C",
-            "text": "控制"
+            "text": "Certain that Metro City is below her"
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：整个的。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "Roxy 飞越整个海域仍未找到目标，发出抱怨，表现出挫败感。",
         "source": "original-learning-material-from-user-text"
       }
     ]
@@ -2305,7 +2305,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "Whom is Roxy trying to find?",
         "options": [
           {
@@ -2322,13 +2322,13 @@
           }
         ],
         "answer": "B",
-        "explanation": "正确答案：The bodhisattva Guanyin。请结合本集正文核对。",
+        "explanation": "Roxy 向老妇说明，她正在寻找居住在普陀山的观音菩萨。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "Where does Wukong sit as king?",
         "options": [
           {
@@ -2345,76 +2345,76 @@
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：On a throne outside City Hall。请结合本集正文核对。",
+        "explanation": "悟空坐在市政厅外高台中央的华丽王座上，身后站着猴子和猿。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"blinding\" mean in this episode?",
+        "category": "story",
+        "question": "What does Wukong enjoy about his new position?",
         "options": [
           {
             "key": "A",
-            "text": "刺眼的"
+            "text": "Studying with Miss Apricot"
           },
           {
             "key": "B",
-            "text": "高台"
+            "text": "Ruling over a kingdom again"
           },
           {
             "key": "C",
-            "text": "华丽的"
+            "text": "Working in a food store"
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：刺眼的。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "悟空说自己很怀念统治王国的感觉，说明他享受称王。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"platform\" mean in this episode?",
+        "category": "story",
+        "question": "How does Bajie compare ruling the city with the journey west?",
         "options": [
           {
             "key": "A",
-            "text": "华丽的"
+            "text": "He thinks ruling is more fun."
           },
           {
             "key": "B",
-            "text": "高台"
+            "text": "He thinks traveling west is easier and more fun."
           },
           {
             "key": "C",
-            "text": "刺眼的"
+            "text": "He thinks both activities are boring."
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：高台。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "八戒认为统治城市比西行更有趣。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"magnificent\" mean in this episode?",
+        "category": "inference",
+        "question": "How does Roxy challenge Wukong in front of the crowd?",
         "options": [
           {
             "key": "A",
-            "text": "刺眼的"
+            "text": "She asks to become his guard."
           },
           {
             "key": "B",
-            "text": "高台"
+            "text": "She offers him the mayor’s throne."
           },
           {
             "key": "C",
-            "text": "华丽的"
+            "text": "She tells him he is not their king."
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：华丽的。请结合本集正文核对。",
+        "explanation": "Roxy 当众否认悟空对城市的王权。",
         "source": "original-learning-material-from-user-text"
       }
     ]
@@ -2426,7 +2426,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "What does Wukong announce to Detective Smith?",
         "options": [
           {
@@ -2443,13 +2443,13 @@
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：He is no longer king。请结合本集正文核对。",
+        "explanation": "悟空告诉 Detective Smith 自己不再是国王，让市长重新管理城市。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "What does Wukong say is approaching during the picnic?",
         "options": [
           {
@@ -2466,76 +2466,76 @@
           }
         ],
         "answer": "A",
-        "explanation": "正确答案：An army of demons。请结合本集正文核对。",
+        "explanation": "众人以为要下暴雨时，悟空指出来的是一支妖怪军队。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"apology\" mean in this episode?",
+        "category": "story",
+        "question": "What happens just as Wukong prepares to fight Roxy?",
         "options": [
           {
             "key": "A",
-            "text": "熟食店"
+            "text": "He falls down holding his head in pain."
           },
           {
             "key": "B",
-            "text": "道歉"
+            "text": "He grows taller than City Hall."
           },
           {
             "key": "C",
-            "text": "野餐"
+            "text": "He changes into a fire warrior."
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：道歉。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "悟空准备出手时突然倒地，抱头疼痛地翻滚。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"picnic\" mean in this episode?",
+        "category": "story",
+        "question": "What does Jack suggest before the travelers continue their journey?",
         "options": [
           {
             "key": "A",
-            "text": "道歉"
+            "text": "A visit to the bank"
           },
           {
             "key": "B",
-            "text": "熟食店"
+            "text": "A flight over the South Sea"
           },
           {
             "key": "C",
-            "text": "野餐"
+            "text": "A picnic in the park"
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：野餐。请结合本集正文核对。",
+        "explanation": "Jack 建议先在公园野餐，然后众人再继续旅程。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"deli\" mean in this episode?",
+        "category": "inference",
+        "question": "Why does Terrell think the picnic cannot happen?",
         "options": [
           {
             "key": "A",
-            "text": "熟食店"
+            "text": "He hears the mayor cancel the event."
           },
           {
             "key": "B",
-            "text": "道歉"
+            "text": "He thinks a storm is approaching."
           },
           {
             "key": "C",
-            "text": "野餐"
+            "text": "He sees that all the sandwiches are gone."
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：熟食店。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "Terrell 看到雷雨征兆，以为暴风雨将至，野餐无法进行。",
         "source": "original-learning-material-from-user-text"
       }
     ]
@@ -2547,7 +2547,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "How does the demon stop Roxy’s freeze breath at first?",
         "options": [
           {
@@ -2564,13 +2564,13 @@
           }
         ],
         "answer": "A",
-        "explanation": "正确答案：He catches it in a jar。请结合本集正文核对。",
+        "explanation": "妖怪举起小罐子，Roxy 的冰冻气息进入罐中并消失。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "What trick helps Roxy and Wukong trap the demon?",
         "options": [
           {
@@ -2587,76 +2587,76 @@
           }
         ],
         "answer": "B",
-        "explanation": "正确答案：Wukong makes them look like each other。请结合本集正文核对。",
+        "explanation": "悟空让两人外貌互换，骗过妖怪的防备，使冰冻攻击成功。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"horror\" mean in this episode?",
+        "category": "story",
+        "question": "What does Black Rain declare when he arrives in the park?",
         "options": [
           {
             "key": "A",
-            "text": "高兴"
+            "text": "He wants to become Wukong’s friend."
           },
           {
             "key": "B",
-            "text": "罐子"
+            "text": "He has come to return the Tang Monk."
           },
           {
             "key": "C",
-            "text": "恐惧"
+            "text": "The kingdom is now his."
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：恐惧。请结合本集正文核对。",
+        "explanation": "黑雨妖看中这个王国，当场宣称它归自己所有。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"delight\" mean in this episode?",
+        "category": "story",
+        "question": "Why does Roxy’s repeated freeze attack fail at first?",
         "options": [
           {
             "key": "A",
-            "text": "高兴"
+            "text": "Her friends take away her powers."
           },
           {
             "key": "B",
-            "text": "恐惧"
+            "text": "The demon keeps catching it in his jar."
           },
           {
             "key": "C",
-            "text": "罐子"
+            "text": "The Tang Monk blocks her view."
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：高兴。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "妖怪反复用罐子收走冰冻气息，导致 Roxy 的攻击失效。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"jar\" mean in this episode?",
+        "category": "inference",
+        "question": "Why do Roxy and Wukong turn their attention away from the trapped demon?",
         "options": [
           {
             "key": "A",
-            "text": "高兴"
+            "text": "Other demons surround their friends and the Tang Monk."
           },
           {
             "key": "B",
-            "text": "罐子"
+            "text": "They hear the mayor calling them for lunch."
           },
           {
             "key": "C",
-            "text": "恐惧"
+            "text": "They see the mountain’s spirit fly away."
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：罐子。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "Mara 呼救后，两人看到朋友和唐僧被其他妖怪包围。",
         "source": "original-learning-material-from-user-text"
       }
     ]
@@ -2668,7 +2668,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "Why does Wukong lower his iron bar at the beginning?",
         "options": [
           {
@@ -2685,13 +2685,13 @@
           }
         ],
         "answer": "B",
-        "explanation": "正确答案：The demons threaten the Tang Monk and Roxy’s friends。请结合本集正文核对。",
+        "explanation": "妖怪抓住唐僧并威胁 Roxy 的朋友，悟空因此放下铁棒，不能贸然进攻。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "What is left after Wukong strikes the demon?",
         "options": [
           {
@@ -2708,76 +2708,76 @@
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：A small salamander。请结合本集正文核对。",
+        "explanation": "悟空击中妖怪后，妖怪消失，原地剩下一只小蝾螈。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"snarling\" mean in this episode?",
+        "category": "story",
+        "question": "Why do Bajie and Wujing fail to help at first?",
         "options": [
           {
             "key": "A",
-            "text": "咆哮着"
+            "text": "They have returned to the Western Paradise."
           },
           {
             "key": "B",
-            "text": "蝾螈"
+            "text": "The demons have beaten them up."
           },
           {
             "key": "C",
-            "text": "闪光"
+            "text": "They are sleeping at the bakery."
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：咆哮着。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "两人躺在地上，八戒说明他们被妖怪打倒了。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"salamander\" mean in this episode?",
+        "category": "story",
+        "question": "What happens to the jar when the demon falls backward?",
         "options": [
           {
             "key": "A",
-            "text": "闪光"
+            "text": "He drops it."
           },
           {
             "key": "B",
-            "text": "蝾螈"
+            "text": "It turns into Wukong’s iron bar."
           },
           {
             "key": "C",
-            "text": "咆哮着"
+            "text": "Bajie eats it."
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：蝾螈。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "妖怪后退跌倒时掉落了罐子，为之后的攻击提供机会。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"sparkled\" mean in this episode?",
+        "category": "inference",
+        "question": "Why does Wukong want to destroy the salamander?",
         "options": [
           {
             "key": "A",
-            "text": "咆哮着"
+            "text": "He thinks it belongs to the mayor."
           },
           {
             "key": "B",
-            "text": "蝾螈"
+            "text": "He thinks it stole his schoolbook."
           },
           {
             "key": "C",
-            "text": "闪光"
+            "text": "He believes it is still an evil spirit."
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：闪光。请结合本集正文核对。",
+        "explanation": "悟空强调蝾螈并不可爱，而是必须消灭的邪灵。",
         "source": "original-learning-material-from-user-text"
       }
     ]
@@ -2789,7 +2789,7 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "Where did the salamander escape from?",
         "options": [
           {
@@ -2806,13 +2806,13 @@
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：A pond in the Jade Emperor’s garden。请结合本集正文核对。",
+        "explanation": "火武士解释，蝾螈是从玉帝花园的池塘里逃出来的。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading",
+        "category": "story",
         "question": "How does Terrell explain Roxy’s return?",
         "options": [
           {
@@ -2829,76 +2829,76 @@
           }
         ],
         "answer": "A",
-        "explanation": "正确答案：He says he texted her after she returned from visiting family。请结合本集正文核对。",
+        "explanation": "Terrell 称 Roxy 刚探亲回来，自己发消息让她来见大家，帮助掩饰身份。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"warrior\" mean in this episode?",
+        "category": "story",
+        "question": "What does the fire warrior explain about the jar?",
         "options": [
           {
             "key": "A",
-            "text": "盛宴"
+            "text": "The salamander stole it from Laozi."
           },
           {
             "key": "B",
-            "text": "武士"
+            "text": "Bajie made it in Metro City."
           },
           {
             "key": "C",
-            "text": "池塘"
+            "text": "Rocket Girl found it at school."
           }
         ],
-        "answer": "B",
-        "explanation": "正确答案：武士。请结合本集正文核对。",
+        "answer": "A",
+        "explanation": "火武士说明罐子属于老子，是蝾螈偷走的。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"pond\" mean in this episode?",
+        "category": "story",
+        "question": "What does Wujing ask Rocket Girl to teach him?",
         "options": [
           {
             "key": "A",
-            "text": "武士"
+            "text": "How to control a cloud"
           },
           {
             "key": "B",
-            "text": "盛宴"
+            "text": "How to rule Metro City"
           },
           {
             "key": "C",
-            "text": "池塘"
+            "text": "How to shoot fire from his eyes"
           }
         ],
         "answer": "C",
-        "explanation": "正确答案：池塘。请结合本集正文核对。",
+        "explanation": "悟净希望学会从眼睛发出火焰。",
         "source": "original-learning-material-from-user-text"
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "What does \"feast\" mean in this episode?",
+        "category": "inference",
+        "question": "Why does Roxy give Terrell a thankful look?",
         "options": [
           {
             "key": "A",
-            "text": "盛宴"
+            "text": "He has brought her a new watch."
           },
           {
             "key": "B",
-            "text": "武士"
+            "text": "His explanation helps cover up her secret identity."
           },
           {
             "key": "C",
-            "text": "池塘"
+            "text": "He has defeated the salamander alone."
           }
         ],
-        "answer": "A",
-        "explanation": "正确答案：盛宴。请结合本集正文核对。",
+        "answer": "B",
+        "explanation": "Terrell 解释 Roxy 刚探亲回来，帮助她掩饰与 Rocket Girl 的身份联系，因此她用眼神感谢他。",
         "source": "original-learning-material-from-user-text"
       }
     ]
