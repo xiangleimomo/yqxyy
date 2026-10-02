@@ -132,7 +132,7 @@ async renderSeries(seriesId){
         <h1>${series.seriesTitle}</h1>
         <div class="sub">${series.seriesTitleZh || ''} · Level ${series.level ?? 0} · ${this.statusText(series.status)}</div>
         <p class="sub">${series.description || ''}</p>
-        ${series.storyBookLibrary?.url?`<a class="series-story-library" href="${this.escapeHtml(series.storyBookLibrary.url)}" target="_blank" rel="noreferrer noopener"><span>📖</span><span><strong>${this.escapeHtml(series.storyBookLibrary.title || '全集绘本库')}</strong><small>${this.escapeHtml(series.storyBookLibrary.description || '打开系列配套绘本，自由选择任意集数')}</small></span><b>打开 ↗</b></a>`:''}
+        ${series.storyBookLibrary?.url?`<a class="series-story-library" href="${this.escapeHtml(series.storyBookLibrary.url)}" target="_blank" rel="noreferrer noopener"><span aria-hidden="true">📚</span>${this.escapeHtml(series.storyBookLibrary.title || '全集绘本库')}<small>夸克网盘 · 自由选集</small><b aria-hidden="true">↗</b></a>`:''}
       </div>
     </section>
     <section class="learning-map">
