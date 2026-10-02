@@ -90,6 +90,14 @@ button{font-family:inherit}
 .series-hero .cover{width:260px}
 .series-hero h1{margin:0 0 6px;font-size:27px}
 .series-hero .sub{color:#5e6d83;line-height:1.6}
+.series-hero-content{min-width:0;flex:1}
+.series-story-library{display:flex;align-items:center;gap:12px;max-width:470px;margin-top:14px;padding:10px 14px;background:#fff8de;border:1px solid #efd27a;border-radius:12px;color:#563d00;text-decoration:none}
+.series-story-library:hover{background:#fff0b8}
+.series-story-library > span:first-child{font-size:27px}
+.series-story-library > span:nth-child(2){display:flex;flex:1;min-width:0;flex-direction:column;gap:2px}
+.series-story-library strong{font-size:15px}
+.series-story-library small{color:#80672a;font-size:12px;line-height:1.4}
+.series-story-library > b{font-size:13px;white-space:nowrap;color:#8a6400}
 .episode-toolbar{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:12px;flex-wrap:wrap}
 .episode-list{display:flex;flex-direction:column;gap:12px}
 .episode-card{background:white;border:1px solid var(--line);border-radius:14px;padding:15px 16px;display:grid;grid-template-columns:72px 1fr auto;gap:14px;align-items:center}
@@ -506,13 +514,6 @@ button{font-family:inherit}
 .module-grid{display:grid;grid-template-columns:repeat(2,minmax(180px,1fr));gap:18px;margin-top:30px}
 .module-card{height:150px;border:1px solid var(--line);background:#fff;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;cursor:pointer;font-size:18px}
 .module-card b{font-size:20px}
-.story-book-card{border-color:#e8c66f;background:#fffdf5}
-.story-book-panel{display:flex;gap:20px;align-items:flex-start;padding:28px;max-width:680px;margin:0 auto;background:#fffdf5;border:1px solid #f1d889;border-radius:18px}
-.story-book-panel h2{margin:0 0 10px}
-.story-book-panel p{line-height:1.7;margin:0 0 12px}
-.story-book-icon{font-size:46px;line-height:1}
-.story-book-open{margin-top:4px}
-@media(max-width:800px){.story-book-panel{padding:20px;gap:14px}.story-book-icon{font-size:36px}}
 @media(max-width:800px){.learning-map{grid-template-columns:1fr}.module-grid{grid-template-columns:1fr}}
 
 /* V21.1 modal learning windows */
