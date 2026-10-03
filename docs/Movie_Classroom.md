@@ -14,6 +14,10 @@
 2. 在同一文件的 `sources` 数组中，找到相同 `id` 的对象，只填写 `hlsUrl` 的空字符串内容；其他字段不要删除；
 3. 可选填写 `cover`，优先使用片方公开且稳定的海报地址；不要使用会防盗链的图片外链。
 
+### 英文字幕
+
+播放器使用 WebVTT 字幕。将你已获授权的 `.srt`、`.ass` 或 `.vtt` 文件交给维护者转换为 `assets/subtitles/<影片ID>.en.vtt` 后，在该影片的 `sources` 对象中填写：`subtitleUrl`、`subtitleLang: "en"` 与 `subtitleLabel: "English"`。播放器会自动显示英文字幕开关。
+
 - 第一版仅提供电影目录、搜索、题材筛选和 Watch 播放，不包含听读、单词、测验或配音。
 - 影片资料单独存放在 `data/movies.json`，不修改动画故事的课程或解锁规则。
 - 添加影片时填写唯一的 `id`、中英文名称、年份、题材、合集、海报和 `hlsUrl`。
