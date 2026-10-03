@@ -20,7 +20,7 @@ window.MovieClassroom = {
   },
   async renderList(app, query='', genre='all') {
     const generation=this.generation;
-    const movies=await app.getJSON('data/movies.json');
+    const movies=[...await app.getJSON('data/movies.json')].sort((a,b)=>(a.seriesOrder || 999)-(b.seriesOrder || 999));
     if(generation!==this.generation) return;
     document.getElementById('globalSearch').value=query;
     const e=value=>app.escapeHtml(String(value || ''));
@@ -31,7 +31,7 @@ window.MovieClassroom = {
   },
   async renderWatch(app, id) {
     const generation=this.generation;
-    const movies=await app.getJSON('data/movies.json');
+    const movies=[...await app.getJSON('data/movies.json')].sort((a,b)=>(a.seriesOrder || 999)-(b.seriesOrder || 999));
     if(generation!==this.generation) return;
     const movie=movies.find(item=>item.id===id);
     if(!movie) { app.el().innerHTML='<div class="empty">影片不存在。<p><a class="btn" href="#/movies">返回光影课堂</a></p></div>'; return; }
