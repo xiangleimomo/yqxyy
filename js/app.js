@@ -29,15 +29,29 @@ const App = {
   async globalSearch(){
     const q = document.getElementById('globalSearch').value.trim();
     if(!q) return;
+    if(['movies','movie'].includes(this.route()[0])) {
+      location.hash = '#/movies/' + encodeURIComponent(q);
+      return;
+    }
     location.hash = '#/search/' + encodeURIComponent(q);
   },
   async render(){
     const [page, a, b] = this.route();
+    window.MovieClassroom?.cleanup();
+    const isMoviePage = ['movies','movie'].includes(page);
+    document.querySelectorAll('.main-tab').forEach(tab=>{
+      const active = tab.getAttribute('href') === (isMoviePage ? '#/movies' : '#/home');
+      tab.classList.toggle('active', active);
+      if(active) tab.setAttribute('aria-current','page'); else tab.removeAttribute('aria-current');
+    });
+    document.getElementById('globalSearch').placeholder = isMoviePage ? '搜索电影中英文名称' : '搜索故事、单词或集数';
     this.updateUtilityNav();
     this.el().classList.remove('series-page-shell');
     document.body.classList.remove('series-fixed-page');
     document.documentElement.classList.remove('series-fixed-page');
     try{
+      if(page === 'movies') return await window.MovieClassroom.renderList(this, decodeURIComponent(a || ''));
+      if(page === 'movie') return await window.MovieClassroom.renderWatch(this, a);
       if(page === 'home') return this.renderHome();
       if(page === 'series') return this.renderSeries(a);
       if(page === 'lesson') return this.renderLesson(a, Number(b || 1));
