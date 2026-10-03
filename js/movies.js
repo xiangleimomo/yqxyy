@@ -46,7 +46,12 @@ window.MovieClassroom = {
     if (this.player) { this.player.pause(); this.player.removeAttribute('src'); this.player.load(); this.player = null; }
   },
   async getLibrary(app) {
-    const [series, playable] = await Promise.all([app.getJSON('data/movie-series.json'), app.getJSON('data/movies.json')]);
+    const catalog = await app.getJSON('data/movie-series.json');
+    const series = await Promise.all(catalog.map(async item => ({
+      ...item,
+      ...(await app.getJSON(`data/movies/${item.id}/movies.json`))
+    })));
+    const playable = series.flatMap(item => item.sources || []);
     return { series, playable, playableById: new Map(playable.map(item => [item.id, item])) };
   },
   stars(rating) { return '★'.repeat(rating) + '☆'.repeat(5 - rating); },
