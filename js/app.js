@@ -29,7 +29,7 @@ const App = {
   async globalSearch(){
     const q = document.getElementById('globalSearch').value.trim();
     if(!q) return;
-    if(['movies','movie'].includes(this.route()[0])) {
+    if(['movies','movie','movie-series'].includes(this.route()[0])) {
       location.hash = '#/movies/' + encodeURIComponent(q);
       return;
     }
@@ -38,7 +38,7 @@ const App = {
   async render(){
     const [page, a, b] = this.route();
     window.MovieClassroom?.cleanup();
-    const isMoviePage = ['movies','movie'].includes(page);
+    const isMoviePage = ['movies','movie','movie-series'].includes(page);
     document.querySelectorAll('.main-tab').forEach(tab=>{
       const active = tab.getAttribute('href') === (isMoviePage ? '#/movies' : '#/home');
       tab.classList.toggle('active', active);
@@ -51,6 +51,7 @@ const App = {
     document.documentElement.classList.remove('series-fixed-page');
     try{
       if(page === 'movies') return await window.MovieClassroom.renderList(this, decodeURIComponent(a || ''));
+      if(page === 'movie-series') return await window.MovieClassroom.renderSeries(this, a);
       if(page === 'movie') return await window.MovieClassroom.renderWatch(this, a);
       if(page === 'home') return this.renderHome();
       if(page === 'series') return this.renderSeries(a);

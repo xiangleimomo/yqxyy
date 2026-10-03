@@ -1,76 +1,83 @@
-/* Watch-only movie catalogue. Source URLs are maintained in data/movies.json. */
+/* Movie catalogue: a title becomes Watch-enabled only after its authorized hlsUrl is added. */
 window.MovieClassroom = {
-  player: null,
-  hls: null,
-  libraryPromise: null,
-  generation: 0,
+  player: null, hls: null, libraryPromise: null, generation: 0,
   cleanup() {
     this.generation++;
-    if(this.hls) { this.hls.destroy(); this.hls=null; }
-    if(this.player) {
-      this.player.pause();
-      this.player.removeAttribute('src');
-      this.player.load();
-      this.player=null;
-    }
+    if (this.hls) { this.hls.destroy(); this.hls = null; }
+    if (this.player) { this.player.pause(); this.player.removeAttribute('src'); this.player.load(); this.player = null; }
   },
-  card(app, movie) {
-    const e=value=>app.escapeHtml(String(value || ''));
-    return `<a class="movie-card" href="#/movie/${e(movie.id)}" aria-label="观看 ${e(movie.titleZh)}"><div class="movie-poster"><img src="${e(movie.cover)}" alt="${e(movie.titleZh)}海报" loading="lazy" referrerpolicy="no-referrer"><span class="movie-play-hover" aria-hidden="true">▶</span><span class="movie-poster-label">Watch · 看电影</span></div><h3>${e(movie.titleZh)}</h3><p class="movie-english-title">${e(movie.title)}</p><div class="movie-meta">${e(movie.year)} · ${e(movie.genre)}</div></a>`;
+  async getLibrary(app) {
+    const [series, playable] = await Promise.all([app.getJSON('data/movie-series.json'), app.getJSON('data/movies.json')]);
+    return { series, playable, playableById: new Map(playable.map(item => [item.id, item])) };
   },
-  async renderList(app, query='', genre='all') {
-    const generation=this.generation;
-    const movies=[...await app.getJSON('data/movies.json')].sort((a,b)=>(a.seriesOrder || 999)-(b.seriesOrder || 999));
-    if(generation!==this.generation) return;
-    document.getElementById('globalSearch').value=query;
-    const e=value=>app.escapeHtml(String(value || ''));
-    const genres=[...new Set(movies.map(movie=>movie.genre))];
-    const visible=movies.filter(movie=>(genre==='all'||movie.genre===genre)&&`${movie.title} ${movie.titleZh} ${movie.collection}`.toLowerCase().includes(query.toLowerCase()));
-    app.el().innerHTML=`<section class="movie-intro"><div><h1>🎬 光影课堂</h1><p>Movie Classroom · 在电影中感受英语，先从 Watch 开始。</p></div><span class="movie-count">${movies.length} 部影片</span></section><div class="filters" id="movieFilters"><span class="movie-filter-label">题材</span>${['all',...genres].map(item=>`<button type="button" class="filter-btn ${genre===item?'active':''}" data-genre="${e(item)}">${item==='all'?'全部影片':e(item)}</button>`).join('')}</div><div class="movie-section-heading"><h2>${query?`搜索结果：${e(query)}`:'最新上线'}</h2><span class="meta">${visible.length} 部</span></div><div class="movie-grid">${visible.map(movie=>this.card(app,movie)).join('')}</div>${visible.length?'':'<div class="empty">没有找到对应影片，请尝试其他名称。</div>'}`;
-    document.querySelectorAll('#movieFilters button').forEach(button=>button.addEventListener('click',()=>this.renderList(app,query,button.dataset.genre)));
+  stars(rating) { return '★'.repeat(rating) + '☆'.repeat(5 - rating); },
+  escape(app, value) { return app.escapeHtml(String(value || '')); },
+  poster(app, item, label, className='movie-poster') {
+    const e = value => this.escape(app, value);
+    if (item.cover) return `<div class="${className}"><img src="${e(item.cover)}" alt="${e(label)}海报" loading="lazy" referrerpolicy="no-referrer"></div>`;
+    return `<div class="${className} movie-poster-fallback" aria-label="${e(label)}待补充官方海报"><span>🎬</span><strong>${e(label)}</strong><small>Official poster coming soon</small></div>`;
+  },
+  seriesCard(app, series, playableById) {
+    const e = value => this.escape(app, value);
+    const enabled = series.films.filter(([id]) => playableById.has(id)).length;
+    return `<a class="movie-series-card" href="#/movie-series/${e(series.id)}" aria-label="查看${e(series.titleZh)}系列">${this.poster(app, series, series.titleZh, 'movie-series-poster')}<div class="movie-series-info"><h3>${e(series.titleZh)}</h3><p>${e(series.title)}</p><div class="movie-series-badges"><span>英语 ${e(series.level)}</span><span title="推荐度 ${series.rating}/5">${this.stars(series.rating)}</span></div><small>${series.films.length} 部影片 · ${enabled ? `${enabled} 部可 Watch` : '待补片源'}</small></div></a>`;
+  },
+  movieCard(app, series, film, playableById) {
+    const [id, title, titleZh, year] = film;
+    const item = playableById.get(id);
+    const e = value => this.escape(app, value);
+    const inner = `${this.poster(app, item || {}, titleZh)}<h3>${e(titleZh)}</h3><p class="movie-english-title">${e(title)}</p><div class="movie-meta">${e(year)} · ${e(series.level)}</div>`;
+    return item ? `<a class="movie-card" href="#/movie/${e(id)}" aria-label="观看 ${e(titleZh)}"><div class="movie-card-state watch">Watch · 看电影</div>${inner}</a>` : `<article class="movie-card movie-card-coming" aria-label="${e(titleZh)}待上线"><div class="movie-card-state">待上线</div>${inner}</article>`;
+  },
+  async renderList(app, query='', level='all') {
+    const generation = this.generation;
+    const { series, playableById } = await this.getLibrary(app);
+    if (generation !== this.generation) return;
+    document.getElementById('globalSearch').value = query;
+    const normalized = query.trim().toLowerCase();
+    const levels = [...new Set(series.map(item => item.level))];
+    const visible = series.filter(item => (level === 'all' || item.level === level) && `${item.title} ${item.titleZh} ${item.films.flat().join(' ')}`.toLowerCase().includes(normalized));
+    const totalFilms = series.reduce((count, item) => count + item.films.length, 0);
+    const e = value => this.escape(app, value);
+    app.el().innerHTML = `<section class="movie-intro"><div><h1>🎬 光影课堂</h1><p>Movie Classroom · 选择系列，在电影中感受英语。</p></div><span class="movie-count">${series.length} 个系列 · ${totalFilms} 部影片</span></section><div class="filters" id="movieFilters"><span class="movie-filter-label">英语难度</span>${['all', ...levels].map(item => `<button type="button" class="filter-btn ${level === item ? 'active' : ''}" data-level="${e(item)}">${item === 'all' ? '全部等级' : e(item)}</button>`).join('')}</div><div class="movie-section-heading"><h2>${query ? `搜索结果：${e(query)}` : '电影系列'}</h2><span class="meta">${visible.length} 个系列</span></div><div class="movie-series-grid">${visible.map(item => this.seriesCard(app, item, playableById)).join('')}</div>${visible.length ? '' : '<div class="empty">没有找到对应影片或系列。</div>'}`;
+    document.querySelectorAll('#movieFilters button').forEach(button => button.addEventListener('click', () => this.renderList(app, query, button.dataset.level)));
+  },
+  async renderSeries(app, id) {
+    const generation = this.generation;
+    const { series, playableById } = await this.getLibrary(app);
+    if (generation !== this.generation) return;
+    const group = series.find(item => item.id === id);
+    if (!group) { app.el().innerHTML = '<div class="empty">系列不存在。<p><a class="btn" href="#/movies">返回光影课堂</a></p></div>'; return; }
+    const e = value => this.escape(app, value);
+    const watchReady = group.films.filter(([filmId]) => playableById.has(filmId)).length;
+    app.el().innerHTML = `<div class="breadcrumb"><a href="#/movies">光影课堂</a> › ${e(group.titleZh)}</div><section class="movie-collection-hero">${this.poster(app, group, group.titleZh, 'movie-collection-poster')}<div><h1>${e(group.titleZh)}</h1><p>${e(group.title)}</p><div class="movie-series-badges"><span>英语难度 ${e(group.level)}</span><span>${this.stars(group.rating)} 推荐</span><span>${e(group.genre)}</span></div><p class="movie-collection-note">共 ${group.films.length} 部；${watchReady ? `${watchReady} 部已提供 Watch 播放` : '播放源待补充'}。</p></div></section><div class="movie-section-heading"><h2>影片列表</h2><span class="meta">按上映顺序</span></div><div class="movie-grid">${group.films.map(film => this.movieCard(app, group, film, playableById)).join('')}</div>`;
   },
   async renderWatch(app, id) {
-    const generation=this.generation;
-    const movies=[...await app.getJSON('data/movies.json')].sort((a,b)=>(a.seriesOrder || 999)-(b.seriesOrder || 999));
-    if(generation!==this.generation) return;
-    const movie=movies.find(item=>item.id===id);
-    if(!movie) { app.el().innerHTML='<div class="empty">影片不存在。<p><a class="btn" href="#/movies">返回光影课堂</a></p></div>'; return; }
-    const e=value=>app.escapeHtml(String(value || ''));
-    app.el().innerHTML=`<div class="breadcrumb"><a href="#/movies">光影课堂</a> › ${e(movie.titleZh)}</div><section class="movie-watch-head"><div><h1>${e(movie.titleZh)}</h1><p>${e(movie.title)} · ${e(movie.year)}</p></div><a class="btn secondary" href="#/movies">返回电影库</a></section><div class="movie-watch-frame"><video controls playsinline preload="metadata" aria-label="${e(movie.titleZh)}"></video></div><div class="movie-player-status" id="moviePlayerStatus" role="status" aria-live="polite">正在加载影片，请稍候…</div><div class="movie-watch-actions"><button type="button" class="btn secondary" id="movieRetry">重新加载</button><span class="muted">Watch 看电影</span></div><div class="movie-section-heading"><h2>同系列影片</h2></div><div class="movie-grid">${movies.filter(item=>item.id!==id&&item.collection===movie.collection).map(item=>this.card(app,item)).join('')}</div>`;
-    const player=app.el().querySelector('video');
-    this.player=player;
-    document.getElementById('movieRetry').onclick=()=>{
-      this.cleanup();
-      this.renderWatch(app,id).catch(()=>{});
-    };
-    const report=(message,failed=false)=>{
-      if(generation!==this.generation) return;
-      const status=document.getElementById('moviePlayerStatus');
-      if(status){status.textContent=message;status.classList.toggle('failed',failed);}
-    };
-    player.addEventListener('loadedmetadata',()=>report('影片已就绪，点击播放开始观看。'));
-    player.addEventListener('playing',()=>report('正在播放 · 可使用播放器控制倍速、音量和全屏。'));
-    player.addEventListener('error',()=>report('影片加载失败：片源可能已过期，或当前网络无法访问。请重试；仍失败时需要更新片源地址。',true));
-    if(player.canPlayType('application/vnd.apple.mpegurl')) {player.src=movie.hlsUrl;return;}
+    const generation = this.generation;
+    const { series, playableById } = await this.getLibrary(app);
+    if (generation !== this.generation) return;
+    const movie = playableById.get(id);
+    const group = series.find(item => item.films.some(([filmId]) => filmId === id));
+    if (!movie || !group) { app.el().innerHTML = '<div class="empty">这部影片暂未添加授权播放源。<p><a class="btn" href="#/movies">返回光影课堂</a></p></div>'; return; }
+    const e = value => this.escape(app, value);
+    app.el().innerHTML = `<div class="breadcrumb"><a href="#/movies">光影课堂</a> › <a href="#/movie-series/${e(group.id)}">${e(group.titleZh)}</a> › ${e(movie.titleZh)}</div><section class="movie-watch-head"><div><h1>${e(movie.titleZh)}</h1><p>${e(movie.title)} · ${e(movie.year)}</p></div><a class="btn secondary" href="#/movie-series/${e(group.id)}">返回系列</a></section><div class="movie-watch-frame"><video controls playsinline preload="metadata" aria-label="${e(movie.titleZh)}"></video></div><div class="movie-player-status" id="moviePlayerStatus" role="status" aria-live="polite">正在加载影片，请稍候…</div><div class="movie-watch-actions"><button type="button" class="btn secondary" id="movieRetry">重新加载</button><span class="muted">Watch 看电影 · ${e(movie.sourceLabel || '授权播放源')}</span></div><div class="movie-section-heading"><h2>同系列影片</h2></div><div class="movie-grid">${group.films.filter(([filmId]) => filmId !== id).map(film => this.movieCard(app, group, film, playableById)).join('')}</div>`;
+    const player = app.el().querySelector('video'); this.player = player;
+    document.getElementById('movieRetry').onclick = () => { this.cleanup(); this.renderWatch(app, id).catch(() => {}); };
+    const report = (message, failed=false) => { if (generation !== this.generation) return; const status = document.getElementById('moviePlayerStatus'); if (status) { status.textContent = message; status.classList.toggle('failed', failed); } };
+    player.addEventListener('loadedmetadata', () => report('影片已就绪，点击播放开始观看。'));
+    player.addEventListener('playing', () => report('正在播放 · 可使用播放器控制倍速、音量和全屏。'));
+    player.addEventListener('error', () => report('影片加载失败：片源可能已过期，或当前网络无法访问。请重试；仍失败时需要更新片源地址。', true));
+    if (player.canPlayType('application/vnd.apple.mpegurl')) { player.src = movie.hlsUrl; return; }
     try {
-      if(!window.Hls) {
-        if(!this.libraryPromise) this.libraryPromise=new Promise((resolve,reject)=>{
-          const script=document.createElement('script');
-          script.src='https://cdn.jsdelivr.net/npm/hls.js@1.5.20/dist/hls.min.js';
-          script.onload=resolve;script.onerror=()=>reject(new Error('播放器组件加载失败'));
-          document.head.append(script);
-        }).catch(error=>{this.libraryPromise=null;throw error;});
+      if (!window.Hls) {
+        if (!this.libraryPromise) this.libraryPromise = new Promise((resolve, reject) => { const script = document.createElement('script'); script.src = 'https://cdn.jsdelivr.net/npm/hls.js@1.5.20/dist/hls.min.js'; script.onload = resolve; script.onerror = () => reject(new Error('播放器组件加载失败')); document.head.append(script); }).catch(error => { this.libraryPromise = null; throw error; });
         await this.libraryPromise;
       }
-      if(generation!==this.generation || !player.isConnected) return;
-      if(!window.Hls?.isSupported()) throw new Error('当前浏览器不支持 HLS 播放');
-      const hls=new window.Hls();
-      this.hls=hls;
-      hls.on(window.Hls.Events.ERROR,(_event,data)=>{
-        if(data.fatal) {hls.stopLoad();report('影片加载失败：片源可能已过期，或存在网络／跨站访问限制。请重试；仍失败时需要更新片源地址。',true);}
-      });
-      hls.loadSource(movie.hlsUrl);
-      hls.attachMedia(player);
-    } catch(error) {report(error.message+'，请点击重新加载。',true);}
+      if (generation !== this.generation || !player.isConnected) return;
+      if (!window.Hls?.isSupported()) throw new Error('当前浏览器不支持 HLS 播放');
+      const hls = new window.Hls(); this.hls = hls;
+      hls.on(window.Hls.Events.ERROR, (_event, data) => { if (data.fatal) { hls.stopLoad(); report('影片加载失败：片源可能已过期，或存在网络／跨站访问限制。请重试；仍失败时需要更新片源地址。', true); } });
+      hls.loadSource(movie.hlsUrl); hls.attachMedia(player);
+    } catch (error) { report(error.message + '，请点击重新加载。', true); }
   }
 };

@@ -6,7 +6,26 @@
 .movie-section-heading{display:flex;align-items:center;justify-content:space-between;margin:28px 0 18px}
 .movie-section-heading h2{font-size:22px;margin:0}
 .movie-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px 18px}
-.movie-card{min-width:0;display:block}
+.movie-series-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.movie-series-card{min-width:0;display:flex;overflow:hidden;min-height:188px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+.movie-series-card:hover{transform:translateY(-3px);box-shadow:0 13px 30px #1732521f}
+.movie-series-card:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+.movie-series-poster{width:39%;flex:0 0 39%;min-height:188px;border-radius:0;background:linear-gradient(145deg,#173252,#0b62b6 58%,#ffc84c);overflow:hidden}
+.movie-series-poster img{display:block;width:100%;height:100%;object-fit:cover}
+.movie-poster-fallback{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:5px;padding:14px;color:#fff;background:linear-gradient(145deg,#173252,#0b62b6 58%,#ffc84c)}
+.movie-poster-fallback span{font-size:28px;line-height:1}
+.movie-poster-fallback strong{font-size:17px;line-height:1.2}
+.movie-poster-fallback small{font-size:11px;opacity:.88;line-height:1.3}
+.movie-series-info{display:flex;min-width:0;flex:1;flex-direction:column;align-items:flex-start;padding:17px}
+.movie-series-info h3{margin:0 0 5px;font-size:17px;line-height:1.3;color:var(--ink)}
+.movie-series-info p{margin:0;color:var(--muted);font-size:13px;line-height:1.4}
+.movie-series-info .movie-series-cn{margin-bottom:auto}
+.movie-series-badges{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
+.movie-series-badges span{padding:4px 7px;border-radius:10px;background:var(--light-blue);color:var(--blue-dark);font-size:11px;font-weight:700}
+.movie-card{position:relative;min-width:0;display:block}
+.movie-card-state{position:absolute;z-index:2;top:8px;left:8px;padding:4px 7px;border-radius:8px;background:#53657be8;color:white;font-size:11px;font-weight:700}
+.movie-card-state.watch{background:#0871cce8}
+.movie-card-coming .movie-poster{filter:saturate(.7)}
 .movie-poster{position:relative;aspect-ratio:2/3;overflow:hidden;border-radius:9px;background:linear-gradient(145deg,#173252,#091628);box-shadow:0 8px 20px #122b481a}
 .movie-poster img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .25s}
 .movie-card:hover img{transform:scale(1.04)}
@@ -25,6 +44,12 @@
 .movie-player-status{padding:14px 0;color:var(--muted);font-size:14px;line-height:1.6}
 .movie-player-status.failed{color:#a34a21}
 .movie-watch-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.movie-collection-hero{display:flex;gap:20px;align-items:center;margin-bottom:25px;padding:20px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.movie-collection-poster{width:92px;height:122px;flex:0 0 92px;border-radius:10px;overflow:hidden;background:linear-gradient(145deg,#173252,#0b62b6 58%,#ffc84c)}
+.movie-collection-poster img{display:block;width:100%;height:100%;object-fit:cover}
+.movie-collection-hero h1{margin:0 0 7px;font-size:27px}
+.movie-collection-hero p{margin:0;color:var(--muted);line-height:1.55}
 .movie-filter-label{font-size:14px;color:var(--muted);margin-right:4px}
+@media(max-width:1100px){.movie-series-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:900px){.movie-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.main-tab{font-size:16px;padding:0 12px}.main-nav-inner{gap:8px}.search-box input{width:min(300px,32vw)}}
-@media(max-width:600px){.movie-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 14px}.movie-intro{align-items:start}.movie-intro h1{font-size:24px}.movie-watch-head{align-items:start;flex-direction:column}.movie-watch-head h1{font-size:22px}.main-nav-inner{height:auto;flex-wrap:wrap;padding-bottom:10px}.main-tabs{width:100%}.main-nav .search-box{width:100%}.main-nav .search-box input{width:100%;min-width:0;flex:1}.movie-watch-frame{border-radius:8px}}
+@media(max-width:600px){.movie-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 14px}.movie-series-grid{grid-template-columns:1fr}.movie-series-card{min-height:154px}.movie-series-poster{min-height:154px}.movie-intro{align-items:start}.movie-intro h1{font-size:24px}.movie-watch-head{align-items:start;flex-direction:column}.movie-watch-head h1{font-size:22px}.movie-collection-hero{align-items:flex-start;padding:15px;gap:14px}.movie-collection-poster{width:72px;height:96px;flex-basis:72px}.movie-collection-hero h1{font-size:21px}.main-nav-inner{height:auto;flex-wrap:wrap;padding-bottom:10px}.main-tabs{width:100%}.main-nav .search-box{width:100%}.main-nav .search-box input{width:100%;min-width:0;flex:1}.movie-watch-frame{border-radius:8px}}
