@@ -51,7 +51,7 @@ window.MovieClassroom = {
       ...item,
       ...(await app.getJSON(`data/movies/${item.id}/movies.json`))
     })));
-    const playable = series.flatMap(item => item.sources || []);
+    const playable = series.flatMap(item => item.sources || []).filter(item => String(item.hlsUrl || '').trim());
     return { series, playable, playableById: new Map(playable.map(item => [item.id, item])) };
   },
   stars(rating) { return '★'.repeat(rating) + '☆'.repeat(5 - rating); },
