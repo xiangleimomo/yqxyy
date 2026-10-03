@@ -1,38 +1,7 @@
 {
   "films": [
-    [
-      "inside-out-1",
-      "Inside Out",
-      "头脑特工队",
-      2015
-    ],
-    [
-      "inside-out-2",
-      "Inside Out 2",
-      "头脑特工队2",
-      2024
-    ]
-  ],
-  "sources": [
-    {
-      "id": "inside-out-1",
-      "title": "Inside Out",
-      "titleZh": "头脑特工队",
-      "year": 2015,
-      "hlsUrl": "{
-  "films": [
-    [
-      "inside-out-1",
-      "Inside Out",
-      "头脑特工队",
-      2015
-    ],
-    [
-      "inside-out-2",
-      "Inside Out 2",
-      "头脑特工队2",
-      2024
-    ]
+    ["inside-out-1", "Inside Out", "头脑特工队", 2015],
+    ["inside-out-2", "Inside Out 2", "头脑特工队2", 2024]
   ],
   "sources": [
     {
@@ -41,21 +10,6 @@
       "titleZh": "头脑特工队",
       "year": 2015,
       "hlsUrl": "https://vip.ffzy-online1.com/20230324/32417_b22363ba/index.m3u8",
-      "sourceLabel": "蓝光",
-      "seriesOrder": 1
-    },
-    {
-      "id": "inside-out-2",
-      "title": "Inside Out 2",
-      "titleZh": "头脑特工队2",
-      "year": 2024,
-      "hlsUrl": "https://svipsvip.ffzy-online5.com/20240820/31586_c1840640/index.m3u8",
-      "sourceLabel": "蓝光",
-      "seriesOrder": 2
-    }
-  ]
-}
-",
       "subtitleUrl": "assets/subtitles/inside-out-1.en.vtt",
       "subtitleLang": "en",
       "subtitleLabel": "English",
