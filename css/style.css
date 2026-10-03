@@ -225,6 +225,13 @@ button{font-family:inherit}
 .sentence-action{display:none;gap:8px;margin:14px 0;position:sticky;bottom:10px;background:white;padding:10px;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.08)}
 .audio-btn{border:0;background:transparent;cursor:pointer;font-size:18px}
 
+/* Lightweight client-side developer-tools warning. */
+.client-protection-warning{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;padding:24px;background:rgba(14,30,52,.96);color:#fff;text-align:center}
+.client-protection-warning>div{max-width:360px;padding:32px 28px;border:1px solid rgba(255,255,255,.22);border-radius:18px;background:rgba(255,255,255,.08);box-shadow:0 18px 60px rgba(0,0,0,.35)}
+.client-protection-warning span{display:block;font-size:32px;margin-bottom:12px}
+.client-protection-warning strong{font-size:20px}
+.client-protection-warning p{margin:10px 0 0;color:#d6e7f8;line-height:1.6}
+
 /* Read vocabulary interaction */
 .reading-word{color:#1265b2;font-weight:800;border-bottom:2px dotted #1265b2;cursor:pointer;position:relative}
 .reading-word:hover{color:#064f9c;background:#eaf4ff}
