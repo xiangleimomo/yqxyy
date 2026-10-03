@@ -1,6 +1,33 @@
 /* Movie catalogue: a title becomes Watch-enabled only after its authorized hlsUrl is added. */
 window.MovieClassroom = {
   player: null, hls: null, libraryPromise: null, generation: 0,
+  seriesCovers: {
+    'harry-potter':'https://media.themoviedb.org/t/p/w500/yahXormFOI94jTYeFEtglQ2izXv.jpg',
+    'fantastic-beasts':'https://media.themoviedb.org/t/p/w500/tIHlo9ifG1sHy2zLzUecmCwNIRW.jpg',
+    'narnia':'https://media.themoviedb.org/t/p/w500/vE2wdhuCTrKd1BHnYeOXeXrItI4.jpg',
+    'paddington':'https://media.themoviedb.org/t/p/w500/x9PQiCchFbrJEG7Hh6j86s4vfLN.jpg',
+    'toy-story':'https://media.themoviedb.org/t/p/w500/dEoN5k2ulqk9mhEwVrapciKJm8s.jpg',
+    'how-to-train-your-dragon':'https://media.themoviedb.org/t/p/w500/a2nloGnhEqJSSL5czOlS9qIblUb.jpg',
+    'kung-fu-panda':'https://media.themoviedb.org/t/p/w500/A5RDPzzHsmKPtxxrTbl0EgvMoom.jpg',
+    'zootopia':'https://media.themoviedb.org/t/p/w500/oqlsQwZN1Umt9rX9t2LaN5RhwhX.jpg',
+    'inside-out':'https://media.themoviedb.org/t/p/w500/xKJyZ5rbOlaDIjvudGVKQ6kko2W.jpg',
+    'finding-nemo':'https://media.themoviedb.org/t/p/w500/lKysxbPWhvVzaCQWU9NRBx6UKkU.jpg',
+    'the-incredibles':'https://media.themoviedb.org/t/p/w500/swL3B7oxrnw7cgqmpPz8gfOpx3F.jpg',
+    'monsters':'https://media.themoviedb.org/t/p/w500/4ag7HjlRUQKSOyBJCEvqZz29kPP.jpg',
+    'cars':'https://media.themoviedb.org/t/p/w500/tHqoGr0QqTZZgjZl55XeViCH3RB.jpg',
+    'frozen':'https://media.themoviedb.org/t/p/w500/5UfIxiiEbqfT1X1SEyV4EZFcTZU.jpg',
+    'wreck-it-ralph':'https://media.themoviedb.org/t/p/w500/86eu71V84YzZgJCrcoV2MPlE7Q0.jpg',
+    'despicable-me':'https://media.themoviedb.org/t/p/w500/hrExp5Ztuzk45SKPZVqsHuwnsxI.jpg',
+    'sing':'https://media.themoviedb.org/t/p/w500/dsyAzOPLfVudYepL8o3y4pQttdF.jpg',
+    'secret-life-of-pets':'https://media.themoviedb.org/t/p/w500/xZk75oqbQHbnmXRLhzFUStowJ8Z.jpg',
+    'hotel-transylvania':'https://media.themoviedb.org/t/p/w500/8GjJVJ7WcxY0cMJLUAOLaHhHPCs.jpg',
+    'the-croods':'https://media.themoviedb.org/t/p/w500/ae9QqU62ly2iXwAH884pq5oGtrV.jpg',
+    'trolls':'https://media.themoviedb.org/t/p/w500/rd0vZaveNp47JIwPd1fHeZK2zpr.jpg',
+    'the-bad-guys':'https://media.themoviedb.org/t/p/w500/is4uVUIqtNtPATwLrZC9cdR3zye.jpg',
+    'peter-rabbit':'https://media.themoviedb.org/t/p/w500/u4s7S21F1SA04yek8kbiIpSJ4hv.jpg',
+    'sonic':'https://media.themoviedb.org/t/p/w500/9hG9Gxn42Gqu2zx8rD9HjfGTd1z.jpg',
+    'ice-age':'https://media.themoviedb.org/t/p/w500/u89XINHw8lSFNCBTPWMqINc29n7.jpg'
+  },
   cleanup() {
     this.generation++;
     if (this.hls) { this.hls.destroy(); this.hls = null; }
@@ -14,7 +41,8 @@ window.MovieClassroom = {
   escape(app, value) { return app.escapeHtml(String(value || '')); },
   poster(app, item, label, className='movie-poster') {
     const e = value => this.escape(app, value);
-    if (item.cover) return `<div class="${className}"><img src="${e(item.cover)}" alt="${e(label)}海报" loading="lazy" referrerpolicy="no-referrer"></div>`;
+    const cover = item.cover || this.seriesCovers[item.id];
+    if (cover) return `<div class="${className}"><img src="${e(cover)}" alt="${e(label)}海报" loading="lazy" referrerpolicy="no-referrer"></div>`;
     return `<div class="${className} movie-poster-fallback" aria-label="${e(label)}待补充官方海报"><span>🎬</span><strong>${e(label)}</strong><small>Official poster coming soon</small></div>`;
   },
   seriesCard(app, series, playableById) {
@@ -26,7 +54,7 @@ window.MovieClassroom = {
     const [id, title, titleZh, year] = film;
     const item = playableById.get(id);
     const e = value => this.escape(app, value);
-    const inner = `${this.poster(app, item || {}, titleZh)}<h3>${e(titleZh)}</h3><p class="movie-english-title">${e(title)}</p><div class="movie-meta">${e(year)} · ${e(series.level)}</div>`;
+    const inner = `${this.poster(app, item || {id:series.id}, titleZh)}<h3>${e(titleZh)}</h3><p class="movie-english-title">${e(title)}</p><div class="movie-meta">${e(year)} · ${e(series.level)}</div>`;
     return item ? `<a class="movie-card" href="#/movie/${e(id)}" aria-label="观看 ${e(titleZh)}"><div class="movie-card-state watch">Watch · 看电影</div>${inner}</a>` : `<article class="movie-card movie-card-coming" aria-label="${e(titleZh)}待上线"><div class="movie-card-state">待上线</div>${inner}</article>`;
   },
   async renderList(app, query='', level='all') {
