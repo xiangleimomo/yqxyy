@@ -72,10 +72,12 @@ const App = {
   },
   async renderHome(statusFilter='all', levelFilter='all'){
     const list = await this.getJSON('data/series-list.json');
-    const total = list.length;
-    const levels = [...new Set(list.map(s=>Number(s.level ?? 0)))].sort((a,b)=>a-b);
-    const visible = list.filter(s=>(statusFilter==='all'||s.status===statusFilter) && (levelFilter==='all'||Number(s.level ?? 0)===Number(levelFilter)));
-    const grouped = (levelFilter==='all' ? levels : [Number(levelFilter)]).map(level=>{
+    const accessibleList=this.isGuest() ? list.filter(s=>!this.isGuestRestrictedLevel(s.level)) : list;
+    const total = accessibleList.length;
+    const levels = [...new Set(accessibleList.map(s=>Number(s.level ?? 0)))].sort((a,b)=>a-b);
+    const selectedLevel=levelFilter!=='all' && !levels.includes(Number(levelFilter)) ? 'all' : levelFilter;
+    const visible = accessibleList.filter(s=>(statusFilter==='all'||s.status===statusFilter) && (selectedLevel==='all'||Number(s.level ?? 0)===Number(selectedLevel)));
+    const grouped = (selectedLevel==='all' ? levels : [Number(selectedLevel)]).map(level=>{
       const series = visible.filter(s=>Number(s.level ?? 0)===level);
       if(!series.length) return '';
       return `<section class="level-group"><div class="level-group-head"><h3>Level ${level}</h3><span>${series.length} 个系列</span></div><div class="series-grid">${series.map(s=>this.seriesCard(s)).join('')}</div></section>`;
@@ -96,8 +98,8 @@ const App = {
       </div>
       <div class="filters level-filters" id="levelFilters" aria-label="按等级筛选">
         <span class="filter-label">分级</span>
-        <button class="filter-btn ${levelFilter==='all'?'active':''}" data-level="all">全部等级</button>
-        ${levels.map(level=>`<button class="filter-btn ${Number(levelFilter)===level?'active':''}" data-level="${level}">Level ${level}</button>`).join('')}
+        <button class="filter-btn ${selectedLevel==='all'?'active':''}" data-level="all">全部等级</button>
+        ${levels.map(level=>`<button class="filter-btn ${Number(selectedLevel)===level?'active':''}" data-level="${level}">Level ${level}</button>`).join('')}
       </div>
       <div class="level-groups">
         ${grouped || '<div class="empty">当前筛选条件下没有系列。</div>'}
@@ -130,6 +132,11 @@ async renderSeries(seriesId){
   if(!seriesId) return this.renderHome();
   const [bundle] = await Promise.all([this.loadSeries(seriesId)]);
   const {series, episodes} = bundle;
+  if(this.isGuestRestrictedLevel(series.level)){
+    this.el().innerHTML=this.guestLevelGate();
+    this.bindGuestEpisodeGate();
+    return;
+  }
   const episodeGroups = Array.from({length:Math.ceil(episodes.length / 10)}, (_, index)=>{
     const start=index * 10 + 1;
     return {start, end:Math.min(start + 9, episodes.length)};
@@ -250,6 +257,11 @@ async renderLesson(seriesId, episodeId){
     if(ep.status !== 'published'){
       this.el().innerHTML = `<div class="breadcrumb"><a href="#/home">动画故事</a><span>›</span><a href="#/series/${seriesId}">${series.seriesTitle}</a></div><div class="empty"><h2>${ep.title}</h2><p>${this.statusText(ep.status)}</p><p>这一集还没有完整开放。</p><a class="btn" href="#/series/${seriesId}">返回系列页</a></div>`; return;
     }
+    if(this.isGuestRestrictedLevel(series.level)){
+      this.el().innerHTML=this.guestLevelGate();
+      this.bindGuestEpisodeGate();
+      return;
+    }
     if(this.isGuestEpisodeLimit(seriesId,episodeId)){
       this.el().innerHTML=this.guestEpisodeGate(seriesId, ep, series);
       this.bindGuestEpisodeGate();
@@ -291,6 +303,10 @@ async renderLesson(seriesId, episodeId){
     const ep = episodes.find(e=>Number(e.episodeId)===Number(episodeId));
     if(!ep || ep.status!=='published'){
       alert('这一集暂未开放。');
+      return;
+    }
+    if(this.isGuestRestrictedLevel(series.level)){
+      window.SFCloud?.open();
       return;
     }
     if(this.isGuestEpisodeLimit(seriesId,episodeId)){
@@ -973,6 +989,9 @@ addPoints(n=1){
   isGuest(){
     return !window.SFCloud?.user;
   },
+  isGuestRestrictedLevel(level){
+    return this.isGuest() && Number(level)>3;
+  },
   isGuestEpisodeLimit(seriesId, episodeId){
     // Visitors may try the first three episodes in every animation series.
     // Movie Classroom does not use this lesson flow.
@@ -987,6 +1006,9 @@ addPoints(n=1){
   guestEpisodeGate(seriesId, ep, series=null){
     const back=series ? `<a class="btn secondary" href="#/series/${this.escapeHtml(seriesId)}">返回课程列表</a>` : '';
     return `<div class="empty guest-episode-gate"><h2>🔒 注册后继续学习</h2><p>游客可免费学习本系列前 3 集。注册或登录后，即可继续完成 Quiz，按学习进度解锁后续课程。</p><button class="btn" type="button" data-guest-register>注册 / 登录继续学习</button>${back}</div>`;
+  },
+  guestLevelGate(){
+    return `<div class="empty guest-episode-gate"><h2>🔒 注册后解锁更多分级</h2><p>游客可浏览并学习 Level 0–3。注册或登录后，即可查看 Level 4–9 的全部动画故事，并继续按 Quiz 学习进度解锁课程。</p><button class="btn" type="button" data-guest-register>注册 / 登录查看全部内容</button><p><a class="btn secondary" href="#/home">返回动画故事</a></p></div>`;
   },
   bindGuestEpisodeGate(){
     document.querySelector('[data-guest-register]')?.addEventListener('click',()=>window.SFCloud?.open());
@@ -1056,7 +1078,7 @@ addPoints(n=1){
     this.el().innerHTML=`<section class="hero"><div><h1>签到</h1><p>每天完成任意学习模块后，当天会自动点亮。</p></div><div class="hero-badge">${y}年${m+1}月</div></section><div class="content-panel"><div class="calendar">${['一','二','三','四','五','六','日'].map(x=>`<strong style="text-align:center">${x}</strong>`).join('')}${cells}</div></div>`;
   },
   async renderBookshelf(){
-    const list=await this.getJSON('data/series-list.json'); const p=this.storage('progress') || {};
+    const all=await this.getJSON('data/series-list.json'); const list=this.isGuest()?all.filter(s=>!this.isGuestRestrictedLevel(s.level)):all; const p=this.storage('progress') || {};
     this.el().innerHTML=`<section class="hero"><div><h1>书架</h1><p>这里收集正在学习和已经学过的故事系列。</p></div></section><div class="series-grid">${list.map(s=>{const done=Object.values(p).filter(x=>x.seriesId===s.seriesId).length;return `<article class="series-card"><img class="cover" src="${s.cover}" alt=""><div class="series-info"><h3>${s.title}</h3><div class="zh">${s.titleZh||''}</div><p>学习进度：${done}/${s.episodeCount || 0}</p><div class="progress-bar"><span style="width:${s.episodeCount?Math.min(100,done/s.episodeCount*100):0}%"></span></div><p><a class="btn small" href="#/series/${s.seriesId}">进入系列</a></p></div></article>`}).join('')}</div>`;
   },
   renderWordbank(){
@@ -1068,7 +1090,8 @@ addPoints(n=1){
     this.el().innerHTML=`<section class="hero"><div><h1>英文写作</h1><p>先从收藏喜欢的英文句子开始，后期可以升级为仿写练习。</p></div></section><div class="content-panel">${arr.length?arr.map(s=>`<div class="read-paragraph"><strong>${s.sentence}</strong><div class="muted">${s.seriesId} · Episode ${s.episodeId}</div></div>`).join(''):'<div class="empty">还没有收藏句子。进入 Read 页面可以收藏好句。</div>'}</div>`;
   },
   async renderSearch(q){
-    const list=await this.getJSON('data/series-list.json');
+    const all=await this.getJSON('data/series-list.json');
+    const list=this.isGuest()?all.filter(s=>!this.isGuestRestrictedLevel(s.level)):all;
     const results=[];
     for(const s of list.filter(x=>!['coming','locked'].includes(x.status))){
       try{
