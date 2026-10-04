@@ -178,20 +178,26 @@ async renderSeries(seriesId){
       const list=document.getElementById('episodeSideList');
       list.innerHTML=visible.length ? visible.map(e=>{
         const available=e.status==='published';
-        const unlocked=available && this.isEpisodeUnlocked(seriesId,e.episodeId);
+        const guestLocked=this.isGuestEpisodeLimit(seriesId,e.episodeId);
+        const unlocked=available && this.canAccessEpisode(seriesId,e.episodeId);
         const prog=this.episodeProgress(seriesId,e.episodeId);
         const done=!!(prog.modules.quiz);
-        return `<button class="episode-side-item ${Number(e.episodeId)===activeEpisodeId?'active':''} ${unlocked?'':'locked'}" data-ep="${e.episodeId}" data-available="${available}" ${unlocked?'':'disabled'}>
+        return `<button class="episode-side-item ${Number(e.episodeId)===activeEpisodeId?'active':''} ${unlocked?'':'locked'}" data-ep="${e.episodeId}" data-available="${available}" ${unlocked || guestLocked?'':'disabled'}>
           <span class="num">${e.episodeId}</span>
           <span>${e.title}${done?' ✓':''}</span>
-          <small>${!available?'即将上线':(unlocked?(done?'已完成':'可学习'):'🔒 未解锁')}</small>
+          <small>${!available?'即将上线':(unlocked?(done?'已完成':'可学习'):(guestLocked?'🔒 注册后解锁':'🔒 未解锁'))}</small>
         </button>`;
       }).join('') : '<div class="episode-filter-empty">没有找到匹配课程</div>';
       document.querySelectorAll('.episode-side-item').forEach(btn=>btn.onclick=()=>openEpisode(btn.dataset.ep));
     };
     const openEpisode = (id)=>{
       const ep=episodes.find(e=>Number(e.episodeId)===Number(id)) || episodes[0];
-      if(!this.isEpisodeUnlocked(seriesId, ep.episodeId)){
+      if(this.isGuestEpisodeLimit(seriesId, ep.episodeId)){
+        document.getElementById('episodeWorkspace').innerHTML=this.guestEpisodeGate(seriesId, ep);
+        this.bindGuestEpisodeGate();
+        return;
+      }
+      if(!this.canAccessEpisode(seriesId, ep.episodeId)){
         alert('🔒 请先完成上一集 Quiz（正确率80%以上）后解锁本集。');
         return;
       }
@@ -244,7 +250,12 @@ async renderLesson(seriesId, episodeId){
     if(ep.status !== 'published'){
       this.el().innerHTML = `<div class="breadcrumb"><a href="#/home">动画故事</a><span>›</span><a href="#/series/${seriesId}">${series.seriesTitle}</a></div><div class="empty"><h2>${ep.title}</h2><p>${this.statusText(ep.status)}</p><p>这一集还没有完整开放。</p><a class="btn" href="#/series/${seriesId}">返回系列页</a></div>`; return;
     }
-    if(!this.isEpisodeUnlocked(seriesId,episodeId)){
+    if(this.isGuestEpisodeLimit(seriesId,episodeId)){
+      this.el().innerHTML=this.guestEpisodeGate(seriesId, ep, series);
+      this.bindGuestEpisodeGate();
+      return;
+    }
+    if(!this.canAccessEpisode(seriesId,episodeId)){
       this.el().innerHTML=`<div class="empty"><h2>🔒 本集尚未解锁</h2><p>请先完成上一集 Quiz，正确率达到 80% 后自动解锁。</p><a class="btn" href="#/series/${this.escapeHtml(seriesId)}">返回课程列表</a></div>`;
       return;
     }
@@ -278,7 +289,15 @@ async renderLesson(seriesId, episodeId){
     const [bundle] = await Promise.all([this.loadSeries(seriesId)]);
     const {series, episodes} = bundle;
     const ep = episodes.find(e=>Number(e.episodeId)===Number(episodeId));
-    if(!ep || ep.status!=='published' || !this.isEpisodeUnlocked(seriesId,episodeId)){
+    if(!ep || ep.status!=='published'){
+      alert('这一集暂未开放。');
+      return;
+    }
+    if(this.isGuestEpisodeLimit(seriesId,episodeId)){
+      window.SFCloud?.open();
+      return;
+    }
+    if(!this.canAccessEpisode(seriesId,episodeId)){
       alert('🔒 请先完成上一集 Quiz（正确率80%以上）后解锁本集。');
       return;
     }
@@ -949,6 +968,28 @@ addPoints(n=1){
     if(val===undefined){try{return JSON.parse(localStorage.getItem(k)||'null')}catch(e){return null}}
     localStorage.setItem(k, JSON.stringify(val));
     window.SFCloud?.schedule();
+  },
+
+  isGuest(){
+    return !window.SFCloud?.user;
+  },
+  isGuestEpisodeLimit(seriesId, episodeId){
+    // Visitors may try the first three episodes in every animation series.
+    // Movie Classroom does not use this lesson flow.
+    return this.isGuest() && Number(episodeId)>3;
+  },
+  canAccessEpisode(seriesId, episodeId){
+    // The trial episodes are intentionally available without a quiz or account.
+    // Once signed in, the existing level-based quiz-unlock rules take over.
+    if(this.isGuest() && Number(episodeId)<=3) return true;
+    return this.isEpisodeUnlocked(seriesId, episodeId);
+  },
+  guestEpisodeGate(seriesId, ep, series=null){
+    const back=series ? `<a class="btn secondary" href="#/series/${this.escapeHtml(seriesId)}">返回课程列表</a>` : '';
+    return `<div class="empty guest-episode-gate"><h2>🔒 注册后继续学习</h2><p>游客可免费学习本系列前 3 集。注册或登录后，即可继续完成 Quiz，按学习进度解锁后续课程。</p><button class="btn" type="button" data-guest-register>注册 / 登录继续学习</button>${back}</div>`;
+  },
+  bindGuestEpisodeGate(){
+    document.querySelector('[data-guest-register]')?.addEventListener('click',()=>window.SFCloud?.open());
   },
 
   requiresQuizUnlock(seriesId){
