@@ -966,5 +966,81 @@
         "source": "user-provided-transcript"
       }
     ]
+  },
+  "9": {
+    "episodeId": 9,
+    "title": "The Coward Dong Zhuo Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "story",
+        "question": "What happens after the light around Zhang Jue disappears?",
+        "options": [
+          {"key":"A","text":"Zhang Jue is gone."},
+          {"key":"B","text":"Zhang Jue surrenders to Liu Bei."},
+          {"key":"C","text":"The city gate closes."}
+        ],
+        "answer": "A",
+        "explanation": "闪光消失后，张角也不见了。",
+        "source": "user-provided-transcript"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "character",
+        "question": "Where was Dong Zhuo when the oath brothers found him?",
+        "options": [
+          {"key":"A","text":"Behind a barrel."},
+          {"key":"B","text":"On the city wall."},
+          {"key":"C","text":"Leading the imperial soldiers."}
+        ],
+        "answer": "A",
+        "explanation": "一个桶倒下后，大家发现董卓躲在桶后面。",
+        "source": "user-provided-transcript"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "story",
+        "question": "Why does Dong Zhuo dismiss Liu Bei and his oath brothers?",
+        "options": [
+          {"key":"A","text":"He refuses to believe that simple men saved his life."},
+          {"key":"B","text":"He thinks they are Yellow Turban rebels."},
+          {"key":"C","text":"He wants them to join the imperial army immediately."}
+        ],
+        "answer": "A",
+        "explanation": "董卓自认是重要将军，不相信普通人能救他，因此赶他们离开。",
+        "source": "user-provided-transcript"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "vocabulary",
+        "question": "What does “mercy” mean in the story?",
+        "options": [
+          {"key":"A","text":"Kindness or forgiveness toward someone who has lost."},
+          {"key":"B","text":"A weapon used in battle."},
+          {"key":"C","text":"A place where soldiers camp."}
+        ],
+        "answer": "A",
+        "explanation": "mercy 指对本可受到惩罚的人表现出的仁慈或宽恕。",
+        "source": "user-provided-transcript"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "character",
+        "question": "Why does Liu Bei refuse to attack Dong Zhuo?",
+        "options": [
+          {"key":"A","text":"He believes there is already enough conflict in the world."},
+          {"key":"B","text":"He is afraid of Dong Zhuo's army."},
+          {"key":"C","text":"He wants to become Dong Zhuo's friend."}
+        ],
+        "answer": "A",
+        "explanation": "刘备认为世上已经有足够多的冲突；为帝国而战并获胜就足够了。",
+        "source": "user-provided-transcript"
+      }
+    ]
   }
 }
