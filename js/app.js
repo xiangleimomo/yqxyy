@@ -218,7 +218,7 @@ async renderSeries(seriesId){
           ${ep.modules?.read?'<button class="module-card" data-go="listenRead">🎧<b>Listen and Read</b><span>听读</span></button>':''}
           ${(ep.modules?.words || ep.modules?.vocabulary)?'<button class="module-card" data-go="words">🔤<b>Words</b><span>单词</span></button>':''}
           ${ep.modules?.quiz?'<button class="module-card" data-go="quiz">✅<b>Quiz</b><span>测验</span></button>':''}
-          ${(ep.modules?.words || ep.modules?.vocabulary)?'<button class="module-card" data-go="games">🎮<b>Games</b><span>本集词汇 · 随机 3 款</span></button>':''}
+          ${(ep.modules?.words || ep.modules?.vocabulary)?'<button class="module-card" data-go="games">🎮<b>Games</b><span>游戏</span></button>':''}
         </div>`;
       document.querySelectorAll('.module-card').forEach(btn=>{
         btn.onclick=()=>{ this.openLearningModal(btn.dataset.go, seriesId, ep.episodeId); };

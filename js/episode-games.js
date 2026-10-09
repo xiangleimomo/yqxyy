@@ -15,9 +15,9 @@ const EpisodeGames=(()=>{
  function refresh(section){
   const d=section.gameLesson;if(!d||!section.isConnected)return;const s=status(d),points=App.getPoints(),body=section.querySelector('.games-body');
   section.querySelector('.games-access').textContent=`拼写挑战：${s.done}/${s.total} 个（需 ${s.required} 个） · ${s.unlocked?'已解锁':'尚未解锁'} · 可用积分：${points} · 每局 2 积分`;
-  if(!s.unlocked){body.innerHTML='<div class="empty games-locked"><h3>🔒 请先完成本集拼写挑战的 50%</h3><p>前往 Words → Typing Practice，正确拼写本集单词。跳过及重复拼写同一个词不会增加解锁进度。</p></div>';return}
+  let hint=section.querySelector('.games-lock-hint');if(!hint){hint=document.createElement('p');hint.className='games-lock-hint';body.before(hint)}hint.hidden=s.unlocked;hint.textContent=`🔒 再正确拼写 ${Math.max(0,s.required-s.done)} 个不同单词，就能解锁下面 3 款游戏！前往 Words → Typing Practice 挑战吧。`;
   const p=pack(d.vocab);if(p.words.length<4){body.innerHTML='<div class="empty">本集不足 4 个可用游戏单词，暂不能开始游戏；不会使用其他集或示例词补齐。</div>';return}
-  let frame=body.querySelector('iframe');if(!frame){frame=document.createElement('iframe');frame.className='episode-games-frame';frame.title=`Episode ${d.episodeId} 词汇游戏`;frame.src='arcade/index.html?embedded=1&v=20261009-3';frame.allow='fullscreen';frame.gameLesson=d;frame.requests=new Map();frame.gamePayload={type:'episode-games:init',episodeKey:`${d.seriesId}:${d.episodeId}`,title:`Episode ${d.episodeId} · ${d.ep.title}`,words:p.words,ids:choose()};frame.addEventListener('load',()=>sendInit(frame));body.replaceChildren(frame)}
+  let frame=body.querySelector('iframe');if(!frame){frame=document.createElement('iframe');frame.className='episode-games-frame';frame.title=`Episode ${d.episodeId} 词汇游戏`;frame.src='arcade/index.html?embedded=1&v=20261009-4';frame.allow='fullscreen';frame.gameLesson=d;frame.requests=new Map();frame.gamePayload={type:'episode-games:init',episodeKey:`${d.seriesId}:${d.episodeId}`,title:`Episode ${d.episodeId} · ${d.ep.title}`,words:p.words,ids:choose()};frame.addEventListener('load',()=>sendInit(frame));body.replaceChildren(frame)}
   frame.contentWindow?.postMessage({type:'episode-games:wallet',points,unlocked:s.unlocked},location.origin);
  }
  function sendInit(frame){if(frame.isConnected){frame.contentWindow?.postMessage(frame.gamePayload,location.origin);refresh(frame.closest('.episode-games'))}}
