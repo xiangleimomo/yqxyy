@@ -568,6 +568,7 @@ async renderLesson(seriesId, episodeId){
   },
   escapeHtml(text){return String(text).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));},
   speakText(text){
+    if(window.WordPronunciation)return window.WordPronunciation.speak(text);
     const value=String(text||'').trim();
     if(!value || !('speechSynthesis' in window) || !window.SpeechSynthesisUtterance) return false;
     const synth=window.speechSynthesis;
@@ -582,7 +583,8 @@ async renderLesson(seriesId, episodeId){
       u.rate=0.9;
       u.pitch=1;
       u.volume=1;
-      window.setTimeout(()=>synth.speak(u), 0);
+      this._speechUtterance=u;
+      synth.speak(u);
       return true;
     }catch(err){
       console.warn('Speech playback failed:', err);

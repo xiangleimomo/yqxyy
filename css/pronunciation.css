@@ -1,0 +1,2 @@
+#pronunciation-status{position:fixed;z-index:2147483000;left:50%;bottom:max(18px,env(safe-area-inset-bottom));transform:translateX(-50%);max-width:calc(100vw - 24px);padding:10px 15px;border-radius:10px;background:#172b46;color:#fff;box-shadow:0 3px 16px #0003;font-size:14px;line-height:1.5;overflow-wrap:anywhere;pointer-events:none}
+#pronunciation-status[hidden]{display:none}
