@@ -5,6 +5,13 @@ const vm=require('node:vm');
 const ctx=vm.createContext({window:{addEventListener(){}},crypto:require('node:crypto').webcrypto});
 vm.runInContext(fs.readFileSync(path.join(__dirname,'../js/episode-games.js'),'utf8')+'\nglobalThis.api=EpisodeGames',ctx);
 const api=ctx.api;
+const Rules=require('../arcade/rules.js');
+const casing=api.pack([{word:'APPLE',meaningZh:'苹果'},{word:'bridge',meaningZh:'桥'},{word:'Venus',meaningZh:'金星'},{word:'TV',meaningZh:'电视'},{word:'Guanyin',meaningZh:'观音'},{word:'Good',meaningZh:'好'},{word:'eBay',meaningZh:'品牌',preserveCase:true}]).words;
+assert.equal(casing.map(w=>w.en).join(','),'apple,bridge,Venus,TV,Guanyin,good,eBay');
+assert.equal(Rules.normalize(Rules.normalize(casing)).map(w=>w.en).join(','),'apple,bridge,Venus,TV,Guanyin,good,eBay');
+const ordinary=Rules.normalize([{en:'APPLE',zh:'苹果'},{en:'BRIDGE',zh:'桥'},{en:'CLOUD',zh:'云'},{en:'DRAGON',zh:'龙'}]);
+assert.ok(ordinary.every(w=>w.en===w.en.toLowerCase()));
+for(let i=0;i<30;i++){const search=Rules.search(ordinary),cross=Rules.crossword(ordinary);assert.ok(search.grid.flat().every(ch=>/^[a-z]$/.test(ch)));assert.ok(cross.grid.flat().filter(Boolean).every(ch=>/^[a-z]$/.test(ch)));for(const entry of search.entries)assert.equal(entry.cells.map(p=>search.grid[p.r][p.c]).join(''),entry.en);for(const entry of cross.entries)assert.equal(entry.cells.map(p=>cross.grid[p.r][p.c]).join(''),entry.en)}
 const random=Array.from({length:300},()=>api.choose());
 assert.ok(random.every(ids=>ids.length===3&&new Set(ids).size===3));
 assert.equal(new Set(random.flat()).size,27);

@@ -33,7 +33,7 @@ Arcade.register('G07',()=>{
 Arcade.register('G20',()=>{
  const e=Arcade.start('G20','连接相邻字母组成词库中的词，可以横、竖、斜向转弯，同一条路径不能重复格子。找到所有主题词和贯穿两侧的主题词即可完成。',[{key:'x',label:'提示（扣分）'},{key:' ',label:'提交路径'}]);
  const list=ArcadeRules.shuffle(e.pool).slice(0,6).sort((a,b)=>b.en.length-a.en.length),cols=Math.min(6,list[0].en.length),total=list.reduce((n,w)=>n+w.en.length,0),rows=Math.ceil(total/cols),S=Math.min(66,450/rows),ox=450-cols*S/2,oy=70;let board=[],paths=[],cursor=0,found=new Set(),path=[];
- for(const w of list){let cells=[];for(const ch of w.en){let r=Math.floor(cursor/cols),c=r%2?cols-1-cursor%cols:cursor%cols;board[r*cols+c]=ch;cells.push(r*cols+c);cursor++}paths.push(cells)}for(let i=0;i<rows*cols;i++)board[i]??=String.fromCharCode(65+Math.random()*26|0);
+ for(const w of list){let cells=[];for(const ch of w.en){let r=Math.floor(cursor/cols),c=r%2?cols-1-cursor%cols:cursor%cols;board[r*cols+c]=ch;cells.push(r*cols+c);cursor++}paths.push(cells)}for(let i=0;i<rows*cols;i++)board[i]??=String.fromCharCode(97+Math.random()*26|0);
  function hud(){e.hud(`主题词 ${found.size}/${list.length}`);e.mission(`本盘词库主题 · ${list.map(w=>w.zh).join('、')}　金色贯穿词：${list[0].zh}`)}
  function cell(p){let c=Math.floor((p.x-ox)/S),r=Math.floor((p.y-oy)/S);return r>=0&&c>=0&&r<rows&&c<cols?r*cols+c:-1}
  function add(i){if(i<0||[...found].some(j=>paths[j].includes(i)))return;if(path.at(-2)===i){path.pop();return}if(path.includes(i))return;let last=path.at(-1);if(last!==undefined&&Math.max(Math.abs(Math.floor(last/cols)-Math.floor(i/cols)),Math.abs(last%cols-i%cols))!==1)return;path.push(i)}

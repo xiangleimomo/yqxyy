@@ -1,12 +1,12 @@
 /* Original algorithms for the vocabulary arcade; no third-party assets. */
 (function(root){
   const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
-  function normalize(a){const seen=new Set();return a.filter(w=>/^[a-z]{2,16}$/i.test(w.en)&&w.zh&&!seen.has(w.en.toUpperCase())&&seen.add(w.en.toUpperCase())).map(w=>({...w,en:w.en.toUpperCase()}))}
+  function normalize(a){const seen=new Set();return a.filter(w=>/^[a-z]{2,16}$/i.test(w.en)&&w.zh&&!seen.has(w.en.toLowerCase())&&seen.add(w.en.toLowerCase())).map(w=>({...w,en:w.preserveCase?w.en:w.en.toLowerCase()}))}
   const dirs=[[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]];
   function search(a){const pool=shuffle(normalize(a)).slice(0,8),size=Math.max(10,...pool.map(w=>w.en.length+1)),grid=Array.from({length:size},()=>Array(size).fill('')),entries=[];
     for(const w of pool){const candidates=[];for(let r=0;r<size;r++)for(let c=0;c<size;c++)for(const [dr,dc] of dirs){const cells=Array.from(w.en,(_,i)=>({r:r+i*dr,c:c+i*dc}));if(cells.every((p,i)=>p.r>=0&&p.c>=0&&p.r<size&&p.c<size&&(!grid[p.r][p.c]||grid[p.r][p.c]===w.en[i])))candidates.push(cells)}
       if(!candidates.length)continue;const cells=shuffle(candidates)[0];cells.forEach((p,i)=>grid[p.r][p.c]=w.en[i]);entries.push({...w,cells});}
-    grid.forEach(row=>row.forEach((v,i)=>{if(!v)row[i]=String.fromCharCode(65+Math.floor(Math.random()*26))}));return {grid,size,entries};
+    grid.forEach(row=>row.forEach((v,i)=>{if(!v)row[i]=String.fromCharCode(97+Math.floor(Math.random()*26))}));return {grid,size,entries};
   }
   function line(a,b){let dr=b.r-a.r,dc=b.c-a.c;if(dr&&dc&&Math.abs(dr)!==Math.abs(dc))return [];let n=Math.max(Math.abs(dr),Math.abs(dc));return Array.from({length:n+1},(_,i)=>({r:a.r+i*Math.sign(dr),c:a.c+i*Math.sign(dc)}))}
   function crossword(a){const pool=normalize(a);let best=null;
