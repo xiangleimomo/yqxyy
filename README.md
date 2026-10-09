@@ -4,13 +4,17 @@
 
 每集学习顺序为 Watch → Listen and Read → Words → Quiz → Games。有 Words 模块的集会自动显示 Games，无需逐集修改 JSON。Games 读取同一集 `vocabulary.json` 的 `word` 与 `meaningZh`（或 `meaning`），不使用示例词或其他集词库。
 
-- 每次打开 Games，从 27 款游戏随机抽取 3 款不重复游戏；本次窗口内保持这 3 款。“换一组”结束当前游戏，并抽取另 3 款。
+- 本集 Typing Practice 正确拼写至少 50% 的不同 Words 词条后解锁 Games（奇数向上取整）。每次打开随机抽取 3 款，不再提供“换一组”按钮。重复拼写同一词只计一次解锁进度，跳过或拼错不计；全部 Words 词条参与解锁进度，包括未适配小游戏的短语。
+- 每次点击开始游戏或重新开始/再来一局消耗 2 积分。余额不足不允许开始；暂停、继续及返回列表免费，不退还已经开始的一局。页面展示进度、所需词数、余额与价格，所有 27 款通过同一个收费入口。直接访问游戏库不能免费开始。
 - 游戏支持 2–16 个 A–Z 字母的单词，重复拼写去重；短语、标点词、缺中文释义的词不拆分，页面明确列出未参与的词条。可用词少于 4 个时显示提示，不拿示例词补齐。
 - 游戏普通单词和干扰字母使用小写，不再整体转大写。Words 中原有的专名大小写、固定缩写（如 Venus、Guanyin、TV、CD）保留；词条也可用 `preserveCase: true` 显式保留特殊拼写。填字接受大小写输入，按格子的规范大小写显示。
 - 游戏在独立 iframe 中运行，键盘、暂停、词库互不干扰；关闭窗口或切换模块结束游戏。成绩按系列与集数保存在本机 `episodeArcadeScores:<series>:<episode>`，不修改原有 Quiz 解锁规则，也不自动发放奖励积分。
 - 入口及词库传递：`js/episode-games.js`；完整游戏库：`arcade/`；只允许本次 3 款及本集词库：`arcade/episode-bridge.js`。
+- 拼写正确词记录在账户作用域的 `progress[series:episode].typingCorrect`，积分消费以唯一请求记录在同一集 `pointSpends`。云同步合并已拼对词和消费记录，按消费前余额合并再扣除唯一消费，避免高余额旧快照恢复已花积分。HTTPS Web Locks 串行同浏览器多标签页消费；重复消息不重复收费。无需改动数据库表结构。
+- 历史版本只记录积分、模块完成，无法还原具体答对词；不能把旧的“Words 已完成”（可能包含跳过）当作 50% 拼写证明，需要新版本逐词正确记录。现有每次拼对 +1 积分的奖励方式不变。
+- 这是现有静态站点的客户端学习积分规则，不是服务端防作弊钱包；恶意修改浏览器数据以及跨设备同时离线超额消费需要后续服务器事务账本防护。
 
-验证：`node --check js/app.js`、`node --check js/episode-games.js`、`node tests/episode-games.test.cjs`、`git diff --check`。浏览器回归已检查系列及课程入口、切换集数词库隔离、27 款游戏启动、随机换组、手机宽度、关闭清理，以及 Watch 视频 / Listen and Read 音频 / Words / Quiz。
+验证：`node --check js/app.js`、`node --check js/episode-games.js`、`node tests/episode-games.test.cjs`、`node tests/game-access.test.cjs`、`git diff --check`。新增验证覆盖 50% 奇偶边界、拼错/跳过/重复词、实际 Typing Practice 解锁、单局/重玩扣 2 分、暂停/返回免费、余额不足、并发/重复请求、关闭等待中的窗口、多标签页余额、账户及集数隔离、刷新持久化、云同步不恢复已花积分。视频和听读入口未改变。
 
 ## 统一课程解锁规则
 

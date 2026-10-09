@@ -1207,3 +1207,5 @@ body.series-fixed-page .footer{
 .floating-games{width:min(1100px,calc(100vw - 40px));height:80vh;max-width:calc(100vw - 40px)}
 .floating-games .floating-content{overflow:auto;min-height:0}.episode-games{min-width:0}
 @media(max-width:640px){.floating-games{left:10px!important;top:25px!important;width:calc(100vw - 20px);max-width:calc(100vw - 20px);height:90vh}.episode-games-head h2{font-size:20px}.episode-games-frame{border-radius:9px}}
+.games-access{padding:12px 15px;border:1px solid #cbd8ea;border-radius:10px;background:#f3f8ff;color:#244e7b;line-height:1.7}
+.games-locked{padding:25px 15px}.games-locked h3{margin-top:0}.game-wallet{font-size:15px;line-height:1.6}

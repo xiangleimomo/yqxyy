@@ -22,3 +22,4 @@ header{max-width:1320px;padding:23px 30px;border-color:#293044;gap:30px}.brand{f
 .episode-embedded .layout{grid-template-columns:minmax(0,1fr)}
 .episode-embedded .side{display:none}
 @media(max-width:560px){.episode-game-lobby .grid{grid-template-columns:1fr}.episode-embedded main{padding:8px}}
+html.episode-loading #app{visibility:hidden}

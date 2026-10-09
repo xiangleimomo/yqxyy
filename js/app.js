@@ -914,6 +914,7 @@ checkWordPractice(){
     return;
   }
   fb.innerHTML=`<div class="practice-result success">拼写正确！ +1 ⭐</div>`;
+  this.recordTypingCorrect(state.seriesId,state.episodeId,item.word);
   this.addPoints(1);
   state.checked=true;
   input.disabled=true;
@@ -938,11 +939,12 @@ nextWordPractice(){
   }
 },
 updateUtilityNav(){
+    EpisodeGames.refreshAll();
     const nav=document.getElementById('navRewards');
     if(!nav) return;
     const points=this.getPoints();
     nav.innerHTML=`🎁 积分奖励 <span class="nav-points-badge">${points}</span>`;
-    nav.setAttribute('title', `当前累计积分：${points}`);
+    nav.setAttribute('title', `当前可用积分：${points}`);
   },
   renderRewards(){
     const points=this.getPoints();
@@ -954,9 +956,9 @@ updateUtilityNav(){
       {points:200,reward:'获得一次阶段大奖，可由家长自定义'}
     ];
     const next=rules.find(r=>points<r.points);
-    this.el().innerHTML=`<section class="hero"><div><h1>积分奖励</h1><p>单词拼写挑战中，每拼对 1 个单词可获得 1 积分。积分会自动累计，用于兑换奖励。</p></div><div class="hero-badge">当前积分：${points}</div></section>
+    this.el().innerHTML=`<section class="hero"><div><h1>积分奖励</h1><p>单词拼写挑战中，每拼对 1 个单词可获得 1 积分。Games 每开始或重玩一局消耗 2 积分，余额不足时不能开始。</p></div><div class="hero-badge">可用积分：${points}</div></section>
       <div class="personal-grid">
-        <div class="personal-card"><h3>累计积分</h3><div class="point-highlight">${points}</div><div class="points-note">登录可跨设备同步；游客仅保存本机</div></div>
+        <div class="personal-card"><h3>可用积分</h3><div class="point-highlight">${points}</div><div class="points-note">登录可跨设备同步；游客仅保存本机</div></div>
         <div class="personal-card"><h3>积分来源</h3><p>Words 模块中的 Typing Practice 拼写挑战。</p><p class="muted">答对 1 个单词 = +1 积分</p></div>
         <div class="personal-card"><h3>下一档奖励</h3>${next?`<div class="point-highlight">${next.points}</div><div class="points-note">还差 ${next.points-points} 分可兑换：${next.reward}</div>`:`<div class="point-highlight">已满级</div><div class="points-note">当前已达到最高档奖励，可继续累计积分。</div>`}</div>
       </div>
@@ -971,6 +973,14 @@ updateUtilityNav(){
         </div>
         <p class="points-note">说明：以上奖励方案可作为默认规则，也可以后续按家庭需要自行调整。</p>
       </div>`;
+  },
+recordTypingCorrect(seriesId,episodeId,word){
+    const progress=this.storage('progress')||{},key=`${seriesId}:${episodeId}`,spelling=String(word||'').trim().toLowerCase();
+    if(!spelling)return;
+    const entry=progress[key]||{seriesId,episodeId:Number(episodeId),modules:{}};
+    entry.typingCorrect={...(entry.typingCorrect||{}),[spelling]:true};entry.updatedAt=new Date().toISOString();progress[key]=entry;
+    this.storage('progress',progress);
+    EpisodeGames.refreshAll();
   },
 addPoints(n=1){
     const key=window.SFCloud?.storageKey('points')||'sf_points';

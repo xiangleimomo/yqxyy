@@ -53,6 +53,8 @@ window.SFCloud = {
       const old=progress[key];
       progress[key]={...old,...value,
         modules:{...(old.modules||{}),...(value.modules||{})},
+        typingCorrect:{...(old.typingCorrect||{}),...(value.typingCorrect||{})},
+        pointSpends:{...(old.pointSpends||{}),...(value.pointSpends||{})},
         updatedAt:[old.updatedAt,value.updatedAt].filter(Boolean).sort().at(-1)||''};
     }
     const quiz_scores={...(a.quiz_scores||{})};
@@ -74,9 +76,13 @@ window.SFCloud = {
       checkins:[...new Set([...(a.checkins||[]),...(b.checkins||[]),
         ...Object.values(a.progress||{}).map(x=>(x.updatedAt||'').slice(0,10)).filter(Boolean),
         ...Object.values(b.progress||{}).map(x=>(x.updatedAt||'').slice(0,10)).filter(Boolean)])].sort(),
-      // Snapshot MVP: max prevents duplicate imports; simultaneous offline gains on two devices
-      // require a points event ledger for exact addition (documented in README).
-      points:Math.max(0,Number(a.points)||0,Number(b.points)||0)};
+      // Compare earned totals before subtracting the union of unique game purchases.
+      // A stale high-balance snapshot must not undo a game purchase.
+      points:Math.max(0,Math.max((Number(a.points)||0)+this.spent(a.progress),(Number(b.points)||0)+this.spent(b.progress))-this.spent(progress))};
+  },
+  spent(progress={}){
+    const events=new Map();for(const entry of Object.values(progress||{}))for(const [id,event] of Object.entries(entry.pointSpends||{}))if(event?.amount===2)events.set(id,2);
+    return [...events.values()].reduce((sum,n)=>sum+n,0);
   },
   hasData(s){
     return Object.keys(s.progress||{}).length || Object.keys(s.quiz_scores||{}).length ||
