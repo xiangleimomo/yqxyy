@@ -1200,3 +1200,10 @@ body.series-fixed-page .footer{
   .practice-box{padding:14px}
   .letter-box{width:36px;height:38px;font-size:20px}
 }
+.episode-games-head{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;margin-bottom:12px}
+.episode-games-head h2{margin:0 0 6px}.episode-games-head p,.games-practice-note{font-size:14px;color:#64748b}
+.episode-games-frame{display:block;width:100%;height:600px;border:0;border-radius:14px;background:#0c1423}
+.games-exclusions{margin:12px 0;font-size:13px;color:#64748b}.games-exclusions p{overflow-wrap:anywhere}
+.floating-games{width:min(1100px,calc(100vw - 40px));height:80vh;max-width:calc(100vw - 40px)}
+.floating-games .floating-content{overflow:auto;min-height:0}.episode-games{min-width:0}
+@media(max-width:640px){.floating-games{left:10px!important;top:25px!important;width:calc(100vw - 20px);max-width:calc(100vw - 20px);height:90vh}.episode-games-head h2{font-size:20px}.episode-games-frame{border-radius:9px}}

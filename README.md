@@ -1,5 +1,16 @@
 # Story Fox English V16
 
+## Episode Games（2026-10-09）
+
+每集学习顺序为 Watch → Listen and Read → Words → Quiz → Games。有 Words 模块的集会自动显示 Games，无需逐集修改 JSON。Games 读取同一集 `vocabulary.json` 的 `word` 与 `meaningZh`（或 `meaning`），不使用示例词或其他集词库。
+
+- 每次打开 Games，从 27 款游戏随机抽取 3 款不重复游戏；本次窗口内保持这 3 款。“换一组”结束当前游戏，并抽取另 3 款。
+- 游戏支持 2–16 个 A–Z 字母的单词，重复拼写去重；短语、标点词、缺中文释义的词不拆分，页面明确列出未参与的词条。可用词少于 4 个时显示提示，不拿示例词补齐。
+- 游戏在独立 iframe 中运行，键盘、暂停、词库互不干扰；关闭窗口或切换模块结束游戏。成绩按系列与集数保存在本机 `episodeArcadeScores:<series>:<episode>`，不修改原有 Quiz 解锁规则，也不自动发放奖励积分。
+- 入口及词库传递：`js/episode-games.js`；完整游戏库：`arcade/`；只允许本次 3 款及本集词库：`arcade/episode-bridge.js`。
+
+验证：`node --check js/app.js`、`node --check js/episode-games.js`、`node tests/episode-games.test.cjs`、`git diff --check`。浏览器回归已检查系列及课程入口、切换集数词库隔离、27 款游戏启动、随机换组、手机宽度、关闭清理，以及 Watch 视频 / Listen and Read 音频 / Words / Quiz。
+
 ## 统一课程解锁规则
 
 Level 0–2 不上锁，可自由选择已发布课程。Level 3 及以上沿用西游记、三国演义的顺序解锁：第一集开放，上一集 Quiz 正确率达到 80% 且记录为完成后，自动解锁下一集已发布课程。级别取自共享加载的 `series.json`，课程列表、直接课程链接、学习弹窗均执行同一规则；Level 3 及以上的旧数据中 `unlockRequiresQuiz: false` 不再跳过课程锁。测验保留最高正确率，已通过后重测低分不会重新锁住下一集。已有学习记录沿用账户同步，无需重新通过已记录的测验。

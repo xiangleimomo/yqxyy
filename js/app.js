@@ -218,6 +218,7 @@ async renderSeries(seriesId){
           ${ep.modules?.read?'<button class="module-card" data-go="listenRead">🎧<b>Listen and Read</b><span>听读</span></button>':''}
           ${(ep.modules?.words || ep.modules?.vocabulary)?'<button class="module-card" data-go="words">🔤<b>Words</b><span>单词</span></button>':''}
           ${ep.modules?.quiz?'<button class="module-card" data-go="quiz">✅<b>Quiz</b><span>测验</span></button>':''}
+          ${(ep.modules?.words || ep.modules?.vocabulary)?'<button class="module-card" data-go="games">🎮<b>Games</b><span>本集词汇 · 随机 3 款</span></button>':''}
         </div>`;
       document.querySelectorAll('.module-card').forEach(btn=>{
         btn.onclick=()=>{ this.openLearningModal(btn.dataset.go, seriesId, ep.episodeId); };
@@ -281,7 +282,7 @@ async renderLesson(seriesId, episodeId){
     ]);
     const [reading, vocab, phrases, grammar, quiz, review] = data;
     const lessonData = {seriesId, episodeId, series, ep, reading:reading[String(episodeId)], vocab:vocab[String(episodeId)]||[], phrases:phrases[String(episodeId)]||[], grammar:grammar[String(episodeId)]||[], quiz:quiz[String(episodeId)], review:review[String(episodeId)]};
-    const visibleTabs=['watch','listenRead','words','quiz'];
+    const visibleTabs=['watch','listenRead','words','quiz','games'];
     const tab = visibleTabs.includes(this.activeLessonTab) ? this.activeLessonTab : 'watch';
     this.el().innerHTML = `
       <div class="breadcrumb"><a href="#/home">动画故事</a><span>›</span><a href="#/series/${seriesId}">${series.seriesTitle}</a><span>›</span><span>Episode ${episodeId}</span></div>
@@ -376,9 +377,10 @@ async renderLesson(seriesId, episodeId){
     if(ep.modules?.read) tabs.push('listenRead');
     if(ep.modules?.words || ep.modules?.vocabulary) tabs.push('words');
     if(ep.modules?.quiz) tabs.push('quiz');
+    if(ep.modules?.words || ep.modules?.vocabulary) tabs.push('games');
     return tabs.map(t=>`<button class="tab ${active===t?'active':''}" data-tab="${t}">${this.tabText(t)}</button>`).join('');
   },
-  tabText(t){return {watch:'Watch 看视频',hlsVideo:'HLS 播放',directVideo:'直链播放 · 备用',localVideo:'Local Video 本地视频',listenRead:'Listen and Read 听读',words:'Words 单词',quiz:'Quiz 测验'}[t]||t},
+  tabText(t){return {watch:'Watch 看视频',hlsVideo:'HLS 播放',directVideo:'直链播放 · 备用',localVideo:'Local Video 本地视频',listenRead:'Listen and Read 听读',words:'Words 单词',quiz:'Quiz 测验',games:'Games 词汇游戏'}[t]||t},
   lessonPanel(tab,d){
     if(tab==='watch') return this.watchPanel(d);
     if(tab==='hlsVideo') return this.hlsVideoPanel(d);
@@ -387,6 +389,7 @@ async renderLesson(seriesId, episodeId){
     if(tab==='listenRead') return this.listenReadPanel(d);
     if(tab==='words') return this.wordsPanel(d);
     if(tab==='quiz') return this.quizPanel(d);
+    if(tab==='games') return EpisodeGames.panel(d);
     return '';
   },
   completeButton(d,module){return `<button class="btn small mark-complete" data-series="${d.seriesId}" data-episode="${d.episodeId}" data-module="${module}">完成本模块</button>`},
@@ -677,6 +680,7 @@ phrasesPanel(d){
   },
   
 bindLessonPanel(tab,d,root=document){
+  if(tab==='games') EpisodeGames.bind(root,d);
   document.querySelectorAll('.hls-video-player').forEach(player=>this.initializeHlsVideo(player));
   document.querySelectorAll('.hls-audio-player').forEach(player=>this.initializeHlsAudio(player));
   document.querySelectorAll('.mark-complete').forEach(btn=>btn.addEventListener('click', e=>{e.preventDefault(); this.markComplete(btn.dataset.series, btn.dataset.episode, btn.dataset.module); btn.textContent='已完成 ✓';}));
