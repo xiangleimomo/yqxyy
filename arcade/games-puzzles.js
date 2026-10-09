@@ -19,7 +19,7 @@ Arcade.register('G07',()=>{
  const e=Arcade.start('G07','调整方向，发射泡泡。3 个以上同色泡泡相连即消除，悬空泡泡会掉落。墙壁可反弹，每 5 次射击顶部下降。清空即可获胜。',[{key:' ',label:'发射'},{key:'x',label:'换球'}]);
  const R=23,dx=48,dy=41,cols=13,ox=138,oy=45,colors=['#f0b75b','#76c9a4','#8db7ef','#ec89b5'];let cells=new Map(),ball=null,angle=-Math.PI/2,current=0,next=1,shots=0,drop=0;
  const k=(r,c)=>r+','+c,xy=(r,c)=>({x:ox+c*dx+(r%2)*24,y:oy+r*dy+drop});function neighbors(r,c){let off=r%2?1:-1;return [[r,c-1],[r,c+1],[r-1,c],[r-1,c+off],[r+1,c],[r+1,c+off]].filter(([a,b])=>a>=0&&b>=0&&b<cols)}
- for(let r=0;r<5;r++)for(let c=0;c<cols;c++)cells.set(k(r,c),{r,c,color:Math.floor(Math.random()*4)});
+ for(let r=0;r<5;r++)for(let c=0;c<cols;c++)cells.set(k(r,c),{r,c,color:(r*cols+c)%4});
  function hud(){e.hud(`剩余 ${cells.size} 泡泡 · 第 ${shots+1} 发`);e.mission(`泡泡颜色对应词汇：${e.pool.slice(0,4).map(w=>w.en+' '+w.zh).join(' / ')}`)}
  function shoot(){if(ball)return;ball={x:450,y:552,vx:Math.cos(angle)*540,vy:Math.sin(angle)*540,color:current};current=next;next=Math.floor(Math.random()*4)}
  function attach(){let options=[];for(let c=0;c<cols;c++)if(!cells.has(k(0,c)))options.push([0,c]);for(const cell of cells.values())for(const n of neighbors(cell.r,cell.c))if(!cells.has(k(...n)))options.push(n);options.sort((a,b)=>Arcade.dist(xy(...a),ball)-Arcade.dist(xy(...b),ball));let pos=options[0];if(!pos){e.end(false);return}let cell={r:pos[0],c:pos[1],color:ball.color};cells.set(k(...pos),cell);ball=null;shots++;

@@ -23,3 +23,6 @@ header{max-width:1320px;padding:23px 30px;border-color:#293044;gap:30px}.brand{f
 .episode-embedded .side{display:none}
 @media(max-width:560px){.episode-game-lobby .grid{grid-template-columns:1fr}.episode-embedded main{padding:8px}}
 html.episode-loading #app{visibility:hidden}
+.campaign-progress{margin:0;padding:12px 18px;background:#eef5ff;color:#284c78;font-size:14px;border-bottom:1px solid #cbdcf4}
+.campaign-checkpoint{max-width:620px;margin:40px auto;padding:24px;text-align:center}
+.campaign-checkpoint input{display:block;box-sizing:border-box;width:100%;margin:18px 0;padding:14px;font:inherit;border:1px solid #9cb6d4;border-radius:10px;background:#fff;color:#18263c}

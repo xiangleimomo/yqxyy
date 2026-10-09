@@ -23,7 +23,7 @@ if(parent===window){
   if(event.data?.type!=='episode-games:init'||initialized)return;
   const d=event.data;if(!Array.isArray(d.words)||!Array.isArray(d.ids)||d.ids.length!==(d.admin===true?27:3)||new Set(d.ids).size!==d.ids.length||d.ids.some(id=>!games.some(g=>g[0]===id))||typeof d.episodeKey!=='string')return;
   const pool=ArcadeRules.normalize(d.words);if(pool.length<4||pool.length!==d.words.length)return;
-  initialized=true;admin=d.admin===true;stopRound();words=pool;selected=[...d.ids];lessonTitle=String(d.title||'本集游戏');scoreKey='episodeArcadeScores:'+d.episodeKey;hall();
+  initialized=true;admin=d.admin===true;stopRound();words=pool;ArcadeCampaign.extra=Array.isArray(d.reviewWords)?d.reviewWords.filter(w=>w&&typeof w.en==='string'&&typeof w.zh==='string'&&w.en.length<=200&&w.zh.length<=500):[];selected=[...d.ids];lessonTitle=String(d.title||'本集游戏');scoreKey='episodeArcadeScores:'+d.episodeKey;hall();
  });
  const report=()=>parent.postMessage({type:'episode-games:height',height:Math.ceil(document.documentElement.getBoundingClientRect().height)},location.origin);
  new ResizeObserver(report).observe(document.body);window.addEventListener('resize',report);
