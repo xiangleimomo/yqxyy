@@ -9,7 +9,22 @@ window.SFCloud = {
   pending: false,
   timer: null,
   loginTask: null,
+  adminVerified: false,
+  adminUserId: null,
+  adminCheckVersion: 0,
   keys: ['progress','quizScores','wordbank','sentences','points','checkins'],
+
+  isAdmin(){return !!this.user && this.adminVerified===true && this.adminUserId===this.user.id;},
+  async verifyAdmin(user){
+    const version=++this.adminCheckVersion;this.adminVerified=false;this.adminUserId=null;
+    try{
+      // getUser verifies with Auth; never authorize from editable user_metadata or cached session flags.
+      const {data,error}=await this.client.auth.getUser();
+      if(version!==this.adminCheckVersion||this.user?.id!==user.id)return;
+      if(!error&&data.user?.id===user.id&&data.user.app_metadata?.site_admin===true){this.adminVerified=true;this.adminUserId=user.id;}
+    }catch{/* Fail closed when administrator verification is unavailable. */}
+    if(version===this.adminCheckVersion)document.dispatchEvent(new CustomEvent('sf-access-change'));
+  },
 
   configured(){
     const c=window.STORYFOX_SUPABASE || {};
@@ -94,9 +109,9 @@ window.SFCloud = {
   },
   updateHeader(){
     const link=document.getElementById('accountLink');
-    if(link){link.textContent=this.user?`👤 ${this.user.email?.split('@')[0]||'我的账户'}`:'👤 注册 / 登录';}
+    if(link){link.textContent=this.user?`${this.isAdmin()?'🛠 管理员':'👤'} ${this.user.email?.split('@')[0]||'我的账户'}`:'👤 注册 / 登录';}
     const state=document.getElementById('syncState');
-    if(state){state.textContent=this.user?'已登录 · 学习记录可云端同步':'游客模式 · 记录仅在本设备';}
+    if(state){state.textContent=this.isAdmin()?'开发调试管理员 · 已发布课程与全部游戏免解锁、游戏不扣积分':this.user?'已登录 · 学习记录可云端同步':'游客模式 · 记录仅在本设备';}
   },
   async loadLibrary(){
     if(window.supabase?.createClient) return;
@@ -133,7 +148,8 @@ window.SFCloud = {
         if(event==='SIGNED_OUT') this.onSignedOut();
         else if(event==='PASSWORD_RECOVERY') { this.open();this.mode('newPassword');this.setMessage('请设置一个新密码。'); }
         else if(['SIGNED_IN','INITIAL_SESSION','TOKEN_REFRESHED'].includes(event) && session?.user){
-          Promise.resolve().then(()=>this.onSession(session.user));
+          // Auth calls must run after the callback releases the SDK's session lock.
+          setTimeout(()=>this.onSession(session.user),0);
         }
       });
       const {data,error}=await this.client.auth.getSession();
@@ -143,7 +159,7 @@ window.SFCloud = {
     }catch(e){this.setMessage('云端连接失败：'+e.message,true);this.updateHeader();}
   },
   async onSession(user){
-    if(this.user?.id===user.id && this.active) return;
+    if(this.user?.id===user.id && this.active){const before=this.isAdmin();await this.verifyAdmin(user);this.updateHeader();if(before!==this.isAdmin()){this.app?.windowLayer?.replaceChildren();this.app?.updateUtilityNav();await this.app?.render();}return;}
     if(this.loginTask) return this.loginTask;
     this.loginTask=this.enterAccount(user).finally(()=>{this.loginTask=null;});
     return this.loginTask;
@@ -153,10 +169,13 @@ window.SFCloud = {
     this.app?.windowLayer?.replaceChildren();
     // Switch scope BEFORE rendering; another account's cache is never shown.
     this.user=user;this.active=false;this.updateHeader();
+    await this.verifyAdmin(user);this.updateHeader();
+    if(this.user?.id!==user.id)return;
     try{
       const {data,error}=await this.client.from('user_learning_state').select('*').eq('user_id',user.id).maybeSingle();
       if(error) throw error;
       const cloud=data||{};
+      if(this.user?.id!==user.id)return;
       const local=this.snapshot(user.id);
       let merged=this.merge(cloud,local);
       const guest=this.snapshot(null);
@@ -174,12 +193,14 @@ window.SFCloud = {
       if(!data || JSON.stringify(merged)!==JSON.stringify(this.merge(cloud,{}))) this.schedule();
       this.setMessage('登录成功，学习进度已加载。');
     }catch(e){
+      if(this.user?.id!==user.id)return;
       this.active=true; // scoped offline fallback (not another user's guest state)
       this.setMessage('已登录，但云端读取失败。此设备记录仍可使用；网络恢复后重试同步。'+e.message,true);
       this.app.updateUtilityNav(); await this.app.render();
     }
   },
   onSignedOut(){
+    this.adminCheckVersion++;this.adminVerified=false;this.adminUserId=null;
     if(this.timer)clearTimeout(this.timer);
     this.app?.windowLayer?.replaceChildren();
     this.user=null;this.active=false;this.pending=false;

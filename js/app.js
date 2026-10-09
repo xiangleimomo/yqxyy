@@ -1000,6 +1000,7 @@ addPoints(n=1){
     window.SFCloud?.schedule();
   },
 
+  isAdmin(){return window.SFCloud?.isAdmin?.()===true;},
   isGuest(){
     return !window.SFCloud?.user;
   },
@@ -1012,6 +1013,7 @@ addPoints(n=1){
     return this.isGuest() && Number(episodeId)>3;
   },
   canAccessEpisode(seriesId, episodeId){
+    if(this.isAdmin())return true;
     // The trial episodes are intentionally available without a quiz or account.
     // Once signed in, the existing level-based quiz-unlock rules take over.
     if(this.isGuest() && Number(episodeId)<=3) return true;
@@ -1034,6 +1036,7 @@ addPoints(n=1){
     return !Number.isFinite(level) || level>=3;
   },
   isEpisodeUnlocked(seriesId, episodeId){
+    if(this.isAdmin())return true;
     if(!this.requiresQuizUnlock(seriesId)) return true;
     const id=Number(episodeId);
     if(id<=1) return true;

@@ -9,16 +9,18 @@ const EpisodeGames=(()=>{
  function status(d,records=typeof App==='undefined'?{}:App.storage('progress')||{}){
   const words=[...new Set((d.vocab||[]).map(w=>String(w.word||'').trim().toLowerCase()).filter(Boolean))],correct=records[`${d.seriesId}:${d.episodeId}`]?.typingCorrect||{};
   const done=words.filter(w=>correct[w]===true).length,required=Math.ceil(words.length/2);
-  return {done,total:words.length,required,unlocked:words.length>0&&done>=required};
+  const admin=typeof App!=='undefined'&&App.isAdmin?.()===true;
+  return {done,total:words.length,required,admin,unlocked:admin||(words.length>0&&done>=required)};
  }
- function panel(d){const p=pack(d.vocab);return `<section class="episode-games"><div class="episode-games-head"><div><h2>Games · 本集词汇游戏</h2><p>Episode ${escape(d.episodeId)} · 本集 ${p.words.length} 个游戏单词 · 每次随机出现 3 款</p></div></div><p class="games-access" role="status"></p>${p.excluded.length?`<details class="games-exclusions"><summary>${p.excluded.length} 个词条暂不适用于游戏</summary><p>${p.excluded.map(escape).join('、')}</p><p>游戏支持 2–16 个英文字母；全部 Words 词条仍计入拼写挑战解锁进度。</p></details>`:''}<p class="games-practice-note">本集 Typing Practice 拼写挑战答对至少 50% 的不同单词后解锁。每开始或重新开始一局消耗 2 积分，暂停和继续不扣分。</p><div class="games-body"></div></section>`}
+ function panel(d){const p=pack(d.vocab),admin=typeof App!=='undefined'&&App.isAdmin?.()===true;return `<section class="episode-games"><div class="episode-games-head"><div><h2>Games · 本集词汇游戏</h2><p>Episode ${escape(d.episodeId)} · 本集 ${p.words.length} 个游戏单词 · ${admin?'管理员 · 全部 27 款游戏':'每次随机出现 3 款'}</p></div></div><p class="games-access" role="status"></p>${p.excluded.length?`<details class="games-exclusions"><summary>${p.excluded.length} 个词条暂不适用于游戏</summary><p>${p.excluded.map(escape).join('、')}</p><p>游戏支持 2–16 个英文字母；全部 Words 词条仍计入拼写挑战解锁进度。</p></details>`:''}<p class="games-practice-note">本集 Typing Practice 拼写挑战答对至少 50% 的不同单词后解锁。每开始或重新开始一局消耗 2 积分，暂停和继续不扣分。</p><div class="games-body"></div></section>`}
  function refresh(section){
   const d=section.gameLesson;if(!d||!section.isConnected)return;const s=status(d),points=App.getPoints(),body=section.querySelector('.games-body');
-  section.querySelector('.games-access').textContent=`拼写挑战：${s.done}/${s.total} 个（需 ${s.required} 个） · ${s.unlocked?'已解锁':'尚未解锁'} · 可用积分：${points} · 每局 2 积分`;
+  section.querySelector('.games-practice-note').textContent=s.admin?'开发调试模式：可直接体验本集全部游戏，开始和重新开始均不扣积分，也不会自动补写学习记录。':'本集 Typing Practice 拼写挑战答对至少 50% 的不同单词后解锁。每开始或重新开始一局消耗 2 积分，暂停和继续不扣分。';
+  section.querySelector('.games-access').textContent=s.admin?'🛠 管理员调试 · 全部 27 款游戏 · 无需拼写解锁 · 不消耗积分':`拼写挑战：${s.done}/${s.total} 个（需 ${s.required} 个） · ${s.unlocked?'已解锁':'尚未解锁'} · 可用积分：${points} · 每局 2 积分`;
   let hint=section.querySelector('.games-lock-hint');if(!hint){hint=document.createElement('p');hint.className='games-lock-hint';body.before(hint)}hint.hidden=s.unlocked;hint.textContent=`🔒 再正确拼写 ${Math.max(0,s.required-s.done)} 个不同单词，就能解锁下面 3 款游戏！前往 Words → Typing Practice 挑战吧。`;
   const p=pack(d.vocab);if(p.words.length<4){body.innerHTML='<div class="empty">本集不足 4 个可用游戏单词，暂不能开始游戏；不会使用其他集或示例词补齐。</div>';return}
-  let frame=body.querySelector('iframe');if(!frame){frame=document.createElement('iframe');frame.className='episode-games-frame';frame.title=`Episode ${d.episodeId} 词汇游戏`;frame.src='arcade/index.html?embedded=1&v=20261009-4';frame.allow='fullscreen';frame.gameLesson=d;frame.requests=new Map();frame.gamePayload={type:'episode-games:init',episodeKey:`${d.seriesId}:${d.episodeId}`,title:`Episode ${d.episodeId} · ${d.ep.title}`,words:p.words,ids:choose()};frame.addEventListener('load',()=>sendInit(frame));body.replaceChildren(frame)}
-  frame.contentWindow?.postMessage({type:'episode-games:wallet',points,unlocked:s.unlocked},location.origin);
+  let frame=body.querySelector('iframe');if(frame&&frame.gamePayload.admin!==s.admin){frame.remove();frame=null}if(!frame){frame=document.createElement('iframe');frame.className='episode-games-frame';frame.title=`Episode ${d.episodeId} 词汇游戏`;frame.src='arcade/index.html?embedded=1&v=20261009-5';frame.allow='fullscreen';frame.gameLesson=d;frame.requests=new Map();frame.gamePayload={type:'episode-games:init',episodeKey:`${d.seriesId}:${d.episodeId}`,title:`Episode ${d.episodeId} · ${d.ep.title}`,words:p.words,ids:s.admin?[...ids]:choose(),admin:s.admin};frame.addEventListener('load',()=>sendInit(frame));body.replaceChildren(frame)}
+  frame.contentWindow?.postMessage({type:'episode-games:wallet',points,unlocked:s.unlocked,admin:s.admin},location.origin);
  }
  function sendInit(frame){if(frame.isConnected){frame.contentWindow?.postMessage(frame.gamePayload,location.origin);refresh(frame.closest('.episode-games'))}}
  function refreshAll(){document.querySelectorAll('.episode-games[data-bound]').forEach(refresh)}
@@ -27,6 +29,7 @@ const EpisodeGames=(()=>{
   const scope=window.SFCloud?.storageKey('points')||'sf_points';
   const debit=()=>{
    if(!active()||scope!==(window.SFCloud?.storageKey('points')||'sf_points'))return {ok:false,message:'学习窗口或账户已变更，请重新打开游戏。'};
+   if(App.isAdmin?.())return {ok:true,points:App.getPoints(),admin:true};
    if(!status(d).unlocked)return {ok:false,message:'请先在本集 Typing Practice 中正确拼写至少 50% 的不同单词。'};
    const before=App.storage('progress')||{},key=`${d.seriesId}:${d.episodeId}`;
    if(before[key]?.pointSpends?.[requestId])return {ok:false,message:'这次开始请求已经处理，请重新点击。'};

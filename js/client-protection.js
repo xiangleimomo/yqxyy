@@ -8,6 +8,7 @@
   let warning;
 
   function showWarning() {
+    if(window.SFCloud?.isAdmin?.())return;
     if (warning) return;
     warning = document.createElement('div');
     warning.className = 'client-protection-warning';
@@ -17,13 +18,15 @@
   }
 
   function checkDevTools() {
+    if(window.SFCloud?.isAdmin?.()){warning?.remove();warning=null;return;}
     const widthOpen = window.outerWidth - window.innerWidth > threshold;
     const heightOpen = window.outerHeight - window.innerHeight > threshold;
     if (widthOpen || heightOpen) showWarning();
   }
 
-  document.addEventListener('contextmenu', event => event.preventDefault());
+  document.addEventListener('contextmenu', event => {if(!window.SFCloud?.isAdmin?.())event.preventDefault();});
   document.addEventListener('keydown', event => {
+    if(window.SFCloud?.isAdmin?.())return;
     const key = event.key.toLowerCase();
     const devToolsShortcut = event.key === 'F12' ||
       (event.ctrlKey && event.shiftKey && ['i', 'j', 'c'].includes(key)) ||
@@ -32,5 +35,6 @@
   });
 
   window.addEventListener('resize', checkDevTools);
+  document.addEventListener('sf-access-change',checkDevTools);
   window.setInterval(checkDevTools, 1200);
 })();

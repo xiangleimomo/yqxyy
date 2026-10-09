@@ -1,0 +1,20 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
+const values=new Map(),window={addEventListener(){}};
+const ctx=vm.createContext({window,document:{querySelectorAll:()=>[],getElementById:()=>null,dispatchEvent(){}},CustomEvent:class{constructor(type){this.type=type}},navigator:{},crypto:require('node:crypto').webcrypto,localStorage:{getItem:k=>values.get(k)||null,setItem:(k,v)=>values.set(k,String(v))},setTimeout,clearTimeout});
+const read=file=>fs.readFileSync(path.join(__dirname,'..',file),'utf8');
+vm.runInContext(read('js/cloud-account.js'),ctx);vm.runInContext(read('js/episode-games.js')+'\nglobalThis.api=EpisodeGames;',ctx);vm.runInContext(read('js/app.js').replace(/App\.start\(\);\s*$/,'globalThis.app=App;'),ctx);
+const cloud=window.SFCloud,app=ctx.app,api=ctx.api,d={seriesId:'test',episodeId:99,vocab:['apple','bridge','cloud','dragon'].map(word=>({word,meaningZh:'词'}))};
+app.cache['data/test/series.json']={level:5};
+(async()=>{
+ cloud.user={id:'owner',app_metadata:{site_admin:true},user_metadata:{site_admin:true}};
+ assert.equal(cloud.isAdmin(),false);assert.equal(app.canAccessEpisode('test',99),false);
+ const remote=user=>cloud.client={auth:{getUser:async()=>({data:{user},error:null})}};
+ remote({id:'owner',user_metadata:{site_admin:true},app_metadata:{}});await cloud.verifyAdmin(cloud.user);assert.equal(cloud.isAdmin(),false);
+ remote({id:'other',app_metadata:{site_admin:true}});await cloud.verifyAdmin(cloud.user);assert.equal(cloud.isAdmin(),false);
+ remote({id:'owner',app_metadata:{site_admin:'true'}});await cloud.verifyAdmin(cloud.user);assert.equal(cloud.isAdmin(),false);
+ remote({id:'owner',app_metadata:{site_admin:true}});await cloud.verifyAdmin(cloud.user);assert.equal(cloud.isAdmin(),true);assert.equal(app.isEpisodeUnlocked('test',99),true);assert.equal(app.canAccessEpisode('test',99),true);assert.equal(api.status(d).unlocked,true);
+ assert.equal(app.getPoints(),0);const before=JSON.stringify([...values]);const result=await api.charge(d,'G07','admin-free');assert.equal(result.ok,true);assert.equal(result.admin,true);assert.equal(app.getPoints(),0);assert.equal(JSON.stringify([...values]),before);
+ cloud.client={auth:{getUser:async()=>{throw Error('offline')}}};await cloud.verifyAdmin(cloud.user);assert.equal(cloud.isAdmin(),false);assert.equal(api.status(d).unlocked,false);assert.equal((await api.charge(d,'G07','regular-locked')).ok,false);
+ let resolve;cloud.client={auth:{getUser:()=>new Promise(r=>resolve=r)}};const task=cloud.verifyAdmin(cloud.user);cloud.onSignedOut();resolve({data:{user:{id:'owner',app_metadata:{site_admin:true}}}});await task;assert.equal(cloud.isAdmin(),false);assert.equal(cloud.user,null);
+ console.log('PASS: server-verified app_metadata only, editable metadata/cache rejected, UID match, strict boolean, quiz/typing/zero-point bypass without writes, offline fail-closed, logout invalidates pending verification.');
+})().catch(e=>{console.error(e);process.exitCode=1});

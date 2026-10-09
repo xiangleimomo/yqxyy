@@ -99,3 +99,13 @@ Read 顶部可关闭内置词典，偏好保存到本机；不会取消原生文
 - Removed user-facing video source technical notes.
 - Prepared Watch page for cleaner user experience.
 - Added Listen as a learning mode entry point where supported by existing data structure.
+
+## 开发调试管理员
+
+先在网站注册专用账户，再由 Supabase 项目所有者在 Dashboard → SQL Editor 中执行 `supabase/grant-site-admin.sql`，将其中的邮箱占位符替换为已注册邮箱。脚本只授权一个现有账户，不创建账号或设置密码。请勿将密码、service_role 密钥提交到仓库。
+
+授权后退出并重新登录，账户入口会显示“管理员”。该账户可以直接进入所有已发布课程，无需逐集通过 Quiz；游戏无需完成 50% 拼写挑战、无需积分，显示全部 27 款便于调试。管理员可以使用浏览器开发者工具。权限不会自动填写学习记录，也不会提供尚未上传的课程素材。
+
+网站通过 Auth 的 `getUser()` 验证服务器返回的 `app_metadata.site_admin === true`，不会使用用户可编辑的 `user_metadata` 或本地缓存授权。验证失败时不启用管理员模式。撤销时由所有者执行 `supabase/revoke-site-admin.sql`，然后让账户重新登录或刷新验证；已打开页面需重新验证才反映权限变更。
+
+这是学习网站的调试访问模式，不授予修改其他用户资料或数据库的权限。现有静态页面的访问限制不是服务端内容保护；数据库仍由 Supabase RLS 控制。
