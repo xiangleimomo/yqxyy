@@ -1,0 +1,10 @@
+/* Only the game window on phones / small touch screens opts in. */
+.mobile-games-window.floating-games{position:fixed!important;inset:0!important;width:100%!important;max-width:none!important;height:var(--mobile-game-height,100dvh)!important;min-width:0!important;min-height:0!important;resize:none;border-radius:0;border:0}
+.mobile-games-window .floating-header{height:44px;min-height:44px;padding:0 10px;cursor:default}
+.mobile-games-window .floating-close{min-height:44px;min-width:44px;padding:0}
+.mobile-games-playing .floating-content{display:flex;flex-direction:column;padding:0!important;overflow:hidden!important;min-height:0}
+.mobile-games-playing .episode-games{flex:1;min-height:0;display:flex;flex-direction:column}
+.mobile-games-playing .episode-games-head,.mobile-games-playing .games-access,.mobile-games-playing .games-practice-note,.mobile-games-playing .games-exclusions,.mobile-games-playing .games-lock-hint{display:none}
+.mobile-games-playing .games-body{flex:1;min-height:0;display:flex}
+.mobile-games-playing .episode-games-frame{flex:1;min-height:0;height:100%!important;border-radius:0}
+.mobile-games-fullscreen .floating-header{display:none}
