@@ -348,7 +348,10 @@ async renderLesson(seriesId, episodeId){
     this.windowLayer.appendChild(win);
 
     const close=win.querySelector('.floating-close');
-    close.onclick=()=>win.remove();
+    close.onclick=()=>{
+      win.querySelectorAll('video,audio').forEach(player=>{player._disposeHls?.();player.pause();});
+      win.remove();
+    };
 
     win.addEventListener('mousedown',()=>win.style.zIndex=++this.windowZ);
 
@@ -408,48 +411,81 @@ async renderLesson(seriesId, episodeId){
   hlsVideoPanel(d, completionModule='hlsVideo'){
     const url=d.ep.video?.hlsUrl;
     if(!url) return `<div class="empty">本集 HLS 视频源暂未添加。</div>`;
-    return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>Watch 看视频</h2><p class="muted">当前使用 HLS 播放源，播放器会自动适配支持 HLS 的浏览器。</p></div></div><div class="video-wrap"><video class="hls-video-player" controls playsinline preload="metadata" data-hls-src="${this.escapeHtml(url)}"></video></div><p class="muted direct-video-help">若当前浏览器无法播放，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">在新页面打开视频源</a>。</p></section>${this.completeButton(d,completionModule)}`;
+    const fallback=d.ep.video?.mp4Url || d.ep.video?.directUrl || '';
+    return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>Watch 看视频</h2><p class="muted">播放器加载失败时，会尝试本集备用视频。</p></div></div><div class="video-wrap"><video class="hls-video-player" controls playsinline preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-fallback-src="${this.escapeHtml(fallback)}"></video></div><p class="muted direct-video-help" role="status" aria-live="polite">${fallback?`也可<a href="${this.escapeHtml(fallback)}" target="_blank" rel="noreferrer noopener">直接打开本集视频</a>。`:`若无法播放，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">打开视频源</a>。`}</p></section>${this.completeButton(d,completionModule)}`;
   },
   async initializeHlsVideo(player){
-    if(player.dataset.ready) return;
-    player.dataset.ready='1';
-    const source=player.dataset.hlsSrc;
-    if(player.canPlayType('application/vnd.apple.mpegurl')) { player.src=source; return; }
-    try{
-      if(!window.Hls){
-        await new Promise((resolve,reject)=>{
-          const script=document.createElement('script');
-          script.src='https://cdn.jsdelivr.net/npm/hls.js@1.5.20/dist/hls.min.js';
-          script.onload=resolve; script.onerror=reject; document.head.appendChild(script);
-        });
-      }
-      if(window.Hls && window.Hls.isSupported()){
-        const hls=new window.Hls();
-        hls.loadSource(source); hls.attachMedia(player); player._hls=hls;
-      }else throw new Error('HLS is not supported');
-    }catch(err){
-      player.closest('.direct-video-panel')?.querySelector('.direct-video-help')?.insertAdjacentHTML('beforeend',' 当前浏览器无法载入 HLS 播放器。');
-    }
+    return this.initializeHlsMedia(player);
   },
   async initializeHlsAudio(player){
+    return this.initializeHlsMedia(player);
+  },
+  async loadHlsLibrary(){
+    if(window.Hls) return window.Hls;
+    if(!this._hlsLibraryPromise){
+      this._hlsLibraryPromise=new Promise((resolve,reject)=>{
+        const script=document.createElement('script');
+        const timer=setTimeout(()=>{script.remove();reject(new Error('Player load timed out'));},10000);
+        script.src='https://cdn.jsdelivr.net/npm/hls.js@1.5.20/dist/hls.min.js';
+        script.onload=()=>{clearTimeout(timer);resolve(window.Hls);};
+        script.onerror=()=>{clearTimeout(timer);script.remove();reject(new Error('Player load failed'));};
+        document.head.appendChild(script);
+      }).catch(error=>{this._hlsLibraryPromise=null;throw error;});
+    }
+    return this._hlsLibraryPromise;
+  },
+  async initializeHlsMedia(player){
     if(player.dataset.ready) return;
     player.dataset.ready='1';
     const source=player.dataset.hlsSrc;
-    if(player.canPlayType('application/vnd.apple.mpegurl')) { player.src=source; return; }
+    const fallback=player.dataset.fallbackSrc;
+    const help=player.closest('.direct-video-panel')?.querySelector('.direct-video-help') || player.closest('.audio-player-card')?.querySelector('.audio-player-help');
+    let switched=false, disposed=false, wantsPlay=false;
+    const onPlay=()=>{wantsPlay=true;};
+    player.addEventListener('play',onPlay);
+    const destroy=()=>{if(player._hls){player._hls.destroy();player._hls=null;}};
+    const recover=()=>{
+      if(disposed || switched) return;
+      switched=true;
+      clearTimeout(timer);
+      const resume=wantsPlay || !player.paused;
+      const position=Number.isFinite(player.currentTime)?player.currentTime:0;
+      destroy();
+      if(!fallback){if(help)help.textContent='本集暂时无法加载，请稍后重试。';return;}
+      if(help)help.textContent='已切换到备用视频，可点击播放继续。';
+      player.addEventListener('loadedmetadata',()=>{
+        if(disposed) return;
+        if(position>0 && Number.isFinite(player.duration))player.currentTime=Math.min(position,Math.max(0,player.duration-0.1));
+        if(resume)player.play().catch(()=>{});
+      },{once:true});
+      player.src=fallback;
+      player.load();
+    };
+    const timer=setTimeout(()=>{if(player.readyState<1)recover();},15000);
+    const onMetadata=()=>clearTimeout(timer);
+    player.addEventListener('loadedmetadata',onMetadata,{once:true});
+    player.addEventListener('error',recover);
+    player._disposeHls=()=>{
+      disposed=true;clearTimeout(timer);destroy();
+      player.removeEventListener('play',onPlay);
+      player.removeEventListener('error',recover);
+      player.removeEventListener('loadedmetadata',onMetadata);
+    };
     try{
-      if(!window.Hls){
-        await new Promise((resolve,reject)=>{
-          const script=document.createElement('script');
-          script.src='https://cdn.jsdelivr.net/npm/hls.js@1.5.20/dist/hls.min.js';
-          script.onload=resolve; script.onerror=reject; document.head.appendChild(script);
-        });
-      }
-      if(window.Hls && window.Hls.isSupported()){
-        const hls=new window.Hls();
-        hls.loadSource(source); hls.attachMedia(player); player._hls=hls;
-      }else throw new Error('HLS is not supported');
-    }catch(err){
-      player.closest('.audio-player-card')?.insertAdjacentHTML('beforeend','<p class="muted audio-player-help">当前浏览器无法载入本集音频。</p>');
+      // Safari can use native HLS. Desktop Chrome uses the explicit MSE player.
+      const native=player.canPlayType('application/vnd.apple.mpegurl');
+      const safari=/Safari/i.test(navigator.userAgent) && !/Chrome|Chromium|CriOS|Edg|Android/i.test(navigator.userAgent);
+      if(native && safari){player.src=source;return;}
+      const Hls=await this.loadHlsLibrary();
+      if(disposed || switched) return;
+      if(Hls && Hls.isSupported()){
+        const hls=new Hls();player._hls=hls;
+        hls.on(Hls.Events.ERROR,(_event,data)=>{if(data.fatal)recover();});
+        hls.attachMedia(player);hls.loadSource(source);
+      }else if(native){player.src=source;}
+      else recover();
+    }catch(error){
+      recover();
     }
   },
   localVideoPanel(d){
@@ -533,7 +569,8 @@ async renderLesson(seriesId, episodeId){
   hlsAudioPanel(d){
     const url=d.ep.video?.hlsUrl;
     if(!url) return `<section class="listen-header"><span class="audio-icon">🎧</span><div><h3>Listen and Read</h3><p>本集暂未添加音频播放源，可先阅读下方原文。</p></div></section>`;
-    return `<section class="listen-read-audio" aria-label="本集音频播放"><div class="listen-header"><span class="audio-icon">🎧</span><div><h3>Listen and Read</h3><p>播放本集原声，同时阅读下方英文文本；此处只播放音频，不显示视频。</p></div></div><div class="audio-player-card"><div class="audio-player-label">本集音频</div><audio class="hls-audio-player" controls preload="metadata" data-hls-src="${this.escapeHtml(url)}">当前浏览器不支持音频播放。</audio></div></section>`;
+    const fallback=d.ep.video?.mp4Url || d.ep.video?.directUrl || '';
+    return `<section class="listen-read-audio" aria-label="本集音频播放"><div class="listen-header"><span class="audio-icon">🎧</span><div><h3>Listen and Read</h3><p>播放本集原声，同时阅读下方英文文本；此处只播放音频，不显示视频。</p></div></div><div class="audio-player-card"><div class="audio-player-label">本集音频</div><audio class="hls-audio-player" controls preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-fallback-src="${this.escapeHtml(fallback)}">当前浏览器不支持音频播放。</audio><p class="muted audio-player-help" role="status" aria-live="polite"></p></div></section>`;
   },
   readPanel(d){
     const paras=(d.reading && d.reading.paragraphs) || [];
