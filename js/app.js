@@ -430,6 +430,7 @@ async renderLesson(seriesId, episodeId){
     const option=(value,label,current)=>`<option value="${value}"${value===current?' selected':''}>${label}</option>`;
     return `<div class="subtitle-settings-dock">
       <button type="button" class="subtitle-settings-trigger" aria-label="打开字幕设置" aria-expanded="false">⚙<span>字幕</span></button>
+      <button type="button" class="video-fullscreen-trigger" aria-label="全屏观看（保留字幕设置）" title="全屏观看（保留字幕设置）">⛶<span>全屏</span></button>
       <div class="subtitle-controls subtitle-controls-overlay" aria-label="字幕设置">
       <div class="subtitle-controls-title">字幕设置</div>
       <button type="button" class="btn secondary small subtitle-toggle" aria-pressed="${prefs.visible}">${prefs.visible?'隐藏字幕':'显示字幕'}</button>
@@ -460,6 +461,7 @@ async renderLesson(seriesId, episodeId){
     const player=stage?.querySelector('.hls-video-player');
     const dock=controls.closest('.subtitle-settings-dock');
     const trigger=dock?.querySelector('.subtitle-settings-trigger');
+    const fullscreenTrigger=dock?.querySelector('.video-fullscreen-trigger');
     let hideTimer=null;
     const showControls=()=>{
       if(!stage) return;
@@ -493,6 +495,17 @@ async renderLesson(seriesId, episodeId){
         showControls();
         if(!open) hideControlsLater();
       });
+      fullscreenTrigger?.addEventListener('click',async()=>{
+        try{
+          if(document.fullscreenElement===stage) await document.exitFullscreen();
+          else await stage.requestFullscreen();
+        }catch{alert('当前浏览器不支持此全屏方式，请使用最新版 Chrome 或 Edge。');}
+      });
+      document.addEventListener('fullscreenchange',()=>{
+        const isFullscreen=document.fullscreenElement===stage;
+        fullscreenTrigger?.classList.toggle('is-fullscreen',isFullscreen);
+        fullscreenTrigger?.setAttribute('aria-label',isFullscreen?'退出全屏':'全屏观看（保留字幕设置）');
+      });
       stage.addEventListener('focusin',showControls);
       player.addEventListener('play',hideControlsLater);
       player.addEventListener('pause',showControls);
@@ -517,8 +530,24 @@ async renderLesson(seriesId, episodeId){
     const caption=player.parentElement?.querySelector('.video-caption');
     const cues=this.subtitleForEpisode(d)?.subtitle || [];
     if(!caption || !cues.length) return;
+    let nativeTrack=null;
+    try{
+      nativeTrack=player.addTextTrack('subtitles','English','en');
+      const Cue=window.VTTCue || window.WebKitVTTCue;
+      if(Cue) cues.forEach(cue=>nativeTrack.addCue(new Cue(cue.startMs/1000,cue.endMs/1000,cue.text)));
+      nativeTrack.mode='hidden';
+    }catch{}
+    const isNativeFullscreen=()=>document.fullscreenElement===player || player.webkitDisplayingFullscreen;
+    const syncNativeTrack=()=>{
+      if(nativeTrack) nativeTrack.mode=isNativeFullscreen() && this.subtitlePreferences().visible?'showing':'hidden';
+    };
     let active=-1;
     const update=()=>{
+      syncNativeTrack();
+      if(isNativeFullscreen()){
+        caption.hidden=true;
+        return;
+      }
       const now=Math.round(player.currentTime*1000);
       const next=cues.findIndex(cue=>now>=cue.startMs && now<=cue.endMs);
       if(next===active){
@@ -532,6 +561,9 @@ async renderLesson(seriesId, episodeId){
     player.addEventListener('timeupdate',update);
     player.addEventListener('seeked',update);
     player.addEventListener('ended',()=>{active=-1;caption.hidden=true;});
+    document.addEventListener('fullscreenchange',update);
+    player.addEventListener('webkitbeginfullscreen',update);
+    player.addEventListener('webkitendfullscreen',update);
     if(caption.dataset.dragBound) return;
     caption.dataset.dragBound='1';
     caption.addEventListener('pointerdown',event=>{
