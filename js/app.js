@@ -537,13 +537,24 @@ async renderLesson(seriesId, episodeId){
   },
   bindSubtitleOverlay(player,d){
     const caption=player.parentElement?.querySelector('.video-caption');
-    const cues=this.subtitleForEpisode(d)?.subtitle || [];
+    const subtitleEntry=this.subtitleForEpisode(d);
+    const cues=subtitleEntry?.subtitle || [];
     if(!caption || !cues.length) return;
     let nativeTrack=null;
     try{
-      nativeTrack=player.addTextTrack('subtitles','English','en');
-      const Cue=window.VTTCue || window.WebKitVTTCue;
-      if(Cue) cues.forEach(cue=>nativeTrack.addCue(new Cue(cue.startMs/1000,cue.endMs/1000,cue.text)));
+      if(subtitleEntry.vttUrl){
+        const track=document.createElement('track');
+        track.kind='subtitles';
+        track.label='English';
+        track.srclang='en';
+        track.src=`data/${d.seriesId}/${subtitleEntry.vttUrl}`;
+        player.appendChild(track);
+        nativeTrack=track.track;
+      }else{
+        nativeTrack=player.addTextTrack('subtitles','English','en');
+        const Cue=window.VTTCue || window.WebKitVTTCue;
+        if(Cue) cues.forEach(cue=>nativeTrack.addCue(new Cue(cue.startMs/1000,cue.endMs/1000,cue.text)));
+      }
       nativeTrack.mode='hidden';
     }catch{}
     const isNativeFullscreen=()=>document.fullscreenElement===player || player.webkitDisplayingFullscreen;
