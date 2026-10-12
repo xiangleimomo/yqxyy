@@ -415,7 +415,47 @@ async renderLesson(seriesId, episodeId){
     if(!url) return `<div class="empty">本集 HLS 视频源暂未添加。</div>`;
     const fallback=d.ep.video?.mp4Url || d.ep.video?.directUrl || '';
     const hasSubtitle=this.subtitleForEpisode(d)?.subtitle?.length;
-    return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>Watch 看视频</h2><p class="muted">播放器加载失败时，会尝试本集备用视频。${hasSubtitle?' 已加载英文外挂字幕。':''}</p></div></div><div class="video-wrap"><video class="hls-video-player" controls playsinline preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="video-caption" aria-live="polite" hidden></div></div><p class="muted direct-video-help" role="status" aria-live="polite">${fallback?`也可<a href="${this.escapeHtml(fallback)}" target="_blank" rel="noreferrer noopener">直接打开本集视频</a>。`:`若无法播放，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">打开视频源</a>。`}</p></section>${this.completeButton(d,completionModule)}`;
+    return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>Watch 看视频</h2><p class="muted">播放器加载失败时，会尝试本集备用视频。${hasSubtitle?' 已加载英文外挂字幕。':''}</p></div></div><div class="video-wrap"><video class="hls-video-player" controls playsinline preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="video-caption" aria-live="polite" hidden></div></div>${hasSubtitle?this.subtitleControls():''}<p class="muted direct-video-help" role="status" aria-live="polite">${fallback?`也可<a href="${this.escapeHtml(fallback)}" target="_blank" rel="noreferrer noopener">直接打开本集视频</a>。`:`若无法播放，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">打开视频源</a>。`}</p></section>${this.completeButton(d,completionModule)}`;
+  },
+  subtitlePreferences(){
+    const defaults={visible:true,size:20,color:'#ffffff',position:'bottom',opacity:72};
+    try{return {...defaults,...JSON.parse(localStorage.getItem('storyfox-subtitle-preferences')||'{}')};}catch{return defaults;}
+  },
+  subtitleControls(){
+    const prefs=this.subtitlePreferences();
+    const option=(value,label,current)=>`<option value="${value}"${value===current?' selected':''}>${label}</option>`;
+    return `<div class="subtitle-controls" aria-label="字幕设置">
+      <div class="subtitle-controls-title">字幕设置</div>
+      <button type="button" class="btn secondary small subtitle-toggle" aria-pressed="${prefs.visible}">${prefs.visible?'隐藏字幕':'显示字幕'}</button>
+      <label>字号 <input class="subtitle-size" type="range" min="14" max="32" step="1" value="${prefs.size}"><output>${prefs.size}px</output></label>
+      <label>颜色 <input class="subtitle-color" type="color" value="${prefs.color}"></label>
+      <label>位置 <select class="subtitle-position">${option('top','顶部',prefs.position)}${option('middle','中部',prefs.position)}${option('bottom','底部',prefs.position)}</select></label>
+      <label>背景 <input class="subtitle-opacity" type="range" min="0" max="95" step="5" value="${prefs.opacity}"><output>${prefs.opacity}%</output></label>
+    </div>`;
+  },
+  applySubtitlePreferences(root=document){
+    const prefs=this.subtitlePreferences();
+    root.querySelectorAll('.video-caption').forEach(caption=>{
+      caption.style.setProperty('--caption-size',`${prefs.size}px`);
+      caption.style.setProperty('--caption-color',prefs.color);
+      caption.style.setProperty('--caption-opacity',String(prefs.opacity/100));
+      caption.dataset.subtitleVisible=String(prefs.visible);
+      caption.classList.toggle('caption-top',prefs.position==='top');
+      caption.classList.toggle('caption-middle',prefs.position==='middle');
+    });
+  },
+  bindSubtitleControls(root=document){
+    const controls=root.querySelector('.subtitle-controls');
+    if(!controls || controls.dataset.bound) return;
+    controls.dataset.bound='1';
+    const save=patch=>{const next={...this.subtitlePreferences(),...patch};localStorage.setItem('storyfox-subtitle-preferences',JSON.stringify(next));this.applySubtitlePreferences(root);return next;};
+    const toggle=controls.querySelector('.subtitle-toggle');
+    toggle.addEventListener('click',()=>{const prefs=save({visible:!this.subtitlePreferences().visible});toggle.textContent=prefs.visible?'隐藏字幕':'显示字幕';toggle.setAttribute('aria-pressed',String(prefs.visible));root.querySelectorAll('.hls-video-player').forEach(player=>player.dispatchEvent(new Event('timeupdate')));});
+    [['.subtitle-size','size','px'],['.subtitle-opacity','opacity','%']].forEach(([selector,key,suffix])=>{
+      const input=controls.querySelector(selector);input.addEventListener('input',()=>{input.nextElementSibling.textContent=`${input.value}${suffix}`;save({[key]:Number(input.value)});});
+    });
+    controls.querySelector('.subtitle-color').addEventListener('input',event=>save({color:event.target.value}));
+    controls.querySelector('.subtitle-position').addEventListener('change',event=>save({position:event.target.value}));
   },
   subtitleForEpisode(d){
     const episodes=d.subtitles?.episodes || [];
@@ -431,9 +471,12 @@ async renderLesson(seriesId, episodeId){
     const update=()=>{
       const now=Math.round(player.currentTime*1000);
       const next=cues.findIndex(cue=>now>=cue.startMs && now<=cue.endMs);
-      if(next===active) return;
+      if(next===active){
+        caption.hidden=next<0 || caption.dataset.subtitleVisible==='false';
+        return;
+      }
       active=next;
-      caption.hidden=next<0;
+      caption.hidden=next<0 || caption.dataset.subtitleVisible==='false';
       caption.textContent=next<0?'':cues[next].text;
     };
     player.addEventListener('timeupdate',update);
@@ -747,6 +790,8 @@ phrasesPanel(d){
 bindLessonPanel(tab,d,root=document){
   if(tab==='games') EpisodeGames.bind(root,d);
   root.querySelectorAll('.hls-video-player').forEach(player=>{this.initializeHlsVideo(player);this.bindSubtitleOverlay(player,d);});
+  this.applySubtitlePreferences(root);
+  this.bindSubtitleControls(root);
   document.querySelectorAll('.hls-audio-player').forEach(player=>this.initializeHlsAudio(player));
   document.querySelectorAll('.mark-complete').forEach(btn=>btn.addEventListener('click', e=>{e.preventDefault(); this.markComplete(btn.dataset.series, btn.dataset.episode, btn.dataset.module); btn.textContent='已完成 ✓';}));
   document.querySelectorAll('.open-direct-video').forEach(btn=>btn.addEventListener('click',()=>{this.activeLessonTab='directVideo'; this.renderLesson(d.seriesId,d.episodeId);}));
