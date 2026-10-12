@@ -22,6 +22,7 @@ const PROGRESS_PATH = path.join(OUTPUT_DIR, 'import-progress.json');
 const EPISODE_CONCURRENCY = 12;
 const SERIES_DIRECTORY_OVERRIDES = {
   'Journey to the West': 'journey-to-the-west',
+  'Romance of the Three Kingdoms': 'three-kingdoms',
 };
 
 const account = process.env.XET_ACCOUNT;
