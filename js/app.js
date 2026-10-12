@@ -415,22 +415,30 @@ async renderLesson(seriesId, episodeId){
     if(!url) return `<div class="empty">本集 HLS 视频源暂未添加。</div>`;
     const fallback=d.ep.video?.mp4Url || d.ep.video?.directUrl || '';
     const hasSubtitle=this.subtitleForEpisode(d)?.subtitle?.length;
-    return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>Watch 看视频</h2><p class="muted">播放器加载失败时，会尝试本集备用视频。${hasSubtitle?' 已加载英文外挂字幕。':''}</p></div></div><div class="video-wrap"><video class="hls-video-player" controls playsinline preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="video-caption" aria-live="polite" hidden></div></div>${hasSubtitle?this.subtitleControls():''}<p class="muted direct-video-help" role="status" aria-live="polite">${fallback?`也可<a href="${this.escapeHtml(fallback)}" target="_blank" rel="noreferrer noopener">直接打开本集视频</a>。`:`若无法播放，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">打开视频源</a>。`}</p></section>${this.completeButton(d,completionModule)}`;
+    return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>Watch 看视频</h2><p class="muted">播放器加载失败时，会尝试本集备用视频。${hasSubtitle?' 已加载英文外挂字幕。':''}</p></div></div><div class="video-wrap${hasSubtitle?' subtitle-video-wrap':''}"><video class="hls-video-player" controls playsinline preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="video-caption" aria-live="polite" hidden></div>${hasSubtitle?this.subtitleControls():''}</div><p class="muted direct-video-help" role="status" aria-live="polite">${fallback?`也可<a href="${this.escapeHtml(fallback)}" target="_blank" rel="noreferrer noopener">直接打开本集视频</a>。`:`若无法播放，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">打开视频源</a>。`}</p></section>${this.completeButton(d,completionModule)}`;
   },
   subtitlePreferences(){
-    const defaults={visible:true,size:20,color:'#ffffff',position:'bottom',opacity:72};
-    try{return {...defaults,...JSON.parse(localStorage.getItem('storyfox-subtitle-preferences')||'{}')};}catch{return defaults;}
+    const defaults={visible:true,size:20,color:'#ffffff',captionX:50,captionY:84,opacity:72};
+    try{
+      const saved=JSON.parse(localStorage.getItem('storyfox-subtitle-preferences')||'{}') || {};
+      const legacyY={top:16,middle:50,bottom:84}[saved.position];
+      return {...defaults,...saved,...(!Number.isFinite(saved.captionY) && legacyY!==undefined?{captionY:legacyY}:{} )};
+    }catch{return defaults;}
   },
   subtitleControls(){
     const prefs=this.subtitlePreferences();
     const option=(value,label,current)=>`<option value="${value}"${value===current?' selected':''}>${label}</option>`;
-    return `<div class="subtitle-controls" aria-label="字幕设置">
+    return `<div class="subtitle-settings-dock">
+      <button type="button" class="subtitle-settings-trigger" aria-label="打开字幕设置" aria-expanded="false">⚙<span>字幕</span></button>
+      <div class="subtitle-controls subtitle-controls-overlay" aria-label="字幕设置">
       <div class="subtitle-controls-title">字幕设置</div>
       <button type="button" class="btn secondary small subtitle-toggle" aria-pressed="${prefs.visible}">${prefs.visible?'隐藏字幕':'显示字幕'}</button>
       <label>字号 <input class="subtitle-size" type="range" min="14" max="32" step="1" value="${prefs.size}"><output>${prefs.size}px</output></label>
       <label>颜色 <input class="subtitle-color" type="color" value="${prefs.color}"></label>
-      <label>位置 <select class="subtitle-position">${option('top','顶部',prefs.position)}${option('middle','中部',prefs.position)}${option('bottom','底部',prefs.position)}</select></label>
+      <button type="button" class="btn secondary small subtitle-reset-position">重置位置</button>
+      <span class="subtitle-drag-tip">可直接拖动字幕</span>
       <label>背景 <input class="subtitle-opacity" type="range" min="0" max="95" step="5" value="${prefs.opacity}"><output>${prefs.opacity}%</output></label>
+      </div>
     </div>`;
   },
   applySubtitlePreferences(root=document){
@@ -439,15 +447,57 @@ async renderLesson(seriesId, episodeId){
       caption.style.setProperty('--caption-size',`${prefs.size}px`);
       caption.style.setProperty('--caption-color',prefs.color);
       caption.style.setProperty('--caption-opacity',String(prefs.opacity/100));
+      caption.style.setProperty('--caption-x',`${prefs.captionX}%`);
+      caption.style.setProperty('--caption-y',`${prefs.captionY}%`);
       caption.dataset.subtitleVisible=String(prefs.visible);
-      caption.classList.toggle('caption-top',prefs.position==='top');
-      caption.classList.toggle('caption-middle',prefs.position==='middle');
     });
   },
   bindSubtitleControls(root=document){
     const controls=root.querySelector('.subtitle-controls');
     if(!controls || controls.dataset.bound) return;
     controls.dataset.bound='1';
+    const stage=controls.closest('.subtitle-video-wrap');
+    const player=stage?.querySelector('.hls-video-player');
+    const dock=controls.closest('.subtitle-settings-dock');
+    const trigger=dock?.querySelector('.subtitle-settings-trigger');
+    let hideTimer=null;
+    const showControls=()=>{
+      if(!stage) return;
+      window.clearTimeout(hideTimer);
+      stage.classList.add('subtitle-settings-visible');
+    };
+    const hideControlsLater=()=>{
+      if(!stage || !player || player.paused) return;
+      window.clearTimeout(hideTimer);
+      hideTimer=window.setTimeout(()=>{
+        stage.classList.remove('subtitle-settings-visible','subtitle-settings-open');
+        trigger?.setAttribute('aria-expanded','false');
+        trigger?.setAttribute('aria-label','打开字幕设置');
+      },1800);
+    };
+    if(stage && player){
+      const revealControls=()=>{showControls();hideControlsLater();};
+      stage.addEventListener('pointerenter',revealControls);
+      stage.addEventListener('pointermove',revealControls);
+      stage.addEventListener('pointerleave',hideControlsLater);
+      stage.addEventListener('touchstart',revealControls,{passive:true});
+      controls.addEventListener('pointerdown',showControls);
+      controls.addEventListener('focusin',showControls);
+      controls.addEventListener('input',revealControls);
+      controls.addEventListener('change',revealControls);
+      trigger?.addEventListener('click',()=>{
+        const open=!stage.classList.contains('subtitle-settings-open');
+        stage.classList.toggle('subtitle-settings-open',open);
+        trigger.setAttribute('aria-expanded',String(open));
+        trigger.setAttribute('aria-label',open?'关闭字幕设置':'打开字幕设置');
+        showControls();
+        if(!open) hideControlsLater();
+      });
+      stage.addEventListener('focusin',showControls);
+      player.addEventListener('play',hideControlsLater);
+      player.addEventListener('pause',showControls);
+      player.addEventListener('ended',showControls);
+    }
     const save=patch=>{const next={...this.subtitlePreferences(),...patch};localStorage.setItem('storyfox-subtitle-preferences',JSON.stringify(next));this.applySubtitlePreferences(root);return next;};
     const toggle=controls.querySelector('.subtitle-toggle');
     toggle.addEventListener('click',()=>{const prefs=save({visible:!this.subtitlePreferences().visible});toggle.textContent=prefs.visible?'隐藏字幕':'显示字幕';toggle.setAttribute('aria-pressed',String(prefs.visible));root.querySelectorAll('.hls-video-player').forEach(player=>player.dispatchEvent(new Event('timeupdate')));});
@@ -455,7 +505,7 @@ async renderLesson(seriesId, episodeId){
       const input=controls.querySelector(selector);input.addEventListener('input',()=>{input.nextElementSibling.textContent=`${input.value}${suffix}`;save({[key]:Number(input.value)});});
     });
     controls.querySelector('.subtitle-color').addEventListener('input',event=>save({color:event.target.value}));
-    controls.querySelector('.subtitle-position').addEventListener('change',event=>save({position:event.target.value}));
+    controls.querySelector('.subtitle-reset-position').addEventListener('click',()=>save({captionX:50,captionY:84}));
   },
   subtitleForEpisode(d){
     const episodes=d.subtitles?.episodes || [];
@@ -482,6 +532,33 @@ async renderLesson(seriesId, episodeId){
     player.addEventListener('timeupdate',update);
     player.addEventListener('seeked',update);
     player.addEventListener('ended',()=>{active=-1;caption.hidden=true;});
+    if(caption.dataset.dragBound) return;
+    caption.dataset.dragBound='1';
+    caption.addEventListener('pointerdown',event=>{
+      if(event.button!==undefined && event.button!==0) return;
+      event.preventDefault();
+      const stage=player.parentElement;
+      const updatePosition=moveEvent=>{
+        const rect=stage.getBoundingClientRect();
+        const x=Math.min(93,Math.max(7,((moveEvent.clientX-rect.left)/rect.width)*100));
+        const y=Math.min(86,Math.max(8,((moveEvent.clientY-rect.top)/rect.height)*100));
+        const next={...this.subtitlePreferences(),captionX:Math.round(x),captionY:Math.round(y)};
+        localStorage.setItem('storyfox-subtitle-preferences',JSON.stringify(next));
+        this.applySubtitlePreferences(stage);
+      };
+      const finish=()=>{
+        caption.classList.remove('caption-dragging');
+        caption.removeEventListener('pointermove',updatePosition);
+        caption.removeEventListener('pointerup',finish);
+        caption.removeEventListener('pointercancel',finish);
+      };
+      caption.classList.add('caption-dragging');
+      caption.setPointerCapture?.(event.pointerId);
+      caption.addEventListener('pointermove',updatePosition);
+      caption.addEventListener('pointerup',finish);
+      caption.addEventListener('pointercancel',finish);
+      updatePosition(event);
+    });
   },
   async initializeHlsVideo(player){
     return this.initializeHlsMedia(player);
