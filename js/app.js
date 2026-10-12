@@ -278,10 +278,11 @@ async renderLesson(seriesId, episodeId){
       this.getJSON(`data/${seriesId}/phrases.json`).catch(()=>({})),
       this.getJSON(`data/${seriesId}/grammar.json`).catch(()=>({})),
       this.getJSON(`data/${seriesId}/quiz.json`).catch(()=>({})),
-      this.getJSON(`data/${seriesId}/review.json`).catch(()=>({}))
+      this.getJSON(`data/${seriesId}/review.json`).catch(()=>({})),
+      this.getJSON(`data/${seriesId}/subtitles.json`).catch(()=>null)
     ]);
-    const [reading, vocab, phrases, grammar, quiz, review] = data;
-    const lessonData = {seriesId, episodeId, series, ep, reading:reading[String(episodeId)], vocab:vocab[String(episodeId)]||[], phrases:phrases[String(episodeId)]||[], grammar:grammar[String(episodeId)]||[], quiz:quiz[String(episodeId)], review:review[String(episodeId)]};
+    const [reading, vocab, phrases, grammar, quiz, review, subtitles] = data;
+    const lessonData = {seriesId, episodeId, series, ep, reading:reading[String(episodeId)], vocab:vocab[String(episodeId)]||[], phrases:phrases[String(episodeId)]||[], grammar:grammar[String(episodeId)]||[], quiz:quiz[String(episodeId)], review:review[String(episodeId)], subtitles};
     const visibleTabs=['watch','listenRead','words','quiz','games'];
     const tab = visibleTabs.includes(this.activeLessonTab) ? this.activeLessonTab : 'watch';
     this.el().innerHTML = `
@@ -318,15 +319,16 @@ async renderLesson(seriesId, episodeId){
       alert('🔒 请先完成上一集 Quiz（正确率80%以上）后解锁本集。');
       return;
     }
-    const [reading, vocab, phrases, grammar, quiz, review] = await Promise.all([
+    const [reading, vocab, phrases, grammar, quiz, review, subtitles] = await Promise.all([
       this.getJSON(`data/${seriesId}/reading-lessons.json`).catch(()=>({})),
       this.getJSON(`data/${seriesId}/vocabulary.json`).catch(()=>({})),
       this.getJSON(`data/${seriesId}/phrases.json`).catch(()=>({})),
       this.getJSON(`data/${seriesId}/grammar.json`).catch(()=>({})),
       this.getJSON(`data/${seriesId}/quiz.json`).catch(()=>({})),
-      this.getJSON(`data/${seriesId}/review.json`).catch(()=>({}))
+      this.getJSON(`data/${seriesId}/review.json`).catch(()=>({})),
+      this.getJSON(`data/${seriesId}/subtitles.json`).catch(()=>null)
     ]);
-    const d={seriesId, episodeId, series, ep, reading:reading[String(episodeId)], vocab:vocab[String(episodeId)]||[], phrases:phrases[String(episodeId)]||[], grammar:grammar[String(episodeId)]||[], quiz:quiz[String(episodeId)], review:review[String(episodeId)]};
+    const d={seriesId, episodeId, series, ep, reading:reading[String(episodeId)], vocab:vocab[String(episodeId)]||[], phrases:phrases[String(episodeId)]||[], grammar:grammar[String(episodeId)]||[], quiz:quiz[String(episodeId)], review:review[String(episodeId)], subtitles};
 
     if(!this.windowLayer){
       this.windowLayer=document.createElement('div');
@@ -412,7 +414,31 @@ async renderLesson(seriesId, episodeId){
     const url=d.ep.video?.hlsUrl;
     if(!url) return `<div class="empty">本集 HLS 视频源暂未添加。</div>`;
     const fallback=d.ep.video?.mp4Url || d.ep.video?.directUrl || '';
-    return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>Watch 看视频</h2><p class="muted">播放器加载失败时，会尝试本集备用视频。</p></div></div><div class="video-wrap"><video class="hls-video-player" controls playsinline preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-fallback-src="${this.escapeHtml(fallback)}"></video></div><p class="muted direct-video-help" role="status" aria-live="polite">${fallback?`也可<a href="${this.escapeHtml(fallback)}" target="_blank" rel="noreferrer noopener">直接打开本集视频</a>。`:`若无法播放，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">打开视频源</a>。`}</p></section>${this.completeButton(d,completionModule)}`;
+    const hasSubtitle=this.subtitleForEpisode(d)?.subtitle?.length;
+    return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>Watch 看视频</h2><p class="muted">播放器加载失败时，会尝试本集备用视频。${hasSubtitle?' 已加载英文外挂字幕。':''}</p></div></div><div class="video-wrap"><video class="hls-video-player" controls playsinline preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="video-caption" aria-live="polite" hidden></div></div><p class="muted direct-video-help" role="status" aria-live="polite">${fallback?`也可<a href="${this.escapeHtml(fallback)}" target="_blank" rel="noreferrer noopener">直接打开本集视频</a>。`:`若无法播放，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">打开视频源</a>。`}</p></section>${this.completeButton(d,completionModule)}`;
+  },
+  subtitleForEpisode(d){
+    const episodes=d.subtitles?.episodes || [];
+    const normalize=value=>String(value||'').replace(/[^a-z0-9]/gi,'').toLowerCase();
+    const byTitle=episodes.find(item=>normalize(item.title)===normalize(d.ep?.title));
+    return byTitle || episodes[Number(d.episodeId)-1] || null;
+  },
+  bindSubtitleOverlay(player,d){
+    const caption=player.parentElement?.querySelector('.video-caption');
+    const cues=this.subtitleForEpisode(d)?.subtitle || [];
+    if(!caption || !cues.length) return;
+    let active=-1;
+    const update=()=>{
+      const now=Math.round(player.currentTime*1000);
+      const next=cues.findIndex(cue=>now>=cue.startMs && now<=cue.endMs);
+      if(next===active) return;
+      active=next;
+      caption.hidden=next<0;
+      caption.textContent=next<0?'':cues[next].text;
+    };
+    player.addEventListener('timeupdate',update);
+    player.addEventListener('seeked',update);
+    player.addEventListener('ended',()=>{active=-1;caption.hidden=true;});
   },
   async initializeHlsVideo(player){
     return this.initializeHlsMedia(player);
@@ -720,7 +746,7 @@ phrasesPanel(d){
   
 bindLessonPanel(tab,d,root=document){
   if(tab==='games') EpisodeGames.bind(root,d);
-  document.querySelectorAll('.hls-video-player').forEach(player=>this.initializeHlsVideo(player));
+  root.querySelectorAll('.hls-video-player').forEach(player=>{this.initializeHlsVideo(player);this.bindSubtitleOverlay(player,d);});
   document.querySelectorAll('.hls-audio-player').forEach(player=>this.initializeHlsAudio(player));
   document.querySelectorAll('.mark-complete').forEach(btn=>btn.addEventListener('click', e=>{e.preventDefault(); this.markComplete(btn.dataset.series, btn.dataset.episode, btn.dataset.module); btn.textContent='已完成 ✓';}));
   document.querySelectorAll('.open-direct-video').forEach(btn=>btn.addEventListener('click',()=>{this.activeLessonTab='directVideo'; this.renderLesson(d.seriesId,d.episodeId);}));
