@@ -10,3 +10,6 @@ data/.vocabulary-translation-cache.json
 .env
 .env.*
 !.env.example
+
+# Resumable state written by the licensed subtitle importer
+data/little-fox/import-progress.json
