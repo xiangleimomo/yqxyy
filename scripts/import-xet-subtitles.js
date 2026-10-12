@@ -20,6 +20,9 @@ const DATA_ROOT = path.resolve(__dirname, '..', 'data');
 const OUTPUT_DIR = path.join(DATA_ROOT, 'little-fox');
 const PROGRESS_PATH = path.join(OUTPUT_DIR, 'import-progress.json');
 const EPISODE_CONCURRENCY = 12;
+const SERIES_DIRECTORY_OVERRIDES = {
+  'Journey to the West': 'journey-to-the-west',
+};
 
 const account = process.env.XET_ACCOUNT;
 const password = process.env.XET_PASSWORD;
@@ -197,10 +200,11 @@ async function main() {
   const orderedSeries = series.map(item => progress.subtitles[item.fsId]).filter(Boolean);
   for (const seriesItem of orderedSeries) {
     const fsId = seriesItem.fsId || series.find(item => item.title === seriesItem.title && item.level === seriesItem.level)?.fsId;
-    const target = seriesList.find(item => item.seriesId?.endsWith(`-${String(fsId).toLowerCase()}`));
-    if (!target) continue;
+    const targetSeriesId = seriesList.find(item => item.seriesId?.endsWith(`-${String(fsId).toLowerCase()}`))?.seriesId
+      || SERIES_DIRECTORY_OVERRIDES[seriesItem.title];
+    if (!targetSeriesId) continue;
     await fs.writeFile(
-      path.join(DATA_ROOT, target.seriesId, 'subtitles.json'),
+      path.join(DATA_ROOT, targetSeriesId, 'subtitles.json'),
       `${JSON.stringify({
         source: 'XET Little Fox licensed subtitle import',
         importedAt: new Date().toISOString(),
