@@ -432,13 +432,12 @@ async renderLesson(seriesId, episodeId){
       <button type="button" class="subtitle-settings-trigger" aria-label="打开字幕设置" aria-expanded="false">⚙<span>字幕</span></button>
       <button type="button" class="video-fullscreen-trigger" aria-label="全屏观看（保留字幕设置）" title="全屏观看（保留字幕设置）">⛶<span>全屏</span></button>
       <div class="subtitle-controls subtitle-controls-overlay" aria-label="字幕设置">
-      <div class="subtitle-controls-title">字幕设置</div>
-      <button type="button" class="btn secondary small subtitle-toggle" aria-pressed="${prefs.visible}">${prefs.visible?'隐藏字幕':'显示字幕'}</button>
-      <label>字号 <input class="subtitle-size" type="range" min="14" max="32" step="1" value="${prefs.size}"><output>${prefs.size}px</output></label>
-      <label>颜色 <input class="subtitle-color" type="color" value="${prefs.color}"></label>
-      <button type="button" class="btn secondary small subtitle-reset-position">重置位置</button>
-      <span class="subtitle-drag-tip">可直接拖动字幕</span>
-      <label>背景 <input class="subtitle-opacity" type="range" min="0" max="95" step="5" value="${prefs.opacity}"><output>${prefs.opacity}%</output></label>
+        <div class="subtitle-controls-header"><div class="subtitle-controls-title">字幕设置</div><button type="button" class="subtitle-reset-position">恢复默认设置 ↻</button></div>
+        <div class="subtitle-setting-row"><span>显示字幕</span><button type="button" class="btn secondary small subtitle-toggle" aria-pressed="${prefs.visible}">${prefs.visible?'开启':'关闭'}</button></div>
+        <div class="subtitle-setting-row"><span>字幕位置</span><span class="subtitle-drag-tip">直接拖动字幕</span></div>
+        <label class="subtitle-setting-row"><span>字幕颜色</span><input class="subtitle-color" type="color" value="${prefs.color}"></label>
+        <label class="subtitle-setting-row"><span>字幕大小</span><input class="subtitle-size" type="range" min="14" max="32" step="1" value="${prefs.size}"><output>${prefs.size}px</output></label>
+        <label class="subtitle-setting-row"><span>背景透明度</span><input class="subtitle-opacity" type="range" min="0" max="95" step="5" value="${prefs.opacity}"><output>${prefs.opacity}%</output></label>
       </div>
     </div>`;
   },
@@ -518,7 +517,17 @@ async renderLesson(seriesId, episodeId){
       const input=controls.querySelector(selector);input.addEventListener('input',()=>{input.nextElementSibling.textContent=`${input.value}${suffix}`;save({[key]:Number(input.value)});});
     });
     controls.querySelector('.subtitle-color').addEventListener('input',event=>save({color:event.target.value}));
-    controls.querySelector('.subtitle-reset-position').addEventListener('click',()=>save({captionX:50,captionY:84}));
+    controls.querySelector('.subtitle-reset-position').addEventListener('click',()=>{
+      const prefs=save({visible:true,size:20,color:'#ffffff',captionX:50,captionY:84,opacity:72});
+      toggle.textContent='开启';
+      toggle.setAttribute('aria-pressed','true');
+      controls.querySelector('.subtitle-size').value=prefs.size;
+      controls.querySelector('.subtitle-size').nextElementSibling.textContent=`${prefs.size}px`;
+      controls.querySelector('.subtitle-color').value=prefs.color;
+      controls.querySelector('.subtitle-opacity').value=prefs.opacity;
+      controls.querySelector('.subtitle-opacity').nextElementSibling.textContent=`${prefs.opacity}%`;
+      root.querySelectorAll('.hls-video-player').forEach(player=>player.dispatchEvent(new Event('timeupdate')));
+    });
   },
   subtitleForEpisode(d){
     const episodes=d.subtitles?.episodes || [];
