@@ -8,7 +8,7 @@
  *   XET_PASSWORD
  *
  * Output:
- *   data/little-fox-*/subtitles.json
+ *   data/little-fox-<series>/subtitles.json
  *   data/little-fox/import-progress.json (checkpoint, safe to delete after success)
  */
 
