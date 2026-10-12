@@ -8,8 +8,7 @@
  *   XET_PASSWORD
  *
  * Output:
- *   data/little-fox/catalog.json
- *   data/little-fox/series/*.json
+ *   data/little-fox-*/subtitles.json
  *   data/little-fox/import-progress.json (checkpoint, safe to delete after success)
  */
 
@@ -17,9 +16,8 @@ const fs = require('node:fs/promises');
 const path = require('node:path');
 
 const BASE_URL = 'http://xet.bolinzhiyin.cn';
-const OUTPUT_DIR = path.resolve(__dirname, '..', 'data', 'little-fox');
-const CATALOG_PATH = path.join(OUTPUT_DIR, 'catalog.json');
-const SERIES_DIR = path.join(OUTPUT_DIR, 'series');
+const DATA_ROOT = path.resolve(__dirname, '..', 'data');
+const OUTPUT_DIR = path.join(DATA_ROOT, 'little-fox');
 const PROGRESS_PATH = path.join(OUTPUT_DIR, 'import-progress.json');
 const EPISODE_CONCURRENCY = 12;
 
@@ -143,7 +141,6 @@ async function mapWithConcurrency(items, worker, limit = EPISODE_CONCURRENCY) {
 
 async function main() {
   await fs.mkdir(OUTPUT_DIR, { recursive: true });
-  await fs.mkdir(SERIES_DIR, { recursive: true });
   await login();
 
   const series = [];
@@ -186,7 +183,6 @@ async function main() {
       return {
         episodeId: source.fc_id,
         title: cleanText(source.title),
-        videoUrl: source.url || source.video_url || '',
         subtitle,
       };
     });
@@ -197,32 +193,31 @@ async function main() {
     process.stderr.write(`Imported ${index + 1}/${series.length}: ${item.title} (${episodes.length} episodes)\n`);
   }
 
+  const seriesList = JSON.parse(await fs.readFile(path.join(DATA_ROOT, 'series-list.json'), 'utf8'));
   const orderedSeries = series.map(item => progress.subtitles[item.fsId]).filter(Boolean);
-  const catalog = orderedSeries.map(item => ({
-    level: item.level,
-    seriesId: item.title,
-    title: item.title,
-    episodeCount: item.episodes.length,
-    subtitleEpisodeCount: item.episodes.filter(episode => episode.subtitle.length).length,
-  }));
   for (const seriesItem of orderedSeries) {
     const fsId = seriesItem.fsId || series.find(item => item.title === seriesItem.title && item.level === seriesItem.level)?.fsId;
-    if (!fsId) continue;
+    const target = seriesList.find(item => item.seriesId?.endsWith(`-${String(fsId).toLowerCase()}`));
+    if (!target) continue;
     await fs.writeFile(
-      path.join(SERIES_DIR, `${fsId}.json`),
+      path.join(DATA_ROOT, target.seriesId, 'subtitles.json'),
       `${JSON.stringify({
         source: 'XET Little Fox licensed subtitle import',
         importedAt: new Date().toISOString(),
-        ...seriesItem,
+        seriesId: fsId,
+        level: seriesItem.level,
+        title: seriesItem.title,
+        episodeCount: seriesItem.episodes.length,
+        episodes: seriesItem.episodes.map(episode => ({
+          episodeId: episode.episodeId,
+          title: episode.title,
+          subtitle: episode.subtitle,
+        })),
       }, null, 2)}\n`,
     );
   }
-  await fs.writeFile(CATALOG_PATH, `${JSON.stringify(catalog.map(item => ({
-    ...item,
-    dataFile: `series/${item.fsId || series.find(source => source.title === item.title && source.level === item.level)?.fsId}.json`,
-  })), null, 2)}\n`);
   await fs.rm(PROGRESS_PATH, { force: true });
-  process.stderr.write(`Completed ${catalog.length} series and ${importedEpisodes} episodes.\n`);
+  process.stderr.write(`Completed ${orderedSeries.length} series and ${importedEpisodes} episodes.\n`);
 }
 
 main().catch(error => {

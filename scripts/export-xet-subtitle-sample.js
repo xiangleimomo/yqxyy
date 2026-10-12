@@ -13,12 +13,23 @@ const path = require('node:path');
 const seriesId = process.argv[2];
 if (!seriesId) throw new Error('Usage: node scripts/export-xet-subtitle-sample.js <FS_ID>');
 
-const dataDir = path.resolve(__dirname, '..', 'data', 'little-fox');
-const checkpointPath = path.join(dataDir, 'import-progress.json');
-const seriesDir = path.join(dataDir, 'series');
+const dataRoot = path.resolve(__dirname, '..', 'data');
+const checkpointPath = path.join(dataRoot, 'little-fox', 'import-progress.json');
+const seriesListPath = path.join(dataRoot, 'series-list.json');
 
 async function main() {
-  const checkpoint = JSON.parse(await fs.readFile(checkpointPath, 'utf8'));
+  let checkpoint;
+  let lastError;
+  for (let attempt = 1; attempt <= 20; attempt += 1) {
+    try {
+      checkpoint = JSON.parse(await fs.readFile(checkpointPath, 'utf8'));
+      break;
+    } catch (error) {
+      lastError = error;
+      await new Promise(resolve => setTimeout(resolve, 1500));
+    }
+  }
+  if (!checkpoint) throw lastError;
   const source = checkpoint.subtitles[seriesId];
   if (!source?.episodes?.length) throw new Error(`No completed series found for ${seriesId}.`);
 
@@ -40,17 +51,13 @@ async function main() {
     })),
   };
 
-  await fs.mkdir(seriesDir, { recursive: true });
-  await fs.writeFile(path.join(seriesDir, `${seriesId}.json`), `${JSON.stringify(output, null, 2)}\n`);
-  await fs.writeFile(path.join(dataDir, 'catalog.json'), `${JSON.stringify([{
-    seriesId: output.seriesId,
-    level: output.level,
-    title: output.title,
-    episodeCount: output.episodeCount,
-    subtitleEpisodeCount: output.episodes.filter(episode => episode.subtitle.length).length,
-    dataFile: `series/${seriesId}.json`,
-  }], null, 2)}\n`);
-  process.stderr.write(`Exported ${seriesId} (${output.episodeCount} episodes).\n`);
+  const suffix = `-${seriesId.toLowerCase()}`;
+  const seriesList = JSON.parse(await fs.readFile(seriesListPath, 'utf8'));
+  const target = seriesList.find(item => item.seriesId?.endsWith(suffix));
+  if (!target) throw new Error(`No application series folder is registered for ${seriesId}.`);
+  const outputPath = path.join(dataRoot, target.seriesId, 'subtitles.json');
+  await fs.writeFile(outputPath, `${JSON.stringify(output, null, 2)}\n`);
+  process.stderr.write(`Exported ${seriesId} to ${path.relative(path.resolve(__dirname, '..'), outputPath)} (${output.episodeCount} episodes).\n`);
 }
 
 main().catch(error => {
