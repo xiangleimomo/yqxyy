@@ -106,7 +106,6 @@ async function loadCatalog() {
         level: Number(series.level),
         title: series.seriesTitle,
         titleKey: normalize(series.seriesTitle),
-        usesVttFiles: directory.name === 'journey-to-the-west',
         episodes: episodes.map((episode, index) => ({ ...episode, order: index + 1, titleKey: normalize(episode.title) })),
       });
     } catch {
@@ -184,7 +183,13 @@ async function main() {
 
   const existingSubtitleSeries = [];
   for (const series of catalog) {
-    try { await fs.access(path.join(series.dir, 'subtitles.json')); existingSubtitleSeries.push(series.seriesId); } catch {}
+    try {
+      await Promise.any([
+        fs.access(path.join(series.dir, 'subtitles.json')),
+        fs.access(path.join(series.dir, 'subtitles')),
+      ]);
+      existingSubtitleSeries.push(series.seriesId);
+    } catch {}
   }
   const removeExisting = existingSubtitleSeries.filter(seriesId => !mappedSeries.has(seriesId));
 
@@ -229,35 +234,22 @@ async function main() {
 
   for (const series of catalog) {
     const entries = mappedSeries.get(series.seriesId) || [];
-    const destination = path.join(series.dir, 'subtitles.json');
+    const jsonDestination = path.join(series.dir, 'subtitles.json');
+    const vttDirectory = path.join(series.dir, 'subtitles');
     if (!entries.length) {
-      if (existingSubtitleSeries.includes(series.seriesId)) await fs.rm(destination, { force: true });
+      if (existingSubtitleSeries.includes(series.seriesId)) {
+        await fs.rm(jsonDestination, { force: true });
+        await fs.rm(vttDirectory, { recursive: true, force: true });
+      }
       continue;
     }
-    let importedAt = new Date().toISOString();
-    try {
-      const existing = JSON.parse(await fs.readFile(destination, 'utf8'));
-      if (existing.importedAt) importedAt = existing.importedAt;
-    } catch {}
-    const episodes = [];
+    await fs.rm(vttDirectory, { recursive: true, force: true });
+    await fs.mkdir(vttDirectory, { recursive: true });
     for (const item of entries) {
-      const episode = { episodeId: item.episode.episodeId, title: item.episode.title, subtitle: item.subtitle };
-      if (series.usesVttFiles) {
-        const vttUrl = `subtitles/${String(item.episode.order).padStart(3, '0')}.vtt`;
-        await fs.mkdir(path.join(series.dir, 'subtitles'), { recursive: true });
-        await fs.writeFile(path.join(series.dir, vttUrl), toVtt(item.subtitle));
-        episode.vttUrl = vttUrl;
-      }
-      episodes.push(episode);
+      const filename = `${String(item.episode.order).padStart(3, '0')}.vtt`;
+      await fs.writeFile(path.join(vttDirectory, filename), toVtt(item.subtitle));
     }
-    await fs.writeFile(destination, `${JSON.stringify({
-      source: 'Local Little Fox SRT library',
-      importedAt,
-      level: series.level,
-      title: series.title,
-      episodeCount: episodes.length,
-      episodes,
-    }, null, 2)}\n`);
+    await fs.rm(jsonDestination, { force: true });
   }
 
   // Keep the original level folders untouched.  Copy every source subtitle
