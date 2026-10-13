@@ -234,6 +234,11 @@ async function main() {
       if (existingSubtitleSeries.includes(series.seriesId)) await fs.rm(destination, { force: true });
       continue;
     }
+    let importedAt = new Date().toISOString();
+    try {
+      const existing = JSON.parse(await fs.readFile(destination, 'utf8'));
+      if (existing.importedAt) importedAt = existing.importedAt;
+    } catch {}
     const episodes = [];
     for (const item of entries) {
       const episode = { episodeId: item.episode.episodeId, title: item.episode.title, subtitle: item.subtitle };
@@ -247,7 +252,7 @@ async function main() {
     }
     await fs.writeFile(destination, `${JSON.stringify({
       source: 'Local Little Fox SRT library',
-      importedAt: new Date().toISOString(),
+      importedAt,
       level: series.level,
       title: series.title,
       episodeCount: episodes.length,
