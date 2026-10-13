@@ -131,13 +131,48 @@ function matchFile(filePath, catalog) {
   const base = path.basename(filePath, '.srt');
   const key = normalize(base);
   const level = sourceLevel(filePath);
+  const numberMatch = base.match(/^(\d{1,4})[_.]/);
+  const order = Number(numberMatch?.[1]);
+  const matchSeriesByAlias = seriesId => {
+    const series = catalog.find(item => item.seriesId === seriesId);
+    const episode = series?.episodes.find(item => Number(item.episodeId) === order || item.order === order);
+    return series && episode ? { base, level, status: 'matched-by-series-alias', series, episode } : null;
+  };
+
+  // These two official folders use a different series name in the local
+  // library, while their episode numbers match the project exactly.
+  if (level === 2 && /(taleofpeterrabbit|benjaminbunny|jemimapuddleduck|hungrybunnies|tomkitten|bunniesmeet|kittensgototown|peterandbenjamin|jeremyfisher|tiggywinkle|bunnieshelpthetailor|jemimatakescare|peterandbenjaminhave|tomsbirthday|findaboot)/.test(key)) {
+    const match = matchSeriesByAlias('little-fox-the-world-of-peter-rabbit-and-friends-fs0087');
+    if (match) return match;
+  }
+  if (level === 3 && /words/.test(base) && Number.isInteger(order) && order >= 1 && order <= 25) {
+    const match = matchSeriesByAlias('little-fox-phonics-i-fs0111');
+    if (match) return match;
+  }
   const titleCandidates = catalog
     .filter(series => level === null || series.level === level)
     .filter(series => series.titleKey && key.includes(series.titleKey))
     .sort((a, b) => b.titleKey.length - a.titleKey.length);
   const strongestLength = titleCandidates[0]?.titleKey.length || 0;
   const strongest = titleCandidates.filter(series => series.titleKey.length === strongestLength);
-  if (strongest.length !== 1) return { base, level, status: strongest.length ? 'ambiguous-series' : 'unmatched-series', candidates: strongest.map(item => item.seriesId) };
+  if (strongest.length !== 1) {
+    // Some local folders use a shortened series name (or just the episode
+    // title).  The project episode titles are the final authority in that
+    // case, but only accept a single longest match within the same level.
+    const episodeMatches = catalog
+      .filter(item => level === null || item.level === level)
+      .flatMap(item => item.episodes
+        .filter(episode => episode.titleKey.length >= 7 && key.includes(episode.titleKey))
+        .map(episode => ({ series: item, episode }))
+      )
+      .sort((a, b) => b.episode.titleKey.length - a.episode.titleKey.length);
+    const longestEpisodeTitle = episodeMatches[0]?.episode.titleKey.length || 0;
+    const strongestEpisodeMatches = episodeMatches.filter(item => item.episode.titleKey.length === longestEpisodeTitle);
+    if (strongestEpisodeMatches.length === 1) {
+      return { base, level, status: 'matched-by-episode-title', series: strongestEpisodeMatches[0].series, episode: strongestEpisodeMatches[0].episode };
+    }
+    return { base, level, status: strongest.length ? 'ambiguous-series' : 'unmatched-series', candidates: strongest.length ? strongest.map(item => item.seriesId) : strongestEpisodeMatches.map(item => item.series.seriesId) };
+  }
   const series = strongest[0];
   const episodeCandidates = series.episodes
     .filter(episode => episode.titleKey && key.includes(episode.titleKey))
@@ -146,8 +181,6 @@ function matchFile(filePath, catalog) {
   const matchingEpisodes = episodeCandidates.filter(episode => episode.titleKey.length === longestEpisode);
   if (matchingEpisodes.length === 1) return { base, level, status: 'matched', series, episode: matchingEpisodes[0] };
 
-  const numberMatch = base.match(/^(\d{1,4})_/);
-  const order = Number(numberMatch?.[1]);
   const episodeByOrder = series.episodes.find(episode => Number(episode.episodeId) === order || episode.order === order);
   if (episodeByOrder) return { base, level, status: 'matched-by-number', series, episode: episodeByOrder };
   return { base, level, status: matchingEpisodes.length ? 'ambiguous-episode' : 'unmatched-episode', series, candidates: matchingEpisodes.map(item => item.title) };
@@ -156,7 +189,7 @@ function matchFile(filePath, catalog) {
 async function main() {
   const [catalog, files] = await Promise.all([loadCatalog(), walk(SOURCE_ROOT)]);
   const mappings = files.map(file => ({ file, ...matchFile(file, catalog) }));
-  const candidateMatches = mappings.filter(item => item.status === 'matched' || item.status === 'matched-by-number');
+  const candidateMatches = mappings.filter(item => ['matched', 'matched-by-number', 'matched-by-episode-title', 'matched-by-series-alias'].includes(item.status));
   const matched = [];
   const unreadableMatches = [];
   for (const item of candidateMatches) {
@@ -217,7 +250,7 @@ async function main() {
         files: entries.map(item => ({ episodeId: item.episode.episodeId, episodeTitle: item.episode.title, sourceFile: item.file, match: item.status })),
       };
     }),
-    unmatchedFiles: [...mappings.filter(item => !['matched', 'matched-by-number'].includes(item.status)), ...unreadableMatches].map(item => ({
+    unmatchedFiles: [...mappings.filter(item => !['matched', 'matched-by-number', 'matched-by-episode-title', 'matched-by-series-alias'].includes(item.status)), ...unreadableMatches].map(item => ({
       level: item.level,
       sourceFile: item.file,
       status: item.status,
