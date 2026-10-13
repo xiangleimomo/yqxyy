@@ -76,10 +76,23 @@ function parseSrt(text) {
   return cues;
 }
 
+function formatVttTime(milliseconds) {
+  const hours = Math.floor(milliseconds / 3_600_000);
+  const minutes = Math.floor((milliseconds % 3_600_000) / 60_000);
+  const seconds = Math.floor((milliseconds % 60_000) / 1000);
+  const ms = Math.floor(milliseconds % 1000);
+  return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}.${String(ms).padStart(3, '0')}`;
+}
+
+function toVtt(cues) {
+  return `WEBVTT\n\n${cues.map((cue, index) => `${index + 1}\n${formatVttTime(cue.startMs)} --> ${formatVttTime(cue.endMs)}\n${cue.text}`).join('\n\n')}\n`;
+}
+
 async function loadCatalog() {
   const directoryNames = await fs.readdir(DATA_ROOT, { withFileTypes: true });
   const catalog = [];
-  for (const directory of directoryNames.filter(item => item.isDirectory() && item.name.startsWith('little-fox-'))) {
+  const standardSeriesDirectories = new Set(['journey-to-the-west']);
+  for (const directory of directoryNames.filter(item => item.isDirectory() && (item.name.startsWith('little-fox-') || standardSeriesDirectories.has(item.name)))) {
     const seriesPath = path.join(DATA_ROOT, directory.name, 'series.json');
     const episodesPath = path.join(DATA_ROOT, directory.name, 'episodes.json');
     try {
@@ -93,6 +106,7 @@ async function loadCatalog() {
         level: Number(series.level),
         title: series.seriesTitle,
         titleKey: normalize(series.seriesTitle),
+        usesVttFiles: directory.name === 'journey-to-the-west',
         episodes: episodes.map((episode, index) => ({ ...episode, order: index + 1, titleKey: normalize(episode.title) })),
       });
     } catch {
@@ -222,7 +236,14 @@ async function main() {
     }
     const episodes = [];
     for (const item of entries) {
-      episodes.push({ episodeId: item.episode.episodeId, title: item.episode.title, subtitle: item.subtitle });
+      const episode = { episodeId: item.episode.episodeId, title: item.episode.title, subtitle: item.subtitle };
+      if (series.usesVttFiles) {
+        const vttUrl = `subtitles/${String(item.episode.order).padStart(3, '0')}.vtt`;
+        await fs.mkdir(path.join(series.dir, 'subtitles'), { recursive: true });
+        await fs.writeFile(path.join(series.dir, vttUrl), toVtt(item.subtitle));
+        episode.vttUrl = vttUrl;
+      }
+      episodes.push(episode);
     }
     await fs.writeFile(destination, `${JSON.stringify({
       source: 'Local Little Fox SRT library',
