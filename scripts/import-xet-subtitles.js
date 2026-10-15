@@ -7,19 +7,28 @@
  *   XET_ACCOUNT
  *   XET_PASSWORD
  *
- * Output:
- *   data/little-fox-<series>/subtitles.json
- *   data/little-fox/import-progress.json (checkpoint, safe to delete after success)
+ * Usage:
+ *   node scripts/import-xet-subtitles.js --dry-run
+ *   node scripts/import-xet-subtitles.js --apply
+ *
+ * The default is a dry run.  --apply writes only changed subtitle files, then
+ * reconciles them to local Read lessons and regenerates their VTT sidecars.
  */
 
 const fs = require('node:fs/promises');
 const path = require('node:path');
+const { execFileSync } = require('node:child_process');
 
 const BASE_URL = 'http://xet.bolinzhiyin.cn';
 const DATA_ROOT = path.resolve(__dirname, '..', 'data');
 const OUTPUT_DIR = path.join(DATA_ROOT, 'little-fox');
 const PROGRESS_PATH = path.join(OUTPUT_DIR, 'import-progress.json');
 const EPISODE_CONCURRENCY = 12;
+const args = new Set(process.argv.slice(2));
+const apply = args.has('--apply');
+if ([...args].some(value => !['--apply', '--dry-run'].includes(value))) {
+  throw new Error('Usage: node scripts/import-xet-subtitles.js [--dry-run|--apply]');
+}
 const SERIES_DIRECTORY_OVERRIDES = {
   'Journey to the West': 'journey-to-the-west',
   'Romance of the Three Kingdoms': 'three-kingdoms',
@@ -157,25 +166,19 @@ async function main() {
   let importedEpisodes = 0;
   for (let index = 0; index < series.length; index += 1) {
     const item = series[index];
-    if (progress.subtitles[item.fsId]?.episodes?.length) {
-      process.stderr.write(`Skipped ${index + 1}/${series.length}: ${item.title} (already imported)\n`);
-      continue;
-    }
     const page = await (await request(`/xhl_play.php?fs_id=${encodeURIComponent(item.fsId)}`)).text();
     const playlist = parsePlaylist(page);
     const episodes = await mapWithConcurrency(playlist, async episode => {
       const key = `${item.fsId}:${episode.fc_id}`;
       let source = episode;
       if (!source.subtitle?.length) {
-        if (progress.subtitles[key]) {
-          source = { ...source, ...progress.subtitles[key] };
-        } else {
-          const endpoint = `/xhl_play.php?ajax=episode&fc_id=${encodeURIComponent(episode.fc_id)}&fs_id=${encodeURIComponent(item.fsId)}`;
-          const response = await request(endpoint);
-          const extra = await response.json();
-          source = { ...source, ...extra };
-          progress.subtitles[key] = { video_url: extra.video_url || '', subtitle: extra.subtitle || [] };
-        }
+        // Request the episode endpoint instead of reusing a checkpoint: this is
+        // what lets a later run detect corrected or newly added subtitles.
+        const endpoint = `/xhl_play.php?ajax=episode&fc_id=${encodeURIComponent(episode.fc_id)}&fs_id=${encodeURIComponent(item.fsId)}`;
+        const response = await request(endpoint);
+        const extra = await response.json();
+        source = { ...source, ...extra };
+        progress.subtitles[key] = { subtitle: extra.subtitle || [] };
       }
 
       const subtitle = (source.subtitle || []).map(cue => ({
@@ -193,36 +196,54 @@ async function main() {
     importedEpisodes += episodes.length;
 
     progress.subtitles[item.fsId] = { fsId: item.fsId, level: item.level, title: item.title, episodes };
-    await saveProgress(progress);
+    if (apply) await saveProgress(progress);
     process.stderr.write(`Imported ${index + 1}/${series.length}: ${item.title} (${episodes.length} episodes)\n`);
   }
 
   const seriesList = JSON.parse(await fs.readFile(path.join(DATA_ROOT, 'series-list.json'), 'utf8'));
   const orderedSeries = series.map(item => progress.subtitles[item.fsId]).filter(Boolean);
+  const changedDirectories = [];
+  const unavailableDirectories = [];
   for (const seriesItem of orderedSeries) {
     const fsId = seriesItem.fsId || series.find(item => item.title === seriesItem.title && item.level === seriesItem.level)?.fsId;
     const targetSeriesId = seriesList.find(item => item.seriesId?.endsWith(`-${String(fsId).toLowerCase()}`))?.seriesId
       || SERIES_DIRECTORY_OVERRIDES[seriesItem.title];
-    if (!targetSeriesId) continue;
-    await fs.writeFile(
-      path.join(DATA_ROOT, targetSeriesId, 'subtitles.json'),
-      `${JSON.stringify({
-        source: 'XET Little Fox licensed subtitle import',
-        importedAt: new Date().toISOString(),
-        seriesId: fsId,
-        level: seriesItem.level,
-        title: seriesItem.title,
-        episodeCount: seriesItem.episodes.length,
-        episodes: seriesItem.episodes.map(episode => ({
-          episodeId: episode.episodeId,
-          title: episode.title,
-          subtitle: episode.subtitle,
-        })),
-      }, null, 2)}\n`,
-    );
+    if (!targetSeriesId) { unavailableDirectories.push({ fsId, title: seriesItem.title }); continue; }
+    const targetPath = path.join(DATA_ROOT, targetSeriesId, 'subtitles.json');
+    const nextEpisodes = seriesItem.episodes.map(episode => ({
+      episodeId: episode.episodeId,
+      title: episode.title,
+      subtitle: episode.subtitle,
+    }));
+    let previous = null;
+    try { previous = JSON.parse(await fs.readFile(targetPath, 'utf8')); } catch (error) { if (error.code !== 'ENOENT') throw error; }
+    // Do not compare importedAt or vttUrl: neither reflects a change upstream.
+    if (JSON.stringify(previous?.episodes || []) === JSON.stringify(nextEpisodes)) continue;
+    changedDirectories.push(targetSeriesId);
+    if (apply) await fs.writeFile(targetPath, `${JSON.stringify({
+      source: 'XET Little Fox licensed subtitle import',
+      importedAt: new Date().toISOString(),
+      seriesId: fsId,
+      level: seriesItem.level,
+      title: seriesItem.title,
+      episodeCount: nextEpisodes.length,
+      episodes: nextEpisodes,
+    }, null, 2)}\n`);
   }
-  await fs.rm(PROGRESS_PATH, { force: true });
-  process.stderr.write(`Completed ${orderedSeries.length} series and ${importedEpisodes} episodes.\n`);
+  if (apply && changedDirectories.length) {
+    // Read is our local approved canonical wording.  Keep timestamps from XET,
+    // then build VTT only after any Read reconciliation has been applied.
+    execFileSync(process.execPath, [path.join(__dirname, 'reconcile-subtitles-with-read.js'), '--apply', ...changedDirectories], { stdio: 'inherit' });
+    execFileSync(process.execPath, [path.join(__dirname, 'generate-vtt-subtitles.js'), ...changedDirectories], { stdio: 'inherit' });
+  }
+  if (apply) await fs.rm(PROGRESS_PATH, { force: true });
+  process.stdout.write(`${JSON.stringify({
+    mode: apply ? 'apply' : 'dry-run',
+    catalogSeries: orderedSeries.length,
+    catalogEpisodes: importedEpisodes,
+    changedDirectories: [...new Set(changedDirectories)],
+    missingLocalCourses: unavailableDirectories,
+  }, null, 2)}\n`);
 }
 
 main().catch(error => {
