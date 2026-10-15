@@ -19,6 +19,8 @@ const titleFilter = [...args].find(value => value.startsWith('--title='))?.slice
 if ([...args].some(value => !['--apply', '--dry-run'].includes(value) && !value.startsWith('--fs-id=') && !value.startsWith('--title='))) throw new Error('Usage: node scripts/sync-xet-catalog.js [--apply|--dry-run] [--fs-id=FS0000|--title=Title]');
 
 const overrides = { 'Journey to the West': 'journey-to-the-west', 'Romance of the Three Kingdoms': 'three-kingdoms' };
+const SERIALIZING_SERIES_IDS = new Set(['three-kingdoms', 'little-fox-nero-the-talking-dog-fs0183', 'little-fox-the-happy-prince-fs0181', 'little-fox-red-magic-fs0059', 'little-fox-daisy-dolittle-fs0175']);
+const courseStatus = seriesId => SERIALIZING_SERIES_IDS.has(seriesId) ? 'serializing' : 'completed';
 const account = process.env.XET_ACCOUNT;
 const password = process.env.XET_PASSWORD;
 if (!account || !password) throw new Error('Set XET_ACCOUNT and XET_PASSWORD before running this collector.');
@@ -77,8 +79,8 @@ async function createCourse(seriesList, item) {
   await fs.mkdir(directory, { recursive: true });
   const blank = value => fs.writeFile(path.join(directory, value), value === 'episodes.json' ? '[]\n' : '{}\n');
   await Promise.all(['episodes.json', 'reading-lessons.json', 'vocabulary.json', 'quiz.json'].map(blank));
-  await fs.writeFile(path.join(directory, 'series.json'), `${JSON.stringify({ seriesId, seriesTitle: item.title, seriesTitleZh: '', level: item.level, language: 'en', source: 'Little Fox', status: 'serializing', totalEpisodes: 0, description: 'Video releases are discovered from the authorised catalogue. Read comes from Little Fox public pages.', coverImage: '', updateNote: 'Read, Words, Quiz and Games are generated only after a public Little Fox Read is available.' }, null, 2)}\n`);
-  seriesList.push({ seriesId, title: item.title, titleZh: '', level: item.level, episodeCount: 0, status: 'serializing', cover: '', description: 'Video lessons with public Read-based learning material.', readyEpisodes: 0, tagline: 'Serializing' });
+  await fs.writeFile(path.join(directory, 'series.json'), `${JSON.stringify({ seriesId, seriesTitle: item.title, seriesTitleZh: '', level: item.level, language: 'en', source: 'Little Fox', status: courseStatus(seriesId), totalEpisodes: 0, description: 'Video releases are discovered from the authorised catalogue. Read comes from Little Fox public pages.', coverImage: '', updateNote: 'Read, Words, Quiz and Games are generated only after a public Little Fox Read is available.' }, null, 2)}\n`);
+  seriesList.push({ seriesId, title: item.title, titleZh: '', level: item.level, episodeCount: 0, status: courseStatus(seriesId), cover: '', description: 'Video lessons with public Read-based learning material.', readyEpisodes: 0, tagline: courseStatus(seriesId) === 'serializing' ? 'Serializing' : 'Completed' });
   return seriesId;
 }
 async function detail(item, episode) {

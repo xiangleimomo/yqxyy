@@ -94,7 +94,7 @@ const App = {
         <h2>所有动画故事 <span class="meta">（${total} 个系列）</span></h2>
       </div>
       <div class="filters" id="homeFilters">
-        ${['all','completed','serializing','coming'].map(x=>`<button class="filter-btn ${statusFilter===x?'active':''}" data-status="${x}">${x==='all'?'全部':this.statusText(x)}</button>`).join('')}
+        ${['all','completed','serializing'].map(x=>`<button class="filter-btn ${statusFilter===x?'active':''}" data-status="${x}">${x==='all'?'全部':this.statusText(x)}</button>`).join('')}
       </div>
       <div class="filters level-filters" id="levelFilters" aria-label="按等级筛选">
         <span class="filter-label">分级</span>
