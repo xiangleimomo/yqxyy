@@ -14,7 +14,8 @@ const BASE_URL = 'http://xet.bolinzhiyin.cn';
 const DATA_ROOT = path.resolve(__dirname, '..', 'data');
 const args = new Set(process.argv.slice(2));
 const apply = args.has('--apply');
-if ([...args].some(value => !['--apply', '--dry-run'].includes(value))) throw new Error('Usage: node scripts/sync-xet-catalog.js [--apply|--dry-run]');
+const fsIdFilter = [...args].find(value => value.startsWith('--fs-id='))?.slice('--fs-id='.length).toUpperCase();
+if ([...args].some(value => !['--apply', '--dry-run'].includes(value) && !value.startsWith('--fs-id='))) throw new Error('Usage: node scripts/sync-xet-catalog.js [--apply|--dry-run] [--fs-id=FS0000]');
 
 const overrides = { 'Journey to the West': 'journey-to-the-west', 'Romance of the Three Kingdoms': 'three-kingdoms' };
 const account = process.env.XET_ACCOUNT;
@@ -87,9 +88,11 @@ async function main() {
   await login();
   const catalogue = [];
   for (let level = 1; level <= 9; level += 1) catalogue.push(...parseCatalog(await (await request(`/huiben${String(level).padStart(2, '0')}.php`)).text(), level));
+  const selectedCatalogue = fsIdFilter ? catalogue.filter(item => item.fsId === fsIdFilter) : catalogue;
+  if (fsIdFilter && !selectedCatalogue.length) throw new Error(`Series ${fsIdFilter} was not found in the XET catalogue.`);
   const seriesListPath = path.join(DATA_ROOT, 'series-list.json');
   const seriesList = await readJson(seriesListPath, []);
-  const plans = await concurrent(catalogue, async item => ({ item, playlist: parsePlaylist(await (await request(`/xhl_play.php?fs_id=${encodeURIComponent(item.fsId)}`)).text()) }));
+  const plans = await concurrent(selectedCatalogue, async item => ({ item, playlist: parsePlaylist(await (await request(`/xhl_play.php?fs_id=${encodeURIComponent(item.fsId)}`)).text()) }));
   const discovered = {}; const changed = [];
   for (const { item, playlist } of plans) {
     let seriesId = targetId(seriesList, item);
@@ -123,6 +126,6 @@ async function main() {
     }
   }
   if (apply && changed.length) await fs.writeFile(seriesListPath, `${JSON.stringify(seriesList, null, 2)}\n`);
-  console.log(JSON.stringify({ mode: apply ? 'apply' : 'dry-run', catalogueSeries: catalogue.length, discovered, changedSeries: [...new Set(changed)], subtitlesChanged: false, vttChanged: false }, null, 2));
+  console.log(JSON.stringify({ mode: apply ? 'apply' : 'dry-run', catalogueSeries: selectedCatalogue.length, discovered, changedSeries: [...new Set(changed)], subtitlesChanged: false, vttChanged: false }, null, 2));
 }
 main().catch(error => { console.error(error.stack || error.message); process.exitCode = 1; });

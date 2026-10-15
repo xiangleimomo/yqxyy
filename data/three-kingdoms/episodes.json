@@ -23,7 +23,8 @@
       "grammar": true,
       "quiz": true,
       "review": true
-    }
+    },
+    "sourceContentId": "C0013397"
   },
   {
     "episodeId": 2,
@@ -49,7 +50,8 @@
       "grammar": true,
       "quiz": true,
       "review": true
-    }
+    },
+    "sourceContentId": "C0013398"
   },
   {
     "episodeId": 3,
@@ -75,7 +77,8 @@
       "grammar": true,
       "quiz": true,
       "review": true
-    }
+    },
+    "sourceContentId": "C0013399"
   },
   {
     "episodeId": 4,
@@ -101,7 +104,8 @@
       "grammar": false,
       "quiz": true,
       "review": false
-    }
+    },
+    "sourceContentId": "C0013400"
   },
   {
     "episodeId": 5,
@@ -127,7 +131,8 @@
       "grammar": false,
       "quiz": true,
       "review": false
-    }
+    },
+    "sourceContentId": "C0013401"
   },
   {
     "episodeId": 6,
@@ -153,7 +158,8 @@
       "grammar": false,
       "quiz": true,
       "review": false
-    }
+    },
+    "sourceContentId": "C0013402"
   },
   {
     "episodeId": 7,
@@ -175,7 +181,8 @@
       "grammar": false,
       "quiz": true,
       "review": false
-    }
+    },
+    "sourceContentId": "C0013403"
   },
   {
     "episodeId": 8,
@@ -197,8 +204,9 @@
       "grammar": false,
       "quiz": true,
       "review": false
-    }
     },
+    "sourceContentId": "C0013404"
+  },
   {
     "episodeId": 9,
     "title": "The Coward Dong Zhuo",
@@ -213,6 +221,31 @@
     "modules": {
       "watch": true,
       "read": true,
+      "vocabulary": true,
+      "phrases": false,
+      "grammar": false,
+      "quiz": true,
+      "review": false
+    },
+    "sourceContentId": "C0013405"
+  },
+  {
+    "episodeId": 10,
+    "sourceContentId": "C0013406",
+    "title": "A Fair and Just Magistrate",
+    "titleZh": "",
+    "releaseDate": "",
+    "status": "published",
+    "sourceType": "xet-catalog",
+    "unlockRequiresQuiz": false,
+    "video": {
+      "source": "hls",
+      "hlsUrl": "https://cdn.littlefox.co.kr/contents_5/hls/720/41c3662f8f/17909243466ea1301c76a2752155f93ff51443ad01/stream.m3u8?_=1790924395"
+    },
+    "modules": {
+      "watch": true,
+      "read": true,
+      "words": true,
       "vocabulary": true,
       "phrases": false,
       "grammar": false,
