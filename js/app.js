@@ -80,6 +80,7 @@ const App = {
   async render(){
     const [page, a, b] = this.route();
     window.MovieClassroom?.cleanup();
+    this.disposeHlsPlayers(this.el());
     const isMoviePage = ['movies','movie','movie-series'].includes(page);
     document.querySelectorAll('.main-tab').forEach(tab=>{
       const active = tab.getAttribute('href') === (isMoviePage ? '#/movies' : '#/home');
@@ -168,6 +169,26 @@ const App = {
       this.getJSON(`data/${seriesId}/episodes.json`)
     ]);
     return {series, episodes};
+  },
+  disposeHlsPlayers(root=document){
+    root.querySelectorAll?.('video,audio').forEach(player=>{
+      player._disposeHls?.();
+      if(player._hls) player._hls.destroy();
+    });
+  },
+  async loadLessonAssets(seriesId, episodeId, tab){
+    // Load only the material needed by the selected tab.  The previous eager
+    // implementation downloaded six full course JSON files before Watch could
+    // open, which was especially noticeable for long serialised courses.
+    const read=tab==='listenRead';
+    const vocab=tab==='words'||tab==='games';
+    const quiz=tab==='quiz';
+    const [reading, vocabulary, quizzes]=await Promise.all([
+      read?this.getJSON(`data/${seriesId}/reading-lessons.json`).catch(()=>({})):Promise.resolve({}),
+      vocab?this.getJSON(`data/${seriesId}/vocabulary.json`).catch(()=>({})):Promise.resolve({}),
+      quiz?this.getJSON(`data/${seriesId}/quiz.json`).catch(()=>({})):Promise.resolve({})
+    ]);
+    return {reading:reading[String(episodeId)],vocab:vocabulary[String(episodeId)]||[],quiz:quizzes[String(episodeId)]};
   },
   
 async renderSeries(seriesId){
@@ -314,18 +335,11 @@ async renderLesson(seriesId, episodeId){
       this.el().innerHTML=`<div class="empty"><h2>🔒 本集尚未解锁</h2><p>请先完成上一集 Quiz，正确率达到 80% 后自动解锁。</p><a class="btn" href="#/series/${this.escapeHtml(seriesId)}">返回课程列表</a></div>`;
       return;
     }
-    const data = await Promise.all([
-      this.getJSON(`data/${seriesId}/reading-lessons.json`).catch(()=>({})),
-      this.getJSON(`data/${seriesId}/vocabulary.json`).catch(()=>({})),
-      this.getJSON(`data/${seriesId}/phrases.json`).catch(()=>({})),
-      this.getJSON(`data/${seriesId}/grammar.json`).catch(()=>({})),
-      this.getJSON(`data/${seriesId}/quiz.json`).catch(()=>({})),
-      this.getJSON(`data/${seriesId}/review.json`).catch(()=>({}))
-    ]);
-    const [reading, vocab, phrases, grammar, quiz, review] = data;
-    const lessonData = {seriesId, episodeId, series, ep, reading:reading[String(episodeId)], vocab:vocab[String(episodeId)]||[], phrases:phrases[String(episodeId)]||[], grammar:grammar[String(episodeId)]||[], quiz:quiz[String(episodeId)], review:review[String(episodeId)]};
     const visibleTabs=['watch','listenRead','words','quiz','games'];
     const tab = visibleTabs.includes(this.activeLessonTab) ? this.activeLessonTab : 'watch';
+    const assets=await this.loadLessonAssets(seriesId,episodeId,tab);
+    const lessonData = {seriesId, episodeId, series, ep, ...assets, phrases:[], grammar:[], review:{}};
+    this.disposeHlsPlayers(this.el());
     this.el().innerHTML = `
       <div class="breadcrumb"><a href="#/home">动画故事</a><span>›</span><a href="#/series/${seriesId}">${series.seriesTitle}</a><span>›</span><span>Episode ${episodeId}</span></div>
       <section class="lesson-head">
@@ -360,15 +374,8 @@ async renderLesson(seriesId, episodeId){
       alert('🔒 请先完成上一集 Quiz（正确率80%以上）后解锁本集。');
       return;
     }
-    const [reading, vocab, phrases, grammar, quiz, review] = await Promise.all([
-      this.getJSON(`data/${seriesId}/reading-lessons.json`).catch(()=>({})),
-      this.getJSON(`data/${seriesId}/vocabulary.json`).catch(()=>({})),
-      this.getJSON(`data/${seriesId}/phrases.json`).catch(()=>({})),
-      this.getJSON(`data/${seriesId}/grammar.json`).catch(()=>({})),
-      this.getJSON(`data/${seriesId}/quiz.json`).catch(()=>({})),
-      this.getJSON(`data/${seriesId}/review.json`).catch(()=>({}))
-    ]);
-    const d={seriesId, episodeId, series, ep, reading:reading[String(episodeId)], vocab:vocab[String(episodeId)]||[], phrases:phrases[String(episodeId)]||[], grammar:grammar[String(episodeId)]||[], quiz:quiz[String(episodeId)], review:review[String(episodeId)]};
+    const assets=await this.loadLessonAssets(seriesId,episodeId,tab);
+    const d={seriesId, episodeId, series, ep, ...assets, phrases:[], grammar:[], review:{}};
 
     if(!this.windowLayer){
       this.windowLayer=document.createElement('div');
@@ -455,7 +462,7 @@ async renderLesson(seriesId, episodeId){
     if(!url) return `<div class="empty">本集 HLS 视频源暂未添加。</div>`;
     const fallback=d.ep.video?.mp4Url || d.ep.video?.directUrl || '';
     const hasSubtitle=true;
-    return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>Watch 看视频</h2><p class="muted">播放器加载失败时，会尝试本集备用视频。${hasSubtitle?' 本集提供时将自动加载英文外挂字幕。':''}</p></div></div><div class="video-wrap${hasSubtitle?' subtitle-video-wrap':''}"><video class="hls-video-player" controls playsinline preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="video-caption" aria-live="polite" hidden></div>${hasSubtitle?this.subtitleControls():''}</div><p class="muted direct-video-help" role="status" aria-live="polite">${fallback?`也可<a href="${this.escapeHtml(fallback)}" target="_blank" rel="noreferrer noopener">直接打开本集视频</a>。`:`若无法播放，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">打开视频源</a>。`}</p></section>${this.completeButton(d,completionModule)}`;
+    return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>Watch 看视频</h2><p class="muted">播放器加载失败时，会尝试本集备用视频。${hasSubtitle?' 本集提供时将自动加载英文外挂字幕。':''}</p></div></div><div class="video-wrap${hasSubtitle?' subtitle-video-wrap':''}"><video class="hls-video-player" controls playsinline preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="video-caption" aria-live="polite" hidden></div>${hasSubtitle?this.subtitleControls():''}</div><p class="muted direct-video-help"><span class="hls-load-status" role="status" aria-live="polite">正在连接视频…</span> ${fallback?`也可<a href="${this.escapeHtml(fallback)}" target="_blank" rel="noreferrer noopener">直接打开本集视频</a>。`:`若无法播放，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">打开视频源</a>。`}</p></section>${this.completeButton(d,completionModule)}`;
   },
   subtitlePreferences(){
     const defaults={visible:true,size:20,color:'#ffffff',captionX:50,captionY:84,opacity:72};
@@ -706,6 +713,7 @@ async renderLesson(seriesId, episodeId){
     const source=player.dataset.hlsSrc;
     const fallback=player.dataset.fallbackSrc;
     const help=player.closest('.direct-video-panel')?.querySelector('.direct-video-help') || player.closest('.audio-player-card')?.querySelector('.audio-player-help');
+    const loadStatus=player.closest('.direct-video-panel')?.querySelector('.hls-load-status');
     let switched=false, disposed=false, wantsPlay=false;
     const onPlay=()=>{wantsPlay=true;};
     player.addEventListener('play',onPlay);
@@ -717,8 +725,8 @@ async renderLesson(seriesId, episodeId){
       const resume=wantsPlay || !player.paused;
       const position=Number.isFinite(player.currentTime)?player.currentTime:0;
       destroy();
-      if(!fallback){if(help)help.textContent='本集暂时无法加载，请稍后重试。';return;}
-      if(help)help.textContent='已切换到备用视频，可点击播放继续。';
+      if(!fallback){if(loadStatus)loadStatus.textContent='本集暂时无法加载，请稍后重试。';else if(help)help.textContent='本集暂时无法加载，请稍后重试。';return;}
+      if(loadStatus)loadStatus.textContent='已切换到备用视频。'; else if(help)help.textContent='已切换到备用视频，可点击播放继续。';
       player.addEventListener('loadedmetadata',()=>{
         if(disposed) return;
         if(position>0 && Number.isFinite(player.duration))player.currentTime=Math.min(position,Math.max(0,player.duration-0.1));
@@ -727,8 +735,8 @@ async renderLesson(seriesId, episodeId){
       player.src=fallback;
       player.load();
     };
-    const timer=setTimeout(()=>{if(player.readyState<1)recover();},15000);
-    const onMetadata=()=>clearTimeout(timer);
+    const timer=setTimeout(()=>{if(player.readyState<1)recover();},9000);
+    const onMetadata=()=>{clearTimeout(timer);if(loadStatus)loadStatus.textContent='视频已就绪。';};
     player.addEventListener('loadedmetadata',onMetadata,{once:true});
     player.addEventListener('error',recover);
     player._disposeHls=()=>{
@@ -745,7 +753,7 @@ async renderLesson(seriesId, episodeId){
       const Hls=await this.loadHlsLibrary();
       if(disposed || switched) return;
       if(Hls && Hls.isSupported()){
-        const hls=new Hls();player._hls=hls;
+        const hls=new Hls({enableWorker:true,capLevelToPlayerSize:true,maxBufferLength:15,maxMaxBufferLength:30,backBufferLength:30,manifestLoadingTimeOut:8000,levelLoadingTimeOut:8000,fragLoadingTimeOut:15000});player._hls=hls;
         hls.on(Hls.Events.ERROR,(_event,data)=>{if(data.fatal)recover();});
         hls.attachMedia(player);hls.loadSource(source);
       }else if(native){player.src=source;}

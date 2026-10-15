@@ -15,7 +15,9 @@ async function main() {
     const episodes = await json(path.join(dataRoot, row.seriesId, 'episodes.json'), []);
     for (const episode of episodes.filter(item => item.status === 'published')) items.push({ type: 'episode', seriesId: row.seriesId, seriesTitle: row.title, seriesTitleZh: row.titleZh || '', episodeId: episode.episodeId, title: episode.title, titleZh: episode.titleZh || '' });
   }
-  await fs.writeFile(path.join(dataRoot, 'search-index.json'), `${JSON.stringify({ version: 1, items }, null, 2)}\n`);
+  // The index is requested only when search is used; keep it compact so the
+  // first suggestion remains quick on mobile networks.
+  await fs.writeFile(path.join(dataRoot, 'search-index.json'), `${JSON.stringify({ version: 1, items })}\n`);
   console.log(`Search index: ${items.length} entries.`);
 }
 main().catch(error => { console.error(error.stack || error.message); process.exitCode = 1; });
