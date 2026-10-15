@@ -3,12 +3,12 @@
 /*
  * One repeatable Little Fox sync entry point.
  *
- * --dry-run (default): checks the authorised subtitle catalogue and reports
- *                       changed courses without changing the repository.
- * --apply:              refreshes the public video catalogue, then imports
- *                       changed authorised subtitles and generates VTT files.
+ * --dry-run (default): checks the authorised video catalogue and reports
+ *                       new courses or episodes without changing the repository.
+ * --apply:              adds video releases from XET, then fetches each new
+ *                       Read from Little Fox's public supplement page.
  *
- * Required only for the subtitle part: XET_ACCOUNT and XET_PASSWORD.
+ * Required only for catalogue discovery: XET_ACCOUNT and XET_PASSWORD.
  * Keep those values in local environment variables or GitHub Actions secrets;
  * never place them in this repository.
  */
@@ -27,7 +27,8 @@ const run = (script, scriptArgs) => {
   if (result.status) throw new Error(`${script} failed with exit code ${result.status}.`);
 };
 
-// XET's authenticated episode response is the catalogue of record.  The older
-// public course-config endpoint is not needed and may not be available.
+// XET is used only to discover videos/content IDs. Read is fetched separately
+// from Little Fox public supplement/org/Cxxxx pages. Subtitle files are never
+// read or written by this workflow.
 if (!apply) process.stderr.write('Dry run: no files will be written.\n');
-run('import-xet-subtitles.js', [apply ? '--apply' : '--dry-run']);
+run('sync-xet-catalog.js', [apply ? '--apply' : '--dry-run']);
