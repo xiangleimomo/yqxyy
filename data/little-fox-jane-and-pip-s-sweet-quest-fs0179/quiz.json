@@ -1,1 +1,123 @@
-{}
+{
+  "24": {
+    "episodeId": 24,
+    "title": "Like Magic Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: The queen gives the _____ a soft smile.",
+        "options": [
+          {
+            "key": "A",
+            "text": "duke"
+          },
+          {
+            "key": "B",
+            "text": "queen"
+          },
+          {
+            "key": "C",
+            "text": "you're"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “duke”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: I will be _____ from now on.",
+        "options": [
+          {
+            "key": "A",
+            "text": "sweet"
+          },
+          {
+            "key": "B",
+            "text": "you're"
+          },
+          {
+            "key": "C",
+            "text": "pip"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “sweet”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: The _____ gives the duke a soft smile.",
+        "options": [
+          {
+            "key": "A",
+            "text": "queen"
+          },
+          {
+            "key": "B",
+            "text": "pip"
+          },
+          {
+            "key": "C",
+            "text": "says"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “queen”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____ not the Duke of Yuck anymore.",
+        "options": [
+          {
+            "key": "A",
+            "text": "you're"
+          },
+          {
+            "key": "B",
+            "text": "says"
+          },
+          {
+            "key": "C",
+            "text": "gran"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “you're”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: \" _____ grins.",
+        "options": [
+          {
+            "key": "A",
+            "text": "pip"
+          },
+          {
+            "key": "B",
+            "text": "gran"
+          },
+          {
+            "key": "C",
+            "text": "jane"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “pip”.",
+        "source": "generated-from-public-read"
+      }
+    ]
+  }
+}

@@ -1,1 +1,123 @@
-{}
+{
+  "67": {
+    "episodeId": 67,
+    "title": "Shapes Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: I can _____ many shapes.",
+        "options": [
+          {
+            "key": "A",
+            "text": "draw"
+          },
+          {
+            "key": "B",
+            "text": "circle"
+          },
+          {
+            "key": "C",
+            "text": "square"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “draw”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____, it is.",
+        "options": [
+          {
+            "key": "A",
+            "text": "yes"
+          },
+          {
+            "key": "B",
+            "text": "square"
+          },
+          {
+            "key": "C",
+            "text": "triangle"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “yes”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: I can draw a _____.",
+        "options": [
+          {
+            "key": "A",
+            "text": "circle"
+          },
+          {
+            "key": "B",
+            "text": "triangle"
+          },
+          {
+            "key": "C",
+            "text": "rectangle"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “circle”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: I can draw a _____.",
+        "options": [
+          {
+            "key": "A",
+            "text": "square"
+          },
+          {
+            "key": "B",
+            "text": "rectangle"
+          },
+          {
+            "key": "C",
+            "text": "heart"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “square”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: I can draw a _____.",
+        "options": [
+          {
+            "key": "A",
+            "text": "triangle"
+          },
+          {
+            "key": "B",
+            "text": "heart"
+          },
+          {
+            "key": "C",
+            "text": "clock"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “triangle”.",
+        "source": "generated-from-public-read"
+      }
+    ]
+  }
+}

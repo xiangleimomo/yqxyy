@@ -8589,5 +8589,126 @@
         "source": "local-pdf"
       }
     ]
+  },
+  "72": {
+    "episodeId": 72,
+    "title": "The Best Gift of All Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____: Can I get this?",
+        "options": [
+          {
+            "key": "A",
+            "text": "bada"
+          },
+          {
+            "key": "B",
+            "text": "christmas"
+          },
+          {
+            "key": "C",
+            "text": "gifts"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “bada”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____: I'll get this for Mommy.",
+        "options": [
+          {
+            "key": "A",
+            "text": "hana"
+          },
+          {
+            "key": "B",
+            "text": "gifts"
+          },
+          {
+            "key": "C",
+            "text": "mom"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “hana”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____ is just around the corner.",
+        "options": [
+          {
+            "key": "A",
+            "text": "christmas"
+          },
+          {
+            "key": "B",
+            "text": "mom"
+          },
+          {
+            "key": "C",
+            "text": "it's"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “christmas”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: I still haven't bought _____ for my family!",
+        "options": [
+          {
+            "key": "A",
+            "text": "gifts"
+          },
+          {
+            "key": "B",
+            "text": "it's"
+          },
+          {
+            "key": "C",
+            "text": "give"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “gifts”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____: Is Bada still sleeping?",
+        "options": [
+          {
+            "key": "A",
+            "text": "mom"
+          },
+          {
+            "key": "B",
+            "text": "give"
+          },
+          {
+            "key": "C",
+            "text": "i'm"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “mom”.",
+        "source": "generated-from-public-read"
+      }
+    ]
   }
 }

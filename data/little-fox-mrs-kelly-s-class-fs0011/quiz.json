@@ -1,1 +1,123 @@
-{}
+{
+  "36": {
+    "episodeId": 36,
+    "title": "I Don't Like Salad Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____: Mom, we’re hungry.",
+        "options": [
+          {
+            "key": "A",
+            "text": "minwoo"
+          },
+          {
+            "key": "B",
+            "text": "sally"
+          },
+          {
+            "key": "C",
+            "text": "don"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “minwoo”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: Minwoo: _____, we’re hungry.",
+        "options": [
+          {
+            "key": "A",
+            "text": "mom"
+          },
+          {
+            "key": "B",
+            "text": "don"
+          },
+          {
+            "key": "C",
+            "text": "noodles"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “mom”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____: I like chicken.",
+        "options": [
+          {
+            "key": "A",
+            "text": "sally"
+          },
+          {
+            "key": "B",
+            "text": "noodles"
+          },
+          {
+            "key": "C",
+            "text": "chicken"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “sally”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: Minwoo: I _____’t like chicken.",
+        "options": [
+          {
+            "key": "A",
+            "text": "don"
+          },
+          {
+            "key": "B",
+            "text": "chicken"
+          },
+          {
+            "key": "C",
+            "text": "peter"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “don”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: Minwoo: I like _____.",
+        "options": [
+          {
+            "key": "A",
+            "text": "noodles"
+          },
+          {
+            "key": "B",
+            "text": "peter"
+          },
+          {
+            "key": "C",
+            "text": "salad"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “noodles”.",
+        "source": "generated-from-public-read"
+      }
+    ]
+  }
+}

@@ -1329,5 +1329,126 @@
         "source": "local-pdf"
       }
     ]
+  },
+  "12": {
+    "episodeId": 12,
+    "title": "Happily Ever After Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: Stepmother laughed at _____.",
+        "options": [
+          {
+            "key": "A",
+            "text": "cinderella"
+          },
+          {
+            "key": "B",
+            "text": "shoe"
+          },
+          {
+            "key": "C",
+            "text": "messenger"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “cinderella”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____ laughed at Cinderella.",
+        "options": [
+          {
+            "key": "A",
+            "text": "stepmother"
+          },
+          {
+            "key": "B",
+            "text": "messenger"
+          },
+          {
+            "key": "C",
+            "text": "prince"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “stepmother”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: \"It can't be your _____.",
+        "options": [
+          {
+            "key": "A",
+            "text": "shoe"
+          },
+          {
+            "key": "B",
+            "text": "prince"
+          },
+          {
+            "key": "C",
+            "text": "princess"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “shoe”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: \" The _____ looked at Cinderella.",
+        "options": [
+          {
+            "key": "A",
+            "text": "messenger"
+          },
+          {
+            "key": "B",
+            "text": "princess"
+          },
+          {
+            "key": "C",
+            "text": "must"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “messenger”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: The messenger had orders from the _____.",
+        "options": [
+          {
+            "key": "A",
+            "text": "prince"
+          },
+          {
+            "key": "B",
+            "text": "must"
+          },
+          {
+            "key": "C",
+            "text": "took"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “prince”.",
+        "source": "generated-from-public-read"
+      }
+    ]
   }
 }

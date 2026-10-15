@@ -5322,5 +5322,489 @@
         "source": "local-pdf"
       }
     ]
+  },
+  "45": {
+    "episodeId": 45,
+    "title": "Boohoo! Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____: What's wrong, Jenna?",
+        "options": [
+          {
+            "key": "A",
+            "text": "coby"
+          },
+          {
+            "key": "B",
+            "text": "gray"
+          },
+          {
+            "key": "C",
+            "text": "fun"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “coby”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____ Gray.",
+        "options": [
+          {
+            "key": "A",
+            "text": "miss"
+          },
+          {
+            "key": "B",
+            "text": "fun"
+          },
+          {
+            "key": "C",
+            "text": "mark"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “miss”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: Miss _____.",
+        "options": [
+          {
+            "key": "A",
+            "text": "gray"
+          },
+          {
+            "key": "B",
+            "text": "mark"
+          },
+          {
+            "key": "C",
+            "text": "jenna"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “gray”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: Coby: Are we doing something _____?",
+        "options": [
+          {
+            "key": "A",
+            "text": "fun"
+          },
+          {
+            "key": "B",
+            "text": "jenna"
+          },
+          {
+            "key": "C",
+            "text": "almost"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “fun”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: Right, _____?",
+        "options": [
+          {
+            "key": "A",
+            "text": "mark"
+          },
+          {
+            "key": "B",
+            "text": "almost"
+          },
+          {
+            "key": "C",
+            "text": "it's"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “mark”.",
+        "source": "generated-from-public-read"
+      }
+    ]
+  },
+  "46": {
+    "episodeId": 46,
+    "title": "Boys Against Girls Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____: Oh yeah!",
+        "options": [
+          {
+            "key": "A",
+            "text": "mark"
+          },
+          {
+            "key": "B",
+            "text": "gray"
+          },
+          {
+            "key": "C",
+            "text": "kara"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “mark”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____ Gray: Okay, Room Two.",
+        "options": [
+          {
+            "key": "A",
+            "text": "miss"
+          },
+          {
+            "key": "B",
+            "text": "kara"
+          },
+          {
+            "key": "C",
+            "text": "win"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “miss”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: Miss _____: Okay, Room Two.",
+        "options": [
+          {
+            "key": "A",
+            "text": "gray"
+          },
+          {
+            "key": "B",
+            "text": "win"
+          },
+          {
+            "key": "C",
+            "text": "girls"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “gray”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____: Ha-ha!",
+        "options": [
+          {
+            "key": "A",
+            "text": "kara"
+          },
+          {
+            "key": "B",
+            "text": "girls"
+          },
+          {
+            "key": "C",
+            "text": "team"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “kara”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: So your team has two chances to _____.",
+        "options": [
+          {
+            "key": "A",
+            "text": "win"
+          },
+          {
+            "key": "B",
+            "text": "team"
+          },
+          {
+            "key": "C",
+            "text": "we're"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “win”.",
+        "source": "generated-from-public-read"
+      }
+    ]
+  },
+  "47": {
+    "episodeId": 47,
+    "title": "Mark's Letter Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____: But .",
+        "options": [
+          {
+            "key": "A",
+            "text": "mark"
+          },
+          {
+            "key": "B",
+            "text": "gray"
+          },
+          {
+            "key": "C",
+            "text": "tell"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “mark”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____ Gray: You stepped over the line.",
+        "options": [
+          {
+            "key": "A",
+            "text": "miss"
+          },
+          {
+            "key": "B",
+            "text": "tell"
+          },
+          {
+            "key": "C",
+            "text": "write"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “miss”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: Miss _____: You stepped over the line.",
+        "options": [
+          {
+            "key": "A",
+            "text": "gray"
+          },
+          {
+            "key": "B",
+            "text": "write"
+          },
+          {
+            "key": "C",
+            "text": "letters"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “gray”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: And you didn't _____ the truth about it.",
+        "options": [
+          {
+            "key": "A",
+            "text": "tell"
+          },
+          {
+            "key": "B",
+            "text": "letters"
+          },
+          {
+            "key": "C",
+            "text": "don't"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “tell”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: Then it will be time to _____ our letters.",
+        "options": [
+          {
+            "key": "A",
+            "text": "write"
+          },
+          {
+            "key": "B",
+            "text": "don't"
+          },
+          {
+            "key": "C",
+            "text": "jim"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “write”.",
+        "source": "generated-from-public-read"
+      }
+    ]
+  },
+  "48": {
+    "episodeId": 48,
+    "title": "Dear Room Two Kids Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: Coby: Come on, _____!",
+        "options": [
+          {
+            "key": "A",
+            "text": "mark"
+          },
+          {
+            "key": "B",
+            "text": "miss"
+          },
+          {
+            "key": "C",
+            "text": "gray"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “mark”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: Mark: I wrote a mean _____ about Miss Gray.",
+        "options": [
+          {
+            "key": "A",
+            "text": "letter"
+          },
+          {
+            "key": "B",
+            "text": "gray"
+          },
+          {
+            "key": "C",
+            "text": "it's"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “letter”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: Mark: I wrote a mean letter about _____ Gray.",
+        "options": [
+          {
+            "key": "A",
+            "text": "miss"
+          },
+          {
+            "key": "B",
+            "text": "it's"
+          },
+          {
+            "key": "C",
+            "text": "coby"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “miss”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: Mark: I wrote a mean letter about Miss _____.",
+        "options": [
+          {
+            "key": "A",
+            "text": "gray"
+          },
+          {
+            "key": "B",
+            "text": "coby"
+          },
+          {
+            "key": "C",
+            "text": "jenna"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “gray”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____ not about that.",
+        "options": [
+          {
+            "key": "A",
+            "text": "it's"
+          },
+          {
+            "key": "B",
+            "text": "jenna"
+          },
+          {
+            "key": "C",
+            "text": "mean"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “it's”.",
+        "source": "generated-from-public-read"
+      }
+    ]
   }
 }

@@ -2698,5 +2698,126 @@
         "source": "generated-from-reading"
       }
     ]
+  },
+  "37": {
+    "episodeId": 37,
+    "title": "George Washington Carver: The Plant Doctor Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: George was born a slave in Missouri in 1864, and he and his mother were owned by the _____ Farm.",
+        "options": [
+          {
+            "key": "A",
+            "text": "carver"
+          },
+          {
+            "key": "B",
+            "text": "george"
+          },
+          {
+            "key": "C",
+            "text": "black"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “carver”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: He discovered that planting cotton damaged and exhausted the nutrients in the soil, while planting _____ and sweet potatoes replenished them.",
+        "options": [
+          {
+            "key": "A",
+            "text": "peanuts"
+          },
+          {
+            "key": "B",
+            "text": "black"
+          },
+          {
+            "key": "C",
+            "text": "farmers"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “peanuts”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: His name was _____.",
+        "options": [
+          {
+            "key": "A",
+            "text": "george"
+          },
+          {
+            "key": "B",
+            "text": "farmers"
+          },
+          {
+            "key": "C",
+            "text": "plants"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “george”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: Tragically, the schools in his town refused to teach him because he was _____.",
+        "options": [
+          {
+            "key": "A",
+            "text": "black"
+          },
+          {
+            "key": "B",
+            "text": "plants"
+          },
+          {
+            "key": "C",
+            "text": "teach"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “black”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: But, the _____ were dependent on cotton, and no one wanted to plant acres and acres of peanuts or sweet potatoes.",
+        "options": [
+          {
+            "key": "A",
+            "text": "farmers"
+          },
+          {
+            "key": "B",
+            "text": "teach"
+          },
+          {
+            "key": "C",
+            "text": "college"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “farmers”.",
+        "source": "generated-from-public-read"
+      }
+    ]
   }
 }

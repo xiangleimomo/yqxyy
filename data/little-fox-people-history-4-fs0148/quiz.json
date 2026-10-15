@@ -2848,5 +2848,126 @@
         "source": "generated-from-reading"
       }
     ]
+  },
+  "39": {
+    "episodeId": 39,
+    "title": "Beatlemania Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: John Lennon, Paul McCartney, George Harrison, and Ringo Starr were all members of the radical new pop band the _____, and this was their first trip to the United States.",
+        "options": [
+          {
+            "key": "A",
+            "text": "beatles"
+          },
+          {
+            "key": "B",
+            "text": "new"
+          },
+          {
+            "key": "C",
+            "text": "john"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “beatles”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: John Lennon, Paul McCartney, George Harrison, and Ringo Starr were all members of the radical new pop _____ the Beatles, and this was their first trip to the United States.",
+        "options": [
+          {
+            "key": "A",
+            "text": "band"
+          },
+          {
+            "key": "B",
+            "text": "john"
+          },
+          {
+            "key": "C",
+            "text": "many"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “band”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: John Lennon, Paul McCartney, George Harrison, and Ringo Starr were all members of the radical _____ pop band the Beatles, and this was their first trip to the United States.",
+        "options": [
+          {
+            "key": "A",
+            "text": "new"
+          },
+          {
+            "key": "B",
+            "text": "many"
+          },
+          {
+            "key": "C",
+            "text": "please"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “new”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____ Lennon, Paul McCartney, George Harrison, and Ringo Starr were all members of the radical new pop band the Beatles, and this was their first trip to the United States.",
+        "options": [
+          {
+            "key": "A",
+            "text": "john"
+          },
+          {
+            "key": "B",
+            "text": "please"
+          },
+          {
+            "key": "C",
+            "text": "music"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “john”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____ held up signs with messages to the young men, such as \"I love you, please stay!",
+        "options": [
+          {
+            "key": "A",
+            "text": "many"
+          },
+          {
+            "key": "B",
+            "text": "music"
+          },
+          {
+            "key": "C",
+            "text": "musicians"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “many”.",
+        "source": "generated-from-public-read"
+      }
+    ]
   }
 }

@@ -1,1 +1,244 @@
-{}
+{
+  "99": {
+    "episodeId": 99,
+    "title": "Building a City Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____: He has a dentist appointment.",
+        "options": [
+          {
+            "key": "A",
+            "text": "ricky"
+          },
+          {
+            "key": "B",
+            "text": "city"
+          },
+          {
+            "key": "C",
+            "text": "own"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “ricky”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____: Aren’t you playing baseball with Brian?",
+        "options": [
+          {
+            "key": "A",
+            "text": "dad"
+          },
+          {
+            "key": "B",
+            "text": "own"
+          },
+          {
+            "key": "C",
+            "text": "make"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “dad”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: Dad: We can build our own _____.",
+        "options": [
+          {
+            "key": "A",
+            "text": "city"
+          },
+          {
+            "key": "B",
+            "text": "make"
+          },
+          {
+            "key": "C",
+            "text": "rachel"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “city”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: Dad: We can build our _____ city.",
+        "options": [
+          {
+            "key": "A",
+            "text": "own"
+          },
+          {
+            "key": "B",
+            "text": "rachel"
+          },
+          {
+            "key": "C",
+            "text": "doing"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “own”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: Ricky: Hmmm, what can I _____ with this?",
+        "options": [
+          {
+            "key": "A",
+            "text": "make"
+          },
+          {
+            "key": "B",
+            "text": "doing"
+          },
+          {
+            "key": "C",
+            "text": "aren"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “make”.",
+        "source": "generated-from-public-read"
+      }
+    ]
+  },
+  "100": {
+    "episodeId": 100,
+    "title": "A Family Project Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____: I ran home as fast as I could.",
+        "options": [
+          {
+            "key": "A",
+            "text": "ricky"
+          },
+          {
+            "key": "B",
+            "text": "home"
+          },
+          {
+            "key": "C",
+            "text": "city"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “ricky”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____: Our city is looking great.",
+        "options": [
+          {
+            "key": "A",
+            "text": "dad"
+          },
+          {
+            "key": "B",
+            "text": "city"
+          },
+          {
+            "key": "C",
+            "text": "mom"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “dad”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: Ricky: I ran _____ as fast as I could.",
+        "options": [
+          {
+            "key": "A",
+            "text": "home"
+          },
+          {
+            "key": "B",
+            "text": "mom"
+          },
+          {
+            "key": "C",
+            "text": "rachel"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “home”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: Dad: Our _____ is looking great.",
+        "options": [
+          {
+            "key": "A",
+            "text": "city"
+          },
+          {
+            "key": "B",
+            "text": "rachel"
+          },
+          {
+            "key": "C",
+            "text": "great"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “city”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____: I wanted to work on our city.",
+        "options": [
+          {
+            "key": "A",
+            "text": "mom"
+          },
+          {
+            "key": "B",
+            "text": "great"
+          },
+          {
+            "key": "C",
+            "text": "know"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “mom”.",
+        "source": "generated-from-public-read"
+      }
+    ]
+  }
+}

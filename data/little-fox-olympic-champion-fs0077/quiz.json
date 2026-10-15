@@ -8181,5 +8181,126 @@
         "source": "local-pdf"
       }
     ]
+  },
+  "50": {
+    "episodeId": 50,
+    "title": "The Final Journey Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: \" _____ cried as Heracles disappeared.",
+        "options": [
+          {
+            "key": "A",
+            "text": "julia"
+          },
+          {
+            "key": "B",
+            "text": "heracles"
+          },
+          {
+            "key": "C",
+            "text": "through"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “julia”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: And now Julia and _____ were trapped in ancient Greece .",
+        "options": [
+          {
+            "key": "A",
+            "text": "brody"
+          },
+          {
+            "key": "B",
+            "text": "through"
+          },
+          {
+            "key": "C",
+            "text": "wall"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “brody”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: \" Julia cried as _____ disappeared.",
+        "options": [
+          {
+            "key": "A",
+            "text": "heracles"
+          },
+          {
+            "key": "B",
+            "text": "wall"
+          },
+          {
+            "key": "C",
+            "text": "looked"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “heracles”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: A faint spark of light was coming _____ a tiny crack in the wall.",
+        "options": [
+          {
+            "key": "A",
+            "text": "through"
+          },
+          {
+            "key": "B",
+            "text": "looked"
+          },
+          {
+            "key": "C",
+            "text": "rift"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “through”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: She leaped forward and grabbed at the temple _____ with her fingers.",
+        "options": [
+          {
+            "key": "A",
+            "text": "wall"
+          },
+          {
+            "key": "B",
+            "text": "rift"
+          },
+          {
+            "key": "C",
+            "text": "cried"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “wall”.",
+        "source": "generated-from-public-read"
+      }
+    ]
   }
 }
