@@ -34,6 +34,12 @@ const SERIES_DIRECTORY_OVERRIDES = {
   'Romance of the Three Kingdoms': 'three-kingdoms',
 };
 
+function targetSeriesId(seriesList, item) {
+  return seriesList.find(entry => entry.seriesId?.endsWith(`-${String(item.fsId).toLowerCase()}`))?.seriesId
+    || SERIES_DIRECTORY_OVERRIDES[item.title]
+    || null;
+}
+
 const account = process.env.XET_ACCOUNT;
 const password = process.env.XET_PASSWORD;
 if (!account || !password) {
@@ -47,6 +53,10 @@ function cleanText(value) {
     .replace(/\[n@/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+function normalized(value) {
+  return cleanText(value).toLowerCase().replace(/[^\p{L}\p{N}]+/gu, '');
 }
 
 function getSetCookies(headers) {
@@ -162,23 +172,39 @@ async function main() {
     series.push(...parseCatalogPage(html, level));
   }
 
+  const seriesList = JSON.parse(await fs.readFile(path.join(DATA_ROOT, 'series-list.json'), 'utf8'));
   const progress = await loadProgress();
   let importedEpisodes = 0;
   for (let index = 0; index < series.length; index += 1) {
     const item = series[index];
     const page = await (await request(`/xhl_play.php?fs_id=${encodeURIComponent(item.fsId)}`)).text();
     const playlist = parsePlaylist(page);
+    const target = targetSeriesId(seriesList, item);
+    let previousSubtitles = new Map();
+    let previousEpisodes = [];
+    if (target) {
+      try {
+        const previous = JSON.parse(await fs.readFile(path.join(DATA_ROOT, target, 'subtitles.json'), 'utf8'));
+        previousSubtitles = new Map((previous.episodes || []).map(episode => [String(episode.episodeId), episode]));
+      } catch (error) { if (error.code !== 'ENOENT') throw error; }
+      try { previousEpisodes = JSON.parse(await fs.readFile(path.join(DATA_ROOT, target, 'episodes.json'), 'utf8')); } catch (error) { if (error.code !== 'ENOENT') throw error; }
+    }
     const episodes = await mapWithConcurrency(playlist, async episode => {
       const key = `${item.fsId}:${episode.fc_id}`;
       let source = episode;
       if (!source.subtitle?.length) {
-        // Request the episode endpoint instead of reusing a checkpoint: this is
-        // what lets a later run detect corrected or newly added subtitles.
-        const endpoint = `/xhl_play.php?ajax=episode&fc_id=${encodeURIComponent(episode.fc_id)}&fs_id=${encodeURIComponent(item.fsId)}`;
-        const response = await request(endpoint);
-        const extra = await response.json();
-        source = { ...source, ...extra };
-        progress.subtitles[key] = { subtitle: extra.subtitle || [] };
+        const cached = previousSubtitles.get(String(episode.fc_id));
+        const cachedEpisode = previousEpisodes.find(row => row.sourceContentId === episode.fc_id || normalized(row.title) === normalized(episode.title));
+        if (cached?.subtitle?.length) {
+          source = { ...source, subtitle: cached.subtitle.map(cue => ({ start_ms: cue.startMs, end_ms: cue.endMs, text: cue.text, highlight: cue.highlight || [] })), video_url: cachedEpisode?.video?.hlsUrl || '' };
+        } else {
+          // Only new or incomplete episodes call XET's detailed endpoint.
+          const endpoint = `/xhl_play.php?ajax=episode&fc_id=${encodeURIComponent(episode.fc_id)}&fs_id=${encodeURIComponent(item.fsId)}`;
+          const response = await request(endpoint);
+          const extra = await response.json();
+          source = { ...source, ...extra };
+          progress.subtitles[key] = { subtitle: extra.subtitle || [] };
+        }
       }
 
       const subtitle = (source.subtitle || []).map(cue => ({
@@ -190,6 +216,7 @@ async function main() {
       return {
         episodeId: source.fc_id,
         title: cleanText(source.title),
+        hlsUrl: source.video_url || source.url || '',
         subtitle,
       };
     });
@@ -200,16 +227,16 @@ async function main() {
     process.stderr.write(`Imported ${index + 1}/${series.length}: ${item.title} (${episodes.length} episodes)\n`);
   }
 
-  const seriesList = JSON.parse(await fs.readFile(path.join(DATA_ROOT, 'series-list.json'), 'utf8'));
   const orderedSeries = series.map(item => progress.subtitles[item.fsId]).filter(Boolean);
   const changedDirectories = [];
+  const newEpisodesByDirectory = new Map();
   const unavailableDirectories = [];
   for (const seriesItem of orderedSeries) {
     const fsId = seriesItem.fsId || series.find(item => item.title === seriesItem.title && item.level === seriesItem.level)?.fsId;
-    const targetSeriesId = seriesList.find(item => item.seriesId?.endsWith(`-${String(fsId).toLowerCase()}`))?.seriesId
-      || SERIES_DIRECTORY_OVERRIDES[seriesItem.title];
-    if (!targetSeriesId) { unavailableDirectories.push({ fsId, title: seriesItem.title }); continue; }
-    const targetPath = path.join(DATA_ROOT, targetSeriesId, 'subtitles.json');
+    const destination = targetSeriesId(seriesList, { fsId, title: seriesItem.title });
+    if (!destination) { unavailableDirectories.push({ fsId, title: seriesItem.title }); continue; }
+    const targetDir = path.join(DATA_ROOT, destination);
+    const targetPath = path.join(targetDir, 'subtitles.json');
     const nextEpisodes = seriesItem.episodes.map(episode => ({
       episodeId: episode.episodeId,
       title: episode.title,
@@ -219,7 +246,7 @@ async function main() {
     try { previous = JSON.parse(await fs.readFile(targetPath, 'utf8')); } catch (error) { if (error.code !== 'ENOENT') throw error; }
     // Do not compare importedAt or vttUrl: neither reflects a change upstream.
     if (JSON.stringify(previous?.episodes || []) === JSON.stringify(nextEpisodes)) continue;
-    changedDirectories.push(targetSeriesId);
+    changedDirectories.push(destination);
     if (apply) await fs.writeFile(targetPath, `${JSON.stringify({
       source: 'XET Little Fox licensed subtitle import',
       importedAt: new Date().toISOString(),
@@ -229,6 +256,43 @@ async function main() {
       episodeCount: nextEpisodes.length,
       episodes: nextEpisodes,
     }, null, 2)}\n`);
+
+    // Keep the course catalogue in step with XET without replacing an existing
+    // Bilibili/direct source. XET's HLS URL is a fallback on the same episode.
+    const episodesPath = path.join(targetDir, 'episodes.json');
+    const episodes = JSON.parse(await fs.readFile(episodesPath, 'utf8'));
+    const currentMax = Math.max(0, ...episodes.map(episode => Number(episode.episodeId) || 0));
+    let nextId = currentMax + 1;
+    const newEpisodes = [];
+    for (const remote of seriesItem.episodes) {
+      const existing = episodes.find(episode => episode.sourceContentId === remote.episodeId)
+        || episodes.find(episode => normalized(episode.title) === normalized(remote.title));
+      if (existing) {
+        existing.sourceContentId = remote.episodeId;
+        if (remote.hlsUrl) existing.video = { ...(existing.video || {}), hlsUrl: remote.hlsUrl };
+        continue;
+      }
+      const created = {
+        episodeId: nextId++,
+        sourceContentId: remote.episodeId,
+        title: remote.title,
+        titleZh: '',
+        // XET does not expose the official release date; this is the date our
+        // scheduled collector first detected the episode.
+        releaseDate: new Date().toISOString().slice(0, 10),
+        status: 'published',
+        sourceType: 'xet-import',
+        unlockRequiresQuiz: false,
+        video: { source: 'hls', hlsUrl: remote.hlsUrl },
+        modules: { watch: true, read: false, words: false, vocabulary: false, phrases: false, grammar: false, quiz: false, review: false },
+      };
+      episodes.push(created);
+      newEpisodes.push(created);
+    }
+    if (apply && newEpisodes.length) {
+      await fs.writeFile(episodesPath, `${JSON.stringify(episodes, null, 2)}\n`);
+      newEpisodesByDirectory.set(destination, newEpisodes.map(episode => episode.episodeId));
+    }
   }
   if (apply && changedDirectories.length) {
     // Read is our local approved canonical wording.  Keep timestamps from XET,
@@ -236,12 +300,18 @@ async function main() {
     execFileSync(process.execPath, [path.join(__dirname, 'reconcile-subtitles-with-read.js'), '--apply', ...changedDirectories], { stdio: 'inherit' });
     execFileSync(process.execPath, [path.join(__dirname, 'generate-vtt-subtitles.js'), ...changedDirectories], { stdio: 'inherit' });
   }
+  if (apply && newEpisodesByDirectory.size) {
+    for (const [directory, episodeIds] of newEpisodesByDirectory) {
+      execFileSync(process.execPath, [path.join(__dirname, 'enrich-new-lessons.mjs'), directory, ...episodeIds.map(String)], { stdio: 'inherit' });
+    }
+  }
   if (apply) await fs.rm(PROGRESS_PATH, { force: true });
   process.stdout.write(`${JSON.stringify({
     mode: apply ? 'apply' : 'dry-run',
     catalogSeries: orderedSeries.length,
     catalogEpisodes: importedEpisodes,
     changedDirectories: [...new Set(changedDirectories)],
+    newEpisodes: Object.fromEntries(newEpisodesByDirectory),
     missingLocalCourses: unavailableDirectories,
   }, null, 2)}\n`);
 }

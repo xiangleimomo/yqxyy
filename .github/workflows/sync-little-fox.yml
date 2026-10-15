@@ -3,13 +3,17 @@ name: Sync Little Fox catalogue
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 */6 * * *'
+    # 15:00 Asia/Shanghai (UTC+8), Monday–Friday.
+    - cron: '0 7 * * 1-5'
 
 permissions:
   contents: write
 
 jobs:
   sync:
+    concurrency:
+      group: little-fox-sync
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

@@ -27,6 +27,7 @@ const run = (script, scriptArgs) => {
   if (result.status) throw new Error(`${script} failed with exit code ${result.status}.`);
 };
 
-if (apply) run('import-hls-catalog.mjs', []);
-else process.stderr.write('Dry run: video catalogue is not written.\n');
+// XET's authenticated episode response is the catalogue of record.  The older
+// public course-config endpoint is not needed and may not be available.
+if (!apply) process.stderr.write('Dry run: no files will be written.\n');
 run('import-xet-subtitles.js', [apply ? '--apply' : '--dry-run']);
