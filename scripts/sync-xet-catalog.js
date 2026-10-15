@@ -130,7 +130,10 @@ async function main() {
       execFileSync(process.execPath, [path.join(__dirname, 'enrich-new-lessons.mjs'), seriesId, ...newRows.map(row => String(row.episodeId))], { stdio: 'inherit' });
     }
   }
-  if (apply && changed.length) await fs.writeFile(seriesListPath, `${JSON.stringify(seriesList, null, 2)}\n`);
+  if (apply && changed.length) {
+    await fs.writeFile(seriesListPath, `${JSON.stringify(seriesList, null, 2)}\n`);
+    execFileSync(process.execPath, [path.join(__dirname, 'generate-search-index.js')], { stdio: 'inherit' });
+  }
   console.log(JSON.stringify({ mode: apply ? 'apply' : 'dry-run', catalogueSeries: selectedCatalogue.length, discovered, seriesReport, changedSeries: [...new Set(changed)], subtitlesChanged: false, vttChanged: false }, null, 2));
 }
 main().catch(error => { console.error(error.stack || error.message); process.exitCode = 1; });

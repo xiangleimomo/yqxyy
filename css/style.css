@@ -47,9 +47,12 @@ button{font-family:inherit}
 /* Replace Chrome's default focus rectangle with a site-consistent keyboard focus cue. */
 .main-tab:focus{outline:none}
 .main-tab:focus-visible{outline:2px solid #fff;outline-offset:-5px;border-radius:5px;box-shadow:0 0 0 2px rgba(8,67,143,.45)}
-.search-box{display:flex;align-items:center;gap:0}
+.search-box{display:flex;align-items:center;gap:0;position:relative}
 .search-box input{width:min(400px,40vw);height:34px;border:0;border-radius:3px 0 0 3px;padding:0 12px;font-size:14px}
 .search-box button{height:34px;border:0;border-radius:0 3px 3px 0;background:#fff;color:var(--blue-dark);font-size:19px;cursor:pointer;padding:0 12px}
+.search-suggestions{position:absolute;top:calc(100% + 2px);right:0;width:min(480px,calc(100vw - 28px));max-height:min(420px,60vh);overflow:auto;background:#fff;border:1px solid #a8c9ee;box-shadow:0 8px 20px rgba(18,50,91,.25);z-index:1000;color:#17355d}
+.search-suggestion{display:block;width:100%;box-sizing:border-box;border:0;border-bottom:1px solid #e3edf8;background:#fff;text-align:left;padding:8px 12px;cursor:pointer;color:#124d9c;font:inherit;line-height:1.32}
+.search-suggestion:last-child{border-bottom:0}.search-suggestion:hover,.search-suggestion:focus{background:#edf6ff;outline:none}.search-suggestion strong{display:block;font-size:14px}.search-suggestion small{display:block;color:#5c6e84;margin-top:2px}.search-suggestion-empty{padding:10px 12px;color:#64748b;font-size:13px}
 .app-shell{max-width:1120px;margin:0 auto;padding:28px 18px 56px}
 .footer{max-width:1120px;margin:0 auto;color:#789;padding:20px 18px 40px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;font-size:13px}
 .hero{background:linear-gradient(135deg,#fafdff,#e8f3ff);border:1px solid #dcecff;border-radius:18px;padding:26px;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:22px}

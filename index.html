@@ -35,8 +35,9 @@
       <div class="main-nav-inner">
         <div class="main-tabs"><a class="main-tab active" href="#/home">📖 动画故事</a><a class="main-tab" href="#/movies">🎬 光影课堂</a></div>
         <div class="search-box">
-          <input id="globalSearch" type="search" placeholder="搜索故事、单词或集数" />
+          <input id="globalSearch" type="search" placeholder="搜索故事、单词或集数" autocomplete="off" aria-autocomplete="list" aria-controls="globalSearchSuggestions" aria-expanded="false" />
           <button id="searchBtn" type="button" aria-label="搜索">🔍</button>
+          <div id="globalSearchSuggestions" class="search-suggestions" role="listbox" hidden></div>
         </div>
       </div>
     </div>

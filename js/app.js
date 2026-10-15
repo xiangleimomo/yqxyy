@@ -2,6 +2,8 @@
 const App = {
   cache: {},
   activeLessonTab: 'watch',
+  searchTimer: null,
+  searchRequest: 0,
   async getJSON(path){
     if(this.cache[path]) return this.cache[path];
     const res = await fetch(path, {cache:'no-store'});
@@ -21,7 +23,14 @@ const App = {
   async start(){
     window.addEventListener('hashchange', () => this.render());
     document.getElementById('searchBtn').addEventListener('click', () => this.globalSearch());
-    document.getElementById('globalSearch').addEventListener('keydown', e=>{ if(e.key==='Enter') this.globalSearch(); });
+    const searchInput=document.getElementById('globalSearch');
+    searchInput.addEventListener('keydown', e=>{ if(e.key==='Enter') this.globalSearch(); if(e.key==='Escape') this.hideSearchSuggestions(); });
+    searchInput.addEventListener('input',()=>this.queueSearchSuggestions());
+    searchInput.addEventListener('blur',()=>setTimeout(()=>this.hideSearchSuggestions(),160));
+    document.getElementById('globalSearchSuggestions').addEventListener('mousedown',event=>{
+      const target=event.target.closest('[data-search-href]'); if(!target) return;
+      event.preventDefault(); this.hideSearchSuggestions(); location.hash=target.dataset.searchHref;
+    });
     this.updateUtilityNav();
     await this.render();
     if(window.SFCloud) window.SFCloud.init(this);
@@ -29,11 +38,44 @@ const App = {
   async globalSearch(){
     const q = document.getElementById('globalSearch').value.trim();
     if(!q) return;
+    this.hideSearchSuggestions();
     if(['movies','movie','movie-series'].includes(this.route()[0])) {
       location.hash = '#/movies/' + encodeURIComponent(q);
       return;
     }
     location.hash = '#/search/' + encodeURIComponent(q);
+  },
+  hideSearchSuggestions(){
+    const box=document.getElementById('globalSearchSuggestions'), input=document.getElementById('globalSearch');
+    if(box){box.hidden=true;box.replaceChildren();} if(input) input.setAttribute('aria-expanded','false');
+  },
+  queueSearchSuggestions(){
+    clearTimeout(this.searchTimer);
+    const input=document.getElementById('globalSearch');
+    if(!input?.value.trim() || ['movies','movie','movie-series'].includes(this.route()[0])) return this.hideSearchSuggestions();
+    this.searchTimer=setTimeout(()=>this.showSearchSuggestions(input.value),180);
+  },
+  async showSearchSuggestions(query){
+    const request=++this.searchRequest;
+    const normalized=query.trim().toLowerCase();
+    if(!normalized) return this.hideSearchSuggestions();
+    const index=await this.getJSON('data/search-index.json');
+    if(request!==this.searchRequest) return;
+    const score=item=>{
+      const main=`${item.title||''} ${item.titleZh||''}`.toLowerCase();
+      const series=`${item.seriesTitle||''} ${item.seriesTitleZh||''}`.toLowerCase();
+      return (main.startsWith(normalized)?0:main.includes(normalized)?1:series.includes(normalized)?2:9)+(item.type==='series'?0:.1);
+    };
+    const matches=index.items.filter(item=>`${item.title||''} ${item.titleZh||''} ${item.seriesTitle||''} ${item.seriesTitleZh||''}`.toLowerCase().includes(normalized)).sort((a,b)=>score(a)-score(b)).slice(0,12);
+    const box=document.getElementById('globalSearchSuggestions'), input=document.getElementById('globalSearch');
+    if(!box||!input||document.activeElement!==input) return;
+    box.innerHTML=matches.length?matches.map(item=>{
+      const href=item.type==='series'?`#/series/${encodeURIComponent(item.seriesId)}`:`#/lesson/${encodeURIComponent(item.seriesId)}/${item.episodeId}`;
+      const title=this.escapeHtml(item.type==='series'?`${item.title}${item.titleZh?` · ${item.titleZh}`:''}`:`${item.seriesTitle} ${item.episodeId}: ${item.title}`);
+      const meta=this.escapeHtml(item.type==='series'?`系列 · ${this.statusText(item.status)}`:`${item.seriesTitleZh||item.seriesTitle} · Episode ${item.episodeId}`);
+      return `<button type="button" class="search-suggestion" role="option" data-search-href="${href}"><strong>${title}</strong><small>${meta}</small></button>`;
+    }).join(''):'<div class="search-suggestion-empty">没有找到匹配课程</div>';
+    box.hidden=false; input.setAttribute('aria-expanded','true');
   },
   async render(){
     const [page, a, b] = this.route();
