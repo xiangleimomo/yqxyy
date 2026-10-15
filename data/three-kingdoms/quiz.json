@@ -1095,8 +1095,8 @@
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "Complete the sentence: \"This report says _____ Bei helped Dong Zhuo at the battle of Guangzong.",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: \"This report says _____ Bei helped Dong Zhuo at the battle of Guangzong.",
         "options": [
           {
             "key": "A",
@@ -1104,22 +1104,22 @@
           },
           {
             "key": "B",
-            "text": "bei"
+            "text": "man"
           },
           {
             "key": "C",
-            "text": "man"
+            "text": "inspector"
           }
         ],
         "answer": "A",
-        "explanation": "The word “liu” appears in the Read lesson.",
+        "explanation": "In the Read, the sentence uses “liu”.",
         "source": "generated-from-public-read"
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "Complete the sentence: \"This report says Liu _____ helped Dong Zhuo at the battle of Guangzong.",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: \"This report says Liu _____ helped Dong Zhuo at the battle of Guangzong.",
         "options": [
           {
             "key": "A",
@@ -1127,22 +1127,22 @@
           },
           {
             "key": "B",
-            "text": "liu"
+            "text": "inspector"
           },
           {
             "key": "C",
-            "text": "man"
+            "text": "prison"
           }
         ],
         "answer": "A",
-        "explanation": "The word “bei” appears in the Read lesson.",
+        "explanation": "In the Read, the sentence uses “bei”.",
         "source": "generated-from-public-read"
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "vocabulary",
-        "question": "Complete the sentence: One _____ pointed at the other.",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: One _____ pointed at the other.",
         "options": [
           {
             "key": "A",
@@ -1150,15 +1150,61 @@
           },
           {
             "key": "B",
-            "text": "liu"
+            "text": "prison"
           },
           {
             "key": "C",
-            "text": "bei"
+            "text": "people"
           }
         ],
         "answer": "A",
-        "explanation": "The word “man” appears in the Read lesson.",
+        "explanation": "In the Read, the sentence uses “man”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: One day a government _____ visited Liu Bei.",
+        "options": [
+          {
+            "key": "A",
+            "text": "inspector"
+          },
+          {
+            "key": "B",
+            "text": "people"
+          },
+          {
+            "key": "C",
+            "text": "government"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “inspector”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: He belongs in _____!",
+        "options": [
+          {
+            "key": "A",
+            "text": "prison"
+          },
+          {
+            "key": "B",
+            "text": "government"
+          },
+          {
+            "key": "C",
+            "text": "magistrate"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “prison”.",
         "source": "generated-from-public-read"
       }
     ]

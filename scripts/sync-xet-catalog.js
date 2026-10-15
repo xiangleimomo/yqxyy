@@ -15,7 +15,8 @@ const DATA_ROOT = path.resolve(__dirname, '..', 'data');
 const args = new Set(process.argv.slice(2));
 const apply = args.has('--apply');
 const fsIdFilter = [...args].find(value => value.startsWith('--fs-id='))?.slice('--fs-id='.length).toUpperCase();
-if ([...args].some(value => !['--apply', '--dry-run'].includes(value) && !value.startsWith('--fs-id='))) throw new Error('Usage: node scripts/sync-xet-catalog.js [--apply|--dry-run] [--fs-id=FS0000]');
+const titleFilter = [...args].find(value => value.startsWith('--title='))?.slice('--title='.length);
+if ([...args].some(value => !['--apply', '--dry-run'].includes(value) && !value.startsWith('--fs-id=') && !value.startsWith('--title='))) throw new Error('Usage: node scripts/sync-xet-catalog.js [--apply|--dry-run] [--fs-id=FS0000|--title=Title]');
 
 const overrides = { 'Journey to the West': 'journey-to-the-west', 'Romance of the Three Kingdoms': 'three-kingdoms' };
 const account = process.env.XET_ACCOUNT;
@@ -88,12 +89,12 @@ async function main() {
   await login();
   const catalogue = [];
   for (let level = 1; level <= 9; level += 1) catalogue.push(...parseCatalog(await (await request(`/huiben${String(level).padStart(2, '0')}.php`)).text(), level));
-  const selectedCatalogue = fsIdFilter ? catalogue.filter(item => item.fsId === fsIdFilter) : catalogue;
-  if (fsIdFilter && !selectedCatalogue.length) throw new Error(`Series ${fsIdFilter} was not found in the XET catalogue.`);
+  const selectedCatalogue = fsIdFilter ? catalogue.filter(item => item.fsId === fsIdFilter) : titleFilter ? catalogue.filter(item => item.title === titleFilter) : catalogue;
+  if ((fsIdFilter || titleFilter) && !selectedCatalogue.length) throw new Error(`Requested series was not found in the XET catalogue.`);
   const seriesListPath = path.join(DATA_ROOT, 'series-list.json');
   const seriesList = await readJson(seriesListPath, []);
   const plans = await concurrent(selectedCatalogue, async item => ({ item, playlist: parsePlaylist(await (await request(`/xhl_play.php?fs_id=${encodeURIComponent(item.fsId)}`)).text()) }));
-  const discovered = {}; const changed = [];
+  const discovered = {}; const changed = []; const seriesReport = [];
   for (const { item, playlist } of plans) {
     let seriesId = targetId(seriesList, item);
     if (!seriesId) {
@@ -103,6 +104,7 @@ async function main() {
     const directory = path.join(DATA_ROOT, seriesId);
     const episodesPath = path.join(directory, 'episodes.json');
     const episodes = await readJson(episodesPath, []);
+    const localBefore = episodes.length;
     let nextId = Math.max(0, ...episodes.map(row => Number(row.episodeId) || 0)) + 1;
     const newRows = [];
     for (const remote of playlist) {
@@ -116,6 +118,7 @@ async function main() {
       episodes.push(row); newRows.push(row);
     }
     discovered[seriesId] = newRows.length;
+    seriesReport.push({ title: item.title, fsId: item.fsId, remoteEpisodes: playlist.length, localEpisodes: localBefore, newEpisodes: newRows.length });
     if (!apply) continue;
     if (newRows.length || changed.includes(seriesId)) await fs.writeFile(episodesPath, `${JSON.stringify(episodes, null, 2)}\n`);
     if (newRows.length) {
@@ -126,6 +129,6 @@ async function main() {
     }
   }
   if (apply && changed.length) await fs.writeFile(seriesListPath, `${JSON.stringify(seriesList, null, 2)}\n`);
-  console.log(JSON.stringify({ mode: apply ? 'apply' : 'dry-run', catalogueSeries: selectedCatalogue.length, discovered, changedSeries: [...new Set(changed)], subtitlesChanged: false, vttChanged: false }, null, 2));
+  console.log(JSON.stringify({ mode: apply ? 'apply' : 'dry-run', catalogueSeries: selectedCatalogue.length, discovered, seriesReport, changedSeries: [...new Set(changed)], subtitlesChanged: false, vttChanged: false }, null, 2));
 }
 main().catch(error => { console.error(error.stack || error.message); process.exitCode = 1; });
