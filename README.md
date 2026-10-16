@@ -139,3 +139,10 @@ Read 顶部可关闭内置词典，偏好保存到本机；不会取消原生文
 不改动影片数据、原始M3U8地址、TS地址或列表内容，仅在原始播放器时间轴上seek跳过广告，字幕和学习进度仍使用原时间轴。HLS.js读取已解析片段的start/duration/cc，不额外请求列表；原生HLS在metadata就绪后异步读取列表，检测请求失败时保持原播放。关闭、重试、切换备用源时清理检测。广告TS可能仍被缓冲，边界处可能短暂显示画面。
 
 验证：`node tests/dytt-ad-skip.test.cjs`、`node scripts/test-hls-playback.cjs`、JS语法检查、`git diff --check`。可给广告测试传入本地审核资料目录（包含analysis.json和8个实际列表快照），核对32处区间以及原生/HLS解析结果和逐段跳过；审核资料不提交到仓库。
+
+
+## 电影 Chrome 播放兼容（2026-10-16）
+
+部分桌面 Chrome 对 HLS 的 canPlayType 返回 maybe，但直接设置 M3U8 后仍报 MEDIA_ERR_SRC_NOT_SUPPORTED。电影播放器现与课程播放器保持一致：Safari 优先原生 HLS，Chrome/Edge 使用 HLS.js；没有 MSE 且具备原生 HLS 的设备保留原生回退。片源地址及广告规则不变。
+
+验证：`node tests/movie-playback.test.cjs` 覆盖 Chrome/Edge 的 maybe/probably、手机 Safari 原生、无 MSE 回退和广告检测清理。当前《赛车总动员》片源在本机 Chrome 155 实测：修复前原生播放 error code 4，修复后 HLS.js 成功读取时长并播放。原课程播放回归与32处广告区间验证均通过。
