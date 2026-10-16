@@ -42,6 +42,7 @@ window.MovieClassroom = {
   },
   cleanup() {
     this.generation++;
+    this.disposeAdSkip?.(); this.disposeAdSkip = null;
     if (this.hls) { this.hls.destroy(); this.hls = null; }
     if (this.player) { this.player.pause(); this.player.removeAttribute('src'); this.player.load(); this.player = null; }
   },
@@ -113,7 +114,7 @@ window.MovieClassroom = {
     player.addEventListener('loadedmetadata', () => report('影片已就绪，点击播放开始观看。'));
     player.addEventListener('playing', () => report('正在播放 · 可使用播放器控制倍速、音量和全屏。'));
     player.addEventListener('error', () => report('影片加载失败：片源可能已过期，或当前网络无法访问。请重试；仍失败时需要更新片源地址。', true));
-    if (player.canPlayType('application/vnd.apple.mpegurl')) { player.src = movie.hlsUrl; return; }
+    if (player.canPlayType('application/vnd.apple.mpegurl')) { player.src = movie.hlsUrl; this.disposeAdSkip = window.DyttAdSkip?.attach(player, movie.hlsUrl); return; }
     try {
       if (!window.Hls) {
         if (!this.libraryPromise) this.libraryPromise = new Promise((resolve, reject) => { const script = document.createElement('script'); script.src = 'https://cdn.jsdelivr.net/npm/hls.js@1.5.20/dist/hls.min.js'; script.onload = resolve; script.onerror = () => reject(new Error('播放器组件加载失败')); document.head.append(script); }).catch(error => { this.libraryPromise = null; throw error; });
@@ -123,6 +124,7 @@ window.MovieClassroom = {
       if (!window.Hls?.isSupported()) throw new Error('当前浏览器不支持 HLS 播放');
       const hls = new window.Hls(); this.hls = hls;
       hls.on(window.Hls.Events.ERROR, (_event, data) => { if (data.fatal) { hls.stopLoad(); report('影片加载失败：片源可能已过期，或存在网络／跨站访问限制。请重试；仍失败时需要更新片源地址。', true); } });
+      this.disposeAdSkip = window.DyttAdSkip?.attach(player, movie.hlsUrl, hls);
       hls.loadSource(movie.hlsUrl); hls.attachMedia(player);
     } catch (error) { report(error.message + '，请点击重新加载。', true); }
   }

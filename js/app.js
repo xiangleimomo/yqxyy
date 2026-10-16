@@ -714,13 +714,14 @@ async renderLesson(seriesId, episodeId){
     const fallback=player.dataset.fallbackSrc;
     const help=player.closest('.direct-video-panel')?.querySelector('.direct-video-help') || player.closest('.audio-player-card')?.querySelector('.audio-player-help');
     const loadStatus=player.closest('.direct-video-panel')?.querySelector('.hls-load-status');
-    let switched=false, disposed=false, wantsPlay=false;
+    let switched=false, disposed=false, wantsPlay=false, disposeAdSkip;
     const onPlay=()=>{wantsPlay=true;};
     player.addEventListener('play',onPlay);
     const destroy=()=>{if(player._hls){player._hls.destroy();player._hls=null;}};
     const recover=()=>{
       if(disposed || switched) return;
       switched=true;
+      disposeAdSkip?.();
       clearTimeout(timer);
       const resume=wantsPlay || !player.paused;
       const position=Number.isFinite(player.currentTime)?player.currentTime:0;
@@ -740,7 +741,7 @@ async renderLesson(seriesId, episodeId){
     player.addEventListener('loadedmetadata',onMetadata,{once:true});
     player.addEventListener('error',recover);
     player._disposeHls=()=>{
-      disposed=true;clearTimeout(timer);destroy();
+      disposed=true;disposeAdSkip?.();clearTimeout(timer);destroy();
       player.removeEventListener('play',onPlay);
       player.removeEventListener('error',recover);
       player.removeEventListener('loadedmetadata',onMetadata);
@@ -749,14 +750,15 @@ async renderLesson(seriesId, episodeId){
       // Safari can use native HLS. Desktop Chrome uses the explicit MSE player.
       const native=player.canPlayType('application/vnd.apple.mpegurl');
       const safari=/Safari/i.test(navigator.userAgent) && !/Chrome|Chromium|CriOS|Edg|Android/i.test(navigator.userAgent);
-      if(native && safari){player.src=source;return;}
+      if(native && safari){player.src=source;disposeAdSkip=window.DyttAdSkip?.attach(player,source);return;}
       const Hls=await this.loadHlsLibrary();
       if(disposed || switched) return;
       if(Hls && Hls.isSupported()){
         const hls=new Hls({enableWorker:true,capLevelToPlayerSize:true,maxBufferLength:15,maxMaxBufferLength:30,backBufferLength:30,manifestLoadingTimeOut:8000,levelLoadingTimeOut:8000,fragLoadingTimeOut:15000});player._hls=hls;
         hls.on(Hls.Events.ERROR,(_event,data)=>{if(data.fatal)recover();});
+        disposeAdSkip=window.DyttAdSkip?.attach(player,source,hls);
         hls.attachMedia(player);hls.loadSource(source);
-      }else if(native){player.src=source;}
+      }else if(native){player.src=source;disposeAdSkip=window.DyttAdSkip?.attach(player,source);}
       else recover();
     }catch(error){
       recover();

@@ -129,3 +129,9 @@ Read 顶部可关闭内置词典，偏好保存到本机；不会取消原生文
 网站通过 Auth 的 `getUser()` 验证服务器返回的 `app_metadata.site_admin === true`，不会使用用户可编辑的 `user_metadata` 或本地缓存授权。验证失败时不启用管理员模式。撤销时由所有者执行 `supabase/revoke-site-admin.sql`，然后让账户重新登录或刷新验证；已打开页面需重新验证才反映权限变更。
 
 这是学习网站的调试访问模式，不授予修改其他用户资料或数据库的权限。现有静态页面的访问限制不是服务端内容保护；数据库仍由 Supabase RLS 控制。
+
+## DYTT 播放器广告跳过（2026-10-16）
+
+仅原始来源为 HTTPS 且 hostname 为 `vip.dytt-live.com` 时启用 `js/dytt-ad-skip.js`。不更改 catalogue、M3U8 地址、TS 地址或列表内容。使用五段时长指纹（逐段容差 0.001 秒）与前后 discontinuity 检测广告，在播放器原时间轴上 seek 到整组结束；字幕与进度仍使用原始时间。HLS.js 路径读取 LEVEL_LOADED 的实际 fragment.start / duration / cc，不额外请求播放列表。原生 HLS 仅在 metadata 就绪后异步读取列表，CORS/网络不允许检测时保留原播放。关闭、切换备用源和重试清理监听器及定时器。广告 TS 可能仍被缓冲，不保证边界帧完全不可见。仅匹配已知特征，未验证实际广告画面。
+
+验证：`node tests/dytt-ad-skip.test.cjs`（可传本地样本目录）、`node scripts/test-hls-playback.cjs`、JS 语法检查与 `git diff --check`。五个本地样本均匹配两组；模拟测试验证原地址保留、HLS 不额外 fetch、域名排除、拖动跳过及检测异常隔离。真实远程播放因地区限制尚未验证。
