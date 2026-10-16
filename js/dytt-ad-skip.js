@@ -16,16 +16,25 @@
     "/20250430/5290_6e7d5d25/index.m3u8", // sonic-3
     "/20250520/6928_20c1945e/index.m3u8" // trolls-2
   ]);
+  const bfzySource = 'https://s3.bfzycdn.com/video/chaorenzongdongyuan/HD%E4%B8%AD%E5%AD%97/index.m3u8';
+  const bfzyFingerprint = [3,3,3,3,3,3,3,3,2.04];
+  function isBfzy(source) {
+    try { const u = new URL(source); return u.origin + u.pathname === bfzySource; } catch (_) { return false; }
+  }
   function enabled(source) {
+    if (isBfzy(source)) return true;
     try { const u = new URL(source); return u.protocol === 'https:' && u.hostname === 'vip.dytt-live.com' && testedPaths.has(u.pathname); } catch (_) { return false; }
   }
-  function find(rows) {
+  function find(rows, source) {
+    const bfzy = isBfzy(source);
+    const patterns = bfzy ? [bfzyFingerprint] : fingerprints;
     const result = [];
     for (let i = 0; i < rows.length; i++) {
       if (!rows[i].boundary) continue;
-      for (const fingerprint of fingerprints) {
+      for (const fingerprint of patterns) {
         const count = fingerprint.length;
         if (i + count >= rows.length || !rows[i+count].boundary) continue;
+        if (bfzy && !rows.slice(i,i+count).every(r => /^https:\/\/s3\.bfzycdn\.com\/video\/adjump\/time\/\d+\.ts$/.test(r.uri || ''))) continue;
         if (fingerprint.every((d,j) => Number.isFinite(rows[i+j].duration) && Math.abs(d-rows[i+j].duration) <= 0.001)) {
           result.push({start: rows[i].start, end: rows[i+count-1].start + rows[i+count-1].duration});
           i += count - 1;
@@ -35,7 +44,7 @@
     }
     return result;
   }
-  function fromText(text) {
+  function fromText(text, source) {
     if (!text.includes('#EXT-X-ENDLIST')) return [];
     const rows = []; let time = 0, duration = NaN, boundary = false;
     for (const line of text.split(/\r?\n/).map(l => l.trim())) {
@@ -43,15 +52,15 @@
       else if (line.startsWith('#EXTINF:')) duration = Number(line.slice(8).split(',')[0]);
       else if (line && !line.startsWith('#')) {
         if (!Number.isFinite(duration) || duration <= 0) return [];
-        rows.push({start:time, duration, boundary}); time += duration; duration = NaN; boundary = false;
+        rows.push({start:time, duration, boundary, uri: new URL(line, source || 'https://invalid.test/').href}); time += duration; duration = NaN; boundary = false;
       }
     }
-    return find(rows);
+    return find(rows, source);
   }
-  function fromDetails(details) {
+  function fromDetails(details, source) {
     if (!details || details.live || !Array.isArray(details.fragments)) return [];
     const fragments = details.fragments;
-    return find(fragments.map((f,i) => ({start:f.start, duration:f.duration, boundary:i > 0 && f.cc !== fragments[i-1].cc})));
+    return find(fragments.map((f,i) => ({start:f.start, duration:f.duration, boundary:i > 0 && f.cc !== fragments[i-1].cc, uri:f.url})), source);
   }
   function attach(player, source, hls) {
     if (!enabled(source)) return () => {};
@@ -82,7 +91,7 @@
         if (!child) throw Error('Missing variant');
         return read(new URL(child,response.url || url).href,depth+1);
       }
-      return fromText(text);
+      return fromText(text, source);
     }
     function nativeReady() {
       if (started || disposed) return; started = true;
@@ -92,7 +101,7 @@
       } catch (_) { /* Native playback remains unchanged if detection is unavailable. */ }
     }
     const event = root.Hls?.Events?.LEVEL_LOADED;
-    const onLevel = (_event,data) => { try { blocks = fromDetails(data?.details); check(); } catch (_) {} };
+    const onLevel = (_event,data) => { try { blocks = fromDetails(data?.details, source); check(); } catch (_) {} };
     try {
       events.forEach(e=>player.addEventListener(e,check));
       if (hls && event) hls.on(event,onLevel);
