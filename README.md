@@ -146,3 +146,14 @@ Read 顶部可关闭内置词典，偏好保存到本机；不会取消原生文
 部分桌面 Chrome 对 HLS 的 canPlayType 返回 maybe，但直接设置 M3U8 后仍报 MEDIA_ERR_SRC_NOT_SUPPORTED。电影播放器现与课程播放器保持一致：Safari 优先原生 HLS，Chrome/Edge 使用 HLS.js；没有 MSE 且具备原生 HLS 的设备保留原生回退。片源地址及广告规则不变。
 
 验证：`node tests/movie-playback.test.cjs` 覆盖 Chrome/Edge 的 maybe/probably、手机 Safari 原生、无 MSE 回退和广告检测清理。当前《赛车总动员》片源在本机 Chrome 155 实测：修复前原生播放 error code 4，修复后 HLS.js 成功读取时长并播放。原课程播放回归与32处广告区间验证均通过。
+
+
+## 光影课堂主片源及备用片源（2026-10-16）
+
+按用户提供的38条完整影片/地址记录设置主片源（37条替换，赛车总动员原已更新）。通过 `node scripts/import-movie-sources.cjs <清单.txt> --write` 可重复执行导入；不带 `--write` 仅检查。脚本先验证全部标题、URL及影片ID，再修改字段，保持目录、标题和字幕元数据不变。
+
+此前人工确认的8个DYTT地址保存在各影片的 `backupHlsUrl`，并保留原有广告跳过规则。清单中有新主源的3部哈利波特（魔法石、死亡圣器上/下）显示主/备用切换菜单；其余5部尚无新地址，继续使用原主源，同时保留备用记录。主备地址相同时不显示重复选项。切换源从头播放，重新加载保留所选源。备用源的检测始终使用实际播放URL，不把旧广告时间套用到新源。
+
+验证：`node tests/movie-sources.test.cjs <清单.txt>`、`node tests/movie-playback.test.cjs`、课程播放回归及32处已确认广告的回归。38个新地址在本次检查时均返回有效M3U8。Chrome桌面/手机尺寸通过测试媒体验证主备解码、播放、双向切换、重试和控件边界；未逐部完整播放38个远程视频。
+
+清单中的《超人总动员》第一部未填写地址，保留现有来源。新增的5条 mujizybf.com/m3u8/?url= 播放器页面链接已提取其显式 url 参数中的实际 M3U8。

@@ -98,25 +98,30 @@ window.MovieClassroom = {
     const watchReady = group.films.filter(([filmId]) => playableById.has(filmId)).length;
     app.el().innerHTML = `<div class="breadcrumb"><a href="#/movies">光影课堂</a> › ${e(group.titleZh)}</div><section class="movie-collection-hero">${this.poster(app, group, group.titleZh, 'movie-collection-poster')}<div><h1>${e(group.titleZh)}</h1><p>${e(group.title)}</p><div class="movie-series-badges"><span>英语难度 ${e(group.level)}</span><span>${this.stars(group.rating)} 推荐</span><span>${e(group.genre)}</span></div><p class="movie-collection-note">共 ${group.films.length} 部；${watchReady ? `${watchReady} 部已提供 Watch 播放` : '播放源待补充'}。</p></div></section><div class="movie-section-heading"><h2>影片列表</h2><span class="meta">按上映顺序</span></div><div class="movie-grid">${group.films.map(film => this.movieCard(app, group, film, playableById)).join('')}</div>`;
   },
-  async renderWatch(app, id) {
+  async renderWatch(app, id, sourceChoice = 'primary') {
     const generation = this.generation;
     const { series, playableById } = await this.getLibrary(app);
     if (generation !== this.generation) return;
     const movie = playableById.get(id);
     const group = series.find(item => item.films.some(([filmId]) => filmId === id));
     if (!movie || !group) { app.el().innerHTML = '<div class="empty">这部影片暂未添加授权播放源。<p><a class="btn" href="#/movies">返回光影课堂</a></p></div>'; return; }
+    const hasBackup = /^https:\/\//i.test(movie.backupHlsUrl || '') && movie.backupHlsUrl !== movie.hlsUrl;
+    const usingBackup = sourceChoice === 'backup' && hasBackup;
+    const sourceUrl = usingBackup ? movie.backupHlsUrl : movie.hlsUrl;
     const e = value => this.escape(app, value);
+    const sourceControl = hasBackup ? `<label class="movie-source-control">播放源 <select id="movieSource" aria-label="选择播放源"><option value="primary"${usingBackup ? '' : ' selected'}>主片源</option><option value="backup"${usingBackup ? ' selected' : ''}>备用片源（广告自动跳过）</option></select></label><small class="muted">切换片源将从头播放。</small>` : '';
     const subtitleTrack = movie.subtitleUrl ? `<track kind="subtitles" src="${e(movie.subtitleUrl)}" srclang="${e(movie.subtitleLang || 'en')}" label="${e(movie.subtitleLabel || 'English')}" default>` : '';
-    app.el().innerHTML = `<div class="breadcrumb"><a href="#/movies">光影课堂</a> › <a href="#/movie-series/${e(group.id)}">${e(group.titleZh)}</a> › ${e(movie.titleZh)}</div><section class="movie-watch-head"><div><h1>${e(movie.titleZh)}</h1><p>${e(movie.title)} · ${e(movie.year)}</p></div><a class="btn secondary" href="#/movie-series/${e(group.id)}">返回系列</a></section><div class="movie-watch-frame"><video controls playsinline preload="metadata" aria-label="${e(movie.titleZh)}">${subtitleTrack}</video></div><div class="movie-player-status" id="moviePlayerStatus" role="status" aria-live="polite">正在加载影片，请稍候…</div><div class="movie-watch-actions"><button type="button" class="btn secondary" id="movieRetry">重新加载</button><span class="muted">Watch 看电影 · ${e(movie.sourceLabel || '授权播放源')}${movie.subtitleUrl ? ' · English subtitles' : ''}</span></div><div class="movie-section-heading"><h2>同系列影片</h2></div><div class="movie-grid">${group.films.filter(([filmId]) => filmId !== id).map(film => this.movieCard(app, group, film, playableById)).join('')}</div>`;
+    app.el().innerHTML = `<div class="breadcrumb"><a href="#/movies">光影课堂</a> › <a href="#/movie-series/${e(group.id)}">${e(group.titleZh)}</a> › ${e(movie.titleZh)}</div><section class="movie-watch-head"><div><h1>${e(movie.titleZh)}</h1><p>${e(movie.title)} · ${e(movie.year)}</p></div><a class="btn secondary" href="#/movie-series/${e(group.id)}">返回系列</a></section><div class="movie-watch-frame"><video controls playsinline preload="metadata" aria-label="${e(movie.titleZh)}">${subtitleTrack}</video></div><div class="movie-player-status" id="moviePlayerStatus" role="status" aria-live="polite">正在加载影片，请稍候…</div><div class="movie-watch-actions">${sourceControl}<button type="button" class="btn secondary" id="movieRetry">重新加载</button><span class="muted">Watch 看电影 · ${e(movie.sourceLabel || '授权播放源')}${movie.subtitleUrl ? ' · English subtitles' : ''}</span></div><div class="movie-section-heading"><h2>同系列影片</h2></div><div class="movie-grid">${group.films.filter(([filmId]) => filmId !== id).map(film => this.movieCard(app, group, film, playableById)).join('')}</div>`;
     const player = app.el().querySelector('video'); this.player = player;
-    document.getElementById('movieRetry').onclick = () => { this.cleanup(); this.renderWatch(app, id).catch(() => {}); };
+    document.getElementById('movieRetry').onclick = () => { this.cleanup(); this.renderWatch(app, id, usingBackup ? 'backup' : 'primary').catch(() => {}); };
+    if (hasBackup) document.getElementById('movieSource').onchange = event => { const choice = event.target.value; this.cleanup(); this.renderWatch(app, id, choice).catch(() => {}); };
     const report = (message, failed=false) => { if (generation !== this.generation) return; const status = document.getElementById('moviePlayerStatus'); if (status) { status.textContent = message; status.classList.toggle('failed', failed); } };
-    player.addEventListener('loadedmetadata', () => report('影片已就绪，点击播放开始观看。'));
+    player.addEventListener('loadedmetadata', () => report(usingBackup ? '备用片源已就绪，广告将自动跳过。' : '影片已就绪，点击播放开始观看。'));
     player.addEventListener('playing', () => report('正在播放 · 可使用播放器控制倍速、音量和全屏。'));
-    player.addEventListener('error', () => report('影片加载失败：片源可能已过期，或当前网络无法访问。请重试；仍失败时需要更新片源地址。', true));
+    player.addEventListener('error', () => report(hasBackup && !usingBackup ? '主片源加载失败，请选择备用片源或重新加载。' : '影片加载失败：片源可能已过期，或当前网络无法访问。请重试；仍失败时需要更新片源地址。', true));
     const native = player.canPlayType('application/vnd.apple.mpegurl');
     const safari = /Safari/i.test(navigator.userAgent) && !/Chrome|Chromium|CriOS|Edg|Android/i.test(navigator.userAgent);
-    const useNative = () => { player.src = movie.hlsUrl; this.disposeAdSkip = window.DyttAdSkip?.attach(player, movie.hlsUrl); };
+    const useNative = () => { player.src = sourceUrl; this.disposeAdSkip = window.DyttAdSkip?.attach(player, sourceUrl); };
     // Chrome may report "maybe" even when its native HLS path cannot play this source.
     if (native && safari) { useNative(); return; }
     try {
@@ -130,9 +135,9 @@ window.MovieClassroom = {
         throw new Error('当前浏览器不支持 HLS 播放');
       }
       const hls = new window.Hls(); this.hls = hls;
-      hls.on(window.Hls.Events.ERROR, (_event, data) => { if (data.fatal) { hls.stopLoad(); report('影片加载失败：片源可能已过期，或存在网络／跨站访问限制。请重试；仍失败时需要更新片源地址。', true); } });
-      this.disposeAdSkip = window.DyttAdSkip?.attach(player, movie.hlsUrl, hls);
-      hls.loadSource(movie.hlsUrl); hls.attachMedia(player);
+      hls.on(window.Hls.Events.ERROR, (_event, data) => { if (data.fatal) { hls.stopLoad(); report(hasBackup && !usingBackup ? '主片源加载失败，请选择备用片源或重新加载。' : '影片加载失败：片源可能已过期，或存在网络／跨站访问限制。请重试；仍失败时需要更新片源地址。', true); } });
+      this.disposeAdSkip = window.DyttAdSkip?.attach(player, sourceUrl, hls);
+      hls.loadSource(sourceUrl); hls.attachMedia(player);
     } catch (error) { report(error.message + '，请点击重新加载。', true); }
   }
 };
