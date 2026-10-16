@@ -1,20 +1,36 @@
 /* Skip a known ad fingerprint without replacing media URLs or editing playlists. */
 (function(root) {
-  const fingerprint = [5.566667, 2.933333, 5.7, 3.333333, 1.533333];
-  // Limit the first rollout to the two tested live-domain movie sources.
+  // Both groups were confirmed by the user in the eight-film Excel review.
+  const fingerprints = [
+    [5.566667, 2.933333, 5.7, 3.333333, 1.533333],
+    [6.666667, 2.133333, 3.233333, 3.733333]
+  ];
+  // Only the eight reviewed original sources are enabled.
   const testedPaths = new Set([
-    '/20250430/5290_6e7d5d25/index.m3u8', // Sonic the Hedgehog 3
-    '/20250408/3711_aba18772/index.m3u8'  // Despicable Me
+    "/20250408/3701_b181eaa4/index.m3u8", // cars-2
+    "/20250408/3711_aba18772/index.m3u8", // despicable-me-1
+    "/20250408/3736_3e195b07/index.m3u8", // finding-nemo
+    "/20250325/1771_21be9a4b/index.m3u8", // harry-potter-philosophers-stone
+    "/20250325/1782_4a2ddf14/index.m3u8", // harry-potter-deathly-hallows-part-1
+    "/20250325/1783_b865367f/index.m3u8", // harry-potter-deathly-hallows-part-2
+    "/20250430/5290_6e7d5d25/index.m3u8", // sonic-3
+    "/20250520/6928_20c1945e/index.m3u8" // trolls-2
   ]);
   function enabled(source) {
     try { const u = new URL(source); return u.protocol === 'https:' && u.hostname === 'vip.dytt-live.com' && testedPaths.has(u.pathname); } catch (_) { return false; }
   }
   function find(rows) {
     const result = [];
-    for (let i = 0; i + 5 < rows.length; i++) {
-      if (!rows[i].boundary || !rows[i+5].boundary) continue;
-      if (fingerprint.every((d,j) => Number.isFinite(rows[i+j].duration) && Math.abs(d-rows[i+j].duration) <= 0.001)) {
-        result.push({start: rows[i].start, end: rows[i+4].start + rows[i+4].duration}); i += 4;
+    for (let i = 0; i < rows.length; i++) {
+      if (!rows[i].boundary) continue;
+      for (const fingerprint of fingerprints) {
+        const count = fingerprint.length;
+        if (i + count >= rows.length || !rows[i+count].boundary) continue;
+        if (fingerprint.every((d,j) => Number.isFinite(rows[i+j].duration) && Math.abs(d-rows[i+j].duration) <= 0.001)) {
+          result.push({start: rows[i].start, end: rows[i+count-1].start + rows[i+count-1].duration});
+          i += count - 1;
+          break;
+        }
       }
     }
     return result;
