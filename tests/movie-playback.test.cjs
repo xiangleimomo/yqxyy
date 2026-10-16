@@ -3,7 +3,7 @@ const vm = require('node:vm');
 const assert = require('node:assert/strict');
 const source = fs.readFileSync(require('node:path').join(__dirname, '../js/movies.js'), 'utf8');
 const url = 'https://example.test/movie/index.m3u8';
-async function render({ua = 'Chrome/155 Safari/537.36', native = 'maybe', supported = true, backupHlsUrl, choice} = {}) {
+async function render({ua = 'Chrome/155 Safari/537.36', native = 'maybe', supported = true, backupHlsUrl, choice, embedUrl, hlsUrl = url} = {}) {
   const instances = [], attachments = [];
   class Hls {
     static Events = {ERROR: 'error'};
@@ -17,15 +17,16 @@ async function render({ua = 'Chrome/155 Safari/537.36', native = 'maybe', suppor
   }
   const player = {isConnected: true, canPlayType: () => native, addEventListener() {}, pause() {}, removeAttribute() {}, load() {}};
   const status = {textContent: '', classList: {toggle() {}}};
-  const root = {innerHTML: '', querySelector: () => player};
+  const frames = [], links = [];
+  const root = {innerHTML: '', querySelector: selector => selector === '.movie-watch-frame' ? {replaceChildren(frame) {frames.push(frame);}} : selector === '.movie-watch-actions' ? {append(link) {links.push(link);}} : player};
   const elements = {moviePlayerStatus: status, movieRetry: {}, movieSource: {}};
-  const ctx = {window: {Hls, DyttAdSkip: {attach: (...args) => { attachments.push(args); return () => { player.skipDisposed = true; }; }}}, navigator: {userAgent: ua}, document: {getElementById: id => elements[id]}};
+  const ctx = {URL, window: {Hls, DyttAdSkip: {attach: (...args) => { attachments.push(args); return () => { player.skipDisposed = true; }; }}}, navigator: {userAgent: ua}, document: {getElementById: id => elements[id], createElement: () => ({events: {}, setAttribute(key, value) {this[key] = value;}, addEventListener(key, callback) {this.events[key] = callback;}, remove() {this.removed = true;}})}};
   vm.runInNewContext(source, ctx);
-  const movie = {id: 'test', title: 'Test', titleZh: '测试', hlsUrl: url, backupHlsUrl};
+  const movie = {id: 'test', title: 'Test', titleZh: '测试', hlsUrl, embedUrl, backupHlsUrl};
   const classroom = ctx.window.MovieClassroom;
   classroom.getLibrary = async () => ({series: [{films: [['test']], titleZh: '系列'}], playableById: new Map([['test', movie]])});
   await classroom.renderWatch({el: () => root, escapeHtml: value => String(value)}, 'test', choice);
-  return {classroom, player, status, instances, attachments, elements, root};
+  return {classroom, player, status, instances, attachments, elements, root, frames, links};
 }
 (async () => {
   for (const native of ['maybe', 'probably', '']) {
@@ -66,6 +67,33 @@ async function render({ua = 'Chrome/155 Safari/537.36', native = 'maybe', suppor
   assert(!duplicate.root.innerHTML.includes('id="movieSource"'), 'No duplicate option when original remains primary');
   const nativeBackup = await render({ua: 'Version/18.0 Safari/604.1', backupHlsUrl: backup, choice: 'backup'});
   assert.equal(nativeBackup.player.src, backup);
+  const parser = 'https://jimaoys99.com/parse?url=' + encodeURIComponent(url);
+  for (const config of [{embedUrl: parser, hlsUrl: ''}, {hlsUrl: parser}]) {
+    const r = await render(config);
+    assert.equal(r.instances.length, 0, 'Parser HTML must never be passed to HLS.js');
+    assert.equal(r.attachments.length, 0);
+    assert.equal(r.classroom.player, null);
+    const frame = r.frames[0];
+    assert.equal(frame.src, parser);
+    assert.equal(frame.referrerPolicy, 'no-referrer');
+    assert(!frame.sandbox.includes('allow-top-navigation'));
+    assert.equal(r.links[0].href, parser);
+    frame.events.load(); assert.match(r.status.textContent, /页面已加载/);
+    assert(!r.status.textContent.includes('正在播放'), 'Iframe load is not playback confirmation');
+    r.elements.movieRetry.onclick();
+    await new Promise(resolve => setImmediate(resolve));
+    assert(frame.removed); assert.equal(frame.src, 'about:blank');
+    assert.equal(r.frames[1].src, parser);
+    r.classroom.cleanup();
+    frame.events.error(); assert(!r.status.textContent.includes('加载失败'), 'Ignore stale iframe events');
+    assert.equal(r.classroom.playbackSource({embedUrl: 'javascript:alert(1)'}).url, '');
+  }
+  const catalog = await render();
+  const catalogueMethod = vm.runInNewContext(source + '; window.MovieClassroom.getLibrary', {window: {}, URL});
+  const library = await catalogueMethod.call(catalog.classroom, {getJSON: async file => file === 'data/movie-series.json' ? [{id: 'test'}] : {sources: [{id: 'embed', embedUrl: parser}, {id: 'media', hlsUrl: url}, {id: 'invalid', embedUrl: 'javascript:alert(1)'}]}});
+  assert.equal(library.playable.length, 2, 'Both media and embedded sources appear in catalogue');
+  assert(library.playableById.has('embed'));
+  console.log('PASS: embed catalogue, legacy parser URLs, iframe isolation, retry/cleanup and stale events');
   console.log('PASS: Chrome/Edge maybe/probably, Safari native, native-only fallback, unsupported browser and ad-filter lifecycle');
   console.log('PASS: main/backup switching, error prompt, selected-source retry, duplicate deduplication and native backup');
 })().catch(error => {console.error(error); process.exitCode = 1;});
