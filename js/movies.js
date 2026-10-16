@@ -42,6 +42,7 @@ window.MovieClassroom = {
   },
   cleanup() {
     this.generation++;
+    this.disposeAdFilter?.(); this.disposeAdFilter = null;
     if (this.hls) { this.hls.destroy(); this.hls = null; }
     if (this.player) { this.player.pause(); this.player.removeAttribute('src'); this.player.load(); this.player = null; }
   },
@@ -113,6 +114,7 @@ window.MovieClassroom = {
     player.addEventListener('loadedmetadata', () => report('影片已就绪，点击播放开始观看。'));
     player.addEventListener('playing', () => report('正在播放 · 可使用播放器控制倍速、音量和全屏。'));
     player.addEventListener('error', () => report('影片加载失败：片源可能已过期，或当前网络无法访问。请重试；仍失败时需要更新片源地址。', true));
+    this.disposeAdFilter = window.DyttAdFilter?.attach(player, movie.hlsUrl);
     if (player.canPlayType('application/vnd.apple.mpegurl')) { player.src = movie.hlsUrl; return; }
     try {
       if (!window.Hls) {

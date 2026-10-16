@@ -712,6 +712,7 @@ async renderLesson(seriesId, episodeId){
     player.dataset.ready='1';
     const source=player.dataset.hlsSrc;
     const fallback=player.dataset.fallbackSrc;
+    const disposeAdFilter=window.DyttAdFilter?.attach(player,source);
     const help=player.closest('.direct-video-panel')?.querySelector('.direct-video-help') || player.closest('.audio-player-card')?.querySelector('.audio-player-help');
     const loadStatus=player.closest('.direct-video-panel')?.querySelector('.hls-load-status');
     let switched=false, disposed=false, wantsPlay=false;
@@ -721,6 +722,7 @@ async renderLesson(seriesId, episodeId){
     const recover=()=>{
       if(disposed || switched) return;
       switched=true;
+      disposeAdFilter?.();
       clearTimeout(timer);
       const resume=wantsPlay || !player.paused;
       const position=Number.isFinite(player.currentTime)?player.currentTime:0;
@@ -740,7 +742,7 @@ async renderLesson(seriesId, episodeId){
     player.addEventListener('loadedmetadata',onMetadata,{once:true});
     player.addEventListener('error',recover);
     player._disposeHls=()=>{
-      disposed=true;clearTimeout(timer);destroy();
+      disposed=true;disposeAdFilter?.();clearTimeout(timer);destroy();
       player.removeEventListener('play',onPlay);
       player.removeEventListener('error',recover);
       player.removeEventListener('loadedmetadata',onMetadata);
