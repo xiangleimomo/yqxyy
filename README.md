@@ -132,6 +132,6 @@ Read 顶部可关闭内置词典，偏好保存到本机；不会取消原生文
 
 ## DYTT 播放器广告跳过（2026-10-16）
 
-仅原始来源为 HTTPS 且 hostname 为 `vip.dytt-live.com` 时启用 `js/dytt-ad-skip.js`。不更改 catalogue、M3U8 地址、TS 地址或列表内容。使用五段时长指纹（逐段容差 0.001 秒）与前后 discontinuity 检测广告，在播放器原时间轴上 seek 到整组结束；字幕与进度仍使用原始时间。HLS.js 路径读取 LEVEL_LOADED 的实际 fragment.start / duration / cc，不额外请求播放列表。原生 HLS 仅在 metadata 就绪后异步读取列表，CORS/网络不允许检测时保留原播放。关闭、切换备用源和重试清理监听器及定时器。广告 TS 可能仍被缓冲，不保证边界帧完全不可见。仅匹配已知特征，未验证实际广告画面。
+本轮只对已测试的《刺猬索尼克3》（/20250430/5290_6e7d5d25/index.m3u8）及《神偷奶爸》（/20250408/3711_aba18772/index.m3u8）启用；协议须为 HTTPS，hostname 须为 `vip.dytt-live.com`。使用 `js/dytt-ad-skip.js`。不更改 catalogue、M3U8 地址、TS 地址或列表内容。使用五段时长指纹（逐段容差 0.001 秒）与前后 discontinuity 检测广告，在播放器原时间轴上 seek 到整组结束；字幕与进度仍使用原始时间。HLS.js 路径读取 LEVEL_LOADED 的实际 fragment.start / duration / cc，不额外请求播放列表。原生 HLS 仅在 metadata 就绪后异步读取列表，CORS/网络不允许检测时保留原播放。关闭、切换备用源和重试清理监听器及定时器。广告 TS 可能仍被缓冲，不保证边界帧完全不可见。仅匹配已知特征，未验证实际广告画面。
 
 验证：`node tests/dytt-ad-skip.test.cjs`（可传本地样本目录）、`node scripts/test-hls-playback.cjs`、JS 语法检查与 `git diff --check`。五个本地样本均匹配两组；模拟测试验证原地址保留、HLS 不额外 fetch、域名排除、拖动跳过及检测异常隔离。真实远程播放因地区限制尚未验证。

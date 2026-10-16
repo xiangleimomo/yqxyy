@@ -1,8 +1,13 @@
 /* Skip a known ad fingerprint without replacing media URLs or editing playlists. */
 (function(root) {
   const fingerprint = [5.566667, 2.933333, 5.7, 3.333333, 1.533333];
+  // Limit the first rollout to the two tested live-domain movie sources.
+  const testedPaths = new Set([
+    '/20250430/5290_6e7d5d25/index.m3u8', // Sonic the Hedgehog 3
+    '/20250408/3711_aba18772/index.m3u8'  // Despicable Me
+  ]);
   function enabled(source) {
-    try { const u = new URL(source); return u.protocol === 'https:' && u.hostname === 'vip.dytt-live.com'; } catch (_) { return false; }
+    try { const u = new URL(source); return u.protocol === 'https:' && u.hostname === 'vip.dytt-live.com' && testedPaths.has(u.pathname); } catch (_) { return false; }
   }
   function find(rows) {
     const result = [];
