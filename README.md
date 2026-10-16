@@ -157,3 +157,14 @@ Read 顶部可关闭内置词典，偏好保存到本机；不会取消原生文
 验证：`node tests/movie-sources.test.cjs <清单.txt>`、`node tests/movie-playback.test.cjs`、课程播放回归及32处已确认广告的回归。38个新地址在本次检查时均返回有效M3U8。Chrome桌面/手机尺寸通过测试媒体验证主备解码、播放、双向切换、重试和控件边界；未逐部完整播放38个远程视频。
 
 清单中的《超人总动员》第一部未填写地址，保留现有来源。新增的5条 mujizybf.com/m3u8/?url= 播放器页面链接已提取其显式 url 参数中的实际 M3U8。
+
+
+## 英语片源复核（2026-10-16）
+
+本轮核查并采用29部英语正片，含用户补充的神偷奶爸1—4及小黄人大眼萌：神偷奶爸前传。实际M3U8写入影片数据，保留此前8个DYTT备用地址。优先查片库自营4K60帧，逐一核对电影、时长、抽样英语对白和Chrome解码/启动播放；线路名称不当作真实分辨率或帧率。11部未找到可靠替代，保持原状态。
+
+详情及排除原因见 `docs/movie-source-audit-2026-10-16.md`；精确地址、实测时长和分辨率见 `docs/movie-source-review-2026-10-16.json`。所给欢乐好声音地址为约11分钟短片，不用来替换正片；原误放在第二部的短片已改为约110分钟英语版第二部。未使用用户取消的skr网站。
+
+可用 `node scripts/apply-reviewed-movie-sources.cjs docs/movie-source-review-2026-10-16.json --write` 重复执行本轮地址更新，不带 `--write` 仅检查。运行 `node tests/reviewed-movie-sources.test.cjs`、`node tests/movie-sources.test.cjs`、`node tests/movie-playback.test.cjs` 以及现有课程/广告回归。29个实际来源逐一通过桌面Chrome启动播放；未完整观看全片，不承诺任意时间点绝无广告。
+
+已合并用户同期更新的地址：冰川时代1—3保留等价的直接地址；玩具总动员5新片源补充通过英语对白及Chrome检查。小黄人大眼萌第一部误填的前传地址已纠正。
