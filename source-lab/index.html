@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <title>片源探索 · Story Fox English</title>
+    <link rel="stylesheet" href="style.css?v=20261017-1" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/">SF <span>Story Fox English</span></a
+      ><a href="/#/movies">返回光影课堂</a>
+    </header>
+    <main>
+      <section class="hero">
+        <div>
+          <span class="eyebrow">SOURCE EXPLORER</span>
+          <h1>片源探索</h1>
+          <p>搜索不同来源，在这里试播、切换与查看字幕。</p>
+        </div>
+        <span class="pill">独立试播 · 不改已有片源</span>
+      </section>
+      <form id="searchForm" class="search">
+        <label class="sr-only" for="query">影片名称</label
+        ><input
+          id="query"
+          type="search"
+          required
+          maxlength="80"
+          placeholder="输入电影名称，如：冰雪奇缘"
+          autocomplete="off"
+        /><button id="searchButton">查找片源</button>
+      </form>
+      <div class="filters">
+        <label
+          ><input id="englishOnly" type="checkbox" checked /> 仅英语原声</label
+        ><label
+          ><input id="includeUnknown" type="checkbox" />
+          同时查看语言待核对的结果</label
+        ><button id="manageSources" class="quiet" type="button">
+          管理搜索源
+        </button>
+      </div>
+      <details id="sourceSettings">
+        <summary>搜索源设置</summary>
+        <p>
+          支持导入 LibreTV 点播源
+          JSON；自定义接口由浏览器直连，是否可用取决于来源的跨域设置。
+        </p>
+        <div id="providerList"></div>
+        <label class="file-button"
+          >导入 LibreTV 源列表<input
+            id="sourceImport"
+            type="file"
+            accept=".json,application/json" /></label
+        ><button id="resetSources" class="quiet" type="button">
+          清除本机导入源
+        </button>
+        <p id="sourceNotice" role="status"></p>
+      </details>
+      <p id="searchStatus" role="status" aria-live="polite">
+        输入影片名称开始搜索。搜索结果的语言以片源标注为准，播放后请核对。
+      </p>
+      <div id="results" class="results"></div>
+      <section id="watch" hidden>
+        <div class="watch-head">
+          <div>
+            <h2 id="watchTitle"></h2>
+            <p id="watchSource"></p>
+          </div>
+          <button id="closePlayer" class="quiet" type="button">关闭试播</button>
+        </div>
+        <video
+          id="video"
+          controls
+          playsinline
+          preload="metadata"
+          crossorigin="anonymous"
+        ></video>
+        <p id="playerStatus" role="status" aria-live="polite"></p>
+        <div class="controls">
+          <label
+            >播放线路
+            <select id="episodes"></select></label
+          ><button id="retry" class="quiet" type="button">重试</button
+          ><button id="nextSource" class="quiet" type="button">
+            寻找其他来源
+          </button>
+        </div>
+        <div class="tools">
+          <section>
+            <h3>广告跳过</h3>
+            <label
+              ><input id="adFilter" type="checkbox" checked />
+              自动跳过已知广告特征</label
+            ><label
+              ><input id="extendedAds" type="checkbox" /> LibreTV
+              扩展识别（可能误判）</label
+            >
+            <p class="hint">保留原播放地址与时间轴。普通断点不直接当成广告。</p>
+            <div id="adRanges"></div>
+            <div class="controls">
+              <button id="markStart" class="quiet" type="button">
+                标记广告开始</button
+              ><button id="markEnd" class="quiet" type="button">
+                标记结束并跳过</button
+              ><button id="clearMarks" class="quiet" type="button">
+                清除手动标记
+              </button>
+            </div>
+          </section>
+          <section>
+            <h3>英文字幕</h3>
+            <label
+              >字幕
+              <select id="subtitleTracks">
+                <option value="off">关闭字幕</option>
+              </select></label
+            ><button id="findSubtitles" class="quiet" type="button">
+              查找英文字幕</button
+            ><label class="file-button"
+              >导入 SRT / VTT<input
+                id="subtitleFile"
+                type="file"
+                accept=".srt,.vtt,text/vtt" /></label
+            ><label
+              >字幕延迟（秒）<input
+                id="subtitleOffset"
+                type="number"
+                value="0"
+                min="-600"
+                max="600"
+                step="0.5"
+            /></label>
+            <p id="subtitleStatus" role="status"></p>
+            <div id="externalSubtitles"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+    <footer>
+      与
+      <a
+        href="https://github.com/LibreSpark/LibreTV"
+        target="_blank"
+        rel="noopener noreferrer"
+        >LibreTV</a
+      >
+      点播源格式兼容 · 使用其开源广告识别模块 ·
+      <a href="https://github.com/xiangleimomo/yqxyy/tree/main/source-lab"
+        >实现说明与源码</a
+      >
+      · <a href="LICENSE">AGPL-3.0</a>
+    </footer>
+    <script src="core.js?v=20261017-1"></script>
+    <script src="vendor/libretv-m3u8.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.20/dist/hls.min.js"></script>
+    <script src="app.js?v=20261017-1"></script>
+  </body>
+</html>

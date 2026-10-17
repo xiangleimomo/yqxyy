@@ -1,0 +1,290 @@
+:root {
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  color: #15304c;
+  background: #f3f7fc;
+  line-height: 1.6;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+header,
+main,
+footer {
+  max-width: 1120px;
+  margin: auto;
+  padding: 20px 24px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dbe6f1;
+}
+.brand {
+  font-weight: 800;
+  font-size: 20px;
+}
+.brand span {
+  margin-left: 10px;
+}
+a {
+  color: #1469b8;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 30px 0 18px;
+}
+.eyebrow {
+  letter-spacing: 0.16em;
+  font-size: 12px;
+  color: #4882aa;
+}
+h1 {
+  font-size: 34px;
+  margin: 6px 0;
+}
+h2 {
+  font-size: 24px;
+  margin: 0;
+}
+h3 {
+  margin-top: 0;
+}
+p {
+  margin: 8px 0 16px;
+  color: #52677d;
+}
+.pill {
+  border: 1px solid #b9d8f5;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  white-space: nowrap;
+  background: #eaf4ff;
+}
+.search {
+  display: flex;
+  gap: 12px;
+}
+input,
+select,
+button {
+  font: inherit;
+}
+input[type="search"] {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #c1d1e2;
+  border-radius: 10px;
+  padding: 13px 16px;
+  background: #fff;
+}
+button,
+.file-button {
+  border: 1px solid #176bb4;
+  background: #176bb4;
+  color: white;
+  padding: 9px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+.quiet,
+.file-button {
+  background: #fff;
+  color: #176bb4;
+  border-color: #b4cce0;
+}
+.filters,
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 14px 0;
+}
+label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+details {
+  background: #fff;
+  border: 1px solid #d8e4ef;
+  padding: 14px;
+  border-radius: 12px;
+  margin: 12px 0;
+}
+summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.file-button {
+  display: inline-flex;
+  margin: 5px 8px 5px 0;
+}
+.file-button input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.results {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.card {
+  background: #fff;
+  border: 1px solid #d5e3f0;
+  border-radius: 12px;
+  padding: 20px;
+}
+.card h3 {
+  font-size: 19px;
+  margin: 0 0 8px;
+}
+.meta {
+  font-size: 13px;
+  color: #62768b;
+}
+.card button {
+  margin-top: 10px;
+  width: 100%;
+}
+.watch-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-top: 32px;
+}
+video {
+  display: block;
+  background: #111;
+  width: 100%;
+  max-height: 70vh;
+  border-radius: 12px;
+}
+.tools {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 22px;
+}
+.tools section {
+  padding: 20px;
+  border: 1px solid #d5e3f0;
+  border-radius: 12px;
+  background: white;
+}
+.tools label {
+  display: flex;
+  margin: 10px 0;
+}
+.tools input[type="number"] {
+  width: 95px;
+  border: 1px solid #b4cce0;
+  border-radius: 5px;
+  padding: 5px;
+}
+.tools select,
+.controls select {
+  max-width: 100%;
+  padding: 7px;
+  border: 1px solid #b4cce0;
+  border-radius: 6px;
+}
+.hint {
+  font-size: 13px;
+}
+#adRanges {
+  font-size: 13px;
+}
+.ad-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid #edf2f8;
+  padding: 6px 0;
+}
+.ad-row button {
+  padding: 3px 8px;
+  margin-left: auto;
+}
+.error {
+  color: #ac412a;
+}
+footer {
+  font-size: 13px;
+  color: #6b7e91;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+[hidden] {
+  display: none !important;
+}
+:focus-visible {
+  outline: 3px solid #62a8ea;
+  outline-offset: 3px;
+}
+@media (max-width: 720px) {
+  header,
+  main,
+  footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .hero {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 18px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  .results,
+  .tools {
+    grid-template-columns: 1fr;
+  }
+  .search {
+    gap: 8px;
+  }
+  .search button {
+    padding: 8px 12px;
+  }
+  .brand span {
+    font-size: 15px;
+  }
+  .filters {
+    font-size: 14px;
+  }
+  .watch-head {
+    align-items: flex-start;
+  }
+}

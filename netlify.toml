@@ -5,3 +5,9 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[functions]
+  directory = "netlify/functions"
+
+[functions."source-lab"]
+  included_files = ["source-lab/providers.json"]
