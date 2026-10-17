@@ -16,12 +16,23 @@
     "/20250430/5290_6e7d5d25/index.m3u8", // sonic-3
     "/20250520/6928_20c1945e/index.m3u8" // trolls-2
   ]);
+  // Explicit sources checked against all 27 ad samples on 2026-10-17.
+  const additionalSources = new Set([
+    "https://vip.dytt-hot.com/20250211/59939_7cb394c2/index.m3u8",
+    "https://vip.dytt-hot.com/20250211/59941_6122d783/index.m3u8",
+    "https://vip.dytt-hot.com/20250211/59936_daa6007f/index.m3u8",
+    "https://vip.dytt-hot.com/20250211/59920_5bc77550/index.m3u8",
+    "https://vip.dytt-live.com/20250408/3736_3e195b07/3000k/hls/mixed.m3u8",
+    "https://vip.dytt-film.com/20250126/2714_b628386c/index.m3u8",
+    "https://vip.dytt-kan.com/20250927/6462_dca49d1a/index.m3u8"
+]);
   const bfzySource = 'https://s3.bfzycdn.com/video/chaorenzongdongyuan/HD%E4%B8%AD%E5%AD%97/index.m3u8';
   const bfzyFingerprint = [3,3,3,3,3,3,3,3,2.04];
   function isBfzy(source) {
     try { const u = new URL(source); return u.origin + u.pathname === bfzySource; } catch (_) { return false; }
   }
   function enabled(source) {
+    try { const u = new URL(source); if (additionalSources.has(u.origin + u.pathname)) return true; } catch (_) {}
     if (isBfzy(source)) return true;
     try { const u = new URL(source); return u.protocol === 'https:' && u.hostname === 'vip.dytt-live.com' && testedPaths.has(u.pathname); } catch (_) { return false; }
   }
