@@ -44,6 +44,9 @@ function boundary(target){
 }
 const indices=[0,...plan.chapters.map(c=>boundary(c.targetEnd))];
 assert(indices.every((n,i)=>!i||n>indices[i-1]),'Chapter boundaries must increase');
+if(process.argv.includes('--preview-cuts')){
+  console.log(JSON.stringify(plan.chapters.map((c,i)=>({episodeId:i+1,title:c.title,start:rows[indices[i]].start,end:rows[indices[i+1]].start})),null,2));process.exit(0);
+}
 const round=n=>Math.round(n*1e6)/1e6,episodes=[],vocabulary={},quiz={};
 const letters=['A','B','C'];
 function question(q,choices,why,id,category,seed){

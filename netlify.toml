@@ -24,3 +24,8 @@
   for = "/data/movie-harry-potter-2/hls/*"
   [headers.values]
     Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-harry-potter-3/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
