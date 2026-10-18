@@ -1,0 +1,2195 @@
+{
+  "seriesId": "movie-harry-potter-2",
+  "collectionId": "harry-potter",
+  "movieId": "harry-potter-chamber-of-secrets",
+  "level": 5,
+  "coverImage": "https://media.themoviedb.org/t/p/w500/sdEOH0992YZ0QSxgXNIGLq1ToUi.jpg",
+  "subtitleOffsetSeconds": 0.15,
+  "subtitleScale": 1,
+  "subtitleSource": {
+    "page": "https://subf2m.co/subtitles/harry-potter-and-the-chamber-of-secrets/english/3644082",
+    "download": "https://subf2m.co/subtitles/harry-potter-and-the-chamber-of-secrets/english/3644082/download",
+    "release": "Harry_Potter_and_the_Chamber_of_Secrets_(2002)_Extended_(1080p_BluRay_x265_10bit_Tigole).srt",
+    "language": "en"
+  },
+  "verification": {
+    "method": "Reviewed sampled dialogue across the matching extended-release source; word onsets from ASR are approximate",
+    "anchors": [
+      {
+        "subtitle": 75.367,
+        "audio": 75.416956
+      },
+      {
+        "subtitle": 1501.458,
+        "audio": 1501.431448
+      },
+      {
+        "subtitle": 2990.738,
+        "audio": 2990.737742
+      },
+      {
+        "subtitle": 9485.476,
+        "audio": 9485.442578
+      }
+    ],
+    "note": "No progressive drift observed in sampled dialogue. Constant +0.15s display adjustment; not frame-by-frame certification."
+  },
+  "chapters": [
+    {
+      "title": "An Unwelcome Visitor",
+      "titleZh": "不速之客",
+      "targetStart": 0,
+      "targetEnd": 575,
+      "summaryEn": "Harry's lonely summer is interrupted by a visitor with an alarming warning.",
+      "words": [
+        {
+          "word": "wizard",
+          "partOfSpeech": "noun",
+          "meaningZh": "男巫；巫师",
+          "definitionEn": "A person who uses magic in stories.",
+          "example": "The wizard carries a wooden staff.",
+          "exampleZh": "巫师拿着一根木杖。"
+        },
+        {
+          "word": "magic",
+          "partOfSpeech": "noun",
+          "meaningZh": "魔法",
+          "definitionEn": "Special powers that cause impossible things to happen.",
+          "example": "The story is full of magic.",
+          "exampleZh": "这个故事充满了魔法。"
+        },
+        {
+          "word": "forgotten",
+          "partOfSpeech": "past participle",
+          "meaningZh": "忘记了的",
+          "definitionEn": "No longer remembered.",
+          "example": "I have forgotten where I put my notebook.",
+          "exampleZh": "我忘了把笔记本放在哪里。"
+        },
+        {
+          "word": "friends",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "朋友",
+          "definitionEn": "People you know well and like.",
+          "example": "Good friends help one another.",
+          "exampleZh": "好朋友互相帮助。"
+        },
+        {
+          "word": "family",
+          "partOfSpeech": "noun",
+          "meaningZh": "家人；家庭",
+          "definitionEn": "People related to one another.",
+          "example": "Her family supports her decision.",
+          "exampleZh": "她的家人支持她的决定。"
+        },
+        {
+          "word": "warning",
+          "partOfSpeech": "noun",
+          "meaningZh": "警告",
+          "definitionEn": "Information about a possible danger.",
+          "example": "The sign gives a clear warning.",
+          "exampleZh": "标志给出了明确的警告。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Why does Dobby visit Harry?",
+          "choices": [
+            "To warn him not to return to Hogwarts.",
+            "To sell him a new broom.",
+            "To ask him to teach at Hogwarts."
+          ],
+          "explanation": "多比前来警告哈利，不要返回霍格沃茨。"
+        },
+        {
+          "question": "What has Dobby done with Harry's letters?",
+          "choices": [
+            "He has kept them from Harry.",
+            "He has delivered them all on time.",
+            "He has turned them into school books."
+          ],
+          "explanation": "多比截下朋友的信，试图让哈利不愿回学校。"
+        }
+      ]
+    },
+    {
+      "title": "Escape to the Burrow",
+      "titleZh": "逃往陋居",
+      "targetStart": 575,
+      "targetEnd": 890,
+      "summaryEn": "A late-night rescue brings Harry to a lively magical household.",
+      "words": [
+        {
+          "word": "rescuing",
+          "partOfSpeech": "present participle",
+          "meaningZh": "营救",
+          "definitionEn": "Saving someone from danger or difficulty.",
+          "example": "The crew is rescuing the passengers.",
+          "exampleZh": "工作人员正在营救乘客。"
+        },
+        {
+          "word": "trunk",
+          "partOfSpeech": "noun",
+          "meaningZh": "大箱子；行李箱",
+          "definitionEn": "A large strong box used for travel or storage.",
+          "example": "We packed the trunk before leaving.",
+          "exampleZh": "我们出发前装好了行李箱。"
+        },
+        {
+          "word": "breakfast",
+          "partOfSpeech": "noun",
+          "meaningZh": "早餐",
+          "definitionEn": "The first meal of the day.",
+          "example": "Breakfast is ready in the kitchen.",
+          "exampleZh": "早餐在厨房里准备好了。"
+        },
+        {
+          "word": "enchanted",
+          "partOfSpeech": "adjective",
+          "meaningZh": "被施了魔法的",
+          "definitionEn": "Changed or controlled by magic.",
+          "example": "The enchanted clock began to sing.",
+          "exampleZh": "被施了魔法的钟开始唱歌。"
+        },
+        {
+          "word": "ministry",
+          "partOfSpeech": "noun",
+          "meaningZh": "部；政府部门",
+          "definitionEn": "A government department responsible for a subject.",
+          "example": "The ministry announced a new policy.",
+          "exampleZh": "该部门宣布了一项新政策。"
+        },
+        {
+          "word": "function",
+          "partOfSpeech": "noun",
+          "meaningZh": "功能；作用",
+          "definitionEn": "The purpose that something serves.",
+          "example": "What is the function of this button?",
+          "exampleZh": "这个按钮有什么作用？"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Why do Ron and his brothers come in the car?",
+          "choices": [
+            "To rescue Harry from the Dursleys.",
+            "To take Dudley to school.",
+            "To collect a Ministry award."
+          ],
+          "explanation": "罗恩和哥哥们开车来接走被关在家中的哈利。"
+        },
+        {
+          "question": "What surprises Harry at the Burrow?",
+          "choices": [
+            "Ordinary household tasks are done with magic.",
+            "Nobody there can use magic.",
+            "The house is a railway station."
+          ],
+          "explanation": "韦斯莱家中的日常家务也处处有魔法。"
+        }
+      ]
+    },
+    {
+      "title": "Trouble in Diagon Alley",
+      "titleZh": "对角巷风波",
+      "targetStart": 890,
+      "targetEnd": 1555,
+      "summaryEn": "A shopping trip introduces new surprises, uncomfortable encounters, and hidden tensions.",
+      "words": [
+        {
+          "word": "powder",
+          "partOfSpeech": "noun",
+          "meaningZh": "粉末",
+          "definitionEn": "A substance made of very small dry particles.",
+          "example": "She added a spoonful of powder to the water.",
+          "exampleZh": "她向水中加入了一勺粉末。"
+        },
+        {
+          "word": "bookshop",
+          "partOfSpeech": "noun",
+          "meaningZh": "书店",
+          "definitionEn": "A shop that sells books.",
+          "example": "The bookshop is near the station.",
+          "exampleZh": "书店在车站附近。"
+        },
+        {
+          "word": "secondhand",
+          "partOfSpeech": "adjective",
+          "meaningZh": "二手的",
+          "definitionEn": "Previously owned or used by someone else.",
+          "example": "He bought a secondhand bicycle.",
+          "exampleZh": "他买了一辆二手自行车。"
+        },
+        {
+          "word": "autobiography",
+          "partOfSpeech": "noun",
+          "meaningZh": "自传",
+          "definitionEn": "A book someone writes about their own life.",
+          "example": "Her autobiography describes her childhood.",
+          "exampleZh": "她的自传描写了她的童年。"
+        },
+        {
+          "word": "purchase",
+          "partOfSpeech": "noun",
+          "meaningZh": "购买；购买的物品",
+          "definitionEn": "The act of buying something, or the item bought.",
+          "example": "Keep the receipt for your purchase.",
+          "exampleZh": "请保留所购物品的收据。"
+        },
+        {
+          "word": "embarrassing",
+          "partOfSpeech": "adjective",
+          "meaningZh": "令人尴尬的",
+          "definitionEn": "Making someone feel awkward or ashamed.",
+          "example": "Forgetting his name was embarrassing.",
+          "exampleZh": "忘记他的名字令人尴尬。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Why does Harry first arrive in the wrong shopping area?",
+          "choices": [
+            "He says the destination unclearly while using Floo powder.",
+            "He follows a map from Dudley.",
+            "He takes the Hogwarts Express."
+          ],
+          "explanation": "哈利使用飞路粉时把地名说含糊了，误入翻倒巷。"
+        },
+        {
+          "question": "What makes the bookshop visit uncomfortable?",
+          "choices": [
+            "The Malfoys provoke the Weasleys and Harry.",
+            "The shop refuses to sell any books.",
+            "Hagrid asks everyone to leave school."
+          ],
+          "explanation": "马尔福父子在书店挑衅哈利与韦斯莱一家。"
+        }
+      ]
+    },
+    {
+      "title": "The Flying Car",
+      "titleZh": "会飞的汽车",
+      "targetStart": 1555,
+      "targetEnd": 1975,
+      "summaryEn": "A blocked gateway forces Harry and Ron to choose a risky route to school.",
+      "words": [
+        {
+          "word": "barrier",
+          "partOfSpeech": "noun",
+          "meaningZh": "障碍；隔墙",
+          "definitionEn": "Something that blocks movement or access.",
+          "example": "A barrier separated the two paths.",
+          "exampleZh": "一道障碍物隔开了两条小路。"
+        },
+        {
+          "word": "platform",
+          "partOfSpeech": "noun",
+          "meaningZh": "站台",
+          "definitionEn": "The area beside a railway track where passengers wait.",
+          "example": "We waited on the platform for the train.",
+          "exampleZh": "我们在站台上等火车。"
+        },
+        {
+          "word": "sealed",
+          "partOfSpeech": "past participle",
+          "meaningZh": "封住的",
+          "definitionEn": "Closed so that nothing can pass through.",
+          "example": "The box was sealed with tape.",
+          "exampleZh": "盒子用胶带封住了。"
+        },
+        {
+          "word": "control",
+          "partOfSpeech": "noun",
+          "meaningZh": "控制",
+          "definitionEn": "The ability to direct or manage something.",
+          "example": "The driver lost control on the ice.",
+          "exampleZh": "司机在冰上失去了控制。"
+        },
+        {
+          "word": "invisibility",
+          "partOfSpeech": "noun",
+          "meaningZh": "隐形",
+          "definitionEn": "The state of being impossible to see.",
+          "example": "Invisibility is a useful power in this story.",
+          "exampleZh": "在这个故事里，隐形是一种有用的能力。"
+        },
+        {
+          "word": "flying",
+          "partOfSpeech": "adjective",
+          "meaningZh": "飞行的；会飞的",
+          "definitionEn": "Moving or able to move through the air.",
+          "example": "The children imagined a flying boat.",
+          "exampleZh": "孩子们想象了一艘会飞的船。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Why do Harry and Ron take the flying car?",
+          "choices": [
+            "They cannot get through the platform barrier.",
+            "Their tickets say they must drive.",
+            "They want to enter a race."
+          ],
+          "explanation": "站台隔墙突然无法穿过，两人决定开飞车去学校。"
+        },
+        {
+          "question": "What happens when they reach Hogwarts?",
+          "choices": [
+            "The car crashes into the Whomping Willow.",
+            "The teachers give them a flying prize.",
+            "They land safely inside the library."
+          ],
+          "explanation": "飞车撞上打人柳，两人狼狈抵达学校。"
+        }
+      ]
+    },
+    {
+      "title": "Consequences at Hogwarts",
+      "titleZh": "霍格沃茨的处罚",
+      "targetStart": 1975,
+      "targetEnd": 2130,
+      "summaryEn": "Harry and Ron face the consequences of their unusual arrival.",
+      "words": [
+        {
+          "word": "decree",
+          "partOfSpeech": "noun",
+          "meaningZh": "法令",
+          "definitionEn": "An official rule or order.",
+          "example": "The decree changed the town's rules.",
+          "exampleZh": "这项法令改变了镇上的规定。"
+        },
+        {
+          "word": "detention",
+          "partOfSpeech": "noun",
+          "meaningZh": "留校惩罚；禁闭",
+          "definitionEn": "A punishment that keeps a student at school for extra time.",
+          "example": "He received detention for breaking the rules.",
+          "exampleZh": "他因违反规定受到留校惩罚。"
+        },
+        {
+          "word": "damage",
+          "partOfSpeech": "noun",
+          "meaningZh": "损坏；损害",
+          "definitionEn": "Harm that makes something less useful.",
+          "example": "The storm caused serious damage.",
+          "exampleZh": "暴风雨造成了严重损坏。"
+        },
+        {
+          "word": "underage",
+          "partOfSpeech": "adjective",
+          "meaningZh": "未达到法定年龄的",
+          "definitionEn": "Younger than the age legally required.",
+          "example": "Underage drivers cannot enter the race.",
+          "exampleZh": "未达到法定年龄的驾驶者不能参赛。"
+        },
+        {
+          "word": "serious",
+          "partOfSpeech": "adjective",
+          "meaningZh": "严重的；认真的",
+          "definitionEn": "Important or dangerous enough to need careful attention.",
+          "example": "The mistake had serious results.",
+          "exampleZh": "这个错误造成了严重后果。"
+        },
+        {
+          "word": "expel",
+          "partOfSpeech": "verb",
+          "meaningZh": "开除；驱逐",
+          "definitionEn": "To officially force someone to leave.",
+          "example": "The school may expel a student for serious misconduct.",
+          "exampleZh": "学校可能因严重违纪开除学生。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Why are the teachers concerned about the car journey?",
+          "choices": [
+            "It breaks rules and exposes magic to ordinary people.",
+            "The car arrives too early.",
+            "The car is the wrong colour."
+          ],
+          "explanation": "未经允许使用飞车既违纪，也可能让麻瓜发现魔法。"
+        },
+        {
+          "question": "What does this episode show about escaping a problem?",
+          "choices": [
+            "A risky solution can bring new consequences.",
+            "Every broken rule is rewarded.",
+            "Teachers ignore all accidents."
+          ],
+          "explanation": "逃避眼前问题的冒险做法，会带来新的后果。"
+        }
+      ]
+    },
+    {
+      "title": "Mandrakes and Pixies",
+      "titleZh": "曼德拉草与小精灵",
+      "targetStart": 2130,
+      "targetEnd": 2620,
+      "summaryEn": "New lessons introduce extraordinary plants, noisy surprises, and troublesome creatures.",
+      "words": [
+        {
+          "word": "mandrake",
+          "partOfSpeech": "noun",
+          "meaningZh": "曼德拉草",
+          "definitionEn": "A plant which has magical properties in these stories.",
+          "example": "The class studied a mandrake in a pot.",
+          "exampleZh": "全班研究了花盆里的曼德拉草。"
+        },
+        {
+          "word": "earmuffs",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "耳罩",
+          "definitionEn": "A covering worn over the ears.",
+          "example": "Wear earmuffs to protect your ears.",
+          "exampleZh": "戴上耳罩保护耳朵。"
+        },
+        {
+          "word": "pixies",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "小精灵",
+          "definitionEn": "Small mischievous magical creatures.",
+          "example": "The pixies scattered papers across the room.",
+          "exampleZh": "小精灵把纸撒得满屋都是。"
+        },
+        {
+          "word": "petrified",
+          "partOfSpeech": "adjective",
+          "meaningZh": "被石化的；极度害怕的",
+          "definitionEn": "Turned motionless by magic, or extremely frightened.",
+          "example": "The victim was petrified by the creature.",
+          "exampleZh": "受害者被这个生物石化了。"
+        },
+        {
+          "word": "howler",
+          "partOfSpeech": "noun",
+          "meaningZh": "吼叫信",
+          "definitionEn": "A magical letter that loudly delivers its message.",
+          "example": "A howler interrupted the quiet breakfast.",
+          "exampleZh": "一封吼叫信打破了早餐时的安静。"
+        },
+        {
+          "word": "fatal",
+          "partOfSpeech": "adjective",
+          "meaningZh": "致命的",
+          "definitionEn": "Causing death.",
+          "example": "A fatal mistake put the expedition in danger.",
+          "exampleZh": "一个致命的错误让探险队陷入危险。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Why do students wear earmuffs around Mandrakes?",
+          "choices": [
+            "Their cries can harm listeners.",
+            "The plants dislike cold weather.",
+            "The class is learning to fly."
+          ],
+          "explanation": "曼德拉草的叫声会伤害听者，所以需要戴耳罩。"
+        },
+        {
+          "question": "How does Lockhart's pixie lesson go?",
+          "choices": [
+            "He loses control and leaves the students to cope.",
+            "He calmly solves every problem.",
+            "No creature is brought into the room."
+          ],
+          "explanation": "洛哈特放出小精灵后无法控制，留下学生处理残局。"
+        }
+      ]
+    },
+    {
+      "title": "Rivalry on the Practice Field",
+      "titleZh": "训练场上的冲突",
+      "targetStart": 2620,
+      "targetEnd": 2830,
+      "summaryEn": "A practice session exposes rivalry and prejudice in the school teams.",
+      "words": [
+        {
+          "word": "seeker",
+          "partOfSpeech": "noun",
+          "meaningZh": "找球手；寻找者",
+          "definitionEn": "A player who tries to catch the Snitch in Quidditch.",
+          "example": "The seeker watched the sky carefully.",
+          "exampleZh": "找球手仔细观察天空。"
+        },
+        {
+          "word": "team",
+          "partOfSpeech": "noun",
+          "meaningZh": "队；团队",
+          "definitionEn": "A group working or playing together.",
+          "example": "Our team practises every Friday.",
+          "exampleZh": "我们队每周五训练。"
+        },
+        {
+          "word": "talent",
+          "partOfSpeech": "noun",
+          "meaningZh": "天赋；才能",
+          "definitionEn": "A natural ability to do something well.",
+          "example": "She has a talent for music.",
+          "exampleZh": "她有音乐天赋。"
+        },
+        {
+          "word": "curse",
+          "partOfSpeech": "noun",
+          "meaningZh": "诅咒；恶咒",
+          "definitionEn": "Harmful magic directed at someone.",
+          "example": "The curse made the door impossible to open.",
+          "exampleZh": "诅咒让那扇门无法打开。"
+        },
+        {
+          "word": "opinion",
+          "partOfSpeech": "noun",
+          "meaningZh": "意见；看法",
+          "definitionEn": "What someone thinks about something.",
+          "example": "I would like to hear your opinion.",
+          "exampleZh": "我想听听你的意见。"
+        },
+        {
+          "word": "disgusting",
+          "partOfSpeech": "adjective",
+          "meaningZh": "令人厌恶的",
+          "definitionEn": "Causing a strong feeling of dislike.",
+          "example": "That insulting remark was disgusting.",
+          "exampleZh": "那句侮辱性的话令人厌恶。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "How does Hermione challenge Malfoy's claim about Harry?",
+          "choices": [
+            "She points to talent rather than a purchased place.",
+            "She says Harry owns every broom.",
+            "She agrees that money decides everything."
+          ],
+          "explanation": "赫敏强调哈利凭的是天赋，并非靠购买扫帚进入球队。"
+        },
+        {
+          "question": "Why is Malfoy's insult especially hurtful?",
+          "choices": [
+            "It attacks Hermione's family background.",
+            "It describes her handwriting.",
+            "It concerns a lost train ticket."
+          ],
+          "explanation": "马尔福以出身侮辱赫敏，显露了巫师世界的偏见。"
+        }
+      ]
+    },
+    {
+      "title": "A Voice in the Walls",
+      "titleZh": "墙里的声音",
+      "targetStart": 2830,
+      "targetEnd": 3210,
+      "summaryEn": "A mysterious voice leads Harry towards a disturbing discovery.",
+      "words": [
+        {
+          "word": "voice",
+          "partOfSpeech": "noun",
+          "meaningZh": "声音；嗓音",
+          "definitionEn": "The sound a person makes when speaking.",
+          "example": "A quiet voice came from the next room.",
+          "exampleZh": "隔壁传来轻轻的说话声。"
+        },
+        {
+          "word": "spiders",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "蜘蛛",
+          "definitionEn": "Small eight-legged animals that often make webs.",
+          "example": "The spiders hid in the dark corners.",
+          "exampleZh": "蜘蛛躲在阴暗的角落里。"
+        },
+        {
+          "word": "caution",
+          "partOfSpeech": "noun",
+          "meaningZh": "谨慎；小心",
+          "definitionEn": "Care taken to avoid danger.",
+          "example": "Use caution when crossing the road.",
+          "exampleZh": "过马路时要小心。"
+        },
+        {
+          "word": "revive",
+          "partOfSpeech": "verb",
+          "meaningZh": "使苏醒；使恢复",
+          "definitionEn": "To bring someone back to consciousness or health.",
+          "example": "The treatment helped revive the patient.",
+          "exampleZh": "治疗帮助病人苏醒过来。"
+        },
+        {
+          "word": "punishment",
+          "partOfSpeech": "noun",
+          "meaningZh": "惩罚",
+          "definitionEn": "A penalty for doing something wrong.",
+          "example": "The punishment should be fair.",
+          "exampleZh": "惩罚应当公平。"
+        },
+        {
+          "word": "blood",
+          "partOfSpeech": "noun",
+          "meaningZh": "血；血液",
+          "definitionEn": "The red liquid moving through the body.",
+          "example": "The nurse took a small sample of blood.",
+          "exampleZh": "护士取了少量血样。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is unusual about the voice Harry hears?",
+          "choices": [
+            "Other people nearby cannot hear it.",
+            "It comes from a radio everyone shares.",
+            "It only reads homework aloud."
+          ],
+          "explanation": "哈利能听到墙里的声音，周围的人却听不到。"
+        },
+        {
+          "question": "What do the students find near the writing on the wall?",
+          "choices": [
+            "Mrs Norris has been petrified.",
+            "A new school trophy has arrived.",
+            "The Sorting Hat is missing."
+          ],
+          "explanation": "他们发现洛丽丝夫人被石化，墙上还有威胁信息。"
+        }
+      ]
+    },
+    {
+      "title": "The Legend of the Chamber",
+      "titleZh": "密室的传说",
+      "targetStart": 3210,
+      "targetEnd": 3480,
+      "summaryEn": "The students learn a legend that makes the latest attack more frightening.",
+      "words": [
+        {
+          "word": "legend",
+          "partOfSpeech": "noun",
+          "meaningZh": "传说",
+          "definitionEn": "An old story passed down through generations.",
+          "example": "The legend describes a hidden city.",
+          "exampleZh": "这个传说描述了一座隐藏的城市。"
+        },
+        {
+          "word": "chamber",
+          "partOfSpeech": "noun",
+          "meaningZh": "房间；密室",
+          "definitionEn": "A room, often an enclosed or private one.",
+          "example": "A narrow passage led to a chamber.",
+          "exampleZh": "一条狭窄通道通往一个房间。"
+        },
+        {
+          "word": "heir",
+          "partOfSpeech": "noun",
+          "meaningZh": "继承人",
+          "definitionEn": "Someone who will receive a position or property.",
+          "example": "The heir returned to the family home.",
+          "exampleZh": "继承人回到了家族的住所。"
+        },
+        {
+          "word": "monster",
+          "partOfSpeech": "noun",
+          "meaningZh": "怪物",
+          "definitionEn": "A frightening imaginary creature.",
+          "example": "The monster guarded the cave.",
+          "exampleZh": "怪物守着山洞。"
+        },
+        {
+          "word": "founders",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "创始人",
+          "definitionEn": "People who establish an organisation.",
+          "example": "The founders agreed on a common purpose.",
+          "exampleZh": "创始人们就共同目标达成一致。"
+        },
+        {
+          "word": "sealed",
+          "partOfSpeech": "past participle",
+          "meaningZh": "封住的",
+          "definitionEn": "Closed so that nothing can pass through.",
+          "example": "The box was sealed with tape.",
+          "exampleZh": "盒子用胶带封住了。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the legend of the Chamber connected with?",
+          "choices": [
+            "Salazar Slytherin and his heir.",
+            "A normal school swimming pool.",
+            "Dudley's birthday party."
+          ],
+          "explanation": "密室传说与萨拉查·斯莱特林及其继承人有关。"
+        },
+        {
+          "question": "Why does the legend frighten Hermione?",
+          "choices": [
+            "It threatens students from non-magical families.",
+            "It says all exams will be postponed.",
+            "It concerns only school meals."
+          ],
+          "explanation": "传说中的危险针对麻瓜出身的学生，赫敏因此担忧。"
+        }
+      ]
+    },
+    {
+      "title": "A Potion Plan and a Rogue Bludger",
+      "titleZh": "魔药计划与失控的游走球",
+      "targetStart": 3480,
+      "targetEnd": 3925,
+      "summaryEn": "The friends prepare a risky disguise while danger follows Harry onto the pitch.",
+      "words": [
+        {
+          "word": "potion",
+          "partOfSpeech": "noun",
+          "meaningZh": "药剂；魔药",
+          "definitionEn": "A liquid with magical or medicinal effects.",
+          "example": "The potion changed colour in the bottle.",
+          "exampleZh": "瓶里的药剂变了颜色。"
+        },
+        {
+          "word": "transform",
+          "partOfSpeech": "verb",
+          "meaningZh": "使改变；使转化",
+          "definitionEn": "To change the form or nature of something.",
+          "example": "Practice can transform a beginner into an expert.",
+          "exampleZh": "练习可以使初学者成为专家。"
+        },
+        {
+          "word": "temporarily",
+          "partOfSpeech": "adverb",
+          "meaningZh": "暂时地",
+          "definitionEn": "For a limited period of time.",
+          "example": "The road is temporarily closed.",
+          "exampleZh": "这条路暂时封闭。"
+        },
+        {
+          "word": "bludger",
+          "partOfSpeech": "noun",
+          "meaningZh": "游走球",
+          "definitionEn": "A ball that tries to hit players in Quidditch.",
+          "example": "The bludger flew towards the player.",
+          "exampleZh": "游走球朝队员飞去。"
+        },
+        {
+          "word": "bones",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "骨头",
+          "definitionEn": "The hard parts that support the body.",
+          "example": "Strong bones help protect the body.",
+          "exampleZh": "坚固的骨头帮助保护身体。"
+        },
+        {
+          "word": "painful",
+          "partOfSpeech": "adjective",
+          "meaningZh": "疼痛的；痛苦的",
+          "definitionEn": "Causing physical or emotional pain.",
+          "example": "Moving the injured arm was painful.",
+          "exampleZh": "移动受伤的手臂很疼。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the purpose of the Polyjuice plan?",
+          "choices": [
+            "To question Malfoy while disguised as his friends.",
+            "To win a cooking competition.",
+            "To change the school's timetable."
+          ],
+          "explanation": "三人计划变成马尔福的朋友，套出他是否与密室有关。"
+        },
+        {
+          "question": "Why is Harry's Quidditch match unusually dangerous?",
+          "choices": [
+            "A rogue Bludger keeps targeting him.",
+            "All the goal hoops disappear.",
+            "He forgets which school he attends."
+          ],
+          "explanation": "一只失控的游走球持续追击哈利，令比赛异常危险。"
+        }
+      ]
+    },
+    {
+      "title": "Warnings and a Witness",
+      "titleZh": "警告与目击者",
+      "targetStart": 3925,
+      "targetEnd": 4240,
+      "summaryEn": "A hospital visit brings a confession, another attack, and a new witness.",
+      "words": [
+        {
+          "word": "safe",
+          "partOfSpeech": "adjective",
+          "meaningZh": "安全的",
+          "definitionEn": "Protected from danger.",
+          "example": "The children are safe inside the house.",
+          "exampleZh": "孩子们待在屋里很安全。"
+        },
+        {
+          "word": "master",
+          "partOfSpeech": "noun",
+          "meaningZh": "主人；掌控者",
+          "definitionEn": "A person with control over a servant or situation.",
+          "example": "The servant waited for the master's instructions.",
+          "exampleZh": "仆人等候主人的指示。"
+        },
+        {
+          "word": "enslavement",
+          "partOfSpeech": "noun",
+          "meaningZh": "奴役",
+          "definitionEn": "The condition of being forced to serve without freedom.",
+          "example": "The story questions the cruelty of enslavement.",
+          "exampleZh": "这个故事质疑了奴役的残酷。"
+        },
+        {
+          "word": "petrified",
+          "partOfSpeech": "adjective",
+          "meaningZh": "被石化的；极度害怕的",
+          "definitionEn": "Turned motionless by magic, or extremely frightened.",
+          "example": "The victim was petrified by the creature.",
+          "exampleZh": "受害者被这个生物石化了。"
+        },
+        {
+          "word": "moaning",
+          "partOfSpeech": "present participle",
+          "meaningZh": "呻吟；抱怨",
+          "definitionEn": "Making a low unhappy sound.",
+          "example": "Someone was moaning in the empty hall.",
+          "exampleZh": "空荡的大厅里有人在呻吟。"
+        },
+        {
+          "word": "train",
+          "partOfSpeech": "noun",
+          "meaningZh": "火车",
+          "definitionEn": "A railway vehicle that carries people or goods.",
+          "example": "The train leaves at nine o'clock.",
+          "exampleZh": "火车九点出发。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What does Dobby admit at the hospital?",
+          "choices": [
+            "He interfered with the barrier and the Bludger to keep Harry away.",
+            "He wrote all of Harry's homework.",
+            "He owns the school hospital."
+          ],
+          "explanation": "多比承认自己阻拦入学并干扰游走球，原意是让哈利远离危险。"
+        },
+        {
+          "question": "What does the attack on Colin show?",
+          "choices": [
+            "The threat has not ended.",
+            "The school has caught the culprit.",
+            "The first incident was a harmless joke."
+          ],
+          "explanation": "科林也遭到袭击，说明危险仍在继续。"
+        }
+      ]
+    },
+    {
+      "title": "The Dueling Club",
+      "titleZh": "决斗俱乐部",
+      "targetStart": 4240,
+      "targetEnd": 4600,
+      "summaryEn": "A public demonstration reveals an ability Harry had never thought unusual.",
+      "words": [
+        {
+          "word": "dueling",
+          "partOfSpeech": "noun",
+          "meaningZh": "决斗",
+          "definitionEn": "A formal fight between two opponents.",
+          "example": "The teacher demonstrated dueling to the class.",
+          "exampleZh": "老师向全班演示了决斗。"
+        },
+        {
+          "word": "disarm",
+          "partOfSpeech": "verb",
+          "meaningZh": "解除武装；缴械",
+          "definitionEn": "To take a weapon away from someone.",
+          "example": "The guard tried to disarm the intruder.",
+          "exampleZh": "卫兵试图解除闯入者的武装。"
+        },
+        {
+          "word": "wand",
+          "partOfSpeech": "noun",
+          "meaningZh": "魔杖",
+          "definitionEn": "A thin stick used to perform magic in stories.",
+          "example": "She drew a circle with her wand.",
+          "exampleZh": "她用魔杖画了一个圈。"
+        },
+        {
+          "word": "assistant",
+          "partOfSpeech": "noun",
+          "meaningZh": "助手",
+          "definitionEn": "Someone who helps another person with work.",
+          "example": "The assistant prepared the equipment.",
+          "exampleZh": "助手准备好了设备。"
+        },
+        {
+          "word": "defend",
+          "partOfSpeech": "verb",
+          "meaningZh": "保护；防御",
+          "definitionEn": "To protect against attack or criticism.",
+          "example": "The team must defend its goal.",
+          "exampleZh": "球队必须守住球门。"
+        },
+        {
+          "word": "common",
+          "partOfSpeech": "adjective",
+          "meaningZh": "常见的；共有的",
+          "definitionEn": "Found often or shared by many people.",
+          "example": "This is a common problem in winter.",
+          "exampleZh": "这是冬季常见的问题。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What does the Dueling Club unexpectedly reveal about Harry?",
+          "choices": [
+            "He can speak to snakes.",
+            "He cannot hold a wand.",
+            "He is the club's new teacher."
+          ],
+          "explanation": "决斗中的蛇让众人发现哈利会蛇佬腔。"
+        },
+        {
+          "question": "Why do Harry's actions alarm the spectators?",
+          "choices": [
+            "They cannot understand what he says to the snake.",
+            "They know he is reading a joke.",
+            "He refuses to enter the hall."
+          ],
+          "explanation": "别人听不懂蛇佬腔，误会了哈利对蛇的指示。"
+        }
+      ]
+    },
+    {
+      "title": "Under Suspicion",
+      "titleZh": "受到怀疑",
+      "targetStart": 4600,
+      "targetEnd": 4940,
+      "summaryEn": "Rumours and new victims place Harry under growing suspicion.",
+      "words": [
+        {
+          "word": "victim",
+          "partOfSpeech": "noun",
+          "meaningZh": "受害者",
+          "definitionEn": "Someone harmed by a crime, attack, or accident.",
+          "example": "The victim received medical help.",
+          "exampleZh": "受害者得到了医疗帮助。"
+        },
+        {
+          "word": "serpent",
+          "partOfSpeech": "noun",
+          "meaningZh": "蛇",
+          "definitionEn": "A snake, especially in stories or formal language.",
+          "example": "A serpent appeared in the old painting.",
+          "exampleZh": "古老的画中出现了一条蛇。"
+        },
+        {
+          "word": "profile",
+          "partOfSpeech": "noun",
+          "meaningZh": "形象；曝光度",
+          "definitionEn": "The amount of public attention someone receives.",
+          "example": "He kept a low profile during the investigation.",
+          "exampleZh": "调查期间他保持低调。"
+        },
+        {
+          "word": "blood",
+          "partOfSpeech": "noun",
+          "meaningZh": "血；血液",
+          "definitionEn": "The red liquid moving through the body.",
+          "example": "The nurse took a small sample of blood.",
+          "exampleZh": "护士取了少量血样。"
+        },
+        {
+          "word": "decent",
+          "partOfSpeech": "adjective",
+          "meaningZh": "正派的；得体的",
+          "definitionEn": "Behaving in an honest and fair way.",
+          "example": "A decent person treats others with respect.",
+          "exampleZh": "正派的人尊重他人。"
+        },
+        {
+          "word": "school",
+          "partOfSpeech": "noun",
+          "meaningZh": "学校",
+          "definitionEn": "A place where children learn.",
+          "example": "Our school has a large library.",
+          "exampleZh": "我们学校有一个大图书馆。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Why do some students suspect Harry?",
+          "choices": [
+            "His rare ability resembles a power linked to Slytherin.",
+            "They see him steal the Stone.",
+            "He admits to causing every attack."
+          ],
+          "explanation": "哈利的蛇佬腔与斯莱特林有关，使同学产生怀疑。"
+        },
+        {
+          "question": "What makes Harry's situation worse?",
+          "choices": [
+            "He is found near more petrified victims.",
+            "He wins a library prize.",
+            "The school closes for summer."
+          ],
+          "explanation": "哈利又出现在新受害者附近，进一步加深了误会。"
+        }
+      ]
+    },
+    {
+      "title": "The Phoenix and the Headmaster",
+      "titleZh": "凤凰与校长",
+      "targetStart": 4940,
+      "targetEnd": 5260,
+      "summaryEn": "A visit to the headmaster offers reassurance and an extraordinary discovery.",
+      "words": [
+        {
+          "word": "phoenix",
+          "partOfSpeech": "noun",
+          "meaningZh": "凤凰",
+          "definitionEn": "A mythical bird that is reborn from its ashes.",
+          "example": "The phoenix rose from the flames.",
+          "exampleZh": "凤凰从火焰中升起。"
+        },
+        {
+          "word": "ashes",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "灰烬",
+          "definitionEn": "The powder left after something burns.",
+          "example": "Only ashes remained in the fireplace.",
+          "exampleZh": "壁炉里只剩下灰烬。"
+        },
+        {
+          "word": "tears",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "眼泪",
+          "definitionEn": "Drops of liquid that come from the eyes.",
+          "example": "Tears rolled down her face.",
+          "exampleZh": "眼泪顺着她的脸流下来。"
+        },
+        {
+          "word": "reborn",
+          "partOfSpeech": "adjective",
+          "meaningZh": "重生的",
+          "definitionEn": "Born or beginning again.",
+          "example": "The mythical bird is reborn after burning.",
+          "exampleZh": "神话中的鸟在燃烧后重生。"
+        },
+        {
+          "word": "healing",
+          "partOfSpeech": "adjective",
+          "meaningZh": "治愈的",
+          "definitionEn": "Helping an injury or illness get better.",
+          "example": "Rest has a healing effect.",
+          "exampleZh": "休息有治愈作用。"
+        },
+        {
+          "word": "powers",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "力量；能力",
+          "definitionEn": "Special abilities or forms of control.",
+          "example": "The character discovers new powers.",
+          "exampleZh": "这个角色发现了新的能力。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What happens to Fawkes in Dumbledore's office?",
+          "choices": [
+            "He burns and is reborn from the ashes.",
+            "He becomes an ordinary owl forever.",
+            "He leaves on the school train."
+          ],
+          "explanation": "凤凰福克斯在火中消逝，又从灰烬里重生。"
+        },
+        {
+          "question": "How does Harry react to the suspicion around him?",
+          "choices": [
+            "He begins to question what he knows about himself.",
+            "He becomes certain that every rumour is true.",
+            "He forgets all about the attacks."
+          ],
+          "explanation": "周围的怀疑让哈利对自己的能力和身份产生不安。"
+        }
+      ]
+    },
+    {
+      "title": "Borrowed Faces",
+      "titleZh": "借来的面孔",
+      "targetStart": 5260,
+      "targetEnd": 5805,
+      "summaryEn": "A Christmas disguise lets the friends test their suspicions about Malfoy.",
+      "words": [
+        {
+          "word": "asleep",
+          "partOfSpeech": "adjective",
+          "meaningZh": "睡着的",
+          "definitionEn": "In a state of sleep.",
+          "example": "The baby is already asleep.",
+          "exampleZh": "婴儿已经睡着了。"
+        },
+        {
+          "word": "draught",
+          "partOfSpeech": "noun",
+          "meaningZh": "药水；一剂饮料",
+          "definitionEn": "A drink, especially a medicinal or magical one.",
+          "example": "The doctor prepared a sleeping draught.",
+          "exampleZh": "医生准备了一剂安眠药水。"
+        },
+        {
+          "word": "scar",
+          "partOfSpeech": "noun",
+          "meaningZh": "伤疤",
+          "definitionEn": "A mark left on the skin after an injury.",
+          "example": "A small scar remained on his hand.",
+          "exampleZh": "他的手上留下了一道小伤疤。"
+        },
+        {
+          "word": "uniforms",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "制服；校服",
+          "definitionEn": "Matching clothing worn by members of a group.",
+          "example": "The students changed into their uniforms.",
+          "exampleZh": "学生们换上了校服。"
+        },
+        {
+          "word": "change",
+          "partOfSpeech": "verb",
+          "meaningZh": "改变；变化",
+          "definitionEn": "To become or make something different.",
+          "example": "The spell can change a person's appearance.",
+          "exampleZh": "这个咒语能改变人的外貌。"
+        },
+        {
+          "word": "human",
+          "partOfSpeech": "adjective",
+          "meaningZh": "人类的",
+          "definitionEn": "Relating to people rather than animals or other beings.",
+          "example": "The rule applies only to human transformations.",
+          "exampleZh": "这条规则只适用于人类变形。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What does the disguise allow Harry and Ron to learn?",
+          "choices": [
+            "Malfoy is not the source of the answers they expected.",
+            "Malfoy invented the Sorting Hat.",
+            "Malfoy is secretly the headmaster."
+          ],
+          "explanation": "潜入斯莱特林后，他们发现马尔福并不知道预想中的真相。"
+        },
+        {
+          "question": "Why does Hermione's transformation go wrong?",
+          "choices": [
+            "She uses an animal hair in a potion meant for human transformations.",
+            "She forgets to bring a school uniform.",
+            "She drinks ordinary water."
+          ],
+          "explanation": "赫敏误用了猫毛，而复方汤剂只适用于人类变形。"
+        }
+      ]
+    },
+    {
+      "title": "A Blank Diary",
+      "titleZh": "空白日记",
+      "targetStart": 5805,
+      "targetEnd": 6010,
+      "summaryEn": "An old diary offers a puzzling connection to the school's past.",
+      "words": [
+        {
+          "word": "diary",
+          "partOfSpeech": "noun",
+          "meaningZh": "日记；日记本",
+          "definitionEn": "A book used to record personal experiences.",
+          "example": "She writes in her diary every night.",
+          "exampleZh": "她每晚都写日记。"
+        },
+        {
+          "word": "award",
+          "partOfSpeech": "noun",
+          "meaningZh": "奖；奖项",
+          "definitionEn": "A prize given for an achievement.",
+          "example": "He received an award for helping others.",
+          "exampleZh": "他因帮助别人而获奖。"
+        },
+        {
+          "word": "trophy",
+          "partOfSpeech": "noun",
+          "meaningZh": "奖杯",
+          "definitionEn": "An object given as a prize for achievement.",
+          "example": "The trophy stood on a high shelf.",
+          "exampleZh": "奖杯摆在高高的架子上。"
+        },
+        {
+          "word": "services",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "服务；贡献",
+          "definitionEn": "Work done to help others.",
+          "example": "The town thanked her for her services.",
+          "exampleZh": "镇上的人感谢她的贡献。"
+        },
+        {
+          "word": "creature",
+          "partOfSpeech": "noun",
+          "meaningZh": "生物；动物",
+          "definitionEn": "A living being, especially an animal.",
+          "example": "A tiny creature hid under the leaf.",
+          "exampleZh": "一个小生物藏在叶子下面。"
+        },
+        {
+          "word": "theory",
+          "partOfSpeech": "noun",
+          "meaningZh": "理论；推测",
+          "definitionEn": "An explanation supported by ideas or evidence.",
+          "example": "We need evidence to test the theory.",
+          "exampleZh": "我们需要证据来验证这个推测。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What connects the diary to an old mystery?",
+          "choices": [
+            "It belonged to a student from the time of an earlier Chamber incident.",
+            "It is Dudley's shopping list.",
+            "It contains last week's Quidditch scores."
+          ],
+          "explanation": "日记属于密室上次开启时期的学生，与旧案有关。"
+        },
+        {
+          "question": "Why is the diary puzzling at first?",
+          "choices": [
+            "Its pages appear to be blank.",
+            "It is too large to lift.",
+            "Its cover has no colour."
+          ],
+          "explanation": "日记看起来空白，却似乎隐藏着重要信息。"
+        }
+      ]
+    },
+    {
+      "title": "Inside Tom Riddle's Memory",
+      "titleZh": "走进汤姆的记忆",
+      "targetStart": 6010,
+      "targetEnd": 6330,
+      "summaryEn": "Harry is drawn into a memory that seems to explain an earlier tragedy.",
+      "words": [
+        {
+          "word": "caught",
+          "partOfSpeech": "past participle",
+          "meaningZh": "被抓住的；被发现的",
+          "definitionEn": "Taken hold of or discovered.",
+          "example": "The thief was caught near the gate.",
+          "exampleZh": "小偷在大门附近被抓住了。"
+        },
+        {
+          "word": "school",
+          "partOfSpeech": "noun",
+          "meaningZh": "学校",
+          "definitionEn": "A place where children learn.",
+          "example": "Our school has a large library.",
+          "exampleZh": "我们学校有一个大图书馆。"
+        },
+        {
+          "word": "parents",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "父母",
+          "definitionEn": "A person's mother and father.",
+          "example": "Her parents encouraged her to read.",
+          "exampleZh": "她的父母鼓励她阅读。"
+        },
+        {
+          "word": "Aragog",
+          "partOfSpeech": "proper noun",
+          "meaningZh": "阿拉戈克",
+          "definitionEn": "The giant spider Hagrid raised in this story.",
+          "example": "Aragog lives deep in the forest.",
+          "exampleZh": "阿拉戈克住在森林深处。"
+        },
+        {
+          "word": "responsible",
+          "partOfSpeech": "adjective",
+          "meaningZh": "负责的；有责任的",
+          "definitionEn": "Having a duty, or being the cause of something.",
+          "example": "Who is responsible for the missing books?",
+          "exampleZh": "谁要为丢失的书负责？"
+        },
+        {
+          "word": "expelled",
+          "partOfSpeech": "past participle",
+          "meaningZh": "被开除的",
+          "definitionEn": "Forced to leave an institution by an official decision.",
+          "example": "The student was expelled after repeated serious offences.",
+          "exampleZh": "那个学生因多次严重违规被开除了。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What does the diary show Harry?",
+          "choices": [
+            "A memory that appears to accuse Hagrid.",
+            "A prediction of next year's exams.",
+            "A map of the Dursleys' home."
+          ],
+          "explanation": "日记展示了一段似乎把矛头指向海格的记忆。"
+        },
+        {
+          "question": "Why should Harry be cautious about this memory?",
+          "choices": [
+            "A shown memory can still be incomplete or misleading.",
+            "All memories are automatically false.",
+            "Hagrid has never been to Hogwarts."
+          ],
+          "explanation": "看到的记忆并不一定完整，呈现方式也可能误导判断。"
+        }
+      ]
+    },
+    {
+      "title": "Another Friend in Danger",
+      "titleZh": "又一位朋友遇险",
+      "targetStart": 6330,
+      "targetEnd": 6690,
+      "summaryEn": "The danger reaches someone close to Harry while the school tightens its rules.",
+      "words": [
+        {
+          "word": "password",
+          "partOfSpeech": "noun",
+          "meaningZh": "口令；密码",
+          "definitionEn": "A secret word that allows access.",
+          "example": "You need a password to enter.",
+          "exampleZh": "你需要口令才能进入。"
+        },
+        {
+          "word": "attacks",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "袭击",
+          "definitionEn": "Acts intended to harm someone.",
+          "example": "The guards investigated the attacks.",
+          "exampleZh": "卫兵调查了这些袭击。"
+        },
+        {
+          "word": "canceled",
+          "partOfSpeech": "past participle",
+          "meaningZh": "被取消的",
+          "definitionEn": "Stopped from happening as planned.",
+          "example": "The trip was canceled because of the storm.",
+          "exampleZh": "旅行因暴风雨被取消了。"
+        },
+        {
+          "word": "hospital",
+          "partOfSpeech": "noun",
+          "meaningZh": "医院",
+          "definitionEn": "A place where sick or injured people are treated.",
+          "example": "He went to hospital after the accident.",
+          "exampleZh": "事故后他去了医院。"
+        },
+        {
+          "word": "cloak",
+          "partOfSpeech": "noun",
+          "meaningZh": "斗篷",
+          "definitionEn": "A loose outer garment without sleeves.",
+          "example": "The traveller wore a dark cloak.",
+          "exampleZh": "旅行者穿着一件深色斗篷。"
+        },
+        {
+          "word": "library",
+          "partOfSpeech": "noun",
+          "meaningZh": "图书馆",
+          "definitionEn": "A place where books are kept for reading or borrowing.",
+          "example": "I borrowed a history book from the library.",
+          "exampleZh": "我从图书馆借了一本历史书。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Which friend becomes a victim of the attacks?",
+          "choices": [
+            "Hermione.",
+            "Dudley.",
+            "Oliver Wood."
+          ],
+          "explanation": "赫敏也遭到石化，危险越来越迫近三人。"
+        },
+        {
+          "question": "How does the school respond to the new danger?",
+          "choices": [
+            "It restricts students' movements and cancels activities.",
+            "It opens every locked door.",
+            "It invites everyone to camp alone."
+          ],
+          "explanation": "学校加强行动限制并取消活动，以保护学生。"
+        }
+      ]
+    },
+    {
+      "title": "Hagrid's Last Clue",
+      "titleZh": "海格留下的线索",
+      "targetStart": 6690,
+      "targetEnd": 6935,
+      "summaryEn": "The removal of two trusted adults leaves the boys with one strange clue.",
+      "words": [
+        {
+          "word": "minister",
+          "partOfSpeech": "noun",
+          "meaningZh": "部长",
+          "definitionEn": "A senior member of a government.",
+          "example": "The minister answered questions about the decision.",
+          "exampleZh": "部长回答了关于该决定的问题。"
+        },
+        {
+          "word": "governors",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "理事；管理委员会成员",
+          "definitionEn": "People who supervise an institution.",
+          "example": "The governors met to discuss the school's future.",
+          "exampleZh": "理事们开会讨论学校的未来。"
+        },
+        {
+          "word": "prison",
+          "partOfSpeech": "noun",
+          "meaningZh": "监狱",
+          "definitionEn": "A place where people are kept as punishment.",
+          "example": "The prisoner was taken back to prison.",
+          "exampleZh": "囚犯被带回了监狱。"
+        },
+        {
+          "word": "suspension",
+          "partOfSpeech": "noun",
+          "meaningZh": "停职；暂停",
+          "definitionEn": "A temporary removal from a role or activity.",
+          "example": "The suspension lasted for two weeks.",
+          "exampleZh": "停职持续了两周。"
+        },
+        {
+          "word": "follow",
+          "partOfSpeech": "verb",
+          "meaningZh": "跟随",
+          "definitionEn": "To go after someone or something.",
+          "example": "Follow the path to the lake.",
+          "exampleZh": "沿着小路走到湖边。"
+        },
+        {
+          "word": "desire",
+          "partOfSpeech": "verb",
+          "meaningZh": "渴望；想要",
+          "definitionEn": "To want something strongly.",
+          "example": "They desire a peaceful life.",
+          "exampleZh": "他们渴望平静的生活。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What happens to Hagrid and Dumbledore?",
+          "choices": [
+            "Hagrid is taken away and Dumbledore is suspended.",
+            "They are both appointed Quidditch captains.",
+            "They move the school to London."
+          ],
+          "explanation": "海格被带走，邓布利多被停职，哈利失去重要支持。"
+        },
+        {
+          "question": "What clue does Hagrid leave for the boys?",
+          "choices": [
+            "Follow the spiders.",
+            "Wait for the next birthday cake.",
+            "Buy a new diary."
+          ],
+          "explanation": "海格留下了跟随蜘蛛的线索。"
+        }
+      ]
+    },
+    {
+      "title": "Follow the Spiders",
+      "titleZh": "跟随蜘蛛",
+      "targetStart": 6935,
+      "targetEnd": 7410,
+      "summaryEn": "A trail leads into the forest and a meeting with Hagrid's old friend.",
+      "words": [
+        {
+          "word": "forest",
+          "partOfSpeech": "noun",
+          "meaningZh": "森林",
+          "definitionEn": "A large area covered with trees.",
+          "example": "A path runs through the forest.",
+          "exampleZh": "一条小路穿过森林。"
+        },
+        {
+          "word": "ancient",
+          "partOfSpeech": "adjective",
+          "meaningZh": "古老的",
+          "definitionEn": "Very old or belonging to the distant past.",
+          "example": "They discovered an ancient doorway.",
+          "exampleZh": "他们发现了一道古老的门。"
+        },
+        {
+          "word": "spiders",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "蜘蛛",
+          "definitionEn": "Small eight-legged animals that often make webs.",
+          "example": "The spiders hid in the dark corners.",
+          "exampleZh": "蜘蛛躲在阴暗的角落里。"
+        },
+        {
+          "word": "accused",
+          "partOfSpeech": "past participle",
+          "meaningZh": "被指控的",
+          "definitionEn": "Said to have done something wrong.",
+          "example": "He was accused of taking the missing key.",
+          "exampleZh": "他被指控拿走了丢失的钥匙。"
+        },
+        {
+          "word": "trail",
+          "partOfSpeech": "noun",
+          "meaningZh": "踪迹；小路",
+          "definitionEn": "Marks left behind, or a narrow path.",
+          "example": "We followed a trail of footprints.",
+          "exampleZh": "我们沿着一串脚印追踪。"
+        },
+        {
+          "word": "creature",
+          "partOfSpeech": "noun",
+          "meaningZh": "生物；动物",
+          "definitionEn": "A living being, especially an animal.",
+          "example": "A tiny creature hid under the leaf.",
+          "exampleZh": "一个小生物藏在叶子下面。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What does Aragog reveal about Hagrid?",
+          "choices": [
+            "Hagrid did not release the Chamber's monster.",
+            "Hagrid wrote the diary yesterday.",
+            "Hagrid cannot care for animals."
+          ],
+          "explanation": "阿拉戈克的证词表明，海格并非放出密室怪物的人。"
+        },
+        {
+          "question": "How do the boys escape the spiders?",
+          "choices": [
+            "The flying car helps them get away.",
+            "They take the Hogwarts Express.",
+            "Lockhart personally carries them out."
+          ],
+          "explanation": "飞车再次出现，帮助两人逃离蜘蛛群。"
+        }
+      ]
+    },
+    {
+      "title": "The Monster's Secret",
+      "titleZh": "怪物的秘密",
+      "targetStart": 7410,
+      "targetEnd": 7610,
+      "summaryEn": "A page of research connects the victims and explains how the monster travels.",
+      "words": [
+        {
+          "word": "basilisk",
+          "partOfSpeech": "noun",
+          "meaningZh": "蛇怪",
+          "definitionEn": "A mythical giant serpent with a deadly gaze.",
+          "example": "The basilisk guarded the underground chamber.",
+          "exampleZh": "蛇怪守着地下密室。"
+        },
+        {
+          "word": "reflection",
+          "partOfSpeech": "noun",
+          "meaningZh": "映像；倒影",
+          "definitionEn": "An image seen in a mirror or shiny surface.",
+          "example": "She saw a reflection in the water.",
+          "exampleZh": "她看到了水中的倒影。"
+        },
+        {
+          "word": "mirror",
+          "partOfSpeech": "noun",
+          "meaningZh": "镜子",
+          "definitionEn": "A surface that reflects an image.",
+          "example": "She looked in the mirror before leaving.",
+          "exampleZh": "她出门前照了照镜子。"
+        },
+        {
+          "word": "camera",
+          "partOfSpeech": "noun",
+          "meaningZh": "照相机",
+          "definitionEn": "A device used to take pictures.",
+          "example": "The camera was hanging from his neck.",
+          "exampleZh": "照相机挂在他的脖子上。"
+        },
+        {
+          "word": "deadly",
+          "partOfSpeech": "adjective",
+          "meaningZh": "致命的",
+          "definitionEn": "Able to cause death.",
+          "example": "The plant contains a deadly poison.",
+          "exampleZh": "这种植物含有致命毒素。"
+        },
+        {
+          "word": "snake",
+          "partOfSpeech": "noun",
+          "meaningZh": "蛇",
+          "definitionEn": "A long reptile with no legs.",
+          "example": "A snake moved slowly through the grass.",
+          "exampleZh": "一条蛇缓缓穿过草丛。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What creature do Hermione's notes identify?",
+          "choices": [
+            "A basilisk.",
+            "A harmless garden snake.",
+            "A Cornish pixie."
+          ],
+          "explanation": "赫敏留下的资料指出，怪物是一条蛇怪。"
+        },
+        {
+          "question": "Why have the victims been petrified rather than killed?",
+          "choices": [
+            "They saw the creature indirectly through reflections or other barriers.",
+            "They were all wearing earmuffs.",
+            "The creature cannot harm anyone."
+          ],
+          "explanation": "受害者都是间接看到蛇怪，所以被石化而非直接死亡。"
+        }
+      ]
+    },
+    {
+      "title": "Ginny Is Missing",
+      "titleZh": "金妮失踪了",
+      "targetStart": 7610,
+      "targetEnd": 7900,
+      "summaryEn": "Ginny's disappearance forces the boys to confront their unreliable teacher.",
+      "words": [
+        {
+          "word": "urgent",
+          "partOfSpeech": "adjective",
+          "meaningZh": "紧急的",
+          "definitionEn": "Needing immediate attention.",
+          "example": "We received an urgent message this morning.",
+          "exampleZh": "我们今早收到了一条紧急消息。"
+        },
+        {
+          "word": "fraud",
+          "partOfSpeech": "noun",
+          "meaningZh": "骗子；欺骗",
+          "definitionEn": "A person or act that pretends to be genuine.",
+          "example": "The famous expert turned out to be a fraud.",
+          "exampleZh": "那位著名专家原来是个骗子。"
+        },
+        {
+          "word": "memory",
+          "partOfSpeech": "noun",
+          "meaningZh": "记忆",
+          "definitionEn": "The ability to remember, or something remembered.",
+          "example": "The song brought back a happy memory.",
+          "exampleZh": "这首歌唤起了一段快乐的记忆。"
+        },
+        {
+          "word": "entrance",
+          "partOfSpeech": "noun",
+          "meaningZh": "入口",
+          "definitionEn": "A place through which someone enters.",
+          "example": "The entrance was hidden behind a curtain.",
+          "exampleZh": "入口藏在帘子后面。"
+        },
+        {
+          "word": "sister",
+          "partOfSpeech": "noun",
+          "meaningZh": "姐妹",
+          "definitionEn": "A girl or woman with the same parent as someone.",
+          "example": "His sister helped him with the puzzle.",
+          "exampleZh": "他的妹妹帮他解谜。"
+        },
+        {
+          "word": "pipes",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "管道",
+          "definitionEn": "Tubes used to carry water, gas, or other materials.",
+          "example": "Water moved through the old pipes.",
+          "exampleZh": "水流过旧管道。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Why does the crisis suddenly become personal for Ron?",
+          "choices": [
+            "Ginny has been taken into the Chamber.",
+            "His broom changes colour.",
+            "His school bag is lost."
+          ],
+          "explanation": "金妮被带入密室，罗恩的妹妹面临生命危险。"
+        },
+        {
+          "question": "What do Harry and Ron discover about Lockhart?",
+          "choices": [
+            "His famous achievements were stolen from others.",
+            "He secretly built Hogwarts.",
+            "He is a skilled train driver."
+          ],
+          "explanation": "洛哈特承认自己盗用了别人的经历，并篡改了他们的记忆。"
+        }
+      ]
+    },
+    {
+      "title": "Down into the Chamber",
+      "titleZh": "深入密室",
+      "targetStart": 7900,
+      "targetEnd": 8235,
+      "summaryEn": "The journey underground separates the friends and reveals another hidden danger.",
+      "words": [
+        {
+          "word": "snakeskin",
+          "partOfSpeech": "noun",
+          "meaningZh": "蛇皮",
+          "definitionEn": "The skin a snake sheds as it grows.",
+          "example": "They found a snakeskin near the rocks.",
+          "exampleZh": "他们在岩石附近发现了一张蛇皮。"
+        },
+        {
+          "word": "charm",
+          "partOfSpeech": "noun",
+          "meaningZh": "魔咒；护符",
+          "definitionEn": "A magical spell or object.",
+          "example": "The charm opened a hidden passage.",
+          "exampleZh": "魔咒打开了一条隐藏通道。"
+        },
+        {
+          "word": "backfired",
+          "partOfSpeech": "past-tense verb",
+          "meaningZh": "反噬；适得其反",
+          "definitionEn": "Produced the opposite of the intended result.",
+          "example": "His plan backfired and made things worse.",
+          "exampleZh": "他的计划适得其反，让事情更糟。"
+        },
+        {
+          "word": "memories",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "记忆；回忆",
+          "definitionEn": "Things someone remembers from the past.",
+          "example": "The photographs brought back childhood memories.",
+          "exampleZh": "照片唤起了童年的回忆。"
+        },
+        {
+          "word": "sight",
+          "partOfSpeech": "noun",
+          "meaningZh": "视力；视野",
+          "definitionEn": "The ability to see, or the area that can be seen.",
+          "example": "Keep the entrance in sight.",
+          "exampleZh": "别让入口离开视野。"
+        },
+        {
+          "word": "heart",
+          "partOfSpeech": "noun",
+          "meaningZh": "心；心脏",
+          "definitionEn": "The organ that pumps blood, or the centre of feelings.",
+          "example": "Her heart was beating quickly.",
+          "exampleZh": "她的心跳得很快。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What happens when Lockhart tries to erase the boys' memories?",
+          "choices": [
+            "The spell backfires through Ron's broken wand.",
+            "He becomes headmaster immediately.",
+            "The Chamber closes forever."
+          ],
+          "explanation": "洛哈特使用罗恩折断的魔杖，遗忘咒反噬了自己。"
+        },
+        {
+          "question": "Why must Harry continue without Ron?",
+          "choices": [
+            "A rockfall separates them.",
+            "Ron chooses to attend a feast.",
+            "Ron has already left for London."
+          ],
+          "explanation": "坍塌的石块把两人隔开，哈利必须独自深入。"
+        }
+      ]
+    },
+    {
+      "title": "The Heir Revealed",
+      "titleZh": "继承人的真相",
+      "targetStart": 8235,
+      "targetEnd": 8580,
+      "summaryEn": "Harry meets the person behind the diary and learns how Ginny was manipulated.",
+      "words": [
+        {
+          "word": "loyal",
+          "partOfSpeech": "adjective",
+          "meaningZh": "忠诚的",
+          "definitionEn": "Remaining faithful and supportive.",
+          "example": "A loyal friend stood beside him.",
+          "exampleZh": "一位忠诚的朋友站在他身边。"
+        },
+        {
+          "word": "diary",
+          "partOfSpeech": "noun",
+          "meaningZh": "日记；日记本",
+          "definitionEn": "A book used to record personal experiences.",
+          "example": "She writes in her diary every night.",
+          "exampleZh": "她每晚都写日记。"
+        },
+        {
+          "word": "preserved",
+          "partOfSpeech": "past participle",
+          "meaningZh": "保存了的",
+          "definitionEn": "Kept in its original condition.",
+          "example": "The old letter was carefully preserved.",
+          "exampleZh": "那封旧信被仔细保存着。"
+        },
+        {
+          "word": "future",
+          "partOfSpeech": "noun",
+          "meaningZh": "未来",
+          "definitionEn": "The time that has not happened yet.",
+          "example": "We are making plans for the future.",
+          "exampleZh": "我们正在为未来做计划。"
+        },
+        {
+          "word": "power",
+          "partOfSpeech": "noun",
+          "meaningZh": "力量；权力",
+          "definitionEn": "The ability to control or affect things.",
+          "example": "The leader used her power responsibly.",
+          "exampleZh": "领导者负责任地运用她的权力。"
+        },
+        {
+          "word": "innocent",
+          "partOfSpeech": "adjective",
+          "meaningZh": "无辜的",
+          "definitionEn": "Not guilty of wrongdoing.",
+          "example": "They realised the accused man was innocent.",
+          "exampleZh": "他们意识到被指控的人是无辜的。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Who does Tom Riddle reveal himself to be?",
+          "choices": [
+            "The younger Voldemort preserved in the diary.",
+            "A new Hogwarts gardener.",
+            "Harry's cousin."
+          ],
+          "explanation": "汤姆·里德尔就是保存在日记中的年轻伏地魔。"
+        },
+        {
+          "question": "How has Riddle used Ginny?",
+          "choices": [
+            "He has controlled her through the diary.",
+            "He has helped her finish her exams honestly.",
+            "He has only borrowed her textbooks."
+          ],
+          "explanation": "里德尔通过日记影响并控制金妮，借她实施计划。"
+        }
+      ]
+    },
+    {
+      "title": "The Basilisk and the Sword",
+      "titleZh": "蛇怪与宝剑",
+      "targetStart": 8580,
+      "targetEnd": 9080,
+      "summaryEn": "Help arrives as Harry faces the creature inside the Chamber.",
+      "words": [
+        {
+          "word": "venom",
+          "partOfSpeech": "noun",
+          "meaningZh": "毒液",
+          "definitionEn": "Poison produced by some animals.",
+          "example": "The snake's venom can be dangerous.",
+          "exampleZh": "这种蛇的毒液可能很危险。"
+        },
+        {
+          "word": "healing",
+          "partOfSpeech": "adjective",
+          "meaningZh": "治愈的",
+          "definitionEn": "Helping an injury or illness get better.",
+          "example": "Rest has a healing effect.",
+          "exampleZh": "休息有治愈作用。"
+        },
+        {
+          "word": "tears",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "眼泪",
+          "definitionEn": "Drops of liquid that come from the eyes.",
+          "example": "Tears rolled down her face.",
+          "exampleZh": "眼泪顺着她的脸流下来。"
+        },
+        {
+          "word": "blinded",
+          "partOfSpeech": "past participle",
+          "meaningZh": "被弄瞎；看不见了",
+          "definitionEn": "Made unable to see.",
+          "example": "The bright flash briefly blinded the driver.",
+          "exampleZh": "强光使司机短暂失明。"
+        },
+        {
+          "word": "chamber",
+          "partOfSpeech": "noun",
+          "meaningZh": "房间；密室",
+          "definitionEn": "A room, often an enclosed or private one.",
+          "example": "A narrow passage led to a chamber.",
+          "exampleZh": "一条狭窄通道通往一个房间。"
+        },
+        {
+          "word": "brilliant",
+          "partOfSpeech": "adjective",
+          "meaningZh": "聪明的；出色的",
+          "definitionEn": "Very clever or excellent.",
+          "example": "She found a brilliant solution to the problem.",
+          "exampleZh": "她找到了一个出色的解决办法。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "How does Fawkes help Harry against the basilisk?",
+          "choices": [
+            "He blinds the creature and later heals Harry.",
+            "He takes Harry straight to the feast.",
+            "He gives the basilisk a train ticket."
+          ],
+          "explanation": "福克斯啄瞎蛇怪，随后又用眼泪治愈哈利。"
+        },
+        {
+          "question": "How does Harry stop the diary's power?",
+          "choices": [
+            "He pierces it with a basilisk fang.",
+            "He hides it in the library.",
+            "He gives it back without opening it."
+          ],
+          "explanation": "哈利用蛇怪的毒牙刺穿日记，摧毁了其中的力量。"
+        }
+      ]
+    },
+    {
+      "title": "The Choices We Make",
+      "titleZh": "我们的选择",
+      "targetStart": 9080,
+      "targetEnd": 9430,
+      "summaryEn": "Harry discusses identity, loyalty, and the decisions that shape a person.",
+      "words": [
+        {
+          "word": "choices",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "选择",
+          "definitionEn": "Options or decisions available to someone.",
+          "example": "Our choices affect other people.",
+          "exampleZh": "我们的选择会影响别人。"
+        },
+        {
+          "word": "loyalty",
+          "partOfSpeech": "noun",
+          "meaningZh": "忠诚",
+          "definitionEn": "Faithfulness to a person or cause.",
+          "example": "Her loyalty remained strong during difficult times.",
+          "exampleZh": "困难时期她依然坚定忠诚。"
+        },
+        {
+          "word": "abilities",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "能力",
+          "definitionEn": "Skills or powers to do things.",
+          "example": "Practice improves our abilities.",
+          "exampleZh": "练习能提高我们的能力。"
+        },
+        {
+          "word": "qualities",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "品质；特质",
+          "definitionEn": "Characteristics of a person or thing.",
+          "example": "Kindness is one of her best qualities.",
+          "exampleZh": "善良是她最好的品质之一。"
+        },
+        {
+          "word": "determination",
+          "partOfSpeech": "noun",
+          "meaningZh": "决心",
+          "definitionEn": "The firm intention to achieve something.",
+          "example": "His determination helped him finish the journey.",
+          "exampleZh": "他的决心帮助他完成了旅程。"
+        },
+        {
+          "word": "resourcefulness",
+          "partOfSpeech": "noun",
+          "meaningZh": "机智；应变能力",
+          "definitionEn": "The ability to find useful ways to solve problems.",
+          "example": "Her resourcefulness saved the team time.",
+          "exampleZh": "她的应变能力为团队节省了时间。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What distinction does Dumbledore make about identity?",
+          "choices": [
+            "Choices reveal who we are more than abilities alone.",
+            "A person's house decides every future action.",
+            "Only fame makes someone good."
+          ],
+          "explanation": "邓布利多强调，选择比能力更能体现一个人真正是谁。"
+        },
+        {
+          "question": "What does Harry drawing the sword show in this conversation?",
+          "choices": [
+            "His connection to Gryffindor is genuine.",
+            "He should leave school immediately.",
+            "He cannot be trusted with any task."
+          ],
+          "explanation": "邓布利多以格兰芬多宝剑说明哈利真正属于这个学院。"
+        }
+      ]
+    },
+    {
+      "title": "A Gift of Freedom",
+      "titleZh": "自由的礼物",
+      "targetStart": 9430,
+      "targetEnd": 9630,
+      "summaryEn": "Harry finds a clever way to repay a friend who has lived without freedom.",
+      "words": [
+        {
+          "word": "servant",
+          "partOfSpeech": "noun",
+          "meaningZh": "仆人",
+          "definitionEn": "A person employed or forced to work for someone.",
+          "example": "The servant carried a tray into the room.",
+          "exampleZh": "仆人端着托盘走进房间。"
+        },
+        {
+          "word": "freed",
+          "partOfSpeech": "past participle",
+          "meaningZh": "获得自由的；被释放的",
+          "definitionEn": "Released from confinement or control.",
+          "example": "The trapped bird was freed.",
+          "exampleZh": "被困的鸟获得了自由。"
+        },
+        {
+          "word": "clothes",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "衣服",
+          "definitionEn": "Things worn to cover the body.",
+          "example": "He packed warm clothes for the trip.",
+          "exampleZh": "他为旅行装上了保暖的衣服。"
+        },
+        {
+          "word": "master",
+          "partOfSpeech": "noun",
+          "meaningZh": "主人；掌控者",
+          "definitionEn": "A person with control over a servant or situation.",
+          "example": "The servant waited for the master's instructions.",
+          "exampleZh": "仆人等候主人的指示。"
+        },
+        {
+          "word": "promise",
+          "partOfSpeech": "verb",
+          "meaningZh": "承诺",
+          "definitionEn": "To say that you will definitely do something.",
+          "example": "I promise to return your book tomorrow.",
+          "exampleZh": "我保证明天归还你的书。"
+        },
+        {
+          "word": "parents",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "父母",
+          "definitionEn": "A person's mother and father.",
+          "example": "Her parents encouraged her to read.",
+          "exampleZh": "她的父母鼓励她阅读。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "How does Harry help Dobby gain freedom?",
+          "choices": [
+            "He tricks Lucius into presenting Dobby with clothing.",
+            "He buys Dobby a flying car.",
+            "He asks Dobby to erase his memory."
+          ],
+          "explanation": "哈利巧妙地让卢修斯把衣物交给多比，使他获得自由。"
+        },
+        {
+          "question": "What does Dobby do when Lucius threatens Harry?",
+          "choices": [
+            "He protects Harry.",
+            "He helps Lucius attack.",
+            "He returns to the diary."
+          ],
+          "explanation": "获得自由后，多比主动保护哈利。"
+        }
+      ]
+    },
+    {
+      "title": "Welcome Home, Hagrid",
+      "titleZh": "欢迎回来，海格",
+      "targetStart": 9630,
+      "targetEnd": 9908,
+      "summaryEn": "The school celebrates recovery, reunion, and the return of a trusted friend.",
+      "words": [
+        {
+          "word": "feast",
+          "partOfSpeech": "noun",
+          "meaningZh": "盛宴",
+          "definitionEn": "A large special meal.",
+          "example": "Everyone gathered for the feast.",
+          "exampleZh": "大家聚在一起参加盛宴。"
+        },
+        {
+          "word": "exams",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "考试",
+          "definitionEn": "Tests of knowledge or skill.",
+          "example": "Our final exams begin next week.",
+          "exampleZh": "我们的期末考试下周开始。"
+        },
+        {
+          "word": "canceled",
+          "partOfSpeech": "past participle",
+          "meaningZh": "被取消的",
+          "definitionEn": "Stopped from happening as planned.",
+          "example": "The trip was canceled because of the storm.",
+          "exampleZh": "旅行因暴风雨被取消了。"
+        },
+        {
+          "word": "attention",
+          "partOfSpeech": "noun",
+          "meaningZh": "注意；专注",
+          "definitionEn": "The act of watching or listening carefully.",
+          "example": "Please pay attention to the instructions.",
+          "exampleZh": "请注意听说明。"
+        },
+        {
+          "word": "welcome",
+          "partOfSpeech": "verb",
+          "meaningZh": "欢迎",
+          "definitionEn": "To greet someone in a friendly way.",
+          "example": "We welcome new students every year.",
+          "exampleZh": "我们每年欢迎新学生。"
+        },
+        {
+          "word": "successfully",
+          "partOfSpeech": "adverb",
+          "meaningZh": "成功地",
+          "definitionEn": "In a way that achieves the intended result.",
+          "example": "The team successfully completed the repair.",
+          "exampleZh": "团队成功完成了修理。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What happy news marks the final feast?",
+          "choices": [
+            "The petrified students have recovered.",
+            "The Chamber is opening again.",
+            "The school has lost all its teachers."
+          ],
+          "explanation": "曼德拉草药剂治好了被石化的学生，众人重聚。"
+        },
+        {
+          "question": "Why is Hagrid's return important to the celebration?",
+          "choices": [
+            "He has been cleared and welcomed back by the school.",
+            "He is replacing every professor.",
+            "He has brought a new dangerous pet to the feast."
+          ],
+          "explanation": "海格洗清嫌疑回到学校，师生欢迎他归来。"
+        }
+      ]
+    }
+  ]
+}

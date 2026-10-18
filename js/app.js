@@ -81,7 +81,7 @@ const App = {
     const [page, a, b] = this.route();
     window.MovieClassroom?.cleanup();
     this.disposeHlsPlayers(this.el());
-    const isMoviePage = ['movies','movie','movie-series'].includes(page) || (['series','lesson'].includes(page) && a==='movie-harry-potter-1');
+    const isMoviePage = ['movies','movie','movie-series'].includes(page) || (['series','lesson'].includes(page) && String(a||'').startsWith('movie-'));
     document.querySelectorAll('.main-tab').forEach(tab=>{
       const active = tab.getAttribute('href') === (isMoviePage ? '#/movies' : '#/home');
       tab.classList.toggle('active', active);

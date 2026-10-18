@@ -36,7 +36,7 @@ function extractSrt(zip){
 }
 function stamp(seconds){const ms=Math.max(0,Math.round(seconds*1000));return `${String(Math.floor(ms/3600000)).padStart(2,'0')}:${String(Math.floor(ms/60000)%60).padStart(2,'0')}:${String(Math.floor(ms/1000)%60).padStart(2,'0')}.${String(ms%1000).padStart(3,'0')}`;}
 function episodeVtt(cues,chapter,offset=.3,scale=1){
-  const selected=cues.map(c=>({...c,start:c.start*scale+offset-chapter.start,end:c.end*scale+offset-chapter.start})).filter(c=>c.end>0&&c.start<chapter.end-chapter.start);
+  const selected=cues.filter(c=>!/subtitles downloaded from|best watched using open subtitles|www\.opensubtitles\.org/i.test(c.text)).map(c=>({...c,start:c.start*scale+offset-chapter.start,end:c.end*scale+offset-chapter.start})).filter(c=>c.end>0&&c.start<chapter.end-chapter.start);
   return 'WEBVTT\n\n'+selected.map((c,i)=>`${i+1}\n${stamp(c.start)} --> ${stamp(Math.min(c.end,chapter.end-chapter.start))}\n${c.text}\n`).join('\n');
 }
 module.exports={parseSrt,extractSrt,episodeVtt,stamp};

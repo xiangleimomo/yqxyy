@@ -19,3 +19,8 @@
 
 [functions."movie-study-subtitles"]
   included_files = ["data/movie-harry-potter-1/alignment.json"]
+
+[[headers]]
+  for = "/data/movie-harry-potter-2/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
