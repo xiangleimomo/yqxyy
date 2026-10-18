@@ -10,4 +10,4 @@
   directory = "netlify/functions"
 
 [functions."source-explorer-api"]
-  included_files = ["source-lab/providers.json"]
+  included_files = ["source-lab/providers.json", "source-lab/subtitle-films.json"]

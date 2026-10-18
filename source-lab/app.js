@@ -13,6 +13,7 @@
     hls: null,
     generation: 0,
     searchGeneration: 0,
+    subtitleRequest: 0,
     blocks: [],
     manual: [],
     ignored: new Set(),
@@ -59,7 +60,9 @@
       throw Error("搜索服务未启动，请在部署完成后重试。");
     }
     if (!r.ok || data.error)
-      throw Error(data.error || `搜索服务暂不可用（HTTP ${r.status}），请稍后重试。`);
+      throw Error(
+        data.error || `搜索服务暂不可用（HTTP ${r.status}），请稍后重试。`,
+      );
     return data;
   }
   async function direct(provider, query, id, signal) {
@@ -191,6 +194,7 @@
   }
   function cleanup() {
     state.generation++;
+    state.subtitleRequest++;
     clearTimeout(state.timer);
     state.abort?.abort();
     state.abort = null;
@@ -267,6 +271,7 @@
       .toString()
       .padStart(2, "0")}:${(t % 60).toFixed(2).padStart(5, "0")}`;
   function showBlocks() {
+    offsetTracks();
     const box = $("adRanges");
     box.replaceChildren();
     const ranges = blockList();
@@ -351,6 +356,8 @@
     const episode = item.episodes[index];
     if (!episode) return;
     state.episode = episode;
+    $("subtitleQuery").value = item.title;
+    $("subtitleYear").value = /^\d{4}$/.test(item.year || "") ? item.year : "";
     const generation = state.generation;
     state.resume = resume;
     lastRows = [];
@@ -483,14 +490,23 @@
   }
   function offsetTracks() {
     const offset = Number($("subtitleOffset").value) || 0;
+    const externalTracks = new Set(
+      Array.from(video.querySelectorAll("track[data-clean-timeline]")).map(
+        (el) => el.track,
+      ),
+    );
+    const mapTime = (time, track) =>
+      $("subtitleAdSync").checked && externalTracks.has(track)
+        ? C.subtitlePlaybackTime(time, blockList())
+        : time;
     for (const t of Array.from(video.textTracks))
       for (const cue of Array.from(t.cues || [])) {
         if (!Object.hasOwn(cue, "_sfOriginal"))
           cue._sfOriginal = [cue.startTime, cue.endTime];
-        cue.startTime = Math.max(0, cue._sfOriginal[0] + offset);
+        cue.startTime = Math.max(0, mapTime(cue._sfOriginal[0] + offset, t));
         cue.endTime = Math.max(
           cue.startTime + 0.001,
-          cue._sfOriginal[1] + offset,
+          mapTime(cue._sfOriginal[1] + offset, t),
         );
       }
   }
@@ -506,6 +522,7 @@
     track.label = label;
     track.src = url;
     track.default = true;
+    track.dataset.cleanTimeline = "true";
     track.addEventListener(
       "load",
       () => {
@@ -547,19 +564,21 @@
       )
       .then((rows) => rows.flat());
     const movies = await cataloguePromise;
-    return movies.find(
-      (m) =>
-        m.subtitleUrl &&
-        [m.title, m.titleZh].some(
-          (t) => C.normalize(t) === C.normalize(item.title),
-        ) &&
-        (!m.year || !item.year || String(m.year) === item.year),
+    const matches = movies.filter((m) =>
+      [m.title, m.titleZh].some(
+        (t) => C.normalize(t) === C.normalize(item.title),
+      ),
+    );
+    return (
+      matches.find((m) => String(m.year) === String(item.year)) ||
+      (matches.length === 1 ? matches[0] : null)
     );
   }
   async function findSubtitles(explicit = true) {
     const item = state.current;
     if (!item) return;
     const generation = state.generation;
+    const subtitleRequest = ++state.subtitleRequest;
     message("subtitleStatus", "正在查找英文字幕…");
     $("externalSubtitles").replaceChildren();
     try {
@@ -586,7 +605,15 @@
         if (!explicit) return;
       }
       const local = await localSubtitle(item);
-      if (generation !== state.generation) return;
+      if (
+        generation !== state.generation ||
+        subtitleRequest !== state.subtitleRequest
+      )
+        return;
+      if (local && $("subtitleQuery").value === item.title) {
+        $("subtitleQuery").value = local.title;
+        $("subtitleYear").value = local.year || item.year || "";
+      }
       const subtitleUrl = item.subtitleUrl || local?.subtitleUrl;
       if (subtitleUrl && !video.querySelector("track[data-auto]")) {
         const response = await fetch(subtitleUrl);
@@ -603,41 +630,78 @@
       const data = await api(
         {
           action: "subtitles",
-          query: local?.title || item.title,
-          year: item.year,
+          query: $("subtitleQuery").value.trim() || local?.title || item.title,
+          year: $("subtitleYear").value || undefined,
         },
         state.abort?.signal,
       );
-      if (generation !== state.generation) return;
+      if (
+        generation !== state.generation ||
+        subtitleRequest !== state.subtitleRequest
+      )
+        return;
       if (!data.configured) {
         if (embedded < 0 && nativeEnglish < 0 && !subtitleUrl)
           message("subtitleStatus", data.message);
         return;
       }
+      if (data.films?.length) {
+        message("subtitleStatus", data.message);
+        for (const film of data.films) {
+          const button = document.createElement("button");
+          button.className = "quiet";
+          button.textContent = film.name + " · " + film.year;
+          button.onclick = () => {
+            $("subtitleQuery").value = film.id;
+            $("subtitleYear").value = film.year;
+            findSubtitles(true);
+          };
+          $("externalSubtitles").append(button);
+        }
+        return;
+      }
       if (!data.list.length) {
-        message("subtitleStatus", "未找到外部英文字幕，可导入本地 SRT / VTT。");
+        message(
+          "subtitleStatus",
+          data.message || "未找到外部英文字幕，可导入本地 SRT / VTT。",
+        );
         return;
       }
       message(
         "subtitleStatus",
-        "找到 " +
+        (data.film ? data.film.name + "（" + data.film.year + "） · " : "") +
+          "找到 " +
           data.list.length +
           " 个英文字幕版本，请选择与影片匹配的版本。",
       );
       for (const file of data.list) {
         const button = document.createElement("button");
         button.className = "quiet";
-        button.textContent = file.label;
+        button.textContent =
+          file.label + (file.fps ? " · " + file.fps + " fps" : "");
         button.onclick = async () => {
           button.disabled = true;
           try {
             const result = await api(
-              { action: "subtitle-download", fileId: file.id },
+              {
+                action: "subtitle-download",
+                fileId: file.id,
+                provider: file.provider,
+                imdbId: file.imdbId,
+              },
               state.abort?.signal,
             );
+            if (
+              subtitleRequest !== state.subtitleRequest ||
+              generation !== state.generation
+            )
+              return;
             await addSubtitle(result.text, file.label, generation);
           } catch (e) {
-            if (generation === state.generation)
+            if (
+              generation === state.generation &&
+              subtitleRequest === state.subtitleRequest
+            )
               message("subtitleStatus", e.message, true);
           } finally {
             button.disabled = false;
@@ -646,7 +710,11 @@
         $("externalSubtitles").append(button);
       }
     } catch (e) {
-      if (generation === state.generation && e.name !== "AbortError")
+      if (
+        generation === state.generation &&
+        subtitleRequest === state.subtitleRequest &&
+        e.name !== "AbortError"
+      )
         message("subtitleStatus", e.message, true);
     }
   }
@@ -748,6 +816,7 @@
   };
   $("subtitleTracks").onchange = chooseTrack;
   $("subtitleOffset").onchange = offsetTracks;
+  $("subtitleAdSync").onchange = offsetTracks;
   $("findSubtitles").onclick = () => findSubtitles(true);
   $("subtitleFile").onchange = async (event) => {
     const generation = state.generation;

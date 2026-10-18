@@ -210,6 +210,27 @@
       })
       .slice(0, 12);
   }
+  function subtitlePlaybackTime(time, ranges) {
+    const merged = [];
+    for (const r of [...ranges].sort((a, b) => a.start - b.start)) {
+      if (
+        !Number.isFinite(r.start) ||
+        !Number.isFinite(r.end) ||
+        r.end <= r.start
+      )
+        continue;
+      const previous = merged.at(-1);
+      if (previous && r.start <= previous.end)
+        previous.end = Math.max(previous.end, r.end);
+      else merged.push({ start: r.start, end: r.end });
+    }
+    let skipped = 0;
+    for (const r of merged) {
+      if (time < r.start - skipped) break;
+      skipped += r.end - r.start;
+    }
+    return time + skipped;
+  }
   const api = {
     safeUrl,
     clean,
@@ -221,6 +242,7 @@
     rowsFromText,
     adRanges,
     sourceList,
+    subtitlePlaybackTime,
   };
   if (typeof module !== "undefined") module.exports = api;
   else root.SourceLabCore = api;

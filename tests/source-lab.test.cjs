@@ -9,9 +9,9 @@ assert(fs.existsSync("netlify/functions/source-explorer-api.js"));
 assert(!fs.existsSync("source-explorer-api"));
 assert(!fs.existsSync("netlify/functions/source-lab.cjs"));
 assert(
-  fs.readFileSync("source-lab/app.js", "utf8").includes(
-    'fetch("/.netlify/functions/source-explorer-api"',
-  ),
+  fs
+    .readFileSync("source-lab/app.js", "utf8")
+    .includes('fetch("/.netlify/functions/source-explorer-api"'),
 );
 assert.equal(C.safeUrl("javascript:alert(1)"), "");
 assert.equal(C.safeUrl("https://user:pass@example.com/a"), "");
@@ -146,10 +146,15 @@ const handler = require("../netlify/functions/source-explorer-api.js").handler,
     assert.equal((await handler({ httpMethod: "GET" })).statusCode, 405);
     const saved = process.env.OPENSUBTITLES_API_KEY;
     delete process.env.OPENSUBTITLES_API_KEY;
+    global.fetch = async () =>
+      new Response(JSON.stringify({ metas: [] }), {
+        headers: { "Content-Type": "application/json" },
+      });
     assert.equal(
-      JSON.parse((await request({ action: "subtitles", query: "Frozen" })).body)
-        .configured,
-      false,
+      JSON.parse(
+        (await request({ action: "subtitles", query: "NoSuchFilm" })).body,
+      ).configured,
+      true,
     );
     if (saved) process.env.OPENSUBTITLES_API_KEY = saved;
     console.log(

@@ -53,7 +53,7 @@ async function cms(provider, query, id) {
   });
   return JSON.parse((await read(r)).replace(/^\uFEFF/, ""));
 }
-async function subtitles(body) {
+async function accountSubtitles(body) {
   const key = process.env.OPENSUBTITLES_API_KEY;
   if (!key)
     return {
@@ -119,6 +119,26 @@ async function subtitles(body) {
       )
       .slice(0, 12),
   };
+}
+const publicSubtitles =
+  require("../../source-lab/subtitle-service.cjs").createPublicSubtitles(read);
+async function subtitles(body) {
+  if (body.action === "subtitle-download") {
+    if (body.provider === "stremio") return publicSubtitles(body);
+    if (!process.env.OPENSUBTITLES_API_KEY)
+      throw Error("请重新查找字幕并选择版本。");
+    return accountSubtitles(body);
+  }
+  if (process.env.OPENSUBTITLES_API_KEY) {
+    try {
+      const data = await accountSubtitles(body);
+      if (data.list.length)
+        return { ...data, providerName: "OpenSubtitles 账号服务" };
+    } catch (_) {
+      /* Public lookup remains available if the account service fails. */
+    }
+  }
+  return publicSubtitles(body);
 }
 exports.handler = async (event) => {
   const reply = (statusCode, data) => ({

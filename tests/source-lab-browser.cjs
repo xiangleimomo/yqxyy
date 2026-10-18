@@ -83,13 +83,13 @@ const assert = require("assert/strict");
       (await p.locator("video").evaluate((v) => v.currentTime)) - 315.941678,
     ) < 0.01,
   );
-  await p
-    .locator("#subtitleFile")
-    .setInputFiles({
-      name: "English.srt",
-      mimeType: "application/x-subrip",
-      buffer: Buffer.from("1\n00:00:01,000 --> 00:00:03,000\nHello world\n"),
-    });
+  await p.locator("#subtitleFile").setInputFiles({
+    name: "English.srt",
+    mimeType: "application/x-subrip",
+    buffer: Buffer.from(
+      "1\n00:00:01,000 --> 00:00:03,000\nHello world\n\n2\n00:06:00,000 --> 00:06:02,000\nAfter first ad\n",
+    ),
+  });
   await p
     .waitForFunction(
       () =>
@@ -128,6 +128,19 @@ const assert = require("assert/strict");
       ),
     3,
   );
+  const subtitleTime = () =>
+    p
+      .locator("video")
+      .evaluate(
+        (v) =>
+          Array.from(v.textTracks).find((t) => t.cues?.length).cues[1]
+            .startTime,
+      );
+  assert(Math.abs((await subtitleTime()) - 381.066666) < 0.01);
+  await p.locator("#subtitleAdSync").uncheck();
+  assert.equal(await subtitleTime(), 362);
+  await p.locator("#subtitleAdSync").check();
+  assert(Math.abs((await subtitleTime()) - 381.066666) < 0.01);
   await p.locator("video").evaluate((v) => (v.currentTime = 40));
   await p.locator("#markStart").click();
   await p.locator("video").evaluate((v) => (v.currentTime = 45));
@@ -139,17 +152,15 @@ const assert = require("assert/strict");
   );
   await p.locator("#clearMarks").click();
   assert.equal(await p.locator(".ad-row").count(), 4);
-  await p
-    .locator("#sourceImport")
-    .setInputFiles({
-      name: "libretv-sources.json",
-      mimeType: "application/json",
-      buffer: Buffer.from(
-        JSON.stringify({
-          sources: [{ name: "Imported", url: "https://custom.test/api" }],
-        }),
-      ),
-    });
+  await p.locator("#sourceImport").setInputFiles({
+    name: "libretv-sources.json",
+    mimeType: "application/json",
+    buffer: Buffer.from(
+      JSON.stringify({
+        sources: [{ name: "Imported", url: "https://custom.test/api" }],
+      }),
+    ),
+  });
   await p.waitForFunction(() =>
     document.querySelector("#sourceNotice").textContent.includes("已导入 1"),
   );

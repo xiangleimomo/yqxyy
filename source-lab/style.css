@@ -288,3 +288,37 @@ footer {
     align-items: flex-start;
   }
 }
+
+#subtitleQuery {
+  min-width: 0;
+  width: 100%;
+  padding: 7px;
+  border: 1px solid #b4cce0;
+  border-radius: 6px;
+}
+#externalSubtitles {
+  display: grid;
+  gap: 8px;
+  max-height: 320px;
+  overflow: auto;
+  margin-top: 12px;
+}
+#externalSubtitles button {
+  width: 100%;
+  overflow-wrap: anywhere;
+  text-align: left;
+  font-size: 13px;
+}
+.tools > section {
+  min-width: 0;
+}
+.tools select {
+  min-width: 0;
+  flex: 1;
+}
+.tools label {
+  max-width: 100%;
+}
+#externalSubtitles {
+  min-width: 0;
+}

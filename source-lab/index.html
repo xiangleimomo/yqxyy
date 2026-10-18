@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="referrer" content="no-referrer" />
     <title>片源探索 · Story Fox English</title>
-    <link rel="stylesheet" href="style.css?v=20261017-1" />
+    <link rel="stylesheet" href="style.css?v=20261018-2" />
   </head>
   <body>
     <header>
@@ -112,6 +112,26 @@
           </section>
           <section>
             <h3>英文字幕</h3>
+            <p class="hint">
+              公共英文字幕服务已接入，无需配置账号。按影片匹配后选择字幕版本。
+            </p>
+            <label
+              >片名 / IMDb 编号
+              <input
+                id="subtitleQuery"
+                type="text"
+                maxlength="100"
+                placeholder="英文片名或 tt 开头编号"
+            /></label>
+            <label
+              >上映年份
+              <input
+                id="subtitleYear"
+                type="number"
+                min="1900"
+                max="2100"
+                placeholder="可选"
+            /></label>
             <label
               >字幕
               <select id="subtitleTracks">
@@ -133,6 +153,10 @@
                 max="600"
                 step="0.5"
             /></label>
+            <label
+              ><input id="subtitleAdSync" type="checkbox" checked />
+              外挂字幕补偿已识别的广告时长</label
+            >
             <p id="subtitleStatus" role="status"></p>
             <div id="externalSubtitles"></div>
           </section>
@@ -153,9 +177,9 @@
       >
       · <a href="LICENSE">AGPL-3.0</a>
     </footer>
-    <script src="core.js?v=20261017-1"></script>
+    <script src="core.js?v=20261018-2"></script>
     <script src="vendor/libretv-m3u8.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.20/dist/hls.min.js"></script>
-    <script src="app.js?v=20261018-1"></script>
+    <script src="app.js?v=20261018-2"></script>
   </body>
 </html>
