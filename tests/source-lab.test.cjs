@@ -120,7 +120,7 @@ const handler = require("../netlify/functions/source-explorer-api.js").handler,
     const search = JSON.parse(
       (await request({ action: "search", query: "冰雪奇缘" })).body,
     );
-    assert.equal(search.outcomes.length, 3);
+    assert.equal(search.outcomes.length, 5);
     assert(search.outcomes.some((x) => !x.ok));
     assert(
       search.outcomes

@@ -78,7 +78,21 @@
     box.replaceChildren();
     for (const p of [...state.providers, ...state.custom]) {
       const line = document.createElement("p");
-      line.textContent = p.name + (p.custom ? " · 本机导入" : " · 预置搜索源");
+      line.textContent =
+        p.name +
+        (p.custom
+          ? " · 本机导入"
+          : p.kind && p.kind !== "cms"
+            ? " · 预置网站源"
+            : " · 预置搜索源");
+      if (C.safeUrl(p.websiteUrl)) {
+        const link = document.createElement("a");
+        link.href = p.websiteUrl;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = " · 查看原站";
+        line.append(link);
+      }
       box.append(line);
     }
   }
@@ -113,6 +127,15 @@
       button.textContent = "试播 / 查看线路";
       button.onclick = () => select(item);
       card.append(title, meta, button);
+      if (C.safeUrl(item.websiteUrl)) {
+        const link = document.createElement("a");
+        link.className = "original-site";
+        link.href = item.websiteUrl;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = "在原站查看";
+        card.append(link);
+      }
       box.append(card);
     }
     if (state.results.length && !results.length) {
@@ -241,7 +264,11 @@
             ).item;
         if (generation !== state.generation) return;
         if (!detail?.episodes?.length)
-          throw Error("此来源未提供可直接播放的 M3U8 / MP4，可尝试其他来源。");
+          throw Error(
+            item.websiteUrl
+              ? "此线路需要原站解析，请点击结果卡片的“在原站查看”，或选择其他来源。"
+              : "此来源未提供可直接播放的 M3U8 / MP4，可尝试其他来源。",
+          );
         Object.assign(item, detail);
       }
       if (generation !== state.generation) return;
@@ -356,7 +383,7 @@
     const episode = item.episodes[index];
     if (!episode) return;
     state.episode = episode;
-    $("subtitleQuery").value = item.title;
+    $("subtitleQuery").value = item.lookupTitle || item.title;
     $("subtitleYear").value = /^\d{4}$/.test(item.year || "") ? item.year : "";
     const generation = state.generation;
     state.resume = resume;
@@ -566,7 +593,7 @@
     const movies = await cataloguePromise;
     const matches = movies.filter((m) =>
       [m.title, m.titleZh].some(
-        (t) => C.normalize(t) === C.normalize(item.title),
+        (t) => C.normalize(t) === C.normalize(item.lookupTitle || item.title),
       ),
     );
     return (
@@ -610,7 +637,10 @@
         subtitleRequest !== state.subtitleRequest
       )
         return;
-      if (local && $("subtitleQuery").value === item.title) {
+      if (
+        local &&
+        $("subtitleQuery").value === (item.lookupTitle || item.title)
+      ) {
         $("subtitleQuery").value = local.title;
         $("subtitleYear").value = local.year || item.year || "";
       }

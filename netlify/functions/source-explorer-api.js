@@ -1,5 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 const core = require("../../source-lab/core.js");
+const websites =
+  require("../../source-lab/website-providers.cjs").createWebsiteProviders(
+    read,
+  );
 const defaultProviders = require("../../source-lab/providers.json");
 function providers() {
   const rows = process.env.SOURCE_LAB_PROVIDERS
@@ -9,7 +13,15 @@ function providers() {
   return rows.slice(0, 12).map((r, i) => {
     const url = core.safeUrl(r.url);
     if (!url) throw Error("片源配置必须使用 HTTPS");
+    const kind = ["pianku", "lxyy"].includes(r.kind) ? r.kind : "cms";
+    const websiteOrigin = {
+      pianku: "https://4k01.pianku.online",
+      lxyy: "https://tv.lxyy.club",
+    }[kind];
+    if (websiteOrigin && new URL(url).origin !== websiteOrigin)
+      throw Error("网站来源地址不匹配");
     return {
+      kind,
       id: String(r.id || "source_" + i),
       name: String(r.name || "资源 " + (i + 1)),
       url,
@@ -157,7 +169,12 @@ exports.handler = async (event) => {
     const all = providers();
     if (body.action === "providers")
       return reply(200, {
-        providers: all.map(({ id, name }) => ({ id, name })),
+        providers: all.map(({ id, name, kind, url }) => ({
+          id,
+          name,
+          kind,
+          websiteUrl: kind === "cms" ? undefined : url,
+        })),
       });
     if (body.action === "subtitles" || body.action === "subtitle-download") {
       if (
@@ -174,7 +191,10 @@ exports.handler = async (event) => {
         all.map(async (p) => {
           const start = Date.now();
           try {
-            const list = core.parseList(await cms(p, query), p, query);
+            const list =
+              p.kind === "cms"
+                ? core.parseList(await cms(p, query), p, query)
+                : await websites.search(p, query);
             return {
               id: p.id,
               name: p.name,
@@ -197,8 +217,10 @@ exports.handler = async (event) => {
     }
     if (body.action === "detail") {
       const p = all.find((p) => p.id === body.providerId);
-      if (!p || !/^\d{1,15}$/.test(String(body.id)))
-        throw Error("片源编号无效");
+      if (!p) throw Error("片源编号无效");
+      if (p.kind !== "cms")
+        return reply(200, { item: await websites.detail(p, String(body.id)) });
+      if (!/^\d{1,15}$/.test(String(body.id))) throw Error("片源编号无效");
       const items = core.parseList(await cms(p, "", String(body.id)), p);
       return reply(200, {
         item: items.find((x) => x.id === String(body.id)) || null,
