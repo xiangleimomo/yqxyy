@@ -1,6 +1,6 @@
 # 片源探索 · 独立功能
 
-此目录及 `netlify/functions/source-lab.cjs` 是新增的独立试播功能，按 AGPL-3.0-only 提供源代码。现有电影目录、播放地址、播放器与广告规则不属于本次修改范围。主站仅增加一个 `/source-lab/` 导航入口。
+此目录及 `netlify/functions/source-explorer-api.js` 是新增的独立试播功能，按 AGPL-3.0-only 提供源代码。现有电影目录、播放地址、播放器与广告规则不属于本次修改范围。主站仅增加一个 `/source-lab/` 导航入口。
 
 ## 使用
 
@@ -21,7 +21,7 @@
 - `vendor/libretv-m3u8.js` 是上述文件生成的浏览器构建产物，页面使用它的 `stripAdGroups` 扩展广告识别入口。只取其候选片段用于 seek，不用其代理重写功能，也不把改写播放列表接入原播放器。
 - 保留完整上游许可证：本目录 `LICENSE`。上游代码及新增独立功能均按 AGPL-3.0-only 提供。
 - 新功能完整源码：https://github.com/xiangleimomo/yqxyy/tree/main/source-lab
-- 服务端源码：https://github.com/xiangleimomo/yqxyy/blob/main/netlify/functions/source-lab.cjs
+- 服务端源码：https://github.com/xiangleimomo/yqxyy/blob/main/netlify/functions/source-explorer-api.js
 - 新增测试：https://github.com/xiangleimomo/yqxyy/blob/main/tests/source-lab.test.cjs
 
 重建浏览器产物：
@@ -34,7 +34,7 @@ npx --yes esbuild@0.28.2 source-lab/vendor/libretv-m3u8.ts --bundle --format=iif
 
 ## 部署
 
-静态站点仍发布仓库根目录，无需新前端构建；Netlify 自动部署 `netlify/functions/source-lab.cjs`。函数只代理管理员配置的采集接口，不接受客户端提供任意代理 URL，不代理影片分片，不覆盖原站重定向规则。默认三源：如意、无尽、魔都。第三方源的可用性会变化；失败源有独立提示，其他源继续搜索。
+静态站点仍发布仓库根目录，无需新前端构建；Netlify 自动部署 `netlify/functions/source-explorer-api.js`。函数只代理管理员配置的采集接口，不接受客户端提供任意代理 URL，不代理影片分片，不覆盖原站重定向规则。默认三源：如意、无尽、魔都。第三方源的可用性会变化；失败源有独立提示，其他源继续搜索。
 
 可选 Netlify 环境变量（不要写入仓库或前端）：
 
@@ -49,7 +49,7 @@ npx --yes esbuild@0.28.2 source-lab/vendor/libretv-m3u8.ts --bundle --format=iif
 ```sh
 node tests/source-lab.test.cjs
 node --check source-lab/app.js
-node --check netlify/functions/source-lab.cjs
+node --check netlify/functions/source-explorer-api.js
 ```
 
 实测多源搜索、英语结果筛选与 Chrome 真实影片试播；桌面和 390px 手机布局无横向溢出。额外浏览器验证覆盖字幕导入与延迟、广告跳转及手动标记、本机源列表导入、关闭播放器清理；旧站回归测试继续运行。

@@ -28,7 +28,7 @@ const assert = require("assert/strict");
           contentType: "text/javascript",
         }),
     );
-  await p.route("**/.netlify/functions/source-lab", async (route) => {
+  await p.route("**/.netlify/functions/source-explorer-api", async (route) => {
     const body = route.request().postDataJSON();
     let data;
     if (body.action === "providers")

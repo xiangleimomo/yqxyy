@@ -3,6 +3,16 @@ const assert = require("node:assert/strict"),
   fs = require("node:fs"),
   vm = require("node:vm"),
   C = require("../source-lab/core.js");
+// Lambda resolves its handler by basename. Keep the deployable .js entry
+// distinct from included static directories (the former .cjs entry caused 502).
+assert(fs.existsSync("netlify/functions/source-explorer-api.js"));
+assert(!fs.existsSync("source-explorer-api"));
+assert(!fs.existsSync("netlify/functions/source-lab.cjs"));
+assert(
+  fs.readFileSync("source-lab/app.js", "utf8").includes(
+    'fetch("/.netlify/functions/source-explorer-api"',
+  ),
+);
 assert.equal(C.safeUrl("javascript:alert(1)"), "");
 assert.equal(C.safeUrl("https://user:pass@example.com/a"), "");
 assert.equal(C.language("英语"), "en");
@@ -90,7 +100,7 @@ vm.runInNewContext(
 );
 assert.equal(typeof ctx.LibreTVM3u8.stripAdGroups, "function");
 assert(C.adRanges(marked, true, ctx.LibreTVM3u8.stripAdGroups).length);
-const handler = require("../netlify/functions/source-lab.cjs").handler,
+const handler = require("../netlify/functions/source-explorer-api.js").handler,
   originalFetch = global.fetch;
 (async () => {
   try {

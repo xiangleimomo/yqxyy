@@ -46,7 +46,7 @@
     $(id).classList.toggle("error", error);
   };
   async function api(body, signal) {
-    const r = await fetch("/.netlify/functions/source-lab", {
+    const r = await fetch("/.netlify/functions/source-explorer-api", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
@@ -58,7 +58,8 @@
     } catch {
       throw Error("搜索服务未启动，请在部署完成后重试。");
     }
-    if (!r.ok || data.error) throw Error(data.error || "请求失败");
+    if (!r.ok || data.error)
+      throw Error(data.error || `搜索服务暂不可用（HTTP ${r.status}），请稍后重试。`);
     return data;
   }
   async function direct(provider, query, id, signal) {

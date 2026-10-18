@@ -9,5 +9,5 @@
 [functions]
   directory = "netlify/functions"
 
-[functions."source-lab"]
+[functions."source-explorer-api"]
   included_files = ["source-lab/providers.json"]
