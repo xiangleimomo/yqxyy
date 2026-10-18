@@ -81,7 +81,7 @@ const App = {
     const [page, a, b] = this.route();
     window.MovieClassroom?.cleanup();
     this.disposeHlsPlayers(this.el());
-    const isMoviePage = ['movies','movie','movie-series'].includes(page);
+    const isMoviePage = ['movies','movie','movie-series'].includes(page) || (['series','lesson'].includes(page) && a==='movie-harry-potter-1');
     document.querySelectorAll('.main-tab').forEach(tab=>{
       const active = tab.getAttribute('href') === (isMoviePage ? '#/movies' : '#/home');
       tab.classList.toggle('active', active);
@@ -92,6 +92,9 @@ const App = {
     this.el().classList.remove('series-page-shell');
     document.body.classList.remove('series-fixed-page');
     document.documentElement.classList.remove('series-fixed-page');
+    this.el().classList.remove('movie-study-course');
+    document.body.classList.remove('movie-study-page');
+    document.documentElement.classList.remove('movie-study-page');
     try{
       if(page === 'movies') return await window.MovieClassroom.renderList(this, decodeURIComponent(a || ''));
       if(page === 'movie-series') return await window.MovieClassroom.renderSeries(this, a);
@@ -206,17 +209,21 @@ async renderSeries(seriesId){
   });
   let activeEpisodeId=1;
   this.el().classList.add('series-page-shell');
+  this.el().classList.toggle('movie-study-course',Boolean(series.movieId));
+  document.body.classList.toggle('movie-study-page',Boolean(series.movieId));
+  document.documentElement.classList.toggle('movie-study-page',Boolean(series.movieId));
   document.body.classList.add('series-fixed-page');
   document.documentElement.classList.add('series-fixed-page');
   this.el().innerHTML = `
     <div class="series-page-fixed">
-    <div class="breadcrumb"><a href="#/home">动画故事</a><span>›</span><span>${series.seriesTitle}</span></div>
+    <div class="breadcrumb"><a href="${series.movieId?'#/movies':'#/home'}">${series.movieId?'光影课堂':'动画故事'}</a><span>›</span><span>${series.seriesTitle}</span></div>
     <section class="series-hero">
       <img class="cover" src="${series.coverImage || `assets/covers/${seriesId}.svg`}" alt="${series.seriesTitle}">
       <div class="series-hero-content">
         <h1>${series.seriesTitle}</h1>
         <div class="sub">${series.seriesTitleZh || ''} · Level ${series.level ?? 0} · ${this.statusText(series.status)}</div>
         <p class="sub">${series.description || ''}</p>
+        ${series.movieId?`<a class="btn secondary" href="#/movie/${this.escapeHtml(series.movieId)}">▶ 观看完整电影</a>`:''}
         ${series.storyBookLibrary?.url?`<a class="series-story-library" href="${this.escapeHtml(series.storyBookLibrary.url)}" target="_blank" rel="noreferrer noopener"><span aria-hidden="true">📚</span><strong>${this.escapeHtml(series.storyBookLibrary.title || '全集绘本库')}</strong></a>`:''}
       </div>
     </section>
@@ -276,6 +283,7 @@ async renderSeries(seriesId){
       document.getElementById('episodeWorkspace').innerHTML=`
         <h2>Episode ${ep.episodeId} · ${ep.title}</h2>
         <p class="muted">${ep.titleZh || ''}</p>
+        ${series.movieId?`<p class="muted">${this.escapeHtml(ep.summaryEn || '')} · ${Math.ceil(ep.video.duration/60)} 分钟</p>`:''}
         <div class="module-grid">
           ${ep.video?.hlsUrl?'<button class="module-card direct-video-card" data-go="watch">▶️<b>Watch</b><span>看视频</span></button>':''}
           ${ep.modules?.read?'<button class="module-card" data-go="listenRead">🎧<b>Listen and Read</b><span>听读</span></button>':''}
@@ -335,13 +343,13 @@ async renderLesson(seriesId, episodeId){
       this.el().innerHTML=`<div class="empty"><h2>🔒 本集尚未解锁</h2><p>请先完成上一集 Quiz，正确率达到 80% 后自动解锁。</p><a class="btn" href="#/series/${this.escapeHtml(seriesId)}">返回课程列表</a></div>`;
       return;
     }
-    const visibleTabs=['watch','listenRead','words','quiz','games'];
+    const visibleTabs=[...(ep.video?.hlsUrl?['watch']:[]),...(ep.modules?.read?['listenRead']:[]),...((ep.modules?.words||ep.modules?.vocabulary)?['words','games']:[]),...(ep.modules?.quiz?['quiz']:[])];
     const tab = visibleTabs.includes(this.activeLessonTab) ? this.activeLessonTab : 'watch';
     const assets=await this.loadLessonAssets(seriesId,episodeId,tab);
     const lessonData = {seriesId, episodeId, series, ep, ...assets, phrases:[], grammar:[], review:{}};
     this.disposeHlsPlayers(this.el());
     this.el().innerHTML = `
-      <div class="breadcrumb"><a href="#/home">动画故事</a><span>›</span><a href="#/series/${seriesId}">${series.seriesTitle}</a><span>›</span><span>Episode ${episodeId}</span></div>
+      <div class="breadcrumb"><a href="${series.movieId?'#/movies':'#/home'}">${series.movieId?'光影课堂':'动画故事'}</a><span>›</span><a href="#/series/${seriesId}">${series.seriesTitle}</a><span>›</span><span>Episode ${episodeId}</span></div>
       <section class="lesson-head">
         <h1>Episode ${episodeId} · ${ep.title}</h1>
         <div class="muted">${ep.titleZh || ''} · ${series.seriesTitleZh || ''}</div>
@@ -588,6 +596,10 @@ async renderLesson(seriesId, episodeId){
     });
   },
   subtitleVttUrl(d){
+    if(d.ep?.video?.subtitleUrl){
+      const url=new URL(d.ep.video.subtitleUrl,location.href);
+      if(url.origin===location.origin) return url.href;
+    }
     const episodeNumber=Number(d.ep?.episodeId ?? d.episodeId);
     if(!Number.isInteger(episodeNumber) || episodeNumber<1) return '';
     return `data/${d.seriesId}/subtitles/${String(episodeNumber).padStart(3,'0')}.vtt`;
@@ -616,10 +628,20 @@ async renderLesson(seriesId, episodeId){
     const vttUrl=this.subtitleVttUrl(d);
     if(!caption || !vttUrl) return;
     let cues=[];
+    const panel=player.closest('.direct-video-panel');
+    let subtitleStatus=null;
+    if(d.ep?.video?.subtitleUrl){
+      subtitleStatus=document.createElement('p');
+      subtitleStatus.className='muted movie-subtitle-status';
+      subtitleStatus.setAttribute('role','status');
+      subtitleStatus.textContent='正在加载本集英文字幕…';
+      panel?.appendChild(subtitleStatus);
+    }
     try{
       const response=await fetch(vttUrl);
       if(response.ok) cues=this.parseVtt(await response.text());
     }catch{}
+    if(subtitleStatus) subtitleStatus.textContent=cues.length?'英文字幕已加载 · 已匹配当前片源时间轴':'英文字幕暂时无法加载，请重新打开本集重试。视频仍可播放。';
     if(!caption || !cues.length) return;
     let nativeTrack=null;
     try{

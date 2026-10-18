@@ -1,0 +1,15 @@
+/* Only the movie pilot: keep the existing animation layouts intact. */
+.movie-study-course .series-hero .cover{width:110px;height:160px;object-fit:contain;flex-shrink:0}
+.movie-study-entry{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+@media(max-width:800px){
+  html.movie-study-page,body.movie-study-page{height:auto;overflow:visible}
+  .movie-study-course .series-hero{flex-direction:row;align-items:flex-start;gap:14px}
+  .movie-study-course .series-hero .cover{width:80px;height:116px}
+  .movie-study-course .series-hero h1{font-size:20px;overflow-wrap:anywhere}
+  .app-shell.movie-study-course .episode-side-list{max-height:280px;overflow-y:auto;overscroll-behavior:contain}
+  .movie-study-course .episode-side-item{flex-direction:row;text-align:left;justify-content:flex-start;min-height:64px;flex-shrink:0}
+  .movie-study-course .episode-side-item .num{flex-shrink:0}
+  .movie-study-course .episode-side-item small{margin-left:auto;min-width:48px}
+  .app-shell.movie-study-course .module-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
+  .app-shell.movie-study-course .module-card{height:120px}
+}

@@ -1,6 +1,11 @@
 [build]
   publish = "."
 
+[[headers]]
+  for = "/data/movie-harry-potter-1/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
@@ -11,3 +16,6 @@
 
 [functions."source-explorer-api"]
   included_files = ["source-lab/providers.json", "source-lab/subtitle-films.json"]
+
+[functions."movie-study-subtitles"]
+  included_files = ["data/movie-harry-potter-1/alignment.json"]
