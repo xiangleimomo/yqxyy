@@ -615,5 +615,126 @@
         "source": "generated-from-public-read"
       }
     ]
+  },
+  "8": {
+    "episodeId": 8,
+    "title": "A Great Bond Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____ had to help Duke.",
+        "options": [
+          {
+            "key": "A",
+            "text": "nero"
+          },
+          {
+            "key": "B",
+            "text": "duke"
+          },
+          {
+            "key": "C",
+            "text": "pam"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “nero”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: _____ scratched his head.",
+        "options": [
+          {
+            "key": "A",
+            "text": "dev"
+          },
+          {
+            "key": "B",
+            "text": "pam"
+          },
+          {
+            "key": "C",
+            "text": "log"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “dev”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: Nero had to help _____.",
+        "options": [
+          {
+            "key": "A",
+            "text": "duke"
+          },
+          {
+            "key": "B",
+            "text": "log"
+          },
+          {
+            "key": "C",
+            "text": "got"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “duke”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: \" _____ raised an eyebrow.",
+        "options": [
+          {
+            "key": "A",
+            "text": "pam"
+          },
+          {
+            "key": "B",
+            "text": "got"
+          },
+          {
+            "key": "C",
+            "text": "ditch"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “pam”.",
+        "source": "generated-from-public-read"
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "reading-comprehension",
+        "question": "According to the story, complete the sentence: \" Pam tried to lift the _____.",
+        "options": [
+          {
+            "key": "A",
+            "text": "log"
+          },
+          {
+            "key": "B",
+            "text": "ditch"
+          },
+          {
+            "key": "C",
+            "text": "great"
+          }
+        ],
+        "answer": "A",
+        "explanation": "In the Read, the sentence uses “log”.",
+        "source": "generated-from-public-read"
+      }
+    ]
   }
 }
