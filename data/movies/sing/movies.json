@@ -19,19 +19,29 @@
       "title": "Sing",
       "titleZh": "欢乐好声音",
       "year": 2016,
-      "hlsUrl": "https://vip.dytt-kan.com/20250927/6462_dca49d1a/index.m3u8",
-      "sourceLabel": "蓝光",
-      "seriesOrder": 1
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/r1C9qeKBgACINBF6.CxwGOmG8s-IJRFW_sgEB25qE9m6d4c670RUdsNtrkOA15qgWEhYvwVtSjhbvzg/master.m3u8",
+      "sourceLabel": "主片源",
+      "seriesOrder": 1,
+      "backupSources": [
+        {
+          "url": "https://vip.dytt-kan.com/20250927/6462_dca49d1a/index.m3u8"
+        }
+      ]
     },
     {
       "id": "sing-2",
       "title": "Sing 2",
       "titleZh": "欢乐好声音2",
       "year": 2021,
-      "hlsUrl": "https://v13.wsyzym3u8.com/202512/20/pdgQQ2sUEd27/video/index.m3u8",
-      "sourceLabel": "英语原声",
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/VMHsqBA2lNg06_71.rJQD85Lba6oIrCjP29IRPclQGY20aL2tYhKgELwhk5UMzuAx40z4kykTHsP2iA/master.m3u8",
+      "sourceLabel": "主片源",
       "sourcePage": "https://4k01.pianku.online/voddetail/91438.html",
-      "seriesOrder": 2
+      "seriesOrder": 2,
+      "backupSources": [
+        {
+          "url": "https://v13.wsyzym3u8.com/202512/20/pdgQQ2sUEd27/video/index.m3u8"
+        }
+      ]
     }
   ]
 }

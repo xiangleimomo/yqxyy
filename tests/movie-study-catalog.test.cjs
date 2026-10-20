@@ -7,13 +7,13 @@ for(const [id,manifest]of Object.entries(catalog)){
  const dir=path.join(__dirname,'../data',id),read=f=>JSON.parse(fs.readFileSync(path.join(dir,f+'.json')));
  const eps=read('episodes'),vocab=read('vocabulary'),quiz=read('quiz'),plan=read('editorial');
  const movie=JSON.parse(fs.readFileSync(path.join(__dirname,`../data/movies/${plan.collectionId||'harry-potter'}/movies.json`))).sources.find(m=>m.id===manifest.movieId);
- assert.equal(movie.hlsUrl,manifest.originalHlsUrl);assert.equal(movie.studyCourse.seriesId,id);assert.equal(movie.studyCourse.episodeCount,eps.length);
+ assert(movie.hlsUrl===manifest.originalHlsUrl || movie.backupSources?.some(source=>source.url===manifest.originalHlsUrl));assert.equal(movie.studyCourse.seriesId,id);assert.equal(movie.studyCourse.episodeCount,eps.length);
  let last=0,seq=manifest.chapters[0].firstSegment;
  for(const ep of eps){
   const ch=manifest.chapters[ep.episodeId-1];assert.equal(ch.start,last);last=ch.end;assert.equal(ch.firstSegment,seq);seq+=ch.segmentCount;
   assert.equal(ep.modules.read,false);assert(ep.modules.watch&&ep.modules.words&&ep.modules.quiz);
-  assert.equal(ep.video.originalHlsUrl,movie.hlsUrl);assert.equal(ep.video.originalStart,ch.start);assert.equal(ep.video.originalEnd,ch.end);
-  const playlist=fs.readFileSync(path.join(dir,'hls',`${String(ep.episodeId).padStart(3,'0')}.m3u8`),'utf8');
+  assert.equal(ep.video.originalHlsUrl,manifest.originalHlsUrl);assert.equal(ep.video.originalStart,ch.start);assert.equal(ep.video.originalEnd,ch.end);
+  const playlist=fs.readFileSync(path.join(dir,'hls',`${String(ep.episodeId).padStart(3,'0')}.m3u8`),'utf8').replace(/\r\n/g,'\n');
   const ds=[...playlist.matchAll(/#EXTINF:([\d.]+)/g)].map(m=>Number(m[1]));assert.equal(ds.length,ch.segmentCount);assert(Math.abs(ds.reduce((a,b)=>a+b,0)-(ch.end-ch.start))<.001);assert(playlist.endsWith('#EXT-X-ENDLIST\n'));
   const vv=vocab[ep.episodeId];assert.equal(vv.length,6);assert.equal(new Set(vv.map(w=>w.word.toLowerCase())).size,6);
   for(const w of vv){assert(w.evidence.originalStart>=ch.start&&w.evidence.originalStart<ch.end);assert(w.meaningZh&&w.definitionEn&&w.exampleZh&&w.example);}

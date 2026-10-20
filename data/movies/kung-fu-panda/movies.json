@@ -31,36 +31,56 @@
       "title": "Kung Fu Panda",
       "titleZh": "功夫熊猫",
       "year": 2008,
-      "hlsUrl": "https://mujizybf08.com/videos/202606/27/6a3f81d269ce37f44626b41c/7efb08/index.m3u8",
-      "sourceLabel": "蓝光",
-      "seriesOrder": 1
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/qRnNWuuJnmT4i50X.RBFQwWu_Ox0lIbEAr3Fv-MoUMKr96X1L6JEjE9J2NMb8ecWtviQzfcGqf1U/master.m3u8",
+      "sourceLabel": "主片源",
+      "seriesOrder": 1,
+      "backupSources": [
+        {
+          "url": "https://mujizybf08.com/videos/202606/27/6a3f81d269ce37f44626b41c/7efb08/index.m3u8"
+        }
+      ]
     },
     {
       "id": "kung-fu-panda-2",
       "title": "Kung Fu Panda 2",
       "titleZh": "功夫熊猫2",
       "year": 2011,
-      "hlsUrl": "https://mujizybf08.com/videos/202606/27/6a3f76e9fbf11a467862145a/1dgcf7/index.m3u8",
-      "sourceLabel": "蓝光",
-      "seriesOrder": 2
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/VTTl0CY5bV41bunE.0Y7LFBcKEurW_04jp-fJ1Jj6JzIG8YtKukU11axSTUYe5PbFle_S0JZIAzWT/master.m3u8",
+      "sourceLabel": "主片源",
+      "seriesOrder": 2,
+      "backupSources": [
+        {
+          "url": "https://mujizybf08.com/videos/202606/27/6a3f76e9fbf11a467862145a/1dgcf7/index.m3u8"
+        }
+      ]
     },
     {
       "id": "kung-fu-panda-3",
       "title": "Kung Fu Panda 3",
       "titleZh": "功夫熊猫3",
       "year": 2016,
-      "hlsUrl": "https://mujizybf08.com/videos/202606/27/6a3f5a16fbf11a467861b5e2/223dc3/index.m3u8",
-      "sourceLabel": "蓝光",
-      "seriesOrder": 3
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/mBKMkShSZwMOjMIT.fTE9vo-z48A4DzCRxQMxyn2R-vsCDon8bEjrrvqNbUmcMP1mtkLk6gfro85GVg/master.m3u8",
+      "sourceLabel": "主片源",
+      "seriesOrder": 3,
+      "backupSources": [
+        {
+          "url": "https://mujizybf08.com/videos/202606/27/6a3f5a16fbf11a467861b5e2/223dc3/index.m3u8"
+        }
+      ]
     },
     {
       "id": "kung-fu-panda-4",
       "title": "Kung Fu Panda 4",
       "titleZh": "功夫熊猫4",
       "year": 2024,
-      "hlsUrl": "https://mujizybf08.com/movie/auto/6a1da14c8c1d4494a5181f23.m3u8",
-      "sourceLabel": "蓝光",
-      "seriesOrder": 4
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/py59z3dDrUrUEWPu.RSA7SjapdUwyuqvwpAqB1ONkKqeHk-q4UXvck4Z9Hdge9vR7uW26gione33tx-o/master.m3u8",
+      "sourceLabel": "主片源",
+      "seriesOrder": 4,
+      "backupSources": [
+        {
+          "url": "https://mujizybf08.com/movie/auto/6a1da14c8c1d4494a5181f23.m3u8"
+        }
+      ]
     }
   ]
 }

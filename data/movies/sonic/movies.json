@@ -25,31 +25,49 @@
       "title": "Sonic the Hedgehog",
       "titleZh": "刺猬索尼克",
       "year": 2020,
-      "hlsUrl": "https://mujizybf08.com/movie/auto/697938e2f4a47365fece1c1e.m3u8",
-      "sourceLabel": "英语原声",
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/-S2WfBm_y0wfpzji.E8fjARojAZo-vHtjqZKdxIDSS3jcyXzumIzvgYDAlTb8wvw3lIAkGksBN__2CQ/master.m3u8",
+      "sourceLabel": "主片源",
       "sourcePage": "https://4k01.pianku.online/voddetail/113004.html",
-      "seriesOrder": 1
+      "seriesOrder": 1,
+      "backupSources": [
+        {
+          "url": "https://mujizybf08.com/movie/auto/697938e2f4a47365fece1c1e.m3u8"
+        }
+      ]
     },
     {
       "id": "sonic-2",
       "title": "Sonic the Hedgehog 2",
       "titleZh": "刺猬索尼克2",
       "year": 2022,
-      "hlsUrl": "https://mujizybf08.com/movie/auto/697938d7f4a47365fece1c1d.m3u8",
-      "sourceLabel": "英语原声",
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/OUsW4Jg4sk6OfvE7.m0X0zVRxREUJfcgo1LbI6PHOd42wb_99NCRiMsvtLiSoFZiiR1vXE5NEZBITKw/master.m3u8",
+      "sourceLabel": "主片源",
       "sourcePage": "https://4k01.pianku.online/voddetail/15895.html",
-      "seriesOrder": 2
+      "seriesOrder": 2,
+      "backupSources": [
+        {
+          "url": "https://mujizybf08.com/movie/auto/697938d7f4a47365fece1c1d.m3u8"
+        }
+      ]
     },
     {
       "id": "sonic-3",
       "title": "Sonic the Hedgehog 3",
       "titleZh": "刺猬索尼克3",
       "year": 2024,
-      "hlsUrl": "https://mujizybf08.com/movie/auto/69793b85f4a47365fece1c1f.m3u8",
-      "sourceLabel": "英语原声",
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/GZ7qN_ihQNk8jZ08.fS3Xhd7rRVAmWB3sEEKgbe33EPNVXEnMD1sf4AMS7ORFBIi_7UOE-NwnD07A4Q/master.m3u8",
+      "sourceLabel": "主片源",
       "sourcePage": "https://4k01.pianku.online/voddetail/37054.html",
       "seriesOrder": 3,
-      "backupHlsUrl": "https://vip.dytt-live.com/20250430/5290_6e7d5d25/index.m3u8"
+      "backupHlsUrl": "https://vip.dytt-live.com/20250430/5290_6e7d5d25/index.m3u8",
+      "backupSources": [
+        {
+          "url": "https://vip.dytt-live.com/20250430/5290_6e7d5d25/index.m3u8"
+        },
+        {
+          "url": "https://mujizybf08.com/movie/auto/69793b85f4a47365fece1c1f.m3u8"
+        }
+      ]
     }
   ]
 }

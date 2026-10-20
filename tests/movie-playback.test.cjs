@@ -3,7 +3,7 @@ const vm = require('node:vm');
 const assert = require('node:assert/strict');
 const source = fs.readFileSync(require('node:path').join(__dirname, '../js/movies.js'), 'utf8');
 const url = 'https://example.test/movie/index.m3u8';
-async function render({ua = 'Chrome/155 Safari/537.36', native = 'maybe', supported = true, backupHlsUrl, choice, embedUrl, hlsUrl = url} = {}) {
+async function render({ua = 'Chrome/155 Safari/537.36', native = 'maybe', supported = true, backupHlsUrl, backupSources, choice, embedUrl, hlsUrl = url} = {}) {
   const instances = [], attachments = [];
   class Hls {
     static Events = {ERROR: 'error'};
@@ -22,7 +22,7 @@ async function render({ua = 'Chrome/155 Safari/537.36', native = 'maybe', suppor
   const elements = {moviePlayerStatus: status, movieRetry: {}, movieSource: {}};
   const ctx = {URL, window: {Hls, DyttAdSkip: {attach: (...args) => { attachments.push(args); return () => { player.skipDisposed = true; }; }}}, navigator: {userAgent: ua}, document: {getElementById: id => elements[id], createElement: () => ({events: {}, setAttribute(key, value) {this[key] = value;}, addEventListener(key, callback) {this.events[key] = callback;}, remove() {this.removed = true;}})}};
   vm.runInNewContext(source, ctx);
-  const movie = {id: 'test', title: 'Test', titleZh: '测试', hlsUrl, embedUrl, backupHlsUrl};
+  const movie = {id: 'test', title: 'Test', titleZh: '测试', hlsUrl, embedUrl, backupHlsUrl, backupSources};
   const classroom = ctx.window.MovieClassroom;
   classroom.getLibrary = async () => ({series: [{films: [['test']], titleZh: '系列'}], playableById: new Map([['test', movie]])});
   await classroom.renderWatch({el: () => root, escapeHtml: value => String(value)}, 'test', choice);
@@ -63,6 +63,16 @@ async function render({ua = 'Chrome/155 Safari/537.36', native = 'maybe', suppor
   primary.elements.movieSource.onchange({target: {value: 'primary'}});
   await new Promise(resolve => setImmediate(resolve));
   assert.equal(primary.instances[3].source, url);
+  const second = 'https://example.test/older.m3u8';
+  const multiple = await render({backupSources: [{url: backup}, {url: second}], choice: 'backup-1'});
+  assert.equal(multiple.instances[0].source, second);
+  multiple.elements.movieRetry.onclick();
+  await new Promise(resolve => setImmediate(resolve));
+  assert.equal(multiple.instances[1].source, second, 'Retry preserves second backup');
+  const oldEmbed = await render({backupSources: [{url: 'https://example.test/parse?url=movie', embedded: true}], choice: 'backup'});
+  assert.equal(oldEmbed.frames[0].src, 'https://example.test/parse?url=movie');
+  const invalidChoice = await render({backupSources: [{url: backup}], choice: 'backup-99'});
+  assert.equal(invalidChoice.instances[0].source, url);
   const duplicate = await render({backupHlsUrl: url});
   assert(!duplicate.root.innerHTML.includes('id="movieSource"'), 'No duplicate option when original remains primary');
   const nativeBackup = await render({ua: 'Version/18.0 Safari/604.1', backupHlsUrl: backup, choice: 'backup'});

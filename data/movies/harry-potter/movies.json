@@ -58,15 +58,23 @@
       "collection": "哈利·波特",
       "genre": "奇幻冒险",
       "cover": "https://contentful.harrypotter.com/usf1vwtuqyxm/1f5EjNhKvbBlED0crJAzkN/10031c9cbfbe2683b68781cd3b20289d/hp1-poster.png",
-      "hlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "sourceLabel": "蓝光",
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/0-y4VrnKrdQNKCeq.xYRH_9UBOFjs44YKZaOl0Sr2ilmsqff3olVGqIgshnE0EPgbhBVM-t4Fuw/master.m3u8",
+      "sourceLabel": "主片源",
       "sourcePage": "https://www.ncat23.com/play/16069-39-376043.html",
       "seriesOrder": 1,
       "backupHlsUrl": "https://vip.dytt-live.com/20250325/1771_21be9a4b/index.m3u8",
       "studyCourse": {
         "seriesId": "movie-harry-potter-1",
         "episodeCount": 24
-      }
+      },
+      "backupSources": [
+        {
+          "url": "https://vip.dytt-live.com/20250325/1771_21be9a4b/index.m3u8"
+        },
+        {
+          "url": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8"
+        }
+      ]
     },
     {
       "id": "harry-potter-chamber-of-secrets",
@@ -76,14 +84,19 @@
       "collection": "哈利·波特",
       "genre": "奇幻冒险",
       "cover": "https://contentful.harrypotter.com/usf1vwtuqyxm/4u9jH4UqdaWzWBVFEcHtRJ/568c2190aa8e33223537fb6e32a72c96/hp2-poster.png",
-      "hlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "sourceLabel": "蓝光",
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/9BSbdgrrp5C9Pnc8.ynprWXO_9bWFLnAvMmQo1exKgsz0U6VV8xKrNHgG3EkAx8B8_BU-GE0Xig/master.m3u8",
+      "sourceLabel": "主片源",
       "sourcePage": "https://www.ncat23.com/play/16068-39-333083.html",
       "seriesOrder": 2,
       "studyCourse": {
         "seriesId": "movie-harry-potter-2",
         "episodeCount": 28
-      }
+      },
+      "backupSources": [
+        {
+          "url": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8"
+        }
+      ]
     },
     {
       "id": "harry-potter-prisoner-of-azkaban",
@@ -93,14 +106,19 @@
       "collection": "哈利·波特",
       "genre": "奇幻冒险",
       "cover": "https://contentful.harrypotter.com/usf1vwtuqyxm/231TsijamyKCGe6VvOYW9I/f796a168726a189209f28928d77b7daa/hp3-poster.png",
-      "hlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
-      "sourceLabel": "蓝光",
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/VcffBIt2XD_LsJSu.pPNmzT9ncosrNb0Vy7UMdEqHMWrnFMYCJBKkzOb5JB1tkP_Z1KR4kfVYEQ/master.m3u8",
+      "sourceLabel": "主片源",
       "sourcePage": "https://www.ncat23.com/play/77851-39-334043.html",
       "seriesOrder": 3,
       "studyCourse": {
         "seriesId": "movie-harry-potter-3",
         "episodeCount": 23
-      }
+      },
+      "backupSources": [
+        {
+          "url": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8"
+        }
+      ]
     },
     {
       "id": "harry-potter-goblet-of-fire",
@@ -110,10 +128,15 @@
       "collection": "哈利·波特",
       "genre": "奇幻冒险",
       "cover": "https://contentful.harrypotter.com/usf1vwtuqyxm/600bJMHJpBT6QdHF29sKvp/243f8920e0e372bbf43fd176b21e057b/hp4-poster.png",
-      "hlsUrl": "https://mujizybf08.com/movie/auto/69942633ca01177c0d9d529b.m3u8",
-      "sourceLabel": "蓝光",
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/jwPqtgd3cLXq-eyW.HwebGcEc6ujGLGhgk8NUq_00jF9zR0_EkPF42CokjPF_ldYP2XIcbKNXEQ/master.m3u8",
+      "sourceLabel": "主片源",
       "sourcePage": "https://www.ncat23.com/play/16106-39-333081.html",
-      "seriesOrder": 4
+      "seriesOrder": 4,
+      "backupSources": [
+        {
+          "url": "https://mujizybf08.com/movie/auto/69942633ca01177c0d9d529b.m3u8"
+        }
+      ]
     },
     {
       "id": "harry-potter-order-of-phoenix",
@@ -123,10 +146,15 @@
       "collection": "哈利·波特",
       "genre": "奇幻冒险",
       "cover": "https://contentful.harrypotter.com/usf1vwtuqyxm/6Tl1jqky9PZvDStEJ156HX/8f1b10b409a71c6ef537d5f36c2839b0/hp5-poster.png",
-      "hlsUrl": "https://mujizybf08.com/videos/202606/26/6a3d977fe5f8f18125327d22/dcf2e1/index.m3u8",
-      "sourceLabel": "蓝光",
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/y9fgrRMWC7lqK3JK.G_M8JhQHIWcMHbncPEsW3QQ2MnGg-lvUSrStxhSIea90R5txUg3DyJ-vdw/master.m3u8",
+      "sourceLabel": "主片源",
       "sourcePage": "https://www.ncat23.com/play/16105-39-334044.html",
-      "seriesOrder": 5
+      "seriesOrder": 5,
+      "backupSources": [
+        {
+          "url": "https://mujizybf08.com/videos/202606/26/6a3d977fe5f8f18125327d22/dcf2e1/index.m3u8"
+        }
+      ]
     },
     {
       "id": "harry-potter-half-blood-prince",
@@ -136,10 +164,15 @@
       "collection": "哈利·波特",
       "genre": "奇幻冒险",
       "cover": "https://contentful.harrypotter.com/usf1vwtuqyxm/2aXcRaGMOI4O1qEoj1JlR5/c1d6eb5ccd75df65001bc1a2f7787a39/hp6-poster.png",
-      "hlsUrl": "https://mujizybf08.com/videos/202606/26/6a3d6047843b1781377f6cfc/c73fff/index.m3u8",
-      "sourceLabel": "蓝光",
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/OMEcLvGgarxlD_qs.Hpt-w6EFdYjnH2zcbQ7Hgj-zs1tHvrRljtUNRE4l8P2AtgePpmewkUKxBQ/master.m3u8",
+      "sourceLabel": "主片源",
       "sourcePage": "https://www.ncat23.com/play/233228-39-333080.html",
-      "seriesOrder": 6
+      "seriesOrder": 6,
+      "backupSources": [
+        {
+          "url": "https://mujizybf08.com/videos/202606/26/6a3d6047843b1781377f6cfc/c73fff/index.m3u8"
+        }
+      ]
     },
     {
       "id": "harry-potter-deathly-hallows-part-1",
@@ -149,11 +182,19 @@
       "collection": "哈利·波特",
       "genre": "奇幻冒险",
       "cover": "https://contentful.harrypotter.com/usf1vwtuqyxm/2bgFa1qVAalbxgEhVhthon/a1cda92470a76d44266040b8d891c9d0/hp7-poster.png",
-      "hlsUrl": "https://mujizybf08.com/videos/202606/26/6a3d6effe5f8f1812531e8b1/945ege/index.m3u8",
-      "sourceLabel": "蓝光",
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/5HLISycnFI3CjMw7.Azi2UL82nBhaS06QZ1pYhyCETtadDCRqKKNmkaWcNfjV--KAu7OOhbDsDEmH/master.m3u8",
+      "sourceLabel": "主片源",
       "sourcePage": "https://www.ncat23.com/play/16102-39-375986.html",
       "seriesOrder": 7,
-      "backupHlsUrl": "https://vip.dytt-live.com/20250325/1782_4a2ddf14/index.m3u8"
+      "backupHlsUrl": "https://vip.dytt-live.com/20250325/1782_4a2ddf14/index.m3u8",
+      "backupSources": [
+        {
+          "url": "https://vip.dytt-live.com/20250325/1782_4a2ddf14/index.m3u8"
+        },
+        {
+          "url": "https://mujizybf08.com/videos/202606/26/6a3d6effe5f8f1812531e8b1/945ege/index.m3u8"
+        }
+      ]
     },
     {
       "id": "harry-potter-deathly-hallows-part-2",
@@ -163,11 +204,19 @@
       "collection": "哈利·波特",
       "genre": "奇幻冒险",
       "cover": "https://contentful.harrypotter.com/usf1vwtuqyxm/4Hmi2PKjtlhsEy2vgwarm8/f6156fbb05f86c90db209641e885b9b3/hp8-poster.png",
-      "hlsUrl": "https://mujizybf08.com/videos/202602/14/69909bb06d820e7bc9ddc287/37395d/index.m3u8",
-      "sourceLabel": "蓝光",
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/jUWal_567bFs1SNt.RiKvHyegcP93wI-5kMeaWEDyin4rGBHf6iXeb7GiFH-YQsNn-v879RVQbLtY/master.m3u8",
+      "sourceLabel": "主片源",
       "sourcePage": "https://www.ncat23.com/play/16103-39-375598.html",
       "seriesOrder": 8,
-      "backupHlsUrl": "https://vip.dytt-live.com/20250325/1783_b865367f/index.m3u8"
+      "backupHlsUrl": "https://vip.dytt-live.com/20250325/1783_b865367f/index.m3u8",
+      "backupSources": [
+        {
+          "url": "https://vip.dytt-live.com/20250325/1783_b865367f/index.m3u8"
+        },
+        {
+          "url": "https://mujizybf08.com/videos/202602/14/69909bb06d820e7bc9ddc287/37395d/index.m3u8"
+        }
+      ]
     }
   ]
 }

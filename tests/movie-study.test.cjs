@@ -12,7 +12,7 @@ for(const ep of episodes){
   assert.equal(ch.firstSegment,nextSegment);nextSegment+=ch.segmentCount;
   assert.equal(ep.video.originalStart,ch.start);assert.equal(ep.video.originalEnd,ch.end);
   assert.equal(ep.modules.read,false);assert(ep.modules.words&&ep.modules.quiz&&ep.modules.watch);
-  const playlist=fs.readFileSync(path.join(dir,'hls',`${String(n).padStart(3,'0')}.m3u8`),'utf8');
+  const playlist=fs.readFileSync(path.join(dir,'hls',`${String(n).padStart(3,'0')}.m3u8`),'utf8').replace(/\r\n/g,'\n');
   const durations=[...playlist.matchAll(/#EXTINF:([\d.]+)/g)].map(m=>Number(m[1]));
   assert.equal(durations.length,ch.segmentCount);assert(Math.abs(durations.reduce((a,b)=>a+b,0)-(ch.end-ch.start))<.001);
   assert(playlist.includes(`#EXT-X-MEDIA-SEQUENCE:${ch.firstSegment}\n`)&&playlist.endsWith('#EXT-X-ENDLIST\n'));
@@ -31,7 +31,7 @@ const vtt=episodeVtt(cues,{start:2,end:5.7},.3);
 assert(vtt.includes('00:00:00.000 --> 00:00:01.300'));assert(vtt.includes('00:00:03.300 --> 00:00:03.700'));
 assert.throws(()=>extractSrt(Buffer.from('not a zip')));
 const movie=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/movies/harry-potter/movies.json'))).sources[0];
-assert.equal(movie.hlsUrl,alignment.originalHlsUrl);assert.equal(movie.backupHlsUrl,'https://vip.dytt-live.com/20250325/1771_21be9a4b/index.m3u8');
+assert(movie.hlsUrl===alignment.originalHlsUrl || movie.backupSources?.some(source=>source.url===alignment.originalHlsUrl));assert.equal(movie.backupHlsUrl,'https://vip.dytt-live.com/20250325/1771_21be9a4b/index.m3u8');
 assert.equal(movie.studyCourse.seriesId,read('series').seriesId);
 (async()=>{
   const handler=require('../netlify/functions/movie-study-subtitles').handler;

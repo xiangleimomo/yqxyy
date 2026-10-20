@@ -57,9 +57,18 @@ window.MovieClassroom = {
     return { series, playable, playableById: new Map(playable.map(item => [item.id, item])) };
   },
   stars(rating) { return '★'.repeat(rating) + '☆'.repeat(5 - rating); },
+  backupSources(movie) {
+    const sources = [...(movie.backupSources || [])];
+    if (movie.backupHlsUrl) sources.push({url: movie.backupHlsUrl});
+    return sources.filter((item, index) => {
+      try { const url = new URL(item.url); return /^https?:$/.test(url.protocol) && !url.username && !url.password && item.url !== movie.hlsUrl && sources.findIndex(other => other.url === item.url) === index; }
+      catch { return false; }
+    });
+  },
   playbackSource(movie, backup = false) {
-    const embed = !backup && movie.embedUrl;
-    const raw = String(embed || (backup ? movie.backupHlsUrl : movie.hlsUrl) || '').trim();
+    const selected = backup && typeof backup === 'object' ? backup : null;
+    const embed = selected ? selected.embedded && selected.url : !backup && movie.embedUrl;
+    const raw = String(selected ? selected.url : embed || (backup ? movie.backupHlsUrl : movie.hlsUrl) || '').trim();
     try {
       const url = new URL(raw);
       if (!/^https?:$/.test(url.protocol) || url.username || url.password) return {url: '', embedded: false};
@@ -117,16 +126,19 @@ window.MovieClassroom = {
     const movie = playableById.get(id);
     const group = series.find(item => item.films.some(([filmId]) => filmId === id));
     if (!movie || !group) { app.el().innerHTML = '<div class="empty">这部影片暂未添加授权播放源。<p><a class="btn" href="#/movies">返回光影课堂</a></p></div>'; return; }
-    const hasBackup = /^https:\/\//i.test(movie.backupHlsUrl || '') && movie.backupHlsUrl !== movie.hlsUrl;
-    const usingBackup = sourceChoice === 'backup' && hasBackup;
-    const {url: sourceUrl, embedded} = this.playbackSource(movie, usingBackup);
+    const backups = this.backupSources(movie);
+    const hasBackup = backups.length > 0;
+    const index = sourceChoice === 'backup' ? 0 : /^backup-\d+$/.test(sourceChoice) ? Number(sourceChoice.slice(7)) : -1;
+    const usingBackup = index >= 0 && index < backups.length;
+    const selectedChoice = usingBackup ? (index === 0 ? 'backup' : `backup-${index}`) : 'primary';
+    const {url: sourceUrl, embedded} = this.playbackSource(movie, usingBackup ? backups[index] : false);
     const e = value => this.escape(app, value);
-    const sourceControl = hasBackup ? `<label class="movie-source-control">播放源 <select id="movieSource" aria-label="选择播放源"><option value="primary"${usingBackup ? '' : ' selected'}>主片源</option><option value="backup"${usingBackup ? ' selected' : ''}>备用片源（广告自动跳过）</option></select></label><small class="muted">切换片源将从头播放。</small>` : '';
+    const sourceControl = hasBackup ? `<label class="movie-source-control">播放源 <select id="movieSource" aria-label="选择播放源"><option value="primary"${usingBackup ? '' : ' selected'}>主片源</option>${backups.map((source, i) => `<option value="${i === 0 ? 'backup' : `backup-${i}`}"${usingBackup && index === i ? ' selected' : ''}>备用片源 ${i + 1}${window.DyttAdSkip?.enabled?.(source.url) ? '（广告自动跳过）' : ''}</option>`).join('')}</select></label><small class="muted">切换片源将从头播放。</small>` : '';
     const studyLink = movie.studyCourse ? `<p class="movie-study-entry"><a class="btn" href="#/series/${e(movie.studyCourse.seriesId)}">📖 剧情分集学习 · ${e(movie.studyCourse.episodeCount)} 集</a> <span class="muted">英文字幕 · Words · Quiz · Games</span></p>` : '';
     const subtitleTrack = movie.subtitleUrl ? `<track kind="subtitles" src="${e(movie.subtitleUrl)}" srclang="${e(movie.subtitleLang || 'en')}" label="${e(movie.subtitleLabel || 'English')}" default>` : '';
-    app.el().innerHTML = `<div class="breadcrumb"><a href="#/movies">光影课堂</a> › <a href="#/movie-series/${e(group.id)}">${e(group.titleZh)}</a> › ${e(movie.titleZh)}</div><section class="movie-watch-head"><div><h1>${e(movie.titleZh)}</h1><p>${e(movie.title)} · ${e(movie.year)}</p></div><a class="btn secondary" href="#/movie-series/${e(group.id)}">返回系列</a></section>${studyLink}<div class="movie-watch-frame"><video controls playsinline preload="metadata" aria-label="${e(movie.titleZh)}">${subtitleTrack}</video></div><div class="movie-player-status" id="moviePlayerStatus" role="status" aria-live="polite">正在加载影片，请稍候…</div><div class="movie-watch-actions">${sourceControl}<button type="button" class="btn secondary" id="movieRetry">重新加载</button><span class="muted">Watch 看电影 · ${e(movie.sourceLabel || '授权播放源')}${movie.subtitleUrl ? ' · English subtitles' : ''}</span></div><div class="movie-section-heading"><h2>同系列影片</h2></div><div class="movie-grid">${group.films.filter(([filmId]) => filmId !== id).map(film => this.movieCard(app, group, film, playableById)).join('')}</div>`;
+    app.el().innerHTML = `<div class="breadcrumb"><a href="#/movies">光影课堂</a> › <a href="#/movie-series/${e(group.id)}">${e(group.titleZh)}</a> › ${e(movie.titleZh)}</div><section class="movie-watch-head"><div><h1>${e(movie.titleZh)}</h1><p>${e(movie.title)} · ${e(movie.year)}</p></div><a class="btn secondary" href="#/movie-series/${e(group.id)}">返回系列</a></section>${movie.descriptionZh ? `<p class="movie-description">${e(movie.descriptionZh)}</p>` : ''}${movie.description ? `<p class="movie-description muted">${e(movie.description)}</p>` : ''}${studyLink}<div class="movie-watch-frame"><video controls playsinline preload="metadata" aria-label="${e(movie.titleZh)}">${subtitleTrack}</video></div><div class="movie-player-status" id="moviePlayerStatus" role="status" aria-live="polite">正在加载影片，请稍候…</div><div class="movie-watch-actions">${sourceControl}<button type="button" class="btn secondary" id="movieRetry">重新加载</button><span class="muted">Watch 看电影 · ${e(usingBackup ? `备用片源 ${index + 1}` : movie.sourceLabel || '授权播放源')}${movie.subtitleUrl ? ' · English subtitles' : ''}</span></div><div class="movie-section-heading"><h2>同系列影片</h2></div><div class="movie-grid">${group.films.filter(([filmId]) => filmId !== id).map(film => this.movieCard(app, group, film, playableById)).join('')}</div>`;
     const player = app.el().querySelector('video');
-    document.getElementById('movieRetry').onclick = () => { this.cleanup(); this.renderWatch(app, id, usingBackup ? 'backup' : 'primary').catch(() => {}); };
+    document.getElementById('movieRetry').onclick = () => { this.cleanup(); this.renderWatch(app, id, selectedChoice).catch(() => {}); };
     if (hasBackup) document.getElementById('movieSource').onchange = event => { const choice = event.target.value; this.cleanup(); this.renderWatch(app, id, choice).catch(() => {}); };
     const report = (message, failed=false) => { if (generation !== this.generation) return; const status = document.getElementById('moviePlayerStatus'); if (status) { status.textContent = message; status.classList.toggle('failed', failed); } };
     if (embedded) {
@@ -149,7 +161,7 @@ window.MovieClassroom = {
       return;
     }
     this.player = player;
-    player.addEventListener('loadedmetadata', () => report(usingBackup ? '备用片源已就绪，广告将自动跳过。' : '影片已就绪，点击播放开始观看。'));
+    player.addEventListener('loadedmetadata', () => report(usingBackup ? '备用片源已就绪，点击播放开始观看。' : '影片已就绪，点击播放开始观看。'));
     player.addEventListener('playing', () => report('正在播放 · 可使用播放器控制倍速、音量和全屏。'));
     player.addEventListener('error', () => report(hasBackup && !usingBackup ? '主片源加载失败，请选择备用片源或重新加载。' : '影片加载失败：片源可能已过期，或当前网络无法访问。请重试；仍失败时需要更新片源地址。', true));
     const native = player.canPlayType('application/vnd.apple.mpegurl');

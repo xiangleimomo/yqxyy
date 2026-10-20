@@ -25,30 +25,48 @@
       "title": "Cars",
       "titleZh": "赛车总动员",
       "year": 2006,
-      "hlsUrl": "https://mujizybf08.com/videos/202606/26/6a3e225ca8eb671c1adc14b4/3b0d62/index.m3u8",
-      "sourceLabel": "蓝光",
-      "seriesOrder": 1
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/Ri9QC63r8avVCNW1.RB0oVIga-TgyEdKZnrUwwwQPr4uVwYFj1_f3nErIb7Dl8abOk4huzCvOyw/master.m3u8",
+      "sourceLabel": "主片源",
+      "seriesOrder": 1,
+      "backupSources": [
+        {
+          "url": "https://mujizybf08.com/videos/202606/26/6a3e225ca8eb671c1adc14b4/3b0d62/index.m3u8"
+        }
+      ]
     },
     {
       "id": "cars-2",
       "title": "Cars 2",
       "titleZh": "赛车总动员2",
       "year": 2011,
-      "hlsUrl": "https://mujizybf08.com/videos/202606/26/6a3e22c35c4a4e1c132fa5d7/2d7b26/index.m3u8",
-      "sourceLabel": "英语原声",
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/nxoCuNY-rhuBKZro.7nii2W20UzmYZDIrslypuTBPNXU7ZhGl6QsIZeiAtH-idLr-rhVVIJl3pICg/master.m3u8",
+      "sourceLabel": "主片源",
       "sourcePage": "https://4k01.pianku.online/voddetail/97159.html",
       "seriesOrder": 2,
-      "backupHlsUrl": "https://vip.dytt-live.com/20250408/3701_b181eaa4/index.m3u8"
+      "backupHlsUrl": "https://vip.dytt-live.com/20250408/3701_b181eaa4/index.m3u8",
+      "backupSources": [
+        {
+          "url": "https://vip.dytt-live.com/20250408/3701_b181eaa4/index.m3u8"
+        },
+        {
+          "url": "https://mujizybf08.com/videos/202606/26/6a3e22c35c4a4e1c132fa5d7/2d7b26/index.m3u8"
+        }
+      ]
     },
     {
       "id": "cars-3",
       "title": "Cars 3",
       "titleZh": "赛车总动员3",
       "year": 2017,
-      "hlsUrl": "https://mujizybf08.com/videos/202606/26/6a3e3a6b0b51f6dcd2eac2da/32d888/index.m3u8",
-      "sourceLabel": "英语原声",
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/EMnnKAVpKXZvK7pf.2BRMkbBG6sKtW2dqtsTbNBhIwhlvzi-3dsnIomLgZCRem6QbGn-rSJNd0IABzA/master.m3u8",
+      "sourceLabel": "主片源",
       "sourcePage": "https://4k01.pianku.online/voddetail/96562.html",
-      "seriesOrder": 3
+      "seriesOrder": 3,
+      "backupSources": [
+        {
+          "url": "https://mujizybf08.com/videos/202606/26/6a3e3a6b0b51f6dcd2eac2da/32d888/index.m3u8"
+        }
+      ]
     }
   ]
 }

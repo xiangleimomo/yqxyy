@@ -19,20 +19,33 @@
       "title": "Finding Nemo",
       "titleZh": "海底总动员",
       "year": 2003,
-      "hlsUrl": "https://vip.dytt-live.com/20250408/3736_3e195b07/3000k/hls/mixed.m3u8",
-      "sourceLabel": "蓝光",
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/S8U7dS3AzzcpXHU4.9zF3iyuNbPF_Q_0xJSGe25SZu1kmgoz0c5wRvxHnvt1t8ymwBpN4WEZ6/master.m3u8",
+      "sourceLabel": "主片源",
       "seriesOrder": 1,
-      "backupHlsUrl": "https://vip.dytt-live.com/20250408/3736_3e195b07/index.m3u8"
+      "backupHlsUrl": "https://vip.dytt-live.com/20250408/3736_3e195b07/index.m3u8",
+      "backupSources": [
+        {
+          "url": "https://vip.dytt-live.com/20250408/3736_3e195b07/index.m3u8"
+        },
+        {
+          "url": "https://vip.dytt-live.com/20250408/3736_3e195b07/3000k/hls/mixed.m3u8"
+        }
+      ]
     },
     {
       "id": "finding-dory",
       "title": "Finding Dory",
       "titleZh": "海底总动员2：多莉去哪儿",
       "year": 2016,
-      "hlsUrl": "https://v4.wsyzym3u8.com/202405/06/xBfLvUw5zq4/video/index.m3u8",
-      "sourceLabel": "英语原声",
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/W6fplgTXvVzDtaeg.RZ3zxlV38SjurWfIl6t-5r8FmW9fr-D9fiIEh0VBUcPMZYUfxI6Dmdo6DdaYEA/master.m3u8",
+      "sourceLabel": "主片源",
       "sourcePage": "https://4k01.pianku.online/voddetail/49408.html",
-      "seriesOrder": 2
+      "seriesOrder": 2,
+      "backupSources": [
+        {
+          "url": "https://v4.wsyzym3u8.com/202405/06/xBfLvUw5zq4/video/index.m3u8"
+        }
+      ]
     }
   ]
 }

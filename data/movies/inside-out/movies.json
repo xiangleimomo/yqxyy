@@ -1,7 +1,17 @@
 {
   "films": [
-    ["inside-out-1", "Inside Out", "头脑特工队", 2015],
-    ["inside-out-2", "Inside Out 2", "头脑特工队2", 2024]
+    [
+      "inside-out-1",
+      "Inside Out",
+      "头脑特工队",
+      2015
+    ],
+    [
+      "inside-out-2",
+      "Inside Out 2",
+      "头脑特工队2",
+      2024
+    ]
   ],
   "sources": [
     {
@@ -9,21 +19,31 @@
       "title": "Inside Out",
       "titleZh": "头脑特工队",
       "year": 2015,
-      "hlsUrl": "https://mujizybf08.com/movie/auto/6992f68ee6897e7bf3f6845d.m3u8",
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/sUNvJUWNa9EF9Om6.if6OHaWdanCG5xD8qhQCbE0HiZrcKIVcV8zZmETwW6zgbsI8P_i_f214ZtvoAA/master.m3u8",
       "subtitleUrl": "assets/subtitles/inside-out-1.en.vtt",
       "subtitleLang": "en",
       "subtitleLabel": "English",
-      "sourceLabel": "蓝光",
-      "seriesOrder": 1
+      "sourceLabel": "主片源",
+      "seriesOrder": 1,
+      "backupSources": [
+        {
+          "url": "https://mujizybf08.com/movie/auto/6992f68ee6897e7bf3f6845d.m3u8"
+        }
+      ]
     },
     {
       "id": "inside-out-2",
       "title": "Inside Out 2",
       "titleZh": "头脑特工队2",
       "year": 2024,
-      "hlsUrl": "https://mujizybf08.com/movie/auto/6a1735c944aa856ba84499fe.m3u8",
-      "sourceLabel": "蓝光",
-      "seriesOrder": 2
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/HCiLV5DiylJlD89I.oMueypspLDYML4TI5DapnSDc9YVdZIFunPH7WWFw8vy8MtMROCn59iWZRkNgifc/master.m3u8",
+      "sourceLabel": "主片源",
+      "seriesOrder": 2,
+      "backupSources": [
+        {
+          "url": "https://mujizybf08.com/movie/auto/6a1735c944aa856ba84499fe.m3u8"
+        }
+      ]
     }
   ]
 }

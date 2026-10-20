@@ -19,18 +19,28 @@
       "title": "Peter Rabbit",
       "titleZh": "比得兔",
       "year": 2018,
-      "hlsUrl": "https://v12.wsyzym3u8.com/202403/25/QQMK5FSvz85/video/index.m3u8",
-      "sourceLabel": "蓝光",
-      "seriesOrder": 1
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/nk0RYSmtMGm4IXCm.PSllwS4gBMsi_R4c6pgA3Pzrw-vVdpuVM_ksTMPoQXPerjAB3DoRHxw4hWMcmg/master.m3u8",
+      "sourceLabel": "主片源",
+      "seriesOrder": 1,
+      "backupSources": [
+        {
+          "url": "https://v12.wsyzym3u8.com/202403/25/QQMK5FSvz85/video/index.m3u8"
+        }
+      ]
     },
     {
       "id": "peter-rabbit-2",
       "title": "Peter Rabbit 2: The Runaway",
       "titleZh": "比得兔2：逃跑计划",
       "year": 2021,
-      "hlsUrl": "https://v12.wsyzym3u8.com/202403/24/PwpJvxVAam5/video/index.m3u8",
-      "sourceLabel": "蓝光",
-      "seriesOrder": 2
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/UPM_dmtC8HdgdwFr.UkOCLPctk_Oqa9EcnRQ_5U2H4oBPzzEC666bhfFEYq2sVhdCN3OCJodrp5mhow/master.m3u8",
+      "sourceLabel": "主片源",
+      "seriesOrder": 2,
+      "backupSources": [
+        {
+          "url": "https://v12.wsyzym3u8.com/202403/24/PwpJvxVAam5/video/index.m3u8"
+        }
+      ]
     }
   ]
 }

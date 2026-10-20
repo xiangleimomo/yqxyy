@@ -19,18 +19,28 @@
       "title": "The Incredibles",
       "titleZh": "超人总动员",
       "year": 2004,
-      "hlsUrl": "https://s3.bfzycdn.com/video/chaorenzongdongyuan/HD%E4%B8%AD%E5%AD%97/index.m3u8",
-      "sourceLabel": "蓝光",
-      "seriesOrder": 1
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/aw_rxtBz4zriJ6K2.U_SMx33PcJ83NZUVjH2pqJqvil-CO7HwHLws_1z41J4F1Rv45Wb71jw-hSk/master.m3u8",
+      "sourceLabel": "主片源",
+      "seriesOrder": 1,
+      "backupSources": [
+        {
+          "url": "https://s3.bfzycdn.com/video/chaorenzongdongyuan/HD%E4%B8%AD%E5%AD%97/index.m3u8"
+        }
+      ]
     },
     {
       "id": "incredibles-2",
       "title": "Incredibles 2",
       "titleZh": "超人总动员2",
       "year": 2018,
-      "hlsUrl": "https://mujizybf08.com/videos/202606/26/6a3e69d30b51f6dcd2eb422d/04303a/index.m3u8",
-      "sourceLabel": "蓝光",
-      "seriesOrder": 2
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/YdsW7s9v7LMTfBst.HT_n_V-sXpdNQj5SGGNZnhn4OzgoKl_t_ECQnUBpvG4s7Bo7MR49fARkzpXKUw/master.m3u8",
+      "sourceLabel": "主片源",
+      "seriesOrder": 2,
+      "backupSources": [
+        {
+          "url": "https://mujizybf08.com/videos/202606/26/6a3e69d30b51f6dcd2eb422d/04303a/index.m3u8"
+        }
+      ]
     }
   ]
 }

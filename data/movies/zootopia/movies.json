@@ -19,18 +19,28 @@
       "title": "Zootopia",
       "titleZh": "疯狂动物城",
       "year": 2016,
-      "hlsUrl": "https://mujizybf08.com/movie/auto/69902314c196547be8152d0f.m3u8",
-      "sourceLabel": "蓝光",
-      "seriesOrder": 1
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/DobGFF7_GwyMJ19C.zLkCNXOnbNRZg7Qxkm3bYxYYVvOpo9cevIvm2oSGIYX0jysXFOwNnGZtLICLXA/master.m3u8",
+      "sourceLabel": "主片源",
+      "seriesOrder": 1,
+      "backupSources": [
+        {
+          "url": "https://mujizybf08.com/movie/auto/69902314c196547be8152d0f.m3u8"
+        }
+      ]
     },
     {
       "id": "zootopia-2",
       "title": "Zootopia 2",
       "titleZh": "疯狂动物城2",
       "year": 2025,
-      "hlsUrl": "https://mujizybf08.com/movie/auto/697d0af52a321275f460a9b2.m3u8",
-      "sourceLabel": "待补播放源",
-      "seriesOrder": 2
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/kTIDbyDx4Wgg4kVt.yxR3AsR71aH_bKW3JNRy-UW1n4gJvlLwk057axgFfZPJs3-NzoUkFPzd1fPJXuI/master.m3u8",
+      "sourceLabel": "主片源",
+      "seriesOrder": 2,
+      "backupSources": [
+        {
+          "url": "https://mujizybf08.com/movie/auto/697d0af52a321275f460a9b2.m3u8"
+        }
+      ]
     }
   ]
 }

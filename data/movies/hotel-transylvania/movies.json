@@ -31,38 +31,58 @@
       "title": "Hotel Transylvania",
       "titleZh": "精灵旅社",
       "year": 2012,
-      "hlsUrl": "https://vip.dytt-hot.com/20250211/59939_7cb394c2/index.m3u8",
-      "sourceLabel": "蓝光",
-      "seriesOrder": 1
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/6RAQ65Cok0NvU6NQ.-ervDE3pIxGObPLQhxMCZ_7lS8f5yHWs8RX8nDtWfYl8PECACVxzIxxnS1Pe/master.m3u8",
+      "sourceLabel": "主片源",
+      "seriesOrder": 1,
+      "backupSources": [
+        {
+          "url": "https://vip.dytt-hot.com/20250211/59939_7cb394c2/index.m3u8"
+        }
+      ]
     },
     {
       "id": "hotel-transylvania-2",
       "title": "Hotel Transylvania 2",
       "titleZh": "精灵旅社2",
       "year": 2015,
-      "hlsUrl": "https://vip.dytt-hot.com/20250211/59941_6122d783/index.m3u8",
-      "sourceLabel": "蓝光",
-      "seriesOrder": 2
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/tCA3Ib7kNhiPAksk.CcFCSYroQX5xRCttxzsxtW_f3kaI49WaIJXmp-WW4dRWJPMEZQsF7kM1Pz-Veg/master.m3u8",
+      "sourceLabel": "主片源",
+      "seriesOrder": 2,
+      "backupSources": [
+        {
+          "url": "https://vip.dytt-hot.com/20250211/59941_6122d783/index.m3u8"
+        }
+      ]
     },
     {
       "id": "hotel-transylvania-3",
       "title": "Hotel Transylvania 3: Summer Vacation",
       "titleZh": "精灵旅社3：疯狂假期",
       "year": 2018,
-      "hlsUrl": "https://jimaoys96.com/public/playback/42ff3e9cc5173c774a3c00f36e5d3161/smart.m3u8",
-      "sourceLabel": "英语原声",
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/I-jrlsUDSSLleCuq.d-1m1cu92S-2FYqQYFi86FkLsjk_blIDaFCs4PLycifPpfYKpSv4E5gScVCkpg/master.m3u8",
+      "sourceLabel": "主片源",
       "sourcePage": "https://4k01.pianku.online/voddetail/123822.html",
-      "seriesOrder": 3
+      "seriesOrder": 3,
+      "backupSources": [
+        {
+          "url": "https://jimaoys96.com/public/playback/42ff3e9cc5173c774a3c00f36e5d3161/smart.m3u8"
+        }
+      ]
     },
     {
       "id": "hotel-transylvania-4",
       "title": "Hotel Transylvania: Transformania",
       "titleZh": "精灵旅社4：变身大冒险",
       "year": 2022,
-      "hlsUrl": "https://v8.wsyzym3u8.com/202402/10/JJJgdYgFHe1/video/index.m3u8",
-      "sourceLabel": "英语原声",
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/wgXHu-cQdcL4oUmM.98pCkt7INg6FPFPcjaT3LaFrlVPtZtZRdpTP3Z0Sa-Ng34xI4cjNbV6OI1SdGw/master.m3u8",
+      "sourceLabel": "主片源",
       "sourcePage": "https://4k01.pianku.online/voddetail/53381.html",
-      "seriesOrder": 4
+      "seriesOrder": 4,
+      "backupSources": [
+        {
+          "url": "https://v8.wsyzym3u8.com/202402/10/JJJgdYgFHe1/video/index.m3u8"
+        }
+      ]
     }
   ]
 }

@@ -19,18 +19,30 @@
       "title": "The Secret Life of Pets",
       "titleZh": "爱宠大机密",
       "year": 2016,
-      "embedUrl": "https://jimaoys99.com/parse?url=https%3A%2F%2Fvod.360zyx.vip%2F20250107%2FjM5xRP3A%2Findex.m3u8",
-      "sourceLabel": "蓝光",
-      "seriesOrder": 1
+      "sourceLabel": "主片源",
+      "seriesOrder": 1,
+      "backupSources": [
+        {
+          "url": "https://jimaoys99.com/parse?url=https%3A%2F%2Fvod.360zyx.vip%2F20250107%2FjM5xRP3A%2Findex.m3u8",
+          "embedded": true
+        }
+      ],
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/HuXlmYX5JDmC011R.Rd_lP9mApzAWv7qt5k3C1dv8fUfDeXOSYmxMVJh0qBhefeExUP0mjIOQ-pnVqw/master.m3u8"
     },
     {
       "id": "pets-2",
       "title": "The Secret Life of Pets 2",
       "titleZh": "爱宠大机密2",
       "year": 2019,
-      "embedUrl": "https://jimaoys99.com/parse?url=https%3A%2F%2Fvod.360zyx.vip%2F20250107%2FjM5xRP3A%2Findex.m3u8",
-      "sourceLabel": "蓝光",
-      "seriesOrder": 2
+      "sourceLabel": "主片源",
+      "seriesOrder": 2,
+      "backupSources": [
+        {
+          "url": "https://jimaoys99.com/parse?url=https%3A%2F%2Fvod.360zyx.vip%2F20250107%2FjM5xRP3A%2Findex.m3u8",
+          "embedded": true
+        }
+      ],
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/k2CBSWzWwCwR3VF5.DTZeu17vvmmz1O-ZzYsBdnXy7B4RXcsFr39xm-pXlfpwWePoC9E_mc6avGR6Tg/master.m3u8"
     }
   ]
 }

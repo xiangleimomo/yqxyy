@@ -19,18 +19,28 @@
       "title": "Frozen",
       "titleZh": "冰雪奇缘",
       "year": 2013,
-      "hlsUrl": "https://vip.dytt-hot.com/20250211/59936_daa6007f/index.m3u8",
-      "sourceLabel": "蓝光",
-      "seriesOrder": 1
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/Fv3I4YqOs9rlwsJQ.ZqUMt6glDHGRMaISOTHotS88575vXW3zgy2JOuaA_smRUSSSlU-1V_YjpgooCg/master.m3u8",
+      "sourceLabel": "主片源",
+      "seriesOrder": 1,
+      "backupSources": [
+        {
+          "url": "https://vip.dytt-hot.com/20250211/59936_daa6007f/index.m3u8"
+        }
+      ]
     },
     {
       "id": "frozen-2",
       "title": "Frozen II",
       "titleZh": "冰雪奇缘2",
       "year": 2019,
-      "hlsUrl": "https://vip.dytt-hot.com/20250211/59920_5bc77550/index.m3u8",
-      "sourceLabel": "蓝光",
-      "seriesOrder": 2
+      "hlsUrl": "https://zcdn.bluevelvet.space/play/wxLLkWWFoVoHJoev.crDtDQuTSJEJeel68XCfAYNyoCQBjvS-d0O-OIZBQhsLptdQJoo2T-UwO0zC9w/master.m3u8",
+      "sourceLabel": "主片源",
+      "seriesOrder": 2,
+      "backupSources": [
+        {
+          "url": "https://vip.dytt-hot.com/20250211/59920_5bc77550/index.m3u8"
+        }
+      ]
     }
   ]
 }
