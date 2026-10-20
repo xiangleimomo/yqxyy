@@ -77,6 +77,17 @@ window.MovieClassroom = {
       return {url: url.href, embedded: !!embed || parserPage};
     } catch { return {url: '', embedded: false}; }
   },
+  mediaUrl(sourceUrl) {
+    // This upstream serves HLS without Access-Control-Allow-Origin. Keep all
+    // relative playlists, initialization fragments and segments on our origin.
+    try {
+      const url = new URL(sourceUrl);
+      if (url.protocol === 'https:' && url.hostname === 'zcdn.bluevelvet.space' && !url.port && !url.username && !url.password && url.pathname.startsWith('/play/')) {
+        return '/_movie-media/bluevelvet/' + url.pathname.slice('/play/'.length) + url.search;
+      }
+    } catch {}
+    return sourceUrl;
+  },
   escape(app, value) { return app.escapeHtml(String(value || '')); },
   poster(app, item, label, className='movie-poster') {
     const e = value => this.escape(app, value);
@@ -161,12 +172,13 @@ window.MovieClassroom = {
       return;
     }
     this.player = player;
+    const mediaUrl = this.mediaUrl(sourceUrl);
     player.addEventListener('loadedmetadata', () => report(usingBackup ? '备用片源已就绪，点击播放开始观看。' : '影片已就绪，点击播放开始观看。'));
     player.addEventListener('playing', () => report('正在播放 · 可使用播放器控制倍速、音量和全屏。'));
     player.addEventListener('error', () => report(hasBackup && !usingBackup ? '主片源加载失败，请选择备用片源或重新加载。' : '影片加载失败：片源可能已过期，或当前网络无法访问。请重试；仍失败时需要更新片源地址。', true));
     const native = player.canPlayType('application/vnd.apple.mpegurl');
     const safari = /Safari/i.test(navigator.userAgent) && !/Chrome|Chromium|CriOS|Edg|Android/i.test(navigator.userAgent);
-    const useNative = () => { player.src = sourceUrl; this.disposeAdSkip = window.DyttAdSkip?.attach(player, sourceUrl); };
+    const useNative = () => { player.src = mediaUrl; this.disposeAdSkip = window.DyttAdSkip?.attach(player, sourceUrl); };
     // Chrome may report "maybe" even when its native HLS path cannot play this source.
     if (native && safari) { useNative(); return; }
     try {
@@ -182,7 +194,7 @@ window.MovieClassroom = {
       const hls = new window.Hls(); this.hls = hls;
       hls.on(window.Hls.Events.ERROR, (_event, data) => { if (data.fatal) { hls.stopLoad(); report(hasBackup && !usingBackup ? '主片源加载失败，请选择备用片源或重新加载。' : '影片加载失败：片源可能已过期，或存在网络／跨站访问限制。请重试；仍失败时需要更新片源地址。', true); } });
       this.disposeAdSkip = window.DyttAdSkip?.attach(player, sourceUrl, hls);
-      hls.loadSource(sourceUrl); hls.attachMedia(player);
+      hls.loadSource(mediaUrl); hls.attachMedia(player);
     } catch (error) { report(error.message + '，请点击重新加载。', true); }
   }
 };

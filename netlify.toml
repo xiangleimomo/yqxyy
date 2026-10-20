@@ -6,6 +6,14 @@
   [headers.values]
     Content-Type = "application/vnd.apple.mpegurl"
 
+# Fixed upstream only; keep before the SPA catch-all. A 200 rewrite proxies
+# manifests and relative HLS assets without a cross-origin browser request.
+[[redirects]]
+  from = "/_movie-media/bluevelvet/*"
+  to = "https://zcdn.bluevelvet.space/play/:splat"
+  status = 200
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
