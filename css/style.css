@@ -1217,3 +1217,12 @@ body.series-fixed-page .footer{
 .games-lock-hint{padding:12px 15px;border:1px solid #f3d585;border-radius:10px;background:#fff8e6;color:#77551d;line-height:1.7}
 .subtitle-video-wrap.subtitle-page-fullscreen{position:fixed;inset:0;z-index:10000;width:100%;height:100%;height:100dvh;padding:0;border-radius:0;background:#000;touch-action:manipulation}
 .subtitle-video-wrap.subtitle-page-fullscreen .hls-video-player{width:100%;height:100%}
+
+.movie-subtitles { margin: 24px 0; padding: 20px; border: 1px solid var(--border, #ddd); border-radius: 12px; }
+.movie-subtitles h2 { margin-top: 0; font-size: 1.15rem; }
+.movie-subtitles form, .movie-subtitle-controls { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; margin-bottom: 12px; }
+.movie-subtitles label { display: flex; flex-direction: column; gap: 6px; max-width: 100%; }
+.movie-subtitles input, .movie-subtitles select { padding: 8px; border: 1px solid #aaa; border-radius: 6px; max-width: 100%; }
+.movie-subtitles input[type=number] { width: 110px; }
+.movie-subtitle-results { display: flex; flex-direction: column; gap: 8px; max-height: 320px; overflow: auto; }
+.movie-subtitle-results button { text-align: left; overflow-wrap: anywhere; white-space: normal; }

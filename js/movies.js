@@ -42,6 +42,7 @@ window.MovieClassroom = {
   },
   cleanup() {
     this.generation++;
+    this.disposeSubtitles?.(); this.disposeSubtitles = null;
     if (this.nativeStartTimer) { clearTimeout(this.nativeStartTimer); this.nativeStartTimer = null; }
     this.disposeAdSkip?.(); this.disposeAdSkip = null;
     if (this.hls) { this.hls.destroy(); this.hls = null; }
@@ -174,6 +175,7 @@ window.MovieClassroom = {
       return;
     }
     this.player = player;
+    this.disposeSubtitles = window.MovieSubtitles?.mount(app.el(), player, movie, () => this.hls);
     const mediaUrl = this.mediaUrl(sourceUrl);
     const native = player.canPlayType('application/vnd.apple.mpegurl');
     const safari = /Safari/i.test(navigator.userAgent) && !/Chrome|Chromium|CriOS|Edg|Android/i.test(navigator.userAgent);
