@@ -5033,5 +5033,29 @@
       "quiz": true,
       "review": false
     }
+  },
+  {
+    "episodeId": 211,
+    "sourceContentId": "C0013571",
+    "title": "Zann’s Message",
+    "titleZh": "",
+    "releaseDate": "",
+    "status": "published",
+    "sourceType": "xet-catalog",
+    "unlockRequiresQuiz": false,
+    "video": {
+      "source": "hls",
+      "hlsUrl": "https://cdn.littlefox.co.kr/contents_5/hls/720/183de883a2/1792554386cef762ecebfd6ff463ce4fb05f095d92/stream.m3u8?_=1792554395"
+    },
+    "modules": {
+      "watch": true,
+      "read": true,
+      "words": true,
+      "vocabulary": true,
+      "phrases": false,
+      "grammar": false,
+      "quiz": true,
+      "review": false
+    }
   }
 ]

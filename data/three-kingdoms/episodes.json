@@ -252,5 +252,29 @@
       "quiz": true,
       "review": false
     }
+  },
+  {
+    "episodeId": 11,
+    "sourceContentId": "C0013407",
+    "title": "Chaos in the Imperial Court",
+    "titleZh": "",
+    "releaseDate": "",
+    "status": "published",
+    "sourceType": "xet-catalog",
+    "unlockRequiresQuiz": false,
+    "video": {
+      "source": "hls",
+      "hlsUrl": "https://cdn.littlefox.co.kr/contents_5/hls/720/2ca6327e54/17920465511ad93267910df9c994eae8e51f527c7b/stream.m3u8?_=1792046599"
+    },
+    "modules": {
+      "watch": true,
+      "read": true,
+      "words": true,
+      "vocabulary": true,
+      "phrases": false,
+      "grammar": false,
+      "quiz": true,
+      "review": false
+    }
   }
 ]
