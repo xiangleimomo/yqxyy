@@ -10,8 +10,9 @@ const {
 const p = { id: "pianku", name: "片库", kind: "pianku" },
   l = { id: "lxyy", name: "洛雪TV", kind: "lxyy" };
 const search =
-  '<a href="/voddetail/123.html" title="Ice4K"><h4>Ice4K</h4><p>2013 / 美国</p></a><a href="/voddetail/123.html">duplicate</a><a href="https://evil.test/voddetail/789.html">Ice</a><a href="/voddetail/2.html" title="Ice国语">国语</a>';
+  '<a href="/voddetail/123.html" title="Ice4K"><img data-original="/covers/ice.jpg"><h4>Ice4K</h4><p>2013 / 美国</p></a><a href="/voddetail/123.html">duplicate</a><a href="https://evil.test/voddetail/789.html">Ice</a><a href="/voddetail/2.html" title="Ice国语">国语</a>';
 assert.equal(piankuSearch(search, p, "Ice").length, 1);
+assert.equal(piankuSearch(search,p,"Ice")[0].poster,"https://4k01.pianku.online/covers/ice.jpg");
 const detail =
   '<h1>Ice4K<span>4K</span></h1><span>年份：2013</span><span>语言：英语</span><div>导演：Someone</div><h3>剧情简介</h3><span class="source-tab-item" data-target="playlist-1">自营4K60帧</span><span class="source-tab-item" data-target="playlist-2">备用</span><div class="source-pane" id="playlist-1"><a href="/vodplay/123-1-1.html">英语</a><a href="/vodplay/123-1-2.html">国语</a></div><div class="source-pane" id="playlist-2"><a href="/vodplay/123-2-1.html">HD</a></div>';
 const d = piankuDetail(detail, p, "123");
@@ -46,6 +47,7 @@ const item = lxyyItem(
     source: "jl",
     id: "629107140044259332",
     name: "Ice",
+    pic: "https://images.test/ice.jpg",
     lang: "英语",
     year: "2013",
     source_name: "自营",
@@ -62,6 +64,7 @@ const item = lxyyItem(
 );
 assert.equal(item.id, "jl:629107140044259332");
 assert.equal(item.language, "en");
+assert.equal(item.poster,"https://images.test/ice.jpg");
 assert.equal(item.episodes.length, 1);
 assert.equal(
   lxyyItem({ source: "https://evil.test", id: "1", name: "Ice" }, l),

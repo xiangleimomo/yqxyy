@@ -111,6 +111,26 @@
     for (const item of results) {
       const card = document.createElement("article");
       card.className = "card";
+      const cover = document.createElement("div");
+      cover.className = "result-poster";
+      const fallback = document.createElement("span");
+      fallback.className = "poster-fallback";
+      fallback.setAttribute("aria-hidden", "true");
+      fallback.textContent = "🎬\n封面暂缺";
+      cover.append(fallback);
+      const poster = C.posterUrl(item.poster);
+      if (poster) {
+        const img = document.createElement("img");
+        img.alt = item.title + " 封面";
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.referrerPolicy = "no-referrer";
+        img.addEventListener("error", () => img.remove(), {once: true});
+        img.src = poster;
+        cover.append(img);
+      }
+      const content = document.createElement("div");
+      content.className = "result-content";
       const title = document.createElement("h3");
       title.textContent = item.title;
       const meta = document.createElement("p");
@@ -127,7 +147,8 @@
       button.textContent = "试播 / 查看线路";
       if (item.providerId === "dulo") card.classList.add("primary-source");
       button.onclick = () => select(item);
-      card.append(title, meta, button);
+      content.append(title, meta, button);
+      card.append(cover, content);
       if (C.safeUrl(item.websiteUrl)) {
         const link = document.createElement("a");
         link.className = "original-site";
@@ -135,7 +156,7 @@
         link.target = "_blank";
         link.rel = "noopener noreferrer";
         link.textContent = "在原站查看";
-        card.append(link);
+        content.append(link);
       }
       box.append(card);
     }

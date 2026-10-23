@@ -17,7 +17,7 @@ assert.equal(mediaUrl(source),source);
   }
   assert.equal(u.origin,'https://v3-cinemeta.strem.io');
   const tv=u.pathname.includes('/series/');
-  const meta={id:tv?'tt1234568':'tt1234567',imdb_id:tv?'tt1234568':'tt1234567',name:tv?'Frozen Show':'Frozen',type:tv?'series':'movie',releaseInfo:'2013',year:2013,moviedb_id:tv?'234':'123'};
+  const meta={id:tv?'tt1234568':'tt1234567',imdb_id:tv?'tt1234568':'tt1234567',name:tv?'Frozen Show':'Frozen',type:tv?'series':'movie',releaseInfo:'2013',year:2013,poster:'https://images.test/frozen.jpg',moviedb_id:tv?'234':'123'};
   if(u.pathname.includes('/catalog/')) {assert(u.pathname.includes('search=Frozen')); return new Response(JSON.stringify({metas:[meta]}));}
   return new Response(JSON.stringify({meta}));
  });
@@ -25,6 +25,7 @@ assert.equal(mediaUrl(source),source);
  assert.equal(rows.length,2);assert.equal(rows[0].providerId,'dulo');
  assert.equal(rows[0].language,'unknown','Do not infer audio language from a title');
  assert.equal(rows[0].websiteUrl,'https://dulo.mov/watch/movie/123');
+ assert.equal(rows[0].poster,'https://images.test/frozen.jpg');
  assert.equal(rows[0].episodes.length,0,'Resolve links fresh when the user selects a result');
  assert.equal(cdnCalls,0,'Searching must not require a ready playback line');
  const before=cdnCalls;

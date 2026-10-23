@@ -53,6 +53,14 @@
         }),
       );
   }
+  function posterUrl(raw, base) {
+    if (typeof raw !== "string" || !raw.trim()) return "";
+    try {
+      const url = new URL(raw.trim(), base);
+      if (url.protocol === "http:") url.protocol = "https:";
+      return safeUrl(url.href);
+    } catch { return ""; }
+  }
   function parseList(json, provider, query = "") {
     const list = Array.isArray(json?.list) ? json.list : [];
     const q = normalize(query);
@@ -76,6 +84,7 @@
         providerId: provider.id,
         providerName: provider.name,
         title: clean(v.vod_name),
+        poster: posterUrl(v.vod_pic || v.poster || v.cover, provider.url),
         year: clean(v.vod_year),
         language: language(v.vod_lang),
         languageLabel: clean(v.vod_lang) || "语言待核对",
@@ -233,6 +242,7 @@
   }
   const api = {
     safeUrl,
+    posterUrl,
     clean,
     normalize,
     language,

@@ -23,6 +23,7 @@ const p = { id: "test", name: "测试源" },
     vod_id: 1,
     vod_name: "冰雪奇缘",
     vod_year: 2013,
+    vod_pic: "https://images.example/frozen.jpg",
     vod_lang: "英语",
     vod_play_from: "HLS$$$MP4",
     vod_play_url:
@@ -39,6 +40,12 @@ assert.equal(
   0,
 );
 assert.equal(C.episodes(movie).length, 2);
+assert.equal(C.parseList({list:[movie]},p)[0].poster, movie.vod_pic);
+assert.equal(C.posterUrl("/cover.jpg", "https://images.example/api"), "https://images.example/cover.jpg");
+assert.equal(C.posterUrl("http://images.example/a.jpg"), "https://images.example/a.jpg");
+assert.equal(C.posterUrl("javascript:alert(1)"), "");
+assert.equal(C.posterUrl("https://user:pass@images.example/a.jpg"), "");
+
 for (const url of [
   "https://example.com/?url=javascript:alert(1)",
   "https://example.com/?suffix=.m3u8",

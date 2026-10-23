@@ -37,7 +37,7 @@ function createDuloProvider(read, fetcher = (...args) => fetch(...args)) {
     return data.ready === true ? mediaUrl(data.url) : '';
   }
   function item(provider, type, m, id) {
-    const row = core.parseList({list: [{vod_id: id, vod_name: m.name, vod_year: String(m.year || m.releaseInfo || '').slice(0, 4), vod_lang: m.language || '', type_name: type === 'tv' ? 'TV' : 'Movie'}]}, provider)[0];
+    const row = core.parseList({list: [{vod_id: id, vod_name: m.name, vod_pic: m.poster, vod_year: String(m.year || m.releaseInfo || '').slice(0, 4), vod_lang: m.language || '', type_name: type === 'tv' ? 'TV' : 'Movie'}]}, provider)[0];
     if (!row) return null;
     row.id = `${type}:${id}:${m.imdb_id || m.id}`;
     row.lookupTitle = row.title;

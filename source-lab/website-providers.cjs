@@ -42,6 +42,12 @@ const anchors = (html) =>
     html: m[2],
     label: text(m[2]),
   }));
+function poster(html) {
+  const og = [...html.matchAll(/<meta\b([^>]+)>/gi)].find(m => attr(m[1], "property") === "og:image");
+  if (og) return attr(og[1], "content");
+  const image = /<img\b([^>]+)>/i.exec(html)?.[1] || "";
+  return attr(image, "data-original") || attr(image, "data-src") || attr(image, "src");
+}
 function piankuSearch(html, provider, query) {
   const seen = new Set();
   return anchors(html)
@@ -59,6 +65,7 @@ function piankuSearch(html, provider, query) {
             list: [
               {
                 vod_id: m[1],
+                vod_pic: core.posterUrl(poster(a.html), sites.pianku),
                 vod_name: title,
                 vod_year: year,
                 vod_lang: core.language(title) === "zh" ? "国语" : "",
@@ -93,7 +100,7 @@ function piankuDetail(html, provider, id) {
     )?.[1] || "";
   const year = /年份\s*[:：]\s*(\d{4})/.exec(head)?.[1] || "";
   const row = core.parseList(
-    { list: [{ vod_id: id, vod_name: title, vod_year: year, vod_lang: lang }] },
+    { list: [{ vod_id: id, vod_name: title, vod_year: year, vod_lang: lang, vod_pic: core.posterUrl(poster(html), sites.pianku) }] },
     provider,
   )[0];
   if (!row) throw Error("片库影片详情不可用");
@@ -192,6 +199,7 @@ function lxyyItem(raw, provider, detail = false) {
         {
           vod_id: 1,
           vod_name: raw.name,
+          vod_pic: raw.pic || raw.poster || raw.cover || raw.vod_pic,
           vod_year: raw.year,
           vod_lang:
             raw.lang ||
@@ -336,7 +344,7 @@ function createWebsiteProviders(read, fetcher = (...args) => fetch(...args)) {
         const found = await detail(provider, row.id, signal, false);
         if (!found) return row;
         delete found.playPages;
-        return { ...row, ...found };
+        return { ...row, ...found, poster: found.poster || row.poster };
       });
       return [...enriched, ...tail];
     },
