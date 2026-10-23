@@ -814,5 +814,29 @@
       "quiz": true,
       "review": false
     }
+  },
+  {
+    "episodeId": 35,
+    "sourceContentId": "C0013547",
+    "title": "The Trail Ride",
+    "titleZh": "",
+    "releaseDate": "",
+    "status": "published",
+    "sourceType": "xet-catalog",
+    "unlockRequiresQuiz": false,
+    "video": {
+      "source": "hls",
+      "hlsUrl": "https://cdn.littlefox.co.kr/contents_5/hls/720/678f13d8e6/179248005710ada88209bc465aa0ebd61bc248733e/stream.m3u8?_=1792480064"
+    },
+    "modules": {
+      "watch": true,
+      "read": true,
+      "words": true,
+      "vocabulary": true,
+      "phrases": false,
+      "grammar": false,
+      "quiz": false,
+      "review": false
+    }
   }
 ]
