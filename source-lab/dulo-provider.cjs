@@ -49,9 +49,20 @@ function createDuloProvider(read, fetcher = (...args) => fetch(...args)) {
     async search(provider, query) {
       // Catalogue and per-title metadata have separate budgets. A slow TV
       // search must not consume the movie metadata request's entire timeout.
-      const signal = AbortSignal.timeout(10000);
       const alias = aliases.find(row => [row.title, row.titleZh].some(t => core.normalize(t) === core.normalize(query)));
-      const title = alias?.title || query;
+      let title = alias?.title || query;
+      if (!alias && /[\u3400-\u9fff]/.test(query)) {
+        // Chinese catalogue searches can return loosely related recommendations.
+        // Resolve the localized title first when a public English label exists.
+        try {
+          const u = new URL('https://www.wikidata.org/w/api.php');
+          for (const [key, value] of Object.entries({action:'wbsearchentities',search:query,language:'zh',uselang:'en',format:'json',limit:'5'})) u.searchParams.set(key,value);
+          const data = await json(u.href, AbortSignal.timeout(6000));
+          const found = (data.search || []).find(row => /film|television|series|franchise/i.test(row.description || row.display?.description?.value || '') && /[a-z]/i.test(row.display?.label?.value || row.label || ''));
+          if (found) title = found.display?.label?.value || found.label;
+        } catch { /* Keep the original query when translation is unavailable. */ }
+      }
+      const signal = AbortSignal.timeout(15000);
       const types = imdb(query) ? ['movie', 'tv'] : ['movie', 'series'];
       const outcomes = await Promise.allSettled(types.map(async type => {
         if (imdb(query)) { const m = await meta(type, query, signal); return m ? [{...m, type: type === 'tv' ? 'series' : type}] : []; }

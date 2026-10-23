@@ -43,6 +43,7 @@ assert.equal(mediaUrl(source),source);
   let streamRequests = 0;
   const translated = createDuloProvider(r=>r.text(), async (raw, options)=>{
    const u=new URL(raw);
+   if(u.origin==='https://www.wikidata.org') throw Error('Translation unavailable');
    if(u.origin==='https://zcdn.bluevelvet.space') {streamRequests++;throw Error('CDN unavailable');}
    if(u.pathname.includes('/catalog/series/')) throw Error('TV search timed out');
    const m={id:'tt1234567',imdb_id:'tt1234567',type:'movie',name:english,year:2021,moviedb_id:123};
@@ -56,6 +57,17 @@ assert.equal(mediaUrl(source),source);
   assert(found[0].remarks.includes('点击试播'));
   assert.equal(streamRequests,0);
  }
+ const localized = createDuloProvider(r=>r.text(), async raw=>{
+  const u=new URL(raw);
+  if(u.hostname==='www.wikidata.org') return new Response(JSON.stringify({search:[{label:'Luca',description:'2021 animated film',display:{label:{value:'Luca'}}}]}));
+  if(u.pathname.includes('/catalog/series/')) return new Response(JSON.stringify({metas:[]}));
+  if(u.pathname.includes('/catalog/')) {
+   assert(u.pathname.includes('search=Luca'),'Resolve the Chinese title before catalogue lookup');
+   return new Response(JSON.stringify({metas:[{id:'tt1234567',type:'movie',name:'Luca'}]}));
+  }
+  return new Response(JSON.stringify({meta:{id:'tt1234567',name:'Luca',year:2021,moviedb_id:508943}}));
+ });
+ assert.equal((await localized.search(p,'夏日友晴天'))[0].title,'Luca');
  ready=false;
  assert.equal((await adapter.search(p,'冰雪奇缘')).length,2,'Unready CDN must not remove catalogue matches');
  console.log('PASS: Dulo aliases, movie/TV matching, public fixed-host lookup, honest language, S01E01 labels, fresh links, unready sources, hostile URLs and ID binding');

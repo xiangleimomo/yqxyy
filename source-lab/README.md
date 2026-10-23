@@ -98,3 +98,5 @@ node tests/source-lab-browser.cjs
 - 测试：`node tests/dulo-provider.test.cjs`、`node tests/website-providers.test.cjs`、`node tests/source-lab.test.cjs`。
 
 搜索修复：电影／剧集搜索与每部影片详情使用独立超时预算，避免慢搜索耗尽后续请求时间；不在搜索阶段探测或筛掉未就绪的播放线路。匹配结果不保证当前可播，卡片会提示点击试播查询线路。
+
+中文查询不在站内别名表时，先尝试 Wikidata 的公开英文标签，再查询片目；标签服务失败则继续使用原查询，不影响现有别名或英文搜索。
