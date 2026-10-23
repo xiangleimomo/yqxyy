@@ -47,26 +47,31 @@ function createDuloProvider(read, fetcher = (...args) => fetch(...args)) {
   }
   return {
     async search(provider, query) {
-      const signal = AbortSignal.timeout(12000);
+      // Catalogue and per-title metadata have separate budgets. A slow TV
+      // search must not consume the movie metadata request's entire timeout.
+      const signal = AbortSignal.timeout(10000);
       const alias = aliases.find(row => [row.title, row.titleZh].some(t => core.normalize(t) === core.normalize(query)));
       const title = alias?.title || query;
       const types = imdb(query) ? ['movie', 'tv'] : ['movie', 'series'];
       const outcomes = await Promise.allSettled(types.map(async type => {
         if (imdb(query)) { const m = await meta(type, query, signal); return m ? [{...m, type: type === 'tv' ? 'series' : type}] : []; }
         const data = await json(`${META}/catalog/${type}/top/search=${encodeURIComponent(title)}.json`, signal);
-        return (data.metas || []).filter(m => imdb(m.id) && core.normalize(m.name).includes(core.normalize(title))).slice(0, 4);
+        return (data.metas || []).filter(m => imdb(m.id)).slice(0, 8);
       }));
       if (outcomes.every(x => x.status === 'rejected')) throw Error('Dulo 影片匹配暂不可用，请在原站搜索');
       const candidates = outcomes.flatMap(x => x.status === 'fulfilled' ? x.value : []);
       const rows = await Promise.all(candidates.map(async candidate => {
         try {
           const type = candidate.type === 'series' ? 'tv' : 'movie';
-          const m = await meta(type, candidate.imdb_id || candidate.id, signal);
+          const m = await meta(type, candidate.imdb_id || candidate.id, AbortSignal.timeout(10000));
           const id = String(m?.moviedb_id || '');
-          if (!/^\d{1,9}$/.test(id) || !m.name || (alias && Number(String(m.year || m.releaseInfo).slice(0, 4)) !== Number(alias.year))) return null;
+          if (!/^\d{1,9}$/.test(id) || !m.name) return null;
           const row = item(provider, type, m, id);
-          if (!row || row.language === 'zh' || !await stream(type, id, signal)) return null;
-          // Re-resolve on selection to avoid stale stream links from search.
+          if (!row || row.language === 'zh') return null;
+          // Cinemeta searches across localized titles and aliases. Its returned
+          // English title need not contain the original (often Chinese) query.
+          // Availability is checked on selection, never used to hide a match.
+          row.remarks = type === 'tv' ? '剧集匹配 · 试播时查询第1季第1集；更多集数在原站选择' : '影片匹配 · 点击试播查询线路';
           return row;
         } catch { return null; }
       }));

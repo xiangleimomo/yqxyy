@@ -26,6 +26,7 @@ assert.equal(mediaUrl(source),source);
  assert.equal(rows[0].language,'unknown','Do not infer audio language from a title');
  assert.equal(rows[0].websiteUrl,'https://dulo.mov/watch/movie/123');
  assert.equal(rows[0].episodes.length,0,'Resolve links fresh when the user selects a result');
+ assert.equal(cdnCalls,0,'Searching must not require a ready playback line');
  const before=cdnCalls;
  const detail=await adapter.detail(p,rows[0].id);
  assert.equal(cdnCalls,before+1);assert.equal(detail.episodes[0].url,source);
@@ -36,5 +37,26 @@ assert.equal(mediaUrl(source),source);
  await assert.rejects(adapter.detail(p,'movie:999:tt1234567'),/不匹配/);
  ready=false;assert.equal((await adapter.detail(p,rows[0].id)).episodes.length,0);
  ready=true;invalidUrl=true;assert.equal((await adapter.detail(p,rows[0].id)).episodes.length,0);
+ // Reproduce non-aliased Chinese titles, partial Chinese franchise queries,
+ // translated English titles, and a failed parallel TV catalogue.
+ for (const [query, english] of [['夏日友晴天','Luca'],['寻梦环游记','Coco'],['哈利波特',"Harry Potter and the Sorcerer's Stone"]]) {
+  let streamRequests = 0;
+  const translated = createDuloProvider(r=>r.text(), async (raw, options)=>{
+   const u=new URL(raw);
+   if(u.origin==='https://zcdn.bluevelvet.space') {streamRequests++;throw Error('CDN unavailable');}
+   if(u.pathname.includes('/catalog/series/')) throw Error('TV search timed out');
+   const m={id:'tt1234567',imdb_id:'tt1234567',type:'movie',name:english,year:2021,moviedb_id:123};
+   if(u.pathname.includes('/catalog/')) return new Response(JSON.stringify({metas:[m]}));
+   assert.equal(options.signal.aborted,false,'Metadata must have its own timeout budget');
+   return new Response(JSON.stringify({meta:m}));
+  });
+  const found=await translated.search(p,query);
+  assert.equal(found.length,1,query+' should survive translation and TV failure');
+  assert.equal(found[0].title,english);
+  assert(found[0].remarks.includes('点击试播'));
+  assert.equal(streamRequests,0);
+ }
+ ready=false;
+ assert.equal((await adapter.search(p,'冰雪奇缘')).length,2,'Unready CDN must not remove catalogue matches');
  console.log('PASS: Dulo aliases, movie/TV matching, public fixed-host lookup, honest language, S01E01 labels, fresh links, unready sources, hostile URLs and ID binding');
 })().catch(e=>{console.error(e);process.exitCode=1;});
