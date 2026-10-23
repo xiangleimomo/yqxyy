@@ -6,15 +6,17 @@ const websites =
   );
 const defaultProviders = require("../../source-lab/providers.json");
 function providers() {
-  const rows = process.env.SOURCE_LAB_PROVIDERS
+  const configured = process.env.SOURCE_LAB_PROVIDERS
     ? JSON.parse(process.env.SOURCE_LAB_PROVIDERS)
     : defaultProviders;
-  if (!Array.isArray(rows)) throw Error("片源配置无效");
+  if (!Array.isArray(configured)) throw Error("片源配置无效");
+  const rows = [defaultProviders.find(p => p.id === "dulo"), ...configured.filter(p => p.id !== "dulo")];
   return rows.slice(0, 12).map((r, i) => {
     const url = core.safeUrl(r.url);
     if (!url) throw Error("片源配置必须使用 HTTPS");
-    const kind = ["pianku", "lxyy"].includes(r.kind) ? r.kind : "cms";
+    const kind = ["dulo", "pianku", "lxyy"].includes(r.kind) ? r.kind : "cms";
     const websiteOrigin = {
+      dulo: "https://dulo.mov",
       pianku: "https://4k01.pianku.online",
       lxyy: "https://tv.lxyy.club",
     }[kind];

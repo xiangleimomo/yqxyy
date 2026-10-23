@@ -120,13 +120,23 @@ const handler = require("../netlify/functions/source-explorer-api.js").handler,
     const search = JSON.parse(
       (await request({ action: "search", query: "冰雪奇缘" })).body,
     );
-    assert.equal(search.outcomes.length, 5);
+    assert.equal(search.outcomes.length, 6);
     assert(search.outcomes.some((x) => !x.ok));
     assert(
       search.outcomes
         .filter((x) => x.ok)
         .every((x) => x.list[0].title === movie.vod_name),
     );
+    const originalProviders = process.env.SOURCE_LAB_PROVIDERS;
+    try {
+      process.env.SOURCE_LAB_PROVIDERS = JSON.stringify([{id:"custom",name:"Custom",url:"https://example.test/api"}]);
+      const configured = JSON.parse((await request({action:"providers"})).body).providers;
+      assert.equal(configured[0].id, "dulo");
+      assert.equal(configured[1].id, "custom");
+    } finally {
+      if (originalProviders === undefined) delete process.env.SOURCE_LAB_PROVIDERS;
+      else process.env.SOURCE_LAB_PROVIDERS = originalProviders;
+    }
     const before = calls;
     assert.equal(
       (

@@ -125,6 +125,7 @@
         .join(" · ");
       const button = document.createElement("button");
       button.textContent = "试播 / 查看线路";
+      if (item.providerId === "dulo") card.classList.add("primary-source");
       button.onclick = () => select(item);
       card.append(title, meta, button);
       if (C.safeUrl(item.websiteUrl)) {
@@ -195,7 +196,8 @@
           if (seen.has(key)) return false;
           seen.add(key);
           return true;
-        });
+        })
+        .sort((a, b) => Number(b.providerId === "dulo") - Number(a.providerId === "dulo"));
       renderResults();
       const failed = all.filter((x) => !x.ok);
       message(
@@ -219,6 +221,7 @@
     state.generation++;
     state.subtitleRequest++;
     clearTimeout(state.timer);
+    clearTimeout(state.nativeTimer);
     state.abort?.abort();
     state.abort = null;
     state.hls?.destroy();
@@ -376,13 +379,17 @@
     }
     return C.rowsFromText(text, r.url || url);
   }
-  function startEpisode(index, resume = 0) {
+  function startEpisode(index, resume = 0, transport = "auto") {
     const item = state.current;
     cleanup();
     state.current = item;
     const episode = item.episodes[index];
     if (!episode) return;
     state.episode = episode;
+    const directDulo = item.providerId === "dulo" && /^https:\/\/zcdn\.bluevelvet\.space\/play\//.test(episode.url);
+    const nativeDulo = directDulo && transport !== "relay" && video.canPlayType("application/vnd.apple.mpegurl");
+    if (nativeDulo) video.removeAttribute("crossorigin");
+    else video.setAttribute("crossorigin", "anonymous");
     $("subtitleQuery").value = item.lookupTitle || item.title;
     $("subtitleYear").value = /^\d{4}$/.test(item.year || "") ? item.year : "";
     const generation = state.generation;
@@ -397,8 +404,12 @@
     $("episodes").value = String(index);
     message("playerStatus", "正在加载试播…");
     state.abort = new AbortController();
+    const fallback = () => {
+      if (generation === state.generation) startEpisode(index, video.currentTime || resume, "relay");
+    };
     const ready = () => {
       if (generation !== state.generation) return;
+      clearTimeout(state.nativeTimer);
       if (resume > 0 && resume < video.duration) video.currentTime = resume;
       video
         .play()
@@ -423,11 +434,18 @@
     video.addEventListener(
       "error",
       () => {
-        if (generation === state.generation)
-          message("playerStatus", "试播失败，可重试或选择其他来源。", true);
+        if (generation !== state.generation) return;
+        if (nativeDulo) { fallback(); return; }
+        message("playerStatus", "试播失败，可重试或选择其他来源。", true);
       },
       { signal: state.abort.signal },
     );
+    if (nativeDulo) {
+      state.nativeTimer = setTimeout(fallback, 15000);
+      video.src = episode.url;
+      return;
+    }
+    const playbackUrl = directDulo ? "/_movie-media/bluevelvet/" + new URL(episode.url).pathname.slice("/play/".length) : episode.url;
     if (/\.m3u8(?:[?#]|$)/i.test(episode.url)) {
       const safari =
         /Safari/i.test(navigator.userAgent) &&
@@ -462,10 +480,10 @@
               true,
             );
         });
-        hls.loadSource(episode.url);
+        hls.loadSource(playbackUrl);
         hls.attachMedia(video);
       } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-        video.src = episode.url;
+        video.src = playbackUrl;
         nativePlaylist(episode.url, state.abort.signal)
           .then((rows) => {
             if (generation === state.generation) detect(rows);
@@ -480,7 +498,7 @@
           "当前浏览器不支持此播放格式，请更换浏览器。",
           true,
         );
-    } else video.src = episode.url;
+    } else video.src = playbackUrl;
   }
   function updateTracks() {
     const select = $("subtitleTracks"),

@@ -224,6 +224,7 @@ function lxyyItem(raw, provider, detail = false) {
   return row;
 }
 function createWebsiteProviders(read, fetcher = (...args) => fetch(...args)) {
+  const dulo = require("./dulo-provider.cjs").createDuloProvider(read, fetcher);
   const cache = new Map();
   async function load(url, signal, json = false) {
     const key = (json ? "j:" : "h:") + url;
@@ -260,6 +261,7 @@ function createWebsiteProviders(read, fetcher = (...args) => fetch(...args)) {
     return result;
   }
   async function detail(provider, id, signal, resolve = true) {
+    if (provider.kind === "dulo") return dulo.detail(provider, id);
     if (provider.kind === "pianku") {
       if (!/^\d{1,15}$/.test(id)) throw Error("片库编号无效");
       const meta = piankuDetail(
@@ -298,6 +300,7 @@ function createWebsiteProviders(read, fetcher = (...args) => fetch(...args)) {
     detail: async (provider, id) =>
       detail(provider, String(id), AbortSignal.timeout(12000)),
     search: async (provider, query) => {
+      if (provider.kind === "dulo") return dulo.search(provider, query);
       const signal = AbortSignal.timeout(12000);
       let list;
       if (provider.kind === "pianku") {
