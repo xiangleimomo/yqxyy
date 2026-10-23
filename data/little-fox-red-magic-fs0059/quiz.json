@@ -22301,242 +22301,311 @@
   "210": {
     "episodeId": 210,
     "title": "Now What? Quiz",
+    "styleReference": "journey-to-the-west",
+    "revision": "2026-10-23",
     "questions": [
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: Loro followed _____ and Raff as they moved away from the cave.",
+        "category": "cause-effect",
+        "question": "Why does Zella think the mayor is worried about the cave?",
         "options": [
           {
             "key": "A",
-            "text": "zella"
+            "text": "The mayor wants to explore other worlds alone."
           },
           {
             "key": "B",
-            "text": "raff"
+            "text": "Dangerous relics near Stone Wall could threaten the villagers."
           },
           {
             "key": "C",
-            "text": "cave"
+            "text": "The mayor thinks the children have lost Muncher."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “zella”.",
-        "source": "generated-from-public-read"
+        "answer": "B",
+        "explanation": "洞穴靠近村庄，里面可能有危险遗物；保护村民是市长的职责。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p4"
+          ],
+          "quote": "If King Zanta left a lot of old relics lying around inside, it could be dangerous here."
+        }
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: _____ followed Zella and Raff as they moved away from the cave.",
+        "category": "character",
+        "question": "What does Zella want to do after the mayor leaves?",
         "options": [
           {
             "key": "A",
-            "text": "loro"
+            "text": "Return home and forget about the staff"
           },
           {
             "key": "B",
-            "text": "cave"
+            "text": "Ask her teacher to close every wormhole"
           },
           {
             "key": "C",
-            "text": "it's"
+            "text": "Sneak back into the cave"
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “loro”.",
-        "source": "generated-from-public-read"
+        "answer": "C",
+        "explanation": "泽拉想先躲在灌木丛里，等市长离开后再偷偷进洞。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p7"
+          ],
+          "quote": "After she leaves, we can sneak back in."
+        }
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: Loro followed Zella and _____ as they moved away from the cave.",
+        "category": "cause-effect",
+        "question": "Why does Loro suggest waiting for Zann's reply?",
         "options": [
           {
             "key": "A",
-            "text": "raff"
+            "text": "Zann may have useful ideas about finding the missing staff."
           },
           {
             "key": "B",
-            "text": "it's"
+            "text": "Zann has promised to bring Muncher home."
           },
           {
             "key": "C",
-            "text": "don't"
+            "text": "Zann is the only person who can speak to the mayor."
           }
         ],
         "answer": "A",
-        "explanation": "In the Read, the sentence uses “raff”.",
-        "source": "generated-from-public-read"
+        "explanation": "洛罗认为现在进洞太危险，而且赞恩也许知道怎样寻找失踪的法杖。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p9"
+          ],
+          "quote": "Maybe he has some good ideas about how to find the staff."
+        }
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: Loro followed Zella and Raff as they moved away from the _____.",
+        "category": "detail",
+        "question": "What makes Zella suspect a connection between the wormhole and the cave?",
         "options": [
           {
             "key": "A",
-            "text": "cave"
+            "text": "Both were built by her teacher."
           },
           {
             "key": "B",
-            "text": "don't"
+            "text": "The wormhole appeared beside a hidden cave containing a possible relic."
           },
           {
             "key": "C",
-            "text": "right"
+            "text": "The mayor told her that all caves lead to Fardark."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “cave”.",
-        "source": "generated-from-public-read"
+        "answer": "B",
+        "explanation": "虫洞恰好出现在藏有疑似强大遗物的隐秘洞穴旁，泽拉觉得这可能不是巧合。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p25"
+          ],
+          "quote": "this one appeared right by a hidden cave that had a powerful relic inside."
+        }
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: And _____ her job to protect everyone.",
+        "category": "ending",
+        "question": "What happens just before the children can decide what to do next?",
         "options": [
           {
             "key": "A",
-            "text": "it's"
+            "text": "The mayor invites them back into the cave."
           },
           {
             "key": "B",
-            "text": "right"
+            "text": "Muncher returns carrying the missing staff."
           },
           {
             "key": "C",
-            "text": "wormhole"
+            "text": "A spy fly delivers a video message from Zann and Perda."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “it's”.",
-        "source": "generated-from-public-read"
+        "answer": "C",
+        "explanation": "洛罗刚提议回村，间谍苍蝇就飞来，给泽拉送来了赞恩和佩尔达的视频消息。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p37",
+            "p38"
+          ],
+          "quote": "It's a video message from Zann and Perda!"
+        }
       }
     ]
   },
   "211": {
     "episodeId": 211,
     "title": "Zann’s Message Quiz",
+    "styleReference": "journey-to-the-west",
+    "revision": "2026-10-23",
     "questions": [
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: A few minutes earlier, _____ and Perda had been chasing Zing through First City.",
+        "category": "cause-effect",
+        "question": "Why is Zing angry with Zann at the beginning?",
         "options": [
           {
             "key": "A",
-            "text": "zann"
+            "text": "Zann has taken away all his favorite food."
           },
           {
             "key": "B",
-            "text": "zing"
+            "text": "Perda has refused to send a video message."
           },
           {
             "key": "C",
-            "text": "dragon"
+            "text": "He must stay at the zoo instead of joining the trip."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “zann”.",
-        "source": "generated-from-public-read"
+        "answer": "C",
+        "explanation": "赞恩的父母不让津随他们去神秘山，要把他留在动物园，他因此发脾气。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p2"
+          ],
+          "quote": "My parents are the ones who said you can't come to Mount Mystery with us."
+        }
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: A few minutes earlier, Zann and _____ had been chasing Zing through First City.",
+        "category": "detail",
+        "question": "How do Zann and Perda record their message while chasing Zing?",
         "options": [
           {
             "key": "A",
-            "text": "perda"
+            "text": "They use a spy fly."
           },
           {
             "key": "B",
-            "text": "dragon"
+            "text": "They ask Mima to write a letter."
           },
           {
             "key": "C",
-            "text": "fly"
+            "text": "They send a guard back to the palace."
           }
         ],
         "answer": "A",
-        "explanation": "In the Read, the sentence uses “perda”.",
-        "source": "generated-from-public-read"
+        "explanation": "佩尔达召来间谍苍蝇，让它一边跟着他们，一边录制视频。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p12",
+            "p14"
+          ],
+          "quote": "We can record a video message while we're chasing your goofy dragon."
+        }
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: A few minutes earlier, Zann and Perda had been chasing _____ through First City.",
+        "category": "inference",
+        "question": "How might a Festian have entered the safe room without being stopped?",
         "options": [
           {
             "key": "A",
-            "text": "zing"
+            "text": "By turning into a dragon and burning the barriers"
           },
           {
             "key": "B",
-            "text": "fly"
+            "text": "By looking like a person who was allowed inside"
           },
           {
             "key": "C",
-            "text": "zella"
+            "text": "By using an Invisibility spell in the palace"
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “zing”.",
-        "source": "generated-from-public-read"
+        "answer": "B",
+        "explanation": "费斯特人能变成其他人类的样子，因此可能冒充有权限的人进入，而不必使用宫内禁止的隐身术。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p24",
+            "p25"
+          ],
+          "quote": "maybe a Festian shifted shape to look like someone who was allowed to go in with the relics."
+        }
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: The _____ was flying along the street, staying just out of reach.",
+        "category": "story",
+        "question": "How does Zann finally catch Zing?",
         "options": [
           {
             "key": "A",
-            "text": "dragon"
+            "text": "He asks the queen's guards to catch him."
           },
           {
             "key": "B",
-            "text": "zella"
+            "text": "He waits for Zing to fall asleep at the zoo."
           },
           {
             "key": "C",
-            "text": "through"
+            "text": "He creates a net above Zing and drops it over him."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “dragon”.",
-        "source": "generated-from-public-read"
+        "answer": "C",
+        "explanation": "赞恩趁津在树上盯着鸟时，在他上方变出一张网，再让网落下将他罩住。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p26",
+            "p29",
+            "p30"
+          ],
+          "quote": "When Zann brought his hand down, the net fell right over Zing."
+        }
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: \"I'll summon a spy _____.",
+        "category": "ending",
+        "question": "What is the main news Zann and Perda want to tell Zella?",
         "options": [
           {
             "key": "A",
-            "text": "fly"
+            "text": "They will join a group visiting Stone Wall to investigate the cave."
           },
           {
             "key": "B",
-            "text": "through"
+            "text": "They have already found the missing mask in First City."
           },
           {
             "key": "C",
-            "text": "back"
+            "text": "They have decided to leave the staff mystery to the mayor."
           }
         ],
         "answer": "A",
-        "explanation": "In the Read, the sentence uses “fly”.",
-        "source": "generated-from-public-read"
+        "explanation": "女王派人去石墙村调查洞穴和消失的法杖，赞恩和佩尔达也将同行，第二天一早出发。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p34"
+          ],
+          "quote": "So she's sending a group of people to Stone Wall to check it out."
+        }
       }
     ]
   }

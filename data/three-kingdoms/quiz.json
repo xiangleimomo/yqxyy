@@ -1212,121 +1212,154 @@
   "11": {
     "episodeId": 11,
     "title": "Chaos in the Imperial Court Quiz",
+    "styleReference": "journey-to-the-west",
+    "revision": "2026-10-23",
     "questions": [
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: One day an imperial adviser named _____ Yun received a report.",
+        "category": "story",
+        "question": "How did Dong Zhuo gain more power after Emperor Ling died?",
         "options": [
           {
             "key": "A",
-            "text": "wang"
+            "text": "He made the young Emperor Xian ruler and controlled him."
           },
           {
             "key": "B",
-            "text": "dong"
+            "text": "He gave up his army and became an adviser."
           },
           {
             "key": "C",
-            "text": "yun"
+            "text": "He helped Liu Bei defeat all the Yellow Turbans."
           }
         ],
         "answer": "A",
-        "explanation": "In the Read, the sentence uses “wang”.",
-        "source": "generated-from-public-read"
+        "explanation": "董卓拥立年仅九岁的献帝，并通过控制他获取更多权力。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p1"
+          ],
+          "quote": "Emperor Xian was only nine years old. Dong Zhuo was able to control him and gain much more power."
+        }
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: In the year 189, _____ Ling died.",
+        "category": "detail",
+        "question": "What did Wang Yun suggest doing for the flood victims?",
         "options": [
           {
             "key": "A",
-            "text": "emperor"
+            "text": "Making the farmers leave the empire"
           },
           {
             "key": "B",
-            "text": "yun"
+            "text": "Sending food and money and repairing the river's banks"
           },
           {
             "key": "C",
-            "text": "zhuo"
+            "text": "Sending soldiers to take the farmers' remaining crops"
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “emperor”.",
-        "source": "generated-from-public-read"
+        "answer": "B",
+        "explanation": "王允提议送去粮食和钱，并请工程师修复河岸，防止再次发生洪灾。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p7"
+          ],
+          "quote": "I think we should send food and money."
+        }
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: _____ Zhuo made the emperor's youngest son the new emperor.",
+        "category": "character",
+        "question": "What does Dong Zhuo's response to the flood show about him?",
         "options": [
           {
             "key": "A",
-            "text": "dong"
+            "text": "He is afraid to disagree with the emperor."
           },
           {
             "key": "B",
-            "text": "zhuo"
+            "text": "He cares more about the farmers than Wang Yun does."
           },
           {
             "key": "C",
-            "text": "cao"
+            "text": "He expects obedience without caring about people's suffering."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “dong”.",
-        "source": "generated-from-public-read"
+        "answer": "C",
+        "explanation": "董卓拒绝救助受灾农民，还威胁他们必须效忠，表现出冷酷和专横。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p13",
+            "p16"
+          ],
+          "quote": "We don't need to help them. They'll be loyal—or else!"
+        }
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: One day an imperial adviser named Wang _____ received a report.",
+        "category": "cause-effect",
+        "question": "Why did Wang Yun describe the meeting as a birthday party?",
         "options": [
           {
             "key": "A",
-            "text": "yun"
+            "text": "To hide his plan to discuss removing Dong Zhuo"
           },
           {
             "key": "B",
-            "text": "cao"
+            "text": "To persuade the emperor to celebrate with the farmers"
           },
           {
             "key": "C",
-            "text": "xian"
+            "text": "To collect birthday gifts for Dong Zhuo"
           }
         ],
         "answer": "A",
-        "explanation": "In the Read, the sentence uses “yun”.",
-        "source": "generated-from-public-read"
+        "explanation": "生日宴只是掩护；王允不想引起怀疑，实际召集官员商议除掉董卓。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p28"
+          ],
+          "quote": "I only said that to avoid suspicion."
+        }
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: Dong _____ made the emperor's youngest son the new emperor.",
+        "category": "ending",
+        "question": "What did Cao Cao offer to do at the end of the meeting?",
         "options": [
           {
             "key": "A",
-            "text": "zhuo"
+            "text": "Repair the damaged riverbanks himself"
           },
           {
             "key": "B",
-            "text": "xian"
+            "text": "Assassinate Dong Zhuo"
           },
           {
             "key": "C",
-            "text": "yellow"
+            "text": "Ask Dong Zhuo to lead another army"
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “zhuo”.",
-        "source": "generated-from-public-read"
+        "answer": "B",
+        "explanation": "当众人还在抱怨董卓势力强大时，曹操主动提出刺杀董卓。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p35"
+          ],
+          "quote": "Leave it to me. I'll assassinate Dong Zhuo."
+        }
       }
     ]
   }

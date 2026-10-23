@@ -994,121 +994,158 @@
   "13": {
     "episodeId": 13,
     "title": "Fly Away! Quiz",
+    "styleReference": "journey-to-the-west",
+    "revision": "2026-10-23",
     "questions": [
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: _____ flew away from the writer's cottage.",
+        "category": "cause-effect",
+        "question": "Why is it hard for Swallow to fly at the beginning?",
         "options": [
           {
             "key": "A",
-            "text": "swallow"
+            "text": "The autumn wind is strong and cold."
           },
           {
             "key": "B",
-            "text": "flew"
+            "text": "He is carrying the statue's heavy jewels."
           },
           {
             "key": "C",
-            "text": "statue"
+            "text": "He cannot find the writer's cottage."
           }
         ],
         "answer": "A",
-        "explanation": "In the Read, the sentence uses “swallow”.",
-        "source": "generated-from-public-read"
+        "explanation": "深秋的风又大又冷，燕子觉得飞行很吃力，因而停在喷泉边休息。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p1",
+            "p2"
+          ],
+          "quote": "The late autumn wind blew hard and cold."
+        }
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: The late autumn wind blew hard and _____.",
+        "category": "story",
+        "question": "How does Swallow escape from the hawk?",
         "options": [
           {
             "key": "A",
-            "text": "cold"
+            "text": "He hides inside the writer's cottage."
           },
           {
             "key": "B",
-            "text": "statue"
+            "text": "He dives into a thick bush."
           },
           {
             "key": "C",
-            "text": "voice"
+            "text": "He flies all the way to Egypt."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “cold”.",
-        "source": "generated-from-public-read"
+        "answer": "B",
+        "explanation": "燕子在空中躲闪后钻进茂密的灌木丛，老鹰没有发现他，飞了过去。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p10"
+          ],
+          "quote": "Finally, he spotted a thick bush and dove into it, trembling."
+        }
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: Swallow _____ away from the writer's cottage.",
+        "category": "detail",
+        "question": "Where does Swallow return to rest after escaping?",
         "options": [
           {
             "key": "A",
-            "text": "flew"
+            "text": "His flock's tree in Egypt"
           },
           {
             "key": "B",
-            "text": "voice"
+            "text": "The writer's warm cottage"
           },
           {
             "key": "C",
-            "text": "it's"
+            "text": "The feet of the statue"
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “flew”.",
-        "source": "generated-from-public-read"
+        "answer": "C",
+        "explanation": "燕子回到雕像身边，蜷缩在雕像脚下睡着了。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p11"
+          ],
+          "quote": "Curling up at the statue's feet, he tucked his head beneath his wing."
+        }
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: Safe but scared, Swallow returned to the _____.",
+        "category": "inference",
+        "question": "What is really happening when Swallow sees his flock in Egypt?",
         "options": [
           {
             "key": "A",
-            "text": "statue"
+            "text": "He is dreaming while asleep near the statue."
           },
           {
             "key": "B",
-            "text": "it's"
+            "text": "The hawk has carried him to Egypt."
           },
           {
             "key": "C",
-            "text": "thought"
+            "text": "His flock has come back to visit the fountain."
           }
         ],
         "answer": "A",
-        "explanation": "In the Read, the sentence uses “statue”.",
-        "source": "generated-from-public-read"
+        "explanation": "那是燕子的梦；听到雕像叫他醒来后，他才意识到自己并没有到达埃及。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p13",
+            "p14",
+            "p19"
+          ],
+          "quote": "Slowly the bird realized he'd been dreaming."
+        }
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: \" a _____ growled.",
+        "category": "ending",
+        "question": "Why does the statue cry at the end?",
         "options": [
           {
             "key": "A",
-            "text": "voice"
+            "text": "Swallow refuses to tell him about the writer."
           },
           {
             "key": "B",
-            "text": "thought"
+            "text": "Swallow is too weak to fly away and may die."
           },
           {
             "key": "C",
-            "text": "too"
+            "text": "The hawk has stolen the statue's jewels."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “voice”.",
-        "source": "generated-from-public-read"
+        "answer": "B",
+        "explanation": "燕子说自己虚弱得无法飞行，将要离世，雕像为他难过并希望能帮助他。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p21",
+            "p22",
+            "p24"
+          ],
+          "quote": "I'm too weak"
+        }
       }
     ]
   }

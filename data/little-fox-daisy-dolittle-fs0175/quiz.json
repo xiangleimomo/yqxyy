@@ -2569,121 +2569,156 @@
   "34": {
     "episodeId": 34,
     "title": "Riding Sunny Quiz",
+    "styleReference": "journey-to-the-west",
+    "revision": "2026-10-23",
     "questions": [
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: So, _____, let's have you ride Sunny during the lesson.",
+        "category": "cause-effect",
+        "question": "Why does Jan ask Daisy to ride Sunny during the lesson?",
         "options": [
           {
             "key": "A",
-            "text": "daisy"
+            "text": "She thinks a successful ride may persuade Jon to keep him."
           },
           {
             "key": "B",
-            "text": "jan"
+            "text": "She wants Daisy to race Sunny against the other horses."
           },
           {
             "key": "C",
-            "text": "grace"
+            "text": "She knows Daisy has never ridden a horse before."
           }
         ],
         "answer": "A",
-        "explanation": "In the Read, the sentence uses “daisy”.",
-        "source": "generated-from-public-read"
+        "explanation": "简以为黛西是有经验的骑手，希望她能成功骑乘桑尼，让乔恩考虑把桑尼留下。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p1"
+          ],
+          "quote": "If an experienced kid successfully rides Sunny, maybe Jon will consider keeping him."
+        }
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: \"If an experienced kid successfully rides _____, maybe Jon will consider keeping him.",
+        "category": "character",
+        "question": "Why does Sunny want to behave well during the lesson?",
         "options": [
           {
             "key": "A",
-            "text": "sunny"
+            "text": "He wants to win a race against Blossom."
           },
           {
             "key": "B",
-            "text": "grace"
+            "text": "He wants Grace to give him a new saddle."
           },
           {
             "key": "C",
-            "text": "whispered"
+            "text": "He does not want to return to the dealer's crowded farm."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “sunny”.",
-        "source": "generated-from-public-read"
+        "answer": "C",
+        "explanation": "桑尼不喜欢拥挤的马贩农场，那里其他马会抢他的草料，所以他想表现好，留在这里。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p7",
+            "p8",
+            "p19"
+          ],
+          "quote": "I want to be good so I don't have to leave the farm."
+        }
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: \" _____ looked thoughtful.",
+        "category": "detail",
+        "question": "According to Jan, what should Daisy do to ask Sunny to walk?",
         "options": [
           {
             "key": "A",
-            "text": "jan"
+            "text": "Pull hard on the reins"
           },
           {
             "key": "B",
-            "text": "whispered"
+            "text": "Squeeze her legs without pulling on the reins"
           },
           {
             "key": "C",
-            "text": "good"
+            "text": "Lean back and keep both legs still"
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “jan”.",
-        "source": "generated-from-public-read"
+        "answer": "B",
+        "explanation": "简教她夹腿示意马前进，同时不要拉缰绳，因为拉缰绳表示停止。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p17"
+          ],
+          "quote": "Daisy will squeeze her legs to ask Sunny to walk."
+        }
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: \" Jan showed _____ how to brush Blossom and put on her saddle.",
+        "category": "inference",
+        "question": "Why does Daisy gulp when Jan asks her to demonstrate a trot?",
         "options": [
           {
             "key": "A",
-            "text": "grace"
+            "text": "She has only ridden horses at a walk before."
           },
           {
             "key": "B",
-            "text": "good"
+            "text": "She thinks Grace wants to ride Sunny instead."
           },
           {
             "key": "C",
-            "text": "walk"
+            "text": "She has forgotten Sunny's name."
           }
         ],
         "answer": "A",
-        "explanation": "In the Read, the sentence uses “grace”.",
-        "source": "generated-from-public-read"
+        "explanation": "黛西过去在海滩骑马时只走过慢步，还没有快步骑乘的经验，因此紧张。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p24"
+          ],
+          "quote": "On her beach rides, the horses had only walked."
+        }
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: Then she _____ to Sunny, \"I'm actually not very experienced.",
+        "category": "ending",
+        "question": "What makes Sunny suddenly rush forward at the end?",
         "options": [
           {
             "key": "A",
-            "text": "whispered"
+            "text": "Jan asks him to trot again."
           },
           {
             "key": "B",
-            "text": "walk"
+            "text": "He sees a cat and runs toward it."
           },
           {
             "key": "C",
-            "text": "trot"
+            "text": "Grace drops Blossom's reins."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “whispered”.",
-        "source": "generated-from-public-read"
+        "answer": "B",
+        "explanation": "黛西正准备让桑尼转圈时，桑尼看到猫，突然冲了过去。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p36",
+            "p37"
+          ],
+          "quote": "The horse burst into motion, rushing toward the cat!"
+        }
       }
     ]
   }

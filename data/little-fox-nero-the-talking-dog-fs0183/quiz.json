@@ -619,121 +619,166 @@
   "8": {
     "episodeId": 8,
     "title": "A Great Bond Quiz",
+    "styleReference": "journey-to-the-west",
+    "revision": "2026-10-23",
     "questions": [
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: _____ had to help Duke.",
+        "category": "story",
+        "question": "How does Nero show Dev that Duke is hurt?",
         "options": [
           {
             "key": "A",
-            "text": "nero"
+            "text": "He brings Dev a written note."
           },
           {
             "key": "B",
-            "text": "duke"
+            "text": "He plays charades and pretends to fall and limp."
           },
           {
             "key": "C",
-            "text": "pam"
+            "text": "He hides Duke's collar."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “nero”.",
-        "source": "generated-from-public-read"
+        "answer": "B",
+        "explanation": "尼禄通过模仿杜克、假装摔倒和跛行，让德夫明白杜克受了伤。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p7",
+            "p10",
+            "p12",
+            "p13",
+            "p14"
+          ],
+          "quote": "And Duke hurt his leg!"
+        }
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: _____ scratched his head.",
+        "category": "detail",
+        "question": "What do Pam and Dev lift together in the ditch?",
         "options": [
           {
             "key": "A",
-            "text": "dev"
+            "text": "A large doghouse"
           },
           {
             "key": "B",
-            "text": "pam"
+            "text": "A broken gate"
           },
           {
             "key": "C",
-            "text": "log"
+            "text": "A heavy log"
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “dev”.",
-        "source": "generated-from-public-read"
+        "answer": "C",
+        "explanation": "帕姆独自搬不动木头，德夫下到沟里帮忙，两人才将木头抬起来。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p22",
+            "p23",
+            "p24"
+          ],
+          "quote": "Finally they lifted the log."
+        }
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: Nero had to help _____.",
+        "category": "cause-effect",
+        "question": "Why does Duke stay in the ditch after the log is lifted?",
         "options": [
           {
             "key": "A",
-            "text": "duke"
+            "text": "He is hurt and cannot get out by himself."
           },
           {
             "key": "B",
-            "text": "log"
+            "text": "He wants to keep playing in the mud."
           },
           {
             "key": "C",
-            "text": "got"
+            "text": "He is waiting for a dog treat."
           }
         ],
         "answer": "A",
-        "explanation": "In the Read, the sentence uses “duke”.",
-        "source": "generated-from-public-read"
+        "explanation": "杜克仍然受着伤，无法自己离开，需要尼禄把他拉出来。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p26",
+            "p27",
+            "p28"
+          ],
+          "quote": "He's hurt"
+        }
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: \" _____ raised an eyebrow.",
+        "category": "story",
+        "question": "How does Nero pull Duke to safety?",
         "options": [
           {
             "key": "A",
-            "text": "pam"
+            "text": "He carries Duke on his back."
           },
           {
             "key": "B",
-            "text": "got"
+            "text": "He grabs Duke's collar with his teeth."
           },
           {
             "key": "C",
-            "text": "ditch"
+            "text": "He pushes the log onto dry ground."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “pam”.",
-        "source": "generated-from-public-read"
+        "answer": "B",
+        "explanation": "尼禄听从德夫的指令，用牙齿咬住杜克的项圈，把他拉到安全的地方。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p31",
+            "p32",
+            "p33"
+          ],
+          "quote": "Nero grabbed Duke's collar with his teeth."
+        }
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: \" Pam tried to lift the _____.",
+        "category": "ending",
+        "question": "What does Pam's note say about Dev and Nero?",
         "options": [
           {
             "key": "A",
-            "text": "log"
+            "text": "They must stop visiting Duke."
           },
           {
             "key": "B",
-            "text": "ditch"
+            "text": "They need to practice playing charades."
           },
           {
             "key": "C",
-            "text": "great"
+            "text": "They have great communication."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “log”.",
-        "source": "generated-from-public-read"
+        "answer": "C",
+        "explanation": "帕姆认可了他们之间的沟通和默契，在毕业纸条中写下了这一评价。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p41",
+            "p42",
+            "p43",
+            "p44"
+          ],
+          "quote": "Dev and Nero have great communication."
+        }
       }
     ]
   }
