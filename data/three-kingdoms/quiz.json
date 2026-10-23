@@ -1091,121 +1091,159 @@
   "10": {
     "episodeId": 10,
     "title": "A Fair and Just Magistrate Quiz",
+    "styleReference": "journey-to-the-west",
+    "revision": "2026-10-23",
     "questions": [
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: \"This report says _____ Bei helped Dong Zhuo at the battle of Guangzong.",
+        "category": "cause-effect",
+        "question": "Why did Liu Bei originally miss out on a government job?",
         "options": [
           {
             "key": "A",
-            "text": "liu"
+            "text": "He refused to leave the battlefield."
           },
           {
             "key": "B",
-            "text": "man"
+            "text": "Dong Zhuo refused to admit that Liu Bei had helped him."
           },
           {
             "key": "C",
-            "text": "inspector"
+            "text": "The officials thought Anxi County had no problems."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “liu”.",
-        "source": "generated-from-public-read"
+        "answer": "B",
+        "explanation": "董卓不肯承认刘备在广宗之战中帮助过自己，导致刘备起初没有获授官职。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p3",
+            "p4"
+          ],
+          "quote": "Dong Zhuo refused to admit Liu Bei helped him."
+        }
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: \"This report says Liu _____ helped Dong Zhuo at the battle of Guangzong.",
+        "category": "character",
+        "question": "Why did the man who stole rice say he wanted to go to prison?",
         "options": [
           {
             "key": "A",
-            "text": "bei"
+            "text": "He wanted to escape his job at the basket shop."
           },
           {
             "key": "B",
-            "text": "inspector"
+            "text": "He hoped to meet Liu Bei there."
           },
           {
             "key": "C",
-            "text": "prison"
+            "text": "He was starving and expected to get food there."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “bei”.",
-        "source": "generated-from-public-read"
+        "answer": "C",
+        "explanation": "偷米的人宁愿进监狱，是因为他挨着饿，认为进了监狱至少有饭吃。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p15",
+            "p16"
+          ],
+          "quote": "At least then I won't starve."
+        }
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: One _____ pointed at the other.",
+        "category": "story",
+        "question": "How did Liu Bei help the hungry thief?",
         "options": [
           {
             "key": "A",
-            "text": "man"
+            "text": "He asked someone to give the man work and food."
           },
           {
             "key": "B",
-            "text": "prison"
+            "text": "He made the man a government inspector."
           },
           {
             "key": "C",
-            "text": "people"
+            "text": "He told the man to take rice without paying."
           }
         ],
         "answer": "A",
-        "explanation": "In the Read, the sentence uses “man”.",
-        "source": "generated-from-public-read"
+        "explanation": "刘备没有认可偷窃，而是请人提供工作和当天的食物；一位老人愿意收这个人为竹篮店学徒。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p19",
+            "p21",
+            "p25"
+          ],
+          "quote": "Who will give this man a job and make sure he eats today?"
+        }
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: One day a government _____ visited Liu Bei.",
+        "category": "inference",
+        "question": "What did the government inspector really want from Liu Bei?",
         "options": [
           {
             "key": "A",
-            "text": "inspector"
+            "text": "Help finding work for the hungry man"
           },
           {
             "key": "B",
-            "text": "people"
+            "text": "A bribe so Liu Bei could keep his position"
           },
           {
             "key": "C",
-            "text": "government"
+            "text": "A report explaining how to reduce crime"
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “inspector”.",
-        "source": "generated-from-public-read"
+        "answer": "B",
+        "explanation": "督邮暗示刘备必须付钱才能继续当县令，实质是在以官职相要挟索取贿赂。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p38",
+            "p40",
+            "p41"
+          ],
+          "quote": "Then you must pay me—um, I mean, the government."
+        }
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: He belongs in _____!",
+        "category": "ending",
+        "question": "What happened after Liu Bei had the corrupt inspector thrown out?",
         "options": [
           {
             "key": "A",
-            "text": "prison"
+            "text": "He received money to build a larger prison."
           },
           {
             "key": "B",
-            "text": "government"
+            "text": "He was promoted to an adviser in the imperial court."
           },
           {
             "key": "C",
-            "text": "magistrate"
+            "text": "A letter informed him that he was no longer magistrate."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “prison”.",
-        "source": "generated-from-public-read"
+        "answer": "C",
+        "explanation": "刘备没钱行贿，将腐败的督邮赶走后，收到信通知他已被免去安喜县令职务。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p41"
+          ],
+          "quote": "It informed him he was no longer the magistrate of Anxi County."
+        }
       }
     ]
   },

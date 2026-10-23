@@ -2448,121 +2448,167 @@
   "33": {
     "episodeId": 33,
     "title": "Back to Our Little Farm Quiz",
+    "styleReference": "journey-to-the-west",
+    "revision": "2026-10-23",
     "questions": [
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: \"You'll love horseback riding, Grace,\" _____ said.",
+        "category": "cause-effect",
+        "question": "Why does Jon need to fix the pigpen gate?",
         "options": [
           {
             "key": "A",
-            "text": "daisy"
+            "text": "Sunny has broken it while running."
           },
           {
             "key": "B",
-            "text": "sunny"
+            "text": "Hubert has already escaped twice."
           },
           {
             "key": "C",
-            "text": "jon"
+            "text": "The children need a gate for their riding lesson."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “daisy”.",
-        "source": "generated-from-public-read"
+        "answer": "B",
+        "explanation": "小猪休伯特前一天已经逃出去两次，现在又想逃，因此乔恩急着修门。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p8",
+            "p9",
+            "p10"
+          ],
+          "quote": "He escaped twice yesterday."
+        }
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: _____ and Jon had invited them to meet some new animals and go riding.",
+        "category": "character",
+        "question": "What does Kaleem offer to do while the girls ride?",
         "options": [
           {
             "key": "A",
-            "text": "jan"
+            "text": "Give Grace her first riding lesson"
           },
           {
             "key": "B",
-            "text": "jon"
+            "text": "Take Sunny back to the dealer"
           },
           {
             "key": "C",
-            "text": "kaleem"
+            "text": "Help Jon with work on the farm"
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “jan”.",
-        "source": "generated-from-public-read"
+        "answer": "C",
+        "explanation": "卡里姆主动提出趁女孩们骑马时帮乔恩修猪圈、种菜等农场工作。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p10",
+            "p11",
+            "p13"
+          ],
+          "quote": "I can help you while the girls ride"
+        }
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: \"We have a new horse named _____ and a new pony named Blossom,\" Jan said.",
+        "category": "vocabulary",
+        "question": "What does Jan mean when she calls Sunny a green horse?",
         "options": [
           {
             "key": "A",
-            "text": "sunny"
+            "text": "He is not fully trained yet."
           },
           {
             "key": "B",
-            "text": "kaleem"
+            "text": "His coat is a green color."
           },
           {
             "key": "C",
-            "text": "new"
+            "text": "He only eats fresh green grass."
           }
         ],
         "answer": "A",
-        "explanation": "In the Read, the sentence uses “sunny”.",
-        "source": "generated-from-public-read"
+        "explanation": "这里的 green 指缺乏经验、尚未训练成熟，并不是指桑尼毛色是绿色。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p26",
+            "p27",
+            "p28"
+          ],
+          "quote": "We call a horse 'green' when he's not fully trained yet."
+        }
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: Jan and _____ had invited them to meet some new animals and go riding.",
+        "category": "detail",
+        "question": "Why does Jan choose Blossom for Grace?",
         "options": [
           {
             "key": "A",
-            "text": "jon"
+            "text": "Blossom needs an experienced rider."
           },
           {
             "key": "B",
-            "text": "new"
+            "text": "Blossom is gentle with beginners."
           },
           {
             "key": "C",
-            "text": "ride"
+            "text": "Blossom is the fastest horse on the farm."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “jon”.",
-        "source": "generated-from-public-read"
+        "answer": "B",
+        "explanation": "格蕾丝从没骑过马，又希望骑慢一些的马；简推荐对初学者温顺的布洛瑟姆。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p32",
+            "p33"
+          ],
+          "quote": "She's very gentle with beginners."
+        }
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: _____ nodded.",
+        "category": "inference",
+        "question": "Why does Daisy exaggerate how much riding she has done?",
         "options": [
           {
             "key": "A",
-            "text": "kaleem"
+            "text": "She wants to avoid taking a riding lesson."
           },
           {
             "key": "B",
-            "text": "ride"
+            "text": "She wants Jan to let Grace ride Sunny."
           },
           {
             "key": "C",
-            "text": "grace"
+            "text": "She wants to ride Sunny and help persuade Jon to keep him."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “kaleem”.",
-        "source": "generated-from-public-read"
+        "answer": "C",
+        "explanation": "黛西先答应帮助桑尼留下；当简说桑尼适合有经验的骑手时，她夸大经验，希望获得骑他的机会。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p25",
+            "p28",
+            "p29",
+            "p30",
+            "p33",
+            "p34",
+            "p36",
+            "p37"
+          ],
+          "quote": "I just need to figure out how to change Jon's mind."
+        }
       }
     ]
   },

@@ -40,7 +40,7 @@ const episode = {episodeId: 999, sourceContentId: 'future-release'};
 assert.equal(selectStoryQuiz('unknown', episode, {}, official), official, 'Preserve official questions');
 assert.equal(selectStoryQuiz('unknown', episode, {}, {questions:[{source:'generated-from-public-read'}]}), null, 'Reject old generated cloze');
 assert.equal(selectStoryQuiz('unknown', episode, {}, undefined), null, 'Mark unreviewed releases pending');
-console.log('PASS: 6 episodes / 30 story questions, source binding, original Read evidence, preserved unrelated/official quizzes and no cloze fallback');
+console.log('PASS: 10 episodes / 50 story questions, source binding, original Read evidence, preserved unrelated/official quizzes and no cloze fallback');
 
 // Exercise the actual enrichment entry point with a mocked public Read response.
 const os = require('node:os');

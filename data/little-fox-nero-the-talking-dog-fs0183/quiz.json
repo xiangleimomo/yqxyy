@@ -498,121 +498,167 @@
   "7": {
     "episodeId": 7,
     "title": "New Friend Quiz",
+    "styleReference": "journey-to-the-west",
+    "revision": "2026-10-23",
     "questions": [
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: \"_____ ran into the woods!",
+        "category": "story",
+        "question": "Why does Pam send Duke into the woods?",
         "options": [
           {
             "key": "A",
-            "text": "nero"
+            "text": "To bring back a log"
           },
           {
             "key": "B",
-            "text": "dev"
+            "text": "To play in the mud"
           },
           {
             "key": "C",
-            "text": "thought"
+            "text": "To find Nero"
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “nero”.",
-        "source": "generated-from-public-read"
+        "answer": "C",
+        "explanation": "德夫说尼禄跑进了树林，帕姆便让杜克去把他找回来。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p1",
+            "p3",
+            "p4"
+          ],
+          "quote": "Duke can find him"
+        }
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: \" \"_____ can find him,\" Pam said.",
+        "category": "character",
+        "question": "What does Nero realize after Duke jumps into the mud?",
         "options": [
           {
             "key": "A",
-            "text": "duke"
+            "text": "Duke wants to be his friend."
           },
           {
             "key": "B",
-            "text": "thought"
+            "text": "Duke wants him to stop playing."
           },
           {
             "key": "C",
-            "text": "pam"
+            "text": "Duke wants to hide from Pam."
           }
         ],
         "answer": "A",
-        "explanation": "In the Read, the sentence uses “duke”.",
-        "source": "generated-from-public-read"
+        "explanation": "杜克也跳进泥里并叫了起来，尼禄这才明白杜克想和自己交朋友。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p17",
+            "p18",
+            "p19"
+          ],
+          "quote": "He wants to be friends."
+        }
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: \" _____ said.",
+        "category": "cause-effect",
+        "question": "Why does Nero run back toward the school?",
         "options": [
           {
             "key": "A",
-            "text": "dev"
+            "text": "He wants Dev to clean his muddy fur."
           },
           {
             "key": "B",
-            "text": "pam"
+            "text": "Duke has hurt his leg and needs help."
           },
           {
             "key": "C",
-            "text": "barked"
+            "text": "Pam has called both dogs back."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “dev”.",
-        "source": "generated-from-public-read"
+        "answer": "B",
+        "explanation": "杜克滑进泥沟、在木头下受了伤，尼禄于是跑回学校方向找人帮忙。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p28",
+            "p29",
+            "p30",
+            "p31",
+            "p32"
+          ],
+          "quote": "You've hurt your leg!"
+        }
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: \" \"I'm not telling you where I am,\" Nero _____.",
+        "category": "detail",
+        "question": "Why does Pam think Duke will come back on his own?",
         "options": [
           {
             "key": "A",
-            "text": "thought"
+            "text": "She has seen him leave the ditch."
           },
           {
             "key": "B",
-            "text": "barked"
+            "text": "Nero has told her Duke is not hurt."
           },
           {
             "key": "C",
-            "text": "woof"
+            "text": "She believes Duke is perfectly trained."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “thought”.",
-        "source": "generated-from-public-read"
+        "answer": "C",
+        "explanation": "帕姆不知道杜克受伤了；她认为杜克训练有素，很快会自己回来。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p40",
+            "p41",
+            "p42"
+          ],
+          "quote": "He's perfectly trained and will come back soon."
+        }
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: \" \"Duke can find him,\" _____ said.",
+        "category": "ending",
+        "question": "What problem does Nero face at the end?",
         "options": [
           {
             "key": "A",
-            "text": "pam"
+            "text": "Duke needs help, but Nero cannot talk in front of Pam."
           },
           {
             "key": "B",
-            "text": "woof"
+            "text": "Dev wants him to stay in the woods alone."
           },
           {
             "key": "C",
-            "text": "mud"
+            "text": "Pam wants him to find another dog."
           }
         ],
         "answer": "A",
-        "explanation": "In the Read, the sentence uses “pam”.",
-        "source": "generated-from-public-read"
+        "explanation": "尼禄知道杜克急需帮助，却不能当着帕姆的面说人话，德夫又要带他回学校。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p44",
+            "p45",
+            "p46",
+            "p47",
+            "p48"
+          ],
+          "quote": "I can't talk in front of Pam"
+        }
       }
     ]
   },

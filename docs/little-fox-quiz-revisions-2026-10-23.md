@@ -1,7 +1,10 @@
 # Little Fox Quiz revisions — 2026-10-23
 
 Scope: the six episodes added by the four scheduled catalogue updates on
-October 16, 19, 21 and 22. The October 15 bulk backfill is not changed.
+October 16, 19, 21 and 22. Follow-up: also repair Three Kingdoms 10, The Happy Prince 12, Nero 7,
+and Daisy Dolittle 33, which used the same generated cloze format.
+Ten episodes / fifty questions are now in the reviewed bank.
+Other episodes from the October 15 bulk backfill are not changed.
 
 Reference: `data/journey-to-the-west/quiz.json`. Each episode has five short
 English questions, three parallel choices per question, and one correct answer.

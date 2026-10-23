@@ -873,121 +873,162 @@
   "12": {
     "episodeId": 12,
     "title": "Stories to Tell Quiz",
+    "styleReference": "journey-to-the-west",
+    "revision": "2026-10-23",
     "questions": [
       {
         "id": "q1",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: _____ spent the next day giving away more gold.",
+        "category": "detail",
+        "question": "What did one woman buy with the gold Swallow brought her?",
         "options": [
           {
             "key": "A",
-            "text": "swallow"
+            "text": "Food, candles, and wood for the fireplace"
           },
           {
             "key": "B",
-            "text": "gold"
+            "text": "A new statue for the town"
           },
           {
             "key": "C",
-            "text": "people"
+            "text": "Paper and ink for the young writer"
           }
         ],
         "answer": "A",
-        "explanation": "In the Read, the sentence uses “swallow”.",
-        "source": "generated-from-public-read"
+        "explanation": "这位妇人用燕子送来的金子购买了食物、蜡烛和壁炉用的木柴。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p5",
+            "p6"
+          ],
+          "quote": "I bought food, candles, and wood for the fireplace."
+        }
       },
       {
         "id": "q2",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: \"That bird ruined our _____!",
+        "category": "character",
+        "question": "Why did the man stop complaining about the damaged statue?",
         "options": [
           {
             "key": "A",
-            "text": "statue"
+            "text": "He learned that the statue would receive new gold."
           },
           {
             "key": "B",
-            "text": "people"
+            "text": "He agreed that people having food and shelter mattered more."
           },
           {
             "key": "C",
-            "text": "man"
+            "text": "He discovered that the gold had come from the writer."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “statue”.",
-        "source": "generated-from-public-read"
+        "answer": "B",
+        "explanation": "听到别人比较雕像与镇民的需要后，他承认让人们有饭吃、有地方住更重要。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p8",
+            "p9",
+            "p10"
+          ],
+          "quote": "It's better for people to have food and shelter."
+        }
       },
       {
         "id": "q3",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: Swallow spent the next day giving away more _____.",
+        "category": "cause-effect",
+        "question": "Why did the town seem brighter that evening?",
         "options": [
           {
             "key": "A",
-            "text": "gold"
+            "text": "The statue had put on a new golden coat."
           },
           {
             "key": "B",
-            "text": "man"
+            "text": "Swallow had brought every family to the fountain."
           },
           {
             "key": "C",
-            "text": "it's"
+            "text": "Homes had light and warmth, and people were talking and laughing."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “gold”.",
-        "source": "generated-from-public-read"
+        "answer": "C",
+        "explanation": "窗边的烛光、炉火和人们的欢声笑语，让受到帮助的小镇显得更加明亮温暖。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p18",
+            "p19",
+            "p20"
+          ],
+          "quote": "Candles glow in windows. Fires burn in hearths"
+        }
       },
       {
         "id": "q4",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: \" More _____ gathered, sharing stories about the bird.",
+        "category": "inference",
+        "question": "Why could the last gold piece help the writer even though he had enough food?",
         "options": [
           {
             "key": "A",
-            "text": "people"
+            "text": "It could pay for publishing the stories he thought no one would read."
           },
           {
             "key": "B",
-            "text": "it's"
+            "text": "It could help him buy food for the hungry farmers."
           },
           {
             "key": "C",
-            "text": "talking"
+            "text": "It could replace the animals he had lost."
           }
         ],
         "answer": "A",
-        "explanation": "In the Read, the sentence uses “people”.",
-        "source": "generated-from-public-read"
+        "explanation": "作家并不缺食物，但对作品无人阅读感到灰心；金子能帮助他出版故事。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p26",
+            "p27",
+            "p28",
+            "p30"
+          ],
+          "quote": "Now I can publish my stories."
+        }
       },
       {
         "id": "q5",
         "type": "single-choice",
-        "category": "reading-comprehension",
-        "question": "According to the story, complete the sentence: Then one _____ frowned.",
+        "category": "ending",
+        "question": "What does the writer say after Swallow drops the gold?",
         "options": [
           {
             "key": "A",
-            "text": "man"
+            "text": "He will give up writing and become a farmer."
           },
           {
             "key": "B",
-            "text": "talking"
+            "text": "He may have an idea for a new story."
           },
           {
             "key": "C",
-            "text": "piece"
+            "text": "He will use the gold to repair the statue."
           }
         ],
-        "answer": "A",
-        "explanation": "In the Read, the sentence uses “man”.",
-        "source": "generated-from-public-read"
+        "answer": "B",
+        "explanation": "收到金子后，作家既为能出版故事而高兴，也说自己或许有了一个新故事的灵感。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p29",
+            "p30"
+          ],
+          "quote": "And maybe I have an idea for a new one."
+        }
       }
     ]
   },

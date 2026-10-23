@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* Repeatable, scoped repair: only replace the six reviewed Quiz entries. */
+/* Repeatable, scoped repair: only replace the reviewed Quiz entries. */
 const fs = require('node:fs');
 const path = require('node:path');
 const {reviewedStoryQuiz} = require('./lib/story-quiz.cjs');

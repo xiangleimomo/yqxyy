@@ -580,6 +580,417 @@
           }
         }
       ]
+    },
+    {
+      "seriesId": "three-kingdoms",
+      "episodeId": 10,
+      "sourceContentId": "C0013406",
+      "questions": [
+        {
+          "category": "cause-effect",
+          "question": "Why did Liu Bei originally miss out on a government job?",
+          "options": [
+            "He refused to leave the battlefield.",
+            "Dong Zhuo refused to admit that Liu Bei had helped him.",
+            "The officials thought Anxi County had no problems."
+          ],
+          "answer": "B",
+          "explanation": "董卓不肯承认刘备在广宗之战中帮助过自己，导致刘备起初没有获授官职。",
+          "evidence": {
+            "paragraphIds": [
+              "p3",
+              "p4"
+            ],
+            "quote": "Dong Zhuo refused to admit Liu Bei helped him."
+          }
+        },
+        {
+          "category": "character",
+          "question": "Why did the man who stole rice say he wanted to go to prison?",
+          "options": [
+            "He wanted to escape his job at the basket shop.",
+            "He hoped to meet Liu Bei there.",
+            "He was starving and expected to get food there."
+          ],
+          "answer": "C",
+          "explanation": "偷米的人宁愿进监狱，是因为他挨着饿，认为进了监狱至少有饭吃。",
+          "evidence": {
+            "paragraphIds": [
+              "p15",
+              "p16"
+            ],
+            "quote": "At least then I won't starve."
+          }
+        },
+        {
+          "category": "story",
+          "question": "How did Liu Bei help the hungry thief?",
+          "options": [
+            "He asked someone to give the man work and food.",
+            "He made the man a government inspector.",
+            "He told the man to take rice without paying."
+          ],
+          "answer": "A",
+          "explanation": "刘备没有认可偷窃，而是请人提供工作和当天的食物；一位老人愿意收这个人为竹篮店学徒。",
+          "evidence": {
+            "paragraphIds": [
+              "p19",
+              "p21",
+              "p25"
+            ],
+            "quote": "Who will give this man a job and make sure he eats today?"
+          }
+        },
+        {
+          "category": "inference",
+          "question": "What did the government inspector really want from Liu Bei?",
+          "options": [
+            "Help finding work for the hungry man",
+            "A bribe so Liu Bei could keep his position",
+            "A report explaining how to reduce crime"
+          ],
+          "answer": "B",
+          "explanation": "督邮暗示刘备必须付钱才能继续当县令，实质是在以官职相要挟索取贿赂。",
+          "evidence": {
+            "paragraphIds": [
+              "p38",
+              "p40",
+              "p41"
+            ],
+            "quote": "Then you must pay me—um, I mean, the government."
+          }
+        },
+        {
+          "category": "ending",
+          "question": "What happened after Liu Bei had the corrupt inspector thrown out?",
+          "options": [
+            "He received money to build a larger prison.",
+            "He was promoted to an adviser in the imperial court.",
+            "A letter informed him that he was no longer magistrate."
+          ],
+          "answer": "C",
+          "explanation": "刘备没钱行贿，将腐败的督邮赶走后，收到信通知他已被免去安喜县令职务。",
+          "evidence": {
+            "paragraphIds": [
+              "p41"
+            ],
+            "quote": "It informed him he was no longer the magistrate of Anxi County."
+          }
+        }
+      ]
+    },
+    {
+      "seriesId": "little-fox-the-happy-prince-fs0181",
+      "episodeId": 12,
+      "sourceContentId": "C0013532",
+      "questions": [
+        {
+          "category": "detail",
+          "question": "What did one woman buy with the gold Swallow brought her?",
+          "options": [
+            "Food, candles, and wood for the fireplace",
+            "A new statue for the town",
+            "Paper and ink for the young writer"
+          ],
+          "answer": "A",
+          "explanation": "这位妇人用燕子送来的金子购买了食物、蜡烛和壁炉用的木柴。",
+          "evidence": {
+            "paragraphIds": [
+              "p5",
+              "p6"
+            ],
+            "quote": "I bought food, candles, and wood for the fireplace."
+          }
+        },
+        {
+          "category": "character",
+          "question": "Why did the man stop complaining about the damaged statue?",
+          "options": [
+            "He learned that the statue would receive new gold.",
+            "He agreed that people having food and shelter mattered more.",
+            "He discovered that the gold had come from the writer."
+          ],
+          "answer": "B",
+          "explanation": "听到别人比较雕像与镇民的需要后，他承认让人们有饭吃、有地方住更重要。",
+          "evidence": {
+            "paragraphIds": [
+              "p8",
+              "p9",
+              "p10"
+            ],
+            "quote": "It's better for people to have food and shelter."
+          }
+        },
+        {
+          "category": "cause-effect",
+          "question": "Why did the town seem brighter that evening?",
+          "options": [
+            "The statue had put on a new golden coat.",
+            "Swallow had brought every family to the fountain.",
+            "Homes had light and warmth, and people were talking and laughing."
+          ],
+          "answer": "C",
+          "explanation": "窗边的烛光、炉火和人们的欢声笑语，让受到帮助的小镇显得更加明亮温暖。",
+          "evidence": {
+            "paragraphIds": [
+              "p18",
+              "p19",
+              "p20"
+            ],
+            "quote": "Candles glow in windows. Fires burn in hearths"
+          }
+        },
+        {
+          "category": "inference",
+          "question": "Why could the last gold piece help the writer even though he had enough food?",
+          "options": [
+            "It could pay for publishing the stories he thought no one would read.",
+            "It could help him buy food for the hungry farmers.",
+            "It could replace the animals he had lost."
+          ],
+          "answer": "A",
+          "explanation": "作家并不缺食物，但对作品无人阅读感到灰心；金子能帮助他出版故事。",
+          "evidence": {
+            "paragraphIds": [
+              "p26",
+              "p27",
+              "p28",
+              "p30"
+            ],
+            "quote": "Now I can publish my stories."
+          }
+        },
+        {
+          "category": "ending",
+          "question": "What does the writer say after Swallow drops the gold?",
+          "options": [
+            "He will give up writing and become a farmer.",
+            "He may have an idea for a new story.",
+            "He will use the gold to repair the statue."
+          ],
+          "answer": "B",
+          "explanation": "收到金子后，作家既为能出版故事而高兴，也说自己或许有了一个新故事的灵感。",
+          "evidence": {
+            "paragraphIds": [
+              "p29",
+              "p30"
+            ],
+            "quote": "And maybe I have an idea for a new one."
+          }
+        }
+      ]
+    },
+    {
+      "seriesId": "little-fox-nero-the-talking-dog-fs0183",
+      "episodeId": 7,
+      "sourceContentId": "C0013591",
+      "questions": [
+        {
+          "category": "story",
+          "question": "Why does Pam send Duke into the woods?",
+          "options": [
+            "To bring back a log",
+            "To play in the mud",
+            "To find Nero"
+          ],
+          "answer": "C",
+          "explanation": "德夫说尼禄跑进了树林，帕姆便让杜克去把他找回来。",
+          "evidence": {
+            "paragraphIds": [
+              "p1",
+              "p3",
+              "p4"
+            ],
+            "quote": "Duke can find him"
+          }
+        },
+        {
+          "category": "character",
+          "question": "What does Nero realize after Duke jumps into the mud?",
+          "options": [
+            "Duke wants to be his friend.",
+            "Duke wants him to stop playing.",
+            "Duke wants to hide from Pam."
+          ],
+          "answer": "A",
+          "explanation": "杜克也跳进泥里并叫了起来，尼禄这才明白杜克想和自己交朋友。",
+          "evidence": {
+            "paragraphIds": [
+              "p17",
+              "p18",
+              "p19"
+            ],
+            "quote": "He wants to be friends."
+          }
+        },
+        {
+          "category": "cause-effect",
+          "question": "Why does Nero run back toward the school?",
+          "options": [
+            "He wants Dev to clean his muddy fur.",
+            "Duke has hurt his leg and needs help.",
+            "Pam has called both dogs back."
+          ],
+          "answer": "B",
+          "explanation": "杜克滑进泥沟、在木头下受了伤，尼禄于是跑回学校方向找人帮忙。",
+          "evidence": {
+            "paragraphIds": [
+              "p28",
+              "p29",
+              "p30",
+              "p31",
+              "p32"
+            ],
+            "quote": "You've hurt your leg!"
+          }
+        },
+        {
+          "category": "detail",
+          "question": "Why does Pam think Duke will come back on his own?",
+          "options": [
+            "She has seen him leave the ditch.",
+            "Nero has told her Duke is not hurt.",
+            "She believes Duke is perfectly trained."
+          ],
+          "answer": "C",
+          "explanation": "帕姆不知道杜克受伤了；她认为杜克训练有素，很快会自己回来。",
+          "evidence": {
+            "paragraphIds": [
+              "p40",
+              "p41",
+              "p42"
+            ],
+            "quote": "He's perfectly trained and will come back soon."
+          }
+        },
+        {
+          "category": "ending",
+          "question": "What problem does Nero face at the end?",
+          "options": [
+            "Duke needs help, but Nero cannot talk in front of Pam.",
+            "Dev wants him to stay in the woods alone.",
+            "Pam wants him to find another dog."
+          ],
+          "answer": "A",
+          "explanation": "尼禄知道杜克急需帮助，却不能当着帕姆的面说人话，德夫又要带他回学校。",
+          "evidence": {
+            "paragraphIds": [
+              "p44",
+              "p45",
+              "p46",
+              "p47",
+              "p48"
+            ],
+            "quote": "I can't talk in front of Pam"
+          }
+        }
+      ]
+    },
+    {
+      "seriesId": "little-fox-daisy-dolittle-fs0175",
+      "episodeId": 33,
+      "sourceContentId": "C0013545",
+      "questions": [
+        {
+          "category": "cause-effect",
+          "question": "Why does Jon need to fix the pigpen gate?",
+          "options": [
+            "Sunny has broken it while running.",
+            "Hubert has already escaped twice.",
+            "The children need a gate for their riding lesson."
+          ],
+          "answer": "B",
+          "explanation": "小猪休伯特前一天已经逃出去两次，现在又想逃，因此乔恩急着修门。",
+          "evidence": {
+            "paragraphIds": [
+              "p8",
+              "p9",
+              "p10"
+            ],
+            "quote": "He escaped twice yesterday."
+          }
+        },
+        {
+          "category": "character",
+          "question": "What does Kaleem offer to do while the girls ride?",
+          "options": [
+            "Give Grace her first riding lesson",
+            "Take Sunny back to the dealer",
+            "Help Jon with work on the farm"
+          ],
+          "answer": "C",
+          "explanation": "卡里姆主动提出趁女孩们骑马时帮乔恩修猪圈、种菜等农场工作。",
+          "evidence": {
+            "paragraphIds": [
+              "p10",
+              "p11",
+              "p13"
+            ],
+            "quote": "I can help you while the girls ride"
+          }
+        },
+        {
+          "category": "vocabulary",
+          "question": "What does Jan mean when she calls Sunny a green horse?",
+          "options": [
+            "He is not fully trained yet.",
+            "His coat is a green color.",
+            "He only eats fresh green grass."
+          ],
+          "answer": "A",
+          "explanation": "这里的 green 指缺乏经验、尚未训练成熟，并不是指桑尼毛色是绿色。",
+          "evidence": {
+            "paragraphIds": [
+              "p26",
+              "p27",
+              "p28"
+            ],
+            "quote": "We call a horse 'green' when he's not fully trained yet."
+          }
+        },
+        {
+          "category": "detail",
+          "question": "Why does Jan choose Blossom for Grace?",
+          "options": [
+            "Blossom needs an experienced rider.",
+            "Blossom is gentle with beginners.",
+            "Blossom is the fastest horse on the farm."
+          ],
+          "answer": "B",
+          "explanation": "格蕾丝从没骑过马，又希望骑慢一些的马；简推荐对初学者温顺的布洛瑟姆。",
+          "evidence": {
+            "paragraphIds": [
+              "p32",
+              "p33"
+            ],
+            "quote": "She's very gentle with beginners."
+          }
+        },
+        {
+          "category": "inference",
+          "question": "Why does Daisy exaggerate how much riding she has done?",
+          "options": [
+            "She wants to avoid taking a riding lesson.",
+            "She wants Jan to let Grace ride Sunny.",
+            "She wants to ride Sunny and help persuade Jon to keep him."
+          ],
+          "answer": "C",
+          "explanation": "黛西先答应帮助桑尼留下；当简说桑尼适合有经验的骑手时，她夸大经验，希望获得骑他的机会。",
+          "evidence": {
+            "paragraphIds": [
+              "p25",
+              "p28",
+              "p29",
+              "p30",
+              "p33",
+              "p34",
+              "p36",
+              "p37"
+            ],
+            "quote": "I just need to figure out how to change Jon's mind."
+          }
+        }
+      ]
     }
   ]
 }
