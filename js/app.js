@@ -31,6 +31,7 @@ const App = {
       const target=event.target.closest('[data-search-href]'); if(!target) return;
       event.preventDefault(); this.hideSearchSuggestions(); location.hash=target.dataset.searchHref;
     });
+    window.SFFamily?.init(this);
     this.updateUtilityNav();
     await this.render();
     if(window.SFCloud) window.SFCloud.init(this);
@@ -80,10 +81,11 @@ const App = {
   async render(){
     const [page, a, b] = this.route();
     window.MovieClassroom?.cleanup();
+    window.SFFamily?.stop();
     this.disposeHlsPlayers(this.el());
     const isMoviePage = ['movies','movie','movie-series'].includes(page) || (['series','lesson'].includes(page) && String(a||'').startsWith('movie-'));
     document.querySelectorAll('.main-tab').forEach(tab=>{
-      const active = tab.getAttribute('href') === (isMoviePage ? '#/movies' : '#/home');
+      const active = tab.getAttribute('href') === (['family','parent','child'].includes(page) ? '#/'+page : isMoviePage ? '#/movies' : '#/home');
       tab.classList.toggle('active', active);
       if(active) tab.setAttribute('aria-current','page'); else tab.removeAttribute('aria-current');
     });
@@ -96,6 +98,7 @@ const App = {
     document.body.classList.remove('movie-study-page');
     document.documentElement.classList.remove('movie-study-page');
     try{
+      if(['family','parent','child'].includes(page)) return await window.SFFamily.render(this);
       if(page === 'movies') return await window.MovieClassroom.renderList(this, decodeURIComponent(a || ''));
       if(page === 'movie-series') return await window.MovieClassroom.renderSeries(this, a);
       if(page === 'movie') return await window.MovieClassroom.renderWatch(this, a);
@@ -1141,7 +1144,8 @@ bindLessonPanel(tab,d,root=document){
       qs.forEach((q,i)=>{const ans=(new FormData(form)).get('q'+i); if(ans===q.answer) score++; const ex=form.querySelector('#explain-'+i); if(ex) ex.style.display='block';});
       const result=form.querySelector('#quizResult');
       result.innerHTML=`<div class="quiz-result">得分：${score}/${qs.length}</div>`;
-      this.saveQuizScore(d.seriesId,d.episodeId,score,qs.length);
+      const answers=Object.fromEntries(qs.map((q,i)=>[q.id,(new FormData(form)).get('q'+i)]));
+      this.saveQuizScore(d.seriesId,d.episodeId,score,qs.length,answers);
       this.markComplete(d.seriesId,d.episodeId,'quiz');
       if(score/qs.length>=0.8) this.unlockNextEpisode(d.seriesId,d.episodeId,result);
     });
@@ -1353,6 +1357,7 @@ addPoints(n=1){
   },
   canAccessEpisode(seriesId, episodeId){
     if(this.isAdmin())return true;
+    if(window.SFFamily?.canAccessLesson(seriesId,episodeId))return true;
     // The trial episodes are intentionally available without a quiz or account.
     // Once signed in, the existing level-based quiz-unlock rules take over.
     if(this.isGuest() && Number(episodeId)<=3) return true;
@@ -1397,11 +1402,13 @@ addPoints(n=1){
     const key=`${seriesId}:${episodeId}`;
     if(!p[key]) p[key]={seriesId, episodeId:Number(episodeId), modules:{}, updatedAt:new Date().toISOString()};
     p[key].modules[module]=true; p[key].updatedAt=new Date().toISOString();
+    if(module!=='quiz')window.SFFamily?.record(seriesId,episodeId,module);
     this.storage('progress',p);
     const today=new Date();const ds=[today.getFullYear(),String(today.getMonth()+1).padStart(2,'0'),String(today.getDate()).padStart(2,'0')].join('-');
     const dates=new Set(this.storage('checkins')||[]);dates.add(ds);this.storage('checkins',[...dates].sort());
   },
-  saveQuizScore(seriesId, episodeId, score, total){
+  saveQuizScore(seriesId, episodeId, score, total, answers){
+    if(answers)window.SFFamily?.record(seriesId,episodeId,'quiz',answers);
     const q=this.storage('quizScores') || {}, key=`${seriesId}:${episodeId}`, old=q[key];
     if(old && Number(old.total)>0 && Number(old.score)/Number(old.total)>Number(score)/Number(total)) return;
     q[key]={score,total,date:new Date().toISOString()}; this.storage('quizScores',q);

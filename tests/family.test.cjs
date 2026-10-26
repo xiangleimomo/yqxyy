@@ -1,0 +1,32 @@
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const store=new Map(),calls=[];let offline=true;
+const window={addEventListener(){},SFCloud:{user:{id:'child-one'},storageKey:k=>'account_one_'+k,schedule(){},client:{rpc:async(name,payload)=>{if(offline)throw Error('offline');calls.push(payload);return {data:{ok:true},error:null};}}}};
+const ctx=vm.createContext({window,document:{addEventListener(){},querySelectorAll:()=>[],getElementById:()=>null},navigator:{onLine:true},localStorage:{getItem:k=>store.get(k)||null,setItem:(k,v)=>store.set(k,v)},crypto:require('crypto').webcrypto,URL,Intl,Date,setTimeout,clearTimeout,EpisodeGames:{refreshAll(){}}});
+vm.runInContext(fs.readFileSync(path.join(__dirname,'../js/family.js'),'utf8'),ctx);
+vm.runInContext(fs.readFileSync(path.join(__dirname,'../js/app.js'),'utf8').replace(/App\.start\(\);\s*$/,'globalThis.app=App;'),ctx);
+const family=window.SFFamily,app=ctx.app;
+family.app={escapeHtml:v=>String(v).replace(/</g,'&lt;').replace(/>/g,'&gt;')};
+assert.equal(family.parseLinks('夸克网盘 https://pan.quark.cn/s/test 提取码 abcd')[0].url,'https://pan.quark.cn/s/test');
+assert.equal(family.parseLinks('https://example.test/a https://example.test/a').length,1);
+assert.throws(()=>family.parseLinks('https://user:pass@example.test/a'),/无效/);
+assert.equal(family.parseLinks('说明里只有提取码，没有链接').length,0);
+
+family.uid='child-one';family.data={profile:{role:'child'},assignments:[{series_id:'test',episode_id:8,status:'assigned'}]};
+(async()=>{
+ app.markComplete('test',8,'watch');await family.flush();
+ assert.equal(family.queue('child-one').length,1,'Offline module event remains scoped to its child');
+ app.saveQuizScore('test',8,5,5,{q1:'A'});await family.flush();
+ app.saveQuizScore('test',8,1,5,{q1:'B'});await family.flush();
+ assert.equal(app.storage('quizScores')['test:8'].score,5,'Keep existing best-score behavior');
+ assert.equal(family.queue('child-one').length,3,'Record lower attempts even though the old best remains');
+ assert.equal(family.queue('child-one')[2].answers.q1,'B');
+ assert.equal(app.canAccessEpisode('test',8),true,'Allow a specifically assigned lesson');
+ window.SFCloud.user={id:'other'};
+ assert.equal(family.canAccessLesson('test',8),false,'Never reuse task access after account switch');
+ family.record('test',1,'watch');assert.equal(family.queue('other').length,0);
+ window.SFCloud.user={id:'child-one'};offline=false;await family.flush();
+ assert.equal(family.queue('child-one').length,0);assert.equal(calls.length,3);
+ assert.equal(new Set(calls.map(c=>c.p_payload.id)).size,3,'Replay stable event IDs');
+ family.reset();assert.equal(family.data,null);assert.equal(family.canAccessLesson('test',8),false);
+ console.log('PASS: offline queue, every Quiz attempt before historic-best filtering, assigned lesson access, account isolation, replay and logout cleanup');
+})().catch(e=>{console.error(e);process.exitCode=1;});

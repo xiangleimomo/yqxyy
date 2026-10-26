@@ -168,7 +168,7 @@ window.SFCloud = {
     // Close previous account/guest floating windows before switching identity.
     this.app?.windowLayer?.replaceChildren();
     // Switch scope BEFORE rendering; another account's cache is never shown.
-    this.user=user;this.active=false;this.updateHeader();
+    this.user=user;this.active=false;window.SFFamily?.identitySwitch();this.updateHeader();
     await this.verifyAdmin(user);this.updateHeader();
     if(this.user?.id!==user.id)return;
     try{
@@ -188,18 +188,20 @@ window.SFCloud = {
       }
       this.writeSnapshot(merged,user.id);
       this.active=true;
+      window.SFFamily?.accountChanged();
       this.updateHeader();
       this.app.updateUtilityNav();await this.app.render();
       if(!data || JSON.stringify(merged)!==JSON.stringify(this.merge(cloud,{}))) this.schedule();
       this.setMessage('登录成功，学习进度已加载。');
     }catch(e){
       if(this.user?.id!==user.id)return;
-      this.active=true; // scoped offline fallback (not another user's guest state)
+      this.active=true; window.SFFamily?.accountChanged(); // scoped offline fallback (not another user's guest state)
       this.setMessage('已登录，但云端读取失败。此设备记录仍可使用；网络恢复后重试同步。'+e.message,true);
       this.app.updateUtilityNav(); await this.app.render();
     }
   },
   onSignedOut(){
+    window.SFFamily?.reset();
     this.adminCheckVersion++;this.adminVerified=false;this.adminUserId=null;
     if(this.timer)clearTimeout(this.timer);
     this.app?.windowLayer?.replaceChildren();
@@ -294,6 +296,7 @@ window.SFCloud = {
   },
   async signOut(){
     if(!this.client)return;
+    await window.SFFamily?.flush();
     await this.sync();
     const {error}=await this.client.auth.signOut();
     if(error)this.setMessage('退出失败：'+error.message,true);

@@ -14,3 +14,6 @@ data/.vocabulary-translation-cache.json
 # Resumable state written by the licensed subtitle importer
 data/little-fox/import-progress.json
 data/little-fox/sync-state.json
+
+# Supabase CLI local runtime state
+supabase/.temp/
