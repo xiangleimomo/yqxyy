@@ -52,3 +52,28 @@
 .family-submission {border-left:3px solid #b7d9c9;padding:12px;background:#f7fbf9;margin:16px 0;}
 .family-panel input[type=file] {font-size:13px;}
 .family-panel [hidden] {display:none!important;}
+
+/* One inbox: request above, child reply below. Identity belongs in Account. */
+.homework-inbox .family-assignments {grid-template-columns:1fr;}
+.homework-compose>summary,.homework-history>summary {font-size:17px;font-weight:700;cursor:pointer;}
+.homework-compose-body {margin-top:20px;max-width:760px;}
+.homework-thread {padding:0;overflow:hidden;}
+.homework-subject {padding:20px 24px;background:#f7f9fc;border-bottom:1px solid #e2e9ef;}
+.homework-message {padding:20px 24px;border-bottom:1px solid #edf0f4;}
+.homework-message header {display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;flex-wrap:wrap;}
+.homework-message header small {color:#7b8995;font-size:12px;}
+.homework-text {white-space:pre-wrap;line-height:1.8;}
+.homework-thread .homework-reply {margin:0 16px 0 32px;background:#f4faf7;border-left:3px solid #accfbe;}
+.homework-feedback {background:#fffaf0;}
+.homework-compose-reply {background:#fcfdfd;}
+.homework-thread>[data-cancel] {margin:12px 24px;}
+#familyAccountSettings {width:100%;min-width:0;}
+.family-account-panel {padding-top:18px;margin-top:16px;border-top:1px solid #dce5ee;}
+.family-account-panel label {display:flex;flex-direction:column;gap:6px;margin:12px 0;}
+.family-account-panel input:not([type=radio]) {width:100%;box-sizing:border-box;border:1px solid #cddbd8;border-radius:8px;padding:10px;}
+.family-account-panel fieldset {border:1px solid #dce5ee;border-radius:10px;}
+.family-account-panel fieldset label {flex-direction:row;align-items:center;}
+.family-account-panel p {font-size:13px;line-height:1.65;}
+.family-account-panel .family-link {flex-wrap:wrap;}
+#familySettingsNotice.error {color:#a23d35;}
+@media(max-width:520px){.homework-subject,.homework-message {padding:16px;}.homework-thread .homework-reply {margin:0 8px 0 16px;}.family-account-panel .family-link {align-items:flex-start;}}

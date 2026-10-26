@@ -254,9 +254,11 @@ window.SFCloud = {
     const modal=document.getElementById('accountDialog');if(!modal)return;
     modal.hidden=false;this.mode(this.user?'account':'login');
   },
-  close(){const modal=document.getElementById('accountDialog');if(modal)modal.hidden=true;},
+  close(){const modal=document.getElementById('accountDialog');if(modal)modal.hidden=true;if(window.SFFamily)window.SFFamily.settingsVersion++;},
   mode(mode){
     this.authMode=mode;
+    if(mode==='account')window.SFFamily?.renderSettings();
+    else {if(window.SFFamily)window.SFFamily.settingsVersion++;document.getElementById('familyAccountSettings')?.replaceChildren();}
     document.getElementById('accountForm').hidden=mode==='account';
     document.getElementById('accountActions').hidden=mode!=='account';
     document.getElementById('authPasswordRow').hidden=mode==='reset';

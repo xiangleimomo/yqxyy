@@ -1,19 +1,20 @@
 # Family learning — 2026-10-26
 
-Entry points: `/#/parent`, `/#/child` (and `/#/family`). One website, separate
+Entry point: `/#/homework` (打卡作业). Legacy `/#/parent`, `/#/child` and
+`/#/family` links open the same inbox. One website, separate
 Supabase Auth users. This release is deployed to the existing Story Fox project;
 it does not replace or widen policies on `public.user_learning_state`.
 
 ## First use
 
-1. The parent registers/signs in with their own account, opens Parent, chooses
-   the parent role and a nickname. Role is fixed after setup; use a separate
+1. The parent registers/signs in with their own account, opens My Account → Identity and family binding,
+   chooses the parent role and a nickname. Role is fixed after setup; use a separate
    account for each child.
 2. Generate a single-use binding code (15 minutes). The child signs in with a
-   different account, opens Child, chooses the child role, and pastes the code.
-3. The parent confirms the pending request. Either side can unlink later;
+   different account, opens My Account, chooses the child role, and pastes the code.
+3. The parent uses Refresh binding in account settings and confirms the pending request. Either side can unlink later;
    unlinking immediately revokes record/task access at the database layer.
-4. Default: select a child, enter a free-text title and instructions, optionally
+4. Open 打卡作业 → 布置新作业. Default: select a child, enter a free-text title and instructions, optionally
    attach files or paste website/cloud-drive share text (including extraction
    codes), and set a deadline. No course selection or Quiz is required.
    Optional: choose course mode to assign one episode and its available modules.
@@ -24,6 +25,11 @@ it does not replace or widen policies on `public.user_learning_state`.
 6. Parent approves or requests revision with feedback. Free-text work is completed
    by child check-in and parent confirmation; no automatic course criteria apply.
    Course-mode revisions require new module marks and a new passing Quiz attempt.
+
+Each assignment is a single conversation: parent instructions and resources above,
+child submission below, followed by parent feedback or revision. Identity and
+binding controls are only in account settings; the main navigation has one
+homework entry. Course history remains available in a collapsed section.
 
 Deadlines and displayed times use Asia/Shanghai. Lists refresh after actions,
 when returning to the page and about every 45 seconds; unsaved forms/notes are
@@ -94,9 +100,13 @@ this feature. Reference: https://supabase.com/docs/guides/auth/password-security
   credential file; never use a real family's account. Optional screenshots via
   FAMILY_SCREENSHOT_DIR. Delete test sessions/users and the temporary credential
   file afterwards. This was done for the release verification.
+- `tests/homework-thread.browser.cjs`: deterministic full-site UI test with mocked
+  family responses; one navigation entry, account-only identity/binding, parent
+  request → child reply → feedback, new-account setup and desktop/mobile layout.
+- `tests/family-ui.browser.cjs`: guest navigation and legacy bookmarks.
 - Existing admin-access, game-access and movie-playback regression suites passed.
 
-Rollback UI: remove the two navigation entries and family script/hooks. Keep the
+Rollback UI: remove the homework navigation entry and family script/hooks. Keep the
 new private data while investigating; do not drop original learning-state data.
 
 

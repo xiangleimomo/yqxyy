@@ -85,7 +85,7 @@ const App = {
     this.disposeHlsPlayers(this.el());
     const isMoviePage = ['movies','movie','movie-series'].includes(page) || (['series','lesson'].includes(page) && String(a||'').startsWith('movie-'));
     document.querySelectorAll('.main-tab').forEach(tab=>{
-      const active = tab.getAttribute('href') === (['family','parent','child'].includes(page) ? '#/'+page : isMoviePage ? '#/movies' : '#/home');
+      const active = tab.getAttribute('href') === (['homework','family','parent','child'].includes(page) ? '#/homework' : isMoviePage ? '#/movies' : '#/home');
       tab.classList.toggle('active', active);
       if(active) tab.setAttribute('aria-current','page'); else tab.removeAttribute('aria-current');
     });
@@ -98,7 +98,7 @@ const App = {
     document.body.classList.remove('movie-study-page');
     document.documentElement.classList.remove('movie-study-page');
     try{
-      if(['family','parent','child'].includes(page)) return await window.SFFamily.render(this);
+      if(['homework','family','parent','child'].includes(page)) return await window.SFFamily.render(this);
       if(page === 'movies') return await window.MovieClassroom.renderList(this, decodeURIComponent(a || ''));
       if(page === 'movie-series') return await window.MovieClassroom.renderSeries(this, a);
       if(page === 'movie') return await window.MovieClassroom.renderWatch(this, a);

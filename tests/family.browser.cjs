@@ -16,7 +16,7 @@ const appSource=fs.readFileSync(path.join(root,'js/app.js'),'utf8').replace(/App
   p.on('pageerror',e=>errors.push(e.message));
   await p.route('https://yqxyy.netlify.app/**',async route=>{
    const u=new URL(route.request().url());
-   if(u.pathname==='/')return route.fulfill({contentType:'text/html',body:'<html><head><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><input id="globalSearch" hidden><main id="app" style="padding:16px"></main></body></html>'});
+   if(u.pathname==='/')return route.fulfill({contentType:'text/html',body:'<html><head><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><input id="globalSearch" hidden><main id="app" style="padding:16px"></main><div id="accountDialog" hidden><div id="familyAccountSettings"></div><button id="testCloseSettings">关闭账户设置</button></div></body></html>'});
    const local=path.resolve(root,'.'+decodeURIComponent(u.pathname));
    if(!local.startsWith(root+path.sep)||!fs.existsSync(local))return route.fulfill({status:404,body:''});
    return route.fulfill({path:local,contentType:local.endsWith('.json')?'application/json':'text/plain'});
@@ -35,16 +35,21 @@ const appSource=fs.readFileSync(path.join(root,'js/app.js'),'utf8').replace(/App
     })},
     functions:{invoke:async(name,{body})=>{const r=await fetch(credentials.config.url+'/functions/v1/'+name,{method:'POST',headers:{apikey:credentials.config.publishableKey,Authorization:'Bearer '+token,'Content-Type':'application/json'},body:JSON.stringify(body)});const d=await r.json();return r.ok?{data:d,error:null}:{data:d,error:d};}}
    }};
+   SFCloud.open=()=>{document.getElementById('accountDialog').hidden=false;return SFFamily.renderSettings();};
+   document.getElementById('testCloseSettings').onclick=()=>{document.getElementById('accountDialog').hidden=true;SFFamily.settingsVersion++;};
    SFFamily.init(App);return SFFamily.render(App);
   },{credentials,role});
   return p;
  }
+ async function settings(p){await p.evaluate(()=>SFCloud.open());await p.locator('#familyProfile').waitFor();}
+ async function closeSettings(p){await p.locator('#testCloseSettings').click();}
  async function onboard(p,role,name){
+  await settings(p);
   if(await p.locator('#familyProfile').count()){
    await p.locator('#familyProfile [name=name]').fill(name);
-   await p.locator(`#familyProfile [value=${role}]`).check();await p.getByRole('button',{name:'开始使用'}).click();
+   await p.locator(`#familyProfile [value=${role}]`).check();await p.getByRole('button',{name:'保存身份'}).click();
   }
-  await p.locator('#familyRefresh').waitFor();
+  await p.locator('#familyRefresh').waitFor();await closeSettings(p);
  }
  async function refresh(p){await p.getByRole('button',{name:'刷新 / Refresh'}).click();await p.locator('#familyAssignments').waitFor();}
  async function complete(p,correct){
@@ -59,11 +64,11 @@ const appSource=fs.readFileSync(path.join(root,'js/app.js'),'utf8').replace(/App
  try{
   parent=await page('parent');child=await page('child');
   await onboard(parent,'parent','测试家长');await onboard(child,'child','测试孩子');console.log('Verified real Auth and role onboarding');
-  await parent.getByRole('button',{name:'生成 15 分钟绑定码'}).click();
+  await settings(parent);await parent.getByRole('button',{name:'生成 15 分钟绑定码'}).click();
   await parent.locator('#familyCode input').waitFor();const code=await parent.locator('#familyCode input').inputValue();
-  await child.locator('#familyClaim [name=code]').fill(code);await child.getByRole('button',{name:'申请绑定'}).click();
-  await child.getByText('申请已发送，等待家长确认。').waitFor();
-  await refresh(parent);await parent.getByRole('button',{name:'确认绑定',exact:true}).click();
+  await settings(child);await child.locator('#familyClaim [name=code]').fill(code);await child.getByRole('button',{name:'申请绑定'}).click();
+  await child.getByText('等待家长确认',{exact:true}).waitFor();await closeSettings(child);
+  await settings(parent);await parent.getByRole('button',{name:'确认绑定',exact:true}).click();await parent.getByText('已绑定',{exact:true}).waitFor();await closeSettings(parent);
   let form=parent.locator('#familyAssignmentForm');await form.waitFor();console.log('Verified two-sided family binding');
   assert.equal(await form.locator('[name=kind]').inputValue(),'general');
   await form.locator('[name=title]').fill('完成数学同步练习第 2 页');
@@ -84,7 +89,7 @@ const appSource=fs.readFileSync(path.join(root,'js/app.js'),'utf8').replace(/App
   assert(await parent.evaluate(async path=>{const r=await SFCloud.client.storage.from('family-homework').createSignedUrl(path,60);return !r.error&&!!r.data?.signedUrl;},childFile),'Parent can read the submitted photo');
   await parent.locator('[data-review=approved]').click();await parent.locator('.family-status.approved').waitFor();
   console.log('Verified free-text homework, share link/extraction code, private parent attachment, child photo submission and parent approval without course requirements');
-  form=parent.locator('#familyAssignmentForm');await form.locator('[name=kind]').selectOption('course');
+  await parent.locator('.homework-compose>summary').click();form=parent.locator('#familyAssignmentForm');await form.locator('[name=kind]').selectOption('course');
   await parent.waitForFunction(()=>document.querySelector('[name=series_id]').options.length>1);
 
   await form.locator('[name=series_id]').selectOption('journey-to-the-west');
@@ -107,7 +112,7 @@ const appSource=fs.readFileSync(path.join(root,'js/app.js'),'utf8').replace(/App
   await complete(child,true);await refresh(child);await child.locator('[data-submit]').click();await child.getByText('打卡已提交，等待家长确认。').waitFor();
   await refresh(parent);await parent.locator('[data-review=approved]').click();
   await parent.locator('.family-assignment').filter({hasText:'西游记第一集 · 今日任务'}).locator('.family-status.approved').waitFor();
-  await parent.locator('#familyRecordsChild').selectOption(credentials.childId);
+  await parent.locator('.homework-history>summary').click();await parent.locator('#familyRecordsChild').selectOption(credentials.childId);
   await parent.getByText('近期学习操作',{exact:true}).waitFor();
   assert((await parent.locator('#familyRecords').innerText()).includes('5/5'));
   assert((await parent.locator('#familyRecords').innerText()).includes('0/5'));
