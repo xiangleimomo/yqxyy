@@ -89,6 +89,9 @@ const App = {
       tab.classList.toggle('active', active);
       if(active) tab.setAttribute('aria-current','page'); else tab.removeAttribute('aria-current');
     });
+    const homeworkNav=document.getElementById('navHomework');
+    if(['homework','family','parent','child'].includes(page)) homeworkNav?.setAttribute('aria-current','page');
+    else homeworkNav?.removeAttribute('aria-current');
     document.getElementById('globalSearch').placeholder = isMoviePage ? '搜索电影中英文名称' : '搜索故事、单词或集数';
     this.updateUtilityNav();
     this.el().classList.remove('series-page-shell');

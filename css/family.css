@@ -77,3 +77,5 @@
 .family-account-panel .family-link {flex-wrap:wrap;}
 #familySettingsNotice.error {color:#a23d35;}
 @media(max-width:520px){.homework-subject,.homework-message {padding:16px;}.homework-thread .homework-reply {margin:0 8px 0 16px;}.family-account-panel .family-link {align-items:flex-start;}}
+
+.utility-nav #navHomework[aria-current="page"] {color:var(--blue-dark);font-weight:700;}
