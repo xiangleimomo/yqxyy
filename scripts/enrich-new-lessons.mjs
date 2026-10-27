@@ -15,7 +15,7 @@ const root = path.resolve('data', directory);
 const ids = new Set(requestedIds.map(Number));
 const stopWords = new Set('about after again also and are been but can come could did does from have into just like more not now out over said some that the their then there they this was were what when which will with would your you for our all one two who its her his she him them has had were are is a an of to in on at by as it or if than'.split(' '));
 
-const decode = value => String(value || '').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/gi, ' ').replace(/&amp;/gi, '&').replace(/&quot;/gi, '"').replace(/&#39;|&apos;/gi, "'").replace(/\s+/g, ' ').trim();
+const decode = value => String(value || '').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/gi, ' ').replace(/&amp;/gi, '&').replace(/&quot;/gi, '"').replace(/&#39;|&apos;/gi, "'").replace(/\s+/g, ' ').replace(/\s+([,!?;:])/g, '$1').trim();
 const sentences = text => text.match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.map(item => item.trim()).filter(Boolean) || [];
 const WORD_TARGET = 28;
 const wordsFor = text => {

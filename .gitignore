@@ -17,3 +17,6 @@ data/little-fox/sync-state.json
 
 # Supabase CLI local runtime state
 supabase/.temp/
+
+# Temporary authenticated subtitle audit export (sanitized before publication)
+subtitle-review/
