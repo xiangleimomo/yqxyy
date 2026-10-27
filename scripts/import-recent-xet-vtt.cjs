@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* Scoped subtitle audit. Credentials stay in environment; exports contain no
- * cookies, passwords or video URLs. Raw XET timing is never spread over Read.
+ * cookies or passwords. Any video candidate is a public fixed-CDN URL. Raw XET timing is never spread over Read.
  * Run: node scripts/import-recent-xet-vtt.cjs [--output-dir=subtitle-review]
  */
 const fs=require('node:fs/promises'),path=require('node:path'),crypto=require('node:crypto');
@@ -69,6 +69,7 @@ async function main(){
   const localRead=reading?.paragraphs?.map(p=>p.text||p).join(' ')||'',sourceText=cues.map(c=>c.text).join(' '),officialText=publicParagraphs.join(' ');
   const row={...item,sourceContentId:ep.sourceContentId,title:ep.title,cueCount:cues.length,firstMs:cues[0].startMs,lastMs:cues.at(-1).endMs,videoDurationMs,sameVideoPath,timelineMatchesRemote,maxBoundaryDriftMs:maxBoundaryDriftMs===null?null:Math.round(maxBoundaryDriftMs*1000)/1000,remoteVideoDurationMs:remoteInfo.durationMs,remoteSegmentCount:remoteInfo.segmentCount,segmentCount:videoInfo.segmentCount,timelineHash:videoInfo.timelineHash,readMatchesOfficial:norm(localRead)===norm(officialText),subtitleMatchesRead:norm(sourceText)===norm(localRead),subtitleMatchesOfficial:norm(sourceText)===norm(officialText),overlaps:cues.flatMap((c,i)=>i&&c.startMs<cues[i-1].endMs?[i+1]:[]),fastCues:cues.flatMap((c,i)=>c.text.length/((c.endMs-c.startMs)/1000)>35?[i+1]:[]),localRead,officialParagraphs:publicParagraphs};
   if(option.includes('--apply')&&(!row.readMatchesOfficial||!row.subtitleMatchesOfficial))throw Error('Read/subtitle wording mismatch requires review: '+ep.sourceContentId);
+  if(!timelineMatchesRemote){const candidate=new URL(remoteUrl);candidate.search='';row.reviewVideoCandidate=candidate.href;}
   report.lessons.push(row);
   const target=path.join(out,'data',item.seriesId,'subtitles');await fs.mkdir(target,{recursive:true});await fs.writeFile(path.join(target,String(item.episodeId).padStart(3,'0')+'.vtt'),vtt(cues));
   console.log(JSON.stringify({...item,videoDurationMs,remoteVideoDurationMs:remoteInfo.durationMs,timelineMatchesRemote,cueCount:cues.length,sameVideoPath,readMatchesOfficial:row.readMatchesOfficial,subtitleMatchesOfficial:row.subtitleMatchesOfficial}));
