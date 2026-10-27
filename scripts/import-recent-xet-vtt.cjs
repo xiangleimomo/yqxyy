@@ -38,8 +38,7 @@ async function official(contentId){
 async function main(){
  if(!process.env.XET_ACCOUNT||!process.env.XET_PASSWORD)throw Error('XET environment credentials required');
  const landingResponse=await request('/login_check.php',{method:'POST',headers:{'content-type':'application/x-www-form-urlencoded'},body:new URLSearchParams({account:process.env.XET_ACCOUNT,password:process.env.XET_PASSWORD}).toString()});
- const landing=await landingResponse.text();console.log('Authenticated catalogue links: '+[...landing.matchAll(/href=["']([^"']+)/g)].map(x=>x[1]).filter(x=>/^[a-z_0-9]+\.php(?:\?[^<>]*)?$/i.test(x)).slice(0,30).join(', '));
- const catalog=await(await request('/huiben.php')).text();if(catalog.includes('<title>登录'))throw Error('XET login failed');
+ const catalog=await(await request('/fox05.php')).text();if(catalog.includes('<title>登录'))throw Error('XET login failed');
  const cards=[...catalog.matchAll(/location\.href='xhl_play\.php\?fs_id=([A-Z0-9]+)'[\s\S]*?<div class="card-title">([\s\S]*?)<\/div>/g)];
  const three=cards.find(x=>clean(x[2])==='Romance of the Three Kingdoms')?.[1];if(!three)throw Error('Three Kingdoms series ID not found; catalogue title: '+(catalog.match(/<title>(.*?)<\/title>/s)?.[1]||'')+'; links: '+[...catalog.matchAll(/href=["']([^"']+)/g)].map(x=>x[1]).filter(x=>/^[a-z_0-9]+\.php/i.test(x)).slice(0,20).join(', '));
  const bank=JSON.parse(await fs.readFile(path.join(root,'scripts/quiz-revisions/2026-10-23.json'),'utf8'));
