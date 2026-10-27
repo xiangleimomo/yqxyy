@@ -3,11 +3,11 @@
  * cookies, passwords or video URLs. Raw XET timing is never spread over Read.
  * Run: node scripts/import-recent-xet-vtt.cjs [--output-dir=subtitle-review]
  */
-const fs=require('node:fs/promises'),path=require('node:path');
+const fs=require('node:fs/promises'),path=require('node:path'),crypto=require('node:crypto');
 const root=path.resolve(__dirname,'..'),base='http://xet.bolinzhiyin.cn';
 const option=process.argv.slice(2);if(option.some(a=>!a.startsWith('--output-dir=')))throw Error('Unknown option');
 const out=path.resolve(option.find(a=>a.startsWith('--output-dir='))?.slice(13)||'subtitle-review');
-const clean=s=>String(s||'').replace(/\[n@/g,' ').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
+const clean=s=>String(s||'').replace(/\[n@/g,' ').replace(/\[(?:i|b|u)@|@(?:i|b|u)\]/gi,'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
 const norm=s=>clean(s).toLowerCase().replace(/[‘’]/g,"'").replace(/[^\p{L}\p{N}]+/gu,'');
 const stamp=n=>{const h=Math.floor(n/3600000),m=Math.floor(n%3600000/60000),s=Math.floor(n%60000/1000);return [h,m,s].map(x=>String(x).padStart(2,'0')).join(':')+'.'+String(n%1000).padStart(3,'0');};
 function vtt(cues){return 'WEBVTT\n\n'+cues.map((c,i)=>`${i+1}\n${stamp(c.startMs)} --> ${stamp(c.endMs)}\n${c.text}\n`).join('\n');}
@@ -25,7 +25,7 @@ async function duration(url){
   const u=new URL(url);if(u.hostname!=='cdn.littlefox.co.kr'||u.protocol!=='https:')throw Error('Unexpected video playlist host');
   const r=await fetch(u,{signal:AbortSignal.timeout(30000)});if(!r.ok)throw Error('Video playlist HTTP '+r.status);
   const text=await r.text();if(!text.startsWith('#EXTM3U'))throw Error('Video response is not HLS');
-  const parts=[...text.matchAll(/#EXTINF:([\d.]+)/g)].map(x=>Number(x[1]));if(parts.length)return Math.round(parts.reduce((a,b)=>a+b,0)*1000);
+  const parts=[...text.matchAll(/#EXTINF:([\d.]+)/g)].map(x=>Number(x[1]));if(parts.length)return {durationMs:Math.round(parts.reduce((a,b)=>a+b,0)*1000),segmentCount:parts.length,timelineHash:crypto.createHash('sha256').update(JSON.stringify(parts)).digest('hex')};
   const child=text.split(/\r?\n/).find(x=>x.trim()&&!x.startsWith('#'));if(!child)throw Error('Empty HLS');url=new URL(child.trim(),u).href;
  }throw Error('Nested HLS limit');
 }
@@ -56,11 +56,14 @@ async function main(){
   for(let i=0;i<cues.length;i++){const c=cues[i];if(!Number.isInteger(c.startMs)||!Number.isInteger(c.endMs)||c.startMs<0||c.endMs<=c.startMs||!c.text||i&&c.startMs<cues[i-1].startMs)throw Error('Invalid cue '+i+' for '+ep.sourceContentId);}
   const published=ep.video.hlsUrl,remoteUrl=detail.video_url||remote.video_url||remote.url;
   const sameVideoPath=!!remoteUrl&&new URL(published).pathname===new URL(remoteUrl).pathname;
-  const [videoDurationMs,publicParagraphs]=await Promise.all([duration(published),official(ep.sourceContentId)]);
+  const [videoInfo,publicParagraphs]=await Promise.all([duration(published),official(ep.sourceContentId)]);
+  const videoDurationMs=videoInfo.durationMs,remoteInfo=sameVideoPath?videoInfo:await duration(remoteUrl);
+  const timelineMatchesRemote=videoInfo.timelineHash===remoteInfo.timelineHash;
+  if(!timelineMatchesRemote)throw Error('Published/XET video timeline mismatch for '+ep.sourceContentId);
   if(cues.at(-1).endMs>videoDurationMs+250)throw Error('Subtitle exceeds published video for '+ep.sourceContentId);
   const reading=JSON.parse(await fs.readFile(path.join(dir,'reading-lessons.json'),'utf8'))[String(item.episodeId)];
   const localRead=reading?.paragraphs?.map(p=>p.text||p).join(' ')||'',sourceText=cues.map(c=>c.text).join(' '),officialText=publicParagraphs.join(' ');
-  const row={...item,sourceContentId:ep.sourceContentId,title:ep.title,cueCount:cues.length,firstMs:cues[0].startMs,lastMs:cues.at(-1).endMs,videoDurationMs,sameVideoPath,readMatchesOfficial:norm(localRead)===norm(officialText),subtitleMatchesRead:norm(sourceText)===norm(localRead),subtitleMatchesOfficial:norm(sourceText)===norm(officialText),overlaps:cues.flatMap((c,i)=>i&&c.startMs<cues[i-1].endMs?[i+1]:[]),fastCues:cues.flatMap((c,i)=>c.text.length/((c.endMs-c.startMs)/1000)>35?[i+1]:[]),localRead,officialParagraphs:publicParagraphs};
+  const row={...item,sourceContentId:ep.sourceContentId,title:ep.title,cueCount:cues.length,firstMs:cues[0].startMs,lastMs:cues.at(-1).endMs,videoDurationMs,sameVideoPath,timelineMatchesRemote,segmentCount:videoInfo.segmentCount,timelineHash:videoInfo.timelineHash,readMatchesOfficial:norm(localRead)===norm(officialText),subtitleMatchesRead:norm(sourceText)===norm(localRead),subtitleMatchesOfficial:norm(sourceText)===norm(officialText),overlaps:cues.flatMap((c,i)=>i&&c.startMs<cues[i-1].endMs?[i+1]:[]),fastCues:cues.flatMap((c,i)=>c.text.length/((c.endMs-c.startMs)/1000)>35?[i+1]:[]),localRead,officialParagraphs:publicParagraphs};
   report.lessons.push(row);
   const target=path.join(out,'data',item.seriesId,'subtitles');await fs.mkdir(target,{recursive:true});await fs.writeFile(path.join(target,String(item.episodeId).padStart(3,'0')+'.vtt'),vtt(cues));
   console.log(JSON.stringify({...item,cueCount:cues.length,sameVideoPath,readMatchesOfficial:row.readMatchesOfficial,subtitleMatchesOfficial:row.subtitleMatchesOfficial}));
