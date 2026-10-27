@@ -25,7 +25,7 @@ async function duration(url){
   const u=new URL(url);if(u.hostname!=='cdn.littlefox.co.kr'||u.protocol!=='https:')throw Error('Unexpected video playlist host');
   const r=await fetch(u,{signal:AbortSignal.timeout(30000)});if(!r.ok)throw Error('Video playlist HTTP '+r.status);
   const text=await r.text();if(!text.startsWith('#EXTM3U'))throw Error('Video response is not HLS');
-  const parts=[...text.matchAll(/#EXTINF:([\d.]+)/g)].map(x=>Number(x[1]));if(parts.length)return {durationMs:Math.round(parts.reduce((a,b)=>a+b,0)*1000),segmentCount:parts.length,timelineHash:crypto.createHash('sha256').update(JSON.stringify(parts)).digest('hex')};
+  const parts=[...text.matchAll(/#EXTINF:([\d.]+)/g)].map(x=>Number(x[1]));if(parts.length)return {durationMs:Math.round(parts.reduce((a,b)=>a+b,0)*1000),segmentCount:parts.length,segmentsMs:parts.map(x=>x*1000),timelineHash:crypto.createHash('sha256').update(JSON.stringify(parts)).digest('hex')};
   const child=text.split(/\r?\n/).find(x=>x.trim()&&!x.startsWith('#'));if(!child)throw Error('Empty HLS');url=new URL(child.trim(),u).href;
  }throw Error('Nested HLS limit');
 }
@@ -59,12 +59,15 @@ async function main(){
   const sameVideoPath=!!remoteUrl&&new URL(published).pathname===new URL(remoteUrl).pathname;
   const [videoInfo,publicParagraphs]=await Promise.all([duration(published),official(ep.sourceContentId)]);
   const videoDurationMs=videoInfo.durationMs,remoteInfo=sameVideoPath?videoInfo:await duration(remoteUrl);
-  const timelineMatchesRemote=videoInfo.timelineHash===remoteInfo.timelineHash;
+  let publishedBoundary=0,remoteBoundary=0,maxBoundaryDriftMs=0;
+  if(videoInfo.segmentCount===remoteInfo.segmentCount)for(let n=0;n<videoInfo.segmentCount;n++){publishedBoundary+=videoInfo.segmentsMs[n];remoteBoundary+=remoteInfo.segmentsMs[n];maxBoundaryDriftMs=Math.max(maxBoundaryDriftMs,Math.abs(publishedBoundary-remoteBoundary));}
+  else maxBoundaryDriftMs=null;
+  const timelineMatchesRemote=videoInfo.timelineHash===remoteInfo.timelineHash||(maxBoundaryDriftMs!==null&&maxBoundaryDriftMs<=42);
   if(!timelineMatchesRemote&&option.includes('--apply'))throw Error('Published/XET video timeline mismatch requires review: '+ep.sourceContentId);
   if(cues.at(-1).endMs>videoDurationMs+250)throw Error('Subtitle exceeds published video for '+ep.sourceContentId);
   const reading=JSON.parse(await fs.readFile(path.join(dir,'reading-lessons.json'),'utf8'))[String(item.episodeId)];
   const localRead=reading?.paragraphs?.map(p=>p.text||p).join(' ')||'',sourceText=cues.map(c=>c.text).join(' '),officialText=publicParagraphs.join(' ');
-  const row={...item,sourceContentId:ep.sourceContentId,title:ep.title,cueCount:cues.length,firstMs:cues[0].startMs,lastMs:cues.at(-1).endMs,videoDurationMs,sameVideoPath,timelineMatchesRemote,remoteVideoDurationMs:remoteInfo.durationMs,remoteSegmentCount:remoteInfo.segmentCount,segmentCount:videoInfo.segmentCount,timelineHash:videoInfo.timelineHash,readMatchesOfficial:norm(localRead)===norm(officialText),subtitleMatchesRead:norm(sourceText)===norm(localRead),subtitleMatchesOfficial:norm(sourceText)===norm(officialText),overlaps:cues.flatMap((c,i)=>i&&c.startMs<cues[i-1].endMs?[i+1]:[]),fastCues:cues.flatMap((c,i)=>c.text.length/((c.endMs-c.startMs)/1000)>35?[i+1]:[]),localRead,officialParagraphs:publicParagraphs};
+  const row={...item,sourceContentId:ep.sourceContentId,title:ep.title,cueCount:cues.length,firstMs:cues[0].startMs,lastMs:cues.at(-1).endMs,videoDurationMs,sameVideoPath,timelineMatchesRemote,maxBoundaryDriftMs:maxBoundaryDriftMs===null?null:Math.round(maxBoundaryDriftMs*1000)/1000,remoteVideoDurationMs:remoteInfo.durationMs,remoteSegmentCount:remoteInfo.segmentCount,segmentCount:videoInfo.segmentCount,timelineHash:videoInfo.timelineHash,readMatchesOfficial:norm(localRead)===norm(officialText),subtitleMatchesRead:norm(sourceText)===norm(localRead),subtitleMatchesOfficial:norm(sourceText)===norm(officialText),overlaps:cues.flatMap((c,i)=>i&&c.startMs<cues[i-1].endMs?[i+1]:[]),fastCues:cues.flatMap((c,i)=>c.text.length/((c.endMs-c.startMs)/1000)>35?[i+1]:[]),localRead,officialParagraphs:publicParagraphs};
   if(option.includes('--apply')&&(!row.readMatchesOfficial||!row.subtitleMatchesOfficial))throw Error('Read/subtitle wording mismatch requires review: '+ep.sourceContentId);
   report.lessons.push(row);
   const target=path.join(out,'data',item.seriesId,'subtitles');await fs.mkdir(target,{recursive:true});await fs.writeFile(path.join(target,String(item.episodeId).padStart(3,'0')+'.vtt'),vtt(cues));
