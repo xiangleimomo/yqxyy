@@ -1,18 +1,32 @@
 /* Family dashboards share course pages, but never share another account's cache. */
 window.SFFamily = {
- app:null, data:null, uid:null, generation:0, settingsVersion:0, timer:null, flushing:null, lastError:'',
+ app:null, data:null, uid:null, generation:0, settingsVersion:0, reminderVersion:0, timer:null, flushing:null, lastError:'',
  labels:{watch:'Watch · 观看',read:'Listen and Read · 阅读',words:'Words · 单词',quiz:'Quiz · 测验'},
  statuses:{assigned:'待开始',submitted:'已提交，待家长确认',approved:'已完成',revision:'需要补做',cancelled:'已取消'},
  init(app){
   this.app=app;
-  window.addEventListener('focus',()=>this.refreshIfVisible());
-  window.addEventListener('online',()=>{this.flush();this.refreshIfVisible();});
-  document.addEventListener('visibilitychange',()=>{if(!document.hidden)this.refreshIfVisible();});
+  window.addEventListener('focus',()=>this.refreshCurrent());
+  window.addEventListener('online',()=>{this.flush();this.refreshCurrent();});
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)this.refreshCurrent();});
  },
- reset(){this.generation++;this.settingsVersion++;document.getElementById('familyAccountSettings')?.replaceChildren();this.data=null;this.uid=null;this.lastError='';clearTimeout(this.timer);},
+ reset(){this.reminderVersion++;this.clearReminder();this.generation++;this.settingsVersion++;document.getElementById('familyAccountSettings')?.replaceChildren();this.data=null;this.uid=null;this.lastError='';clearTimeout(this.timer);},
  identitySwitch(){this.reset();if(this.isPage())this.app.el().innerHTML='<section class="family-shell"><p role="status">正在切换账号，读取对应家庭数据…</p></section>';},
  stop(){this.generation++;clearTimeout(this.timer);},
- accountChanged(){this.reset();const uid=this.uid=window.SFCloud?.user?.id;if(uid)this.rpc('dashboard').then(data=>{if(window.SFCloud?.user?.id===uid){this.data=data;this.flush();}}).catch(()=>{});},
+ accountChanged(){this.reset();this.refreshReminder().then(()=>this.flush());},
+ clearReminder(){const box=document.getElementById('homeworkReminder'),badge=document.getElementById('homeworkBadge');if(box){box.hidden=true;box.replaceChildren();}if(badge){badge.hidden=true;badge.textContent='';}},
+ pendingHomework(){const uid=window.SFCloud?.user?.id;return uid&&this.uid===uid&&this.data?.profile?.role==='child'?(this.data.assignments||[]).filter(a=>a.child_id===uid&&['assigned','revision'].includes(a.status)):[];},
+ updateReminder(){
+  const box=document.getElementById('homeworkReminder'),badge=document.getElementById('homeworkBadge'),tasks=this.pendingHomework();
+  if(!tasks.length){this.clearReminder();return;}
+  if(badge){badge.textContent=String(tasks.length);badge.hidden=false;}
+  if(!box)return;const e=v=>this.escape(v);
+  box.innerHTML=`<div><strong>📬 你有 ${tasks.length} 项作业需要完成</strong><ul>${tasks.slice(0,3).map(a=>`<li>${e(a.title)}${a.status==='revision'?' · 需要补做':''}${a.due_on?'（截止 '+e(a.due_on)+'）':''}</li>`).join('')}</ul>${tasks.length>3?'<small>还有 '+(tasks.length-3)+' 项待完成作业</small>':''}</div><a class="btn" href="#/homework">查看作业 →</a>`;box.hidden=false;
+ },
+ async refreshReminder(){
+  const uid=window.SFCloud?.user?.id,run=++this.reminderVersion;if(!uid){this.clearReminder();return;}
+  try{const data=await this.rpc('dashboard');if(run!==this.reminderVersion||window.SFCloud?.user?.id!==uid)return;this.data=data;this.uid=uid;this.updateReminder();}catch{/* A failed request must never show another account's cached homework. */}
+ },
+ refreshCurrent(){if(this.isPage())this.refreshIfVisible();else this.refreshReminder();},
  isPage(){return ['homework','family','parent','child'].includes(this.app?.route()[0]);},
  refreshIfVisible(){if(!this.isPage()||document.hidden)return;if(this.app.el().querySelector('form:focus-within,textarea:focus,[data-dirty]')){clearTimeout(this.timer);this.timer=setTimeout(()=>this.refreshIfVisible(),45000);return;}this.render(this.app);},
  escape(value){return this.app.escapeHtml(String(value??''));},
@@ -81,7 +95,7 @@ window.SFFamily = {
   try{
    const data=await this.rpc('dashboard');if(run!==this.generation||window.SFCloud?.user?.id!==uid)return;
    data.assignments.forEach(a=>a.modules.sort((x,y)=>Object.keys(this.labels).indexOf(x)-Object.keys(this.labels).indexOf(y)));
-   this.data=data;this.uid=uid;
+   this.data=data;this.uid=uid;this.reminderVersion++;this.updateReminder();
    const parent=data.profile?.role==='parent',active=data.links.filter(l=>l.status==='active');
    root.innerHTML=`<section class="family-shell homework-inbox"><div class="family-hero"><div><span>HOMEWORK</span><h1>打卡作业</h1><p>${data.profile?e(data.profile.name)+' · ':''}每条作业里，上面是家长布置的内容，下面是孩子的完成情况和反馈。</p></div><div class="family-actions"><button class="btn secondary" id="familyRefresh">刷新 / Refresh</button><button class="btn secondary" data-family-settings>账号与绑定设置</button></div></div><div id="familyNotice" role="status" aria-live="polite"></div>${!data.profile?'<section class="family-panel"><h2>先在账户中设置身份</h2><p>一个账号对应一个身份。请在“我的账户”中选择家长或孩子，并完成亲子绑定。</p><button class="btn" data-family-settings>打开账号设置</button></section>':`${!active.length?'<section class="family-panel"><p>还没有已确认的亲子绑定，请在账户设置里完成绑定后使用作业功能。</p><button class="btn" data-family-settings>去绑定账号</button></section>':''}${parent&&active.length?`<details class="family-panel homework-compose" ${!data.assignments.length?'open':''}><summary>✉ 布置新作业</summary><div class="homework-compose-body">${this.assignmentForm(active)}</div></details>`:''}<section class="family-panel"><div class="family-section-head"><h2>作业往来</h2><div class="family-filters">${parent?`<select id="familyChildFilter" aria-label="按孩子筛选"><option value="all">全部孩子</option>${active.map(l=>`<option value="${e(l.child_id)}">${e(l.name)}</option>`).join('')}</select>`:''}<select id="familyStatusFilter" aria-label="按作业状态筛选"><option value="all">全部状态</option><option value="todo">待完成</option><option value="submitted">待确认</option><option value="approved">已完成</option><option value="cancelled">已取消</option></select></div></div><div id="familyAssignments" class="family-assignments"></div></section>${parent&&active.length?`<details class="family-panel homework-history"><summary>查看孩子的课程学习记录</summary><div class="family-section-head"><p>选择孩子查看学习操作与历史完成情况。</p><select id="familyRecordsChild" aria-label="选择孩子查看学习记录"><option value="">选择孩子</option>${active.map(l=>`<option value="${e(l.child_id)}">${e(l.name)}</option>`).join('')}</select></div><div id="familyRecords"></div></details>`:''}`}</section>`;
    root.querySelector('#familyRefresh').onclick=ev=>this.action(ev.currentTarget,async()=>{await this.flush();await this.render(app);});
@@ -102,7 +116,7 @@ window.SFFamily = {
   const e=v=>this.escape(v);root.innerHTML='<p role="status">正在读取账号身份与绑定…</p>';
   try{
    const data=await this.rpc('dashboard');if(run!==this.settingsVersion||window.SFCloud?.user?.id!==uid)return;
-   this.data=data;this.uid=uid;
+   this.data=data;this.uid=uid;this.reminderVersion++;this.updateReminder();
    const profile=data.profile,parent=profile?.role==='parent';
    root.innerHTML=`<section class="family-account-panel"><h3>身份与亲子绑定</h3><p id="familySettingsNotice" role="status" aria-live="polite"></p><form id="familyProfile"><label>昵称<input name="name" maxlength="40" required value="${e(profile?.name||'')}" placeholder="例如：小雨 / 小雨妈妈"></label>${profile?`<p>当前身份：<strong>${parent?'家长':'孩子'}</strong>。一个账号对应一个身份。</p>`:'<fieldset><legend>这个账号属于谁？</legend><label><input type="radio" name="role" value="parent" required> 家长</label><label><input type="radio" name="role" value="child" required> 孩子</label></fieldset><p class="muted">设置后身份固定；家长与孩子分别使用自己的账号。</p>'}<button type="submit" class="btn">${profile?'保存昵称':'保存身份'}</button></form>${profile?`<hr><button type="button" class="btn secondary small" id="familySettingsRefresh">刷新绑定</button><h4>${parent?'绑定孩子':'绑定家长'}</h4><p>${parent?'生成绑定码，让孩子在自己的账号设置中输入，再由你确认。':'将家长提供的绑定码粘贴到下面，提交后等待家长确认。'}</p>${parent?'<button class="btn secondary" id="familyInvite" type="button">生成 15 分钟绑定码</button><div id="familyCode"></div>':'<form id="familyClaim"><label>家长绑定码<input name="code" required maxlength="50" autocomplete="off" placeholder="粘贴家长提供的绑定码"></label><button class="btn" type="submit">申请绑定</button></form>'}<div class="family-links">${data.links.map(l=>`<div class="family-link"><div><strong>${e(l.name)}</strong><small>${l.status==='active'?'已绑定':'等待家长确认'}</small></div><div>${parent&&l.status==='pending'?`<button class="btn small" data-confirm="${e(l.child_id)}">确认绑定</button>`:''}<button class="btn secondary small" data-unlink="${e(parent?l.child_id:l.parent_id)}">${l.status==='pending'?'取消申请':'解除绑定'}</button></div></div>`).join('')||'<p class="muted">还没有绑定关系。</p>'}</div>`:''}</section>`;
    const report=(message,error=false)=>{if(run===this.settingsVersion){const n=root.querySelector('#familySettingsNotice');n.textContent=message;n.classList.toggle('error',error);}};

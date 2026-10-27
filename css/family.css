@@ -79,3 +79,11 @@
 @media(max-width:520px){.homework-subject,.homework-message {padding:16px;}.homework-thread .homework-reply {margin:0 8px 0 16px;}.family-account-panel .family-link {align-items:flex-start;}}
 
 .utility-nav #navHomework[aria-current="page"] {color:var(--blue-dark);font-weight:700;}
+
+.homework-reminder {max-width:1120px;margin:18px auto 0;padding:18px 22px;background:#fff8e8;border:1px solid #ebcd83;border-radius:14px;display:flex;align-items:center;justify-content:space-between;gap:16px;color:#594013;}
+.homework-reminder[hidden],.homework-count[hidden] {display:none!important;}
+.homework-reminder ul {margin:8px 0 0;padding-left:22px;line-height:1.8;overflow-wrap:anywhere;}
+.homework-reminder .btn {flex-shrink:0;}
+.homework-count {display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 5px;border-radius:20px;background:#c43b32;color:white;font-size:12px;font-weight:700;}
+@media(max-width:1160px){.homework-reminder {margin:14px 16px 0;}}
+@media(max-width:520px){.homework-reminder {align-items:flex-start;flex-direction:column;padding:16px;}}

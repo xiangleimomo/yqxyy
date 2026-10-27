@@ -11,7 +11,7 @@ const root=path.resolve(__dirname,'..');
   window.testFamily={profiles,assignment};
   SFCloud.client.rpc=async(name,{p_action:action,p_payload:p})=>{
    const uid=SFCloud.user.id;let data={ok:true};
-   if(action==='dashboard')data={profile:profiles[uid]?{id:uid,...profiles[uid]}:null,links:uid==='new'?[]:[{parent_id:'parent',child_id:'child',name:uid==='parent'?profiles.child.name:profiles.parent.name,status:'active'}],assignments:uid==='new'?[]:[assignment]};
+   if(action==='dashboard')data={profile:profiles[uid]?{id:uid,...profiles[uid]}:null,links:uid==='new'?[]:[{parent_id:'parent',child_id:'child',name:uid==='parent'?profiles.child.name:profiles.parent.name,status:'active'}],assignments:uid==='new'||testFamily.noAssignments?[]:[assignment]};
    else if(action==='profile'){if(profiles[uid]&&profiles[uid].role!==p.role)return {error:{message:'不能更改身份'}};profiles[uid]={role:p.role,name:p.name};}
    else if(action==='invite')data={code:'A'.repeat(32),expires_at:new Date(Date.now()+900000).toISOString()};
    else if(action==='submit'){assertRole(uid,'child');assignment.status='submitted';assignment.submitted_at=new Date().toISOString();assignment.submission={note:p.note,links:p.links,attachments:p.attachments,links_text:p.links_text};}
@@ -48,6 +48,38 @@ const root=path.resolve(__dirname,'..');
  assert((await page.locator('.homework-reply').innerText()).includes('第 2 页已完成'));
  assert((await page.locator('.homework-feedback').innerText()).includes('晚上一起看看'));
  for(const width of [1280,390]){await page.setViewportSize({width,height:1000});await page.evaluate(()=>scrollTo(0,0));assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);if(process.env.HOMEWORK_SCREENSHOT_DIR)await page.screenshot({path:path.join(process.env.HOMEWORK_SCREENSHOT_DIR,'homework-thread-'+width+'.png'),fullPage:true});}
+ // Login reminder on a page outside homework uses the real account-entry hook.
+ await page.goto('https://yqxyy.netlify.app/#/records');
+ await page.evaluate(async()=>{
+  SFCloud.verifyAdmin=async()=>{SFCloud.adminVerified=false;SFCloud.adminUserId=null;};SFCloud.schedule=()=>{};
+  SFCloud.client.from=()=>({select:()=>({eq:()=>({maybeSingle:async()=>({data:{},error:null})})})});
+  testFamily.assignment.status='assigned';await SFCloud.enterAccount({id:'child',email:'child@example.invalid'});
+ });
+ await page.locator('#homeworkReminder:not([hidden])').waitFor();
+ assert((await page.locator('#homeworkReminder').innerText()).includes('完成数学同步练习第 2 页'));
+ assert.equal(await page.locator('#homeworkBadge').innerText(),'1');
+ assert.equal(await page.locator('#homeworkReminder a').getAttribute('href'),'#/homework');
+ for(const width of [1280,390]){await page.setViewportSize({width,height:850});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);}
+ await page.evaluate(async()=>{testFamily.noAssignments=true;await SFFamily.refreshReminder();});
+ assert.equal(await page.locator('#homeworkReminder').isVisible(),false);
+ await page.evaluate(()=>{testFamily.noAssignments=false;});
+ for(const status of ['submitted','approved','cancelled']){
+  await page.evaluate(async status=>{testFamily.assignment.status=status;await SFFamily.refreshReminder();},status);
+  assert.equal(await page.locator('#homeworkReminder').isVisible(),false);assert.equal(await page.locator('#homeworkBadge').isVisible(),false);
+ }
+ await page.evaluate(async()=>{testFamily.assignment.status='revision';testFamily.assignment.due_on='2026-01-01';await SFFamily.refreshReminder();});
+ assert((await page.locator('#homeworkReminder').innerText()).includes('需要补做'));
+ await page.evaluate(async()=>{await SFCloud.enterAccount({id:'parent',email:'parent@example.invalid'});});
+ assert.equal(await page.locator('#homeworkReminder').isVisible(),false);
+ // A delayed child response cannot reappear after logging out.
+ await page.evaluate(async()=>{
+  SFCloud.user={id:'child'};let finish;const original=SFCloud.client.rpc;
+  SFCloud.client.rpc=()=>new Promise(resolve=>{finish=resolve;});const pending=SFFamily.refreshReminder();
+  SFCloud.onSignedOut();finish({data:{profile:{role:'child'},assignments:[testFamily.assignment]},error:null});await pending;SFCloud.client.rpc=original;
+ });
+ assert.equal(await page.locator('#homeworkReminder').isVisible(),false);assert.equal(await page.locator('#homeworkBadge').isVisible(),false);
+ console.log('PASS: login reminder on other pages, pending title/count, revision and overdue inclusion, submitted/approved/cancelled exclusion, parent exclusion and stale logout response isolation');
+ await page.goto('https://yqxyy.netlify.app/#/homework');await page.locator('#familyLogin').waitFor();
  await page.evaluate(()=>switchFamily('new'));assert.equal(await page.locator('#app #familyProfile').count(),0);
  await page.getByRole('button',{name:'打开账号设置',exact:true}).click();await page.locator('#familyProfile').waitFor();
  await page.locator('#familyProfile [name=name]').fill('新家长');await page.locator('#familyProfile [value=parent]').check();await page.getByRole('button',{name:'保存身份',exact:true}).click();await page.getByText('当前身份：',{exact:false}).waitFor();

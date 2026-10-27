@@ -133,3 +133,15 @@ The real-browser test also passed free-text math homework with a private text
 attachment, cloud-drive share link/extraction code, child photo upload, parent
 reading the submitted photo, approval without any course work, and attachment
 access denial after unlink. The optional course workflow remains tested.
+
+## Child homework reminder — 2026-10-27
+
+Account entry reads the existing authorized dashboard and shows an inline reminder
+above the current page only for the signed-in child's own assigned/revision tasks.
+It lists up to three titles and deadlines, links to homework, and shows a count in
+the tools navigation. Submitted, approved and cancelled tasks do not count; overdue
+pending tasks still count. Parents, guests and children without pending tasks see
+no banner or badge. Returning focus/online refreshes the reminder; task submission
+and account settings reloads update it too. Account switch/logout immediately clear
+it, and version/UID checks reject delayed responses. No notification permission,
+email delivery or new database access policy is needed.
