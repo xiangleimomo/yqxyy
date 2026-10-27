@@ -28,7 +28,7 @@ const run = (script, scriptArgs) => {
 };
 
 // XET is used only to discover videos/content IDs. Read is fetched separately
-// from Little Fox public supplement/org/Cxxxx pages. Subtitle files are never
-// read or written by this workflow.
+// from Little Fox public supplement/org/Cxxxx pages. New episodes also receive
+// timed VTT after a fail-closed comparison with official Read and the video timeline.
 if (!apply) process.stderr.write('Dry run: no files will be written.\n');
 run('sync-xet-catalog.js', [apply ? '--apply' : '--dry-run']);

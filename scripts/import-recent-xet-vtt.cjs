@@ -5,7 +5,7 @@
  */
 const fs=require('node:fs/promises'),path=require('node:path'),crypto=require('node:crypto');
 const root=path.resolve(__dirname,'..'),base='http://xet.bolinzhiyin.cn';
-const option=process.argv.slice(2);if(option.some(a=>!a.startsWith('--output-dir=')))throw Error('Unknown option');
+const option=process.argv.slice(2);if(option.some(a=>a!=='--apply'&&!a.startsWith('--lesson=')&&!a.startsWith('--output-dir=')))throw Error('Unknown option');
 const out=path.resolve(option.find(a=>a.startsWith('--output-dir='))?.slice(13)||'subtitle-review');
 const clean=s=>String(s||'').replace(/\[n@/g,' ').replace(/\[(?:i|b|u)@|@(?:i|b|u)\]/gi,'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
 const norm=s=>clean(s).toLowerCase().replace(/[‘’]/g,"'").replace(/[^\p{L}\p{N}]+/gu,'');
@@ -42,7 +42,8 @@ async function main(){
  const cards=[...catalog.matchAll(/location\.href='xhl_play\.php\?fs_id=([A-Z0-9]+)'[\s\S]*?<div class="card-title">([\s\S]*?)<\/div>/g)];
  const three=cards.find(x=>clean(x[2])==='Romance of the Three Kingdoms')?.[1];if(!three)throw Error('Three Kingdoms series ID not found; catalogue title: '+(catalog.match(/<title>(.*?)<\/title>/s)?.[1]||'')+'; links: '+[...catalog.matchAll(/href=["']([^"']+)/g)].map(x=>x[1]).filter(x=>/^[a-z_0-9]+\.php/i.test(x)).slice(0,20).join(', '));
  const bank=JSON.parse(await fs.readFile(path.join(root,'scripts/quiz-revisions/2026-10-23.json'),'utf8'));
- const selected=bank.lessons.map(({seriesId,episodeId})=>({seriesId,episodeId}));selected.push({seriesId:'little-fox-daisy-dolittle-fs0175',episodeId:35});
+ const requested=option.filter(a=>a.startsWith('--lesson=')).map(a=>{const [seriesId,n]=a.slice(9).split(':');const episodeId=Number(n);if(!/^[a-z0-9-]+$/.test(seriesId)||!Number.isInteger(episodeId)||episodeId<1)throw Error('Invalid lesson selector');return {seriesId,episodeId};});
+ const selected=requested.length?requested:bank.lessons.map(({seriesId,episodeId})=>({seriesId,episodeId}));if(!requested.length)selected.push({seriesId:'little-fox-daisy-dolittle-fs0175',episodeId:35});
  const report={source:'XET timed subtitles and Little Fox official public Read',lessons:[]};
  for(const item of selected){
   const dir=path.join(root,'data',item.seriesId),episodes=JSON.parse(await fs.readFile(path.join(dir,'episodes.json'),'utf8')),ep=episodes.find(e=>e.episodeId===item.episodeId);
@@ -59,15 +60,17 @@ async function main(){
   const [videoInfo,publicParagraphs]=await Promise.all([duration(published),official(ep.sourceContentId)]);
   const videoDurationMs=videoInfo.durationMs,remoteInfo=sameVideoPath?videoInfo:await duration(remoteUrl);
   const timelineMatchesRemote=videoInfo.timelineHash===remoteInfo.timelineHash;
-  if(!timelineMatchesRemote)throw Error('Published/XET video timeline mismatch for '+ep.sourceContentId);
+  if(!timelineMatchesRemote&&option.includes('--apply'))throw Error('Published/XET video timeline mismatch requires review: '+ep.sourceContentId);
   if(cues.at(-1).endMs>videoDurationMs+250)throw Error('Subtitle exceeds published video for '+ep.sourceContentId);
   const reading=JSON.parse(await fs.readFile(path.join(dir,'reading-lessons.json'),'utf8'))[String(item.episodeId)];
   const localRead=reading?.paragraphs?.map(p=>p.text||p).join(' ')||'',sourceText=cues.map(c=>c.text).join(' '),officialText=publicParagraphs.join(' ');
-  const row={...item,sourceContentId:ep.sourceContentId,title:ep.title,cueCount:cues.length,firstMs:cues[0].startMs,lastMs:cues.at(-1).endMs,videoDurationMs,sameVideoPath,timelineMatchesRemote,segmentCount:videoInfo.segmentCount,timelineHash:videoInfo.timelineHash,readMatchesOfficial:norm(localRead)===norm(officialText),subtitleMatchesRead:norm(sourceText)===norm(localRead),subtitleMatchesOfficial:norm(sourceText)===norm(officialText),overlaps:cues.flatMap((c,i)=>i&&c.startMs<cues[i-1].endMs?[i+1]:[]),fastCues:cues.flatMap((c,i)=>c.text.length/((c.endMs-c.startMs)/1000)>35?[i+1]:[]),localRead,officialParagraphs:publicParagraphs};
+  const row={...item,sourceContentId:ep.sourceContentId,title:ep.title,cueCount:cues.length,firstMs:cues[0].startMs,lastMs:cues.at(-1).endMs,videoDurationMs,sameVideoPath,timelineMatchesRemote,remoteVideoDurationMs:remoteInfo.durationMs,remoteSegmentCount:remoteInfo.segmentCount,segmentCount:videoInfo.segmentCount,timelineHash:videoInfo.timelineHash,readMatchesOfficial:norm(localRead)===norm(officialText),subtitleMatchesRead:norm(sourceText)===norm(localRead),subtitleMatchesOfficial:norm(sourceText)===norm(officialText),overlaps:cues.flatMap((c,i)=>i&&c.startMs<cues[i-1].endMs?[i+1]:[]),fastCues:cues.flatMap((c,i)=>c.text.length/((c.endMs-c.startMs)/1000)>35?[i+1]:[]),localRead,officialParagraphs:publicParagraphs};
+  if(option.includes('--apply')&&(!row.readMatchesOfficial||!row.subtitleMatchesOfficial))throw Error('Read/subtitle wording mismatch requires review: '+ep.sourceContentId);
   report.lessons.push(row);
   const target=path.join(out,'data',item.seriesId,'subtitles');await fs.mkdir(target,{recursive:true});await fs.writeFile(path.join(target,String(item.episodeId).padStart(3,'0')+'.vtt'),vtt(cues));
-  console.log(JSON.stringify({...item,cueCount:cues.length,sameVideoPath,readMatchesOfficial:row.readMatchesOfficial,subtitleMatchesOfficial:row.subtitleMatchesOfficial}));
+  console.log(JSON.stringify({...item,videoDurationMs,remoteVideoDurationMs:remoteInfo.durationMs,timelineMatchesRemote,cueCount:cues.length,sameVideoPath,readMatchesOfficial:row.readMatchesOfficial,subtitleMatchesOfficial:row.subtitleMatchesOfficial}));
  }
+ if(option.includes('--apply'))for(const row of report.lessons){const file=String(row.episodeId).padStart(3,'0')+'.vtt',target=path.join(root,'data',row.seriesId,'subtitles');await fs.mkdir(target,{recursive:true});await fs.copyFile(path.join(out,'data',row.seriesId,'subtitles',file),path.join(target,file));}
  await fs.mkdir(out,{recursive:true});await fs.writeFile(path.join(out,'review.json'),JSON.stringify(report,null,2)+'\n');
 }
 if(require.main===module)main().catch(e=>{console.error(e.message);process.exitCode=1;});

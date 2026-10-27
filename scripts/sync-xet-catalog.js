@@ -2,7 +2,7 @@
 
 /*
  * Discovers Little Fox video releases from the authorised XET catalogue.
- * This program deliberately never reads or writes subtitles/VTT files.
+ * New episodes receive XET timed VTT only after official Read and video timeline validation.
  * Public Read text and generated study material are added by
  * enrich-new-lessons.mjs, which fetches Little Fox's supplement/org/Cxxxx page.
  */
@@ -51,7 +51,7 @@ async function request(target, options = {}) {
 }
 async function login() {
   await request('/login_check.php', { method: 'POST', headers: { 'content-type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ account, password }).toString() });
-  if (!(await (await request('/huiben01.php')).text()).includes("Mrs. Kelly's Class")) throw new Error('XET authentication failed: Little Fox catalogue is unavailable.');
+  if (!(await (await request('/fox01.php')).text()).includes("Mrs. Kelly's Class")) throw new Error('XET authentication failed: Little Fox catalogue is unavailable.');
 }
 function parseCatalog(html, level) {
   const output = [];
@@ -90,7 +90,7 @@ async function detail(item, episode) {
 async function main() {
   await login();
   const catalogue = [];
-  for (let level = 1; level <= 9; level += 1) catalogue.push(...parseCatalog(await (await request(`/huiben${String(level).padStart(2, '0')}.php`)).text(), level));
+  for (let level = 1; level <= 9; level += 1) catalogue.push(...parseCatalog(await (await request(`/fox${String(level).padStart(2, '0')}.php`)).text(), level));
   const selectedCatalogue = fsIdFilter ? catalogue.filter(item => item.fsId === fsIdFilter) : titleFilter ? catalogue.filter(item => item.title === titleFilter) : catalogue;
   if ((fsIdFilter || titleFilter) && !selectedCatalogue.length) throw new Error(`Requested series was not found in the XET catalogue.`);
   const seriesListPath = path.join(DATA_ROOT, 'series-list.json');
@@ -128,6 +128,7 @@ async function main() {
       if (listing) { listing.readyEpisodes = episodes.length; if (!listing.episodeCount) listing.episodeCount = episodes.length; listing.tagline = `${listing.readyEpisodes} video lessons · Content in progress`; }
       changed.push(seriesId);
       execFileSync(process.execPath, [path.join(__dirname, 'enrich-new-lessons.mjs'), seriesId, ...newRows.map(row => String(row.episodeId))], { stdio: 'inherit' });
+      execFileSync(process.execPath, [path.join(__dirname, 'import-recent-xet-vtt.cjs'), '--apply', '--output-dir=subtitle-review', ...newRows.map(row => `--lesson=${seriesId}:${row.episodeId}`)], { stdio: 'inherit' });
     }
   }
   if (apply && changed.length) {
