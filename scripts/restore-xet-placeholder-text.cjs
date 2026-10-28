@@ -30,13 +30,21 @@ function recover(before, source, duration) {
 function main(){
   const args=process.argv.slice(2),folder=args.find(a=>a.startsWith('--review-root='))?.slice(14),apply=args.includes('--apply');
   if(!folder)throw Error('Usage: --review-root=folder [--apply]');
-  const report=JSON.parse(fs.readFileSync(path.join(folder,'review.json'))),restored=[],pending=[...(report.failures||[])];
+  const report=JSON.parse(fs.readFileSync(path.join(folder,'review.json'))),restored=[],speechVerified=[],pending=[...(report.failures||[])];
   for(const row of report.lessons)try{
     const dir=path.join('data',row.seriesId),ep=JSON.parse(fs.readFileSync(path.join(dir,'episodes.json'))).find(e=>e.episodeId===row.episodeId);
     if(ep.sourceContentId!==row.sourceContentId||!row.sameVideoPath||!row.timelineMatchesRemote)throw Error('Source/media identity mismatch');
     const target=path.join(dir,'subtitles',String(row.episodeId).padStart(3,'0')+'.vtt'),raw=fs.readFileSync(target,'utf8').replace(/\r/g,'');
+    const speechMeta=target.replace(/\.vtt$/,'.timing.json'),sourceMeta=target.replace(/\.vtt$/,'.source-repair.json');
+    for(const meta of [speechMeta,sourceMeta])if(fs.existsSync(meta)){
+      const m=JSON.parse(fs.readFileSync(meta));
+      if(m.sourceContentId!==ep.sourceContentId||m.vttSha256!==digest(raw)||m.mediaFingerprint!==digest(new URL(ep.video.hlsUrl).pathname))throw Error('Existing verification metadata is stale');
+    }
+    if(fs.existsSync(speechMeta)){speechVerified.push({seriesId:row.seriesId,episodeId:row.episodeId});continue;}
+    if(fs.existsSync(sourceMeta)){restored.push(JSON.parse(fs.readFileSync(sourceMeta)));continue;}
     const source=parse(fs.readFileSync(path.join(folder,'data',row.seriesId,'subtitles',path.basename(target)),'utf8'));
     const read=JSON.parse(fs.readFileSync(path.join(dir,'reading-lessons.json')))[row.episodeId];
+    if(placeholder(source))throw Error('XET also contains placeholders; independent speech alignment required');
     if(norm(read.paragraphs.map(p=>typeof p==='string'?p:p.text||'').join(' '))!==norm(row.officialParagraphs.join(' ')))throw Error('Read differs from verified official text');
     if(norm(source.map(c=>c.text).join(' '))!==norm(row.officialParagraphs.join(' ')))throw Error('XET wording differs from official Read');
     const {cues,...evidence}=recover(parse(raw),source,row.videoDurationMs),output=vtt(cues);
@@ -44,7 +52,7 @@ function main(){
     if(apply){fs.writeFileSync(target,output);fs.writeFileSync(target.replace(/\.vtt$/,'.source-repair.json'),JSON.stringify(info,null,2)+'\n');}
     restored.push(info);
   }catch(error){pending.push({seriesId:row.seriesId,episodeId:row.episodeId,error:error.message});}
-  const result={method:'Exact canonical wording with independently matching old/new cue boundaries; preserves the existing offset, not a full audio audit.',restored,pending};
+  const result={method:'Exact canonical wording with independently matching old/new cue boundaries; preserves the existing offset, not a full audio audit.',restored,speechVerified,pending};
   if(apply)fs.writeFileSync('docs/placeholder-text-repairs-2026-10-28.json',JSON.stringify(result,null,2)+'\n');
   console.log(JSON.stringify({apply,restored:restored.length,pending:pending.length,samplePending:pending.slice(0,5)}));
 }

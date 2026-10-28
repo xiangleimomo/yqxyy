@@ -81,7 +81,9 @@ def main():
     try:
      temporary.write_text(to_vtt(cues),encoding='utf-8');os.replace(temporary,path)
      sidecar={k:v for k,v in info.items() if k!='cueChecks'};sidecar['method']='canonical-text+independent-speech-word-anchors';sidecar['vttSha256']=digest(to_vtt(cues))
-     path.with_suffix('.timing.json').write_text(json.dumps(sidecar,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');break
+     path.with_suffix('.timing.json').write_text(json.dumps(sidecar,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+     path.with_suffix('.source-repair.json').unlink(missing_ok=True)
+     break
     except OSError:
      if attempt==2:raise
      time.sleep(.2*(attempt+1))
