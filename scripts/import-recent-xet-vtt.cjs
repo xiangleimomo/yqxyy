@@ -7,7 +7,7 @@ const fs=require('node:fs/promises'),path=require('node:path'),crypto=require('n
 const root=path.resolve(__dirname,'..'),base='http://xet.bolinzhiyin.cn';
 const option=process.argv.slice(2);if(option.some(a=>a!=='--apply'&&!a.startsWith('--manifest=')&&!a.startsWith('--lesson=')&&!a.startsWith('--output-dir=')))throw Error('Unknown option');
 const out=path.resolve(option.find(a=>a.startsWith('--output-dir='))?.slice(13)||'subtitle-review');
-const clean=s=>String(s||'').replace(/\[n@/g,' ').replace(/\[(?:i|b|u)@|@(?:i|b|u)\]/gi,'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim().replace(/^\[caption_out@(?:\])?$/i,'');
+const clean=s=>String(s||'').replace(/\[n@/g,' ').replace(/\[(?:i|b|u|g)@|@(?:i|b|u|g)\]/gi,'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim().replace(/^\[caption_out@(?:\])?$/i,'');
 const norm=s=>clean(s).toLowerCase().replace(/[‘’]/g,"'").replace(/[^\p{L}\p{N}]+/gu,'');
 const stamp=n=>{const h=Math.floor(n/3600000),m=Math.floor(n%3600000/60000),s=Math.floor(n%60000/1000);return [h,m,s].map(x=>String(x).padStart(2,'0')).join(':')+'.'+String(n%1000).padStart(3,'0');};
 function vtt(cues){return 'WEBVTT\n\n'+cues.map((c,i)=>`${i+1}\n${stamp(c.startMs)} --> ${stamp(c.endMs)}\n${c.text}\n`).join('\n');}
@@ -75,6 +75,7 @@ async function main(){
   const row={...item,sourceContentId:ep.sourceContentId,title:ep.title,cueCount:cues.length,firstMs:cues[0].startMs,lastMs:cues.at(-1).endMs,endsAfterVideoMs:Math.max(0,cues.at(-1).endMs-videoDurationMs),videoDurationMs,sameVideoPath,timelineMatchesRemote,maxBoundaryDriftMs:maxBoundaryDriftMs===null?null:Math.round(maxBoundaryDriftMs*1000)/1000,remoteVideoDurationMs:remoteInfo.durationMs,remoteSegmentCount:remoteInfo.segmentCount,segmentCount:videoInfo.segmentCount,timelineHash:videoInfo.timelineHash,readMatchesOfficial:norm(localRead)===norm(officialText),subtitleMatchesRead:norm(sourceText)===norm(localRead),subtitleMatchesOfficial:norm(sourceText)===norm(officialText),overlaps:cues.flatMap((c,i)=>i&&c.startMs<cues[i-1].endMs?[i+1]:[]),fastCues:cues.flatMap((c,i)=>c.text.length/((c.endMs-c.startMs)/1000)>35?[i+1]:[]),localRead,officialParagraphs:publicParagraphs};
   if(option.includes('--apply')&&(!row.readMatchesOfficial||!row.subtitleMatchesOfficial))throw Error('Read/subtitle wording mismatch requires review: '+ep.sourceContentId);
   if(!sameVideoPath){const candidate=new URL(remoteUrl);candidate.search='';row.reviewVideoCandidate=candidate.href;}
+  row.sourceWordGroups=(detail.subtitle||remote.subtitle||[]).map(c=>({startMs:Number(c.start_ms),endMs:Number(c.end_ms),text:clean(c.text),words:(c.highlight||[]).map(w=>({text:clean(w.w),startMs:Number(w.start_ms),endMs:Number(w.end_ms)}))}));
   row.detailTimingFields=Object.fromEntries(Object.entries(detail).filter(([k,v])=>/offset|delay|intro|duration|time/i.test(k)&&typeof v==='number'));
   report.lessons.push(row);
   const target=path.join(out,'data',item.seriesId,'subtitles');await fs.mkdir(target,{recursive:true});await fs.writeFile(path.join(target,String(item.episodeId).padStart(3,'0')+'.vtt'),vtt(cues));
