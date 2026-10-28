@@ -2,6 +2,11 @@ name: Compare suspect subtitles with current XET originals
 on:
   workflow_dispatch:
     inputs:
+      manifest:
+        description: "Validated review scope"
+        type: choice
+        options: [timing, bindings]
+        default: timing
       lessons:
         description: "Optional comma-separated series-id:episode selectors"
         type: string
@@ -20,6 +25,7 @@ jobs:
           node-version: 22
       - name: Compare scoped lessons without overwriting published files
         env:
+          REVIEW_MANIFEST: ${{ inputs.manifest }}
           REVIEW_LESSONS: ${{ inputs.lessons }}
           XET_ACCOUNT: ${{ secrets.XET_ACCOUNT }}
           XET_PASSWORD: ${{ secrets.XET_PASSWORD }}

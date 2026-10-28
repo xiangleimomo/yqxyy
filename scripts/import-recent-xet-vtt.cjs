@@ -47,13 +47,13 @@ async function main(){
  const manifestArg=option.find(a=>a.startsWith('--manifest='))?.slice(11);
  const selected=manifestArg?JSON.parse(await fs.readFile(path.resolve(manifestArg),'utf8')).lessons:requested.length?requested:bank.lessons.map(({seriesId,episodeId})=>({seriesId,episodeId}));if(!manifestArg&&!requested.length)selected.push({seriesId:'little-fox-daisy-dolittle-fs0175',episodeId:35});
  for(const row of selected)if(!/^[a-z0-9-]+$/.test(row.seriesId)||!Number.isInteger(row.episodeId)||row.episodeId<1)throw Error('Invalid manifest selector');
- const playlistCache=new Map(),playerHintsCache=new Map();
+ const playlistCache=new Map();
  const report={source:'XET timed subtitles and Little Fox official public Read',lessons:[],failures:[]};
  for(const item of selected){try{
   const dir=path.join(root,'data',item.seriesId),episodes=JSON.parse(await fs.readFile(path.join(dir,'episodes.json'),'utf8')),ep=episodes.find(e=>e.episodeId===item.episodeId);
   if(!ep?.sourceContentId)throw Error('Missing content ID');
   const fsId=item.seriesId==='three-kingdoms'?three:item.seriesId.match(/(fs\d+)$/i)[1].toUpperCase();
-  if(!playlistCache.has(fsId)){const page=await(await request('/xhl_play.php?fs_id='+fsId)).text();playerHintsCache.set(fsId,[...page.matchAll(/currentTime|start_ms|subtitleOffset|SUBTITLE_OFFSET|offset/gi)].slice(0,22).map(m=>page.slice(Math.max(0,m.index-260),m.index+650).replace(/https?:[^\s"'<>]+/g,'[source URL]')));playlistCache.set(fsId,JSON.parse(page.match(/var PLAYLIST\s*=\s*(\[[\s\S]*?\]);\s*\nvar COURSE_TITLE/)[1]));}
+  if(!playlistCache.has(fsId)){const page=await(await request('/xhl_play.php?fs_id='+fsId)).text();playlistCache.set(fsId,JSON.parse(page.match(/var PLAYLIST\s*=\s*(\[[\s\S]*?\]);\s*\nvar COURSE_TITLE/)[1]));}
   const playlist=playlistCache.get(fsId);
   const remote=playlist.find(e=>e.fc_id===ep.sourceContentId);if(!remote||norm(remote.title)!==norm(ep.title))throw Error('Episode identity/title mismatch for '+item.seriesId+'/'+item.episodeId);
   const detail=await(await request('/xhl_play.php?ajax=episode&fc_id='+ep.sourceContentId+'&fs_id='+fsId)).json();
@@ -74,8 +74,8 @@ async function main(){
   const localRead=reading?.paragraphs?.map(p=>p.text||p).join(' ')||'',sourceText=cues.map(c=>c.text).join(' '),officialText=publicParagraphs.join(' ');
   const row={...item,sourceContentId:ep.sourceContentId,title:ep.title,cueCount:cues.length,firstMs:cues[0].startMs,lastMs:cues.at(-1).endMs,endsAfterVideoMs:Math.max(0,cues.at(-1).endMs-videoDurationMs),videoDurationMs,sameVideoPath,timelineMatchesRemote,maxBoundaryDriftMs:maxBoundaryDriftMs===null?null:Math.round(maxBoundaryDriftMs*1000)/1000,remoteVideoDurationMs:remoteInfo.durationMs,remoteSegmentCount:remoteInfo.segmentCount,segmentCount:videoInfo.segmentCount,timelineHash:videoInfo.timelineHash,readMatchesOfficial:norm(localRead)===norm(officialText),subtitleMatchesRead:norm(sourceText)===norm(localRead),subtitleMatchesOfficial:norm(sourceText)===norm(officialText),overlaps:cues.flatMap((c,i)=>i&&c.startMs<cues[i-1].endMs?[i+1]:[]),fastCues:cues.flatMap((c,i)=>c.text.length/((c.endMs-c.startMs)/1000)>35?[i+1]:[]),localRead,officialParagraphs:publicParagraphs};
   if(option.includes('--apply')&&(!row.readMatchesOfficial||!row.subtitleMatchesOfficial))throw Error('Read/subtitle wording mismatch requires review: '+ep.sourceContentId);
-  if(!timelineMatchesRemote){const candidate=new URL(remoteUrl);candidate.search='';row.reviewVideoCandidate=candidate.href;}
-  row.playerTimingHints=playerHintsCache.get(fsId);row.detailTimingFields=Object.fromEntries(Object.entries(detail).filter(([k,v])=>/offset|delay|intro|duration|time/i.test(k)&&typeof v==='number'));
+  if(!sameVideoPath){const candidate=new URL(remoteUrl);candidate.search='';row.reviewVideoCandidate=candidate.href;}
+  row.detailTimingFields=Object.fromEntries(Object.entries(detail).filter(([k,v])=>/offset|delay|intro|duration|time/i.test(k)&&typeof v==='number'));
   report.lessons.push(row);
   const target=path.join(out,'data',item.seriesId,'subtitles');await fs.mkdir(target,{recursive:true});await fs.writeFile(path.join(target,String(item.episodeId).padStart(3,'0')+'.vtt'),vtt(cues));
   console.log(JSON.stringify({...item,videoDurationMs,remoteVideoDurationMs:remoteInfo.durationMs,timelineMatchesRemote,cueCount:cues.length,sameVideoPath,readMatchesOfficial:row.readMatchesOfficial,subtitleMatchesOfficial:row.subtitleMatchesOfficial}));
