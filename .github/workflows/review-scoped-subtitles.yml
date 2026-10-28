@@ -5,7 +5,7 @@ on:
       manifest:
         description: "Validated review scope"
         type: choice
-        options: [timing, bindings]
+        options: [timing, bindings, placeholders]
         default: timing
       lessons:
         description: "Optional comma-separated series-id:episode selectors"
@@ -17,7 +17,7 @@ permissions:
 jobs:
   compare:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
