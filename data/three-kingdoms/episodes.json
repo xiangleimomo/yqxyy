@@ -276,5 +276,29 @@
       "quiz": true,
       "review": false
     }
+  },
+  {
+    "episodeId": 12,
+    "sourceContentId": "C0013408",
+    "title": "The Seven-Star Dagger",
+    "titleZh": "",
+    "releaseDate": "",
+    "status": "published",
+    "sourceType": "xet-catalog",
+    "unlockRequiresQuiz": false,
+    "video": {
+      "source": "hls",
+      "hlsUrl": "https://cdn.littlefox.co.kr/contents_5/hls/720/74487f2cd5/17927188362bd0715ad6441bfe81c6644c0c500205/stream.m3u8?_=1792718843"
+    },
+    "modules": {
+      "watch": true,
+      "read": true,
+      "words": true,
+      "vocabulary": true,
+      "phrases": false,
+      "grammar": false,
+      "quiz": false,
+      "review": false
+    }
   }
 ]
