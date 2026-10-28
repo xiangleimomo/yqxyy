@@ -5,8 +5,13 @@ on:
       scope:
         description: "Validated audio review scope"
         type: choice
-        options: [timing, binding-samples, placeholder-speech, extended-placeholders]
+        options: [timing, binding-samples, placeholder-speech, extended-placeholders, placeholder-retry]
         default: timing
+      model:
+        description: "Speech recognizer for independent timestamp evidence"
+        type: choice
+        options: [tiny.en, base.en]
+        default: tiny.en
 permissions:
   contents: read
 jobs:
@@ -31,7 +36,7 @@ jobs:
       - name: Compare actual video speech against timed captions
         env:
           SPEECH_SCOPE: ${{ inputs.scope }}
-        run: python scripts/audit-subtitle-speech.py --manifest scripts/subtitle-review/2026-10-28-targets.json --shard ${{ matrix.shard }} --shards 4
+        run: python scripts/audit-subtitle-speech.py --manifest scripts/subtitle-review/2026-10-28-targets.json --shard ${{ matrix.shard }} --shards 4 --model "${{ inputs.model }}"
       - uses: actions/upload-artifact@v4
         if: always()
         with:

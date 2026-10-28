@@ -48,12 +48,12 @@ def compare(cues, words):
     return dict(expectedWords=len(expected),recognizedWords=len(actual),matchedFraction=round(len(mapping)/max(1,len(expected)),4),cues=result)
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--manifest',required=True);parser.add_argument('--shard',type=int,default=0);parser.add_argument('--shards',type=int,default=1);parser.add_argument('--output',default='speech-review');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--manifest',required=True);parser.add_argument('--shard',type=int,default=0);parser.add_argument('--shards',type=int,default=1);parser.add_argument('--output',default='speech-review');parser.add_argument('--model',choices=['tiny.en','base.en'],default='tiny.en');args=parser.parse_args()
     output=Path(args.output);output.mkdir(parents=True,exist_ok=True)
-    manifest=Path('scripts/subtitle-review/2026-10-28-extended-placeholders.json') if os.environ.get('SPEECH_SCOPE')=='extended-placeholders' else Path('scripts/subtitle-review/2026-10-28-placeholder-speech.json') if os.environ.get('SPEECH_SCOPE')=='placeholder-speech' else Path('scripts/subtitle-review/2026-10-28-binding-samples.json') if os.environ.get('SPEECH_SCOPE')=='binding-samples' else Path(args.manifest)
+    manifest=Path('scripts/subtitle-review/2026-10-28-placeholder-retry.json') if os.environ.get('SPEECH_SCOPE')=='placeholder-retry' else Path('scripts/subtitle-review/2026-10-28-extended-placeholders.json') if os.environ.get('SPEECH_SCOPE')=='extended-placeholders' else Path('scripts/subtitle-review/2026-10-28-placeholder-speech.json') if os.environ.get('SPEECH_SCOPE')=='placeholder-speech' else Path('scripts/subtitle-review/2026-10-28-binding-samples.json') if os.environ.get('SPEECH_SCOPE')=='binding-samples' else Path(args.manifest)
     rows=json.loads(manifest.read_text(encoding='utf-8'))['lessons'][args.shard::args.shards]
     if not rows:return
-    model=WhisperModel('tiny.en',device='cpu',compute_type='int8',cpu_threads=4,download_root=os.path.join(tempfile.gettempdir(),'yqxyy-whisper-models'))
+    model=WhisperModel(args.model,device='cpu',compute_type='int8',cpu_threads=4,download_root=os.path.join(tempfile.gettempdir(),'yqxyy-whisper-models'))
     # Validate inference/word timestamps before downloading a whole batch.
     probe,_=model.transcribe(np.zeros(16000,dtype=np.float32),language='en',word_timestamps=True,vad_filter=False)
     list(probe)
@@ -76,7 +76,7 @@ def main():
                     samples=np.frombuffer(decoded.readframes(decoded.getnframes()),dtype=np.int16).astype(np.float32)/32768.0
                 segments,info=model.transcribe(samples,language='en',beam_size=3,word_timestamps=True,vad_filter=True,condition_on_previous_text=False)
                 words=[dict(start=w.start,end=w.end,word=w.word,probability=w.probability) for segment in segments for w in (segment.words or [])]
-            report=dict(**{k:v for k,v in item.items() if k!='hlsUrl'},mediaFingerprint=hashlib.sha256(u.path.encode()).hexdigest(),title=ep['title'],sourceContentId=ep.get('sourceContentId'),model='faster-whisper tiny.en int8',durationMs=round(info.duration*1000),**compare(cues,words),words=words)
+            report=dict(**{k:v for k,v in item.items() if k!='hlsUrl'},mediaFingerprint=hashlib.sha256(u.path.encode()).hexdigest(),title=ep['title'],sourceContentId=ep.get('sourceContentId'),model='faster-whisper '+args.model+' int8',durationMs=round(info.duration*1000),**compare(cues,words),words=words)
             name=sid+'-'+str(eid)+'.json';(output/name).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
             print(json.dumps(dict(seriesId=sid,episodeId=eid,coverage=report['matchedFraction'],elapsedSeconds=round(time.time()-started)),ensure_ascii=False),flush=True)
         except Exception as error:
