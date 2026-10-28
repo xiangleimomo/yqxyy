@@ -1,6 +1,12 @@
 name: Compare suspect subtitles with current XET originals
 on:
   workflow_dispatch:
+    inputs:
+      lessons:
+        description: "Optional comma-separated series-id:episode selectors"
+        type: string
+        required: false
+        default: ""
 permissions:
   contents: read
 jobs:
@@ -14,9 +20,10 @@ jobs:
           node-version: 22
       - name: Compare scoped lessons without overwriting published files
         env:
+          REVIEW_LESSONS: ${{ inputs.lessons }}
           XET_ACCOUNT: ${{ secrets.XET_ACCOUNT }}
           XET_PASSWORD: ${{ secrets.XET_PASSWORD }}
-        run: node scripts/import-recent-xet-vtt.cjs --manifest=scripts/subtitle-review/2026-10-28-targets.json
+        run: node scripts/run-scoped-subtitle-review.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
