@@ -5,7 +5,7 @@ import argparse,hashlib,json,re,subprocess,sys,os,time
 from pathlib import Path
 from urllib.parse import urlparse
 sys.path.insert(0,str(Path(__file__).resolve().parent/'lib'))
-from subtitle_alignment import parse_vtt,to_vtt,align_cues,align_read,match_cues,tokens
+from subtitle_alignment import parse_vtt,to_vtt,align_cues,align_read,match_cues,tokens,restore_read_insertions
 ROOT=Path(__file__).resolve().parent.parent
 
 def clean(text):return re.sub(r'\[(?:i|b|u|g)@|@(?:i|b|u|g)\]','',text).strip()
@@ -60,6 +60,7 @@ def main():
     duration=min(duration,measured)
    reads=json.loads((directory/'reading-lessons.json').read_text(encoding='utf-8'));read=reads[str(eid)]
    if read.get('sourceId') and read['sourceId']!=ep.get('sourceContentId'):raise ValueError('Read/source ID still mismatched')
+   canonical,read_insertions=restore_read_insertions(canonical,read['paragraphs'],r['words'])
    coverage,_=match_cues(canonical,r['words'])
    if coverage<.8:
     corrected,review=align_read(read['paragraphs'],r['words'],duration);mode='public-Read-restored-from-placeholders'
@@ -72,6 +73,7 @@ def main():
      corrected,review=align_cues(before,r['words'],duration);mode='existing-verified-timebase'
    if not corrected or any(c['startMs']<0 or c['endMs']>duration or c['endMs']<=c['startMs'] for c in corrected):raise ValueError('Corrected cues exceed media bounds')
    info=dict(seriesId=sid,episodeId=eid,sourceContentId=ep.get('sourceContentId'),title=ep['title'],mediaFingerprint=digest(current_path),wordingHash=digest(' '.join(c['text'] for c in corrected)),sourceMode=mode,beforeCueCount=len(before),afterCueCount=len(corrected),beforeFirstMs=before[0]['startMs'],afterFirstMs=corrected[0]['startMs'],afterLastMs=corrected[-1]['endMs'],durationMs=duration,**review)
+   if read_insertions:info['speechVerifiedReadInsertions']=read_insertions
    old=previous_by_id.get(key)
    if old and old.get('afterFirstMs')==before[0]['startMs'] and old.get('wordingHash')==info['wordingHash']:
     info['beforeFirstMs']=old['beforeFirstMs'];info['beforeCueCount']=old['beforeCueCount']

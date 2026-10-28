@@ -18,4 +18,15 @@ class AlignmentTest(unittest.TestCase):
  def test_vtt_round_trip(self):
   cues=[dict(startMs=123,endMs=4000,text='Hello, world!')]
   self.assertEqual(parse_vtt(to_vtt(cues)),cues)
+ def test_missing_read_names_require_audio_evidence(self):
+  source='First '+('filler '*100)+'We boarded the ship yesterday.'
+  canonical=source.replace('the ship','the Abraham Lincoln ship')
+  words=[dict(word=word,start=i*.1,end=i*.1+.08,probability=.99) for i,word in enumerate(canonical.split())]
+  cues=[dict(startMs=0,endMs=20000,text=source)]
+  restored,evidence=restore_read_insertions(cues,[dict(text=canonical)],words)
+  self.assertEqual(restored[0]['text'],canonical)
+  self.assertEqual(evidence[0]['insertedWords'],['abraham','lincoln'])
+  missing=[w for w in words if w['word']!='Abraham']
+  self.assertEqual(restore_read_insertions(cues,[dict(text=canonical)],missing),(cues,[]))
+  self.assertEqual(restore_read_insertions(cues,[dict(text='Heading. '+source)],words),(cues,[]))
 if __name__=='__main__':unittest.main()

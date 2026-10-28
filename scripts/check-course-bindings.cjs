@@ -27,6 +27,11 @@ for(const entry of fs.readdirSync('data',{withFileTypes:true}).filter(x=>x.isDir
         if(m.sourceContentId!==ep.sourceContentId)throw Error('Caption source content ID mismatch');
         if(m.mediaFingerprint!==digest(new URL(ep.video.hlsUrl).pathname))throw Error('Media version changed after caption verification');
         if(m.vttSha256!==digest(raw))throw Error('VTT changed without updating verification evidence');
+        if(type==='source-repair'){
+          const normalize=s=>String(s).toLowerCase().replace(/[^\p{L}\p{N}]+/gu,'');
+          const text=(reading?.paragraphs||[]).map(p=>typeof p==='string'?p:p.text||'').join(' ');
+          if(normalize(cues.map(c=>c.text).join(' '))!==normalize(text))throw Error('Recovered subtitle wording differs from its verified Read');
+        }
         if(cues.length!==(m.afterCueCount??m.cueCount))throw Error('Verified cue count mismatch');
         if(type==='timing'&&(cues[0].startMs!==m.afterFirstMs||cues.at(-1).endMs!==m.afterLastMs))throw Error('Aligned cue boundaries mismatch');
         for(let i=0;i<cues.length;i++){

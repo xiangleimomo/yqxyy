@@ -45,6 +45,39 @@ def match_cues(cues,words):
 def strong(row):
     return row['coverage']>=.85 and row['edgeWordsMatched'] and row.get('confidence',0)>=.8 and row.get('speechEndMs',0)>row.get('speechStartMs',0)
 
+
+def restore_read_insertions(cues,paragraphs,words):
+    """Restore a few internally omitted names only with exact public Read and
+    independently recognized words. Retain source sentence grouping/times.
+    Headings, boundary additions and substitutions require separate review.
+    """
+    canonical=' '.join(p['text'] if isinstance(p,dict) else p for p in paragraphs)
+    read_matches=list(re.finditer(r'[a-z0-9]+',canonical.lower()))
+    expected=[m.group() for m in read_matches];source=[];positions=[]
+    for index,cue in enumerate(cues):
+        for match in re.finditer(r'[a-z0-9]+',cue['text'].lower()):source.append(match.group());positions.append((index,match.start(),match.end()))
+    edits=[op for op in difflib.SequenceMatcher(None,source,expected,autojunk=False).get_opcodes() if op[0]!='equal']
+    if not edits:return cues,[]
+    if any(tag!='insert' or j-i>5 or a==0 or a==len(source) for tag,a,b,i,j in edits):return cues,[]
+    if sum(j-i for _,_,_,i,j in edits)>min(20,len(expected)*.02):return cues,[]
+    actual=[];confidence=[]
+    for word in words:
+        for match in re.finditer(r'[a-z0-9]+',word['word'].lower()):actual.append(match.group());confidence.append(word['probability'])
+    recognized={}
+    for block in difflib.SequenceMatcher(None,expected,actual,autojunk=False).get_matching_blocks():
+        for n in range(block.size):recognized[block.a+n]=confidence[block.b+n]
+    changes=[]
+    for _,a,b,i,j in edits:
+        left,right=positions[a-1],positions[a]
+        if left[0]!=right[0] or any(recognized.get(k,0)<.75 for k in range(i,j)):return cues,[]
+        text=canonical[read_matches[i-1].end():read_matches[j].start()]
+        changes.append(dict(cue=left[0],start=left[2],end=right[1],text=text,insertedWords=expected[i:j]))
+    result=[dict(c) for c in cues]
+    for change in sorted(changes,key=lambda c:(c['cue'],c['start']),reverse=True):
+        index=change['cue'];text=result[index]['text'];result[index]['text']=text[:change['start']]+change['text']+text[change['end']:]
+    if tokens(' '.join(c['text'] for c in result))!=tokens(canonical):return cues,[]
+    return result,[dict(cue=c['cue']+1,insertedWords=c['insertedWords']) for c in changes]
+
 def fit_offset(rows):
     intervals=[]
     for r in rows:
