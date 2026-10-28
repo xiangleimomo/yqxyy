@@ -6,6 +6,8 @@ from pathlib import Path
 from urllib.parse import urlparse
 from faster_whisper import WhisperModel
 import shutil
+import wave
+import numpy as np
 
 ROOT=Path(__file__).resolve().parent.parent
 
@@ -50,6 +52,9 @@ def main():
     output=Path(args.output);output.mkdir(parents=True,exist_ok=True)
     rows=json.loads(Path(args.manifest).read_text(encoding='utf-8'))['lessons'][args.shard::args.shards]
     model=WhisperModel('tiny.en',device='cpu',compute_type='int8',cpu_threads=4,download_root=os.path.join(tempfile.gettempdir(),'yqxyy-whisper-models'))
+    # Validate inference/word timestamps before downloading a whole batch.
+    probe,_=model.transcribe(np.zeros(16000,dtype=np.float32),language='en',word_timestamps=True,vad_filter=False)
+    list(probe)
     failures=[]
     for item in rows:
         started=time.time();sid=item['seriesId'];eid=item['episodeId']
@@ -64,7 +69,10 @@ def main():
                 if result.returncode:
                     diagnostic=re.sub(r'https?://[^\s]+','[media URL]',result.stderr.decode('utf-8','replace'))
                     raise ValueError('Audio extraction failed ('+str(result.returncode)+'): '+diagnostic[-700:])
-                segments,info=model.transcribe(str(wav),language='en',beam_size=3,word_timestamps=True,vad_filter=True,condition_on_previous_text=False)
+                with wave.open(str(wav),'rb') as decoded:
+                    if decoded.getnchannels()!=1 or decoded.getframerate()!=16000 or decoded.getsampwidth()!=2:raise ValueError('Unexpected PCM audio format')
+                    samples=np.frombuffer(decoded.readframes(decoded.getnframes()),dtype=np.int16).astype(np.float32)/32768.0
+                segments,info=model.transcribe(samples,language='en',beam_size=3,word_timestamps=True,vad_filter=True,condition_on_previous_text=False)
                 words=[dict(start=w.start,end=w.end,word=w.word,probability=w.probability) for segment in segments for w in (segment.words or [])]
             report=dict(**item,title=ep['title'],sourceContentId=ep.get('sourceContentId'),model='faster-whisper tiny.en int8',durationMs=round(info.duration*1000),**compare(cues,words),words=words)
             name=sid+'-'+str(eid)+'.json';(output/name).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
