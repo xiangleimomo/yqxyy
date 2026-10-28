@@ -49,7 +49,8 @@ async function main(){
  for(const row of selected)if(!/^[a-z0-9-]+$/.test(row.seriesId)||!Number.isInteger(row.episodeId)||row.episodeId<1)throw Error('Invalid manifest selector');
  const playlistCache=new Map();
  const report={source:'XET timed subtitles and Little Fox official public Read',lessons:[],failures:[]};
- for(const item of selected){try{
+ let next=0;
+ await Promise.all(Array.from({length:Math.min(3,selected.length)},async()=>{while(next<selected.length){const item=selected[next++];try{
   const dir=path.join(root,'data',item.seriesId),episodes=JSON.parse(await fs.readFile(path.join(dir,'episodes.json'),'utf8')),ep=episodes.find(e=>e.episodeId===item.episodeId);
   if(!ep?.sourceContentId)throw Error('Missing content ID');
   const fsId=item.seriesId==='three-kingdoms'?three:item.seriesId.match(/(fs\d+)$/i)[1].toUpperCase();
@@ -80,7 +81,7 @@ async function main(){
   report.lessons.push(row);
   const target=path.join(out,'data',item.seriesId,'subtitles');await fs.mkdir(target,{recursive:true});await fs.writeFile(path.join(target,String(item.episodeId).padStart(3,'0')+'.vtt'),vtt(cues));
   console.log(JSON.stringify({...item,videoDurationMs,remoteVideoDurationMs:remoteInfo.durationMs,timelineMatchesRemote,cueCount:cues.length,sameVideoPath,readMatchesOfficial:row.readMatchesOfficial,subtitleMatchesOfficial:row.subtitleMatchesOfficial}));
- }catch(err){report.failures.push({...item,error:err.message.replace(/https?:[^ ]+/g,'[source URL]')});console.error('Review failed: '+item.seriesId+'/'+item.episodeId);}}
+ }catch(err){report.failures.push({...item,error:err.message.replace(/https?:[^ ]+/g,'[source URL]')});console.error('Review failed: '+item.seriesId+'/'+item.episodeId);}}}));
  if(option.includes('--apply')&&report.failures.length)throw Error('Some lessons failed validation; no VTT files published');
  if(option.includes('--apply'))for(const row of report.lessons){const file=String(row.episodeId).padStart(3,'0')+'.vtt',target=path.join(root,'data',row.seriesId,'subtitles');await fs.mkdir(target,{recursive:true});await fs.copyFile(path.join(out,'data',row.seriesId,'subtitles',file),path.join(target,file));}
  await fs.mkdir(out,{recursive:true});await fs.writeFile(path.join(out,'review.json'),JSON.stringify(report,null,2)+'\n');
