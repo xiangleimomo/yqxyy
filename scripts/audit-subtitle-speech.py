@@ -50,7 +50,7 @@ def compare(cues, words):
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--manifest',required=True);parser.add_argument('--shard',type=int,default=0);parser.add_argument('--shards',type=int,default=1);parser.add_argument('--output',default='speech-review');args=parser.parse_args()
     output=Path(args.output);output.mkdir(parents=True,exist_ok=True)
-    manifest=Path('scripts/subtitle-review/2026-10-28-placeholder-speech.json') if os.environ.get('SPEECH_SCOPE')=='placeholder-speech' else Path('scripts/subtitle-review/2026-10-28-binding-samples.json') if os.environ.get('SPEECH_SCOPE')=='binding-samples' else Path(args.manifest)
+    manifest=Path('scripts/subtitle-review/2026-10-28-extended-placeholders.json') if os.environ.get('SPEECH_SCOPE')=='extended-placeholders' else Path('scripts/subtitle-review/2026-10-28-placeholder-speech.json') if os.environ.get('SPEECH_SCOPE')=='placeholder-speech' else Path('scripts/subtitle-review/2026-10-28-binding-samples.json') if os.environ.get('SPEECH_SCOPE')=='binding-samples' else Path(args.manifest)
     rows=json.loads(manifest.read_text(encoding='utf-8'))['lessons'][args.shard::args.shards]
     if not rows:return
     model=WhisperModel('tiny.en',device='cpu',compute_type='int8',cpu_threads=4,download_root=os.path.join(tempfile.gettempdir(),'yqxyy-whisper-models'))
