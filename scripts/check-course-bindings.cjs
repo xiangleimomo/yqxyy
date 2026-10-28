@@ -2,7 +2,7 @@
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
 const {parse}=require('./repair-repeated-subtitle-cues.cjs');
 const digest=s=>crypto.createHash('sha256').update(s).digest('hex');
-const errors=[];let checked=0,timings=0,recovered=0;
+const errors=[];let checked=0,timings=0,recovered=0,vttFiles=0,cueCount=0;
 for(const entry of fs.readdirSync('data',{withFileTypes:true}).filter(x=>x.isDirectory())){
   const dir=path.join('data',entry.name);let episodes,reads;
   try{episodes=JSON.parse(fs.readFileSync(path.join(dir,'episodes.json')));reads=JSON.parse(fs.readFileSync(path.join(dir,'reading-lessons.json')));}catch{continue;}
@@ -11,6 +11,14 @@ for(const entry of fs.readdirSync('data',{withFileTypes:true}).filter(x=>x.isDir
     const reading=reads[ep.episodeId],label=`${entry.name}/${ep.episodeId}`;
     if(ep.sourceContentId&&reading?.sourceId){checked++;if(ep.sourceContentId!==reading.sourceId)errors.push(label+': Read content ID differs from video episode');}
     const file=path.join(dir,'subtitles',String(ep.episodeId).padStart(3,'0')+'.vtt');
+    if(fs.existsSync(file)){
+      const cues=parse(fs.readFileSync(file,'utf8'));vttFiles++;cueCount+=cues.length;
+      if(!cues.length)errors.push(label+': Empty VTT');
+      for(let i=0;i<cues.length;i++){
+        const c=cues[i];
+        if(!Number.isFinite(c.startMs)||!Number.isFinite(c.endMs)||c.startMs<0||c.endMs<=c.startMs||i&&c.startMs<cues[i-1].endMs)errors.push(label+': Invalid/overlapping VTT cue '+(i+1));
+      }
+    }
     for(const type of ['timing','source-repair']){
       const meta=file.replace(/\.vtt$/,'.'+type+'.json');if(!fs.existsSync(meta))continue;
       if(type==='timing')timings++;else recovered++;
@@ -29,4 +37,4 @@ for(const entry of fs.readdirSync('data',{withFileTypes:true}).filter(x=>x.isDir
   }
 }
 if(errors.length){console.error(errors.join('\n'));process.exitCode=1;}
-else console.log(`PASS: ${checked} source-bound Reads, ${timings} speech-aligned VTTs and ${recovered} source-text recoveries with verified media fingerprints`);
+else console.log(`PASS: ${checked} source-bound Reads; ${vttFiles} VTTs / ${cueCount} structurally valid cues; ${timings} speech-aligned VTTs and ${recovered} source-text recoveries with verified media fingerprints`);

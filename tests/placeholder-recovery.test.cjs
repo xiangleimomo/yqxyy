@@ -5,4 +5,7 @@ const result=recover(before,source,30000);assert.equal(result.offsetMs,12345);as
 assert.throws(()=>recover(before,before,30000),/XET also/);
 assert.throws(()=>recover(before,source.map((c,i)=>({...c,endMs:c.endMs+100*i})),30000),/stable offset/);
 assert.throws(()=>recover(before,source,10000),/boundaries/);
+const grouped=Array.from({length:10},(_,i)=>({startMs:i*2000+12345,endMs:i*2000+12345+1101,text:String.fromCharCode(97+i)}));
+const split=Array.from({length:20},(_,i)=>({startMs:i*1000,endMs:i*1000+101,text:'Sentence '+i+'.'}));
+const regrouped=recover(grouped,split,40000);assert.equal(regrouped.offsetMs,12345);assert.equal(regrouped.boundaryToleranceMs,40);assert.equal(regrouped.cues.length,20);
 console.log('PASS: restore exact English only with stable pre-existing boundaries; reject source placeholders, unstable offsets and overruns');

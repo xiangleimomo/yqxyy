@@ -22,10 +22,24 @@ function recover(before, source, duration) {
     }
     if(!best||matched>best.matched)best={offset,matched,support:matched/Math.max(before.length,source.length)};
   }
+  if(!best||best.matched<5||best.support<.75){
+    // Older SRTs sometimes group adjacent XET sentences into one cue. Verify
+    // both boundary sets independently, within one 25 fps frame, rather than
+    // requiring identical sentence grouping.
+    let boundaryBest;
+    for(const a of before.slice(0,6))for(const b of source.slice(0,6)){
+      const offset=a.startMs-b.startMs;
+      const starts=before.filter(c=>source.some(s=>Math.abs(c.startMs-s.startMs-offset)<=40)).length;
+      const ends=before.filter(c=>source.some(s=>Math.abs(c.endMs-s.endMs-offset)<=40)).length;
+      const support=Math.min(starts,ends)/before.length;
+      if(!boundaryBest||support>boundaryBest.support)boundaryBest={offset,matched:Math.min(starts,ends),support,boundaryToleranceMs:40};
+    }
+    if(boundaryBest?.matched>=10&&boundaryBest.support>=.85)best=boundaryBest;
+  }
   if(!best||best.matched<5||best.support<.75||Math.abs(best.offset)>60000)throw Error('Existing/source cue boundaries do not establish a stable offset');
   const cues=source.map(c=>({...c,startMs:c.startMs+best.offset,endMs:c.endMs+best.offset}));
   if(cues.some((c,i)=>c.startMs<0||c.endMs>duration||c.endMs<=c.startMs||i&&c.startMs<cues[i-1].endMs))throw Error('Restored cue boundaries require independent speech review');
-  return {cues,offsetMs:best.offset,matchedCueBoundaries:best.matched,boundarySupport:best.support};
+  return {cues,offsetMs:best.offset,matchedCueBoundaries:best.matched,boundarySupport:best.support,boundaryToleranceMs:best.boundaryToleranceMs||1};
 }
 function main(){
   const args=process.argv.slice(2),folder=args.find(a=>a.startsWith('--review-root='))?.slice(14),apply=args.includes('--apply');
@@ -41,7 +55,11 @@ function main(){
       if(m.sourceContentId!==ep.sourceContentId||m.vttSha256!==digest(raw)||m.mediaFingerprint!==digest(new URL(ep.video.hlsUrl).pathname))throw Error('Existing verification metadata is stale');
     }
     if(fs.existsSync(speechMeta)){speechVerified.push({seriesId:row.seriesId,episodeId:row.episodeId});continue;}
-    if(fs.existsSync(sourceMeta)){restored.push(JSON.parse(fs.readFileSync(sourceMeta)));continue;}
+    if(fs.existsSync(sourceMeta)){
+      const meta=JSON.parse(fs.readFileSync(sourceMeta));
+      if(!meta.boundaryToleranceMs){meta.boundaryToleranceMs=40;if(apply)fs.writeFileSync(sourceMeta,JSON.stringify(meta,null,2)+'\n');}
+      restored.push(meta);continue;
+    }
     const source=parse(fs.readFileSync(path.join(folder,'data',row.seriesId,'subtitles',path.basename(target)),'utf8'));
     const read=JSON.parse(fs.readFileSync(path.join(dir,'reading-lessons.json')))[row.episodeId];
     if(placeholder(source))throw Error('XET also contains placeholders; independent speech alignment required');

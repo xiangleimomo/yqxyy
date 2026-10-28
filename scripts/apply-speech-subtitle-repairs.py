@@ -11,8 +11,8 @@ ROOT=Path(__file__).resolve().parent.parent
 def clean(text):return re.sub(r'\[(?:i|b|u|g)@|@(?:i|b|u|g)\]','',text).strip()
 def digest(text):return hashlib.sha256(text.encode('utf-8')).hexdigest()
 def main():
- p=argparse.ArgumentParser();p.add_argument('--speech-root',action='append',required=True);p.add_argument('--xet-root',action='append',default=[]);p.add_argument('--apply',action='store_true');p.add_argument('--allow-pending',action='store_true');p.add_argument('--baseline',default='174cb935bdc19cd75643c526e9c27c5828598e4e');p.add_argument('--manifest');p.add_argument('--report',default='docs/speech-timing-repairs-2026-10-28.json');args=p.parse_args()
- evidence={};source={};baseline={};plans=[];pending=[]
+ p=argparse.ArgumentParser();p.add_argument('--speech-root',action='append',required=True);p.add_argument('--xet-root',action='append',default=[]);p.add_argument('--apply',action='store_true');p.add_argument('--allow-pending',action='store_true');p.add_argument('--adopt-verified-media',action='store_true');p.add_argument('--baseline',default='174cb935bdc19cd75643c526e9c27c5828598e4e');p.add_argument('--manifest');p.add_argument('--report',default='docs/speech-timing-repairs-2026-10-28.json');args=p.parse_args()
+ evidence={};source={};baseline={};plans=[];pending=[];media_plans={}
  previous=json.loads(Path(args.report).read_text(encoding='utf-8')) if Path(args.report).exists() else {}
  previous_by_id={(r['seriesId'],r['episodeId']):r for r in previous.get('lessons',[])}
  for folder in args.speech_root:
@@ -32,8 +32,16 @@ def main():
    if not r:raise ValueError('Speech evidence not yet available')
    directory=ROOT/'data'/sid;eps=json.loads((directory/'episodes.json').read_text(encoding='utf-8'));ep=next(e for e in eps if e['episodeId']==eid)
    current_path=urlparse(ep['video']['hlsUrl']).path
+   previous_media=None;candidate_url=None
    if r.get('mediaFingerprint'):
-    if digest(current_path)!=r['mediaFingerprint']:raise ValueError('Speech evidence belongs to a different media version')
+    if digest(current_path)!=r['mediaFingerprint']:
+     if not args.adopt_verified_media or key not in source:raise ValueError('Speech evidence belongs to a different media version')
+     row,_=source[key];candidate_url=row.get('reviewVideoCandidate','');candidate=urlparse(candidate_url)
+     if candidate.scheme!='https' or candidate.hostname!='cdn.littlefox.co.kr' or candidate.query or digest(candidate.path)!=r['mediaFingerprint'] or row['sourceContentId']!=ep.get('sourceContentId') or row['title']!=ep['title']:raise ValueError('Unverified replacement media identity')
+     read=json.loads((directory/'reading-lessons.json').read_text(encoding='utf-8'))[str(eid)]
+     agreement,anchors=match_cues([dict(startMs=0,endMs=1,text=p['text']) for p in read['paragraphs'] if p.get('text')],r['words'])
+     if agreement<.9 or sum(a.get('confidence',0)>=.8 for a in anchors)<len(anchors)*.8:raise ValueError('Replacement media does not independently match the complete Read')
+     previous_media=digest(current_path);current_path=candidate.path
    else:
     if sid not in baseline:baseline[sid]=json.loads(subprocess.check_output(['git','show',f'{args.baseline}:data/{sid}/episodes.json'],cwd=ROOT,text=True,encoding='utf-8'))
     before=next(e for e in baseline[sid] if e['episodeId']==eid)
@@ -68,6 +76,9 @@ def main():
    if old and old.get('afterFirstMs')==before[0]['startMs'] and old.get('wordingHash')==info['wordingHash']:
     info['beforeFirstMs']=old['beforeFirstMs'];info['beforeCueCount']=old['beforeCueCount']
    plans.append((path,corrected,info))
+   if candidate_url:
+    info['previousMediaFingerprint']=previous_media
+    media_plans.setdefault(sid,{})[eid]=candidate_url
    print(json.dumps({k:info[k] for k in ['seriesId','episodeId','coverage','offsetMs','afterCueCount','sourceMode']},ensure_ascii=False),flush=True)
   except Exception as error:pending.append(dict(seriesId=sid,episodeId=eid,error=str(error)))
  report=dict(method='Independent ASR word anchors, exact canonical XET/public-Read wording, per-media timebase checks. Automatic recognition is approximate, not a human listening certificate.',lessons=[info for _,_,info in plans],pending=pending)
@@ -87,5 +98,10 @@ def main():
     except OSError:
      if attempt==2:raise
      time.sleep(.2*(attempt+1))
+  for sid,replacements in media_plans.items():
+   target=ROOT/'data'/sid/'episodes.json';episodes=json.loads(target.read_text(encoding='utf-8'))
+   for ep in episodes:
+    if ep['episodeId'] in replacements:ep['video']['hlsUrl']=replacements[ep['episodeId']]
+   target.write_text(json.dumps(episodes,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
  print(json.dumps(dict(apply=args.apply,validated=len(plans),pending=pending),ensure_ascii=False),flush=True)
 if __name__=='__main__':main()
