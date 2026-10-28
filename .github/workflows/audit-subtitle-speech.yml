@@ -5,14 +5,14 @@ on:
       scope:
         description: "Validated audio review scope"
         type: choice
-        options: [timing, binding-samples]
+        options: [timing, binding-samples, placeholder-speech]
         default: timing
 permissions:
   contents: read
 jobs:
   speech:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 60
     strategy:
       fail-fast: false
       matrix:
