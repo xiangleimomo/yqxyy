@@ -5,7 +5,7 @@
  */
 const fs=require('node:fs/promises'),path=require('node:path'),crypto=require('node:crypto');
 const root=path.resolve(__dirname,'..'),base='http://xet.bolinzhiyin.cn';
-const option=process.argv.slice(2);if(option.some(a=>a!=='--apply'&&!a.startsWith('--lesson=')&&!a.startsWith('--output-dir=')))throw Error('Unknown option');
+const option=process.argv.slice(2);if(option.some(a=>a!=='--apply'&&!a.startsWith('--manifest=')&&!a.startsWith('--lesson=')&&!a.startsWith('--output-dir=')))throw Error('Unknown option');
 const out=path.resolve(option.find(a=>a.startsWith('--output-dir='))?.slice(13)||'subtitle-review');
 const clean=s=>String(s||'').replace(/\[n@/g,' ').replace(/\[(?:i|b|u)@|@(?:i|b|u)\]/gi,'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim().replace(/^\[caption_out@(?:\])?$/i,'');
 const norm=s=>clean(s).toLowerCase().replace(/[‘’]/g,"'").replace(/[^\p{L}\p{N}]+/gu,'');
@@ -44,10 +44,12 @@ async function main(){
  const three=cards.find(x=>clean(x[2])==='Romance of the Three Kingdoms')?.[1];if(!three)throw Error('Three Kingdoms series ID not found; catalogue title: '+(catalog.match(/<title>(.*?)<\/title>/s)?.[1]||'')+'; links: '+[...catalog.matchAll(/href=["']([^"']+)/g)].map(x=>x[1]).filter(x=>/^[a-z_0-9]+\.php/i.test(x)).slice(0,20).join(', '));
  const bank=JSON.parse(await fs.readFile(path.join(root,'scripts/quiz-revisions/2026-10-23.json'),'utf8'));
  const requested=option.filter(a=>a.startsWith('--lesson=')).map(a=>{const [seriesId,n]=a.slice(9).split(':');const episodeId=Number(n);if(!/^[a-z0-9-]+$/.test(seriesId)||!Number.isInteger(episodeId)||episodeId<1)throw Error('Invalid lesson selector');return {seriesId,episodeId};});
- const selected=requested.length?requested:bank.lessons.map(({seriesId,episodeId})=>({seriesId,episodeId}));if(!requested.length)selected.push({seriesId:'little-fox-daisy-dolittle-fs0175',episodeId:35});
+ const manifestArg=option.find(a=>a.startsWith('--manifest='))?.slice(11);
+ const selected=manifestArg?JSON.parse(await fs.readFile(path.resolve(manifestArg),'utf8')).lessons:requested.length?requested:bank.lessons.map(({seriesId,episodeId})=>({seriesId,episodeId}));if(!manifestArg&&!requested.length)selected.push({seriesId:'little-fox-daisy-dolittle-fs0175',episodeId:35});
+ for(const row of selected)if(!/^[a-z0-9-]+$/.test(row.seriesId)||!Number.isInteger(row.episodeId)||row.episodeId<1)throw Error('Invalid manifest selector');
  const playlistCache=new Map();
- const report={source:'XET timed subtitles and Little Fox official public Read',lessons:[]};
- for(const item of selected){
+ const report={source:'XET timed subtitles and Little Fox official public Read',lessons:[],failures:[]};
+ for(const item of selected){try{
   const dir=path.join(root,'data',item.seriesId),episodes=JSON.parse(await fs.readFile(path.join(dir,'episodes.json'),'utf8')),ep=episodes.find(e=>e.episodeId===item.episodeId);
   if(!ep?.sourceContentId)throw Error('Missing content ID');
   const fsId=item.seriesId==='three-kingdoms'?three:item.seriesId.match(/(fs\d+)$/i)[1].toUpperCase();
@@ -76,7 +78,8 @@ async function main(){
   report.lessons.push(row);
   const target=path.join(out,'data',item.seriesId,'subtitles');await fs.mkdir(target,{recursive:true});await fs.writeFile(path.join(target,String(item.episodeId).padStart(3,'0')+'.vtt'),vtt(cues));
   console.log(JSON.stringify({...item,videoDurationMs,remoteVideoDurationMs:remoteInfo.durationMs,timelineMatchesRemote,cueCount:cues.length,sameVideoPath,readMatchesOfficial:row.readMatchesOfficial,subtitleMatchesOfficial:row.subtitleMatchesOfficial}));
- }
+ }catch(err){report.failures.push({...item,error:err.message.replace(/https?:[^ ]+/g,'[source URL]')});console.error('Review failed: '+item.seriesId+'/'+item.episodeId);}}
+ if(option.includes('--apply')&&report.failures.length)throw Error('Some lessons failed validation; no VTT files published');
  if(option.includes('--apply'))for(const row of report.lessons){const file=String(row.episodeId).padStart(3,'0')+'.vtt',target=path.join(root,'data',row.seriesId,'subtitles');await fs.mkdir(target,{recursive:true});await fs.copyFile(path.join(out,'data',row.seriesId,'subtitles',file),path.join(target,file));}
  await fs.mkdir(out,{recursive:true});await fs.writeFile(path.join(out,'review.json'),JSON.stringify(report,null,2)+'\n');
 }

@@ -1,0 +1,25 @@
+name: Compare suspect subtitles with current XET originals
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Compare scoped lessons without overwriting published files
+        env:
+          XET_ACCOUNT: ${{ secrets.XET_ACCOUNT }}
+          XET_PASSWORD: ${{ secrets.XET_PASSWORD }}
+        run: node scripts/import-recent-xet-vtt.cjs --manifest=scripts/subtitle-review/2026-10-28-targets.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: scoped-xet-review
+          path: subtitle-review/
+          retention-days: 3
