@@ -5,7 +5,7 @@ import argparse, difflib, json, os, re, subprocess, tempfile, time
 from pathlib import Path
 from urllib.parse import urlparse
 from faster_whisper import WhisperModel
-import imageio_ffmpeg
+import shutil
 
 ROOT=Path(__file__).resolve().parent.parent
 
@@ -60,10 +60,10 @@ def main():
             path=ROOT/'data'/sid/'subtitles'/f'{eid:03}.vtt';cues=cues_from_vtt(path.read_text(encoding='utf-8'))
             with tempfile.TemporaryDirectory(prefix='yqxyy-speech-') as temp:
                 wav=Path(temp)/'audio.wav'
-                result=subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(),'-hide_banner','-loglevel','error','-reconnect','1','-reconnect_streamed','1','-reconnect_delay_max','3','-i',url,'-vn','-ac','1','-ar','16000','-y',str(wav)],stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=240)
+                result=subprocess.run([shutil.which('ffmpeg') or 'ffmpeg','-hide_banner','-loglevel','error','-reconnect','1','-reconnect_streamed','1','-reconnect_delay_max','3','-i',url,'-vn','-ac','1','-ar','16000','-y',str(wav)],stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=240)
                 if result.returncode:
                     diagnostic=re.sub(r'https?://[^\s]+','[media URL]',result.stderr.decode('utf-8','replace'))
-                    raise ValueError('Audio extraction failed: '+diagnostic[-700:])
+                    raise ValueError('Audio extraction failed ('+str(result.returncode)+'): '+diagnostic[-700:])
                 segments,info=model.transcribe(str(wav),language='en',beam_size=3,word_timestamps=True,vad_filter=True,condition_on_previous_text=False)
                 words=[dict(start=w.start,end=w.end,word=w.word,probability=w.probability) for segment in segments for w in (segment.words or [])]
             report=dict(**item,title=ep['title'],sourceContentId=ep.get('sourceContentId'),model='faster-whisper tiny.en int8',durationMs=round(info.duration*1000),**compare(cues,words),words=words)
