@@ -96,7 +96,7 @@ async function main() {
   const seriesListPath = path.join(DATA_ROOT, 'series-list.json');
   const seriesList = await readJson(seriesListPath, []);
   const plans = await concurrent(selectedCatalogue, async item => ({ item, playlist: parsePlaylist(await (await request(`/xhl_play.php?fs_id=${encodeURIComponent(item.fsId)}`)).text()) }));
-  const discovered = {}; const changed = []; const seriesReport = [];
+  const discovered = {}; const changed = []; const seriesReport = []; const newSubtitleLessons=[];
   for (const { item, playlist } of plans) {
     let seriesId = targetId(seriesList, item);
     if (!seriesId) {
@@ -129,8 +129,10 @@ async function main() {
       changed.push(seriesId);
       execFileSync(process.execPath, [path.join(__dirname, 'enrich-new-lessons.mjs'), seriesId, ...newRows.map(row => String(row.episodeId))], { stdio: 'inherit' });
       execFileSync(process.execPath, [path.join(__dirname, 'import-recent-xet-vtt.cjs'), '--apply', '--output-dir=subtitle-review', ...newRows.map(row => `--lesson=${seriesId}:${row.episodeId}`)], { stdio: 'inherit' });
+      newSubtitleLessons.push(...newRows.map(row=>({seriesId,episodeId:row.episodeId})));
     }
   }
+  if(apply){await fs.mkdir(path.resolve('subtitle-review'),{recursive:true});await fs.writeFile(path.resolve('subtitle-review/new-lessons.json'),JSON.stringify({lessons:newSubtitleLessons},null,2)+'\n');}
   if (apply && changed.length) {
     await fs.writeFile(seriesListPath, `${JSON.stringify(seriesList, null, 2)}\n`);
     execFileSync(process.execPath, [path.join(__dirname, 'generate-search-index.js')], { stdio: 'inherit' });

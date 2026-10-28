@@ -11,11 +11,12 @@ assert.equal(report.lessons.length,11);let count=0;
 for(const row of report.lessons){
  const dir=path.join(__dirname,'../data',row.seriesId),ep=JSON.parse(fs.readFileSync(path.join(dir,'episodes.json'))).find(e=>e.episodeId===row.episodeId);
  assert.equal(ep.sourceContentId,row.sourceContentId);assert.equal(ep.title,row.title);
- const raw=fs.readFileSync(path.join(dir,'subtitles',String(row.episodeId).padStart(3,'0')+'.vtt'),'utf8');
+ const raw=fs.readFileSync(path.join(dir,'subtitles',String(row.episodeId).padStart(3,'0')+'.vtt'),'utf8').replace(/\r/g,'');
  assert(raw.startsWith('WEBVTT\n'));assert(!/\[(?:i|b|u|n)@|@(?:i|b|u)\]/.test(raw));
  const cues=context.app.parseVtt(raw);assert.equal(cues.length,row.cueCount);
  for(const [i,c]of cues.entries()){assert(c.endMs>c.startMs&&c.startMs>=0);if(i)assert(c.startMs>=cues[i-1].endMs);}
- assert.equal(cues[0].startMs,row.firstMs);assert.equal(cues.at(-1).endMs,row.lastMs);assert(cues.at(-1).endMs<=row.videoDurationMs);
+ const timingFile=path.join(dir,'subtitles',String(row.episodeId).padStart(3,'0')+'.timing.json'),timing=fs.existsSync(timingFile)?JSON.parse(fs.readFileSync(timingFile)):null;
+ assert.equal(cues[0].startMs,timing?.afterFirstMs??row.firstMs);assert.equal(cues.at(-1).endMs,timing?.afterLastMs??row.lastMs);assert(cues.at(-1).endMs<=row.videoDurationMs);
  const read=JSON.parse(fs.readFileSync(path.join(dir,'reading-lessons.json')))[String(row.episodeId)];
  assert.equal(norm(cues.map(c=>c.text).join(' ')),norm(read.paragraphs.map(p=>p.text||p).join(' ')),row.seriesId+'/'+row.episodeId+' Read text');
  assert(row.readMatchesOfficial&&row.subtitleMatchesOfficial&&row.timelineMatchesRemote);assert(row.maxBoundaryDriftMs<=42);count+=cues.length;

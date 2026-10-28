@@ -1,5 +1,9 @@
 # Recent Little Fox subtitles — 2026-10-27
 
+Timing update: the October 28 speech audit supersedes the original raw XET times.
+It identified missing intro offsets in this batch and corrected them against
+actual video word onsets. See `speech-timing-repairs-2026-10-28.json`.
+
 Scope: Three Kingdoms 10–11; Red Magic 210–211; The Happy Prince 12–13;
 Nero the Talking Dog 7–8; Daisy Dolittle 33–35. Eleven VTT files, 675 cues.
 

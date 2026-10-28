@@ -32,7 +32,7 @@ node scripts/repair-subtitle-controls.cjs --dry-run
 node tests/subtitle-controls.test.cjs
 ```
 
-## Speech review in progress
+## Completed speech review
 
 Structural scanning also flagged long/overlapping cues. A scoped 56-lesson
 manifest includes these suspects plus the recent releases. The manual speech
@@ -41,3 +41,20 @@ faster-whisper word timestamps, retaining canonical text for comparison. Results
 are review evidence, not automatic permission to replace wording. Source URLs,
 audio files and model caches are not committed. Source-version and duration
 checks from October 27 alone did not establish spoken-word alignment.
+
+
+The scoped 56-lesson audit is complete: 2,802 cues now have per-media speech evidence, bounded non-overlapping timestamps and timing sidecars. Missing intro offsets (roughly 11–13 seconds on recent imports), long cues and alphabet placeholders in Spotlight 21 / Phonics II 23–25 were corrected. This is automated speech verification, not a claim that all 3,495 files received human listening review.
+
+## Exact content bindings and repeated frames
+
+Authenticated exact-ID/title comparisons found 291 mismatched Read bindings across eight legacy series. The repair preserves episode positions and reuses Read/vocabulary/quiz only from the matching original source ID; 292 videos across nine series were corrected, including South Street School 28. Space Patrol 94 required a newly fetched public Read. Red Magic 128 additionally restores one XET/audio-verified spoken line absent from its public Read. Reports list the exact scope and verified media fingerprints.
+
+325 VTT files had duplicate highlight frames: 45,098 duplicate frames were merged only when the resulting complete transcript exactly matched the episode Read, preserving real spoken repetitions.
+
+## Verification and future imports
+
+The browser passed caption rendering at first/middle/last cues on all 56 reviewed lessons. Watch remains video-capable; Listen and Read remains audio-only with reading text. The source-binding guard passes 5,648 Read bindings and all 56 VTT/media fingerprints. Relevant unit tests, app syntax and diff whitespace checks pass. New automatic imports now run actual-audio alignment and source/VTT integrity checks before publishing.
+
+## Extended placeholder recovery
+
+A subsequent whole-site scan found 573 additional legacy files with mostly alphabet/numeric placeholders. A separate authenticated source audit is running against this explicit manifest. These are additional work, not part of the completed 56-lesson speech scope; the final recovery report will distinguish restored source wording and independently verified speech timing.

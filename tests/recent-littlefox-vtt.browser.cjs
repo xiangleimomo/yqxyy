@@ -13,7 +13,7 @@ const root=path.resolve(__dirname,'..'),reportPath=process.env.SUBTITLE_REPORT||
   await page.evaluate(async r=>{App.activeLessonTab='watch';await App.renderLesson(r.seriesId,r.episodeId);},row);
   await page.waitForFunction(()=>document.querySelector('video')?.textTracks?.[0]?.cues?.length>0);
   assert.equal(await page.locator('#lessonPanel video').count(),1);
-  if(process.env.LIVE_MEDIA){await page.waitForFunction(()=>document.querySelector('#lessonPanel video').readyState>=1,{},{timeout:35000});const d=await page.locator('video').evaluate(v=>v.duration*1000);assert(Math.abs(d-row.videoDurationMs)<1000,'Decoded video duration '+row.sourceContentId);}
+  if(process.env.LIVE_MEDIA){await page.waitForFunction(()=>document.querySelector('#lessonPanel video').readyState>=1,{},{timeout:35000});const d=await page.locator('video').evaluate(v=>v.duration*1000);assert(Math.abs(d-(row.videoDurationMs||row.durationMs))<1000,'Decoded video duration '+row.sourceContentId);}
   for(const c of [cues[0],cues[Math.floor(cues.length/2)],cues.at(-1)]){
    await page.locator('video').evaluate((v,c)=>{const time=(c.startMs+c.endMs)/2000;if(v.readyState>=1)v.currentTime=time;else Object.defineProperty(v,'currentTime',{configurable:true,get:()=>time});v.dispatchEvent(new Event('timeupdate'));},c);
    await page.waitForFunction(text=>document.querySelector('.video-caption')?.textContent===text,c.text);

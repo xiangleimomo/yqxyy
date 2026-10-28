@@ -28,12 +28,13 @@ for (const lesson of bank.lessons) {
   if (!affected.has(dir)) affected.set(dir, new Set());
   affected.get(dir).add(String(lesson.episodeId));
 }
-// No unrelated lesson may be changed by the repair script.
+// Preserve unrelated lessons; separately reviewed exact-ID migrations have their own provenance checks.
+const rebindings = require('../docs/content-binding-repairs-2026-10-28.json').changes;
 for (const [dir, ids] of affected) {
   const file = `${dir}/quiz.json`;
   const before = JSON.parse(execFileSync('git', ['show', `8dac086:${file}`], {cwd: root, encoding: 'utf8'}));
   const after = read(file);
-  for (const [id, lesson] of Object.entries(before)) if (!ids.has(id)) assert.deepEqual(after[id], lesson);
+  for (const [id, lesson] of Object.entries(before)) if (!ids.has(id) && !rebindings.some(r => `data/${r.seriesId}` === dir && String(r.episodeId) === id)) assert.deepEqual(after[id], lesson);
 }
 const official = read('data/journey-to-the-west/quiz.json')['1'];
 const episode = {episodeId: 999, sourceContentId: 'future-release'};
