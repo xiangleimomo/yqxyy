@@ -1,6 +1,12 @@
 name: Audit Little Fox subtitle speech timing
 on:
   workflow_dispatch:
+    inputs:
+      scope:
+        description: "Validated audio review scope"
+        type: choice
+        options: [timing, binding-samples]
+        default: timing
 permissions:
   contents: read
 jobs:
@@ -23,6 +29,8 @@ jobs:
           sudo apt-get install -y ffmpeg
           ffmpeg -version
       - name: Compare actual video speech against timed captions
+        env:
+          SPEECH_SCOPE: ${{ inputs.scope }}
         run: python scripts/audit-subtitle-speech.py --manifest scripts/subtitle-review/2026-10-28-targets.json --shard ${{ matrix.shard }} --shards 4
       - uses: actions/upload-artifact@v4
         if: always()
