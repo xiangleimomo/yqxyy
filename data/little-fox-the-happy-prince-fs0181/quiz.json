@@ -1189,5 +1189,158 @@
         }
       }
     ]
+  },
+  "14": {
+    "episodeId": 14,
+    "title": "To Catch a Thief Quiz",
+    "styleReference": "journey-to-the-west",
+    "revision": "2026-10-28",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "story",
+        "question": "Why does the mayor want to tear down the statue?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He does not want the king to see its changed appearance."
+          },
+          {
+            "key": "B",
+            "text": "He wants to move it closer to the palace."
+          },
+          {
+            "key": "C",
+            "text": "He needs its gold to buy the townspeople warm clothes."
+          }
+        ],
+        "answer": "A",
+        "explanation": "市长不想让国王看到雕像变成这样，因此提议拆除雕像。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p5"
+          ],
+          "quote": "The mayor clapped to get everyone's attention. \"Yes, we must catch the thief. But the king must not see what happened to his beautiful statue.\" The mayor drew in a breath. \"So we will tear it down!\""
+        }
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "story",
+        "question": "Why does Swallow scold the townspeople?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They have given all their food to the hawk."
+          },
+          {
+            "key": "B",
+            "text": "They refuse to let the prince speak to the king."
+          },
+          {
+            "key": "C",
+            "text": "They want to destroy the statue that helped them."
+          }
+        ],
+        "answer": "C",
+        "explanation": "燕子指出雕像牺牲自己的美丽改善人们生活，人们却要拆掉它。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p8"
+          ],
+          "quote": "He chirped softly. \"This statue gave away his beauty to make your lives better! And now you will tear him down? Shame on all of you!\""
+        }
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "story",
+        "question": "Who can hear Swallow's words?",
+        "options": [
+          {
+            "key": "A",
+            "text": "All the people in the crowd."
+          },
+          {
+            "key": "B",
+            "text": "Only the statue."
+          },
+          {
+            "key": "C",
+            "text": "The mayor and the king."
+          }
+        ],
+        "answer": "B",
+        "explanation": "旁白明确说镇民听不见燕子，只有雕像能听见。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p9"
+          ],
+          "quote": "But of course, reader, the townspeople could not hear Swallow. Only the statue could hear these words."
+        }
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "story",
+        "question": "Why did the prince ask Swallow to give away his gold and jewels?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He wanted to help unhappy people."
+          },
+          {
+            "key": "B",
+            "text": "He wanted the hawk to leave the town."
+          },
+          {
+            "key": "C",
+            "text": "He wanted the king to replace the statue."
+          }
+        ],
+        "answer": "A",
+        "explanation": "王子看到人间的不幸，想帮助人们，于是请燕子协助。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p18"
+          ],
+          "quote": "\"Because from up here I see all the unhappiness in the land. I had to do something to help people. And so, I asked Swallow to help me.\""
+        }
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "story",
+        "question": "What happens at the end of the episode?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Swallow becomes strong enough to fly away."
+          },
+          {
+            "key": "B",
+            "text": "The hawk carries Swallow safely to the palace."
+          },
+          {
+            "key": "C",
+            "text": "One of the statue's arms breaks off and falls toward Swallow."
+          }
+        ],
+        "answer": "C",
+        "explanation": "最后雕像的一只胳膊折断，朝燕子落去，故事留下悬念。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p22"
+          ],
+          "quote": "With another crack, one of the statue's arms snapped off. Then it fell down, sailing toward Swallow!"
+        }
+      }
+    ]
   }
 }

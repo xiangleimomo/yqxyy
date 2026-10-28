@@ -7,7 +7,7 @@ const fs=require('node:fs/promises'),path=require('node:path'),crypto=require('n
 const root=path.resolve(__dirname,'..'),base='http://xet.bolinzhiyin.cn';
 const option=process.argv.slice(2);if(option.some(a=>a!=='--apply'&&!a.startsWith('--lesson=')&&!a.startsWith('--output-dir=')))throw Error('Unknown option');
 const out=path.resolve(option.find(a=>a.startsWith('--output-dir='))?.slice(13)||'subtitle-review');
-const clean=s=>String(s||'').replace(/\[n@/g,' ').replace(/\[(?:i|b|u)@|@(?:i|b|u)\]/gi,'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
+const clean=s=>String(s||'').replace(/\[n@/g,' ').replace(/\[(?:i|b|u)@|@(?:i|b|u)\]/gi,'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim().replace(/^\[caption_out@(?:\])?$/i,'');
 const norm=s=>clean(s).toLowerCase().replace(/[‘’]/g,"'").replace(/[^\p{L}\p{N}]+/gu,'');
 const stamp=n=>{const h=Math.floor(n/3600000),m=Math.floor(n%3600000/60000),s=Math.floor(n%60000/1000);return [h,m,s].map(x=>String(x).padStart(2,'0')).join(':')+'.'+String(n%1000).padStart(3,'0');};
 function vtt(cues){return 'WEBVTT\n\n'+cues.map((c,i)=>`${i+1}\n${stamp(c.startMs)} --> ${stamp(c.endMs)}\n${c.text}\n`).join('\n');}
@@ -55,7 +55,7 @@ async function main(){
   const playlist=playlistCache.get(fsId);
   const remote=playlist.find(e=>e.fc_id===ep.sourceContentId);if(!remote||norm(remote.title)!==norm(ep.title))throw Error('Episode identity/title mismatch for '+item.seriesId+'/'+item.episodeId);
   const detail=await(await request('/xhl_play.php?ajax=episode&fc_id='+ep.sourceContentId+'&fs_id='+fsId)).json();
-  const cues=(detail.subtitle||remote.subtitle||[]).map(c=>({startMs:Number(c.start_ms),endMs:Number(c.end_ms),text:clean(c.text)}));
+  const cues=(detail.subtitle||remote.subtitle||[]).map(c=>({startMs:Number(c.start_ms),endMs:Number(c.end_ms),text:clean(c.text)})).filter(c=>c.text);
   if(!cues.length)throw Error('No XET cues for '+ep.sourceContentId);
   for(let i=0;i<cues.length;i++){const c=cues[i];if(!Number.isInteger(c.startMs)||!Number.isInteger(c.endMs)||c.startMs<0||c.endMs<=c.startMs||!c.text||i&&c.startMs<cues[i-1].startMs)throw Error('Invalid cue '+i+' for '+ep.sourceContentId);}
   const published=ep.video.hlsUrl,remoteUrl=detail.video_url||remote.video_url||remote.url;

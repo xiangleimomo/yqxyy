@@ -1400,5 +1400,159 @@
         }
       }
     ]
+  },
+  "12": {
+    "episodeId": 12,
+    "title": "The Seven-Star Dagger Quiz",
+    "styleReference": "journey-to-the-west",
+    "revision": "2026-10-28",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "story",
+        "question": "Why does Cao Cao think he has a chance to kill Dong Zhuo?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Dong Zhuo trusts him and expects a visit."
+          },
+          {
+            "key": "B",
+            "text": "Wang Yun has already arrested Dong Zhuo."
+          },
+          {
+            "key": "C",
+            "text": "Dong Zhuo plans to leave Luoyang alone."
+          }
+        ],
+        "answer": "A",
+        "explanation": "董卓信任曹操，而且约好次日见面，给了曹操接近他的机会。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p3"
+          ],
+          "quote": "Cao Cao looked around the room. \"Dong Zhuo trusts me. In fact, I'm supposed to meet with him tomorrow.\""
+        }
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "story",
+        "question": "Why does Cao Cao like the seven-star dagger for his plan?",
+        "options": [
+          {
+            "key": "A",
+            "text": "It will frighten all the guards."
+          },
+          {
+            "key": "B",
+            "text": "It is easy to hide in his robe."
+          },
+          {
+            "key": "C",
+            "text": "It belonged to Dong Zhuo as a child."
+          }
+        ],
+        "answer": "B",
+        "explanation": "曹操说匕首很容易藏起来，随后将它藏进袍子。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p7"
+          ],
+          "quote": "Cao Cao admired the dagger. \"Perfect. This will be easy to hide.\" He slipped it into his robe and looked around the room. \"I will not fail you.\""
+        }
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "story",
+        "question": "How does Cao Cao realize Dong Zhuo is awake?",
+        "options": [
+          {
+            "key": "A",
+            "text": "A servant warns him from the stable."
+          },
+          {
+            "key": "B",
+            "text": "A guard wakes Dong Zhuo with a shout."
+          },
+          {
+            "key": "C",
+            "text": "He sees Dong Zhuo staring at him in the mirror."
+          }
+        ],
+        "answer": "C",
+        "explanation": "曹操在镜子里看到董卓的倒影正盯着自己，才意识到情况危险。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p19"
+          ],
+          "quote": "A large mirror stood behind the couch. Cao Cao could see his reflection in the mirror. Then he gulped. Dong Zhuo's reflection was staring directly at him!"
+        }
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "story",
+        "question": "What does Cao Cao say when the guards rush in?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The dagger is a gift for Dong Zhuo."
+          },
+          {
+            "key": "B",
+            "text": "Wang Yun is waiting outside the house."
+          },
+          {
+            "key": "C",
+            "text": "He needs the guards to find his horse."
+          }
+        ],
+        "answer": "A",
+        "explanation": "他立即跪下并将匕首说成礼物，用来掩饰刺杀企图。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p21"
+          ],
+          "quote": "As guards rushed into the room, Cao Cao dropped to his knees. He held out the seven-star dagger. \"A gift for you, sir!\""
+        }
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "story",
+        "question": "What happens to Cao Cao at the end of the episode?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He returns to Dong Zhuo to apologize."
+          },
+          {
+            "key": "B",
+            "text": "Soldiers stop him and say he is under arrest."
+          },
+          {
+            "key": "C",
+            "text": "He reaches his family home without being seen."
+          }
+        ],
+        "answer": "B",
+        "explanation": "故事最后，士兵在中牟县拦住曹操，拿着通缉令宣布逮捕他。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p38",
+            "p39"
+          ],
+          "quote": "After another day of riding, he began to feel safe. But that changed in Zhongmu County. Cao Cao came across a group of soldiers blocking the road. One soldier stepped forward, holding a \"Wanted\" poster. \"Cao Cao! You're under arrest!\""
+        }
+      }
+    ]
   }
 }

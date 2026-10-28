@@ -827,5 +827,165 @@
         }
       }
     ]
+  },
+  "9": {
+    "episodeId": 9,
+    "title": "Sneaking In Quiz",
+    "styleReference": "journey-to-the-west",
+    "revision": "2026-10-28",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single-choice",
+        "category": "story",
+        "question": "Why is Dev going to the cereal factory?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He needs to buy food for Nero."
+          },
+          {
+            "key": "B",
+            "text": "It is Take Your Kid to Work Day."
+          },
+          {
+            "key": "C",
+            "text": "He has lost his school backpack."
+          }
+        ],
+        "answer": "B",
+        "explanation": "爸爸问戴夫是否准备好参加带孩子上班日，戴夫期待参观工厂。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p7",
+            "p8"
+          ],
+          "quote": "\"Ready for Take Your Kid to Work Day, Dev?\" Dev grinned. \"Totally! I can't wait to tour the factory.\""
+        }
+      },
+      {
+        "id": "q2",
+        "type": "single-choice",
+        "category": "story",
+        "question": "Why does Dad say Nero cannot come?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Nero has to visit Pam."
+          },
+          {
+            "key": "B",
+            "text": "The factory is too far away."
+          },
+          {
+            "key": "C",
+            "text": "Dogs are not allowed around the food."
+          }
+        ],
+        "answer": "C",
+        "explanation": "爸爸明确说，食品周围不允许有狗。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p13",
+            "p14"
+          ],
+          "quote": "\"Dad, can Nero come?\" Dev asked. \"No,\" Dad said. \"Dogs aren't allowed around the food.\""
+        }
+      },
+      {
+        "id": "q3",
+        "type": "single-choice",
+        "category": "story",
+        "question": "Where does Nero hide?",
+        "options": [
+          {
+            "key": "A",
+            "text": "In Dev's backpack, under his lunch."
+          },
+          {
+            "key": "B",
+            "text": "Inside Dad's coat pocket."
+          },
+          {
+            "key": "C",
+            "text": "In a box of Crackle Pops."
+          }
+        ],
+        "answer": "A",
+        "explanation": "尼罗跳进戴夫的背包，躲在午餐下面。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p20",
+            "p21"
+          ],
+          "quote": "He crept over to Dev's backpack. Nero hopped inside and slid under Dev's lunch."
+        }
+      },
+      {
+        "id": "q4",
+        "type": "single-choice",
+        "category": "story",
+        "question": "Why does Dev think his backpack is heavy?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He thinks Nero has hidden inside."
+          },
+          {
+            "key": "B",
+            "text": "He thinks Dad packed a very big lunch."
+          },
+          {
+            "key": "C",
+            "text": "He thinks he put too many books in it."
+          }
+        ],
+        "answer": "B",
+        "explanation": "戴夫没有发现尼罗，而是猜爸爸装了一大份午餐。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p24",
+            "p25",
+            "p26"
+          ],
+          "quote": "Dev came back and picked up his backpack. \"Oof! It's heavy!\" He laughed. \"I guess you packed a really big lunch, Dad."
+        }
+      },
+      {
+        "id": "q5",
+        "type": "single-choice",
+        "category": "story",
+        "question": "What does Nero think at the end?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He is at a new dog park."
+          },
+          {
+            "key": "B",
+            "text": "He is back in his own kitchen."
+          },
+          {
+            "key": "C",
+            "text": "He is back at Dr. Shady's lab."
+          }
+        ],
+        "answer": "C",
+        "explanation": "熟悉的声音和气味让尼罗以为自己又回到了谢迪博士的实验室。",
+        "source": "editorial-public-read",
+        "evidence": {
+          "paragraphIds": [
+            "p40",
+            "p41",
+            "p42"
+          ],
+          "quote": "\"Familiar sounds . . . familiar smells . . . I've been here before!\" Nero gulped. \"I'm back at Dr. Shady's lab!\""
+        }
+      }
+    ]
   }
 }

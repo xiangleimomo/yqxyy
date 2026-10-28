@@ -1,10 +1,12 @@
 /* Reviewed story questions, bound to the exact episode and its public Read. */
 const fs = require('node:fs');
 const path = require('node:path');
-const bank = JSON.parse(fs.readFileSync(path.join(__dirname, '../quiz-revisions/2026-10-23.json'), 'utf8'));
+const bankDir=path.join(__dirname,'../quiz-revisions');
+const banks=fs.readdirSync(bankDir).filter(name=>/^[0-9]{4}-[0-9]{2}-[0-9]{2}[.]json$/.test(name)).sort().reverse().map(name=>JSON.parse(fs.readFileSync(path.join(bankDir,name),'utf8')));
 
 function reviewedStoryQuiz(seriesId, episode, reading) {
-  const lesson = bank.lessons.find(row => row.seriesId === seriesId && row.episodeId === Number(episode.episodeId));
+  const bank=banks.find(value=>value.lessons.some(row=>row.seriesId===seriesId&&row.episodeId===Number(episode.episodeId)));
+  const lesson = bank?.lessons.find(row => row.seriesId === seriesId && row.episodeId === Number(episode.episodeId));
   if (!lesson) return null;
   if (lesson.sourceContentId !== episode.sourceContentId || reading?.sourceId !== lesson.sourceContentId) {
     throw Error(`Quiz/Read source mismatch: ${seriesId}/${episode.episodeId}`);

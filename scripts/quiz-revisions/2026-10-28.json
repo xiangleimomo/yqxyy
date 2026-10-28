@@ -1,0 +1,290 @@
+{
+  "date": "2026-10-28",
+  "reference": "data/journey-to-the-west/quiz.json",
+  "lessons": [
+    {
+      "seriesId": "three-kingdoms",
+      "episodeId": 12,
+      "sourceContentId": "C0013408",
+      "questions": [
+        {
+          "category": "story",
+          "question": "Why does Cao Cao think he has a chance to kill Dong Zhuo?",
+          "options": [
+            "Dong Zhuo trusts him and expects a visit.",
+            "Wang Yun has already arrested Dong Zhuo.",
+            "Dong Zhuo plans to leave Luoyang alone."
+          ],
+          "answer": "A",
+          "explanation": "董卓信任曹操，而且约好次日见面，给了曹操接近他的机会。",
+          "evidence": {
+            "paragraphIds": [
+              "p3"
+            ],
+            "quote": "Cao Cao looked around the room. \"Dong Zhuo trusts me. In fact, I'm supposed to meet with him tomorrow.\""
+          }
+        },
+        {
+          "category": "story",
+          "question": "Why does Cao Cao like the seven-star dagger for his plan?",
+          "options": [
+            "It will frighten all the guards.",
+            "It is easy to hide in his robe.",
+            "It belonged to Dong Zhuo as a child."
+          ],
+          "answer": "B",
+          "explanation": "曹操说匕首很容易藏起来，随后将它藏进袍子。",
+          "evidence": {
+            "paragraphIds": [
+              "p7"
+            ],
+            "quote": "Cao Cao admired the dagger. \"Perfect. This will be easy to hide.\" He slipped it into his robe and looked around the room. \"I will not fail you.\""
+          }
+        },
+        {
+          "category": "story",
+          "question": "How does Cao Cao realize Dong Zhuo is awake?",
+          "options": [
+            "A servant warns him from the stable.",
+            "A guard wakes Dong Zhuo with a shout.",
+            "He sees Dong Zhuo staring at him in the mirror."
+          ],
+          "answer": "C",
+          "explanation": "曹操在镜子里看到董卓的倒影正盯着自己，才意识到情况危险。",
+          "evidence": {
+            "paragraphIds": [
+              "p19"
+            ],
+            "quote": "A large mirror stood behind the couch. Cao Cao could see his reflection in the mirror. Then he gulped. Dong Zhuo's reflection was staring directly at him!"
+          }
+        },
+        {
+          "category": "story",
+          "question": "What does Cao Cao say when the guards rush in?",
+          "options": [
+            "The dagger is a gift for Dong Zhuo.",
+            "Wang Yun is waiting outside the house.",
+            "He needs the guards to find his horse."
+          ],
+          "answer": "A",
+          "explanation": "他立即跪下并将匕首说成礼物，用来掩饰刺杀企图。",
+          "evidence": {
+            "paragraphIds": [
+              "p21"
+            ],
+            "quote": "As guards rushed into the room, Cao Cao dropped to his knees. He held out the seven-star dagger. \"A gift for you, sir!\""
+          }
+        },
+        {
+          "category": "story",
+          "question": "What happens to Cao Cao at the end of the episode?",
+          "options": [
+            "He returns to Dong Zhuo to apologize.",
+            "Soldiers stop him and say he is under arrest.",
+            "He reaches his family home without being seen."
+          ],
+          "answer": "B",
+          "explanation": "故事最后，士兵在中牟县拦住曹操，拿着通缉令宣布逮捕他。",
+          "evidence": {
+            "paragraphIds": [
+              "p38",
+              "p39"
+            ],
+            "quote": "After another day of riding, he began to feel safe. But that changed in Zhongmu County. Cao Cao came across a group of soldiers blocking the road. One soldier stepped forward, holding a \"Wanted\" poster. \"Cao Cao! You're under arrest!\""
+          }
+        }
+      ]
+    },
+    {
+      "seriesId": "little-fox-nero-the-talking-dog-fs0183",
+      "episodeId": 9,
+      "sourceContentId": "C0013593",
+      "questions": [
+        {
+          "category": "story",
+          "question": "Why is Dev going to the cereal factory?",
+          "options": [
+            "He needs to buy food for Nero.",
+            "It is Take Your Kid to Work Day.",
+            "He has lost his school backpack."
+          ],
+          "answer": "B",
+          "explanation": "爸爸问戴夫是否准备好参加带孩子上班日，戴夫期待参观工厂。",
+          "evidence": {
+            "paragraphIds": [
+              "p7",
+              "p8"
+            ],
+            "quote": "\"Ready for Take Your Kid to Work Day, Dev?\" Dev grinned. \"Totally! I can't wait to tour the factory.\""
+          }
+        },
+        {
+          "category": "story",
+          "question": "Why does Dad say Nero cannot come?",
+          "options": [
+            "Nero has to visit Pam.",
+            "The factory is too far away.",
+            "Dogs are not allowed around the food."
+          ],
+          "answer": "C",
+          "explanation": "爸爸明确说，食品周围不允许有狗。",
+          "evidence": {
+            "paragraphIds": [
+              "p13",
+              "p14"
+            ],
+            "quote": "\"Dad, can Nero come?\" Dev asked. \"No,\" Dad said. \"Dogs aren't allowed around the food.\""
+          }
+        },
+        {
+          "category": "story",
+          "question": "Where does Nero hide?",
+          "options": [
+            "In Dev's backpack, under his lunch.",
+            "Inside Dad's coat pocket.",
+            "In a box of Crackle Pops."
+          ],
+          "answer": "A",
+          "explanation": "尼罗跳进戴夫的背包，躲在午餐下面。",
+          "evidence": {
+            "paragraphIds": [
+              "p20",
+              "p21"
+            ],
+            "quote": "He crept over to Dev's backpack. Nero hopped inside and slid under Dev's lunch."
+          }
+        },
+        {
+          "category": "story",
+          "question": "Why does Dev think his backpack is heavy?",
+          "options": [
+            "He thinks Nero has hidden inside.",
+            "He thinks Dad packed a very big lunch.",
+            "He thinks he put too many books in it."
+          ],
+          "answer": "B",
+          "explanation": "戴夫没有发现尼罗，而是猜爸爸装了一大份午餐。",
+          "evidence": {
+            "paragraphIds": [
+              "p24",
+              "p25",
+              "p26"
+            ],
+            "quote": "Dev came back and picked up his backpack. \"Oof! It's heavy!\" He laughed. \"I guess you packed a really big lunch, Dad."
+          }
+        },
+        {
+          "category": "story",
+          "question": "What does Nero think at the end?",
+          "options": [
+            "He is at a new dog park.",
+            "He is back in his own kitchen.",
+            "He is back at Dr. Shady's lab."
+          ],
+          "answer": "C",
+          "explanation": "熟悉的声音和气味让尼罗以为自己又回到了谢迪博士的实验室。",
+          "evidence": {
+            "paragraphIds": [
+              "p40",
+              "p41",
+              "p42"
+            ],
+            "quote": "\"Familiar sounds . . . familiar smells . . . I've been here before!\" Nero gulped. \"I'm back at Dr. Shady's lab!\""
+          }
+        }
+      ]
+    },
+    {
+      "seriesId": "little-fox-the-happy-prince-fs0181",
+      "episodeId": 14,
+      "sourceContentId": "C0013534",
+      "questions": [
+        {
+          "category": "story",
+          "question": "Why does the mayor want to tear down the statue?",
+          "options": [
+            "He does not want the king to see its changed appearance.",
+            "He wants to move it closer to the palace.",
+            "He needs its gold to buy the townspeople warm clothes."
+          ],
+          "answer": "A",
+          "explanation": "市长不想让国王看到雕像变成这样，因此提议拆除雕像。",
+          "evidence": {
+            "paragraphIds": [
+              "p5"
+            ],
+            "quote": "The mayor clapped to get everyone's attention. \"Yes, we must catch the thief. But the king must not see what happened to his beautiful statue.\" The mayor drew in a breath. \"So we will tear it down!\""
+          }
+        },
+        {
+          "category": "story",
+          "question": "Why does Swallow scold the townspeople?",
+          "options": [
+            "They have given all their food to the hawk.",
+            "They refuse to let the prince speak to the king.",
+            "They want to destroy the statue that helped them."
+          ],
+          "answer": "C",
+          "explanation": "燕子指出雕像牺牲自己的美丽改善人们生活，人们却要拆掉它。",
+          "evidence": {
+            "paragraphIds": [
+              "p8"
+            ],
+            "quote": "He chirped softly. \"This statue gave away his beauty to make your lives better! And now you will tear him down? Shame on all of you!\""
+          }
+        },
+        {
+          "category": "story",
+          "question": "Who can hear Swallow's words?",
+          "options": [
+            "All the people in the crowd.",
+            "Only the statue.",
+            "The mayor and the king."
+          ],
+          "answer": "B",
+          "explanation": "旁白明确说镇民听不见燕子，只有雕像能听见。",
+          "evidence": {
+            "paragraphIds": [
+              "p9"
+            ],
+            "quote": "But of course, reader, the townspeople could not hear Swallow. Only the statue could hear these words."
+          }
+        },
+        {
+          "category": "story",
+          "question": "Why did the prince ask Swallow to give away his gold and jewels?",
+          "options": [
+            "He wanted to help unhappy people.",
+            "He wanted the hawk to leave the town.",
+            "He wanted the king to replace the statue."
+          ],
+          "answer": "A",
+          "explanation": "王子看到人间的不幸，想帮助人们，于是请燕子协助。",
+          "evidence": {
+            "paragraphIds": [
+              "p18"
+            ],
+            "quote": "\"Because from up here I see all the unhappiness in the land. I had to do something to help people. And so, I asked Swallow to help me.\""
+          }
+        },
+        {
+          "category": "story",
+          "question": "What happens at the end of the episode?",
+          "options": [
+            "Swallow becomes strong enough to fly away.",
+            "The hawk carries Swallow safely to the palace.",
+            "One of the statue's arms breaks off and falls toward Swallow."
+          ],
+          "answer": "C",
+          "explanation": "最后雕像的一只胳膊折断，朝燕子落去，故事留下悬念。",
+          "evidence": {
+            "paragraphIds": [
+              "p22"
+            ],
+            "quote": "With another crack, one of the statue's arms snapped off. Then it fell down, sailing toward Swallow!"
+          }
+        }
+      ]
+    }
+  ]
+}
