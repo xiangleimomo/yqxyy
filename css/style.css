@@ -1064,7 +1064,7 @@ body.series-fixed-page .footer{
   padding-right:6px;
 }
 .app-shell.series-page-shell .episode-workspace{
-  overflow:hidden;
+  overflow:auto;
 }
 .app-shell.series-page-shell .module-grid{
   margin-top:22px;
@@ -1095,6 +1095,7 @@ body.series-fixed-page .footer{
 @media(max-width:800px){
   html.series-fixed-page,
   body.series-fixed-page{
+    height:auto;
     overflow:auto;
   }
   .app-shell.series-page-shell{
@@ -1112,7 +1113,16 @@ body.series-fixed-page .footer{
 }
 
 /* v22.11 chapter unlock */
-.episode-side-item{position:relative;display:flex;flex-direction:column;gap:4px}
+.episode-side-item{position:relative;display:flex;flex-direction:row;gap:10px;width:100%;min-width:0;flex-shrink:0}
+.episode-thumbnail{width:80px;aspect-ratio:4/3;object-fit:cover;border-radius:8px;flex:0 0 auto}
+.episode-side-details{display:flex;flex-direction:column;gap:6px;min-width:0;flex:1;text-align:left}
+.episode-side-title{display:flex;align-items:center;gap:6px;overflow-wrap:anywhere}
+.episode-side-item .num{width:25px;height:25px;flex:0 0 auto;font-size:12px}
+.episode-preview{display:flex;align-items:center;gap:18px}
+.episode-preview-cover{width:160px;aspect-ratio:4/3;object-fit:cover;border-radius:12px;flex:0 0 auto}
+.episode-preview h2{margin-top:0}
+.episode-thumbnail[hidden],.episode-preview-cover[hidden]{display:none}
+@media(max-width:500px){.episode-preview-cover{width:100px}.episode-preview{gap:12px}}
 .episode-side-item small{font-size:12px;color:#6b7c93}
 .episode-side-item.locked{opacity:.55;cursor:not-allowed;background:#f7f9fc}
 .episode-progress-tip{margin:12px 0;padding:10px 14px;border-radius:12px;background:#f0f7ff;color:#35628e;font-size:14px}

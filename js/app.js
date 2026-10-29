@@ -200,6 +200,21 @@ const App = {
     return {reading:reading[String(episodeId)],vocab:vocabulary[String(episodeId)]||[],quiz:quizzes[String(episodeId)]};
   },
   
+  episodeCoverUrl(ep){
+    const id=String(ep?.sourceContentId || '');
+    return /^C\d{7}$/.test(id)?`https://img.littlefox.com/static/contents/img/${id}/notext_ipad.jpg`:'';
+  },
+  episodeCover(ep, className){
+    const url=this.episodeCoverUrl(ep);
+    return url?`<img class="${className}" data-episode-cover src="${url}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">`:'';
+  },
+  bindEpisodeCovers(root){
+    root.querySelectorAll('[data-episode-cover]').forEach(img=>{
+      const hide=()=>{img.hidden=true;};
+      img.addEventListener('error',hide,{once:true});
+      if(img.complete && !img.naturalWidth) hide();
+    });
+  },
 async renderSeries(seriesId){
   if(!seriesId) return this.renderHome();
   const [bundle] = await Promise.all([this.loadSeries(seriesId)]);
@@ -268,11 +283,12 @@ async renderSeries(seriesId){
         const prog=this.episodeProgress(seriesId,e.episodeId);
         const done=!!(prog.modules.quiz);
         return `<button class="episode-side-item ${Number(e.episodeId)===activeEpisodeId?'active':''} ${unlocked?'':'locked'}" data-ep="${e.episodeId}" data-available="${available}" ${unlocked || guestLocked?'':'disabled'}>
-          <span class="num">${e.episodeId}</span>
-          <span>${e.title}${done?' ✓':''}</span>
-          <small>${!available?'即将上线':(unlocked?(done?'已完成':'可学习'):(guestLocked?'🔒 注册后解锁':'🔒 未解锁'))}</small>
+          ${this.episodeCover(e,'episode-thumbnail')}
+          <span class="episode-side-details"><span class="episode-side-title"><span class="num">${e.episodeId}</span><span>${e.title}${done?' ✓':''}</span></span>
+          <small>${!available?'即将上线':(unlocked?(done?'已完成':'可学习'):(guestLocked?'🔒 注册后解锁':'🔒 未解锁'))}</small></span>
         </button>`;
       }).join('') : '<div class="episode-filter-empty">没有找到匹配课程</div>';
+      this.bindEpisodeCovers(list);
       document.querySelectorAll('.episode-side-item').forEach(btn=>btn.onclick=()=>openEpisode(btn.dataset.ep));
     };
     const openEpisode = (id)=>{
@@ -290,8 +306,8 @@ async renderSeries(seriesId){
       this.rememberEpisode(seriesId,activeEpisodeId);
       document.querySelectorAll('.episode-side-item').forEach(x=>x.classList.toggle('active', Number(x.dataset.ep)===Number(ep.episodeId)));
       document.getElementById('episodeWorkspace').innerHTML=`
-        <h2>Episode ${ep.episodeId} · ${ep.title}</h2>
-        <p class="muted">${ep.titleZh || ''}</p>
+        <div class="episode-preview">${this.episodeCover(ep,'episode-preview-cover')}<div><h2>Episode ${ep.episodeId} · ${ep.title}</h2>
+        <p class="muted">${ep.titleZh || ''}</p></div></div>
         ${series.movieId?`<p class="muted">${this.escapeHtml(ep.summaryEn || '')} · ${Math.ceil(ep.video.duration/60)} 分钟</p>`:''}
         <div class="module-grid">
           ${ep.video?.hlsUrl?'<button class="module-card direct-video-card" data-go="watch">▶️<b>Watch</b><span>看视频</span></button>':''}
@@ -300,6 +316,7 @@ async renderSeries(seriesId){
           ${ep.modules?.quiz?'<button class="module-card" data-go="quiz">✅<b>Quiz</b><span>测验</span></button>':''}
           ${(ep.modules?.words || ep.modules?.vocabulary)?'<button class="module-card" data-go="games">🎮<b>Games</b><span>游戏</span></button>':''}
         </div>`;
+      this.bindEpisodeCovers(document.getElementById('episodeWorkspace'));
       document.querySelectorAll('.module-card').forEach(btn=>{
         btn.onclick=()=>{ this.openLearningModal(btn.dataset.go, seriesId, ep.episodeId); };
       });
