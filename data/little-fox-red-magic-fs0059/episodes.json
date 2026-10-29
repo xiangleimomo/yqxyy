@@ -5057,5 +5057,29 @@
       "quiz": true,
       "review": false
     }
+  },
+  {
+    "episodeId": 212,
+    "sourceContentId": "C0013572",
+    "title": "Panno's Story",
+    "titleZh": "",
+    "releaseDate": "",
+    "status": "published",
+    "sourceType": "xet-catalog",
+    "unlockRequiresQuiz": false,
+    "video": {
+      "source": "hls",
+      "hlsUrl": "https://cdn.littlefox.co.kr/contents_5/hls/720/cf2409c8fc/1792731128a793d307441615af6aaad7497a75de59/stream.m3u8?_=1792731146"
+    },
+    "modules": {
+      "watch": true,
+      "read": true,
+      "words": true,
+      "vocabulary": true,
+      "phrases": false,
+      "grammar": false,
+      "quiz": false,
+      "review": false
+    }
   }
 ]
