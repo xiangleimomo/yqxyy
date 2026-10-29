@@ -1,0 +1,30 @@
+[
+  {
+    "id": "vidsrc",
+    "name": "VidSrc",
+    "mode": "embed",
+    "movieUrl": "https://vidsrc.sh/embed/movie/{tmdbId}?autoplay=0&ds_lang=en",
+    "documentation": "https://vidsrc.sh/vidsrc/docs/"
+  },
+  {
+    "id": "vidlink",
+    "name": "VidLink",
+    "mode": "embed",
+    "movieUrl": "https://vidlink.pro/movie/{tmdbId}?autoplay=false",
+    "documentation": "https://vidlink.pro/"
+  },
+  {
+    "id": "111movies",
+    "name": "111Movies",
+    "mode": "external",
+    "movieUrl": "https://111movies.net/movie/{tmdbId}",
+    "note": "当前入口会跳转至 Vidlove；新页面尝试播放。"
+  },
+  {
+    "id": "streamjuju",
+    "name": "StreamJuju",
+    "mode": "external",
+    "movieUrl": "https://streamjuju.cyou/watch/movie/{tmdbId}",
+    "note": "在聚合站中选择更多播放平台。"
+  }
+]

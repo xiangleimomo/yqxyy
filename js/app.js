@@ -40,6 +40,7 @@ const App = {
     const q = document.getElementById('globalSearch').value.trim();
     if(!q) return;
     this.hideSearchSuggestions();
+    if(this.route()[0]==='movie-hub') {location.hash='#/movie-hub/search/'+encodeURIComponent(q);return;}
     if(['movies','movie','movie-series'].includes(this.route()[0])) {
       location.hash = '#/movies/' + encodeURIComponent(q);
       return;
@@ -53,7 +54,7 @@ const App = {
   queueSearchSuggestions(){
     clearTimeout(this.searchTimer);
     const input=document.getElementById('globalSearch');
-    if(!input?.value.trim() || ['movies','movie','movie-series'].includes(this.route()[0])) return this.hideSearchSuggestions();
+    if(!input?.value.trim() || ['movies','movie','movie-series','movie-hub'].includes(this.route()[0])) return this.hideSearchSuggestions();
     this.searchTimer=setTimeout(()=>this.showSearchSuggestions(input.value),180);
   },
   async showSearchSuggestions(query){
@@ -81,9 +82,10 @@ const App = {
   async render(){
     const [page, a, b] = this.route();
     window.MovieClassroom?.cleanup();
+    window.MovieHub?.cleanup();
     window.SFFamily?.stop();
     this.disposeHlsPlayers(this.el());
-    const isMoviePage = ['movies','movie','movie-series'].includes(page) || (['series','lesson'].includes(page) && String(a||'').startsWith('movie-'));
+    const isMoviePage = ['movies','movie','movie-series','movie-hub'].includes(page) || (['series','lesson'].includes(page) && String(a||'').startsWith('movie-'));
     document.querySelectorAll('.main-tab').forEach(tab=>{
       const active = tab.getAttribute('href') === (['homework','family','parent','child'].includes(page) ? '#/homework' : isMoviePage ? '#/movies' : '#/home');
       tab.classList.toggle('active', active);
@@ -103,6 +105,7 @@ const App = {
     try{
       if(['homework','family','parent','child'].includes(page)) return await window.SFFamily.render(this);
       if(page === 'movies') return await window.MovieClassroom.renderList(this, decodeURIComponent(a || ''));
+      if(page === 'movie-hub') return await window.MovieHub.render(this,a==='search'?'':a,a==='search'?decodeURIComponent(b||''):'');
       if(page === 'movie-series') return await window.MovieClassroom.renderSeries(this, a);
       if(page === 'movie') return await window.MovieClassroom.renderWatch(this, a);
       if(page === 'home') return this.renderHome();
