@@ -213,7 +213,9 @@ async renderSeries(seriesId){
     const start=index * 10 + 1;
     return {start, end:Math.min(start + 9, episodes.length)};
   });
-  let activeEpisodeId=1;
+  const savedEpisodeId=this.storage('selectedEpisodes')?.[seriesId];
+  const initialEpisode=episodes.find(ep=>Number(ep.episodeId)===Number(savedEpisodeId) && ep.status==='published' && this.canAccessEpisode(seriesId,ep.episodeId) && !this.isGuestEpisodeLimit(seriesId,ep.episodeId)) || episodes[0];
+  let activeEpisodeId=Number(initialEpisode?.episodeId || 1);
   this.el().classList.add('series-page-shell');
   this.el().classList.toggle('movie-study-course',Boolean(series.movieId));
   document.body.classList.toggle('movie-study-page',Boolean(series.movieId));
@@ -285,6 +287,7 @@ async renderSeries(seriesId){
         return;
       }
       activeEpisodeId=Number(ep.episodeId);
+      this.rememberEpisode(seriesId,activeEpisodeId);
       document.querySelectorAll('.episode-side-item').forEach(x=>x.classList.toggle('active', Number(x.dataset.ep)===Number(ep.episodeId)));
       document.getElementById('episodeWorkspace').innerHTML=`
         <h2>Episode ${ep.episodeId} · ${ep.title}</h2>
@@ -305,7 +308,8 @@ async renderSeries(seriesId){
     document.getElementById('episodeRangeFilter').addEventListener('change',renderEpisodeList);
     this.episodeListRefresh={seriesId,render:renderEpisodeList};
     renderEpisodeList();
-    openEpisode(1);
+    openEpisode(activeEpisodeId);
+    document.querySelector('.episode-side-item.active')?.scrollIntoView({block:'nearest'});
 },
 episodeCard(seriesId,e,review={}){
   const isReady = e.status === 'published';
@@ -351,6 +355,7 @@ async renderLesson(seriesId, episodeId){
     }
     const visibleTabs=[...(ep.video?.hlsUrl?['watch']:[]),...(ep.modules?.read?['listenRead']:[]),...((ep.modules?.words||ep.modules?.vocabulary)?['words','games']:[]),...(ep.modules?.quiz?['quiz']:[])];
     const tab = visibleTabs.includes(this.activeLessonTab) ? this.activeLessonTab : 'watch';
+    this.rememberEpisode(seriesId,episodeId);
     const assets=await this.loadLessonAssets(seriesId,episodeId,tab);
     const lessonData = {seriesId, episodeId, series, ep, ...assets, phrases:[], grammar:[], review:{}};
     this.disposeHlsPlayers(this.el());
@@ -1344,6 +1349,14 @@ addPoints(n=1){
     if(val===undefined){try{return JSON.parse(localStorage.getItem(k)||'null')}catch(e){return null}}
     localStorage.setItem(k, JSON.stringify(val));
     window.SFCloud?.schedule();
+  },
+
+  rememberEpisode(seriesId,episodeId){
+    // Keep the view per account without queuing a cloud progress sync.
+    const selections=this.storage('selectedEpisodes') || {};
+    selections[seriesId]=Number(episodeId);
+    const key=window.SFCloud?.storageKey('selectedEpisodes') || 'sf_selectedEpisodes';
+    localStorage.setItem(key,JSON.stringify(selections));
   },
 
   isAdmin(){return window.SFCloud?.isAdmin?.()===true;},
