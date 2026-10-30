@@ -469,7 +469,7 @@
       return;
     }
     const playbackUrl = directDulo ? "/_movie-media/bluevelvet/" + new URL(episode.url).pathname.slice("/play/".length) : episode.url;
-    if (/\.m3u8(?:[?#]|$)/i.test(episode.url)) {
+    if (directDulo || /\.m3u8(?:[?#]|$)/i.test(episode.url)) {
       const safari =
         /Safari/i.test(navigator.userAgent) &&
         !/Chrome|Chromium|CriOS|Edg|Android/i.test(navigator.userAgent);

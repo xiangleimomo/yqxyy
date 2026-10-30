@@ -9,7 +9,9 @@ function mediaUrl(raw) {
   const safe = core.safeUrl(raw);
   if (!safe) return '';
   const u = new URL(safe);
-  return /^\/play\/[A-Za-z0-9._-]{1,160}\/master\.m3u8$/.test(u.pathname) && !u.search ? core.duloMediaUrl(safe) : '';
+  // The public lookup now also returns opaque HLS filenames prefixed with ~.
+  // Use the supplied URL as-is; do not decode it or copy session rebind values.
+  return /^\/play\/[A-Za-z0-9._-]{1,160}\/(?:master\.m3u8|~[A-Za-z0-9._-]{1,160})$/.test(u.pathname) && !u.search && !u.hash ? core.duloMediaUrl(safe) : '';
 }
 function createDuloProvider(read, fetcher = (...args) => fetch(...args)) {
   const cache = new Map();

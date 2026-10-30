@@ -6,15 +6,18 @@ const source = 'https://zcdn.bluevelvet.space/play/test_token/master.m3u8';
 for (const bad of ['https://evil.test/play/a/master.m3u8','http://zcdn.bluevelvet.space/play/a/master.m3u8','https://user@zcdn.bluevelvet.space/play/a/master.m3u8','https://zcdn.bluevelvet.space:444/play/a/master.m3u8','https://zcdn.bluevelvet.space/other/a/master.m3u8','https://zcdn.bluevelvet.space/play/a/master.m3u8?url=https://evil.test']) assert.equal(mediaUrl(bad),'');
 const current=require('../source-lab/core.js').duloMediaUrl(source);
 assert.equal(mediaUrl(source),current);
+const opaque='https://zcdn2.6azt0hwr-cf9.workers.dev/play/test_token/~opaque_file-123';
+assert.equal(mediaUrl(opaque),opaque.replace('zcdn2.','zcdn1.'));
+for(const bad of ['https://evil.test/play/test_token/~opaque','https://zcdn1.6azt0hwr-cf9.workers.dev/play/a/~opaque?url=https://evil.test','https://zcdn1.6azt0hwr-cf9.workers.dev/play/a/~opaque#fragment','https://zcdn1.6azt0hwr-cf9.workers.dev/play/a/unknown.php'])assert.equal(mediaUrl(bad),'');
 (async()=>{
- let ready = true, invalidUrl = false, cdnCalls = 0, calls=[];
+ let ready = true, invalidUrl = false, useOpaque = false, cdnCalls = 0, calls=[];
  const adapter = createDuloProvider(async r=>{assert(r.ok);return r.text();},async (raw,options)=>{
   const u=new URL(raw);calls.push(u);
   assert.equal(options.redirect,'error');
   if(u.origin==='https://zcdn1.6azt0hwr-cf9.workers.dev'){
    assert.equal(u.pathname,'/cdn');cdnCalls++;
    if(u.searchParams.get('type')==='tv') {assert.equal(u.searchParams.get('season'),'1');assert.equal(u.searchParams.get('episode'),'1');}
-   return new Response(JSON.stringify({ready,url:invalidUrl?'https://evil.test/video.m3u8':source}));
+   return new Response(JSON.stringify({ready,url:invalidUrl?'https://evil.test/video.m3u8':useOpaque?opaque:source}));
   }
   assert.equal(u.origin,'https://v3-cinemeta.strem.io');
   const tv=u.pathname.includes('/series/');
@@ -32,6 +35,7 @@ assert.equal(mediaUrl(source),current);
  const before=cdnCalls;
  const detail=await adapter.detail(p,rows[0].id);
  assert.equal(cdnCalls,before+1);assert.equal(detail.episodes[0].url,current);
+ useOpaque=true;assert.equal((await adapter.detail(p,rows[0].id)).episodes[0].url,opaque.replace('zcdn2.','zcdn1.'));useOpaque=false;
  const tv=await adapter.detail(p,rows[1].id);assert.equal(tv.episodes[0].label,'S01E01');assert(tv.remarks.includes('第1季第1集'));
  const count=calls.length;
  for(const id of ['https://evil.test','movie:123:tt1234567/../../x','movie:abc:tt1234567','tv:1:evil']) await assert.rejects(adapter.detail(p,id),/编号无效/);

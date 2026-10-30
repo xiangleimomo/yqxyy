@@ -2,7 +2,9 @@ const {chromium}=require('playwright');const fs=require('fs'),path=require('path
 (async()=>{const browser=await chromium.launch({channel:'msedge',headless:true});try{
  const page=await browser.newPage({viewport:{width:390,height:844}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
  const origin='https://classroom.test';
- const url='https://zcdn.bluevelvet.space/play/OYFcj0y8AqA2TuBJ.24QIgXivz3Knr9bMdt8twrCgkn3EaspEZKBKrlEIZq32QuUBlQjbHbcM9OF6AA/master.m3u8';
+ const response=await fetch('https://zcdn1.6azt0hwr-cf9.workers.dev/cdn?tmdb=508943&type=movie',{signal:AbortSignal.timeout(20000)});
+ const lookup=await response.json(),url=require('../source-lab/dulo-provider.cjs').mediaUrl(lookup.url);
+ assert(lookup.ready&&url,'The current public lookup must return an accepted HLS URL');
  const row={id:'movie:508943:tt12801262',providerId:'dulo',providerName:'Dulo · 主资源',title:'Luca',year:'2021',language:'unknown',languageLabel:'语言待核对',remarks:'电影 · 原站直连线路',episodes:[],websiteUrl:'https://dulo.mov/watch/movie/508943'};
  await page.route('https://cdn.jsdelivr.net/npm/hls.js@*/dist/hls.min.js',r=>r.fulfill({contentType:'application/javascript',body:'window.Hls={isSupported:()=>false};'}));
  await page.route(origin+'/**',async route=>{
@@ -36,5 +38,14 @@ const {chromium}=require('playwright');const fs=require('fs'),path=require('path
  await page.waitForFunction(()=>document.querySelector('video').src.includes('/_movie-media/bluevelvet/'));
  assert.equal(await page.locator('video').getAttribute('crossorigin'),'anonymous');
  await page.locator('#closePlayer').click();assert(await page.locator('#watch').isHidden());
- assert.deepEqual(errors,[]);console.log('PASS: Dulo first despite reversed API order, unknown-language filter, real direct native HLS, relay fallback, mobile layout and cleanup',JSON.stringify(media));
+ await page.evaluate(()=>{
+  HTMLMediaElement.prototype.canPlayType=()=>'';
+  window.Hls=class {static isSupported(){return true;}static Events={LEVEL_LOADED:'level',ERROR:'error'};on(){}loadSource(url){window.duloLoadedHls=url;}attachMedia(){}destroy(){}};
+ });
+ await page.locator('.card').first().getByRole('button').click();
+ await page.waitForFunction(()=>window.duloLoadedHls?.includes('/_movie-media/bluevelvet/'));
+ assert.equal(await page.evaluate(()=>window.duloLoadedHls),'/_movie-media/bluevelvet/'+new URL(url).pathname.slice('/play/'.length));
+ await page.locator('#closePlayer').click();
+ const {src,...safeMedia}=media;
+ assert.deepEqual(errors,[]);console.log('PASS: fresh public Dulo lookup, first-result ordering, language filter, real direct native HLS, opaque HLS via relay/HLS.js, mobile layout and cleanup',JSON.stringify({host:new URL(src).hostname,...safeMedia}));
 }finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

@@ -53,3 +53,16 @@ The current Frozen manifests advertise HEVC (`hev1`); this headless browser coul
 fetch them but did not decode the video. Frozen therefore has manifest/fragment
 verification only, not a confirmed full player test. No transcoding or change to
 that film's catalogue source was made.
+
+## Source-explorer follow-up
+
+The deployed public lookup returned `ready: true`, but its URL now ends with an
+opaque `~...` filename rather than `master.m3u8`. The explorer's old strict filter
+discarded these valid results, so its detail API returned an empty episode list.
+Accept both documented/observed URL forms only on the fixed Dulo host allowlist,
+reject query strings and fragments, and treat Dulo URLs as HLS regardless of file
+extension. Rebind values are still ignored and temporary links are not persisted.
+
+`tests/dulo-source.browser.cjs` now obtains a fresh public lookup URL instead of
+reusing a static link. Actual Luca playback advanced at 853×480; a controlled
+HLS.js check also verifies relay selection for the extensionless HLS URL.
