@@ -30,7 +30,7 @@ const {chromium}=require('playwright');const fs=require('fs'),path=require('path
  await page.locator('.card').first().getByRole('button').click();
  await page.waitForFunction(()=>document.querySelector('video').videoWidth>0&&document.querySelector('video').currentTime>1,null,{timeout:40000});
  const media=await page.locator('video').evaluate(v=>({src:v.currentSrc,width:v.videoWidth,height:v.videoHeight,time:v.currentTime,crossorigin:v.getAttribute('crossorigin')}));
- assert.equal(media.crossorigin,null);assert(media.src.startsWith('https://zcdn.bluevelvet.space/play/'));
+ assert.equal(media.crossorigin,null);assert(media.src.startsWith('https://zcdn1.6azt0hwr-cf9.workers.dev/play/'));
  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
  await page.locator('video').evaluate(v=>v.dispatchEvent(new Event('error')));
  await page.waitForFunction(()=>document.querySelector('video').src.includes('/_movie-media/bluevelvet/'));

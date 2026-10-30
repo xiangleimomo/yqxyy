@@ -3,13 +3,13 @@ const core = require('./core.js');
 const aliases = require('./subtitle-films.json');
 const ORIGIN = 'https://dulo.mov';
 const META = 'https://v3-cinemeta.strem.io';
-const CDN = 'https://zcdn.bluevelvet.space';
+const CDN = core.duloCdnOrigin;
 const imdb = id => /^tt\d{5,12}$/.test(String(id || ''));
 function mediaUrl(raw) {
   const safe = core.safeUrl(raw);
   if (!safe) return '';
   const u = new URL(safe);
-  return u.origin === CDN && /^\/play\/[A-Za-z0-9._-]{1,160}\/master\.m3u8$/.test(u.pathname) && !u.search ? safe : '';
+  return /^\/play\/[A-Za-z0-9._-]{1,160}\/master\.m3u8$/.test(u.pathname) && !u.search ? core.duloMediaUrl(safe) : '';
 }
 function createDuloProvider(read, fetcher = (...args) => fetch(...args)) {
   const cache = new Map();

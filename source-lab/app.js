@@ -407,7 +407,9 @@
     const episode = item.episodes[index];
     if (!episode) return;
     state.episode = episode;
-    const directDulo = item.providerId === "dulo" && /^https:\/\/zcdn\.bluevelvet\.space\/play\//.test(episode.url);
+    const duloUrl = item.providerId === "dulo" && C.duloMediaUrl(episode.url);
+    if(duloUrl) episode.url=duloUrl;
+    const directDulo = Boolean(duloUrl);
     const nativeDulo = directDulo && transport !== "relay" && video.canPlayType("application/vnd.apple.mpegurl");
     if (nativeDulo) video.removeAttribute("crossorigin");
     else video.setAttribute("crossorigin", "anonymous");

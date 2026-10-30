@@ -4,13 +4,14 @@ const {createDuloProvider, mediaUrl} = require('../source-lab/dulo-provider.cjs'
 const p = {id:'dulo',name:'Dulo · 主资源',kind:'dulo'};
 const source = 'https://zcdn.bluevelvet.space/play/test_token/master.m3u8';
 for (const bad of ['https://evil.test/play/a/master.m3u8','http://zcdn.bluevelvet.space/play/a/master.m3u8','https://user@zcdn.bluevelvet.space/play/a/master.m3u8','https://zcdn.bluevelvet.space:444/play/a/master.m3u8','https://zcdn.bluevelvet.space/other/a/master.m3u8','https://zcdn.bluevelvet.space/play/a/master.m3u8?url=https://evil.test']) assert.equal(mediaUrl(bad),'');
-assert.equal(mediaUrl(source),source);
+const current=require('../source-lab/core.js').duloMediaUrl(source);
+assert.equal(mediaUrl(source),current);
 (async()=>{
  let ready = true, invalidUrl = false, cdnCalls = 0, calls=[];
  const adapter = createDuloProvider(async r=>{assert(r.ok);return r.text();},async (raw,options)=>{
   const u=new URL(raw);calls.push(u);
   assert.equal(options.redirect,'error');
-  if(u.origin==='https://zcdn.bluevelvet.space'){
+  if(u.origin==='https://zcdn1.6azt0hwr-cf9.workers.dev'){
    assert.equal(u.pathname,'/cdn');cdnCalls++;
    if(u.searchParams.get('type')==='tv') {assert.equal(u.searchParams.get('season'),'1');assert.equal(u.searchParams.get('episode'),'1');}
    return new Response(JSON.stringify({ready,url:invalidUrl?'https://evil.test/video.m3u8':source}));
@@ -30,7 +31,7 @@ assert.equal(mediaUrl(source),source);
  assert.equal(cdnCalls,0,'Searching must not require a ready playback line');
  const before=cdnCalls;
  const detail=await adapter.detail(p,rows[0].id);
- assert.equal(cdnCalls,before+1);assert.equal(detail.episodes[0].url,source);
+ assert.equal(cdnCalls,before+1);assert.equal(detail.episodes[0].url,current);
  const tv=await adapter.detail(p,rows[1].id);assert.equal(tv.episodes[0].label,'S01E01');assert(tv.remarks.includes('第1季第1集'));
  const count=calls.length;
  for(const id of ['https://evil.test','movie:123:tt1234567/../../x','movie:abc:tt1234567','tv:1:evil']) await assert.rejects(adapter.detail(p,id),/编号无效/);
@@ -45,7 +46,7 @@ assert.equal(mediaUrl(source),source);
   const translated = createDuloProvider(r=>r.text(), async (raw, options)=>{
    const u=new URL(raw);
    if(u.origin==='https://www.wikidata.org') throw Error('Translation unavailable');
-   if(u.origin==='https://zcdn.bluevelvet.space') {streamRequests++;throw Error('CDN unavailable');}
+   if(u.origin==='https://zcdn1.6azt0hwr-cf9.workers.dev') {streamRequests++;throw Error('CDN unavailable');}
    if(u.pathname.includes('/catalog/series/')) throw Error('TV search timed out');
    const m={id:'tt1234567',imdb_id:'tt1234567',type:'movie',name:english,year:2021,moviedb_id:123};
    if(u.pathname.includes('/catalog/')) return new Response(JSON.stringify({metas:[m]}));

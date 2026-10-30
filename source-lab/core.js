@@ -1,5 +1,16 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 (function (root) {
+  // Dulo's public runtime config migrated these identical Workers on 2026-10-27.
+  // Keep existing catalogue tokens/paths; only update the retired public host.
+  const duloCdnOrigin='https://zcdn1.6azt0hwr-cf9.workers.dev';
+  function duloMediaUrl(raw){
+    try{
+      const u=new URL(raw);
+      const allowed=['https://zcdn.bluevelvet.space',...['zcdn1','zcdn2','zcdn3'].map(n=>`https://${n}.6azt0hwr-cf9.workers.dev`)];
+      if(!allowed.includes(u.origin)||u.username||u.password||!/^\/play\/[A-Za-z0-9._-]{1,160}\//.test(u.pathname))return '';
+      return duloCdnOrigin+u.pathname+u.search;
+    }catch{return '';}
+  }
   const safeUrl = (raw) => {
     try {
       const u = new URL(raw);
@@ -241,6 +252,8 @@
     return time + skipped;
   }
   const api = {
+    duloCdnOrigin,
+    duloMediaUrl,
     safeUrl,
     posterUrl,
     clean,

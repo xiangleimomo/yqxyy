@@ -76,13 +76,15 @@ window.MovieClassroom = {
       if (!/^https?:$/.test(url.protocol) || url.username || url.password) return {url: '', embedded: false};
       // Older catalogue entries stored parser HTML pages in hlsUrl.
       const parserPage = /\/parse\/?$/i.test(url.pathname) && url.searchParams.has('url');
-      return {url: url.href, embedded: !!embed || parserPage};
+      return {url: window.SourceLabCore?.duloMediaUrl?.(url.href) || url.href, embedded: !!embed || parserPage};
     } catch { return {url: '', embedded: false}; }
   },
   mediaUrl(sourceUrl) {
     // Compatibility fallback for browsers that cannot play HLS natively.
     // HLS.js needs same-origin playlists and assets when upstream lacks CORS.
     try {
+      const migrated=window.SourceLabCore?.duloMediaUrl?.(sourceUrl);
+      if(migrated){const u=new URL(migrated);return '/_movie-media/bluevelvet/'+u.pathname.slice('/play/'.length)+u.search;}
       const url = new URL(sourceUrl);
       if (url.protocol === 'https:' && url.hostname === 'zcdn.bluevelvet.space' && !url.port && !url.username && !url.password && url.pathname.startsWith('/play/')) {
         return '/_movie-media/bluevelvet/' + url.pathname.slice('/play/'.length) + url.search;

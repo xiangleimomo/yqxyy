@@ -10,7 +10,7 @@
 # manifests and relative HLS assets without a cross-origin browser request.
 [[redirects]]
   from = "/_movie-media/bluevelvet/*"
-  to = "https://zcdn.bluevelvet.space/play/:splat"
+  to = "https://zcdn1.6azt0hwr-cf9.workers.dev/play/:splat"
   status = 200
   force = true
 
