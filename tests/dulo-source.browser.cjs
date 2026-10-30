@@ -3,7 +3,8 @@ const {chromium}=require('playwright');const fs=require('fs'),path=require('path
  const page=await browser.newPage({viewport:{width:390,height:844}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
  const origin='https://classroom.test';
  const response=await fetch('https://zcdn1.6azt0hwr-cf9.workers.dev/cdn?tmdb=508943&type=movie',{signal:AbortSignal.timeout(20000)});
- const lookup=await response.json(),url=require('../source-lab/dulo-provider.cjs').mediaUrl(lookup.url);
+ const lookup=await response.json(),source=require('../source-lab/dulo-provider.cjs').mediaUrl(lookup.url);
+ const fresh=new URL(source);if(lookup.rb)fresh.searchParams.set('_rb',lookup.rb);const url=fresh.href;
  assert(lookup.ready&&url,'The current public lookup must return an accepted HLS URL');
  const row={id:'movie:508943:tt12801262',providerId:'dulo',providerName:'Dulo · 主资源',title:'Luca',year:'2021',language:'unknown',languageLabel:'语言待核对',remarks:'电影 · 原站直连线路',episodes:[],websiteUrl:'https://dulo.mov/watch/movie/508943'};
  await page.route('https://cdn.jsdelivr.net/npm/hls.js@*/dist/hls.min.js',r=>r.fulfill({contentType:'application/javascript',body:'window.Hls={isSupported:()=>false};'}));
@@ -44,7 +45,7 @@ const {chromium}=require('playwright');const fs=require('fs'),path=require('path
  });
  await page.locator('.card').first().getByRole('button').click();
  await page.waitForFunction(()=>window.duloLoadedHls?.includes('/_movie-media/bluevelvet/'));
- assert.equal(await page.evaluate(()=>window.duloLoadedHls),'/_movie-media/bluevelvet/'+new URL(url).pathname.slice('/play/'.length));
+ assert.equal(await page.evaluate(()=>window.duloLoadedHls),'/_movie-media/bluevelvet/'+new URL(url).pathname.slice('/play/'.length)+new URL(url).search);
  await page.locator('#closePlayer').click();
  const {src,...safeMedia}=media;
  assert.deepEqual(errors,[]);console.log('PASS: fresh public Dulo lookup, first-result ordering, language filter, real direct native HLS, opaque HLS via relay/HLS.js, mobile layout and cleanup',JSON.stringify({host:new URL(src).hostname,...safeMedia}));

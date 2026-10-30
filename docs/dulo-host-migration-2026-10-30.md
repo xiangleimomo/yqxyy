@@ -25,9 +25,10 @@ query strings. Original catalogue and backup URLs are unchanged. The existing
 same-origin Netlify relay now targets the replacement, including relative HLS
 playlists and media assets. Native playback remains direct where supported.
 
-This does not import Dulo's rewrite script, protected bridge, runtime secrets,
-cookies, or per-session rebind values. Existing provided catalogue tokens work at
-the replacement domain without those mechanisms.
+This does not import Dulo's rewrite script or decode its bridge paths. Existing
+provided catalogue tokens work at the replacement domain. Current public lookup
+results additionally carry a temporary viewer handoff capability; see the source
+explorer follow-up below. No cookies or temporary credentials enter source control.
 
 ## Verification
 
@@ -60,9 +61,17 @@ The deployed public lookup returned `ready: true`, but its URL now ends with an
 opaque `~...` filename rather than `master.m3u8`. The explorer's old strict filter
 discarded these valid results, so its detail API returned an empty episode list.
 Accept both documented/observed URL forms only on the fixed Dulo host allowlist,
-reject query strings and fragments, and treat Dulo URLs as HLS regardless of file
-extension. Rebind values are still ignored and temporary links are not persisted.
+reject unrelated query strings and fragments, and treat Dulo URLs as HLS regardless
+of file extension. Temporary links are not persisted.
 
 `tests/dulo-source.browser.cjs` now obtains a fresh public lookup URL instead of
 reusing a static link. Actual Luca playback advanced at 853×480; a controlled
 HLS.js check also verifies relay selection for the extensionless HLS URL.
+
+A production test then identified a separate viewer-binding rejection: a URL minted
+by the Netlify lookup returned HTTP 403 to the viewer. The same public lookup
+provides `rb`, which Dulo's published runtime passes as `_rb` when a viewer changes
+networks. The explorer now forwards this capability only for the selected film
+on the fixed CDN allowlist or same-origin relay. HLS subrequests retain it without
+leaking it to unrelated titles or external hosts. No capability is logged, cached
+by the lookup helper, or committed. The API response uses `Cache-Control: no-store`.

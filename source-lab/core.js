@@ -11,6 +11,18 @@
       return duloCdnOrigin+u.pathname+u.search;
     }catch{return '';}
   }
+  function duloHlsRequestUrl(raw,source,base){
+    try{
+      if(!duloMediaUrl(source))return raw;
+      const entry=new URL(source),rb=entry.searchParams.get('_rb');
+      if(!rb||!/^[A-Za-z0-9._~-]{1,128}$/.test(rb))return raw;
+      const url=new URL(raw,base),token=entry.pathname.split('/')[2];
+      const direct=duloMediaUrl(url.href)&&url.pathname.startsWith('/play/'+token+'/');
+      const relay=url.origin===new URL(base).origin&&url.pathname.startsWith('/_movie-media/bluevelvet/'+token+'/');
+      if(!direct&&!relay)return raw;
+      url.searchParams.set('_rb',rb);return url.href;
+    }catch{return raw;}
+  }
   const safeUrl = (raw) => {
     try {
       const u = new URL(raw);
@@ -254,6 +266,7 @@
   const api = {
     duloCdnOrigin,
     duloMediaUrl,
+    duloHlsRequestUrl,
     safeUrl,
     posterUrl,
     clean,

@@ -5,13 +5,16 @@ const ORIGIN = 'https://dulo.mov';
 const META = 'https://v3-cinemeta.strem.io';
 const CDN = core.duloCdnOrigin;
 const imdb = id => /^tt\d{5,12}$/.test(String(id || ''));
+const rebind = value => typeof value === 'string' && /^[A-Za-z0-9._~-]{1,128}$/.test(value);
 function mediaUrl(raw) {
   const safe = core.safeUrl(raw);
   if (!safe) return '';
   const u = new URL(safe);
   // The public lookup now also returns opaque HLS filenames prefixed with ~.
-  // Use the supplied URL as-is; do not decode it or copy session rebind values.
-  return /^\/play\/[A-Za-z0-9._-]{1,160}\/(?:master\.m3u8|~[A-Za-z0-9._-]{1,160})$/.test(u.pathname) && !u.search && !u.hash ? core.duloMediaUrl(safe) : '';
+  // Keep the public lookup's temporary viewer handoff capability in memory only.
+  const query=[...u.searchParams];
+  const validQuery=!query.length || (query.length===1 && query[0][0]==='_rb' && rebind(query[0][1]));
+  return /^\/play\/[A-Za-z0-9._-]{1,160}\/(?:master\.m3u8|~[A-Za-z0-9._-]{1,160})$/.test(u.pathname) && validQuery && !u.hash ? core.duloMediaUrl(safe) : '';
 }
 function createDuloProvider(read, fetcher = (...args) => fetch(...args)) {
   const cache = new Map();
@@ -33,10 +36,13 @@ function createDuloProvider(read, fetcher = (...args) => fetch(...args)) {
     const u = new URL('/cdn', CDN);
     u.searchParams.set('tmdb', id); u.searchParams.set('type', type);
     if (type === 'tv') { u.searchParams.set('season', '1'); u.searchParams.set('episode', '1'); }
-    // The same public lookup used by the site's watch page. Never store signed
-    // stream URLs in the catalogue or imitate its protected bridge transports.
+    // The same public lookup and viewer handoff used by the site's watch page.
+    // Never store these temporary URLs in the catalogue or decode bridge paths.
     const data = await json(u.href, signal, false);
-    return data.ready === true ? mediaUrl(data.url) : '';
+    const source=data.ready===true?mediaUrl(data.url):'';
+    if(!source || !rebind(data.rb))return source;
+    const target=new URL(source);target.searchParams.set('_rb',data.rb);
+    return target.href;
   }
   function item(provider, type, m, id) {
     const row = core.parseList({list: [{vod_id: id, vod_name: m.name, vod_pic: m.poster, vod_year: String(m.year || m.releaseInfo || '').slice(0, 4), vod_lang: m.language || '', type_name: type === 'tv' ? 'TV' : 'Movie'}]}, provider)[0];

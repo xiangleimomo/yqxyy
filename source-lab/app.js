@@ -468,7 +468,8 @@
       video.src = episode.url;
       return;
     }
-    const playbackUrl = directDulo ? "/_movie-media/bluevelvet/" + new URL(episode.url).pathname.slice("/play/".length) : episode.url;
+    const duloTarget=directDulo?new URL(episode.url):null;
+    const playbackUrl = duloTarget ? "/_movie-media/bluevelvet/" + duloTarget.pathname.slice("/play/".length) + duloTarget.search : episode.url;
     if (directDulo || /\.m3u8(?:[?#]|$)/i.test(episode.url)) {
       const safari =
         /Safari/i.test(navigator.userAgent) &&
@@ -477,6 +478,10 @@
         const hls = (state.hls = new Hls({
           maxBufferLength: 30,
           backBufferLength: 30,
+          xhrSetup: directDulo ? (xhr,url)=>{
+            const next=C.duloHlsRequestUrl(url,episode.url,location.href);
+            if(next!==url)xhr.open('GET',next,true);
+          } : undefined,
         }));
         let recovered = false;
         hls.on(Hls.Events.LEVEL_LOADED, (_, data) => {
