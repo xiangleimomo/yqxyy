@@ -6,8 +6,12 @@ window.BookReader = {
   cleanup() {
     if (this.keyHandler) document.removeEventListener('keydown', this.keyHandler);
     if (this.fullscreenHandler) document.removeEventListener('fullscreenchange', this.fullscreenHandler);
+    if (this.viewportResizeHandler) window.removeEventListener('resize', this.viewportResizeHandler);
+    this.resizeObserver?.disconnect();
     this.keyHandler = null;
     this.fullscreenHandler = null;
+    this.viewportResizeHandler = null;
+    this.resizeObserver = null;
     try { this.rendition?.destroy(); } catch (_) {}
     try { this.book?.destroy(); } catch (_) {}
     this.book = null;
@@ -83,10 +87,19 @@ window.BookReader = {
       setStatus('正在解析电子书…');
       this.book = window.ePub(file);
       stage.innerHTML = '';
-      this.rendition = this.book.renderTo(stage, { width: '100%', height: '100%', spread: 'none', flow: 'paginated' });
+      const viewportSize = () => ({
+        width: Math.max(320, Math.floor(stage.clientWidth)),
+        height: Math.max(400, Math.floor(stage.clientHeight))
+      });
+      const initialSize = viewportSize();
+      this.rendition = this.book.renderTo(stage, { width: initialSize.width, height: initialSize.height, spread: 'none', flow: 'paginated' });
       this.rendition.themes.fontSize(`${fontSize}%`);
       await this.rendition.display(localStorage.getItem(progressKey) || undefined);
-      requestAnimationFrame(() => this.rendition?.resize());
+      const resizeRendition = () => {
+        const size = viewportSize();
+        this.rendition?.resize(size.width, size.height);
+      };
+      requestAnimationFrame(resizeRendition);
       setStatus('阅读进度会自动保存在此设备。');
 
       let turning = false;
@@ -113,8 +126,14 @@ window.BookReader = {
         if (event.key === 'ArrowRight' || event.key === ' ') { event.preventDefault(); turn('next'); }
       };
       document.addEventListener('keydown', this.keyHandler);
-      this.fullscreenHandler = () => requestAnimationFrame(() => this.rendition?.resize());
+      this.fullscreenHandler = () => requestAnimationFrame(resizeRendition);
       document.addEventListener('fullscreenchange', this.fullscreenHandler);
+      if ('ResizeObserver' in window) {
+        this.resizeObserver = new ResizeObserver(resizeRendition);
+        this.resizeObserver.observe(stage);
+      }
+      this.viewportResizeHandler = resizeRendition;
+      window.addEventListener('resize', this.viewportResizeHandler);
 
       const navigation = await this.book.loaded.navigation;
       toc.innerHTML = navigation.toc.length ? navigation.toc.map(chapter => `<button type="button" data-href="${app.escapeHtml(chapter.href)}">${app.escapeHtml(chapter.label)}</button>`).join('') : '<span>本书未提供目录。</span>';

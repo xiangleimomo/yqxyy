@@ -1,5 +1,5 @@
 /* Large, paper-like canvas for fixed-layout picture books. */
-.app-shell.book-reader-shell{max-width:min(1540px,calc(100vw - 32px));padding-top:18px}
+.app-shell.book-reader-shell{width:calc(100vw - 32px);max-width:1540px;padding-top:18px}
 .ebook-stage{position:relative;height:calc(100dvh - 260px);min-height:620px;max-height:920px;overflow:hidden;background:radial-gradient(circle at center,#f8fafc 0,#e1e9ef 68%,#d1dbe3 100%);perspective:1800px}
 .ebook-page-turn{position:absolute;z-index:5;inset:0;display:none;pointer-events:none;opacity:0;background:linear-gradient(90deg,#ffffff1a 0%,#f7e9d3b8 42%,#6f51301f 50%,#fff9efba 58%,#ffffff08 100%);box-shadow:inset 22px 0 28px #65421d2e}
 .ebook-reader.turn-next .ebook-page-turn,.ebook-reader.turn-prev .ebook-page-turn{display:block}
