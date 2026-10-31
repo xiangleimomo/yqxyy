@@ -98,7 +98,7 @@ const App = {
     else homeworkNav?.removeAttribute('aria-current');
     document.getElementById('globalSearch').placeholder = isMoviePage ? '搜索电影中英文名称' : (isReadingPage ? '搜索配套绘本' : '搜索故事、单词或集数');
     this.updateUtilityNav();
-    this.el().classList.remove('series-page-shell');
+    this.el().classList.remove('series-page-shell','book-reader-shell');
     document.body.classList.remove('series-fixed-page');
     document.documentElement.classList.remove('series-fixed-page');
     this.el().classList.remove('movie-study-course');

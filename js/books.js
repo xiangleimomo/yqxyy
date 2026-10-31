@@ -4,6 +4,10 @@ window.BookReader = {
   libraryPromise: null,
 
   cleanup() {
+    if (this.keyHandler) document.removeEventListener('keydown', this.keyHandler);
+    if (this.fullscreenHandler) document.removeEventListener('fullscreenchange', this.fullscreenHandler);
+    this.keyHandler = null;
+    this.fullscreenHandler = null;
     try { this.rendition?.destroy(); } catch (_) {}
     try { this.book?.destroy(); } catch (_) {}
     this.book = null;
@@ -32,7 +36,8 @@ window.BookReader = {
       return;
     }
     const e = value => this.escape(app, value);
-    app.el().innerHTML = `<div class="breadcrumb"><a href="#/reading">绘本阅读</a> › ${e(item.titleZh)}</div><section class="reader-head"><div><span class="book-format">${e(item.format.toUpperCase())}</span><h1>${e(item.titleZh)}</h1><p>${e(item.title)}</p></div><a class="btn secondary" href="#/reading">返回书架</a></section><section class="ebook-reader" id="ebookReader"><div class="ebook-toolbar"><button type="button" class="btn secondary small" id="bookPrev">← 上一页</button><button type="button" class="btn secondary small" id="bookToc">目录</button><button type="button" class="btn secondary small" id="bookSmaller">A−</button><button type="button" class="btn secondary small" id="bookLarger">A＋</button><button type="button" class="btn secondary small" id="bookFullscreen">⛶ 全屏</button><button type="button" class="btn secondary small" id="bookNext">下一页 →</button></div><aside class="ebook-toc" id="ebookToc" hidden></aside><div class="ebook-stage"><div id="epubViewport" class="epub-viewport"><div class="ebook-loading">正在打开电子书…</div></div></div><p class="ebook-status" id="ebookStatus" role="status" aria-live="polite">正在准备阅读器…</p></section>`;
+    app.el().classList.add('book-reader-shell');
+    app.el().innerHTML = `<div class="breadcrumb"><a href="#/reading">绘本阅读</a> › ${e(item.titleZh)}</div><section class="reader-head"><div><span class="book-format">${e(item.format.toUpperCase())}</span><h1>${e(item.titleZh)}</h1><p>${e(item.title)}</p></div><a class="btn secondary" href="#/reading">返回书架</a></section><section class="ebook-reader" id="ebookReader"><div class="ebook-toolbar"><button type="button" class="btn secondary small" id="bookPrev">← 上一页</button><button type="button" class="btn secondary small" id="bookToc">目录</button><button type="button" class="btn secondary small" id="bookSmaller">A−</button><button type="button" class="btn secondary small" id="bookLarger">A＋</button><button type="button" class="btn secondary small" id="bookFullscreen">⛶ 全屏</button><button type="button" class="btn secondary small" id="bookNext">下一页 →</button></div><aside class="ebook-toc" id="ebookToc" hidden></aside><div class="ebook-stage" id="ebookStage"><div id="epubViewport" class="epub-viewport"><div class="ebook-loading">正在打开电子书…</div></div><div class="ebook-page-turn" aria-hidden="true"></div></div><p class="ebook-status" id="ebookStatus" role="status" aria-live="polite">正在准备阅读器…</p></section>`;
 
     if (item.format !== 'epub') {
       document.getElementById('ebookStatus').textContent = '该格式的阅读器正在接入。';
@@ -61,6 +66,7 @@ window.BookReader = {
 
   async openEpub(app, item) {
     const stage = document.getElementById('epubViewport');
+    const reader = document.getElementById('ebookReader');
     const status = document.getElementById('ebookStatus');
     const toc = document.getElementById('ebookToc');
     const progressKey = `storyfox-book-progress:${item.id}`;
@@ -77,18 +83,38 @@ window.BookReader = {
       setStatus('正在解析电子书…');
       this.book = window.ePub(file);
       stage.innerHTML = '';
-      this.rendition = this.book.renderTo(stage, { width: '100%', height: '100%', spread: 'auto', flow: 'paginated' });
+      this.rendition = this.book.renderTo(stage, { width: '100%', height: '100%', spread: 'none', flow: 'paginated' });
       this.rendition.themes.fontSize(`${fontSize}%`);
       await this.rendition.display(localStorage.getItem(progressKey) || undefined);
+      requestAnimationFrame(() => this.rendition?.resize());
       setStatus('阅读进度会自动保存在此设备。');
 
-      document.getElementById('bookPrev').onclick = () => this.rendition.prev();
-      document.getElementById('bookNext').onclick = () => this.rendition.next();
+      let turning = false;
+      const turn = direction => {
+        if (turning || !this.rendition) return;
+        turning = true;
+        const className = direction === 'next' ? 'turn-next' : 'turn-prev';
+        reader.classList.remove('turn-next', 'turn-prev');
+        void reader.offsetWidth;
+        reader.classList.add(className);
+        window.setTimeout(() => this.rendition?.[direction](), 140);
+        window.setTimeout(() => { reader.classList.remove(className); turning = false; }, 540);
+      };
+      document.getElementById('bookPrev').onclick = () => turn('prev');
+      document.getElementById('bookNext').onclick = () => turn('next');
       document.getElementById('bookSmaller').onclick = () => { fontSize = Math.max(80, fontSize - 10); this.rendition.themes.fontSize(`${fontSize}%`); localStorage.setItem(`storyfox-book-font-size:${item.id}`, String(fontSize)); };
       document.getElementById('bookLarger').onclick = () => { fontSize = Math.min(160, fontSize + 10); this.rendition.themes.fontSize(`${fontSize}%`); localStorage.setItem(`storyfox-book-font-size:${item.id}`, String(fontSize)); };
-      document.getElementById('bookFullscreen').onclick = () => document.getElementById('ebookReader').requestFullscreen?.();
+      document.getElementById('bookFullscreen').onclick = () => reader.requestFullscreen?.();
       document.getElementById('bookToc').onclick = () => { toc.hidden = !toc.hidden; };
       this.rendition.on('relocated', location => localStorage.setItem(progressKey, location.start.cfi));
+      this.keyHandler = event => {
+        if (event.defaultPrevented || /INPUT|TEXTAREA|SELECT/.test(event.target.tagName)) return;
+        if (event.key === 'ArrowLeft') turn('prev');
+        if (event.key === 'ArrowRight' || event.key === ' ') { event.preventDefault(); turn('next'); }
+      };
+      document.addEventListener('keydown', this.keyHandler);
+      this.fullscreenHandler = () => requestAnimationFrame(() => this.rendition?.resize());
+      document.addEventListener('fullscreenchange', this.fullscreenHandler);
 
       const navigation = await this.book.loaded.navigation;
       toc.innerHTML = navigation.toc.length ? navigation.toc.map(chapter => `<button type="button" data-href="${app.escapeHtml(chapter.href)}">${app.escapeHtml(chapter.label)}</button>`).join('') : '<span>本书未提供目录。</span>';

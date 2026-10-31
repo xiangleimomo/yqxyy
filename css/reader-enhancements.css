@@ -1,0 +1,13 @@
+/* Large, paper-like canvas for fixed-layout picture books. */
+.app-shell.book-reader-shell{max-width:min(1540px,calc(100vw - 32px));padding-top:18px}
+.ebook-stage{position:relative;height:calc(100dvh - 260px);min-height:620px;max-height:920px;overflow:hidden;background:radial-gradient(circle at center,#f8fafc 0,#e1e9ef 68%,#d1dbe3 100%);perspective:1800px}
+.ebook-page-turn{position:absolute;z-index:5;inset:0;display:none;pointer-events:none;opacity:0;background:linear-gradient(90deg,#ffffff1a 0%,#f7e9d3b8 42%,#6f51301f 50%,#fff9efba 58%,#ffffff08 100%);box-shadow:inset 22px 0 28px #65421d2e}
+.ebook-reader.turn-next .ebook-page-turn,.ebook-reader.turn-prev .ebook-page-turn{display:block}
+.ebook-reader.turn-next .ebook-page-turn{transform-origin:left center;animation:page-turn-next .54s cubic-bezier(.4,0,.2,1) both}
+.ebook-reader.turn-prev .ebook-page-turn{transform-origin:right center;animation:page-turn-prev .54s cubic-bezier(.4,0,.2,1) both}
+.ebook-toc{z-index:6}
+.ebook-reader:fullscreen .ebook-stage{height:calc(100vh - 104px);min-height:0;max-height:none}
+@keyframes page-turn-next{0%{opacity:0;transform:rotateY(0deg) scaleX(.02)}18%{opacity:.76}100%{opacity:0;transform:rotateY(-95deg) scaleX(.98)}}
+@keyframes page-turn-prev{0%{opacity:0;transform:rotateY(0deg) scaleX(.02)}18%{opacity:.76}100%{opacity:0;transform:rotateY(95deg) scaleX(.98)}}
+@media(max-width:900px){.app-shell.book-reader-shell{max-width:none}.ebook-stage{height:70dvh;min-height:480px}}
+@media(max-width:600px){.ebook-stage{height:64dvh;min-height:400px}.ebook-page-turn{display:none!important}}
