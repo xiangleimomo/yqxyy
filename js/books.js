@@ -42,15 +42,19 @@ window.BookReader = {
   },
 
   async loadEpubJs() {
-    if (window.ePub) return;
+    if (window.ePub && window.JSZip) return;
     if (!this.libraryPromise) {
-      this.libraryPromise = new Promise((resolve, reject) => {
+      const loadScript = (src, globalName) => new Promise((resolve, reject) => {
+        if (window[globalName]) return resolve();
         const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/epubjs@0.3.93/dist/epub.min.js';
-        script.onload = resolve;
+        script.src = src;
+        script.onload = () => window[globalName] ? resolve() : reject(new Error(`${globalName} 未能初始化`));
         script.onerror = () => reject(new Error('EPUB 阅读组件加载失败，请检查网络。'));
         document.head.appendChild(script);
-      }).catch(error => { this.libraryPromise = null; throw error; });
+      });
+      this.libraryPromise = loadScript('https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js', 'JSZip')
+        .then(() => loadScript('https://cdn.jsdelivr.net/npm/epubjs@0.3.93/dist/epub.min.js', 'ePub'))
+        .catch(error => { this.libraryPromise = null; throw error; });
     }
     await this.libraryPromise;
   },
