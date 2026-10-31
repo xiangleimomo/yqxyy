@@ -69,9 +69,9 @@ window.BookReader = {
 
     try {
       await this.loadEpubJs();
-      setStatus('正在下载电子书…');
+      setStatus('正在加载绘本内容…');
       const response = await fetch(item.readerUrl, { cache: 'no-store' });
-      if (!response.ok) throw new Error(`电子书下载失败（${response.status}）`);
+      if (!response.ok) throw new Error(`绘本内容加载失败（${response.status}）`);
       const file = await response.arrayBuffer();
       if (!file.byteLength) throw new Error('电子书内容为空。');
       setStatus('正在解析电子书…');
