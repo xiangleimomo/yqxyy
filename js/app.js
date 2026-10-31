@@ -84,17 +84,19 @@ const App = {
     window.MovieClassroom?.cleanup();
     window.MovieHub?.cleanup();
     window.SFFamily?.stop();
+    window.BookReader?.cleanup();
     this.disposeHlsPlayers(this.el());
     const isMoviePage = ['movies','movie','movie-series','movie-hub'].includes(page) || (['series','lesson'].includes(page) && String(a||'').startsWith('movie-'));
+    const isReadingPage = ['reading','reader'].includes(page);
     document.querySelectorAll('.main-tab').forEach(tab=>{
-      const active = tab.getAttribute('href') === (['homework','family','parent','child'].includes(page) ? '#/homework' : isMoviePage ? '#/movies' : '#/home');
+      const active = tab.getAttribute('href') === (['homework','family','parent','child'].includes(page) ? '#/homework' : isMoviePage ? '#/movies' : isReadingPage ? '#/reading' : '#/home');
       tab.classList.toggle('active', active);
       if(active) tab.setAttribute('aria-current','page'); else tab.removeAttribute('aria-current');
     });
     const homeworkNav=document.getElementById('navHomework');
     if(['homework','family','parent','child'].includes(page)) homeworkNav?.setAttribute('aria-current','page');
     else homeworkNav?.removeAttribute('aria-current');
-    document.getElementById('globalSearch').placeholder = isMoviePage ? '搜索电影中英文名称' : '搜索故事、单词或集数';
+    document.getElementById('globalSearch').placeholder = isMoviePage ? '搜索电影中英文名称' : (isReadingPage ? '搜索配套绘本' : '搜索故事、单词或集数');
     this.updateUtilityNav();
     this.el().classList.remove('series-page-shell');
     document.body.classList.remove('series-fixed-page');
@@ -108,6 +110,8 @@ const App = {
       if(page === 'movie-hub') return await window.MovieHub.render(this,a==='search'?'':a,a==='search'?decodeURIComponent(b||''):'');
       if(page === 'movie-series') return await window.MovieClassroom.renderSeries(this, a);
       if(page === 'movie') return await window.MovieClassroom.renderWatch(this, a);
+      if(page === 'reading') return await window.BookReader.renderList(this);
+      if(page === 'reader') return await window.BookReader.renderReader(this, a);
       if(page === 'home') return this.renderHome();
       if(page === 'series') return this.renderSeries(a);
       if(page === 'lesson') return this.renderLesson(a, Number(b || 1));
