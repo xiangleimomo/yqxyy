@@ -69,7 +69,14 @@ window.BookReader = {
 
     try {
       await this.loadEpubJs();
-      this.book = window.ePub(item.readerUrl);
+      setStatus('正在下载电子书…');
+      const response = await fetch(item.readerUrl, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`电子书下载失败（${response.status}）`);
+      const file = await response.arrayBuffer();
+      if (!file.byteLength) throw new Error('电子书内容为空。');
+      setStatus('正在解析电子书…');
+      this.book = window.ePub(file);
+      stage.innerHTML = '';
       this.rendition = this.book.renderTo(stage, { width: '100%', height: '100%', spread: 'auto', flow: 'paginated' });
       this.rendition.themes.fontSize(`${fontSize}%`);
       await this.rendition.display(localStorage.getItem(progressKey) || undefined);
