@@ -132,6 +132,7 @@ window.BookReader = {
       // text remains sharp at desktop size and while the user is dragging a page.
       const scale = Math.max(3, Math.min(5, Math.max(screen.width, window.innerWidth) * (window.devicePixelRatio || 1) * 1.25 / firstPage.getViewport({ scale: 1 }).width));
       const pageUrls = [];
+      const pageTexts = [];
       for (let pageNumber = 1; pageNumber <= pageCount; pageNumber += 1) {
         setStatus(`正在渲染第 ${pageNumber} / ${pageCount} 页…`);
         const page = pageNumber === 1 ? firstPage : await documentProxy.getPage(pageNumber);
@@ -143,9 +144,20 @@ window.BookReader = {
         const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
         if (!blob) throw new Error('PDF 页面图像生成失败。');
         pageUrls.push(URL.createObjectURL(blob));
+        const text = await page.getTextContent();
+        pageTexts.push(text.items.map(part => part.str || '').join(' '));
         page.cleanup();
       }
-      documentProxy.destroy();
+      const outlineItems = [];
+      const collectOutline = async entries => {
+        for (const entry of entries || []) {
+          const destination = typeof entry.dest === 'string' ? await documentProxy.getDestination(entry.dest) : entry.dest;
+          if (destination) outlineItems.push({ title: entry.title, page: typeof destination[0] === 'number' ? destination[0] : await documentProxy.getPageIndex(destination[0]) });
+          await collectOutline(entry.items);
+        }
+      };
+      await collectOutline(await documentProxy.getOutline());
+      await documentProxy.destroy();
       this.pdfObjectUrls = pageUrls;
       root.innerHTML = '';
       // This PDF is already laid out as a landscape two-page spread. Force
@@ -227,12 +239,85 @@ window.BookReader = {
       document.getElementById('bookZoomIn').onclick = () => { zoom = Math.min(1.2, zoom + .1); applyZoom(); };
       this.fullscreenHandler = () => window.setTimeout(() => this.pageFlip?.update(), 100);
       document.addEventListener('fullscreenchange', this.fullscreenHandler);
+      this.setupPdfTools(item, { reader, root, pageUrls, pageTexts, outlineItems, pageCount });
       setStatus('PDF 阅读进度保存在此设备。');
     } catch (error) {
       console.error(error);
       root.innerHTML = '<div class="ebook-error"><strong>暂时无法打开 PDF 绘本</strong><span>请稍后重试；若持续失败，请检查 Pone 文件链接是否仍可访问。</span></div>';
       setStatus(error.message || 'PDF 阅读器加载失败。');
     }
+  },
+
+  setupPdfTools(item, { reader, root, pageUrls, pageTexts, outlineItems, pageCount }) {
+    const toolbar = reader.querySelector('.flipbook-footer');
+    const tools = document.createElement('div');
+    tools.className = 'pdf-reader-tools';
+    const labels = { audio: '♫ 音频', zoom: '⌕ 缩放', search: '搜索', contents: '目录', thumbnails: '▦ 缩略图', bookmarks: '☆ 书签', cover: '合上书' };
+    Object.entries(labels).forEach(([name, label]) => {
+      const button = document.createElement('button');
+      button.type = 'button'; button.textContent = label; button.dataset.tool = name;
+      tools.appendChild(button);
+    });
+    toolbar.appendChild(tools);
+    const panel = document.createElement('aside'); panel.className = 'pdf-tools-panel'; panel.hidden = true;
+    reader.appendChild(panel);
+    const toast = document.createElement('div'); toast.className = 'pdf-reader-toast'; toast.hidden = true; toast.setAttribute('role', 'status'); reader.appendChild(toast);
+    let toastTimer;
+    const notify = message => { clearTimeout(toastTimer); toast.textContent = message; toast.hidden = false; toastTimer = setTimeout(() => { toast.hidden = true; }, 2600); };
+    const key = `storyfox-pdf-bookmarks:${item.id}`;
+    let bookmarks;
+    try { bookmarks = JSON.parse(localStorage.getItem(key) || '[]'); } catch (_) { bookmarks = []; }
+    if (!Array.isArray(bookmarks)) bookmarks = [];
+    const go = page => this.pageFlip?.turnToPage(page);
+    const row = (label, page, thumbnail = false) => {
+      const button = document.createElement('button'); button.type = 'button'; button.className = 'pdf-tool-row';
+      if (thumbnail) { const image = document.createElement('img'); image.src = pageUrls[page]; image.alt = ''; button.appendChild(image); }
+      const text = document.createElement('span'); text.textContent = label; button.appendChild(text); button.onclick = () => go(page); panel.appendChild(button);
+    };
+    let closed = false;
+    const show = name => {
+      if (name === 'cover') {
+        closed = !closed; root.classList.toggle('pdf-book-closed', closed);
+        tools.querySelector('[data-tool="cover"]').textContent = closed ? '打开书' : '合上书';
+        notify(closed ? '已合上书，点击「打开书」继续阅读' : '已打开书'); return;
+      }
+      panel.replaceChildren(); panel.hidden = false;
+      const close = document.createElement('button'); close.textContent = '关闭 ×'; close.onclick = () => { panel.hidden = true; }; panel.appendChild(close);
+      const heading = document.createElement('h3'); heading.textContent = labels[name]; panel.appendChild(heading);
+      if (name === 'search') {
+        const input = document.createElement('input'); input.type = 'search'; input.placeholder = '搜索本书文字'; panel.appendChild(input);
+        const results = document.createElement('div'); panel.appendChild(results);
+        input.oninput = () => {
+          results.replaceChildren(); const query = input.value.trim().toLowerCase(); if (!query) return;
+          pageTexts.forEach((text, page) => { const index = text.toLowerCase().indexOf(query); if (index < 0) return;
+            const button = document.createElement('button'); button.className = 'pdf-tool-row'; button.textContent = `第 ${page + 1} 页 · ${text.slice(Math.max(0, index - 35), index + query.length + 90)}`; button.onclick = () => go(page); results.appendChild(button);
+          });
+          if (!results.children.length) results.textContent = '未找到匹配文字（扫描图片中的文字无法直接搜索）。';
+        }; input.focus();
+      } else if (name === 'contents') {
+        if (outlineItems.length) outlineItems.forEach(entry => row(entry.title, entry.page));
+        else { const note = document.createElement('p'); note.textContent = '本书未提供章节目录，以下为页面导航。'; panel.appendChild(note); pageUrls.forEach((_, page) => row(`第 ${page + 1} 页`, page)); }
+      } else if (name === 'thumbnails') pageUrls.forEach((_, page) => row(`第 ${page + 1} 页`, page, true));
+      else if (name === 'bookmarks') {
+        const add = document.createElement('button'); add.textContent = '☆ 添加 / 移除当前页书签'; panel.appendChild(add);
+        add.onclick = () => { const page = this.pageFlip.getCurrentPageIndex(); bookmarks = bookmarks.includes(page) ? bookmarks.filter(value => value !== page) : [...bookmarks, page]; localStorage.setItem(key, JSON.stringify(bookmarks)); show(name); };
+        bookmarks.sort((a,b) => a-b).forEach(page => row(`★ 第 ${page + 1} 页`, page, true));
+      } else if (name === 'audio') {
+        const audio = document.createElement('audio'); audio.controls = true; audio.preload = 'none';
+        const input = document.createElement('input'); input.type = 'url'; input.placeholder = '粘贴本书配套音频直链'; input.value = item.audioUrl || localStorage.getItem(`storyfox-pdf-audio:${item.id}`) || '';
+        const load = document.createElement('button'); load.textContent = '加载音频';
+        load.onclick = () => { try { const url = new URL(input.value); if (!['https:', 'http:'].includes(url.protocol)) return; audio.src = url.href; localStorage.setItem(`storyfox-pdf-audio:${item.id}`, url.href); } catch (_) { notify('请输入有效的音频链接'); } };
+        if (input.value) audio.src = input.value; panel.append(input, load, audio);
+      } else if (name === 'zoom') {
+        const preview = document.createElement('img'); preview.className = 'pdf-zoom-preview'; preview.src = pageUrls[this.pageFlip.getCurrentPageIndex()]; panel.appendChild(preview);
+        const slider = document.createElement('input'); slider.type = 'range'; slider.min = '100'; slider.max = '300'; slider.value = '100'; slider.setAttribute('aria-label', '预览放大比例'); slider.oninput = () => { preview.style.width = `${slider.value}%`; }; panel.appendChild(slider);
+      }
+    };
+    tools.onclick = event => { const name = event.target.closest('[data-tool]')?.dataset.tool; if (name) show(name); };
+    const progressKey = `storyfox-pdf-progress:${item.id}`;
+    this.pageFlip.on('flip', event => { localStorage.setItem(progressKey, String(event.data)); if (event.data >= pageCount - 1) notify('已经是最后一页了'); });
+    const saved = Number(localStorage.getItem(progressKey) || 0); if (saved > 0 && saved < pageCount) go(saved);
+    reader.querySelector('#bookStageNext').onclick = () => { if (this.pageFlip.getCurrentPageIndex() >= pageCount - 1) notify('已经是最后一页了'); else this.pageFlip.flipNext(); };
   },
 
   async openEpub(app, item) {
