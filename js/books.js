@@ -130,7 +130,7 @@ window.BookReader = {
       const pageHeight = Math.round(firstViewport.height);
       // StPageFlip turns raster pages. Use a high-resolution, lossless source so
       // text remains sharp at desktop size and while the user is dragging a page.
-      const scale = Math.min(3, Math.max(2.5, (window.devicePixelRatio || 1) * 1.5));
+      const scale = Math.max(3, Math.min(5, Math.max(screen.width, window.innerWidth) * (window.devicePixelRatio || 1) * 1.25 / firstPage.getViewport({ scale: 1 }).width));
       const pageUrls = [];
       for (let pageNumber = 1; pageNumber <= pageCount; pageNumber += 1) {
         setStatus(`正在渲染第 ${pageNumber} / ${pageCount} 页…`);
@@ -179,7 +179,22 @@ window.BookReader = {
       progress.max = String(Math.max(0, pageCount - 1));
       this.pageFlip.on('flip', event => updateProgress(event.data));
       this.pageFlip.on('init', event => updateProgress(event.data.page));
-      this.pageFlip.loadFromImages(pageUrls);
+      // HTML mode avoids StPageFlip's screen-resolution canvas resampling.
+      // Images preserve their backing pixels and remain intact when the engine
+      // clones a soft page during a drag (cloned canvas elements lose pixels).
+      const htmlPages = pageUrls.map(url => {
+        const pageElement = document.createElement('div');
+        pageElement.className = 'pdf-sharp-page';
+        const image = document.createElement('img');
+        image.src = url;
+        image.alt = '';
+        image.draggable = false;
+        pageElement.appendChild(image);
+        root.appendChild(pageElement);
+        return pageElement;
+      });
+      await Promise.all(htmlPages.map(element => element.firstChild.decode()));
+      this.pageFlip.loadFromHTML(htmlPages);
       document.getElementById('bookStagePrev').onclick = () => this.pageFlip?.flipPrev();
       document.getElementById('bookStageNext').onclick = () => this.pageFlip?.flipNext();
       progress.oninput = () => this.pageFlip?.turnToPage(Number(progress.value));
