@@ -235,9 +235,11 @@ window.BookReader = {
     const setStatus = text => { if (status) status.textContent = text; };
     const session = {};
     this.pdfSession = session;
+    let librariesReady = false;
     try {
       if (!item.localFile) throw new Error('请先下载 PDF 并选择本地文件。');
       await this.loadPdfLibraries();
+      librariesReady = true;
       if (this.pdfSession !== session || !root.isConnected) return;
       setStatus('正在读取本地 PDF…');
       const bytes = await item.localFile.arrayBuffer();
@@ -424,10 +426,12 @@ window.BookReader = {
       setStatus('PDF 阅读进度保存在此设备。');
     } catch (error) {
       if (this.pdfSession !== session || !root.isConnected) return;
-      if (this.localPdfFiles.get(item.id) === item.localFile) this.localPdfFiles.delete(item.id);
-      try { const cache = await caches.open('storyfox-pdf-files-v1'); await cache.delete(this.pdfFileCacheKey(item)); } catch (_) {}
+      if (librariesReady) {
+        if (this.localPdfFiles.get(item.id) === item.localFile) this.localPdfFiles.delete(item.id);
+        try { const cache = await caches.open('storyfox-pdf-files-v1'); await cache.delete(this.pdfFileCacheKey(item)); } catch (_) {}
+      }
       console.error(error);
-      root.innerHTML = '<div class="ebook-error"><strong>暂时无法打开本地 PDF</strong><span>文件可能未完整下载或已损坏，请返回书架重新打开。</span><a href="#/reading">返回书架</a></div>';
+      root.innerHTML = `<div class="ebook-error"><strong>暂时无法打开本地 PDF</strong><span>${librariesReady ? '文件可能未完整下载或已损坏，请返回书架重新打开。' : '阅读组件暂时加载失败，请返回书架重试，已下载的文件会保留。'}</span><a href="#/reading">返回书架</a></div>`;
       setStatus(error.message || 'PDF 阅读器加载失败。');
     }
   },

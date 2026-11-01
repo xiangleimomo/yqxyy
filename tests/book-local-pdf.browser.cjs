@@ -57,10 +57,16 @@ function samplePdf(){
  assert(await page.locator('.pdf-sharp-page img').first().evaluate(img=>img.naturalWidth>0));
  await shelf();await page.locator('.book-card').click();await waitReader();assert.equal(requests,1,'Reuse in-memory file');
  await page.reload();await waitReader();assert.equal(requests,1,'Reuse complete browser-cached PDF after refresh');
+ await shelf();await clearFile();
+ await page.evaluate(()=>{BookReader.savedPdfLoader=BookReader.loadPdfLibraries;BookReader.loadPdfLibraries=async()=>{throw new Error('Temporary component failure');};});
+ await page.locator('.book-card').click();await page.getByText('阅读组件暂时加载失败，请返回书架重试，已下载的文件会保留。').waitFor();
+ const beforeComponentRetry=requests;
+ await page.evaluate(()=>BookReader.loadPdfLibraries=BookReader.savedPdfLoader);
+ await shelf();await page.locator('.book-card').click();await waitReader();assert.equal(requests,beforeComponentRetry,'Keep a complete PDF when only the component fails');
  await shelf();await clearFile();mode='fail';
  await page.locator('.book-card').click();await page.locator('#bookDownloadRetry').waitFor();
  assert.match(await page.locator('#bookDownloadStatus').innerText(),/503/);
- mode='ok';await page.locator('#bookDownloadRetry').click();await waitReader();assert.equal(requests,3);
+ mode='ok';await page.locator('#bookDownloadRetry').click();await waitReader();assert.equal(requests,beforeComponentRetry+2);
  await shelf();await clearFile();mode='html';
  await page.locator('.book-card').click();await page.locator('#bookDownloadRetry').waitFor();
  assert.match(await page.locator('#bookDownloadStatus').innerText(),/不是有效 PDF/);
