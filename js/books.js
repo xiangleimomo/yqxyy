@@ -46,10 +46,14 @@ window.BookReader = {
     return app.escapeHtml(String(value || ''));
   },
 
+  readingNavigation(local = false) {
+    return `<nav class="book-reading-tabs" aria-label="绘本阅读方式"><a href="#/reading"${local ? '' : ' aria-current="page"'}>线上绘本</a><a href="#/reading/local"${local ? ' aria-current="page"' : ''}>本地绘本</a></nav>`;
+  },
+
   async renderList(app) {
     const books = await this.library(app);
     const e = value => this.escape(app, value);
-    app.el().innerHTML = `<section class="books-intro"><h1>绘本书架</h1></section><div class="book-grid">${books.map(item => {
+    app.el().innerHTML = `${this.readingNavigation()}<div class="book-grid">${books.map(item => {
       const direct = item.format === 'pdf' && item.sourceUrl;
       const href = direct ? item.sourceUrl : '#/reader/' + item.id;
       const cover = item.coverUrl ? '<img src="' + e(item.coverUrl) + '" alt="" loading="lazy" decoding="async">' : '<b>' + e(item.titleZh || item.title) + '</b>';
@@ -58,7 +62,7 @@ window.BookReader = {
   },
 
   renderLocalLibrary(app) {
-    app.el().innerHTML = '<section class="book-local-library"><header><h1>本地翻页阅读</h1><a href="#/reading">返回书架</a></header></section>';
+    app.el().innerHTML = this.readingNavigation(true) + '<section class="book-local-library"></section>';
     this.addLocalPdfPicker(app);
   },
 

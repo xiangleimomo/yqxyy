@@ -35,7 +35,7 @@ const externalPdf=process.env.PDF_PERF_FILE;
  });
  const cdp=await page.context().newCDPSession(page);await cdp.send('Emulation.setCPUThrottlingRate',{rate:4});
  const localInput=baseline?'.books-notice input[type=file]':'.book-local-file';
- if(!baseline)await page.locator('.utility-nav a[href="#/reading/local"]').click();
+ if(!baseline)await page.locator('.book-reading-tabs a[href="#/reading/local"]').click();
  await page.locator(localInput).waitFor({state:'attached'});
  await page.evaluate(()=>pdfMetrics.start=performance.now());
  await page.locator(localInput).setInputFiles({name:'mobile-test.pdf',mimeType:'application/pdf',buffer:externalPdf?fs.readFileSync(externalPdf):samplePdf(6)});
