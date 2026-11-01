@@ -41,7 +41,7 @@ window.BookReader = {
     }
     const e = value => this.escape(app, value);
     app.el().classList.add('book-reader-shell');
-    app.el().innerHTML = `<div class="breadcrumb"><a href="#/reading">绘本阅读</a> › ${e(item.titleZh)}</div><section class="reader-head"><div><span class="book-format">${e(item.format.toUpperCase())}</span><h1>${e(item.titleZh)}</h1><p>${e(item.title)}</p></div><a class="btn secondary" href="#/reading">返回书架</a></section><section class="ebook-reader" id="ebookReader"><div class="ebook-toolbar"><button type="button" class="btn secondary small" id="bookPrev">← 上一页</button><button type="button" class="btn secondary small" id="bookToc">目录</button><button type="button" class="btn secondary small" id="bookSmaller">A−</button><button type="button" class="btn secondary small" id="bookLarger">A＋</button><button type="button" class="btn secondary small" id="bookFullscreen">⛶ 全屏</button><button type="button" class="btn secondary small" id="bookNext">下一页 →</button></div><aside class="ebook-toc" id="ebookToc" hidden></aside><div class="ebook-stage" id="ebookStage"><div id="epubViewport" class="epub-viewport"><div class="ebook-loading">正在打开电子书…</div></div><div class="ebook-page-turn" aria-hidden="true"></div></div><p class="ebook-status" id="ebookStatus" role="status" aria-live="polite">正在准备阅读器…</p></section>`;
+    app.el().innerHTML = `<div class="breadcrumb"><a href="#/reading">绘本阅读</a> › ${e(item.titleZh)}</div><section class="reader-head"><div><span class="book-format">${e(item.format.toUpperCase())}</span><h1>${e(item.titleZh)}</h1><p>${e(item.title)}</p></div><a class="btn secondary" href="#/reading">返回书架</a></section><section class="ebook-reader" id="ebookReader"><div class="ebook-toolbar"><button type="button" class="btn secondary small" id="bookPrev">← 上一页</button><button type="button" class="btn secondary small" id="bookToc">目录</button><span class="book-page-indicator" id="bookPageIndicator">正在定位页码…</span><button type="button" class="btn secondary small" id="bookSmaller">A−</button><button type="button" class="btn secondary small" id="bookLarger">A＋</button><button type="button" class="btn secondary small" id="bookFullscreen">⛶ 全屏</button><button type="button" class="btn secondary small" id="bookNext">下一页 →</button></div><aside class="ebook-toc" id="ebookToc" hidden></aside><div class="ebook-stage" id="ebookStage"><button type="button" class="book-page-nav book-page-prev" id="bookStagePrev" aria-label="上一页">‹</button><div id="epubViewport" class="epub-viewport"><div class="ebook-loading">正在打开电子书…</div></div><button type="button" class="book-page-nav book-page-next" id="bookStageNext" aria-label="下一页">›</button><div class="ebook-page-turn" aria-hidden="true"></div><p class="book-stage-hint">点击左右页边或使用方向键翻页</p></div><p class="ebook-status" id="ebookStatus" role="status" aria-live="polite">正在准备阅读器…</p></section>`;
 
     if (item.format !== 'epub') {
       document.getElementById('ebookStatus').textContent = '该格式的阅读器正在接入。';
@@ -73,6 +73,7 @@ window.BookReader = {
     const reader = document.getElementById('ebookReader');
     const status = document.getElementById('ebookStatus');
     const toc = document.getElementById('ebookToc');
+    const pageIndicator = document.getElementById('bookPageIndicator');
     const progressKey = `storyfox-book-progress:${item.id}`;
     let fontSize = Number(localStorage.getItem(`storyfox-book-font-size:${item.id}`) || 100);
     const setStatus = text => { if (status) status.textContent = text; };
@@ -103,6 +104,12 @@ window.BookReader = {
       setStatus('阅读进度会自动保存在此设备。');
 
       let turning = false;
+      const updatePageIndicator = location => {
+        if (!pageIndicator || !location?.start) return;
+        const current = Number(location.start.index) + 1;
+        const total = this.book?.spine?.items?.length;
+        pageIndicator.textContent = total ? `第 ${current} / ${total} 页` : `第 ${current} 页`;
+      };
       const turn = direction => {
         if (turning || !this.rendition) return;
         turning = true;
@@ -115,11 +122,16 @@ window.BookReader = {
       };
       document.getElementById('bookPrev').onclick = () => turn('prev');
       document.getElementById('bookNext').onclick = () => turn('next');
+      document.getElementById('bookStagePrev').onclick = () => turn('prev');
+      document.getElementById('bookStageNext').onclick = () => turn('next');
       document.getElementById('bookSmaller').onclick = () => { fontSize = Math.max(80, fontSize - 10); this.rendition.themes.fontSize(`${fontSize}%`); localStorage.setItem(`storyfox-book-font-size:${item.id}`, String(fontSize)); };
       document.getElementById('bookLarger').onclick = () => { fontSize = Math.min(160, fontSize + 10); this.rendition.themes.fontSize(`${fontSize}%`); localStorage.setItem(`storyfox-book-font-size:${item.id}`, String(fontSize)); };
       document.getElementById('bookFullscreen').onclick = () => reader.requestFullscreen?.();
       document.getElementById('bookToc').onclick = () => { toc.hidden = !toc.hidden; };
-      this.rendition.on('relocated', location => localStorage.setItem(progressKey, location.start.cfi));
+      this.rendition.on('relocated', location => {
+        localStorage.setItem(progressKey, location.start.cfi);
+        updatePageIndicator(location);
+      });
       this.keyHandler = event => {
         if (event.defaultPrevented || /INPUT|TEXTAREA|SELECT/.test(event.target.tagName)) return;
         if (event.key === 'ArrowLeft') turn('prev');
