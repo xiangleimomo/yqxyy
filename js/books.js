@@ -39,10 +39,35 @@ window.BookReader = {
   async renderList(app) {
     const books = await this.library(app);
     const e = value => this.escape(app, value);
+    queueMicrotask(() => { if (app.el().querySelector('.books-intro')) this.addLocalPdfPicker(app); });
+    // The file picker reads locally; no file upload or server storage is used.
     app.el().innerHTML = `<section class="books-intro"><div><h1>📚 绘本阅读</h1><p>Movie Companion Books · 为光影课堂准备的配套电子书，可独立阅读并自动保存进度。</p></div><span class="books-count">${books.length} 本绘本</span></section><section class="books-notice"><strong>测试阶段</strong><span>当前开放 EPUB 测试书；PDF 阅读器与影片配套书目会逐步添加。</span></section><div class="book-grid">${books.map(item => `<a class="book-card" href="#/reader/${e(item.id)}" aria-label="阅读 ${e(item.titleZh)}"><div class="book-cover book-cover-${e(item.format)}"><span>${item.format.toUpperCase()}</span><b>📖</b></div><div class="book-card-body"><span class="book-format">${e(item.format.toUpperCase())}</span><h2>${e(item.titleZh)}</h2><p>${e(item.title)}</p><small>${e(item.level)} · ${e(item.description)}</small></div></a>`).join('')}</div>`;
   },
 
+  addLocalPdfPicker(app) {
+    const section = document.createElement('section');
+    section.className = 'books-notice';
+    const label = document.createElement('label');
+    label.className = 'btn secondary'; label.textContent = '打开本地 PDF';
+    const input = document.createElement('input'); input.type = 'file'; input.accept = '.pdf,application/pdf';
+    input.style.display = 'none'; label.appendChild(input);
+    const note = document.createElement('span'); note.textContent = '文件仅在当前浏览器读取，不上传。刷新后需重新选择。';
+    input.onchange = () => {
+      const file = input.files?.[0]; if (!file) return;
+      this.localPdfFile = file; location.hash = '#/reader/local-pdf';
+    };
+    section.append(label, note); app.el().querySelector('.books-intro').after(section);
+  },
+
   async renderReader(app, id) {
+    if (id === 'local-pdf') {
+      if (!this.localPdfFile) { location.hash = '#/reading'; return; }
+      const file = this.localPdfFile;
+      const item = { id: `local-${file.name}-${file.size}-${file.lastModified}`, title: file.name, titleZh: file.name.replace(/\.pdf$/i, ''), format: 'pdf', level: '本地文件', localFile: file };
+      this.renderPdfReader(app, item);
+      await this.openPdfFlipbook(item);
+      return;
+    }
     const books = await this.library(app);
     const item = books.find(book => book.id === id);
     if (!item) {
@@ -122,10 +147,11 @@ window.BookReader = {
     const setStatus = text => { if (status) status.textContent = text; };
     try {
       await this.loadPdfLibraries();
-      setStatus('正在下载 PDF 内容…');
+      setStatus(item.localFile ? '正在读取本地 PDF…' : '正在加载 PDF 内容…');
       const session = {};
       this.pdfSession = session;
-      const documentProxy = await window.pdfjsLib.getDocument({ url: item.readerUrl, disableAutoFetch: true, disableStream: true }).promise;
+      const source = item.localFile ? { data: await item.localFile.arrayBuffer() } : { url: item.readerUrl, disableAutoFetch: true, disableStream: true };
+      const documentProxy = await window.pdfjsLib.getDocument(source).promise;
       if (this.pdfSession !== session) { await documentProxy.destroy(); return; }
       this.pdfDocument = documentProxy;
       const pageCount = documentProxy.numPages;
