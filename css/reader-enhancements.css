@@ -1,6 +1,7 @@
 /* Flipbook presentation: an original implementation for the Story Fox reader. */
 .app-shell.book-reader-shell{width:100%;max-width:none;margin:0;padding:0;background:#e4d4bf}
 .flipbook-active>.topbar,.flipbook-active>.footer{display:none}
+.hosted-flipbook{display:grid;grid-template-rows:48px calc(100dvh - 48px);width:100vw;height:100dvh;background:#202124}.hosted-flipbook-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 18px;background:#fff;color:#171717;font-size:14px}.hosted-flipbook-bar a{color:#1a5d9b;text-decoration:none;font-weight:700}.hosted-flipbook-bar strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.hosted-flipbook-frame{width:100%;height:100%;border:0;background:#303030}
 .book-reader-shell .breadcrumb,.book-reader-shell .reader-head{display:none}
 .flipbook-reader{min-height:100dvh;background:#d4b993;color:#fff}
 .flipbook-topbar{height:56px;display:flex;align-items:center;gap:12px;padding:0 28px;background:#fff;color:#121212;font-weight:800;box-shadow:0 1px 8px #00000016}

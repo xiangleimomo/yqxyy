@@ -40,6 +40,12 @@ window.BookReader = {
       return;
     }
     const e = value => this.escape(app, value);
+    if (item.format === 'fliphtml') {
+      app.el().classList.add('book-reader-shell');
+      document.body.classList.add('flipbook-active');
+      app.el().innerHTML = `<section class="hosted-flipbook"><header class="hosted-flipbook-bar"><a href="#/reading" aria-label="返回书架">← 返回书架</a><strong>${e(item.titleZh)}</strong><a href="${e(item.readerUrl)}" target="_blank" rel="noopener noreferrer">↗ 新窗口打开</a></header><iframe class="hosted-flipbook-frame" src="${e(item.readerUrl)}" title="${e(item.titleZh)}" allow="fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></section>`;
+      return;
+    }
     app.el().classList.add('book-reader-shell');
     document.body.classList.add('flipbook-active');
     app.el().innerHTML = `<section class="flipbook-reader" id="ebookReader"><header class="flipbook-topbar"><a href="#/reading" class="flipbook-back" aria-label="返回书架">←</a><span>绘本阅读</span><button type="button" id="bookFullscreen" aria-label="全屏阅读">⛶</button></header><div class="flipbook-stage" id="ebookStage"><button type="button" class="flipbook-turn flipbook-turn-prev" id="bookStagePrev" aria-label="上一页">‹</button><div class="flipbook-surface"><div id="epubViewport" class="epub-viewport"><div class="ebook-loading">正在打开电子书…</div></div></div><button type="button" class="flipbook-turn flipbook-turn-next" id="bookStageNext" aria-label="下一页">›</button><div class="ebook-page-turn" aria-hidden="true"></div><div class="flipbook-controls"><span class="book-page-indicator" id="bookPageIndicator">正在定位页码…</span><input type="range" id="bookProgress" min="0" max="1" value="0" step="1" aria-label="阅读进度"><button type="button" id="bookZoomOut" aria-label="缩小">−</button><button type="button" id="bookZoomIn" aria-label="放大">＋</button><button type="button" id="bookFullscreenBottom" aria-label="全屏">⛶</button></div></div><footer class="flipbook-footer"><div><h1>${e(item.title)}</h1><p>${e(item.titleZh)} · ${e(item.level)} · EPUB</p></div><span>使用左右箭头或点击页边翻页</span></footer><p class="ebook-status" id="ebookStatus" role="status" aria-live="polite">正在准备阅读器…</p></section>`;

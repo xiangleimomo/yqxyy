@@ -1,12 +1,11 @@
 [
   {
     "id": "epub-reading-test",
-    "title": "EPUB Reading Test",
-    "titleZh": "EPUB 绘本阅读测试",
-    "format": "epub",
+    "title": "FlipHTML5 Reading Test",
+    "titleZh": "FlipHTML5 翻页绘本测试",
+    "format": "fliphtml",
     "level": "Test",
-    "description": "用于验证独立绘本阅读区、翻页、目录、字号和阅读进度。",
-    "readerUrl": "/book-source/epub-reading-test.epub",
-    "sourceUrl": "https://u.pone.rs/vkoptdac.epub"
+    "description": "使用 FlipHTML5 原版双页翻书、鼠标拖页、缩放与全屏阅读器。",
+    "readerUrl": "https://online.fliphtml5.com/xiaohan/xfkg/"
   }
 ]
