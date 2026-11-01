@@ -51,22 +51,23 @@ window.BookReader = {
     const e = value => this.escape(app, value);
     queueMicrotask(() => { if (app.el().querySelector('.books-intro')) this.addLocalPdfPicker(app); });
     // The file picker reads locally; no file upload or server storage is used.
-    app.el().innerHTML = `<section class="books-intro"><div><h1>📚 绘本阅读</h1><p>Movie Companion Books · 为光影课堂准备的配套电子书，可独立阅读并自动保存进度。</p></div><span class="books-count">${books.length} 本绘本</span></section><section class="books-notice"><strong>点击即读</strong><span>首次打开 PDF 会自动下载，完成后直接阅读；再次打开优先使用本机浏览器缓存。</span></section><div class="book-grid">${books.map(item => `<a class="book-card" href="#/reader/${e(item.id)}" aria-label="阅读 ${e(item.titleZh)}"><div class="book-cover book-cover-${e(item.format)}"><span>${item.format.toUpperCase()}</span><b>📖</b></div><div class="book-card-body"><span class="book-format">${item.format === 'pdf' ? 'PDF · 自动下载阅读' : e(item.format.toUpperCase())}</span><h2>${e(item.titleZh)}</h2><p>${e(item.title)}</p><small>${e(item.level)} · ${e(item.description)}</small></div></a>`).join('')}</div>`;
+    app.el().innerHTML = `<section class="books-intro"><div><h1>📚 绘本阅读</h1><p>Movie Companion Books · 直链阅读或本地翻页，按需选择。</p></div><span class="books-count">${books.length} 本绘本</span></section><section class="books-notice"><strong>直链阅读</strong><span>点击绘本的「Pone 直链阅读」，在新页面直接打开原文件；也可以下载后使用本地翻页阅读。</span></section><div class="book-grid">${books.map(item => `<article class="book-card"><div class="book-cover book-cover-${e(item.format)}"><span>${item.format.toUpperCase()}</span><b>📖</b></div><div class="book-card-body"><span class="book-format">${item.format === 'pdf' ? 'PDF · 两种阅读方式' : e(item.format.toUpperCase())}</span><h2>${e(item.titleZh)}</h2><p>${e(item.title)}</p><small>${e(item.level)} · ${e(item.description)}</small><div class="book-actions">${item.format === 'pdf' && item.sourceUrl ? `<a class="btn book-direct-link" href="${e(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">Pone 直链阅读</a>` : ''}<a class="btn secondary book-flip-link" href="#/reader/${e(item.id)}">${item.format === 'pdf' ? '下载并翻页阅读' : '打开阅读'}</a>${item.format === 'pdf' && (item.downloadUrl || item.sourceUrl) ? `<a class="book-save-link" href="${e(item.downloadUrl || item.sourceUrl)}" download="${e(item.titleZh || item.title)}.pdf">下载 PDF 到本机</a>` : ''}</div></div></article>`).join('')}</div>`;
   },
 
   addLocalPdfPicker(app) {
     const section = document.createElement('section');
     section.className = 'books-notice';
+    const heading = document.createElement('strong'); heading.textContent = '本地翻页阅读';
     const label = document.createElement('label');
     label.className = 'btn secondary'; label.textContent = '打开本地 PDF';
     const input = document.createElement('input'); input.type = 'file'; input.accept = '.pdf,application/pdf';
     input.style.display = 'none'; label.appendChild(input);
-    const note = document.createElement('span'); note.textContent = '文件仅在当前浏览器读取，不上传。刷新后需重新选择。';
+    const note = document.createElement('span'); note.textContent = '从 Pone 下载的 PDF、自己的 PDF，都可以在这里翻页阅读。文件不上传；刷新后需重新选择。';
     input.onchange = () => {
       const file = input.files?.[0]; if (!file) return;
       this.localPdfFile = file; location.hash = '#/reader/local-pdf';
     };
-    section.append(label, note); app.el().querySelector('.books-intro').after(section);
+    section.append(heading, label, note); app.el().querySelector('.books-intro').after(section);
   },
 
   async renderReader(app, id) {
