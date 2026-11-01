@@ -45,3 +45,5 @@ body.flipbook-active .pdf-mobile-landscape .pdf-tools-panel[data-tool=thumbnails
 .book-reader-shell:fullscreen .pdf-mobile-landscape .flipbook-topbar{display:none}
 @media(orientation:portrait){body.flipbook-active .pdf-flipbook-reader.pdf-mobile-landscape{position:fixed;z-index:1000;left:50%;top:50%;width:100dvh;height:100dvw;min-height:0;transform:translate(-50%,-50%) rotate(90deg);transform-origin:center}}
 body.flipbook-active .pdf-mobile-landscape .stf__block{touch-action:none}
+
+@media(orientation:portrait){body.flipbook-active .pdf-mobile-landscape #bookFullscreen{margin-right:64px}}
