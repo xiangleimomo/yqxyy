@@ -207,6 +207,9 @@ window.BookReader = {
       });
       await Promise.all(htmlPages.map(element => element.firstChild.decode()));
       this.pageFlip.loadFromHTML(htmlPages);
+      // Keep single centered covers, but fold them like the inner paper pages.
+      // showCover otherwise assigns hard density to the first and last sheets.
+      [0, pageCount - 1].forEach(index => this.pageFlip.getPage(index).setDensity('soft'));
       const spine = document.createElement('div');
       spine.className = 'pdf-book-spine';
       spine.setAttribute('aria-hidden', 'true');
