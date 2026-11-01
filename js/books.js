@@ -195,6 +195,22 @@ window.BookReader = {
       });
       await Promise.all(htmlPages.map(element => element.firstChild.decode()));
       this.pageFlip.loadFromHTML(htmlPages);
+      const spine = document.createElement('div');
+      spine.className = 'pdf-book-spine';
+      spine.setAttribute('aria-hidden', 'true');
+      root.appendChild(spine);
+      const positionSpine = () => {
+        const bounds = this.pageFlip?.getBoundsRect();
+        if (!bounds) return;
+        spine.style.left = `${bounds.left + bounds.width / 2}px`;
+        spine.style.top = `${bounds.top}px`;
+        spine.style.height = `${bounds.height}px`;
+      };
+      this.pageFlip.on('init', positionSpine);
+      this.pageFlip.on('changeOrientation', positionSpine);
+      this.resizeObserver = new ResizeObserver(() => requestAnimationFrame(positionSpine));
+      this.resizeObserver.observe(root);
+      requestAnimationFrame(positionSpine);
       document.getElementById('bookStagePrev').onclick = () => this.pageFlip?.flipPrev();
       document.getElementById('bookStageNext').onclick = () => this.pageFlip?.flipNext();
       progress.oninput = () => this.pageFlip?.turnToPage(Number(progress.value));
