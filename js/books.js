@@ -169,8 +169,8 @@ window.BookReader = {
         width: pageWidth,
         height: pageHeight,
         size: 'stretch',
-        minWidth: portraitMinWidth,
-        maxWidth: Math.max(pageWidth, portraitMinWidth),
+        minWidth: 280,
+        maxWidth: 1400,
         minHeight: 360,
         maxHeight: 900,
         drawShadow: true,
@@ -178,14 +178,14 @@ window.BookReader = {
         flippingTime: 460,
         usePortrait: true,
         autoSize: true,
-        showCover: false,
+        showCover: true,
         mobileScrollSupport: true,
         useMouseEvents: true,
         clickEventForward: true
       });
       const updateProgress = pageIndex => {
         const current = Number(pageIndex) + 1;
-        indicator.textContent = `第 ${current} / ${pageCount} 页`;
+        indicator.textContent = `${current}/${pageCount}`;
         progress.value = String(pageIndex);
       };
       progress.max = String(Math.max(0, pageCount - 1));
@@ -218,11 +218,14 @@ window.BookReader = {
       const positionSpine = () => {
         const bounds = this.pageFlip?.getBoundsRect();
         if (!bounds) return;
+        const currentPage = this.pageFlip.getCurrentPageIndex();
+        spine.hidden = currentPage === 0 || currentPage === pageCount - 1 || this.pageFlip.getOrientation() === 'portrait';
         spine.style.left = `${bounds.left + bounds.width / 2}px`;
         spine.style.top = `${bounds.top}px`;
         spine.style.height = `${bounds.height}px`;
       };
       this.pageFlip.on('init', positionSpine);
+      this.pageFlip.on('flip', positionSpine);
       this.pageFlip.on('changeOrientation', positionSpine);
       this.resizeObserver = new ResizeObserver(() => requestAnimationFrame(positionSpine));
       this.resizeObserver.observe(root);
@@ -252,15 +255,21 @@ window.BookReader = {
     const toolbar = reader.querySelector('.flipbook-footer');
     const tools = document.createElement('div');
     tools.className = 'pdf-reader-tools';
-    const labels = { audio: '♫ 音频', zoom: '⌕ 缩放', search: '搜索', contents: '目录', thumbnails: '▦ 缩略图', bookmarks: '☆ 书签', cover: '合上书' };
-    const icons = { audio: '♫', zoom: '⌕', search: '⌕', contents: '☷', thumbnails: '▦', bookmarks: '☆', cover: '▣' };
+    const labels = { zoom: '放大', search: '搜索', thumbnails: '缩略图', audio: '声音' };
+    const icons = { zoom: '<path d="M12 4v16M4 12h16"/>', search: '<circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/>', thumbnails: '<path d="M3 3h6v6H3zM15 3h6v6h-6zM3 15h6v6H3zM15 15h6v6h-6z"/>', audio: '<path d="M3 9h4l5-4v14l-5-4H3zM16 8q4 4 0 8M19 5q7 7 0 14"/>' };
     Object.entries(labels).forEach(([name, label]) => {
       const button = document.createElement('button');
-      button.type = 'button'; button.textContent = icons[name]; button.dataset.tool = name;
+      button.type = 'button'; button.innerHTML = `<svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[name]}</svg>`; button.dataset.tool = name;
       button.title = label; button.setAttribute('aria-label', label); button.setAttribute('aria-expanded', 'false');
       tools.appendChild(button);
     });
     reader.querySelector('.flipbook-controls').prepend(tools);
+    reader.querySelector('#bookZoomOut').hidden = true;
+    reader.querySelector('#bookZoomIn').hidden = true;
+    const share = document.createElement('button'); share.type = 'button'; share.title = '分享'; share.setAttribute('aria-label', '分享');
+    share.innerHTML = '<svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 3h7v7M21 3 10 14M10 5H4v16h16v-6"/></svg>';
+    share.onclick = async () => { try { if (navigator.share) await navigator.share({ title: item.title, url: location.href }); else { await navigator.clipboard.writeText(location.href); notify('阅读链接已复制'); } } catch (_) {} };
+    reader.querySelector('#bookFullscreenBottom').before(share);
     const panel = document.createElement('aside'); panel.className = 'pdf-tools-panel'; panel.hidden = true;
     reader.appendChild(panel);
     const toast = document.createElement('div'); toast.className = 'pdf-reader-toast'; toast.hidden = true; toast.setAttribute('role', 'status'); reader.appendChild(toast);
