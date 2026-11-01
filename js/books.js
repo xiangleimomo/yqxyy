@@ -41,7 +41,8 @@ window.BookReader = {
     }
     const e = value => this.escape(app, value);
     app.el().classList.add('book-reader-shell');
-    app.el().innerHTML = `<div class="breadcrumb"><a href="#/reading">绘本阅读</a> › ${e(item.titleZh)}</div><section class="reader-head"><div><span class="book-format">${e(item.format.toUpperCase())}</span><h1>${e(item.titleZh)}</h1><p>${e(item.title)}</p></div><a class="btn secondary" href="#/reading">返回书架</a></section><section class="ebook-reader" id="ebookReader"><div class="ebook-toolbar"><button type="button" class="btn secondary small" id="bookPrev">← 上一页</button><button type="button" class="btn secondary small" id="bookToc">目录</button><span class="book-page-indicator" id="bookPageIndicator">正在定位页码…</span><button type="button" class="btn secondary small" id="bookSmaller">A−</button><button type="button" class="btn secondary small" id="bookLarger">A＋</button><button type="button" class="btn secondary small" id="bookFullscreen">⛶ 全屏</button><button type="button" class="btn secondary small" id="bookNext">下一页 →</button></div><aside class="ebook-toc" id="ebookToc" hidden></aside><div class="ebook-stage" id="ebookStage"><button type="button" class="book-page-nav book-page-prev" id="bookStagePrev" aria-label="上一页">‹</button><div id="epubViewport" class="epub-viewport"><div class="ebook-loading">正在打开电子书…</div></div><button type="button" class="book-page-nav book-page-next" id="bookStageNext" aria-label="下一页">›</button><div class="ebook-page-turn" aria-hidden="true"></div><p class="book-stage-hint">点击左右页边或使用方向键翻页</p></div><p class="ebook-status" id="ebookStatus" role="status" aria-live="polite">正在准备阅读器…</p></section>`;
+    document.body.classList.add('flipbook-active');
+    app.el().innerHTML = `<section class="flipbook-reader" id="ebookReader"><header class="flipbook-topbar"><a href="#/reading" class="flipbook-back" aria-label="返回书架">←</a><span>绘本阅读</span><button type="button" id="bookFullscreen" aria-label="全屏阅读">⛶</button></header><div class="flipbook-stage" id="ebookStage"><button type="button" class="flipbook-turn flipbook-turn-prev" id="bookStagePrev" aria-label="上一页">‹</button><div class="flipbook-surface"><div id="epubViewport" class="epub-viewport"><div class="ebook-loading">正在打开电子书…</div></div></div><button type="button" class="flipbook-turn flipbook-turn-next" id="bookStageNext" aria-label="下一页">›</button><div class="ebook-page-turn" aria-hidden="true"></div><div class="flipbook-controls"><span class="book-page-indicator" id="bookPageIndicator">正在定位页码…</span><input type="range" id="bookProgress" min="0" max="1" value="0" step="1" aria-label="阅读进度"><button type="button" id="bookZoomOut" aria-label="缩小">−</button><button type="button" id="bookZoomIn" aria-label="放大">＋</button><button type="button" id="bookFullscreenBottom" aria-label="全屏">⛶</button></div></div><footer class="flipbook-footer"><div><h1>${e(item.title)}</h1><p>${e(item.titleZh)} · ${e(item.level)} · EPUB</p></div><span>使用左右箭头或点击页边翻页</span></footer><p class="ebook-status" id="ebookStatus" role="status" aria-live="polite">正在准备阅读器…</p></section>`;
 
     if (item.format !== 'epub') {
       document.getElementById('ebookStatus').textContent = '该格式的阅读器正在接入。';
@@ -72,8 +73,8 @@ window.BookReader = {
     const stage = document.getElementById('epubViewport');
     const reader = document.getElementById('ebookReader');
     const status = document.getElementById('ebookStatus');
-    const toc = document.getElementById('ebookToc');
     const pageIndicator = document.getElementById('bookPageIndicator');
+    const progress = document.getElementById('bookProgress');
     const progressKey = `storyfox-book-progress:${item.id}`;
     let fontSize = Number(localStorage.getItem(`storyfox-book-font-size:${item.id}`) || 100);
     const setStatus = text => { if (status) status.textContent = text; };
@@ -93,7 +94,7 @@ window.BookReader = {
         height: Math.max(400, Math.floor(stage.clientHeight))
       });
       const initialSize = viewportSize();
-      this.rendition = this.book.renderTo(stage, { width: initialSize.width, height: initialSize.height, spread: 'none', flow: 'paginated' });
+      this.rendition = this.book.renderTo(stage, { width: initialSize.width, height: initialSize.height, spread: 'auto', minSpreadWidth: 720, flow: 'paginated' });
       this.rendition.themes.fontSize(`${fontSize}%`);
       await this.rendition.display(localStorage.getItem(progressKey) || undefined);
       const resizeRendition = () => {
@@ -104,11 +105,13 @@ window.BookReader = {
       setStatus('阅读进度会自动保存在此设备。');
 
       let turning = false;
+      const totalPages = this.book?.spine?.items?.length || 1;
+      progress.max = String(Math.max(0, totalPages - 1));
       const updatePageIndicator = location => {
         if (!pageIndicator || !location?.start) return;
         const current = Number(location.start.index) + 1;
-        const total = this.book?.spine?.items?.length;
-        pageIndicator.textContent = total ? `第 ${current} / ${total} 页` : `第 ${current} 页`;
+        pageIndicator.textContent = `第 ${current} / ${totalPages} 页`;
+        progress.value = String(Math.max(0, current - 1));
       };
       const turn = direction => {
         if (turning || !this.rendition) return;
@@ -120,18 +123,24 @@ window.BookReader = {
         window.setTimeout(() => this.rendition?.[direction](), 140);
         window.setTimeout(() => { reader.classList.remove(className); turning = false; }, 540);
       };
-      document.getElementById('bookPrev').onclick = () => turn('prev');
-      document.getElementById('bookNext').onclick = () => turn('next');
       document.getElementById('bookStagePrev').onclick = () => turn('prev');
       document.getElementById('bookStageNext').onclick = () => turn('next');
-      document.getElementById('bookSmaller').onclick = () => { fontSize = Math.max(80, fontSize - 10); this.rendition.themes.fontSize(`${fontSize}%`); localStorage.setItem(`storyfox-book-font-size:${item.id}`, String(fontSize)); };
-      document.getElementById('bookLarger').onclick = () => { fontSize = Math.min(160, fontSize + 10); this.rendition.themes.fontSize(`${fontSize}%`); localStorage.setItem(`storyfox-book-font-size:${item.id}`, String(fontSize)); };
-      document.getElementById('bookFullscreen').onclick = () => reader.requestFullscreen?.();
-      document.getElementById('bookToc').onclick = () => { toc.hidden = !toc.hidden; };
+      const toggleFullscreen = () => reader.requestFullscreen?.();
+      document.getElementById('bookFullscreen').onclick = toggleFullscreen;
+      document.getElementById('bookFullscreenBottom').onclick = toggleFullscreen;
+      let zoom = 1;
+      const applyZoom = () => document.getElementById('ebookStage').style.setProperty('--book-zoom', String(zoom));
+      document.getElementById('bookZoomOut').onclick = () => { zoom = Math.max(.8, zoom - .1); applyZoom(); };
+      document.getElementById('bookZoomIn').onclick = () => { zoom = Math.min(1.25, zoom + .1); applyZoom(); };
+      progress.oninput = () => {
+        const spineItem = this.book?.spine?.items?.[Number(progress.value)];
+        if (spineItem) this.rendition.display(spineItem.href);
+      };
       this.rendition.on('relocated', location => {
         localStorage.setItem(progressKey, location.start.cfi);
         updatePageIndicator(location);
       });
+      updatePageIndicator(this.rendition.currentLocation?.());
       this.keyHandler = event => {
         if (event.defaultPrevented || /INPUT|TEXTAREA|SELECT/.test(event.target.tagName)) return;
         if (event.key === 'ArrowLeft') turn('prev');
@@ -147,9 +156,6 @@ window.BookReader = {
       this.viewportResizeHandler = resizeRendition;
       window.addEventListener('resize', this.viewportResizeHandler);
 
-      const navigation = await this.book.loaded.navigation;
-      toc.innerHTML = navigation.toc.length ? navigation.toc.map(chapter => `<button type="button" data-href="${app.escapeHtml(chapter.href)}">${app.escapeHtml(chapter.label)}</button>`).join('') : '<span>本书未提供目录。</span>';
-      toc.querySelectorAll('button').forEach(button => button.addEventListener('click', () => { this.rendition.display(button.dataset.href); toc.hidden = true; }));
     } catch (error) {
       console.error(error);
       stage.innerHTML = '<div class="ebook-error"><strong>暂时无法打开电子书</strong><span>请稍后重试；若持续失败，请检查书籍链接是否仍可访问。</span></div>';
