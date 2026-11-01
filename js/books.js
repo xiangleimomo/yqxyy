@@ -8,6 +8,11 @@ window.BookReader = {
   localPdfFiles: new Map(),
 
   cleanup() {
+    if (this.pdfOrientationLocked) { try { screen.orientation?.unlock?.(); } catch (_) {} }
+    this.pdfOrientationLocked = false;
+    if (this.pdfFullscreenHost && document.fullscreenElement === this.pdfFullscreenHost) document.exitFullscreen?.().catch(() => {});
+    this.pdfFullscreenHost = null;
+    this.pdfPhoneLandscape = false;
     this.pdfRenderTask?.cancel();
     this.pdfRenderTask = null;
     this.mobileRenderedPages = [];
@@ -237,6 +242,17 @@ window.BookReader = {
     app.el().classList.add('book-reader-shell');
     document.body.classList.add('flipbook-active');
     app.el().innerHTML = `<section class="flipbook-reader pdf-flipbook-reader" id="ebookReader"><header class="flipbook-topbar"><a href="#/reading" class="flipbook-back" aria-label="返回书架">←</a><span>绘本阅读</span><button type="button" id="bookFullscreen" aria-label="全屏阅读">⛶</button></header><div class="flipbook-stage" id="ebookStage"><button type="button" class="flipbook-turn flipbook-turn-prev" id="bookStagePrev" aria-label="上一页">‹</button><div class="pdf-flipbook-surface"><div id="pdfFlipbook" class="pdf-pageflip"><div class="ebook-loading">正在解析 PDF 绘本…</div></div></div><button type="button" class="flipbook-turn flipbook-turn-next" id="bookStageNext" aria-label="下一页">›</button><div class="flipbook-controls"><span class="book-page-indicator" id="bookPageIndicator">正在加载…</span><input type="range" id="bookProgress" min="0" max="1" value="0" step="1" aria-label="阅读进度"><button type="button" id="bookZoomOut" aria-label="缩小">−</button><button type="button" id="bookZoomIn" aria-label="放大">＋</button><button type="button" id="bookFullscreenBottom" aria-label="全屏">⛶</button></div></div><footer class="flipbook-footer"><div><h1>${e(item.title)}</h1><p>${e(item.titleZh)} · ${e(item.level)} · PDF</p></div><span>拖动书页、点击页角或使用左右箭头翻页</span></footer><p class="ebook-status" id="ebookStatus" role="status" aria-live="polite">正在准备 PDF 阅读器…</p></section>`;
+    const reader = document.getElementById('ebookReader');
+    this.pdfPhoneLandscape = matchMedia('(pointer:coarse)').matches && Math.min(screen.width, screen.height) <= 760;
+    if (this.pdfPhoneLandscape) {
+      reader.classList.add('pdf-mobile-landscape');
+      this.viewportResizeHandler = () => {
+        if (!reader.isConnected || !this.pageFlip) return;
+        this.pageFlip.getSettings().minWidth = Math.floor(document.getElementById('pdfFlipbook').clientWidth / 2) + 2;
+        this.pageFlip.update();
+      };
+      window.addEventListener('resize', this.viewportResizeHandler);
+    }
   },
 
   async openPdfFlipbook(item) {
@@ -364,9 +380,9 @@ window.BookReader = {
         width: pageWidth,
         height: pageHeight,
         size: 'stretch',
-        minWidth: 280,
+        minWidth: this.pdfPhoneLandscape ? Math.floor(root.clientWidth / 2) + 2 : 280,
         maxWidth: 1400,
-        minHeight: 360,
+        minHeight: this.pdfPhoneLandscape ? 100 : 360,
         maxHeight: 900,
         drawShadow: true,
         maxShadowOpacity: .42,
@@ -403,6 +419,15 @@ window.BookReader = {
       });
       await Promise.all(htmlPages.map(element => element.firstChild.decode()));
       this.pageFlip.loadFromHTML(htmlPages);
+      if (this.pdfPhoneLandscape) {
+        // The pinned PageFlip UI expects local, unrotated mouse/touch positions.
+        const ui = this.pageFlip.getUI(), originalMousePos = ui.getMousePos.bind(ui);
+        ui.getMousePos = (x, y) => {
+          if (!matchMedia('(orientation:portrait)').matches) return originalMousePos(x, y);
+          const element = ui.getDistElement(), rect = element.getBoundingClientRect();
+          return { x: (y - rect.top) * element.offsetWidth / rect.height, y: (rect.right - x) * element.offsetHeight / rect.width };
+        };
+      }
       // Keep single centered covers, but fold them like the inner paper pages.
       // showCover otherwise assigns hard density to the first and last sheets.
       [0, pageCount - 1].forEach(index => this.pageFlip.getPage(index).setDensity('soft'));
@@ -449,14 +474,33 @@ window.BookReader = {
       document.getElementById('bookStagePrev').onclick = () => this.pageFlip?.flipPrev();
       document.getElementById('bookStageNext').onclick = () => this.pageFlip?.flipNext();
       progress.oninput = () => this.pageFlip?.turnToPage(Number(progress.value));
-      const toggleFullscreen = () => reader.requestFullscreen?.();
+      const toggleFullscreen = async () => {
+        if (!this.pdfPhoneLandscape) return reader.requestFullscreen?.();
+        try {
+          // Keep the rotated child inside an unrotated fullscreen host.
+          const host = reader.parentElement;
+          if (document.fullscreenElement === host) { await document.exitFullscreen(); return; }
+          this.pdfFullscreenHost = host;
+          await host.requestFullscreen?.();
+          if (this.pdfSession !== session || document.fullscreenElement !== host || !screen.orientation?.lock) return;
+          await screen.orientation.lock('landscape');
+          if (this.pdfSession !== session || document.fullscreenElement !== host) { screen.orientation.unlock?.(); return; }
+          this.pdfOrientationLocked = true;
+        } catch (_) { /* The CSS landscape layout also works without native lock. */ }
+      };
       document.getElementById('bookFullscreen').onclick = toggleFullscreen;
       document.getElementById('bookFullscreenBottom').onclick = toggleFullscreen;
       let zoom = 1;
       const applyZoom = () => stage.style.setProperty('--book-zoom', String(zoom));
       document.getElementById('bookZoomOut').onclick = () => { zoom = Math.max(.8, zoom - .1); applyZoom(); };
       document.getElementById('bookZoomIn').onclick = () => { zoom = Math.min(1.2, zoom + .1); applyZoom(); };
-      this.fullscreenHandler = () => window.setTimeout(() => this.pageFlip?.update(), 100);
+      this.fullscreenHandler = () => {
+        if (!document.fullscreenElement && this.pdfOrientationLocked) {
+          try { screen.orientation?.unlock?.(); } catch (_) {}
+          this.pdfOrientationLocked = false;
+        }
+        window.setTimeout(() => { if (this.pdfSession === session) { this.viewportResizeHandler?.(); this.pageFlip?.update(); } }, 100);
+      };
       document.addEventListener('fullscreenchange', this.fullscreenHandler);
       this.setupPdfTools(item, { reader, root, pageUrls, pageTexts, outlineItems, pageCount, ensureTextIndex, ensureOutline });
       if (mobile) {

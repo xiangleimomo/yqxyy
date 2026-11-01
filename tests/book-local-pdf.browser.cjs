@@ -54,6 +54,7 @@ const {samplePdf}=require('./helpers/pdf-fixture.cjs');
  await page.setViewportSize({width:1280,height:900});
  while(!release)await new Promise(resolve=>setTimeout(resolve,20));release();mode='ok';
  await waitReader();assert.equal(requests,1);assert.equal(await page.evaluate(()=>BookReader.pdfDocument.numPages),2);
+ assert.equal(await page.locator('.pdf-mobile-landscape').count(),0,'Keep the desktop reader layout unchanged');
  await page.locator('#bookProgress').evaluate(el=>{el.value='1';el.dispatchEvent(new Event('input',{bubbles:true}));});
  await page.waitForFunction(()=>document.getElementById('bookPageIndicator').textContent==='2/2');
  assert(await page.locator('.pdf-sharp-page img').first().evaluate(img=>img.naturalWidth>0));

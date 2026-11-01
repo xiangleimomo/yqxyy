@@ -33,3 +33,15 @@ body.flipbook-active .pdf-flipbook-reader{display:flex;flex-direction:column;hei
 .flipbook-reader:fullscreen{width:100vw;height:100vh}.flipbook-reader:fullscreen .flipbook-stage{height:calc(100vh - 156px);min-height:0}
 @keyframes page-turn-next{0%{opacity:0;transform:rotateY(0deg) scaleX(.02)}18%{opacity:.86}100%{opacity:0;transform:rotateY(-95deg) scaleX(.98)}}@keyframes page-turn-prev{0%{opacity:0;transform:rotateY(0deg) scaleX(.02)}18%{opacity:.86}100%{opacity:0;transform:rotateY(95deg) scaleX(.98)}}
 @media(max-width:760px){.flipbook-topbar{height:50px;padding:0 14px}.flipbook-stage{height:calc(100dvh - 142px);min-height:430px}.flipbook-surface,.pdf-flipbook-surface{padding:18px 45px 62px}.flipbook-turn{width:14%;min-width:40px;padding:0 8px;font-size:58px}.flipbook-controls{right:16px;left:16px;bottom:14px;gap:8px}.flipbook-footer{min-height:92px;padding:12px 16px}.flipbook-footer>span{display:none}.flipbook-reader.turn-next .ebook-page-turn,.flipbook-reader.turn-prev .ebook-page-turn{display:none}.flipbook-surface,.pdf-flipbook-surface{transform:none!important}}
+
+/* Phone-only landscape reader, including browsers without orientation locking. */
+body.flipbook-active .pdf-flipbook-reader.pdf-mobile-landscape .flipbook-topbar{flex-basis:40px;min-height:40px}
+body.flipbook-active .pdf-flipbook-reader.pdf-mobile-landscape .flipbook-stage{height:auto;min-height:0;flex:1 1 0}
+body.flipbook-active .pdf-flipbook-reader.pdf-mobile-landscape .pdf-flipbook-surface{padding:12px 42px 40px}
+body.flipbook-active .pdf-mobile-landscape .flipbook-controls{flex-wrap:nowrap;gap:8px;min-height:44px;padding:8px 14px}
+body.flipbook-active .pdf-mobile-landscape .pdf-reader-tools{width:auto;flex-wrap:nowrap}
+body.flipbook-active .pdf-mobile-landscape .pdf-tools-panel{top:44px;max-height:calc(100% - 100px)}
+body.flipbook-active .pdf-mobile-landscape .pdf-tools-panel[data-tool=thumbnails],body.flipbook-active .pdf-mobile-landscape .pdf-tools-panel[data-tool=audio]{top:auto;bottom:50px}
+.book-reader-shell:fullscreen .pdf-mobile-landscape .flipbook-topbar{display:none}
+@media(orientation:portrait){body.flipbook-active .pdf-flipbook-reader.pdf-mobile-landscape{position:fixed;z-index:1000;left:50%;top:50%;width:100dvh;height:100dvw;min-height:0;transform:translate(-50%,-50%) rotate(90deg);transform-origin:center}}
+body.flipbook-active .pdf-mobile-landscape .stf__block{touch-action:none}

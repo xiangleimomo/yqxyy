@@ -45,6 +45,41 @@ const externalPdf=process.env.PDF_PERF_FILE;
   assert.equal(first.renders.length,1,'Show the current page before rendering neighbours');
   assert.equal(first.textCalls,0,'Text extraction must not block first paint');
   assert(first.renders[0].pixels<=1610000,'Keep mobile raster within the pixel budget');
+  const geometry=await page.locator('#ebookReader').evaluate(reader=>({width:reader.offsetWidth,height:reader.offsetHeight,rect:reader.getBoundingClientRect().toJSON()}));
+  assert(geometry.width>geometry.height,'A portrait phone uses a landscape reader');
+  assert(Math.abs(geometry.rect.width-390)<2&&Math.abs(geometry.rect.height-844)<2,'The rotated reader fills the phone viewport');
+  await page.screenshot({path:path.join(process.env.TEMP,'yqxyy-phone-landscape.png')});
+  const swipe=await page.evaluate(()=>{
+    const ui=BookReader.pageFlip.getUI(),rect=ui.getDistElement().getBoundingClientRect();
+    const point=ui.getMousePos(rect.left+rect.width*.5,rect.top+rect.height*.8);
+    const image=document.querySelector('img[data-pdf-page="1"]').getBoundingClientRect();
+    const x=image.left+image.width*.5,start=image.top+image.height*.8,end=image.top+image.height*.2;
+    return {x,start,end,logicalX:point.x,expectedX:ui.getDistElement().offsetWidth*.8};
+  });
+  assert(Math.abs(swipe.logicalX-swipe.expectedX)<2,'Transform touch coordinates back to book coordinates');
+  await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:swipe.x,y:swipe.start}]});
+  await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:swipe.x,y:(swipe.start+swipe.end)/2}]});
+  await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:swipe.x,y:swipe.end}]});
+  await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+  await page.waitForFunction(()=>BookReader.pageFlip.getCurrentPageIndex()===1,null,{timeout:30000});
+  await page.locator('#bookStagePrev').click();
+  await page.waitForFunction(()=>BookReader.pageFlip.getCurrentPageIndex()===0,null,{timeout:30000});
+  await page.setViewportSize({width:844,height:390});
+  await page.waitForFunction(()=>getComputedStyle(document.querySelector('#ebookReader')).transform==='none');
+  assert(await page.locator('#ebookReader').evaluate(reader=>reader.offsetWidth>reader.offsetHeight),'Native landscape keeps the same reader orientation');
+  assert.equal(await page.locator('#bookPageIndicator').innerText(),'1/6','Device rotation preserves the current page');
+  await page.setViewportSize({width:390,height:844});
+  await page.evaluate(()=>{
+    window.orientationLockAttempts=0;
+    window.originalOrientationLock=screen.orientation.lock;
+    screen.orientation.lock=async()=>{orientationLockAttempts++;throw new DOMException('Not supported','NotSupportedError');};
+  });
+  await page.locator('#bookFullscreen').click();
+  await page.waitForFunction(()=>document.fullscreenElement?.id==='app'&&orientationLockAttempts===1);
+  assert(await page.locator('#ebookReader').evaluate(reader=>reader.offsetWidth>reader.offsetHeight),'Keep landscape if native locking is rejected');
+  await page.locator('#bookFullscreenBottom').click();
+  await page.waitForFunction(()=>!document.fullscreenElement);
+  await page.evaluate(()=>{screen.orientation.lock=window.originalOrientationLock;});
   await page.waitForTimeout(800);
   assert((await page.evaluate(()=>pdfMetrics.renders.length))<6,'Do not rasterize the entire book in the background');
   await page.locator('#bookProgress').evaluate(el=>{el.value='5';el.dispatchEvent(new Event('input',{bubbles:true}));});
@@ -75,5 +110,5 @@ const externalPdf=process.env.PDF_PERF_FILE;
   assert.equal(await page.evaluate(()=>BookReader.pdfObjectUrls.length),0,'A cancelled background render must not retain images');
  }
  if(!baseline){assert(components.length>=3);assert(components.every(url=>url.startsWith('https://yqxyy.netlify.app/assets/vendor/')),'Serve all reader components from the site');}
- assert.deepEqual(errors,[]);console.log('PASS: '+(baseline?'baseline captured':'mobile first paint, bounded rendering/memory, jump/back navigation, lazy search, resume, cleanup and same-origin components'));
+ assert.deepEqual(errors,[]);console.log('PASS: '+(baseline?'baseline captured':'phone landscape, touch page turns, device rotation, fullscreen fallback, bounded rendering, search, resume and cleanup'));
 }finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1;});
