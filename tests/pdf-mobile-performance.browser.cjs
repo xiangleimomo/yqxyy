@@ -34,8 +34,11 @@ const externalPdf=process.env.PDF_PERF_FILE;
   window.St={...window.St,PageFlip:class extends Flip {constructor(...args){super(...args);this.on('init',()=>{pdfMetrics.first={ms:performance.now()-pdfMetrics.start,renders:pdfMetrics.renders.slice(),textCalls:pdfMetrics.textCalls};});}}};
  });
  const cdp=await page.context().newCDPSession(page);await cdp.send('Emulation.setCPUThrottlingRate',{rate:4});
+ const localInput=baseline?'.books-notice input[type=file]':'.book-local-file';
+ if(!baseline)await page.locator('.utility-nav a[href="#/reading/local"]').click();
+ await page.locator(localInput).waitFor({state:'attached'});
  await page.evaluate(()=>pdfMetrics.start=performance.now());
- await page.locator('.books-notice input[type=file]').setInputFiles({name:'mobile-test.pdf',mimeType:'application/pdf',buffer:externalPdf?fs.readFileSync(externalPdf):samplePdf(6)});
+ await page.locator(localInput).setInputFiles({name:'mobile-test.pdf',mimeType:'application/pdf',buffer:externalPdf?fs.readFileSync(externalPdf):samplePdf(6)});
  await page.waitForFunction(()=>pdfMetrics.first,null,{timeout:120000});
  const first=await page.evaluate(()=>pdfMetrics.first);console.log((baseline?'BASELINE':'MOBILE')+' first local page',JSON.stringify(first));
  if(!baseline){
