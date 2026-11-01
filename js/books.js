@@ -148,12 +148,17 @@ window.BookReader = {
       documentProxy.destroy();
       this.pdfObjectUrls = pageUrls;
       root.innerHTML = '';
+      // This PDF is already laid out as a landscape two-page spread. Force
+      // PageFlip's portrait mode so one PDF page remains one full book spread,
+      // instead of PageFlip combining two spreads into four tiny pages.
+      const hostWidth = Math.max(320, Math.floor(root.clientWidth));
+      const portraitMinWidth = Math.floor(hostWidth / 2) + 2;
       this.pageFlip = new window.St.PageFlip(root, {
         width: pageWidth,
         height: pageHeight,
         size: 'stretch',
-        minWidth: 280,
-        maxWidth: 1100,
+        minWidth: portraitMinWidth,
+        maxWidth: Math.max(pageWidth, portraitMinWidth),
         minHeight: 360,
         maxHeight: 900,
         drawShadow: true,
@@ -161,7 +166,7 @@ window.BookReader = {
         flippingTime: 460,
         usePortrait: true,
         autoSize: true,
-        showCover: true,
+        showCover: false,
         mobileScrollSupport: true,
         useMouseEvents: true,
         clickEventForward: true
