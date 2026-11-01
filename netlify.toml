@@ -1,6 +1,12 @@
 [build]
   publish = "."
 
+# Reader libraries have versioned directory names; reuse them on mobile visits.
+[[headers]]
+  for = "/assets/vendor/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
 [[headers]]
   for = "/data/movie-harry-potter-1/hls/*"
   [headers.values]

@@ -28,7 +28,7 @@ const {samplePdf}=require('./helpers/pdf-fixture.cjs');
  await page.locator('.book-card').first().click();await page.locator('#bookDownloadStatus').waitFor();
  await page.waitForFunction(()=>document.getElementById('bookDownloadStatus').textContent.includes('下载'));
  assert.equal(await page.locator('input[type=file]').count(),0,'No manual file selection on the normal path');
- assert.equal(await page.locator('iframe').count(),0,'No PDF preview tab/frame');
+ assert.equal(await page.locator('#app iframe').count(),0,'No PDF preview frame inside the reader (Netlify may inject its own badge)');
  assert.equal(await page.evaluate(()=>Boolean(BookReader.pdfDocument)),false,'Do not parse an incomplete file');
  assert.equal(page.context().pages().length,1);
  await page.screenshot({path:path.join(process.env.TEMP,'yqxyy-auto-pdf-download.png')});
