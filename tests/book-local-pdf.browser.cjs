@@ -1,23 +1,7 @@
 const {chromium}=require('playwright'),fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..');
-function samplePdf(){
- const objects=[
-  '<< /Type /Catalog /Pages 2 0 R >>',
-  '<< /Type /Pages /Kids [3 0 R 5 0 R] /Count 2 >>',
-  '<< /Type /Page /Parent 2 0 R /MediaBox [0 0 200 160] /Resources << /Font << /F1 7 0 R >> >> /Contents 4 0 R >>',
-  '',
-  '<< /Type /Page /Parent 2 0 R /MediaBox [0 0 200 160] /Resources << /Font << /F1 7 0 R >> >> /Contents 6 0 R >>',
-  '',
-  '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>'
- ];
- for(const [index,page] of [[3,1],[5,2]]){const stream=`BT /F1 16 Tf 20 80 Td (Local PDF page ${page}) Tj ET`;objects[index]=`<< /Length ${stream.length} >>\nstream\n${stream}\nendstream`;}
- let pdf='%PDF-1.4\n',offsets=[0];
- objects.forEach((obj,i)=>{offsets.push(Buffer.byteLength(pdf));pdf+=`${i+1} 0 obj\n${obj}\nendobj\n`;});
- const xref=Buffer.byteLength(pdf);pdf+=`xref\n0 ${objects.length+1}\n0000000000 65535 f \n`;
- for(const offset of offsets.slice(1))pdf+=String(offset).padStart(10,'0')+' 00000 n \n';
- pdf+=`trailer\n<< /Size ${objects.length+1} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF\n`;
- return Buffer.from(pdf);
-}
+const {samplePdf}=require('./helpers/pdf-fixture.cjs');
+
 (async()=>{const browser=await chromium.launch({channel:'msedge',headless:true});try{
  const page=await browser.newPage({viewport:{width:1280,height:900}}),errors=[],forbidden=[];
  const pdf=samplePdf();let requests=0,mode='hold',release;
