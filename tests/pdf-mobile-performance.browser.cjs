@@ -38,13 +38,27 @@ const externalPdf=process.env.PDF_PERF_FILE;
  if(!baseline)await page.locator('.book-reading-tabs a[href="#/reading/local"]').click();
  await page.locator(localInput).waitFor({state:'attached'});
  await page.evaluate(()=>pdfMetrics.start=performance.now());
- await page.locator(localInput).setInputFiles({name:'mobile-test.pdf',mimeType:'application/pdf',buffer:externalPdf?fs.readFileSync(externalPdf):samplePdf(6)});
+ await page.locator(localInput).setInputFiles({name:'mobile-test.pdf',mimeType:'application/pdf',buffer:externalPdf?fs.readFileSync(externalPdf):samplePdf(6,[[200,160],[200,160],[160,300],[300,160]])});
  await page.waitForFunction(()=>pdfMetrics.first,null,{timeout:120000});
  const first=await page.evaluate(()=>pdfMetrics.first);console.log((baseline?'BASELINE':'MOBILE')+' first local page',JSON.stringify(first));
  if(!baseline){
   assert.equal(first.renders.length,1,'Show the current page before rendering neighbours');
   assert.equal(first.textCalls,0,'Text extraction must not block first paint');
   assert(first.renders[0].pixels<=1610000,'Keep mobile raster within the pixel budget');
+  assert.equal(await page.evaluate(()=>BookReader.pageFlip.getOrientation()),'landscape','Phone pages open as a two-page book');
+  const checkCompletePages=async pages=>{
+    await page.waitForFunction(pages=>pages.every(n=>BookReader.mobileRenderedPages?.includes(n)),pages);
+    await page.waitForTimeout(900); // Let the existing cover-centering animation finish.
+    const fits=await page.evaluate(pages=>{
+      const surface=document.querySelector('.pdf-flipbook-surface').getBoundingClientRect();
+      return pages.every(n=>{
+        const image=document.querySelector(`img[data-pdf-page="${n}"]`),rect=image.getBoundingClientRect();
+        return rect.width>0&&rect.height>0&&rect.left>=surface.left-2&&rect.right<=surface.right+2&&rect.top>=surface.top-2&&rect.bottom<=surface.bottom+2&&image.naturalWidth>0;
+      });
+    },pages);
+    assert(fits,'Every visible page must fit completely inside the reading surface');
+  };
+  await checkCompletePages([1]);
   const geometry=await page.locator('#ebookReader').evaluate(reader=>({width:reader.offsetWidth,height:reader.offsetHeight,rect:reader.getBoundingClientRect().toJSON()}));
   assert(geometry.width>geometry.height,'A portrait phone uses a landscape reader');
   assert(Math.abs(geometry.rect.width-390)<2&&Math.abs(geometry.rect.height-844)<2,'The rotated reader fills the phone viewport');
@@ -62,12 +76,22 @@ const externalPdf=process.env.PDF_PERF_FILE;
   await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:swipe.x,y:swipe.end}]});
   await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
   await page.waitForFunction(()=>BookReader.pageFlip.getCurrentPageIndex()===1,null,{timeout:30000});
+  await checkCompletePages([2,3]);
+  assert.equal(await page.locator('#bookPageIndicator').innerText(),'2–3/6');
+  await page.screenshot({path:path.join(process.env.TEMP,'yqxyy-phone-double-pages.png')});
+  await page.setViewportSize({width:844,height:390});
+  await page.waitForFunction(()=>getComputedStyle(document.querySelector('#ebookReader')).transform==='none');
+  assert.equal(await page.locator('#bookPageIndicator').innerText(),'2–3/6');
+  await checkCompletePages([2,3]);
+  await page.setViewportSize({width:390,height:844});
+  await checkCompletePages([2,3]);
   await page.locator('#bookStagePrev').click();
   await page.waitForFunction(()=>BookReader.pageFlip.getCurrentPageIndex()===0,null,{timeout:30000});
   await page.setViewportSize({width:844,height:390});
   await page.waitForFunction(()=>getComputedStyle(document.querySelector('#ebookReader')).transform==='none');
   assert(await page.locator('#ebookReader').evaluate(reader=>reader.offsetWidth>reader.offsetHeight),'Native landscape keeps the same reader orientation');
   assert.equal(await page.locator('#bookPageIndicator').innerText(),'1/6','Device rotation preserves the current page');
+  await checkCompletePages([1]);
   await page.setViewportSize({width:390,height:844});
   await page.evaluate(()=>{
     window.orientationLockAttempts=0;
@@ -85,7 +109,8 @@ const externalPdf=process.env.PDF_PERF_FILE;
   await page.locator('#bookProgress').evaluate(el=>{el.value='5';el.dispatchEvent(new Event('input',{bubbles:true}));});
   await page.waitForFunction(()=>BookReader.mobileRenderedPages?.includes(6),null,{timeout:30000});
   assert.equal(await page.locator('#bookPageIndicator').innerText(),'6/6');
-  assert((await page.evaluate(()=>BookReader.pdfObjectUrls.length))<=5,'Evict distant mobile images');
+  assert((await page.evaluate(()=>BookReader.pdfObjectUrls.length))<=6,'Keep only the current and adjacent spreads in memory');
+  await checkCompletePages([6]);
   await page.locator('#bookProgress').evaluate(el=>{el.value='0';el.dispatchEvent(new Event('input',{bubbles:true}));});
   await page.waitForFunction(()=>BookReader.mobileRenderedPages?.includes(1),null,{timeout:30000});
   await page.evaluate(()=>document.querySelector('[data-tool="search"]').click());
@@ -95,7 +120,8 @@ const externalPdf=process.env.PDF_PERF_FILE;
   if(!externalPdf){
    await page.locator('.pdf-tools-panel .pdf-tool-row').filter({hasText:'第 5 页'}).click();
    await page.waitForFunction(()=>BookReader.mobileRenderedPages?.includes(5),null,{timeout:30000});
-   assert.equal(await page.locator('#bookPageIndicator').innerText(),'5/6','Search unvisited pages and jump to a match');
+   assert.equal(await page.locator('#bookPageIndicator').innerText(),'4–5/6','Search opens the spread containing the matched page');
+   await checkCompletePages([4,5]);
   }
   await page.locator('.flipbook-back').click();await page.locator('.book-card').waitFor();
   assert.equal(await page.evaluate(()=>BookReader.pdfObjectUrls.length),0);
@@ -103,11 +129,16 @@ const externalPdf=process.env.PDF_PERF_FILE;
   await page.evaluate(()=>location.hash='#/reader/local-pdf');
   const resume=externalPdf?1:5;
   await page.waitForFunction(number=>BookReader.mobileRenderedPages?.includes(number),resume,{timeout:30000});
-  await page.waitForFunction(number=>document.querySelector('#bookPageIndicator')?.textContent===`${number}/6`,resume);
+  await page.waitForFunction(number=>document.querySelector('#bookPageIndicator')?.textContent===(number===5?'4–5/6':'1/6'),resume);
   await page.locator('#bookProgress').evaluate(el=>{el.value='2';el.dispatchEvent(new Event('input',{bubbles:true}));});
   await page.locator('.flipbook-back').click();await page.locator('.book-card').waitFor();
   await page.waitForTimeout(250);
   assert.equal(await page.evaluate(()=>BookReader.pdfObjectUrls.length),0,'A cancelled background render must not retain images');
+  await page.locator('.book-reading-tabs a[href="#/reading/local"]').click();
+  await page.locator('.book-local-file').setInputFiles({name:'single-page.pdf',mimeType:'application/pdf',buffer:samplePdf(1)});
+  await page.waitForFunction(()=>document.querySelector('#bookPageIndicator')?.textContent==='1/1');
+  await checkCompletePages([1]);
+  await page.locator('.flipbook-back').click();await page.locator('.book-card').waitFor();
  }
  if(!baseline){assert(components.length>=3);assert(components.every(url=>url.startsWith('https://yqxyy.netlify.app/assets/vendor/')),'Serve all reader components from the site');}
  assert.deepEqual(errors,[]);console.log('PASS: '+(baseline?'baseline captured':'phone landscape, touch page turns, device rotation, fullscreen fallback, bounded rendering, search, resume and cleanup'));

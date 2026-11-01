@@ -87,7 +87,14 @@ const {samplePdf}=require('./helpers/pdf-fixture.cjs');
  await page.locator('.book-card').waitFor();
  await page.locator('.book-reading-tabs a[href="#/reading/local"]').click();
  await page.locator('.book-local-file').setInputFiles({name:'local.pdf',mimeType:'application/pdf',buffer:pdf});
- await waitReader();await shelf();
+ await waitReader();
+ await page.setViewportSize({width:1280,height:360});
+ await page.waitForTimeout(1000);
+ assert(await page.evaluate(()=>{
+  const frame=document.querySelector('.pdf-flipbook-surface').getBoundingClientRect(),image=document.querySelector('img[data-pdf-page="1"]').getBoundingClientRect();
+  return image.width>0&&image.height>0&&image.left>=frame.left-2&&image.right<=frame.right+2&&image.top>=frame.top-2&&image.bottom<=frame.bottom+2;
+ }),'Fit the complete desktop PDF page when the window is short');
+ await shelf();
  assert.deepEqual(forbidden,[]);assert.deepEqual(errors,[]);
  console.log('PASS: direct Pone reading without PDF.js/download, download-and-flip, cached reopen/refresh, retry, invalid response rejection, cancellation, page turns, mobile layout and local-file fallback'+(process.env.PRODUCTION_SITE?' on production with controlled source/download fixtures':''));
 }finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

@@ -248,7 +248,6 @@ window.BookReader = {
       reader.classList.add('pdf-mobile-landscape');
       this.viewportResizeHandler = () => {
         if (!reader.isConnected || !this.pageFlip) return;
-        this.pageFlip.getSettings().minWidth = Math.floor(document.getElementById('pdfFlipbook').clientWidth / 2) + 2;
         this.pageFlip.update();
       };
       window.addEventListener('resize', this.viewportResizeHandler);
@@ -292,7 +291,8 @@ window.BookReader = {
       const mobileScale = Math.min(3, Math.sqrt(1600000 / (baseViewport.width * baseViewport.height)) * .999, Math.max(.5, Math.max(240, root.clientWidth) * Math.min(devicePixelRatio || 1, 2) * 1.1 / baseViewport.width));
       const scale = mobile ? mobileScale : desktopScale;
       const savedPage = Number(localStorage.getItem(`storyfox-pdf-progress:${item.id}`) || 0);
-      const initialPage = mobile && Number.isInteger(savedPage) && savedPage >= 0 && savedPage < pageCount ? savedPage + 1 : 1;
+      let initialPage = mobile && Number.isInteger(savedPage) && savedPage >= 0 && savedPage < pageCount ? savedPage + 1 : 1;
+      if (this.pdfPhoneLandscape && initialPage > 1 && initialPage % 2 === 1) initialPage--;
       const placeholder = 'data:image/svg+xml,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="${pageWidth}" height="${pageHeight}"><rect width="100%" height="100%" fill="white"/><text x="50%" y="50%" text-anchor="middle" fill="#789" font-size="24">正在加载书页…</text></svg>`);
       const pageUrls = Array(pageCount).fill(placeholder);
       const pageTexts = Array(pageCount).fill('');
@@ -344,7 +344,10 @@ window.BookReader = {
         if (mobile) this.mobileRenderedPages = [...rendered];
         page.cleanup();
       };
-      if (mobile) await renderPage(initialPage);
+      if (mobile) {
+        await renderPage(initialPage);
+        if (this.pdfPhoneLandscape && initialPage > 1 && initialPage < pageCount) await renderPage(initialPage + 1);
+      }
       else for (let number = 1; number <= Math.min(3, pageCount); number++) await renderPage(number);
       if (this.pdfSession !== session) return;
       const outlineItems = [];
@@ -370,24 +373,20 @@ window.BookReader = {
       };
       const ensureOutline = () => outlinePromise ||= documentProxy.getOutline().then(collectOutline);
       root.innerHTML = '';
-      // This PDF is already laid out as a landscape two-page spread. Force
-      // PageFlip's portrait mode so one PDF page remains one full book spread,
-      // instead of PageFlip combining two spreads into four tiny pages.
-      const hostWidth = Math.max(320, Math.floor(root.clientWidth));
-      const portraitMinWidth = Math.floor(hostWidth / 2) + 2;
+      // Phone readers stay in two-page mode; stretch fits the available surface.
       this.pageFlip = new window.St.PageFlip(root, {
         startPage: initialPage - 1,
         width: pageWidth,
         height: pageHeight,
         size: 'stretch',
-        minWidth: this.pdfPhoneLandscape ? Math.floor(root.clientWidth / 2) + 2 : 280,
+        minWidth: this.pdfPhoneLandscape ? 1 : 280,
         maxWidth: 1400,
-        minHeight: this.pdfPhoneLandscape ? 100 : 360,
+        minHeight: 1,
         maxHeight: 900,
         drawShadow: true,
         maxShadowOpacity: .42,
         flippingTime: 800,
-        usePortrait: true,
+        usePortrait: !this.pdfPhoneLandscape,
         autoSize: true,
         showCover: true,
         mobileScrollSupport: true,
@@ -396,7 +395,7 @@ window.BookReader = {
       });
       const updateProgress = pageIndex => {
         const current = Number(pageIndex) + 1;
-        indicator.textContent = `${current}/${pageCount}`;
+        indicator.textContent = this.pdfPhoneLandscape && current > 1 && current < pageCount ? `${current}–${current + 1}/${pageCount}` : `${current}/${pageCount}`;
         progress.value = String(pageIndex);
       };
       progress.max = String(Math.max(0, pageCount - 1));
@@ -454,7 +453,7 @@ window.BookReader = {
         const bounds = flip.getBoundsRect();
         const page = flip.getCurrentPageIndex();
         const singleCover = flip.getOrientation() === 'landscape';
-        const offset = !animating && singleCover ? (page === 0 ? -bounds.pageWidth / 2 : page === pageCount - 1 ? bounds.pageWidth / 2 : 0) : 0;
+        const offset = !animating && singleCover ? (page === pageCount - 1 ? bounds.pageWidth / 2 : page === 0 ? -bounds.pageWidth / 2 : 0) : 0;
         root.style.setProperty('--cover-offset', `${offset}px`);
       };
       this.pageFlip.on('init', () => centerBook());
@@ -468,7 +467,10 @@ window.BookReader = {
       this.pageFlip.on('init', positionSpine);
       this.pageFlip.on('flip', positionSpine);
       this.pageFlip.on('changeOrientation', positionSpine);
-      this.resizeObserver = new ResizeObserver(() => requestAnimationFrame(positionSpine));
+      this.resizeObserver = new ResizeObserver(() => requestAnimationFrame(() => {
+        if (this.pdfSession !== session) return;
+        this.pageFlip?.update(); centerBook(); positionSpine();
+      }));
       this.resizeObserver.observe(root);
       requestAnimationFrame(positionSpine);
       document.getElementById('bookStagePrev').onclick = () => this.pageFlip?.flipPrev();
@@ -505,21 +507,19 @@ window.BookReader = {
       this.setupPdfTools(item, { reader, root, pageUrls, pageTexts, outlineItems, pageCount, ensureTextIndex, ensureOutline });
       if (mobile) {
         let pump = null, rerun = false;
+        const nearbyPages = current => {
+          const spread = start => start < 1 || start > pageCount ? [] : start === 1 ? [1] : [start, start + 1].filter(n => n <= pageCount);
+          return this.pdfPhoneLandscape
+            ? [...spread(current), ...spread(current === 1 ? 2 : current + 2), ...spread(current === 2 ? 1 : current - 2)]
+            : [current, current + 1, current - 1].filter(n => n >= 1 && n <= pageCount);
+        };
         const nearby = () => {
           if (pump) { rerun = true; return; }
           pump = (async () => {
             while (this.pdfSession === session) {
               const current = this.pageFlip.getCurrentPageIndex() + 1;
-              const number = [current, current + 1, current - 1].find(n => n >= 1 && n <= pageCount && !rendered.has(n));
-              if (!number) break;
-              await new Promise(resolve => setTimeout(resolve, 50));
-              if (this.pdfSession !== session) return;
-              if (this.pageFlip.getCurrentPageIndex() + 1 !== current) continue;
-              await renderPage(number);
-              if (this.pdfSession !== session) return;
-              reader.querySelectorAll(`img[data-pdf-page="${number}"]`).forEach(image => { image.src = pageUrls[number - 1]; });
-              const active = this.pageFlip.getCurrentPageIndex() + 1;
-              for (const distant of [...rendered].filter(n => Math.abs(n - active) > 2)) {
+              const wanted = nearbyPages(current);
+              for (const distant of [...rendered].filter(n => !wanted.includes(n))) {
                 const oldUrl = pageUrls[distant - 1];
                 pageUrls[distant - 1] = placeholder;
                 reader.querySelectorAll(`img[data-pdf-page="${distant}"]`).forEach(image => { image.src = placeholder; });
@@ -527,6 +527,15 @@ window.BookReader = {
                 this.pdfObjectUrls = this.pdfObjectUrls.filter(url => url !== oldUrl);
                 rendered.delete(distant);
               }
+              this.mobileRenderedPages = [...rendered];
+              const number = wanted.find(n => !rendered.has(n));
+              if (!number) break;
+              await new Promise(resolve => setTimeout(resolve, 50));
+              if (this.pdfSession !== session) return;
+              if (this.pageFlip.getCurrentPageIndex() + 1 !== current) continue;
+              await renderPage(number);
+              if (this.pdfSession !== session) return;
+              reader.querySelectorAll(`img[data-pdf-page="${number}"]`).forEach(image => { image.src = pageUrls[number - 1]; });
               this.mobileRenderedPages = [...rendered];
             }
             if (this.pdfSession === session) setStatus('当前书页已就绪；其它页面按阅读位置加载。');
