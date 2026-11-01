@@ -175,7 +175,7 @@ window.BookReader = {
         maxHeight: 900,
         drawShadow: true,
         maxShadowOpacity: .42,
-        flippingTime: 460,
+        flippingTime: 800,
         usePortrait: true,
         autoSize: true,
         showCover: true,
@@ -224,6 +224,23 @@ window.BookReader = {
         spine.style.top = `${bounds.top}px`;
         spine.style.height = `${bounds.height}px`;
       };
+      const centerBook = (animating = false) => {
+        const flip = this.pageFlip;
+        if (!flip) return;
+        const bounds = flip.getBoundsRect();
+        const page = flip.getCurrentPageIndex();
+        const singleCover = flip.getOrientation() === 'landscape';
+        const offset = !animating && singleCover ? (page === 0 ? -bounds.pageWidth / 2 : page === pageCount - 1 ? bounds.pageWidth / 2 : 0) : 0;
+        root.style.setProperty('--cover-offset', `${offset}px`);
+      };
+      this.pageFlip.on('init', () => centerBook());
+      this.pageFlip.on('flip', () => centerBook());
+      this.pageFlip.on('changeOrientation', () => centerBook());
+      this.pageFlip.on('changeState', event => {
+        if (event.data === 'flipping' || event.data === 'user_fold') centerBook(true);
+        else if (event.data === 'read') centerBook();
+      });
+      requestAnimationFrame(() => centerBook());
       this.pageFlip.on('init', positionSpine);
       this.pageFlip.on('flip', positionSpine);
       this.pageFlip.on('changeOrientation', positionSpine);
