@@ -336,6 +336,14 @@ window.BookReader = {
   },
 
   setupPdfTools(item, { reader, root, pageUrls, pageTexts, outlineItems, pageCount }) {
+    const controls = reader.querySelector('.flipbook-controls');
+    let controlsTimer;
+    controls.addEventListener('pointerdown', event => {
+      if (event.pointerType !== 'touch') return;
+      controls.classList.add('controls-visible');
+      clearTimeout(controlsTimer);
+      controlsTimer = setTimeout(() => controls.classList.remove('controls-visible'), 3500);
+    });
     const toolbar = reader.querySelector('.flipbook-footer');
     const tools = document.createElement('div');
     tools.className = 'pdf-reader-tools';
