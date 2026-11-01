@@ -128,7 +128,9 @@ window.BookReader = {
       const firstViewport = firstPage.getViewport({ scale: 1.25 });
       const pageWidth = Math.round(firstViewport.width);
       const pageHeight = Math.round(firstViewport.height);
-      const scale = Math.min(1.55, Math.max(1.15, window.devicePixelRatio || 1));
+      // StPageFlip turns raster pages. Use a high-resolution, lossless source so
+      // text remains sharp at desktop size and while the user is dragging a page.
+      const scale = Math.min(3, Math.max(2.5, (window.devicePixelRatio || 1) * 1.5));
       const pageUrls = [];
       for (let pageNumber = 1; pageNumber <= pageCount; pageNumber += 1) {
         setStatus(`正在渲染第 ${pageNumber} / ${pageCount} 页…`);
@@ -138,7 +140,7 @@ window.BookReader = {
         canvas.width = Math.ceil(viewport.width);
         canvas.height = Math.ceil(viewport.height);
         await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
-        const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', .92));
+        const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
         if (!blob) throw new Error('PDF 页面图像生成失败。');
         pageUrls.push(URL.createObjectURL(blob));
         page.cleanup();
@@ -155,8 +157,8 @@ window.BookReader = {
         minHeight: 360,
         maxHeight: 900,
         drawShadow: true,
-        maxShadowOpacity: .55,
-        flippingTime: 700,
+        maxShadowOpacity: .42,
+        flippingTime: 460,
         usePortrait: true,
         autoSize: true,
         showCover: true,
