@@ -253,12 +253,14 @@ window.BookReader = {
     const tools = document.createElement('div');
     tools.className = 'pdf-reader-tools';
     const labels = { audio: '♫ 音频', zoom: '⌕ 缩放', search: '搜索', contents: '目录', thumbnails: '▦ 缩略图', bookmarks: '☆ 书签', cover: '合上书' };
+    const icons = { audio: '♫', zoom: '⌕', search: '⌕', contents: '☷', thumbnails: '▦', bookmarks: '☆', cover: '▣' };
     Object.entries(labels).forEach(([name, label]) => {
       const button = document.createElement('button');
-      button.type = 'button'; button.textContent = label; button.dataset.tool = name;
+      button.type = 'button'; button.textContent = icons[name]; button.dataset.tool = name;
+      button.title = label; button.setAttribute('aria-label', label); button.setAttribute('aria-expanded', 'false');
       tools.appendChild(button);
     });
-    toolbar.appendChild(tools);
+    reader.querySelector('.flipbook-controls').prepend(tools);
     const panel = document.createElement('aside'); panel.className = 'pdf-tools-panel'; panel.hidden = true;
     reader.appendChild(panel);
     const toast = document.createElement('div'); toast.className = 'pdf-reader-toast'; toast.hidden = true; toast.setAttribute('role', 'status'); reader.appendChild(toast);
@@ -278,10 +280,13 @@ window.BookReader = {
     const show = name => {
       if (name === 'cover') {
         closed = !closed; root.classList.toggle('pdf-book-closed', closed);
-        tools.querySelector('[data-tool="cover"]').textContent = closed ? '打开书' : '合上书';
+        const coverButton = tools.querySelector('[data-tool="cover"]');
+        coverButton.title = closed ? '打开书' : '合上书'; coverButton.setAttribute('aria-label', coverButton.title);
         notify(closed ? '已合上书，点击「打开书」继续阅读' : '已打开书'); return;
       }
-      panel.replaceChildren(); panel.hidden = false;
+      if (!panel.hidden && panel.dataset.tool === name) { panel.hidden = true; tools.querySelectorAll('button').forEach(button => button.setAttribute('aria-expanded', 'false')); return; }
+      panel.replaceChildren(); panel.hidden = false; panel.dataset.tool = name;
+      tools.querySelectorAll('button').forEach(button => button.setAttribute('aria-expanded', String(button.dataset.tool === name)));
       const close = document.createElement('button'); close.textContent = '关闭 ×'; close.onclick = () => { panel.hidden = true; }; panel.appendChild(close);
       const heading = document.createElement('h3'); heading.textContent = labels[name]; panel.appendChild(heading);
       if (name === 'search') {
@@ -300,7 +305,7 @@ window.BookReader = {
       } else if (name === 'thumbnails') pageUrls.forEach((_, page) => row(`第 ${page + 1} 页`, page, true));
       else if (name === 'bookmarks') {
         const add = document.createElement('button'); add.textContent = '☆ 添加 / 移除当前页书签'; panel.appendChild(add);
-        add.onclick = () => { const page = this.pageFlip.getCurrentPageIndex(); bookmarks = bookmarks.includes(page) ? bookmarks.filter(value => value !== page) : [...bookmarks, page]; localStorage.setItem(key, JSON.stringify(bookmarks)); show(name); };
+        add.onclick = () => { const page = this.pageFlip.getCurrentPageIndex(); bookmarks = bookmarks.includes(page) ? bookmarks.filter(value => value !== page) : [...bookmarks, page]; localStorage.setItem(key, JSON.stringify(bookmarks)); panel.hidden = true; show(name); };
         bookmarks.sort((a,b) => a-b).forEach(page => row(`★ 第 ${page + 1} 页`, page, true));
       } else if (name === 'audio') {
         const audio = document.createElement('audio'); audio.controls = true; audio.preload = 'none';
