@@ -7,6 +7,9 @@ window.BookReader = {
   pdfLibraryPromise: null,
 
   cleanup() {
+    this.pdfSession = null;
+    this.pdfDocument?.destroy();
+    this.pdfDocument = null;
     if (this.keyHandler) document.removeEventListener('keydown', this.keyHandler);
     if (this.fullscreenHandler) document.removeEventListener('fullscreenchange', this.fullscreenHandler);
     if (this.viewportResizeHandler) window.removeEventListener('resize', this.viewportResizeHandler);
@@ -120,9 +123,11 @@ window.BookReader = {
     try {
       await this.loadPdfLibraries();
       setStatus('正在下载 PDF 内容…');
-      const response = await fetch(item.readerUrl, { cache: 'no-store' });
-      if (!response.ok) throw new Error(`PDF 内容加载失败（${response.status}）`);
-      const documentProxy = await window.pdfjsLib.getDocument({ data: await response.arrayBuffer() }).promise;
+      const session = {};
+      this.pdfSession = session;
+      const documentProxy = await window.pdfjsLib.getDocument({ url: item.readerUrl, disableAutoFetch: true, disableStream: true }).promise;
+      if (this.pdfSession !== session) { await documentProxy.destroy(); return; }
+      this.pdfDocument = documentProxy;
       const pageCount = documentProxy.numPages;
       const firstPage = await documentProxy.getPage(1);
       const firstViewport = firstPage.getViewport({ scale: 1.25 });
@@ -131,10 +136,25 @@ window.BookReader = {
       // StPageFlip turns raster pages. Use a high-resolution, lossless source so
       // text remains sharp at desktop size and while the user is dragging a page.
       const scale = Math.max(3, Math.min(5, Math.max(screen.width, window.innerWidth) * (window.devicePixelRatio || 1) * 1.25 / firstPage.getViewport({ scale: 1 }).width));
-      const pageUrls = [];
-      const pageTexts = [];
-      for (let pageNumber = 1; pageNumber <= pageCount; pageNumber += 1) {
+      const placeholder = 'data:image/svg+xml,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="${pageWidth}" height="${pageHeight}"><rect width="100%" height="100%" fill="white"/><text x="50%" y="50%" text-anchor="middle" fill="#789" font-size="24">正在加载书页…</text></svg>`);
+      const pageUrls = Array(pageCount).fill(placeholder);
+      const pageTexts = Array(pageCount).fill('');
+      this.pdfObjectUrls = [];
+      let pageCache;
+      try { pageCache = await caches.open('storyfox-pdf-pages-v1'); } catch (_) {}
+      const rendered = new Set();
+      const renderPage = async pageNumber => {
+        if (this.pdfSession !== session || rendered.has(pageNumber)) return;
         setStatus(`正在渲染第 ${pageNumber} / ${pageCount} 页…`);
+        const cacheKey = new URL(`/__pdf-cache/${documentProxy.fingerprints[0]}/${scale.toFixed(2)}/${pageNumber}`, location.origin).href;
+        let cached;
+        try { cached = await pageCache?.match(cacheKey); } catch (_) {}
+        if (cached) {
+          pageUrls[pageNumber - 1] = URL.createObjectURL(await cached.blob());
+          this.pdfObjectUrls.push(pageUrls[pageNumber - 1]);
+          try { pageTexts[pageNumber - 1] = decodeURIComponent(cached.headers.get('X-Page-Text') || ''); } catch (_) {}
+          rendered.add(pageNumber); return;
+        }
         const page = pageNumber === 1 ? firstPage : await documentProxy.getPage(pageNumber);
         const viewport = page.getViewport({ scale });
         const canvas = document.createElement('canvas');
@@ -143,11 +163,17 @@ window.BookReader = {
         await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
         const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
         if (!blob) throw new Error('PDF 页面图像生成失败。');
-        pageUrls.push(URL.createObjectURL(blob));
+        if (this.pdfSession !== session) return;
+        pageUrls[pageNumber - 1] = URL.createObjectURL(blob);
+        this.pdfObjectUrls.push(pageUrls[pageNumber - 1]);
         const text = await page.getTextContent();
-        pageTexts.push(text.items.map(part => part.str || '').join(' '));
+        pageTexts[pageNumber - 1] = text.items.map(part => part.str || '').join(' ');
+        try { await pageCache?.put(cacheKey, new Response(blob, { headers: { 'Content-Type': 'image/png', 'X-Page-Text': encodeURIComponent(pageTexts[pageNumber - 1]) } })); } catch (_) {}
+        rendered.add(pageNumber);
         page.cleanup();
-      }
+      };
+      for (let number = 1; number <= Math.min(3, pageCount); number++) await renderPage(number);
+      if (this.pdfSession !== session) return;
       const outlineItems = [];
       const collectOutline = async entries => {
         for (const entry of entries || []) {
@@ -157,8 +183,6 @@ window.BookReader = {
         }
       };
       await collectOutline(await documentProxy.getOutline());
-      await documentProxy.destroy();
-      this.pdfObjectUrls = pageUrls;
       root.innerHTML = '';
       // This PDF is already laid out as a landscape two-page spread. Force
       // PageFlip's portrait mode so one PDF page remains one full book spread,
@@ -263,6 +287,20 @@ window.BookReader = {
       this.fullscreenHandler = () => window.setTimeout(() => this.pageFlip?.update(), 100);
       document.addEventListener('fullscreenchange', this.fullscreenHandler);
       this.setupPdfTools(item, { reader, root, pageUrls, pageTexts, outlineItems, pageCount });
+      const loadRemaining = async () => {
+        while (this.pdfSession === session && rendered.size < pageCount) {
+          const current = this.pageFlip?.getCurrentPageIndex() || 0;
+          const candidates = Array.from({ length: pageCount }, (_, index) => index + 1).filter(number => !rendered.has(number));
+          candidates.sort((a, b) => Math.abs(a - current - 1) - Math.abs(b - current - 1));
+          const number = candidates[0];
+          await new Promise(resolve => setTimeout(resolve, 30));
+          await renderPage(number);
+          if (this.pdfSession !== session) return;
+          htmlPages[number - 1].firstChild.src = pageUrls[number - 1];
+        }
+        if (this.pdfSession === session) setStatus('全部书页已就绪，高清页面已缓存。');
+      };
+      loadRemaining().catch(error => { if (this.pdfSession === session) { console.error(error); setStatus('部分书页加载失败，请重新打开绘本重试。'); } });
       setStatus('PDF 阅读进度保存在此设备。');
     } catch (error) {
       console.error(error);
