@@ -1,11 +1,12 @@
 [
   {
-    "id": "epub-reading-test",
-    "title": "FlipHTML5 Reading Test",
-    "titleZh": "FlipHTML5 翻页绘本测试",
-    "format": "fliphtml",
+    "id": "pdf-reading-test",
+    "title": "PDF Flipbook Test",
+    "titleZh": "PDF 翻页绘本测试",
+    "format": "pdf",
     "level": "Test",
-    "description": "使用 FlipHTML5 原版双页翻书、鼠标拖页、缩放与全屏阅读器。",
-    "readerUrl": "https://online.fliphtml5.com/xiaohan/xfkg/"
+    "description": "使用 PDF.js 与 StPageFlip 的自有双页翻书、鼠标拖页、缩放与全屏阅读器。",
+    "readerUrl": "/book-source/pdf-reading-test.pdf",
+    "sourceUrl": "https://u.pone.rs/zkaylinz.pdf"
   }
 ]

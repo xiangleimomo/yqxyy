@@ -1,12 +1,15 @@
 const SOURCES = {
-  'epub-reading-test': 'https://u.pone.rs/vkoptdac.epub'
+  'pdf-reading-test': {
+    url: 'https://u.pone.rs/zkaylinz.pdf',
+    contentType: 'application/pdf'
+  }
 };
 
 const FORWARDED_HEADERS = ['range', 'if-range'];
 const RESPONSE_HEADERS = ['accept-ranges', 'content-length', 'content-range', 'content-type', 'etag', 'last-modified'];
 
 export default async function bookSource(request, context) {
-  const bookId = new URL(request.url).pathname.split('/').pop().replace(/\.epub$/i, '');
+  const bookId = new URL(request.url).pathname.split('/').pop().replace(/\.(epub|pdf)$/i, '');
   const source = SOURCES[bookId];
   if (!source) return new Response('Book not found', { status: 404 });
 
@@ -16,13 +19,13 @@ export default async function bookSource(request, context) {
     if (value) headers.set(name, value);
   });
 
-  const upstream = await fetch(source, { method: request.method, headers });
+  const upstream = await fetch(source.url, { method: request.method, headers });
   const responseHeaders = new Headers();
   RESPONSE_HEADERS.forEach(name => {
     const value = upstream.headers.get(name);
     if (value) responseHeaders.set(name, value);
   });
-  responseHeaders.set('Content-Type', 'application/epub+zip');
+  responseHeaders.set('Content-Type', source.contentType);
   responseHeaders.set('Cache-Control', 'public, max-age=86400');
   responseHeaders.set('Access-Control-Allow-Origin', new URL(request.url).origin);
   responseHeaders.set('Vary', 'Range');
