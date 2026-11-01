@@ -1289,9 +1289,9 @@ checkWordPractice(){
     input.select();
     return;
   }
-  fb.innerHTML=`<div class="practice-result success">拼写正确！ +1 ⭐</div>`;
+  fb.innerHTML=`<div class="practice-result success">拼写正确！ +5 ⭐</div>`;
   this.recordTypingCorrect(state.seriesId,state.episodeId,item.word);
-  this.addPoints(1);
+  this.addPoints(5);
   state.checked=true;
   input.disabled=true;
   document.getElementById('checkPractice').disabled=true;
@@ -1332,10 +1332,10 @@ updateUtilityNav(){
       {points:200,reward:'获得一次阶段大奖，可由家长自定义'}
     ];
     const next=rules.find(r=>points<r.points);
-    this.el().innerHTML=`<section class="hero"><div><h1>积分奖励</h1><p>单词拼写挑战中，每拼对 1 个单词可获得 1 积分。Games 每开始或重玩一局消耗 2 积分，余额不足时不能开始。</p></div><div class="hero-badge">可用积分：${points}</div></section>
+    this.el().innerHTML=`<section class="hero"><div><h1>积分奖励</h1><p>单词拼写挑战中，每拼对 1 个单词可获得 5 积分。Games 每开始或重玩一局消耗 2 积分，余额不足时不能开始。</p></div><div class="hero-badge">可用积分：${points}</div></section>
       <div class="personal-grid">
         <div class="personal-card"><h3>可用积分</h3><div class="point-highlight">${points}</div><div class="points-note">登录可跨设备同步；游客仅保存本机</div></div>
-        <div class="personal-card"><h3>积分来源</h3><p>Words 模块中的 Typing Practice 拼写挑战。</p><p class="muted">答对 1 个单词 = +1 积分</p></div>
+        <div class="personal-card"><h3>积分来源</h3><p>Words 模块中的 Typing Practice 拼写挑战。</p><p class="muted">答对 1 个单词 = +5 积分</p></div>
         <div class="personal-card"><h3>下一档奖励</h3>${next?`<div class="point-highlight">${next.points}</div><div class="points-note">还差 ${next.points-points} 分可兑换：${next.reward}</div>`:`<div class="point-highlight">已满级</div><div class="points-note">当前已达到最高档奖励，可继续累计积分。</div>`}</div>
       </div>
       <div class="content-panel" style="margin-top:16px">
