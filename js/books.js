@@ -198,7 +198,11 @@ window.BookReader = {
       const spine = document.createElement('div');
       spine.className = 'pdf-book-spine';
       spine.setAttribute('aria-hidden', 'true');
-      root.appendChild(spine);
+      // Share PageFlip's stacking context: static pages use startZIndex + 1,
+      // bottom pages + 3, and the moving sheet + 5. The spine belongs between
+      // those layers so a folded sheet occludes it naturally.
+      root.querySelector('.stf__block').appendChild(spine);
+      spine.style.zIndex = String(this.pageFlip.getSettings().startZIndex + 4);
       const positionSpine = () => {
         const bounds = this.pageFlip?.getBoundsRect();
         if (!bounds) return;
