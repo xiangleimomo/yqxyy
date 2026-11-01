@@ -5,9 +5,12 @@ window.BookReader = {
   pdfObjectUrls: [],
   libraryPromise: null,
   pdfLibraryPromise: null,
+  localPdfFiles: new Map(),
 
   cleanup() {
     this.pdfSession = null;
+    try { this.pdfLoadingTask?.destroy()?.catch(() => {}); } catch (_) {}
+    this.pdfLoadingTask = null;
     this.pdfDocument?.destroy();
     this.pdfDocument = null;
     if (this.keyHandler) document.removeEventListener('keydown', this.keyHandler);
@@ -41,7 +44,7 @@ window.BookReader = {
     const e = value => this.escape(app, value);
     queueMicrotask(() => { if (app.el().querySelector('.books-intro')) this.addLocalPdfPicker(app); });
     // The file picker reads locally; no file upload or server storage is used.
-    app.el().innerHTML = `<section class="books-intro"><div><h1>📚 绘本阅读</h1><p>Movie Companion Books · 为光影课堂准备的配套电子书，可独立阅读并自动保存进度。</p></div><span class="books-count">${books.length} 本绘本</span></section><section class="books-notice"><strong>测试阶段</strong><span>当前开放 EPUB 测试书；PDF 阅读器与影片配套书目会逐步添加。</span></section><div class="book-grid">${books.map(item => `<a class="book-card" href="#/reader/${e(item.id)}" aria-label="阅读 ${e(item.titleZh)}"><div class="book-cover book-cover-${e(item.format)}"><span>${item.format.toUpperCase()}</span><b>📖</b></div><div class="book-card-body"><span class="book-format">${e(item.format.toUpperCase())}</span><h2>${e(item.titleZh)}</h2><p>${e(item.title)}</p><small>${e(item.level)} · ${e(item.description)}</small></div></a>`).join('')}</div>`;
+    app.el().innerHTML = `<section class="books-intro"><div><h1>📚 绘本阅读</h1><p>Movie Companion Books · 为光影课堂准备的配套电子书，可独立阅读并自动保存进度。</p></div><span class="books-count">${books.length} 本绘本</span></section><section class="books-notice"><strong>先下载，再阅读</strong><span>PDF 请先保存到本地，再选择文件打开。阅读时从本地文件加载，不上传文件。</span></section><div class="book-grid">${books.map(item => `<a class="book-card" href="#/reader/${e(item.id)}" aria-label="阅读 ${e(item.titleZh)}"><div class="book-cover book-cover-${e(item.format)}"><span>${item.format.toUpperCase()}</span><b>📖</b></div><div class="book-card-body"><span class="book-format">${item.format === 'pdf' ? 'PDF · 下载后阅读' : e(item.format.toUpperCase())}</span><h2>${e(item.titleZh)}</h2><p>${e(item.title)}</p><small>${e(item.level)} · ${e(item.description)}</small></div></a>`).join('')}</div>`;
   },
 
   addLocalPdfPicker(app) {
@@ -76,8 +79,11 @@ window.BookReader = {
     }
     const e = value => this.escape(app, value);
     if (item.format === 'pdf') {
-      this.renderPdfReader(app, item);
-      await this.openPdfFlipbook(item);
+      const localFile = this.localPdfFiles.get(item.id);
+      if (!localFile) { this.renderPdfDownload(app, item); return; }
+      const localItem = { ...item, localFile };
+      this.renderPdfReader(app, localItem);
+      await this.openPdfFlipbook(localItem);
       return;
     }
     app.el().classList.add('book-reader-shell');
@@ -107,6 +113,26 @@ window.BookReader = {
         .catch(error => { this.libraryPromise = null; throw error; });
     }
     await this.libraryPromise;
+  },
+
+  renderPdfDownload(app, item) {
+    const e = value => this.escape(app, value);
+    let source = '';
+    try {
+      const url = new URL(item.sourceUrl);
+      if (url.protocol === 'https:' && !url.username && !url.password) source = url.href;
+    } catch (_) {}
+    app.el().innerHTML = `<div class="breadcrumb"><a href="#/reading">绘本阅读</a><span>›</span><span>${e(item.titleZh || item.title)}</span></div><section class="book-local-setup"><h1>${e(item.titleZh || item.title)}</h1><p class="muted">${e(item.title)} · PDF</p><ol class="book-local-steps"><li><h2>下载到本地 · Download</h2><p>从原始地址保存完整 PDF，下载进度可在浏览器的下载列表中查看。</p>${source ? `<a class="btn secondary" id="bookDownload" href="${e(source)}" target="_blank" rel="noopener noreferrer" download="${e(item.titleZh || item.title)}.pdf">下载 PDF 原文件</a><p class="muted">若打开 PDF 预览，请点击预览页的下载按钮保存，再返回此页。</p>` : '<p>这本书暂无下载地址，可以选择您已有的本地 PDF。</p>'}</li><li><h2>选择文件阅读 · Open local PDF</h2><p>下载完成后，选择刚保存的文件，即可翻页阅读。</p><label class="btn">选择本地 PDF 开始阅读<input id="bookLocalPdf" type="file" accept=".pdf,application/pdf" hidden></label><p class="muted">文件仅在当前浏览器读取；刷新页面后需重新选择。首次打开阅读组件仍需联网。</p><p id="bookLocalStatus" role="status" aria-live="polite"></p></li></ol><a href="#/reading">← 返回书架</a></section>`;
+    document.getElementById('bookLocalPdf').onchange = event => {
+      const file = event.target.files?.[0];
+      if (!file) return;
+      const status = document.getElementById('bookLocalStatus');
+      if (!/\.pdf$/i.test(file.name) || !file.size) {
+        status.textContent = '请选择非空的 PDF 文件。'; event.target.value = ''; return;
+      }
+      this.localPdfFiles.set(item.id, file);
+      this.renderReader(app, item.id).catch(error => { if (status.isConnected) status.textContent = error.message; });
+    };
   },
 
   async loadPdfLibraries() {
@@ -145,13 +171,19 @@ window.BookReader = {
     const progress = document.getElementById('bookProgress');
     const indicator = document.getElementById('bookPageIndicator');
     const setStatus = text => { if (status) status.textContent = text; };
+    const session = {};
+    this.pdfSession = session;
     try {
+      if (!item.localFile) throw new Error('请先下载 PDF 并选择本地文件。');
       await this.loadPdfLibraries();
-      setStatus(item.localFile ? '正在读取本地 PDF…' : '正在加载 PDF 内容…');
-      const session = {};
-      this.pdfSession = session;
-      const source = item.localFile ? { data: await item.localFile.arrayBuffer() } : { url: item.readerUrl, disableAutoFetch: true, disableStream: true };
-      const documentProxy = await window.pdfjsLib.getDocument(source).promise;
+      if (this.pdfSession !== session || !root.isConnected) return;
+      setStatus('正在读取本地 PDF…');
+      const bytes = await item.localFile.arrayBuffer();
+      if (this.pdfSession !== session || !root.isConnected) return;
+      const task = window.pdfjsLib.getDocument({ data: new Uint8Array(bytes) });
+      this.pdfLoadingTask = task;
+      const documentProxy = await task.promise;
+      if (this.pdfLoadingTask === task) this.pdfLoadingTask = null;
       if (this.pdfSession !== session) { await documentProxy.destroy(); return; }
       this.pdfDocument = documentProxy;
       const pageCount = documentProxy.numPages;
@@ -329,8 +361,10 @@ window.BookReader = {
       loadRemaining().catch(error => { if (this.pdfSession === session) { console.error(error); setStatus('部分书页加载失败，请重新打开绘本重试。'); } });
       setStatus('PDF 阅读进度保存在此设备。');
     } catch (error) {
+      if (this.pdfSession !== session || !root.isConnected) return;
+      if (this.localPdfFiles.get(item.id) === item.localFile) this.localPdfFiles.delete(item.id);
       console.error(error);
-      root.innerHTML = '<div class="ebook-error"><strong>暂时无法打开 PDF 绘本</strong><span>请稍后重试；若持续失败，请检查 Pone 文件链接是否仍可访问。</span></div>';
+      root.innerHTML = '<div class="ebook-error"><strong>暂时无法打开本地 PDF</strong><span>请确认文件已完整下载且未损坏，返回书架重新选择文件。</span><a href="#/reading">返回书架</a></div>';
       setStatus(error.message || 'PDF 阅读器加载失败。');
     }
   },
