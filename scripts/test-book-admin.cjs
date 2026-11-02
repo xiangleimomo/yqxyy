@@ -48,11 +48,14 @@ const path = require('node:path');
       assert.equal(response.status, source.startsWith('https:') ? 200 : 404);
       if (response.ok) assert.equal(response.headers.get('cache-control'), 'no-store');
     }
-    const context = { window: { STORYFOX_SUPABASE: { url: 'https://project.supabase.co', publishableKey: 'public' } }, AbortSignal, console, fetch: async () => Response.json([{ id: 'existing', title: 'Updated', source_url: 'https://u.pone.rs/newbook.pdf' }, { id: 'bad', source_url: 'javascript:alert(1)' }]) };
+    const context = { window: { STORYFOX_SUPABASE: { url: 'https://project.supabase.co', publishableKey: 'public' } }, AbortSignal, console, fetch: async url => Response.json(url.includes('story_book_shelf') ? [] : [{ id: 'existing', title: 'Updated', source_url: 'https://u.pone.rs/newbook.pdf' }, { id: 'bad', source_url: 'javascript:alert(1)' }]) };
     vm.createContext(context); vm.runInContext(fs.readFileSync('js/books.js', 'utf8'), context);
     const books = await context.window.BookReader.library({ getJSON: async () => [{ id: 'existing', title: 'Old', seriesIds: ['test-series'] }, { id: 'other', title: 'Retained' }] });
     assert.equal(books.length, 2); assert.equal(books[0].title, 'Updated'); assert.equal(books[1].title, 'Retained');
     assert.equal(books[0].seriesIds[0], 'test-series', 'Cloud edits retain the animation assignment');
+    context.fetch = async url => Response.json(url.includes('story_book_shelf') ? [{id:'existing',deleted:true},{id:'third',sort_order:0},{id:'other',sort_order:1}] : []);
+    const managed = await context.window.BookReader.library({getJSON:async()=>[{id:'existing'},{id:'other'},{id:'third'}]});
+    assert.deepEqual(Array.from(managed, book=>book.id), ['third','other'], 'Deleted bundled books stay removed and cloud order applies');
     delete context.window.STORYFOX_SUPABASE;
     const element = { innerHTML: '', querySelectorAll: () => [] };
     const app = { getJSON: async file => JSON.parse(fs.readFileSync(file, 'utf8')), el: () => element, escapeHtml: value => value.replace(/[&<>"']/g, char => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[char])) };

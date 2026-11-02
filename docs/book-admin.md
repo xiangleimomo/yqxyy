@@ -15,4 +15,10 @@ PDF 经本站上传通道转发到 [Pone 官方上传接口](https://pone.rs/api
 
 权限测试：`node scripts/test-book-admin.cjs`。
 
+管理页面顶部的“书架管理”列出所有绘本（包含动画配套书）。按住书名前的 ⠿，拖到另一张绘本卡片上，松开后自动保存摆放顺序。普通书架与动画全集绘本库均按此顺序显示。保存失败会保留原来的顺序。
+
+每张卡片的“删除”按钮会再次确认，确认后从全站目录移除该绘本，保留 Pone 原 PDF。删除和顺序保存在 `public.story_book_shelf`，同样启用管理员专属写入的 RLS；静态目录中的绘本也可删除，刷新后不会重新出现。删除不清除用户已有阅读进度。
+
+交互测试：`node tests/book-shelf-admin.browser.cjs`（Playwright + Edge）。新增环境需先执行 `supabase/migrations/20261102100000_story_book_shelf.sql`。
+
 Little Fox 动画配套绘本通过静态目录的 `seriesIds` 关联动画，显示在动画课程的“全集绘本库”，不再重复出现在独立绘本书架。云端更新同 ID 绘本时会保留这项关联；管理员下拉框仍可找到这些绘本进行更新。对应库支持直接 PDF 和本站阅览器，阅览器返回按钮会回到原动画绘本库。

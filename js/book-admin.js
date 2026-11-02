@@ -5,12 +5,18 @@ window.BookAdmin = {
       app.el().innerHTML = '<section class="empty"><h2>仅管理员可以管理绘本</h2><a href="#/reading">返回书架</a></section>';
       return;
     }
-    const books = await window.BookReader.library(app);
+    const books = await window.BookReader.library(app, true);
     const e = value => app.escapeHtml(String(value || ''));
     app.el().innerHTML = `${window.BookReader.readingNavigation()}<section class="book-admin"><header><h1>管理绘本</h1><p>上传 PDF 或填写已有 Pone 直链，核对预览后发布到全站书架。</p></header><form id="bookAdminForm"><label>新增或更新<select name="existing"><option value="">新增绘本</option>${books.map(book => `<option value="${e(book.id)}">${e(book.titleZh || book.title)}</option>`).join('')}</select></label><div class="book-admin-columns"><div><label>PDF 文件<input name="pdf" type="file" accept="application/pdf,.pdf"></label><button type="button" class="btn secondary" id="bookUpload">上传至 Pone</button><p class="muted">文件上传成功后会自动填写直链。已有直链可直接填写。</p><label>PDF 直链<input name="source" type="url" required placeholder="https://u.pone.rs/xxxxxxxx.pdf"></label><label>英文名称<input name="title" required maxlength="180"></label><label>中文名称<input name="titleZh" maxlength="180"></label><label>分级<input name="level" maxlength="40" placeholder="例如 Level 5 或双语绘本"></label><label>简介<textarea name="description" maxlength="1000"></textarea></label><label>封面图片（可选）<input name="cover" type="file" accept="image/jpeg,image/png,image/webp"></label></div><aside><h2>发布预览</h2><div id="bookAdminPreview"></div></aside></div><p id="bookAdminStatus" role="status" aria-live="polite"></p><button type="submit" class="btn" id="bookPublish">确认发布</button> <a href="#/reading">返回书架</a></form></section>`;
     const form = app.el().querySelector('#bookAdminForm');
     const field = name => form.elements.namedItem(name);
     const status = form.querySelector('#bookAdminStatus');
+    const shelf = document.createElement('section');
+    shelf.className = 'book-admin-shelf';
+    shelf.innerHTML = '<h2>书架管理</h2><p>拖动 ⠿ 调整顺序，松开后自动保存。删除后全站书架将移除该绘本。</p><p class="book-shelf-status" role="status" aria-live="polite"></p><div class="book-admin-shelf-grid"></div>';
+    form.before(shelf);
+    const shelfStatus = shelf.querySelector('.book-shelf-status');
+    const grid = shelf.querySelector('.book-admin-shelf-grid');
     let coverUrl = '', busy = false, selection = 0;
     const preview = () => {
       const target = form.querySelector('#bookAdminPreview');
@@ -22,6 +28,7 @@ window.BookAdmin = {
     const lock = value => {
       busy = value;
       for (const input of form.querySelectorAll('input,select,textarea,button')) input.disabled = value;
+      for (const button of shelf.querySelectorAll('button')) button.disabled = value;
     };
     const auth = async () => {
       const cloud = window.SFCloud;
@@ -31,6 +38,55 @@ window.BookAdmin = {
       const session = await cloud.client.auth.getSession();
       if (!session.data.session?.access_token) throw new Error('登录已过期，请重新登录。');
       return session.data.session.access_token;
+    };
+    const saveShelf = async rows => {
+      await auth();
+      const { data, error } = await window.SFCloud.client.from('story_book_shelf').upsert(rows, { onConflict: 'id' }).select('id');
+      if (error) throw error;
+      if (data?.length !== rows.length) throw new Error('保存未完成，请重新登录管理员账号后重试。');
+    };
+    const drawShelf = () => {
+      grid.innerHTML = books.map(book => `<article class="book-admin-shelf-card" data-book-id="${e(book.id)}"><button type="button" class="book-drag-handle" draggable="true" aria-label="拖动排序 ${e(book.titleZh || book.title)}" title="拖动调整顺序">⠿</button>${book.coverUrl ? `<img src="${e(book.coverUrl)}" alt="" draggable="false">` : '<span class="book-shelf-placeholder">📖</span>'}<strong>${e(book.titleZh || book.title)}</strong><button type="button" class="book-delete">删除</button></article>`).join('');
+      let dragged = null;
+      grid.querySelectorAll('.book-admin-shelf-card').forEach(card => {
+        const id = card.dataset.bookId;
+        const handle = card.querySelector('.book-drag-handle');
+        handle.ondragstart = event => {
+          if (busy || !window.SFCloud?.isAdmin()) { event.preventDefault(); return; }
+          dragged = id; event.dataTransfer.setData('text/plain', id); event.dataTransfer.effectAllowed = 'move'; card.classList.add('is-dragging');
+        };
+        handle.ondragend = () => { dragged = null; grid.querySelectorAll('.is-dragging,.is-drop-target').forEach(node => node.classList.remove('is-dragging', 'is-drop-target')); };
+        card.ondragover = event => { if (dragged && dragged !== id && !busy) { event.preventDefault(); event.dataTransfer.dropEffect = 'move'; card.classList.add('is-drop-target'); } };
+        card.ondragleave = event => { if (!card.contains(event.relatedTarget)) card.classList.remove('is-drop-target'); };
+        card.ondrop = async event => {
+          event.preventDefault(); card.classList.remove('is-drop-target');
+          if (!dragged || dragged === id || busy) return;
+          const reordered = [...books];
+          const from = reordered.findIndex(book => book.id === dragged), to = reordered.findIndex(book => book.id === id);
+          if (from < 0 || to < 0) return;
+          reordered.splice(to, 0, reordered.splice(from, 1)[0]);
+          dragged = null; lock(true); shelfStatus.textContent = '正在保存书架顺序…';
+          try {
+            await saveShelf(reordered.map((book, index) => ({ id: book.id, sort_order: index })));
+            books.splice(0, books.length, ...reordered); shelfStatus.textContent = '顺序已保存，所有用户刷新后生效。';
+          } catch (error) { shelfStatus.textContent = '排序保存失败：' + error.message; }
+          finally { drawShelf(); lock(false); }
+        };
+        card.querySelector('.book-delete').onclick = async () => {
+          if (busy || !window.SFCloud?.isAdmin()) return;
+          const book = books.find(book => book.id === id);
+          if (!confirm(`确定从全站书架删除《${book.titleZh || book.title}》？此操作只移除绘本入口，原 PDF 文件保留。`)) return;
+          lock(true); shelfStatus.textContent = '正在删除绘本…';
+          try {
+            await saveShelf([{ id, deleted: true }]);
+            books.splice(books.findIndex(book => book.id === id), 1);
+            field('existing').querySelector(`option[value="${id}"]`)?.remove();
+            if (field('existing').value === '' || field('existing').value === id) { field('existing').value = ''; field('existing').onchange(); }
+            shelfStatus.textContent = '绘本已删除。';
+          } catch (error) { shelfStatus.textContent = '删除失败：' + error.message; }
+          finally { drawShelf(); lock(false); }
+        };
+      });
     };
     field('existing').onchange = () => {
       selection++;
@@ -114,9 +170,11 @@ window.BookAdmin = {
         const saved = { id, title: row.title, titleZh: row.title_zh, level: row.level, description: row.description, sourceUrl: row.source_url, coverUrl: row.cover_url };
         const index = books.findIndex(book => book.id === id); if (index < 0) books.push(saved); else books[index] = saved;
         field('existing').value = id;
+        drawShelf();
       } catch (error) { status.textContent = '发布失败：' + (error.message || '请重试。'); }
       finally { lock(false); }
     };
+    drawShelf();
     preview();
   }
 };

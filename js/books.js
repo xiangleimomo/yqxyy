@@ -43,21 +43,28 @@ window.BookReader = {
     this.rendition = null;
   },
 
-  async library(app) {
+  async library(app, strict = false) {
     const books = await app.getJSON('data/books.json');
     const config = window.STORYFOX_SUPABASE;
     if (!config?.url || !config.publishableKey) return books;
     try {
-      const response = await fetch(config.url + '/rest/v1/story_books?select=*&order=updated_at.asc', { headers: { apikey: config.publishableKey }, signal: AbortSignal.timeout(6000), cache: 'no-store' });
+      const options = { headers: { apikey: config.publishableKey }, signal: AbortSignal.timeout(6000), cache: 'no-store' };
+      const [response, stateResponse] = await Promise.all([
+        fetch(config.url + '/rest/v1/story_books?select=*&order=updated_at.asc', options),
+        fetch(config.url + '/rest/v1/story_book_shelf?select=*', options)
+      ]);
       if (!response.ok) throw new Error('云端绘本目录暂不可用');
+      if (!stateResponse.ok) throw new Error('云端书架设置暂不可用');
+      const states = new Map((await stateResponse.json()).map(row => [row.id, row]));
       const rows = await response.json();
       const merged = new Map(books.map(book => [book.id, book]));
       for (const row of rows) {
         if (!/^[a-z0-9-]{1,100}$/.test(row.id) || !/^https:\/\/u\.pone\.rs\/[A-Za-z0-9]+\.pdf$/.test(row.source_url)) continue;
         merged.set(row.id, { ...merged.get(row.id), id: row.id, title: row.title, titleZh: row.title_zh, level: row.level, description: row.description, coverUrl: row.cover_url, sourceUrl: row.source_url, format: 'pdf', downloadUrl: '/book-download/' + row.id + '.pdf' });
       }
-      return [...merged.values()];
-    } catch (error) { console.warn('Using bundled book catalogue:', error.message); return books; }
+      return [...merged.values()].filter(book => !states.get(book.id)?.deleted)
+        .sort((a, b) => (states.get(a.id)?.sort_order ?? 2147483647) - (states.get(b.id)?.sort_order ?? 2147483647));
+    } catch (error) { if (strict) throw error; console.warn('Using bundled book catalogue:', error.message); return books; }
   },
 
   escape(app, value) {
