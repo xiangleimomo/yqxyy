@@ -68,6 +68,11 @@ window.BookReader = {
     return `<nav class="book-reading-tabs" aria-label="绘本阅读方式"><a href="#/reading"${local ? '' : ' aria-current="page"'}>线上绘本</a><a href="#/reading/local"${local ? ' aria-current="page"' : ''}>本地绘本</a>${window.SFCloud?.isAdmin() ? '<a class="book-admin-entry" href="#/reading/admin">管理绘本</a>' : ''}</nav>`;
   },
 
+  refreshNavigation() {
+    const navigation = document.querySelector('.book-reading-tabs');
+    if (navigation) navigation.outerHTML = this.readingNavigation(location.hash.startsWith('#/reading/local'));
+  },
+
   async renderList(app) {
     const books = await this.library(app);
     const e = value => this.escape(app, value);
@@ -788,3 +793,8 @@ window.BookReader = {
     }
   }
 };
+
+// Account verification can finish after the shelf is already visible.
+if (typeof document !== "undefined") {
+  document.addEventListener("sf-access-change", () => window.BookReader.refreshNavigation());
+}
