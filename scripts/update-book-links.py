@@ -47,7 +47,17 @@ def main():
                 page = pdf[0]
                 pix = page.get_pixmap(matrix=fitz.Matrix(480 / page.rect.width, 480 / page.rect.width), alpha=False)
                 pix.save(cover, jpg_quality=85)
+    proxy_path = root / 'netlify/edge-functions/book-download.js'
+    proxy = proxy_path.read_text(encoding='utf-8')
+    sources = {book['id']: book['sourceUrl'] for book in books
+               if book.get('format') == 'pdf' and book.get('sourceUrl')}
+    source_line = 'const SOURCES = ' + json.dumps(sources, ensure_ascii=False) + ';'
+    updated_proxy, count = re.subn(r'^const SOURCES = .*;$', lambda _: source_line, proxy, flags=re.MULTILINE)
+    assert count == 1, 'Expected one fixed PDF source map'
+    if args.check:
+        assert updated_proxy == proxy, 'PDF proxy sources are out of sync'
     if args.apply:
+        proxy_path.write_text(updated_proxy, encoding='utf-8')
         target.write_text(json.dumps(books, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(f"{'Checked' if args.check else 'Imported' if args.apply else 'Previewed'} {len(updates)} links; {len(books)} books total.")
 

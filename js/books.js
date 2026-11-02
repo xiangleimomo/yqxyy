@@ -62,7 +62,8 @@ window.BookReader = {
       const direct = item.format === 'pdf' && item.sourceUrl;
       const href = direct ? item.sourceUrl : '#/reader/' + item.id;
       const cover = item.coverUrl ? '<img src="' + e(item.coverUrl) + '" alt="" loading="lazy" decoding="async">' : '<b>' + e(item.titleZh || item.title) + '</b>';
-      return '<a class="book-card" href="' + e(href) + '"' + (direct ? ' target="_blank" rel="noopener noreferrer"' : '') + ' aria-label="阅读 ' + e(item.titleZh || item.title) + '"><div class="book-cover">' + cover + '</div><div class="book-card-body"><h2>' + e(item.titleZh || item.title) + '</h2></div></a>';
+      const readerLink = direct ? '<a class="book-reader-link" href="#/reader/' + e(item.id) + '" aria-label="使用本站阅览器阅读 ' + e(item.titleZh || item.title) + '">使用本站阅览器</a>' : '';
+      return '<article class="book-card"><a class="book-primary-link" href="' + e(href) + '"' + (direct ? ' target="_blank" rel="noopener noreferrer"' : '') + ' aria-label="阅读 ' + e(item.titleZh || item.title) + '"><div class="book-cover">' + cover + '</div><div class="book-card-body"><h2>' + e(item.titleZh || item.title) + '</h2></div></a>' + readerLink + '</article>';
     }).join('')}</div>`;
   },
 
