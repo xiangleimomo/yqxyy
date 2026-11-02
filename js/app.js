@@ -111,7 +111,7 @@ const App = {
       if(page === 'movie-hub') return await window.MovieHub.render(this,a==='search'?'':a,a==='search'?decodeURIComponent(b||''):'');
       if(page === 'movie-series') return await window.MovieClassroom.renderSeries(this, a);
       if(page === 'movie') return await window.MovieClassroom.renderWatch(this, a);
-      if(page === 'reading') return a === 'local' ? window.BookReader.renderLocalLibrary(this) : await window.BookReader.renderList(this);
+      if(page === 'reading') return a === 'admin' ? await window.BookAdmin.render(this) : a === 'local' ? window.BookReader.renderLocalLibrary(this) : await window.BookReader.renderList(this);
       if(page === 'reader') return await window.BookReader.renderReader(this, a);
       if(page === 'home') return this.renderHome();
       if(page === 'series') return this.renderSeries(a);

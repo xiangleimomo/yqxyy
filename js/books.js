@@ -44,7 +44,20 @@ window.BookReader = {
   },
 
   async library(app) {
-    return app.getJSON('data/books.json');
+    const books = await app.getJSON('data/books.json');
+    const config = window.STORYFOX_SUPABASE;
+    if (!config?.url || !config.publishableKey) return books;
+    try {
+      const response = await fetch(config.url + '/rest/v1/story_books?select=*&order=updated_at.asc', { headers: { apikey: config.publishableKey }, signal: AbortSignal.timeout(6000), cache: 'no-store' });
+      if (!response.ok) throw new Error('云端绘本目录暂不可用');
+      const rows = await response.json();
+      const merged = new Map(books.map(book => [book.id, book]));
+      for (const row of rows) {
+        if (!/^[a-z0-9-]{1,100}$/.test(row.id) || !/^https:\/\/u\.pone\.rs\/[A-Za-z0-9]+\.pdf$/.test(row.source_url)) continue;
+        merged.set(row.id, { id: row.id, title: row.title, titleZh: row.title_zh, level: row.level, description: row.description, coverUrl: row.cover_url, sourceUrl: row.source_url, format: 'pdf', downloadUrl: '/book-download/' + row.id + '.pdf' });
+      }
+      return [...merged.values()];
+    } catch (error) { console.warn('Using bundled book catalogue:', error.message); return books; }
   },
 
   escape(app, value) {
@@ -52,7 +65,7 @@ window.BookReader = {
   },
 
   readingNavigation(local = false) {
-    return `<nav class="book-reading-tabs" aria-label="绘本阅读方式"><a href="#/reading"${local ? '' : ' aria-current="page"'}>线上绘本</a><a href="#/reading/local"${local ? ' aria-current="page"' : ''}>本地绘本</a></nav>`;
+    return `<nav class="book-reading-tabs" aria-label="绘本阅读方式"><a href="#/reading"${local ? '' : ' aria-current="page"'}>线上绘本</a><a href="#/reading/local"${local ? ' aria-current="page"' : ''}>本地绘本</a>${window.SFCloud?.isAdmin() ? '<a class="book-admin-entry" href="#/reading/admin">管理绘本</a>' : ''}</nav>`;
   },
 
   async renderList(app) {
