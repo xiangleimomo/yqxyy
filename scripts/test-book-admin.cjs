@@ -5,6 +5,12 @@ const { pathToFileURL } = require('node:url');
 const path = require('node:path');
 
 (async () => {
+  // Netlify treats every JS file in this directory as an edge entry point.
+  for (const entry of fs.readdirSync('netlify/edge-functions', { withFileTypes: true })) {
+    if (!entry.isFile() || !entry.name.endsWith('.js')) continue;
+    const module = await import(pathToFileURL(path.resolve('netlify/edge-functions', entry.name)));
+    assert.ok(typeof module.default === 'function' || typeof module.default?.fetch === 'function', `${entry.name} must export an edge handler; put shared modules outside the entry directory`);
+  }
   const upload = (await import(pathToFileURL(path.resolve('netlify/edge-functions/book-upload.js')))).default;
   const download = (await import(pathToFileURL(path.resolve('netlify/edge-functions/book-download.js')))).default;
   const nativeFetch = global.fetch;

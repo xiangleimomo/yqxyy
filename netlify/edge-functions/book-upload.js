@@ -1,4 +1,4 @@
-import { project, publishableKey, validPdf } from './book-cloud.js';
+import { project, publishableKey, validPdf } from '../lib/book-cloud.js';
 
 export default async function upload(request) {
   const reply = (status, error) => Response.json({ error }, { status, headers: { 'Cache-Control': 'no-store' } });
