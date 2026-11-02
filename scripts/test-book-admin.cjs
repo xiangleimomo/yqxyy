@@ -50,8 +50,26 @@ const path = require('node:path');
     }
     const context = { window: { STORYFOX_SUPABASE: { url: 'https://project.supabase.co', publishableKey: 'public' } }, AbortSignal, console, fetch: async () => Response.json([{ id: 'existing', title: 'Updated', source_url: 'https://u.pone.rs/newbook.pdf' }, { id: 'bad', source_url: 'javascript:alert(1)' }]) };
     vm.createContext(context); vm.runInContext(fs.readFileSync('js/books.js', 'utf8'), context);
-    const books = await context.window.BookReader.library({ getJSON: async () => [{ id: 'existing', title: 'Old' }, { id: 'other', title: 'Retained' }] });
+    const books = await context.window.BookReader.library({ getJSON: async () => [{ id: 'existing', title: 'Old', seriesIds: ['test-series'] }, { id: 'other', title: 'Retained' }] });
     assert.equal(books.length, 2); assert.equal(books[0].title, 'Updated'); assert.equal(books[1].title, 'Retained');
+    assert.equal(books[0].seriesIds[0], 'test-series', 'Cloud edits retain the animation assignment');
+    delete context.window.STORYFOX_SUPABASE;
+    const element = { innerHTML: '', querySelectorAll: () => [] };
+    const app = { getJSON: async file => JSON.parse(fs.readFileSync(file, 'utf8')), el: () => element, escapeHtml: value => value.replace(/[&<>"']/g, char => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[char])) };
+    await context.window.BookReader.renderList(app);
+    assert.equal((element.innerHTML.match(/class="book-card"/g) || []).length, 1);
+    assert.ok(element.innerHTML.includes('狮子王'));
+    const registry = await app.getJSON('data/books.json');
+    for (const book of registry.filter(book => book.seriesIds?.length)) {
+      for (const seriesId of book.seriesIds) {
+        const series = await app.getJSON(`data/${seriesId}/series.json`);
+        assert.equal(series.storyBookLibrary.url, `#/series-books/${seriesId}`);
+        await context.window.BookReader.renderSeriesLibrary(app, seriesId);
+        assert.ok(element.innerHTML.includes(book.sourceUrl));
+        assert.ok(element.innerHTML.includes(`#/reader/${book.id}/${seriesId}`));
+        assert.ok(!element.innerHTML.includes('pan.quark.cn'));
+      }
+    }
     console.log('PASS: administrator enforcement, untrusted metadata rejection, upload forwarding, token isolation, Pone errors, dynamic PDF lookup, URL restrictions, and catalogue merge.');
   } finally { global.fetch = nativeFetch; }
 })().catch(error => { console.error(error); process.exitCode = 1; });

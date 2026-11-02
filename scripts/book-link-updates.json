@@ -9,7 +9,10 @@
     "description": "合并绘本，含分集目录及连续页码。点击打开 PDF 阅读。",
     "sourceUrl": "https://u.pone.rs/qelkoevg.pdf",
     "pdfFile": "A Dog of Flanders 目录页码版.pdf",
-    "downloadUrl": "/book-download/a-dog-of-flanders.pdf"
+    "downloadUrl": "/book-download/a-dog-of-flanders.pdf",
+    "seriesIds": [
+      "little-fox-a-dog-of-flanders-fs0038"
+    ]
   },
   {
     "id": "aladdin-and-his-wonderful-lamp",
@@ -21,7 +24,10 @@
     "description": "合并绘本，含分集目录及连续页码。点击打开 PDF 阅读。",
     "sourceUrl": "https://u.pone.rs/ehbqnbee.pdf",
     "pdfFile": "Aladdin and His Wonderful Lamp 目录页码版.pdf",
-    "downloadUrl": "/book-download/aladdin-and-his-wonderful-lamp.pdf"
+    "downloadUrl": "/book-download/aladdin-and-his-wonderful-lamp.pdf",
+    "seriesIds": [
+      "little-fox-aladdin-and-his-wonderful-lamp-fs0045"
+    ]
   },
   {
     "id": "alice-in-wonderland",
@@ -33,7 +39,10 @@
     "description": "合并绘本，含分集目录及连续页码。点击打开 PDF 阅读。",
     "sourceUrl": "https://u.pone.rs/cmxqudzv.pdf",
     "pdfFile": "Alice's Adventures in Wonderland 目录页码版.pdf",
-    "downloadUrl": "/book-download/alice-in-wonderland.pdf"
+    "downloadUrl": "/book-download/alice-in-wonderland.pdf",
+    "seriesIds": [
+      "little-fox-alice-s-adventures-in-wonderland-fs0106"
+    ]
   },
   {
     "id": "gullivers-travels",
@@ -45,7 +54,10 @@
     "description": "合并绘本，含分集目录及连续页码。点击打开 PDF 阅读。",
     "sourceUrl": "https://u.pone.rs/qqccjlit.pdf",
     "pdfFile": "Gulliver's Travels 目录页码版.pdf",
-    "downloadUrl": "/book-download/gullivers-travels.pdf"
+    "downloadUrl": "/book-download/gullivers-travels.pdf",
+    "seriesIds": [
+      "little-fox-gulliver-s-travels-fs0041"
+    ]
   },
   {
     "id": "heidi",
@@ -57,7 +69,10 @@
     "description": "合并绘本，含分集目录及连续页码。点击打开 PDF 阅读。",
     "sourceUrl": "https://u.pone.rs/wijcznaj.pdf",
     "pdfFile": "Heidi 目录页码版.pdf",
-    "downloadUrl": "/book-download/heidi.pdf"
+    "downloadUrl": "/book-download/heidi.pdf",
+    "seriesIds": [
+      "little-fox-heidi-fs0035"
+    ]
   },
   {
     "id": "iggy-the-incredible-inventor",
@@ -69,7 +84,10 @@
     "description": "合并绘本，含分集目录及连续页码。点击打开 PDF 阅读。",
     "sourceUrl": "https://u.pone.rs/xaxjurup.pdf",
     "pdfFile": "Iggy the Incredible Inventor 目录页码版.pdf",
-    "downloadUrl": "/book-download/iggy-the-incredible-inventor.pdf"
+    "downloadUrl": "/book-download/iggy-the-incredible-inventor.pdf",
+    "seriesIds": [
+      "little-fox-iggy-the-incredible-inventor-fs0066"
+    ]
   },
   {
     "id": "journey-to-the-west",
@@ -81,7 +99,10 @@
     "description": "合并绘本，含分集目录及连续页码。点击打开 PDF 阅读。",
     "sourceUrl": "https://u.pone.rs/kxjfgzfi.pdf",
     "pdfFile": "Journey to the West 目录页码版.pdf",
-    "downloadUrl": "/book-download/journey-to-the-west.pdf"
+    "downloadUrl": "/book-download/journey-to-the-west.pdf",
+    "seriesIds": [
+      "journey-to-the-west"
+    ]
   },
   {
     "id": "rocket-girl-galaxy-squad",
@@ -93,7 +114,10 @@
     "description": "合并绘本，含分集目录及连续页码。点击打开 PDF 阅读。",
     "sourceUrl": "https://u.pone.rs/isqpdqxo.pdf",
     "pdfFile": "Rocket Girl's Galaxy Squad Adventure 目录页码版.pdf",
-    "downloadUrl": "/book-download/rocket-girl-galaxy-squad.pdf"
+    "downloadUrl": "/book-download/rocket-girl-galaxy-squad.pdf",
+    "seriesIds": [
+      "little-fox-rocket-girl-s-galaxy-squad-adventures-fs0120"
+    ]
   },
   {
     "id": "rocket-girl-journey-to-the-west",
@@ -105,7 +129,10 @@
     "description": "合并绘本，含分集目录及连续页码。点击打开 PDF 阅读。",
     "sourceUrl": "https://u.pone.rs/yshuiyzs.pdf",
     "pdfFile": "Rocket Girls Journey to the West 目录页码版.pdf",
-    "downloadUrl": "/book-download/rocket-girl-journey-to-the-west.pdf"
+    "downloadUrl": "/book-download/rocket-girl-journey-to-the-west.pdf",
+    "seriesIds": [
+      "little-fox-rocket-girl-s-journey-to-the-west-fs0110"
+    ]
   },
   {
     "id": "single-stories",
@@ -114,10 +141,19 @@
     "coverUrl": "assets/covers/books/single-stories.jpg",
     "format": "pdf",
     "level": "Level 5",
-    "description": "合并绘本，含分集目录及连续页码。点击打开 PDF 阅读。",
+    "description": "跨主题独立故事合集，包含本动画分类的配套故事。",
     "sourceUrl": "https://u.pone.rs/fudnlnmi.pdf",
     "pdfFile": "Single Stories 目录页码版.pdf",
-    "downloadUrl": "/book-download/single-stories.pdf"
+    "downloadUrl": "/book-download/single-stories.pdf",
+    "seriesIds": [
+      "little-fox-folktales-fairy-tales-1-fs0134",
+      "little-fox-people-history-1-fs0145",
+      "little-fox-aesop-s-fables-fs0131",
+      "little-fox-cultures-landmarks-1-fs0149",
+      "little-fox-animals-2-fs0143",
+      "little-fox-family-friends-2-fs0137",
+      "little-fox-science-nature-2-fs0140"
+    ]
   },
   {
     "id": "the-adventures-of-pinocchio",
@@ -129,7 +165,10 @@
     "description": "合并绘本，含分集目录及连续页码。点击打开 PDF 阅读。",
     "sourceUrl": "https://u.pone.rs/mxuhlmxm.pdf",
     "pdfFile": "The Adventures of Pinocchio 目录页码版.pdf",
-    "downloadUrl": "/book-download/the-adventures-of-pinocchio.pdf"
+    "downloadUrl": "/book-download/the-adventures-of-pinocchio.pdf",
+    "seriesIds": [
+      "little-fox-the-adventures-of-pinocchio-fs0029"
+    ]
   },
   {
     "id": "the-enchanted-castle",
@@ -141,7 +180,10 @@
     "description": "合并绘本，含分集目录及连续页码。点击打开 PDF 阅读。",
     "sourceUrl": "https://u.pone.rs/cjumsjir.pdf",
     "pdfFile": "The Enchanted Castle 目录页码版.pdf",
-    "downloadUrl": "/book-download/the-enchanted-castle.pdf"
+    "downloadUrl": "/book-download/the-enchanted-castle.pdf",
+    "seriesIds": [
+      "little-fox-the-enchanted-castle-fs0069"
+    ]
   },
   {
     "id": "the-little-mermaid",
@@ -153,7 +195,10 @@
     "description": "合并绘本，含分集目录及连续页码。点击打开 PDF 阅读。",
     "sourceUrl": "https://u.pone.rs/wrzwsrbd.pdf",
     "pdfFile": "The Little Mermaid 目录页码版.pdf",
-    "downloadUrl": "/book-download/the-little-mermaid.pdf"
+    "downloadUrl": "/book-download/the-little-mermaid.pdf",
+    "seriesIds": [
+      "little-fox-the-little-mermaid-fs0013"
+    ]
   },
   {
     "id": "the-railway-children",
@@ -165,7 +210,10 @@
     "description": "合并绘本，含分集目录及连续页码。点击打开 PDF 阅读。",
     "sourceUrl": "https://u.pone.rs/wrafmuqy.pdf",
     "pdfFile": "The Railway Children 目录页码版.pdf",
-    "downloadUrl": "/book-download/the-railway-children.pdf"
+    "downloadUrl": "/book-download/the-railway-children.pdf",
+    "seriesIds": [
+      "little-fox-the-railway-children-fs0030"
+    ]
   },
   {
     "id": "disney-the-lion-king",

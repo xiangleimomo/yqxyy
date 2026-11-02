@@ -54,7 +54,7 @@ window.BookReader = {
       const merged = new Map(books.map(book => [book.id, book]));
       for (const row of rows) {
         if (!/^[a-z0-9-]{1,100}$/.test(row.id) || !/^https:\/\/u\.pone\.rs\/[A-Za-z0-9]+\.pdf$/.test(row.source_url)) continue;
-        merged.set(row.id, { id: row.id, title: row.title, titleZh: row.title_zh, level: row.level, description: row.description, coverUrl: row.cover_url, sourceUrl: row.source_url, format: 'pdf', downloadUrl: '/book-download/' + row.id + '.pdf' });
+        merged.set(row.id, { ...merged.get(row.id), id: row.id, title: row.title, titleZh: row.title_zh, level: row.level, description: row.description, coverUrl: row.cover_url, sourceUrl: row.source_url, format: 'pdf', downloadUrl: '/book-download/' + row.id + '.pdf' });
       }
       return [...merged.values()];
     } catch (error) { console.warn('Using bundled book catalogue:', error.message); return books; }
@@ -73,23 +73,40 @@ window.BookReader = {
     if (navigation) navigation.outerHTML = this.readingNavigation(location.hash.startsWith('#/reading/local'));
   },
 
-  async renderList(app) {
-    const books = await this.library(app);
+  bookCards(app, books, seriesId = '') {
     const e = value => this.escape(app, value);
-    app.el().innerHTML = `${this.readingNavigation()}<div class="book-grid">${books.map(item => {
+    return `<div class="book-grid">${books.map(item => {
       const direct = item.format === 'pdf' && item.sourceUrl;
       const href = direct ? item.sourceUrl : '#/reader/' + item.id;
       const cover = item.coverUrl ? '<img src="' + e(item.coverUrl) + '" alt="" loading="lazy" decoding="async">' : '<b>' + e(item.titleZh || item.title) + '</b>';
       const label = e(item.titleZh || item.title);
       const primary = '<a href="' + e(href) + '"' + (direct ? ' target="_blank" rel="noopener noreferrer"' : '') + '>' + (direct ? '直接观看' : '打开绘本') + '</a>';
-      const readerLink = direct ? '<a href="#/reader/' + e(item.id) + '">本站阅览器</a>' : '';
+      const readerLink = direct ? '<a href="#/reader/' + e(item.id) + (seriesId ? '/' + e(seriesId) : '') + '">本站阅览器</a>' : '';
       return '<article class="book-card"><div class="book-cover"><button type="button" class="book-cover-trigger" aria-label="选择' + label + '的阅读方式">' + cover + '</button><div class="book-actions" aria-label="' + label + '阅读方式">' + primary + readerLink + '</div></div><div class="book-card-body"><h2>' + label + '</h2></div></article>';
     }).join('')}</div>`;
+  },
+
+  bindBookCards(app) {
     app.el().querySelectorAll('.book-cover-trigger').forEach(button => {
       button.onclick = () => {
         if (window.matchMedia('(hover: none)').matches) button.parentElement.classList.toggle('book-actions-open');
       };
     });
+  },
+
+  async renderList(app) {
+    const books = (await this.library(app)).filter(book => !book.seriesIds?.length);
+    app.el().innerHTML = this.readingNavigation() + this.bookCards(app, books);
+    this.bindBookCards(app);
+  },
+
+  async renderSeriesLibrary(app, seriesId) {
+    if (!/^[a-z0-9-]+$/.test(seriesId || '')) throw new Error('动画系列不存在');
+    const series = await app.getJSON('data/' + seriesId + '/series.json');
+    const books = (await this.library(app)).filter(book => book.seriesIds?.includes(seriesId));
+    const e = value => this.escape(app, value);
+    app.el().innerHTML = `<section class="series-book-library"><p><a href="#/series/${e(seriesId)}">← 返回动画课程</a></p><h1>${e(series.seriesTitle)} · 全集绘本库</h1>${books.some(book => book.seriesIds.length > 1) ? '<p class="muted">以下为跨主题故事合集，包含本分类的配套故事。</p>' : ''}${books.length ? this.bookCards(app, books, seriesId) : '<div class="empty"><p>尚未添加在线绘本。</p></div>'}${window.SFCloud?.isAdmin() ? '<p><a href="#/reading/admin">管理绘本</a></p>' : ''}</section>`;
+    this.bindBookCards(app);
   },
 
   renderLocalLibrary(app) {
@@ -109,7 +126,8 @@ window.BookReader = {
     app.el().querySelector('.book-local-library').appendChild(label);
   },
 
-  async renderReader(app, id) {
+  async renderReader(app, id, seriesId = '') {
+    this.readerReturnHref = '#/reading';
     if (id === 'local-pdf') {
       if (!this.localPdfFile) { location.hash = '#/reading'; return; }
       const file = this.localPdfFile;
@@ -124,6 +142,7 @@ window.BookReader = {
       app.el().innerHTML = '<div class="empty"><h2>绘本不存在</h2><p><a class="btn" href="#/reading">返回绘本阅读</a></p></div>';
       return;
     }
+    this.readerReturnHref = item.seriesIds?.length ? '#/series-books/' + (item.seriesIds.includes(seriesId) ? seriesId : item.seriesIds[0]) : '#/reading';
     const e = value => this.escape(app, value);
     if (item.format === 'pdf') {
       const localFile = this.localPdfFiles.get(item.id);
@@ -135,7 +154,7 @@ window.BookReader = {
     }
     app.el().classList.add('book-reader-shell');
     document.body.classList.add('flipbook-active');
-    app.el().innerHTML = `<section class="flipbook-reader" id="ebookReader"><header class="flipbook-topbar"><a href="#/reading" class="flipbook-back" aria-label="返回书架">←</a><span>绘本阅读</span><button type="button" id="bookFullscreen" aria-label="全屏阅读">⛶</button></header><div class="flipbook-stage" id="ebookStage"><button type="button" class="flipbook-turn flipbook-turn-prev" id="bookStagePrev" aria-label="上一页">‹</button><div class="flipbook-surface"><div id="epubViewport" class="epub-viewport"><div class="ebook-loading">正在打开电子书…</div></div></div><button type="button" class="flipbook-turn flipbook-turn-next" id="bookStageNext" aria-label="下一页">›</button><div class="ebook-page-turn" aria-hidden="true"></div><div class="flipbook-controls"><span class="book-page-indicator" id="bookPageIndicator">正在定位页码…</span><input type="range" id="bookProgress" min="0" max="1" value="0" step="1" aria-label="阅读进度"><button type="button" id="bookZoomOut" aria-label="缩小">−</button><button type="button" id="bookZoomIn" aria-label="放大">＋</button><button type="button" id="bookFullscreenBottom" aria-label="全屏">⛶</button></div></div><footer class="flipbook-footer"><div><h1>${e(item.title)}</h1><p>${e(item.titleZh)} · ${e(item.level)} · EPUB</p></div><span>使用左右箭头或点击页边翻页</span></footer><p class="ebook-status" id="ebookStatus" role="status" aria-live="polite">正在准备阅读器…</p></section>`;
+    app.el().innerHTML = `<section class="flipbook-reader" id="ebookReader"><header class="flipbook-topbar"><a href="${e(this.readerReturnHref || '#/reading')}" class="flipbook-back" aria-label="返回书架">←</a><span>绘本阅读</span><button type="button" id="bookFullscreen" aria-label="全屏阅读">⛶</button></header><div class="flipbook-stage" id="ebookStage"><button type="button" class="flipbook-turn flipbook-turn-prev" id="bookStagePrev" aria-label="上一页">‹</button><div class="flipbook-surface"><div id="epubViewport" class="epub-viewport"><div class="ebook-loading">正在打开电子书…</div></div></div><button type="button" class="flipbook-turn flipbook-turn-next" id="bookStageNext" aria-label="下一页">›</button><div class="ebook-page-turn" aria-hidden="true"></div><div class="flipbook-controls"><span class="book-page-indicator" id="bookPageIndicator">正在定位页码…</span><input type="range" id="bookProgress" min="0" max="1" value="0" step="1" aria-label="阅读进度"><button type="button" id="bookZoomOut" aria-label="缩小">−</button><button type="button" id="bookZoomIn" aria-label="放大">＋</button><button type="button" id="bookFullscreenBottom" aria-label="全屏">⛶</button></div></div><footer class="flipbook-footer"><div><h1>${e(item.title)}</h1><p>${e(item.titleZh)} · ${e(item.level)} · EPUB</p></div><span>使用左右箭头或点击页边翻页</span></footer><p class="ebook-status" id="ebookStatus" role="status" aria-live="polite">正在准备阅读器…</p></section>`;
 
     if (item.format !== 'epub') {
       document.getElementById('ebookStatus').textContent = '该格式的阅读器正在接入。';
@@ -174,7 +193,7 @@ window.BookReader = {
     const session = {}, controller = new AbortController();
     this.pdfDownloadSession = session;
     this.pdfDownloadAbort = controller;
-    app.el().innerHTML = `<section class="book-local-setup book-download-screen"><h1>${e(item.titleZh || item.title)}</h1><p id="bookDownloadStatus" role="status" aria-live="polite">正在加载…</p><progress id="bookDownloadProgress" aria-label="绘本加载进度"></progress><button class="btn" id="bookDownloadRetry" hidden>重新加载</button><p><a href="#/reading">取消并返回书架</a></p></section>`;
+    app.el().innerHTML = `<section class="book-local-setup book-download-screen"><h1>${e(item.titleZh || item.title)}</h1><p id="bookDownloadStatus" role="status" aria-live="polite">正在加载…</p><progress id="bookDownloadProgress" aria-label="绘本加载进度"></progress><button class="btn" id="bookDownloadRetry" hidden>重新加载</button><p><a href="${e(this.readerReturnHref || '#/reading')}">取消并返回</a></p></section>`;
     const root = document.getElementById('bookDownloadStatus');
     const progress = document.getElementById('bookDownloadProgress');
     const current = () => this.pdfDownloadSession === session && root.isConnected;
@@ -265,7 +284,7 @@ window.BookReader = {
     const e = value => this.escape(app, value);
     app.el().classList.add('book-reader-shell');
     document.body.classList.add('flipbook-active');
-    app.el().innerHTML = `<section class="flipbook-reader pdf-flipbook-reader" id="ebookReader"><header class="flipbook-topbar"><a href="#/reading" class="flipbook-back" aria-label="返回书架">←</a><span>绘本阅读</span><button type="button" id="bookFullscreen" aria-label="全屏阅读">⛶</button></header><div class="flipbook-stage" id="ebookStage"><button type="button" class="flipbook-turn flipbook-turn-prev" id="bookStagePrev" aria-label="上一页">‹</button><div class="pdf-flipbook-surface"><div id="pdfFlipbook" class="pdf-pageflip"><div class="ebook-loading">正在解析 PDF 绘本…</div></div></div><button type="button" class="flipbook-turn flipbook-turn-next" id="bookStageNext" aria-label="下一页">›</button><div class="flipbook-controls"><span class="book-page-indicator" id="bookPageIndicator">正在加载…</span><input type="range" id="bookProgress" min="0" max="1" value="0" step="1" aria-label="阅读进度"><button type="button" id="bookZoomOut" aria-label="缩小">−</button><button type="button" id="bookZoomIn" aria-label="放大">＋</button><button type="button" id="bookFullscreenBottom" aria-label="全屏">⛶</button></div></div><footer class="flipbook-footer"><div><h1>${e(item.title)}</h1><p>${e(item.titleZh)} · ${e(item.level)} · PDF</p></div><span>拖动书页、点击页角或使用左右箭头翻页</span></footer><p class="ebook-status" id="ebookStatus" role="status" aria-live="polite">正在准备 PDF 阅读器…</p></section>`;
+    app.el().innerHTML = `<section class="flipbook-reader pdf-flipbook-reader" id="ebookReader"><header class="flipbook-topbar"><a href="${e(this.readerReturnHref || '#/reading')}" class="flipbook-back" aria-label="返回书架">←</a><span>绘本阅读</span><button type="button" id="bookFullscreen" aria-label="全屏阅读">⛶</button></header><div class="flipbook-stage" id="ebookStage"><button type="button" class="flipbook-turn flipbook-turn-prev" id="bookStagePrev" aria-label="上一页">‹</button><div class="pdf-flipbook-surface"><div id="pdfFlipbook" class="pdf-pageflip"><div class="ebook-loading">正在解析 PDF 绘本…</div></div></div><button type="button" class="flipbook-turn flipbook-turn-next" id="bookStageNext" aria-label="下一页">›</button><div class="flipbook-controls"><span class="book-page-indicator" id="bookPageIndicator">正在加载…</span><input type="range" id="bookProgress" min="0" max="1" value="0" step="1" aria-label="阅读进度"><button type="button" id="bookZoomOut" aria-label="缩小">−</button><button type="button" id="bookZoomIn" aria-label="放大">＋</button><button type="button" id="bookFullscreenBottom" aria-label="全屏">⛶</button></div></div><footer class="flipbook-footer"><div><h1>${e(item.title)}</h1><p>${e(item.titleZh)} · ${e(item.level)} · PDF</p></div><span>拖动书页、点击页角或使用左右箭头翻页</span></footer><p class="ebook-status" id="ebookStatus" role="status" aria-live="polite">正在准备 PDF 阅读器…</p></section>`;
     const reader = document.getElementById('ebookReader');
     this.pdfPhoneLandscape = matchMedia('(pointer:coarse)').matches && Math.min(screen.width, screen.height) <= 760;
     if (this.pdfPhoneLandscape) {

@@ -112,7 +112,8 @@ const App = {
       if(page === 'movie-series') return await window.MovieClassroom.renderSeries(this, a);
       if(page === 'movie') return await window.MovieClassroom.renderWatch(this, a);
       if(page === 'reading') return a === 'admin' ? await window.BookAdmin.render(this) : a === 'local' ? window.BookReader.renderLocalLibrary(this) : await window.BookReader.renderList(this);
-      if(page === 'reader') return await window.BookReader.renderReader(this, a);
+      if(page === 'series-books') return await window.BookReader.renderSeriesLibrary(this, a);
+      if(page === 'reader') return await window.BookReader.renderReader(this, a, b);
       if(page === 'home') return this.renderHome();
       if(page === 'series') return this.renderSeries(a);
       if(page === 'lesson') return this.renderLesson(a, Number(b || 1));
@@ -255,7 +256,7 @@ async renderSeries(seriesId){
         <div class="sub">${series.seriesTitleZh || ''} · Level ${series.level ?? 0} · ${this.statusText(series.status)}</div>
         <p class="sub">${series.description || ''}</p>
         ${series.movieId?`<a class="btn secondary" href="#/movie/${this.escapeHtml(series.movieId)}">▶ 观看完整电影</a>`:''}
-        ${series.storyBookLibrary?.url?`<a class="series-story-library" href="${this.escapeHtml(series.storyBookLibrary.url)}" target="_blank" rel="noreferrer noopener"><span aria-hidden="true">📚</span><strong>${this.escapeHtml(series.storyBookLibrary.title || '全集绘本库')}</strong></a>`:''}
+        ${series.storyBookLibrary?.url?`<a class="series-story-library" href="${this.escapeHtml(series.storyBookLibrary.url)}" ${series.storyBookLibrary.url.startsWith('#/')?'':'target="_blank" rel="noreferrer noopener"'}><span aria-hidden="true">📚</span><strong>${this.escapeHtml(series.storyBookLibrary.title || '全集绘本库')}</strong></a>`:''}
       </div>
     </section>
     <section class="learning-map">

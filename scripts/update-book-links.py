@@ -47,6 +47,18 @@ def main():
                 page = pdf[0]
                 pix = page.get_pixmap(matrix=fitz.Matrix(480 / page.rect.width, 480 / page.rect.width), alpha=False)
                 pix.save(cover, jpg_quality=85)
+    linked_series = {series for book in books for series in book.get('seriesIds', [])}
+    for series_path in (root / 'data').glob('*/series.json'):
+        series = json.loads(series_path.read_text(encoding='utf-8'))
+        old_library = series.get('storyBookLibrary') or {}
+        if series['seriesId'] not in linked_series and 'pan.quark.cn' not in old_library.get('url', ''):
+            continue
+        library = {'title': '全集绘本库', 'url': '#/series-books/' + series['seriesId']}
+        if args.check:
+            assert old_library == library, str(series_path)
+        elif args.apply:
+            series['storyBookLibrary'] = library
+            series_path.write_text(json.dumps(series, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     proxy_path = root / 'netlify/edge-functions/book-download.js'
     proxy = proxy_path.read_text(encoding='utf-8')
     sources = {book['id']: book['sourceUrl'] for book in books
