@@ -62,9 +62,16 @@ window.BookReader = {
       const direct = item.format === 'pdf' && item.sourceUrl;
       const href = direct ? item.sourceUrl : '#/reader/' + item.id;
       const cover = item.coverUrl ? '<img src="' + e(item.coverUrl) + '" alt="" loading="lazy" decoding="async">' : '<b>' + e(item.titleZh || item.title) + '</b>';
-      const readerLink = direct ? '<a class="book-reader-link" href="#/reader/' + e(item.id) + '" aria-label="使用本站阅览器阅读 ' + e(item.titleZh || item.title) + '">使用本站阅览器</a>' : '';
-      return '<article class="book-card"><a class="book-primary-link" href="' + e(href) + '"' + (direct ? ' target="_blank" rel="noopener noreferrer"' : '') + ' aria-label="阅读 ' + e(item.titleZh || item.title) + '"><div class="book-cover">' + cover + '</div><div class="book-card-body"><h2>' + e(item.titleZh || item.title) + '</h2></div></a>' + readerLink + '</article>';
+      const label = e(item.titleZh || item.title);
+      const primary = '<a href="' + e(href) + '"' + (direct ? ' target="_blank" rel="noopener noreferrer"' : '') + '>' + (direct ? '直接观看' : '打开绘本') + '</a>';
+      const readerLink = direct ? '<a href="#/reader/' + e(item.id) + '">本站阅览器</a>' : '';
+      return '<article class="book-card"><div class="book-cover"><button type="button" class="book-cover-trigger" aria-label="选择' + label + '的阅读方式">' + cover + '</button><div class="book-actions" aria-label="' + label + '阅读方式">' + primary + readerLink + '</div></div><div class="book-card-body"><h2>' + label + '</h2></div></article>';
     }).join('')}</div>`;
+    app.el().querySelectorAll('.book-cover-trigger').forEach(button => {
+      button.onclick = () => {
+        if (window.matchMedia('(hover: none)').matches) button.parentElement.classList.toggle('book-actions-open');
+      };
+    });
   },
 
   renderLocalLibrary(app) {
@@ -149,12 +156,11 @@ window.BookReader = {
     const session = {}, controller = new AbortController();
     this.pdfDownloadSession = session;
     this.pdfDownloadAbort = controller;
-    app.el().innerHTML = `<section class="book-local-setup book-download-screen"><h1>${e(item.titleZh || item.title)}</h1><p id="bookDownloadStatus" role="status" aria-live="polite">正在下载中…</p><progress id="bookDownloadProgress" aria-label="绘本下载进度"></progress><p id="bookDownloadSize" class="muted"></p><button class="btn" id="bookDownloadRetry" hidden>重新下载</button><p><a href="#/reading">取消并返回书架</a></p></section>`;
+    app.el().innerHTML = `<section class="book-local-setup book-download-screen"><h1>${e(item.titleZh || item.title)}</h1><p id="bookDownloadStatus" role="status" aria-live="polite">正在加载…</p><progress id="bookDownloadProgress" aria-label="绘本加载进度"></progress><button class="btn" id="bookDownloadRetry" hidden>重新加载</button><p><a href="#/reading">取消并返回书架</a></p></section>`;
     const root = document.getElementById('bookDownloadStatus');
     const progress = document.getElementById('bookDownloadProgress');
     const current = () => this.pdfDownloadSession === session && root.isConnected;
     const isPdf = async blob => blob.size > 0 && (await blob.slice(0, 1024).text()).includes('%PDF-');
-    const displayBytes = value => value >= 1048576 ? (value / 1048576).toFixed(1) + ' MB' : Math.ceil(value / 1024) + ' KB';
     let cache;
     try {
       try { cache = await caches.open('storyfox-pdf-files-v1'); } catch (_) {}
@@ -172,16 +178,15 @@ window.BookReader = {
       if (!current()) return;
       if (!blob) {
         const url = new URL(item.downloadUrl || item.sourceUrl, location.origin);
-        if (url.protocol !== 'https:' || url.username || url.password || (item.downloadUrl && url.origin !== location.origin)) throw new Error('绘本下载地址不可用。');
+        if (url.protocol !== 'https:' || url.username || url.password || (item.downloadUrl && url.origin !== location.origin)) throw new Error('绘本加载地址不可用。');
         const response = await fetch(url.href, { signal: controller.signal, credentials: 'omit' });
-        if (!response.ok) throw new Error(`下载失败（${response.status}），请重试。`);
-        if (response.headers.has('content-range')) throw new Error('收到不完整的 PDF，请重新下载。');
+        if (!response.ok) throw new Error(`加载失败（${response.status}），请重试。`);
+        if (response.headers.has('content-range')) throw new Error('收到不完整的 PDF，请重新加载。');
         const total = Number(response.headers.get('content-length')) || 0;
         const update = received => {
           if (!current()) return;
           if (total) { progress.max = total; progress.value = received; }
-          document.getElementById('bookDownloadSize').textContent = displayBytes(received) + (total ? ' / ' + displayBytes(total) : '');
-          root.textContent = total ? `正在下载中… ${Math.min(99, Math.floor(received / total * 100))}%` : '正在下载中…';
+          root.textContent = total ? `正在加载… ${Math.min(99, Math.floor(received / total * 100))}%` : '正在加载…';
         };
         if (response.body) {
           const reader = response.body.getReader(), chunks = [];
@@ -192,15 +197,15 @@ window.BookReader = {
             if (!current()) { await reader.cancel(); return; }
             chunks.push(value); received += value.byteLength; update(received);
           }
-          if (total && !response.headers.get('content-encoding') && received !== total) throw new Error('下载未完成，请重新下载。');
+          if (total && !response.headers.get('content-encoding') && received !== total) throw new Error('加载未完成，请重新加载。');
           blob = new Blob(chunks, { type: 'application/pdf' });
         } else { blob = await response.blob(); }
         if (!current()) return;
-        if (!(await isPdf(blob))) throw new Error('下载内容不是有效 PDF，请重试。');
+        if (!(await isPdf(blob))) throw new Error('加载内容不是有效 PDF，请重试。');
         try { await cache?.put(cacheKey, new Response(blob, { headers: { 'Content-Type': 'application/pdf' } })); } catch (_) {}
       }
       if (!current()) return;
-      root.textContent = '下载完成，正在打开绘本…'; progress.max = 1; progress.value = 1;
+      root.textContent = '正在加载… 100%'; progress.max = 1; progress.value = 1;
       const file = new File([blob], (item.titleZh || item.title || item.id) + '.pdf', { type: 'application/pdf' });
       this.localPdfFiles.set(item.id, file);
       this.pdfDownloadAbort = null; this.pdfDownloadSession = null;
@@ -209,7 +214,7 @@ window.BookReader = {
     } catch (error) {
       if (!current()) return;
       this.pdfDownloadAbort = null;
-      root.textContent = error.message || '下载失败，请重试。';
+      root.textContent = error.message || '加载失败，请重试。';
       progress.hidden = true;
       const retry = document.getElementById('bookDownloadRetry'); retry.hidden = false;
       retry.onclick = () => { controller.abort(); this.downloadPdf(app, item); };
