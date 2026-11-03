@@ -13,3 +13,5 @@
 @media(hover:none){.medal-grid .medal-card-actions,.medal-grid .medal-template>button:not(.medal-preview){opacity:1;transform:none;pointer-events:auto}}
 
 .medal-shell>.medal-nav{margin-top:0;margin-bottom:16px}#medalNotice:empty{display:none}#medalNotice{min-height:0;margin:0 0 12px}
+
+.medal-resource-picker[hidden]{display:none}.medal-kind-picker{display:flex;align-items:center;gap:10px;margin:12px 0;font-size:14px;color:#657b92}.medal-kind-picker select{border:1px solid #d4dfeb;border-radius:7px;padding:7px 10px;background:white;color:#334e6d}

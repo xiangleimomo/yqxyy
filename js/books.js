@@ -742,7 +742,7 @@ window.BookReader = {
     };
     tools.onclick = event => { const name = event.target.closest('[data-tool]')?.dataset.tool; if (name) show(name); };
     const progressKey = window.BookCommunity.progressKey(item.id);
-    this.pageFlip.on('flip', event => { window.BookCommunity.record(item,event.data); if (event.data >= pageCount - 1) notify('已经是最后一页了'); });
+    this.pageFlip.on('flip', event => { window.BookCommunity.record(item,event.data); const visible=this.pageFlip.getOrientation()==='landscape'?2:1;if(event.data+visible>=pageCount)window.SFMedals?.readingFinished(item);if (event.data >= pageCount - 1) notify('已经是最后一页了'); });
     const saved = Number(localStorage.getItem(progressKey) || 0); if (saved > 0 && saved < pageCount) go(saved);
     window.BookCommunity.record(item, saved >= 0 && saved < pageCount ? saved : 0);
     reader.querySelector('#bookStageNext').onclick = () => { if (this.pageFlip.getCurrentPageIndex() >= pageCount - 1) notify('已经是最后一页了'); else this.pageFlip.flipNext(); };
@@ -818,6 +818,7 @@ window.BookReader = {
       this.rendition.on('relocated', location => {
         localStorage.setItem(progressKey, location.start.cfi);
         window.BookCommunity.record(item,0,location.start.cfi);
+        if(location.atEnd)window.SFMedals?.readingFinished(item);
         updatePageIndicator(location);
       });
       updatePageIndicator(this.rendition.currentLocation?.());
