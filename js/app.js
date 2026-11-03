@@ -40,21 +40,29 @@ const App = {
     const q = document.getElementById('globalSearch').value.trim();
     if(!q) return;
     this.hideSearchSuggestions();
+    if(this.searchScope()==='books'){location.hash='#/reading/search/'+encodeURIComponent(q);return;}
     if(this.route()[0]==='movie-hub') {location.hash='#/movie-hub/search/'+encodeURIComponent(q);return;}
-    if(['movies','movie','movie-series'].includes(this.route()[0])) {
+    if(this.searchScope()==='movies') {
       location.hash = '#/movies/' + encodeURIComponent(q);
       return;
     }
     location.hash = '#/search/' + encodeURIComponent(q);
   },
+  searchScope(){
+    const [page,id]=this.route();
+    if(['reading','reader','series-books'].includes(page))return 'books';
+    if(['movies','movie','movie-series','movie-hub'].includes(page)||(['series','lesson'].includes(page)&&String(id||'').startsWith('movie-')))return 'movies';
+    return 'animation';
+  },
   hideSearchSuggestions(){
+    this.searchRequest++;
     const box=document.getElementById('globalSearchSuggestions'), input=document.getElementById('globalSearch');
     if(box){box.hidden=true;box.replaceChildren();} if(input) input.setAttribute('aria-expanded','false');
   },
   queueSearchSuggestions(){
     clearTimeout(this.searchTimer);
     const input=document.getElementById('globalSearch');
-    if(!input?.value.trim() || ['movies','movie','movie-series','movie-hub'].includes(this.route()[0])) return this.hideSearchSuggestions();
+    if(!input?.value.trim() || this.searchScope()!=='animation') return this.hideSearchSuggestions();
     this.searchTimer=setTimeout(()=>this.showSearchSuggestions(input.value),180);
   },
   async showSearchSuggestions(query){
@@ -62,13 +70,13 @@ const App = {
     const normalized=query.trim().toLowerCase();
     if(!normalized) return this.hideSearchSuggestions();
     const index=await this.getJSON('data/search-index.json');
-    if(request!==this.searchRequest) return;
+    if(request!==this.searchRequest || this.searchScope()!=='animation') return;
     const score=item=>{
       const main=`${item.title||''} ${item.titleZh||''}`.toLowerCase();
       const series=`${item.seriesTitle||''} ${item.seriesTitleZh||''}`.toLowerCase();
       return (main.startsWith(normalized)?0:main.includes(normalized)?1:series.includes(normalized)?2:9)+(item.type==='series'?0:.1);
     };
-    const matches=index.items.filter(item=>`${item.title||''} ${item.titleZh||''} ${item.seriesTitle||''} ${item.seriesTitleZh||''}`.toLowerCase().includes(normalized)).sort((a,b)=>score(a)-score(b)).slice(0,12);
+    const matches=index.items.filter(item=>!String(item.seriesId||'').startsWith('movie-') && `${item.title||''} ${item.titleZh||''} ${item.seriesTitle||''} ${item.seriesTitleZh||''}`.toLowerCase().includes(normalized)).sort((a,b)=>score(a)-score(b)).slice(0,12);
     const box=document.getElementById('globalSearchSuggestions'), input=document.getElementById('globalSearch');
     if(!box||!input||document.activeElement!==input) return;
     box.innerHTML=matches.length?matches.map(item=>{
@@ -81,13 +89,14 @@ const App = {
   },
   async render(){
     const [page, a, b] = this.route();
+    clearTimeout(this.searchTimer);this.hideSearchSuggestions();
     window.MovieClassroom?.cleanup();
     window.MovieHub?.cleanup();
     window.SFFamily?.stop();
     window.BookReader?.cleanup();
     this.disposeHlsPlayers(this.el());
     const isMoviePage = ['movies','movie','movie-series','movie-hub'].includes(page) || (['series','lesson'].includes(page) && String(a||'').startsWith('movie-'));
-    const isReadingPage = ['reading','reader'].includes(page);
+    const isReadingPage = ['reading','reader','series-books'].includes(page);
     document.querySelectorAll('.main-tab').forEach(tab=>{
       const active = tab.getAttribute('href') === (['homework','family','parent','child'].includes(page) ? '#/homework' : isMoviePage ? '#/movies' : isReadingPage ? '#/reading' : '#/home');
       tab.classList.toggle('active', active);
@@ -96,7 +105,7 @@ const App = {
     const homeworkNav=document.getElementById('navHomework');
     if(['homework','family','parent','child'].includes(page)) homeworkNav?.setAttribute('aria-current','page');
     else homeworkNav?.removeAttribute('aria-current');
-    document.getElementById('globalSearch').placeholder = isMoviePage ? '搜索电影中英文名称' : (isReadingPage ? '搜索配套绘本' : '搜索故事、单词或集数');
+    document.getElementById('globalSearch').placeholder = isMoviePage ? '搜索电影中英文名称' : (isReadingPage ? '搜索绘本、上传者或配套资源' : '搜索故事、单词或集数');
     this.updateUtilityNav();
     this.el().classList.remove('series-page-shell','book-reader-shell');
     document.body.classList.remove('flipbook-active');
@@ -1502,7 +1511,8 @@ addPoints(n=1){
   },
   async renderSearch(q){
     const all=await this.getJSON('data/series-list.json');
-    const list=this.isGuest()?all.filter(s=>!this.isGuestRestrictedLevel(s.level)):all;
+    const animations=all.filter(s=>!String(s.seriesId||'').startsWith('movie-'));
+    const list=this.isGuest()?animations.filter(s=>!this.isGuestRestrictedLevel(s.level)):animations;
     const results=[];
     for(const s of list.filter(x=>!['coming','locked'].includes(x.status))){
       try{

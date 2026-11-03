@@ -18,23 +18,19 @@ window.BookCommunity = {
     app.el().querySelector('#bookLogin').onclick = () => window.SFCloud?.open();
     return false;
   },
-  searchForm(app, query = '') {
-    return `<form class="book-search" id="bookSearchForm"><input name="query" value="${this.e(app, query)}" required maxlength="180" placeholder="搜索书名、上传者昵称或配套音视频" aria-label="搜索图书资源"><button class="btn">搜索</button></form>`;
-  },
-  bindSearch(app) {
-    const form = app.el().querySelector('#bookSearchForm');
-    if (form) form.onsubmit = event => { event.preventDefault(); const query = form.elements.query.value.trim(); if (query) location.hash = '#/reading/search/' + encodeURIComponent(query); };
-  },
-  async find(app, query) {
-    const needle = this.norm(query); if (needle.length < 2) return { books: [], media: [] };
-    const [books, series] = await Promise.all([window.BookReader.library(app, true), app.getJSON('data/series-list.json')]);
+  async find(app, query, includeMedia = true) {
+    const needle = this.norm(query); if (!needle) return { books: [], media: [] };
+    const [books, series] = await Promise.all([window.BookReader.library(app, true), includeMedia ? app.getJSON('data/series-list.json') : []]);
     const matches = (...values) => values.some(value => { const text = this.norm(value); return text && (text.includes(needle) || needle.includes(text)); });
     return { books: books.filter(book => matches(book.title, book.titleZh, book.uploaderNickname)), media: series.filter(item => matches(item.title, item.titleZh)) };
   },
   async renderSearch(app, query) {
-    const result = await this.find(app, query), e = value => this.e(app, value);
-    app.el().innerHTML = `${window.BookReader.readingNavigation()}${this.searchForm(app, query)}<h2>绘本 · ${result.books.length} 本</h2>${window.BookReader.bookCards(app, result.books)}<h2>站内配套动画 · ${result.media.length} 个系列</h2><div class="book-media-results">${result.media.map(item => `<a href="#/series/${e(item.seriesId)}">${e(item.titleZh || item.title)} · ${e(item.title)}</a>`).join('') || '<p>暂无匹配动画。</p>'}</div>`;
-    window.BookReader.bindBookCards(app); this.bindSearch(app);
+    const route=location.hash;
+    const result = await this.find(app, query, false), e = value => this.e(app, value);
+    if(location.hash!==route)return;
+    document.getElementById('globalSearch').value=query;
+    app.el().innerHTML = `${window.BookReader.readingNavigation()}<p class="book-search-result">${e(query)} · ${result.books.length} 本</p>${window.BookReader.bookCards(app, result.books)}${result.books.length?'':'<div class="empty">暂无匹配绘本。</div>'}`;
+    window.BookReader.bindBookCards(app);
   },
   async checkDuplicate(app, title) {
     const matches = await Promise.all((Array.isArray(title) ? title : [title]).filter(Boolean).map(value=>this.find(app,value)));
@@ -146,17 +142,28 @@ window.BookCommunity = {
     const dialog = document.createElement('dialog'); dialog.className = 'book-personal-dialog';
     dialog.innerHTML = `<form><h2>个人图书管理</h2><label><input type="checkbox" name="favorite" ${data?.favorite ? 'checked' : ''}>收藏这本书</label><label>我的分类<input name="category" maxlength="60" value="${this.e(app, data?.category)}" placeholder="例如 睡前故事、英语启蒙"></label><p role="status"></p><button class="btn">保存</button> <button type="button" data-close>取消</button></form>`;
     (document.fullscreenElement || document.body).append(dialog); dialog.showModal(); dialog.querySelector('[data-close]').onclick = () => dialog.close(); dialog.onclose = () => dialog.remove();
-    dialog.querySelector('form').onsubmit = async event => { event.preventDefault(); try { const form = event.currentTarget; await this.rpc('personal', { book_id: id, changes: { favorite: form.elements.favorite.checked, category: form.elements.category.value.trim() } }); dialog.close(); } catch (error) { dialog.querySelector('[role=status]').textContent = error.message; } };
+    dialog.querySelector('form').onsubmit = async event => { event.preventDefault(); try { const form = event.currentTarget; await this.rpc('personal', { book_id: id, changes: { favorite: form.elements.favorite.checked, category: form.elements.category.value.trim() } }); dialog.close(); if(/^#\/reading\/mine\/(favorites|recent)$/.test(location.hash))await this.renderMine(app,location.hash.split('/')[3]); } catch (error) { if(dialog.isConnected)dialog.querySelector('[role=status]').textContent = error.message; } };
   },
   async renderMine(app, mode = 'all') {
     if (!this.requireLogin(app)) return;
+    const route=location.hash;
     const uid = window.SFCloud.user.id;
-    const [books, personal, requests] = await Promise.all([window.BookReader.library(app, true), window.SFCloud.client.from('book_personal').select('*').eq('user_id', uid), window.SFCloud.client.from('book_change_requests').select('*').eq('user_id', uid).order('created_at', { ascending: false })]);
-    if(window.SFCloud?.user?.id!==uid)return;
+    const [books, personal, requests] = await Promise.all([window.BookReader.library(app, true), window.SFCloud.client.from('book_personal').select('*').eq('user_id', uid), ['favorites','recent'].includes(mode) ? {data:[]} : window.SFCloud.client.from('book_change_requests').select('*').eq('user_id', uid).order('created_at', { ascending: false })]);
+    if(window.SFCloud?.user?.id!==uid||location.hash!==route)return;
     if (personal.error || requests.error) throw new Error(personal.error?.message || requests.error.message);
     const states = new Map(personal.data.map(row => [row.book_id, row])), e = value => this.e(app, value);
     let shown = books.filter(book => mode === 'uploads' ? book.ownerId === uid : mode === 'favorites' ? states.get(book.id)?.favorite : mode === 'recent' ? states.get(book.id)?.last_read_at : book.ownerId === uid || states.has(book.id));
-    if (mode === 'recent') shown.sort((a,b) => String(states.get(b.id).last_read_at).localeCompare(String(states.get(a.id).last_read_at)));
+    if (mode === 'recent') shown=shown.sort((a,b) => String(states.get(b.id).last_read_at).localeCompare(String(states.get(a.id).last_read_at))).slice(0,5);
+    if (mode==='favorites'||mode==='recent') {
+      const cards=list=>window.BookReader.bookCards(app,list,'',{compact:true,resume:mode==='recent'});
+      const groups=new Map();
+      if(mode==='favorites')for(const book of shown){const name=states.get(book.id)?.category||'未分类';if(!groups.has(name))groups.set(name,[]);groups.get(name).push(book);}
+      const shelves=[...groups].sort(([a],[b])=>a.localeCompare(b,'zh-CN')).map(([name,list])=>`<details class="book-category-shelf"><summary><span>${e(name)}</span><small>${list.length} 本</small></summary>${cards(list)}</details>`).join('');
+      app.el().innerHTML=window.BookReader.readingNavigation()+(shown.length?(mode==='favorites'?`<section class="book-category-shelves">${shelves}</section>`:cards(shown)):`<div class="empty">${mode==='favorites'?'暂无收藏绘本。':'暂无阅读记录。'}</div>`);
+      const sections=app.el().querySelectorAll('.book-category-shelf');
+      sections.forEach(section=>section.addEventListener('toggle',()=>{if(section.open)sections.forEach(other=>{if(other!==section)other.open=false;});}));
+      window.BookReader.bindBookCards(app);return;
+    }
     const categories = [...new Set(personal.data.map(row => row.category).filter(Boolean))].sort();
     app.el().innerHTML = `${window.BookReader.readingNavigation()}<h1>我的图书</h1><nav class="book-personal-tabs">${[['all','全部'],['uploads','我的上传'],['favorites','我的收藏'],['recent','最近阅读']].map(([key,label]) => `<a href="#/reading/mine/${key}" ${key===mode?'aria-current="page"':''}>${label}</a>`).join('')}</nav><label>按我的分类筛选 <select id="bookCategoryFilter"><option value="">全部分类</option>${categories.map(value => `<option>${e(value)}</option>`).join('')}</select></label>${window.BookReader.bookCards(app, shown)}<h2>我的修改／删除申请</h2>${requests.data.map(row => `<article class="book-request"><strong>${e(books.find(book => book.id === row.book_id)?.titleZh || books.find(book => book.id === row.book_id)?.title || row.book_id)}</strong><p>${row.kind==='delete'?'删除':'修改'} · ${{pending:'待审核',approved:'已通过',rejected:'未通过'}[row.status]}${row.review_note?' · '+e(row.review_note):''}</p></article>`).join('') || '<p>暂无申请。</p>'}`;
     window.BookReader.bindBookCards(app);

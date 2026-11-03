@@ -98,6 +98,11 @@ const path = require('node:path');
         assert.ok(!element.innerHTML.includes('pan.quark.cn'));
       }
     }
+    context.location={hash:'#/reading'};
+    let release;context.window.BookReader.library=()=>new Promise(resolve=>{release=resolve;});
+    element.innerHTML='favorites shelf';const delayedShelf=context.window.BookReader.renderList(app);
+    context.location.hash='#/reading/mine/favorites';release([]);await delayedShelf;
+    assert.equal(element.innerHTML,'favorites shelf','A delayed online shelf cannot replace the selected favorites page');
     let sent;
     const uploadContext={window:{STORYFOX_SUPABASE:{url:'https://project.supabase.co',publishableKey:'public'},SFCloud:{user:{id:'parent'},client:{rpc:async()=>({data:{can_upload:true}}),auth:{getSession:async()=>({data:{session:{access_token:'login-token'}}})}}}},FormData,File,fetch:nativeFetch,XMLHttpRequest:class{
       constructor(){this.upload={};this.headers={};}open(method,url){this.url=url;}setRequestHeader(key,value){this.headers[key]=value;}send(body){sent={url:this.url,headers:this.headers,body};this.status=200;this.response={url:this.url.endsWith('kind=image')?'https://u.pone.rs/cover.jpg':'https://u.pone.rs/book.pdf'};this.onload();}

@@ -46,3 +46,13 @@
 #accountNicknameForm { display:grid; gap:10px; margin:18px 0; }
 #accountNicknameForm input { box-sizing:border-box; width:100%; padding:12px; border:1px solid #b9d2ed; border-radius:9px; font:inherit; }
 @media(max-width:600px) { .book-reading-tabs .book-upload-fab { width:54px; height:54px; right:18px; bottom:calc(84px + env(safe-area-inset-bottom)); font-size:32px; } }
+.book-category-shelves { display:grid; gap:18px; }
+.book-category-shelf { border-bottom:1px solid #d8e4ef; padding-bottom:12px; }
+.book-category-shelf summary { display:flex; align-items:center; gap:12px; padding:15px 4px; color:#334c68; font-size:18px; font-weight:700; cursor:pointer; list-style:none; }
+.book-category-shelf summary::-webkit-details-marker { display:none; }
+.book-category-shelf summary::before { content:'›'; font-size:26px; width:18px; transition:transform .15s; }
+.book-category-shelf[open] summary::before { transform:rotate(90deg); }
+.book-category-shelf summary small { font-size:13px; color:#7c8ca1; font-weight:400; }
+.book-category-shelf .book-grid { margin:14px 0 20px; }
+.book-category-shelf summary:focus-visible { outline:2px solid #298be1; outline-offset:3px; border-radius:8px; }
+.book-search-result { margin:0 0 24px; color:#687e96; font-size:14px; }

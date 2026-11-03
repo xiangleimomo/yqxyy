@@ -73,7 +73,9 @@ window.BookReader = {
   },
 
   readingNavigation(local = false) {
-    return `<nav class="book-reading-tabs" aria-label="绘本阅读方式"><a href="#/reading"${local ? '' : ' aria-current="page"'}>线上绘本</a><a href="#/reading/local"${local ? ' aria-current="page"' : ''}>本地绘本</a><a href="#/reading/mine/favorites">我的收藏</a><a href="#/reading/mine/recent">最近阅读</a>${window.SFCloud?.isAdmin() ? '<a class="book-admin-entry" href="#/reading/admin">管理绘本</a>' : ''}<a class="book-upload-fab" href="#/reading/upload" aria-label="上传绘本" title="上传绘本">＋</a></nav>`;
+    const route=typeof location==='undefined'?'#/reading':location.hash;
+    const current=local?'#/reading/local':route.startsWith('#/reading/mine/favorites')?'#/reading/mine/favorites':route.startsWith('#/reading/mine/recent')?'#/reading/mine/recent':route==='#/reading'||route.startsWith('#/reading/search')?'#/reading':'';
+    return `<nav class="book-reading-tabs" aria-label="绘本阅读方式">${[['#/reading','线上绘本'],['#/reading/local','本地绘本'],['#/reading/mine/favorites','我的收藏'],['#/reading/mine/recent','最近阅读']].map(([href,label])=>`<a href="${href}"${href===current?' aria-current="page"':''}>${label}</a>`).join('')}${window.SFCloud?.isAdmin() ? '<a class="book-admin-entry" href="#/reading/admin">管理绘本</a>' : ''}<a class="book-upload-fab" href="#/reading/upload" aria-label="上传绘本" title="上传绘本">＋</a></nav>`;
   },
 
   refreshNavigation() {
@@ -81,7 +83,7 @@ window.BookReader = {
     if (navigation) navigation.outerHTML = this.readingNavigation(location.hash.startsWith('#/reading/local'));
   },
 
-  bookCards(app, books, seriesId = '') {
+  bookCards(app, books, seriesId = '', options = {}) {
     const e = value => this.escape(app, value);
     return `<div class="book-grid">${books.map(item => {
       const direct = item.format === 'pdf' && item.sourceUrl;
@@ -89,9 +91,9 @@ window.BookReader = {
       const cover = item.coverUrl ? '<img src="' + e(item.coverUrl) + '" alt="" loading="lazy" decoding="async">' : '<b>' + e(item.titleZh || item.title) + '</b>';
       const label = e(item.titleZh || item.title);
       const primary = '<a href="' + e(href) + '"' + (direct ? ' target="_blank" rel="noopener noreferrer"' : '') + '>' + (direct ? '直接观看' : '打开绘本') + '</a>';
-      const readerLink = direct ? '<a href="#/reader/' + e(item.id) + (seriesId ? '/' + e(seriesId) : '') + '">本站阅览器</a>' : '';
-      const author = item.uploaderNickname ? '<a class="book-uploader" href="#/reading/search/' + encodeURIComponent(item.uploaderNickname) + '">上传者：' + e(item.uploaderNickname) + '</a>' : '';
-      const media = (item.audioUrl ? '<a href="' + e(item.audioUrl) + '" target="_blank" rel="noopener noreferrer">配套音频</a>' : '') + (item.videoUrl ? '<a href="' + e(item.videoUrl) + '" target="_blank" rel="noopener noreferrer">配套视频</a>' : '');
+      const readerLink = direct ? '<a href="#/reader/' + e(item.id) + (seriesId ? '/' + e(seriesId) : '') + '">' + (options.resume ? '继续阅读' : '本站阅览器') + '</a>' : '';
+      const author = !options.compact && item.uploaderNickname ? '<a class="book-uploader" href="#/reading/search/' + encodeURIComponent(item.uploaderNickname) + '">上传者：' + e(item.uploaderNickname) + '</a>' : '';
+      const media = options.compact ? '' : (item.audioUrl ? '<a href="' + e(item.audioUrl) + '" target="_blank" rel="noopener noreferrer">配套音频</a>' : '') + (item.videoUrl ? '<a href="' + e(item.videoUrl) + '" target="_blank" rel="noopener noreferrer">配套视频</a>' : '');
       return '<article class="book-card" data-book-id="' + e(item.id) + '"><div class="book-cover"><button type="button" class="book-cover-trigger" aria-label="选择' + label + '的阅读方式">' + cover + '</button><div class="book-actions" aria-label="' + label + '阅读方式">' + primary + readerLink + '<button class="book-personal-button" type="button">收藏 / 分类</button></div></div><div class="book-card-body"><h2>' + label + '</h2>' + author + '<div class="book-resource-links">' + media + '</div></div></article>';
     }).join('')}</div>`;
   },
@@ -106,9 +108,10 @@ window.BookReader = {
   },
 
   async renderList(app) {
+    const route=typeof location==='undefined'?null:location.hash;
     const books = (await this.library(app)).filter(book => !book.seriesIds?.length);
-    app.el().innerHTML = this.readingNavigation() + window.BookCommunity.searchForm(app) + this.bookCards(app, books);
-    window.BookCommunity.bindSearch(app);
+    if(route!==null&&location.hash!==route)return;
+    app.el().innerHTML = this.readingNavigation() + this.bookCards(app, books);
     this.bindBookCards(app);
   },
 
