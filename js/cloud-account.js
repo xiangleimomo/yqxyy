@@ -285,7 +285,11 @@ window.SFCloud = {
         result=await this.client.auth.updateUser({password});
       }else if(this.authMode==='signup'){
         if(password.length<8)throw new Error('密码至少需要 8 位。');
+        const lookup=await this.client.rpc('sf_email_registered',{candidate:email});
+        if(lookup.error)throw new Error('暂时无法检查邮箱，请稍后重试。');
+        if(lookup.data===true)throw new Error('该邮箱已注册，请更换其他邮箱注册使用。');
         result=await this.client.auth.signUp({email,password,options:{emailRedirectTo:location.origin+location.pathname}});
+        if(result.error?.code==='user_already_exists'||(!result.error&&Array.isArray(result.data?.user?.identities)&&result.data.user.identities.length===0))throw new Error('该邮箱已注册，请更换其他邮箱注册使用。');
       }else if(this.authMode==='reset'){
         result=await this.client.auth.resetPasswordForEmail(email,{redirectTo:location.origin+location.pathname});
       }else result=await this.client.auth.signInWithPassword({email,password});
