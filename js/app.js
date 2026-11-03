@@ -32,6 +32,7 @@ const App = {
       event.preventDefault(); this.hideSearchSuggestions(); location.hash=target.dataset.searchHref;
     });
     window.SFFamily?.init(this);
+    window.SFMedals?.init(this);
     this.updateUtilityNav();
     await this.render();
     if(window.SFCloud) window.SFCloud.init(this);
@@ -90,6 +91,7 @@ const App = {
   },
   async render(){
     const [page, a, b] = this.route();
+    window.SFMedals?.cleanup();
     clearTimeout(this.searchTimer);this.hideSearchSuggestions();
     window.MovieClassroom?.cleanup();
     window.MovieHub?.cleanup();
@@ -100,11 +102,12 @@ const App = {
     const isMagazinePage=['magazines','magazine-reader'].includes(page);
     const isReadingPage = ['reading','reader','series-books'].includes(page);
     document.querySelectorAll('.main-tab').forEach(tab=>{
-      const active = tab.getAttribute('href') === (['homework','family','parent','child'].includes(page) ? '#/homework' : isMoviePage ? '#/movies' : isMagazinePage ? '#/magazines' : isReadingPage ? '#/reading' : '#/home');
+      const active = tab.getAttribute('href') === (page==='honors'?'#/honors':['homework','family','parent','child'].includes(page) ? '#/homework' : isMoviePage ? '#/movies' : isMagazinePage ? '#/magazines' : isReadingPage ? '#/reading' : '#/home');
       tab.classList.toggle('active', active);
       if(active) tab.setAttribute('aria-current','page'); else tab.removeAttribute('aria-current');
     });
     const homeworkNav=document.getElementById('navHomework');
+    const honorsNav=document.getElementById('navHonors');if(page==='honors')honorsNav?.setAttribute('aria-current','page');else honorsNav?.removeAttribute('aria-current');
     if(['homework','family','parent','child'].includes(page)) homeworkNav?.setAttribute('aria-current','page');
     else homeworkNav?.removeAttribute('aria-current');
     document.getElementById('globalSearch').placeholder = isMoviePage ? '搜索电影中英文名称' : isMagazinePage ? '搜索期刊杂志、上传者' : (isReadingPage ? '搜索绘本、上传者或配套资源' : '搜索故事、单词或集数');
@@ -117,6 +120,7 @@ const App = {
     document.body.classList.remove('movie-study-page');
     document.documentElement.classList.remove('movie-study-page');
     try{
+      if(page === 'honors') return await window.SFMedals.render(this,a||'works',b||'');
       if(['homework','family','parent','child'].includes(page)) return await window.SFFamily.render(this);
       if(page === 'movies') return ['favorites','recent'].includes(a) ? await window.MediaShelf.render(this,'movies',{mode:a}) : await window.MovieClassroom.renderList(this, decodeURIComponent(a || ''));
       if(page === 'movie-hub') return await window.MovieHub.render(this,a==='search'?'':a,a==='search'?decodeURIComponent(b||''):'');
@@ -319,6 +323,7 @@ async renderSeries(seriesId){
     this.episodeListRefresh={seriesId,render:renderEpisodeList};
     renderEpisodeList();
     openEpisode(activeEpisodeId);
+    window.SFMedals?.attach(this,'series:'+seriesId,this.el().querySelector('.series-hero-content'));
     document.querySelector('.episode-side-item.active')?.scrollIntoView({block:'nearest'});
 },
 episodeCard(seriesId,e,review={}){
@@ -1040,6 +1045,7 @@ phrasesPanel(d){
 bindLessonPanel(tab,d,root=document){
   if(tab==='games') EpisodeGames.bind(root,d);
   window.MediaShelf?.bindLesson(root===document?document.getElementById('lessonPanel')||root:root,d);
+  window.SFMedals?.attach(this,'episode:'+d.seriesId+':'+d.episodeId,root===document?document.getElementById('lessonPanel'):root);
   root.querySelectorAll('.hls-video-player').forEach(player=>{this.initializeHlsVideo(player);this.bindSubtitleOverlay(player,d);});
   this.applySubtitlePreferences(root);
   this.bindSubtitleControls(root);
@@ -1431,6 +1437,7 @@ addPoints(n=1){
     p[key].modules[module]=true; p[key].updatedAt=new Date().toISOString();
     if(module!=='quiz')window.SFFamily?.record(seriesId,episodeId,module);
     this.storage('progress',p);
+    window.SFMedals?.lessonCompleted(seriesId,episodeId,module);
     const today=new Date();const ds=[today.getFullYear(),String(today.getMonth()+1).padStart(2,'0'),String(today.getDate()).padStart(2,'0')].join('-');
     const dates=new Set(this.storage('checkins')||[]);dates.add(ds);this.storage('checkins',[...dates].sort());
   },

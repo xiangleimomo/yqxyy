@@ -25,6 +25,7 @@ window.BookAdmin = {
       if (coverUrl) { const image = new Image(); image.src = coverUrl; image.alt = '封面预览'; target.append(image); }
       const title = document.createElement('h3'); title.textContent = field('titleZh').value || field('title').value || '绘本名称'; target.append(title);
       const detail = document.createElement('p'); detail.textContent = field('level').value; target.append(detail);
+      if(field('existing').value){const badge=document.createElement('a');badge.href='#/honors/admin/'+encodeURIComponent((base==='#/magazines'?'magazine:':'book:')+field('existing').value);badge.textContent='🏅 查看 / 配置作品主题徽章';target.append(badge);}
     };
     const lock = value => {
       busy = value;

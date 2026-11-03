@@ -183,6 +183,7 @@ window.SFCloud = {
     return this.loginTask;
   },
   async enterAccount(user){
+    window.SFMedals?.identitySwitch();
     // Close previous account/guest floating windows before switching identity.
     this.app?.windowLayer?.replaceChildren();
     // Switch scope BEFORE rendering; another account's cache is never shown.
@@ -219,6 +220,7 @@ window.SFCloud = {
     }
   },
   onSignedOut(){
+    window.SFMedals?.identitySwitch();
     window.SFFamily?.reset();
     this.adminCheckVersion++;this.adminVerified=false;this.adminUserId=null;
     if(this.timer)clearTimeout(this.timer);
