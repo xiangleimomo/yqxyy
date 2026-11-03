@@ -38,11 +38,11 @@
 .book-review-list input { margin:10px; max-width:85%; }
 .book-media-results { display:grid; gap:12px; margin:18px 0; }
 @media(max-width:600px) { .book-reading-tabs { gap:10px 15px; } .book-reading-tabs a { font-size:14px; } .book-search { gap:8px; } }
-.book-reading-tabs .book-upload-fab { position:fixed; right:max(28px,env(safe-area-inset-right)); bottom:calc(28px + env(safe-area-inset-bottom)); z-index:80; width:62px; height:62px; display:grid; place-items:center; padding:0; margin:0; background:#ff873d; color:#fff; border:0; border-radius:50%; box-shadow:0 7px 22px #d46b3540; font-size:38px; font-weight:400; line-height:1; text-decoration:none; }
+.book-reading-tabs .book-upload-fab { position:fixed; right:max(28px,env(safe-area-inset-right)); bottom:calc(88px + env(safe-area-inset-bottom)); z-index:80; width:62px; height:62px; display:grid; place-items:center; padding:0; margin:0; background:#ff873d; color:#fff; border:0; border-radius:50%; box-shadow:0 7px 22px #d46b3540; font-size:38px; font-weight:400; line-height:1; text-decoration:none; }
 .book-reading-tabs .book-upload-fab:hover { background:#f2752d; transform:translateY(-2px); }
 .book-actions .book-personal-button { display:block; box-sizing:border-box; width:100%; max-width:180px; padding:10px 8px; margin:0; border:1px solid #ffffffaa; border-radius:8px; background:#fffffff2; color:#173252; text-align:center; font-family:inherit; font-size:14px; font-weight:700; cursor:pointer; }
 .book-actions .book-personal-button:hover { background:#e9f5ff; }
 .book-actions .book-personal-button:focus-visible { outline:3px solid #56bafa; outline-offset:2px; }
 #accountNicknameForm { display:grid; gap:10px; margin:18px 0; }
 #accountNicknameForm input { box-sizing:border-box; width:100%; padding:12px; border:1px solid #b9d2ed; border-radius:9px; font:inherit; }
-@media(max-width:600px) { .book-reading-tabs .book-upload-fab { width:54px; height:54px; right:18px; bottom:calc(20px + env(safe-area-inset-bottom)); font-size:32px; } }
+@media(max-width:600px) { .book-reading-tabs .book-upload-fab { width:54px; height:54px; right:18px; bottom:calc(84px + env(safe-area-inset-bottom)); font-size:32px; } }
