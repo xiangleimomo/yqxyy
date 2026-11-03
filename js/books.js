@@ -222,6 +222,8 @@ window.BookReader = {
       if (!current()) return;
       if (!blob) {
         const url = new URL(item.downloadUrl || item.sourceUrl, location.origin);
+        // Replacing a PDF under the same book ID must bypass older HTTP responses.
+        if (item.downloadUrl && item.sourceUrl) url.searchParams.set('source', item.sourceUrl);
         if (url.protocol !== 'https:' || url.username || url.password || (item.downloadUrl && url.origin !== location.origin)) throw new Error('绘本加载地址不可用。');
         const response = await fetch(url.href, { signal: controller.signal, credentials: 'omit' });
         if (!response.ok) throw new Error(`加载失败（${response.status}），请重试。`);
