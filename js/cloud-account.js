@@ -325,6 +325,7 @@ window.SFCloud = {
   async signOut(){
     if(!this.client)return;
     await window.BookCommunity?.flushProgress();
+    await window.MediaShelf?.flush();
     await window.SFFamily?.flush();
     await this.sync();
     const {error}=await this.client.auth.signOut();

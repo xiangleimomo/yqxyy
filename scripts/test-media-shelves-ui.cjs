@@ -1,0 +1,51 @@
+const assert=require('node:assert/strict');
+const {chromium}=require(process.env.STORYFOX_PLAYWRIGHT||'C:/Users/lenovo/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+(async()=>{
+ const browser=await chromium.launch({headless:true,channel:'msedge'});
+ try{
+  const page=await browser.newPage({viewport:{width:1280,height:900}});
+  await page.addInitScript(()=>Object.defineProperty(window,'STORYFOX_SUPABASE',{get:()=>null,set:()=>{}}));
+  await page.goto('http://127.0.0.1:8127/#/home');await page.waitForSelector('.media-card');
+  assert.ok(await page.locator('#levelFilters').isVisible());assert.equal(await page.locator('.hero').count(),0);
+  await page.evaluate(async()=>{
+   SFCloud.user={id:'parent'};SFCloud.isAdmin=()=>false;App.isGuest=()=>false;window.mediaCalls=[];
+   const stories=Array.from({length:7},(_,i)=>({seriesId:'test-'+i,title:'Story '+i,titleZh:'故事 '+i,cover:'assets/covers/lion-king-bilingual.jpg',level:i%3,status:'completed'}));
+   const films=Array.from({length:7},(_,i)=>['test-'+i,'Film '+i,'电影 '+i,2026]);
+   const series=[{id:'test',title:'Film Collection',titleZh:'电影合集',level:'A1',films,cover:'assets/covers/lion-king-bilingual.jpg'}];
+   const playableById=new Map(films.map(([id,title,titleZh])=>[id,{id,title,titleZh,cover:'assets/covers/lion-king-bilingual.jpg',hlsUrl:'https://example.invalid/test.mp4'}]));
+   const original=App.getJSON.bind(App);App.getJSON=path=>path==='data/series-list.json'?Promise.resolve(stories):original(path);
+   MovieClassroom.getLibrary=async()=>({series,playableById});
+   window.mediaRows=[...stories.map((s,i)=>({book_id:'anim-'+s.seriesId,favorite:i===1||i===2,category:i===1?'睡前故事':'英语启蒙',last_read_at:new Date(Date.UTC(2026,10,3,10,i)).toISOString(),last_cfi:JSON.stringify({href:'#/lesson/'+s.seriesId+'/2',episodeId:2})})),...films.map(([id],i)=>({book_id:'film-'+id,favorite:i===1,category:'电影收藏',last_read_at:new Date(Date.UTC(2026,10,3,11,i)).toISOString(),last_cfi:JSON.stringify({href:'#/movie/'+id,seconds:120})})),{book_id:'film-series-test',favorite:true,category:'电影收藏'}];
+   SFCloud.client={from:()=>{const filters={};const rows=()=>mediaRows.filter(row=>!filters.book_id||row.book_id===filters.book_id);const q={select(){return q;},eq(k,v){filters[k]=v;return q;},maybeSingle:async()=>({data:rows()[0]||null}),then(resolve,reject){return Promise.resolve({data:rows()}).then(resolve,reject);}};return q;},rpc:async(name,args)=>{mediaCalls.push(args);const {book_id,changes}=args.p_payload;let row=mediaRows.find(r=>r.book_id===book_id);if(!row){row={book_id};mediaRows.push(row);}if('favorite' in changes)row.favorite=changes.favorite;if('category' in changes)row.category=changes.category;if(changes.cfi){row.last_cfi=changes.cfi;row.last_read_at=new Date().toISOString();}return {data:{ok:true}};}};
+   await App.render();
+  });
+  assert.equal(await page.locator('.media-card').count(),7);
+  await page.locator('[data-media-level="0"]').click();assert.equal(await page.locator('.media-level-group > h2').textContent(),'Level 0');assert.equal(await page.locator('.media-card').count(),3);
+  await page.locator('[data-media-level="1"]').click();assert.equal(await page.locator('.media-level-group').count(),1);assert.equal(await page.locator('.media-card').count(),2);
+  await page.locator('[data-media-level="all"]').click();
+  await page.mouse.move(1,1);await page.waitForFunction(()=>getComputedStyle(document.querySelector('.book-actions')).opacity==='0');
+  await page.locator('.book-cover').first().hover();await page.locator('.media-favorite').first().click();
+  await page.locator('dialog [name=favorite]').check();await page.locator('dialog [name=category]').fill('英语启蒙');await page.locator('dialog').getByRole('button',{name:'保存',exact:true}).click();
+  await page.waitForFunction(()=>!document.querySelector('dialog'));
+  assert.equal(await page.evaluate(()=>mediaCalls.at(-1).p_payload.book_id),'anim-test-0');
+  await page.getByRole('link',{name:'我的收藏',exact:true}).click();await page.waitForSelector('.book-category-shelf');assert.equal(await page.locator('.book-category-shelf').count(),2);
+  await page.locator('summary').filter({hasText:'英语启蒙'}).click();assert.equal(await page.locator('.media-card:visible').count(),2);
+  await page.getByRole('link',{name:'观看记录',exact:true}).click();await page.waitForFunction(()=>document.querySelectorAll('.media-card').length===5);
+  assert.equal(await page.locator('.media-card').first().getAttribute('data-media-key'),'anim-test-6');assert.equal(await page.locator('.media-card').first().getByRole('link',{name:'继续观看'}).getAttribute('href'),'#/lesson/test-6/2');
+  const legacy=await page.evaluate(async()=>{const rows=await MediaShelf.states({storage:()=>({a:{seriesId:'legacy',episodeId:1,modules:{watch:true},updatedAt:'2026-11-01'},b:{seriesId:'legacy',episodeId:3,modules:{watch:true},updatedAt:'2026-11-02'},c:{seriesId:'test-6',episodeId:99,modules:{watch:true},updatedAt:'2027-01-01'}})});return [MediaShelf.metadata(rows.get('anim-legacy')).episodeId,MediaShelf.metadata(rows.get('anim-test-6')).episodeId];});assert.deepEqual(legacy,[3,2]);
+  await page.evaluate(()=>{location.hash='#/movies';});await page.waitForSelector('[data-media-key="film-series-test"]');
+  await page.locator('.book-cover').hover();await page.getByRole('link',{name:'查看系列'}).click();await page.waitForFunction(()=>document.querySelectorAll('.media-card').length===7);
+  assert.equal(await page.locator('.movie-collection-hero').count(),0);
+  await page.getByRole('link',{name:'我的收藏',exact:true}).click();await page.waitForSelector('summary');await page.locator('summary').click();assert.equal(await page.locator('.media-card:visible').count(),2);assert.ok((await page.locator('.media-card').evaluateAll(nodes=>nodes.map(n=>n.dataset.mediaKey))).every(id=>id.startsWith('film-')));
+  await page.getByRole('link',{name:'观看记录',exact:true}).click();await page.waitForFunction(()=>document.querySelectorAll('.media-card').length===5);assert.equal(await page.locator('.media-card').first().getAttribute('data-media-key'),'film-test-6');
+  await page.evaluate(()=>{const video=document.createElement('video');Object.defineProperty(video,'duration',{value:1000});Object.defineProperty(video,'readyState',{value:1});document.body.append(video);window.testVideo=video;MediaShelf.bindPlayer(video,'film-test-0',{href:'#/movie/test-0'});});
+  await page.waitForFunction(()=>testVideo.currentTime===120);
+  await page.evaluate(async()=>{testVideo.dispatchEvent(new Event('play'));testVideo.currentTime=145;testVideo.dispatchEvent(new Event('timeupdate'));await MediaShelf.flush();});assert.equal(await page.evaluate(()=>JSON.parse(mediaCalls.at(-1).p_payload.changes.cfi).seconds),145);
+  await page.evaluate(async()=>{const root=document.createElement('div'),video=document.createElement('video');video.className='hls-video-player';root.append(video);document.body.append(root);MediaShelf.bindLesson(root,{seriesId:'movie-course-test',episodeId:3,series:{movieId:'test-1'}});video.currentTime=30;video.dispatchEvent(new Event('play'));await MediaShelf.flush();video._disposeShelf();root.remove();});assert.equal(await page.evaluate(()=>mediaCalls.at(-1).p_payload.book_id),'film-test-1');
+  assert.equal(await page.evaluate(()=>MediaShelf.resumeHref({scope:'movies',courseId:'movie-course-test',href:'#/movie/test-1'},{last_cfi:JSON.stringify({href:'#/lesson/movie-course-test/3',episodeId:3})})),'#/lesson/movie-course-test/3');
+  await page.evaluate(()=>{SFCloud.user={id:'other'};testVideo.currentTime=160;testVideo.dispatchEvent(new Event('timeupdate'));testVideo._disposeShelf();});assert.equal(await page.evaluate(()=>localStorage.getItem(MediaShelf.localKey())),null);
+  await page.evaluate(()=>{const audio=document.createElement('audio');MediaShelf.bindPlayer(audio,'anim-test-0',{});if(audio._disposeShelf)throw Error('Audio must not gain video tracking');});
+  await page.setViewportSize({width:390,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+  console.log('PASS: animation levels, quiet covers, hover favorites, separate category shelves, five recent items, movie collections, video resume, account isolation and audio-only preservation.');
+ }finally{await browser.close();}
+})().catch(error=>{console.error(error);process.exitCode=1;});

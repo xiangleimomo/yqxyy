@@ -42,6 +42,7 @@ window.MovieClassroom = {
   },
   cleanup() {
     this.generation++;
+    this.player?._disposeShelf?.();
     this.disposeSubtitles?.(); this.disposeSubtitles = null;
     if (this.nativeStartTimer) { clearTimeout(this.nativeStartTimer); this.nativeStartTimer = null; }
     this.disposeAdSkip?.(); this.disposeAdSkip = null;
@@ -100,29 +101,13 @@ window.MovieClassroom = {
     return `<div class="${className} movie-poster-fallback" aria-label="${e(label)}待补充官方海报"><span>🎬</span><strong>${e(label)}</strong><small>Official poster coming soon</small></div>`;
   },
   seriesCard(app, series, playableById) {
-    const e = value => this.escape(app, value);
-    const enabled = series.films.filter(([id]) => playableById.has(id)).length;
-    return `<a class="movie-series-card" href="#/movie-series/${e(series.id)}" aria-label="查看${e(series.titleZh)}系列">${this.poster(app, series, series.titleZh, 'movie-series-poster')}<div class="movie-series-info"><h3>${e(series.titleZh)}</h3><p>${e(series.title)}</p><div class="movie-series-badges"><span>英语 ${e(series.level)}</span><span title="推荐度 ${series.rating}/5">${this.stars(series.rating)}</span></div><small>${series.films.length} 部影片 · ${enabled ? `${enabled} 部可 Watch` : '待补片源'}</small></div></a>`;
+    return window.MediaShelf.card(app,window.MediaShelf.movieSeries(series));
   },
   movieCard(app, series, film, playableById) {
-    const [id, title, titleZh, year] = film;
-    const item = playableById.get(id);
-    const e = value => this.escape(app, value);
-    const inner = `${this.poster(app, {id, cover:this.filmCovers[id] || item?.cover || this.seriesCovers[series.id]}, titleZh)}<h3>${e(titleZh)}</h3><p class="movie-english-title">${e(title)}</p><div class="movie-meta">${e(year)} · ${e(series.level)}</div>`;
-    return item ? `<a class="movie-card" href="#/movie/${e(id)}" aria-label="观看 ${e(titleZh)}"><div class="movie-card-state watch">Watch · 看电影${item.studyCourse?' · 可分集学习':''}</div>${inner}</a>` : `<article class="movie-card movie-card-coming" aria-label="${e(titleZh)}待上线"><div class="movie-card-state">待上线</div>${inner}</article>`;
+    return window.MediaShelf.card(app,window.MediaShelf.movieFilm(series,film,playableById));
   },
   async renderList(app, query='', level='all') {
-    const generation = this.generation;
-    const { series, playableById } = await this.getLibrary(app);
-    if (generation !== this.generation) return;
-    document.getElementById('globalSearch').value = query;
-    const normalized = query.trim().toLowerCase();
-    const levels = [...new Set(series.map(item => item.level))];
-    const visible = series.filter(item => (level === 'all' || item.level === level) && `${item.title} ${item.titleZh} ${item.films.flat().join(' ')}`.toLowerCase().includes(normalized));
-    const totalFilms = series.reduce((count, item) => count + item.films.length, 0);
-    const e = value => this.escape(app, value);
-    app.el().innerHTML = `<section class="movie-intro"><div><h1>🎬 光影课堂</h1><p>Movie Classroom · 选择系列，在电影中感受英语。</p></div><div class="hub-entry"><a class="btn secondary" href="#/movie-hub">🌐 多平台聚合播放</a><span class="movie-count">${series.length} 个系列 · ${totalFilms} 部影片</span></div></section><div class="filters" id="movieFilters"><span class="movie-filter-label">英语难度</span>${['all', ...levels].map(item => `<button type="button" class="filter-btn ${level === item ? 'active' : ''}" data-level="${e(item)}">${item === 'all' ? '全部等级' : e(item)}</button>`).join('')}</div><div class="movie-section-heading"><h2>${query ? `搜索结果：${e(query)}` : '电影系列'}</h2><span class="meta">${visible.length} 个系列</span></div><div class="movie-series-grid">${visible.map(item => this.seriesCard(app, item, playableById)).join('')}</div>${visible.length ? '' : '<div class="empty">没有找到对应影片或系列。</div>'}`;
-    document.querySelectorAll('#movieFilters button').forEach(button => button.addEventListener('click', () => this.renderList(app, query, button.dataset.level)));
+    return window.MediaShelf.render(app,'movies',{query,level});
   },
   async renderSeries(app, id) {
     const generation = this.generation;
@@ -131,8 +116,8 @@ window.MovieClassroom = {
     const group = series.find(item => item.id === id);
     if (!group) { app.el().innerHTML = '<div class="empty">系列不存在。<p><a class="btn" href="#/movies">返回光影课堂</a></p></div>'; return; }
     const e = value => this.escape(app, value);
-    const watchReady = group.films.filter(([filmId]) => playableById.has(filmId)).length;
-    app.el().innerHTML = `<div class="breadcrumb"><a href="#/movies">光影课堂</a> › ${e(group.titleZh)}</div><section class="movie-collection-hero">${this.poster(app, group, group.titleZh, 'movie-collection-poster')}<div><h1>${e(group.titleZh)}</h1><p>${e(group.title)}</p><div class="movie-series-badges"><span>英语难度 ${e(group.level)}</span><span>${this.stars(group.rating)} 推荐</span><span>${e(group.genre)}</span></div><p class="movie-collection-note">共 ${group.films.length} 部；${watchReady ? `${watchReady} 部已提供 Watch 播放` : '播放源待补充'}。</p></div></section><div class="movie-section-heading"><h2>影片列表</h2><span class="meta">按上映顺序</span></div><div class="movie-grid">${group.films.map(film => this.movieCard(app, group, film, playableById)).join('')}</div>`;
+    app.el().innerHTML = window.MediaShelf.nav('movies') + `<div class="breadcrumb"><a href="#/movies">光影课堂</a> › ${e(group.titleZh)}</div><section class="media-catalog"><div class="book-grid">${group.films.map(film => this.movieCard(app, group, film, playableById)).join('')}</div></section>`;
+    window.MediaShelf.bindCards(app);
   },
   async renderWatch(app, id, sourceChoice = 'primary', transportChoice = 'auto') {
     const generation = this.generation;
@@ -152,8 +137,9 @@ window.MovieClassroom = {
     const studyLink = movie.studyCourse ? `<p class="movie-study-entry"><a class="btn" href="#/series/${e(movie.studyCourse.seriesId)}">📖 剧情分集学习 · ${e(movie.studyCourse.episodeCount)} 集</a> <span class="muted">英文字幕 · Words · Quiz · Games</span></p>` : '';
     const directLink = !embedded && this.mediaUrl(sourceUrl) !== sourceUrl ? `<a class="btn secondary" href="${e(sourceUrl)}" target="_blank" rel="noopener noreferrer">直接打开播放</a>` : '';
     const subtitleTrack = movie.subtitleUrl ? `<track kind="subtitles" src="${e(movie.subtitleUrl)}" srclang="${e(movie.subtitleLang || 'en')}" label="${e(movie.subtitleLabel || 'English')}" default>` : '';
-    app.el().innerHTML = `<div class="breadcrumb"><a href="#/movies">光影课堂</a> › <a href="#/movie-series/${e(group.id)}">${e(group.titleZh)}</a> › ${e(movie.titleZh)}</div><section class="movie-watch-head"><div><h1>${e(movie.titleZh)}</h1><p>${e(movie.title)} · ${e(movie.year)}</p></div><a class="btn secondary" href="#/movie-series/${e(group.id)}">返回系列</a></section>${movie.descriptionZh ? `<p class="movie-description">${e(movie.descriptionZh)}</p>` : ''}${movie.description ? `<p class="movie-description muted">${e(movie.description)}</p>` : ''}${studyLink}<div class="movie-watch-frame"><video controls playsinline preload="metadata" aria-label="${e(movie.titleZh)}">${subtitleTrack}</video></div><div class="movie-player-status" id="moviePlayerStatus" role="status" aria-live="polite">正在加载影片，请稍候…</div><div class="movie-watch-actions">${sourceControl}<a class="btn secondary" href="#/movie-hub/${e(id)}">🌐 尝试其他播放平台</a><button type="button" class="btn secondary" id="movieRetry">重新加载</button>${directLink}<span class="muted">Watch 看电影 · ${e(usingBackup ? `备用片源 ${index + 1}` : movie.sourceLabel || '授权播放源')}${movie.subtitleUrl ? ' · English subtitles' : ''}</span></div><div class="movie-section-heading"><h2>同系列影片</h2></div><div class="movie-grid">${group.films.filter(([filmId]) => filmId !== id).map(film => this.movieCard(app, group, film, playableById)).join('')}</div>`;
+    app.el().innerHTML = `<div class="breadcrumb"><a href="#/movies">光影课堂</a> › <a href="#/movie-series/${e(group.id)}">${e(group.titleZh)}</a> › ${e(movie.titleZh)}</div><section class="movie-watch-head"><div><h1>${e(movie.titleZh)}</h1><p>${e(movie.title)} · ${e(movie.year)}</p></div><a class="btn secondary" href="#/movie-series/${e(group.id)}">返回系列</a></section>${movie.descriptionZh ? `<p class="movie-description">${e(movie.descriptionZh)}</p>` : ''}${movie.description ? `<p class="movie-description muted">${e(movie.description)}</p>` : ''}${studyLink}<div class="movie-watch-frame"><video controls playsinline preload="metadata" aria-label="${e(movie.titleZh)}">${subtitleTrack}</video></div><div class="movie-player-status" id="moviePlayerStatus" role="status" aria-live="polite">正在加载影片，请稍候…</div><div class="movie-watch-actions">${sourceControl}<a class="btn secondary" href="#/movie-hub/${e(id)}">🌐 尝试其他播放平台</a><button type="button" class="btn secondary" id="movieRetry">重新加载</button>${directLink}<span class="muted">Watch 看电影 · ${e(usingBackup ? `备用片源 ${index + 1}` : movie.sourceLabel || '授权播放源')}${movie.subtitleUrl ? ' · English subtitles' : ''}</span></div><div class="movie-section-heading"><h2>同系列影片</h2></div><div class="book-grid media-related-grid">${group.films.filter(([filmId]) => filmId !== id).map(film => this.movieCard(app, group, film, playableById)).join('')}</div>`;
     const player = app.el().querySelector('video');
+    window.MediaShelf.bindCards(app);
     document.getElementById('movieRetry').onclick = () => { this.cleanup(); this.renderWatch(app, id, selectedChoice).catch(() => {}); };
     if (hasBackup) document.getElementById('movieSource').onchange = event => { const choice = event.target.value; this.cleanup(); this.renderWatch(app, id, choice).catch(() => {}); };
     const report = (message, failed=false) => { if (generation !== this.generation) return; const status = document.getElementById('moviePlayerStatus'); if (status) { status.textContent = message; status.classList.toggle('failed', failed); } };
@@ -164,7 +150,7 @@ window.MovieClassroom = {
       frame.allowFullscreen = true;
       frame.referrerPolicy = 'no-referrer';
       frame.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms allow-presentation');
-      frame.addEventListener('load', () => report('播放器页面已加载，请在画面内点击播放；若空白，请重新加载。'));
+      frame.addEventListener('load', () => {report('播放器页面已加载，请在画面内点击播放；若空白，请重新加载。');if(generation===this.generation)window.MediaShelf.record('film-'+id,{href:'#/movie/'+id});});
       frame.addEventListener('error', () => report('播放器页面加载失败，请重新加载或打开片源页面。', true));
       this.frame = frame;
       app.el().querySelector('.movie-watch-frame').replaceChildren(frame);
@@ -177,6 +163,7 @@ window.MovieClassroom = {
       return;
     }
     this.player = player;
+    window.MediaShelf.bindPlayer(player,'film-'+id,{href:'#/movie/'+id},{resume:!usingBackup});
     this.disposeSubtitles = window.MovieSubtitles?.mount(app.el(), player, movie, () => this.hls);
     const mediaUrl = this.mediaUrl(sourceUrl);
     const native = player.canPlayType('application/vnd.apple.mpegurl');

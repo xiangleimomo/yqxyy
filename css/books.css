@@ -56,3 +56,10 @@
 .book-category-shelf .book-grid { margin:14px 0 20px; }
 .book-category-shelf summary:focus-visible { outline:2px solid #298be1; outline-offset:3px; border-radius:8px; }
 .book-search-result { margin:0 0 24px; color:#687e96; font-size:14px; }
+.media-animation-cover { aspect-ratio:4/3; }
+.media-animation-cover img { object-fit:cover; }
+.media-level-group { margin:26px 0 38px; }
+.media-level-group > h2 { font-size:17px; font-weight:600; color:#697e95; margin:0 0 20px; }
+.media-level-filters { margin:0 0 24px; gap:10px; }
+.media-unavailable { font-size:14px; color:white; }
+.media-related-grid { margin:20px 0; }

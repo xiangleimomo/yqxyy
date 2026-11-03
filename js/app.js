@@ -116,7 +116,7 @@ const App = {
     document.documentElement.classList.remove('movie-study-page');
     try{
       if(['homework','family','parent','child'].includes(page)) return await window.SFFamily.render(this);
-      if(page === 'movies') return await window.MovieClassroom.renderList(this, decodeURIComponent(a || ''));
+      if(page === 'movies') return ['favorites','recent'].includes(a) ? await window.MediaShelf.render(this,'movies',{mode:a}) : await window.MovieClassroom.renderList(this, decodeURIComponent(a || ''));
       if(page === 'movie-hub') return await window.MovieHub.render(this,a==='search'?'':a,a==='search'?decodeURIComponent(b||''):'');
       if(page === 'movie-series') return await window.MovieClassroom.renderSeries(this, a);
       if(page === 'movie') return await window.MovieClassroom.renderWatch(this, a);
@@ -129,7 +129,7 @@ const App = {
       }
       if(page === 'series-books') return await window.BookReader.renderSeriesLibrary(this, a);
       if(page === 'reader') return await window.BookReader.renderReader(this, a, b);
-      if(page === 'home') return this.renderHome();
+      if(page === 'home') return ['favorites','recent'].includes(a) ? window.MediaShelf.render(this,'animation',{mode:a}) : this.renderHome();
       if(page === 'series') return this.renderSeries(a);
       if(page === 'lesson') return this.renderLesson(a, Number(b || 1));
       if(page === 'records') return this.renderRecords();
@@ -147,41 +147,7 @@ const App = {
     }
   },
   async renderHome(statusFilter='all', levelFilter='all'){
-    const list = await this.getJSON('data/series-list.json');
-    const accessibleList=this.isGuest() ? list.filter(s=>!this.isGuestRestrictedLevel(s.level)) : list;
-    const total = accessibleList.length;
-    const levels = [...new Set(accessibleList.map(s=>Number(s.level ?? 0)))].sort((a,b)=>a-b);
-    const selectedLevel=levelFilter!=='all' && !levels.includes(Number(levelFilter)) ? 'all' : levelFilter;
-    const visible = accessibleList.filter(s=>(statusFilter==='all'||s.status===statusFilter) && (selectedLevel==='all'||Number(s.level ?? 0)===Number(selectedLevel)));
-    const grouped = (selectedLevel==='all' ? levels : [Number(selectedLevel)]).map(level=>{
-      const series = visible.filter(s=>Number(s.level ?? 0)===level);
-      if(!series.length) return '';
-      return `<section class="level-group"><div class="level-group-head"><h3>Level ${level}</h3><span>${series.length} 个系列</span></div><div class="series-grid">${series.map(s=>this.seriesCard(s)).join('')}</div></section>`;
-    }).join('');
-    this.el().innerHTML = `
-      <section class="hero">
-        <div>
-          <h1>动画故事</h1>
-          <p>选择一个故事系列开始学习。Level 0–2 可自由选课；Level 3 及以上完成本集 Quiz，正确率达到 80% 后解锁下一集。</p>
-        </div>
-        <div class="hero-badge">Story · Level · Progress</div>
-      </section>
-      <div class="section-head">
-        <h2>所有动画故事 <span class="meta">（${total} 个系列）</span></h2>
-      </div>
-      <div class="filters" id="homeFilters">
-        ${['all','completed','serializing'].map(x=>`<button class="filter-btn ${statusFilter===x?'active':''}" data-status="${x}">${x==='all'?'全部':this.statusText(x)}</button>`).join('')}
-      </div>
-      <div class="filters level-filters" id="levelFilters" aria-label="按等级筛选">
-        <span class="filter-label">分级</span>
-        <button class="filter-btn ${selectedLevel==='all'?'active':''}" data-level="all">全部等级</button>
-        ${levels.map(level=>`<button class="filter-btn ${Number(selectedLevel)===level?'active':''}" data-level="${level}">Level ${level}</button>`).join('')}
-      </div>
-      <div class="level-groups">
-        ${grouped || '<div class="empty">当前筛选条件下没有系列。</div>'}
-      </div>`;
-    document.querySelectorAll('#homeFilters .filter-btn').forEach(btn=>btn.addEventListener('click',()=>this.renderHome(btn.dataset.status, levelFilter)));
-    document.querySelectorAll('#levelFilters .filter-btn').forEach(btn=>btn.addEventListener('click',()=>this.renderHome(statusFilter, btn.dataset.level)));
+    return window.MediaShelf.render(this,'animation',{level:levelFilter});
   },
   seriesCard(s){
     const disabled = s.status === 'coming' || s.status === 'locked';
@@ -205,6 +171,7 @@ const App = {
   },
   disposeHlsPlayers(root=document){
     root.querySelectorAll?.('video,audio').forEach(player=>{
+      player._disposeShelf?.();player._disposeShelf=null;
       player._disposeHls?.();
       if(player._hls) player._hls.destroy();
     });
@@ -1070,6 +1037,7 @@ phrasesPanel(d){
   
 bindLessonPanel(tab,d,root=document){
   if(tab==='games') EpisodeGames.bind(root,d);
+  window.MediaShelf?.bindLesson(root===document?document.getElementById('lessonPanel')||root:root,d);
   root.querySelectorAll('.hls-video-player').forEach(player=>{this.initializeHlsVideo(player);this.bindSubtitleOverlay(player,d);});
   this.applySubtitlePreferences(root);
   this.bindSubtitleControls(root);

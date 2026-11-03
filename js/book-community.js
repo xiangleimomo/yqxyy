@@ -133,16 +133,16 @@ window.BookCommunity = {
       } catch (error) { status.textContent = '发布未完成：' + error.message; } finally { lock(false); }
     };
   },
-  async personalDialog(app, id) {
+  async personalDialog(app, id, options = {}) {
     if (!window.SFCloud?.user) { window.SFCloud?.open(); return; }
     const uid=window.SFCloud.user.id;
     const { data, error } = await window.SFCloud.client.from('book_personal').select('*').eq('book_id', id).maybeSingle();
     if(window.SFCloud?.user?.id!==uid)return;
     if (error) { alert(error.message); return; }
     const dialog = document.createElement('dialog'); dialog.className = 'book-personal-dialog';
-    dialog.innerHTML = `<form><h2>个人图书管理</h2><label><input type="checkbox" name="favorite" ${data?.favorite ? 'checked' : ''}>收藏这本书</label><label>我的分类<input name="category" maxlength="60" value="${this.e(app, data?.category)}" placeholder="例如 睡前故事、英语启蒙"></label><p role="status"></p><button class="btn">保存</button> <button type="button" data-close>取消</button></form>`;
+    dialog.innerHTML = `<form><h2>${options.media?'收藏 / 分类':'个人图书管理'}</h2><label><input type="checkbox" name="favorite" ${data?.favorite ? 'checked' : ''}>${options.media?'收藏此内容':'收藏这本书'}</label><label>我的分类<input name="category" maxlength="60" value="${this.e(app, data?.category)}" placeholder="例如 睡前故事、英语启蒙"></label><p role="status"></p><button class="btn">保存</button> <button type="button" data-close>取消</button></form>`;
     (document.fullscreenElement || document.body).append(dialog); dialog.showModal(); dialog.querySelector('[data-close]').onclick = () => dialog.close(); dialog.onclose = () => dialog.remove();
-    dialog.querySelector('form').onsubmit = async event => { event.preventDefault(); try { const form = event.currentTarget; await this.rpc('personal', { book_id: id, changes: { favorite: form.elements.favorite.checked, category: form.elements.category.value.trim() } }); dialog.close(); if(/^#\/reading\/mine\/(favorites|recent)$/.test(location.hash))await this.renderMine(app,location.hash.split('/')[3]); } catch (error) { if(dialog.isConnected)dialog.querySelector('[role=status]').textContent = error.message; } };
+    dialog.querySelector('form').onsubmit = async event => { event.preventDefault(); try { const form = event.currentTarget; await this.rpc('personal', { book_id: id, changes: { favorite: form.elements.favorite.checked, category: form.elements.category.value.trim() } }); dialog.close(); if(options.onSave)await options.onSave();else if(/^#\/reading\/mine\/(favorites|recent)$/.test(location.hash))await this.renderMine(app,location.hash.split('/')[3]); } catch (error) { if(dialog.isConnected)dialog.querySelector('[role=status]').textContent = error.message; } };
   },
   async renderMine(app, mode = 'all') {
     if (!this.requireLogin(app)) return;
