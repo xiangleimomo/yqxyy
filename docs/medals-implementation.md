@@ -71,3 +71,21 @@ Pone 为公网文件服务，为同时保留 Pone 存储并满足私有设计与
 “给孩子颁章”先选择作品徽章 / 荣誉纪念章，再选择来源和具体设计。服务端从设计记录确定授予类别，作品徽章进入作品徽章馆，荣誉纪念章进入纪念章墙；历史授予保存当时类别，后续设计变更不改变历史归属。
 
 数据库增量：20261103093004_user_medal_types.sql。仅做语法检查、变更检查和数据库结构核对；没有创建测试账号。
+
+## Little Fox 与光影课堂主线任务
+
+新增 158 枚 Little Fox 系列勋章和 82 枚电影勋章，共 240 个主线位置。已有《哈利波特与魔法石》平台作品徽章升级为电影答题主线，保留既有图片和已获得记录；其余 239 枚待管理员补图。没有生成或上传新的勋章图片。
+
+Little Fox 以整套系列为单位：每一集的服务端答题成绩达到当前达标线才解锁，默认 80%。所需集数为目录声明总集数和实际已发布集数中的较大值，不按当前少量连载集数提前发章。当前 111 个系列题库完整，47 个系列部分或全部题目待补；这些系列保留勋章位置及已有成绩，题库齐全后才具备解锁条件。现有分集 Quiz 提交后自动核对整套进度；系列页和作品徽章详情也可手动“核对答题进度”。只使用已经由家庭学习接口核对的 Quiz 事件，不用观看完成标记替代答题。
+
+电影每部 5 道简短剧情理解题，共 410 道；中文题干配英语选项。影片页登录后出现“答题赢取勋章”，孩子提交全部选择题后由数据库按题库版本计分，达到默认 80% 自动发章。未达标可重答，同一枚勋章不会重复领取。题库变更后不把旧版本分数直接当作新版本达标；既有已获得勋章不自动撤销。主线勋章不出现在家长手动授予模板里，也不能通过自报完成或家长授予绕过答题。绘本、期刊及用户自行设计的普通徽章逻辑保持不变。
+
+管理员在“荣誉馆 → 管理后台”选择 Little Fox 主线 / 电影主线，可按名称搜索并勾选“只看待配图”。悬停图片位置点“编辑配置”补图，仍走既有 Pone 加密上传。名称、说明、达标百分比及启停可调整；主线所属作品及规则不可改成自报领取。暂缺图片不妨碍完成任务及保存已获得记录。
+
+源数据：`data/movie-mainline-prompts.txt` 为原创短题，`scripts/build-mainline-medals.mjs` 重复生成 `data/movie-mainline-quiz.json` 和 `data/mainline-medals.json`。运行 `node scripts/build-mainline-medals.mjs` 检查并生成目录；`--seed-page N` 输出每页 15 项的事务 SQL，当前共 16 页。导入按作品/勋章标识幂等，不覆盖已经补充的图片与设置的达标线。配置与题库源文件仍在 GitHub，Supabase 保存用于服务端判分和解锁的受限配置索引及成绩。
+
+新增数据库迁移按顺序为 `20261103111338_mainline_quiz_medals.sql`、`20261103112238_mainline_episode_lookup.sql`、`20261103112712_mainline_medal_metadata.sql`；均已应用。分集主线查询按系列和有效集号解析，不为此复制整套分集资源库。
+
+较新影片的基础设定参照官方简介后独立编题：[Toy Story 5](https://www.pixar.com/toy-story-5)、[Minions & Monsters](https://www.illumination.com/movie/minions-monsters/)、[Zootopia 2](https://d23.com/d23-exclusive-go-behind-the-scenes-with-zootopia-2s-filmmakers/)、[The Bad Guys 2](https://www.dreamworks.com/movies/the-bad-guys-2)、[Paddington in Peru](https://www.sonypictures.com.sg/movies/paddington-in-peru)、[Buck Wild](https://news.disney.com/ice-age-buck-wild)。题库为基础可用版，后续根据实际使用反馈修订难度和措辞。
+
+遵照用户要求，本次没有创建临时账号。完成 JavaScript 语法、diff 检查及只读数据库核对：158/82 个主线位置、111 个完整系列、82 个有效五题题库、410 道题、答案选项完整、有效分集关联和未登录零进度。
