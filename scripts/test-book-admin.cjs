@@ -24,7 +24,7 @@ const path = require('node:path');
     assert.equal((await upload(request())).status, 401);
     global.fetch = async url => { calls.push(url); return Response.json({ app_metadata: { site_admin: false }, user_metadata: { site_admin: true } }); };
     assert.equal((await upload(request('ordinary-user'))).status, 403);
-    assert.ok(calls.every(url => url.includes('/auth/v1/user')));
+    assert.ok(calls.every(url => url.includes('/auth/v1/user') || url.includes('/rest/v1/rpc/book_portal')));
     calls = [];
     global.fetch = async (url, options) => {
       calls.push(url);
@@ -36,6 +36,14 @@ const path = require('node:path');
     };
     assert.deepEqual(await (await upload(request('administrator'))).json(), { url: 'https://u.pone.rs/testbook.pdf' });
     assert.equal(calls.length, 2);
+    global.fetch = async (url, options) => {
+      if (url.includes('/auth/v1/user')) return Response.json({app_metadata:{},user_metadata:{site_admin:true}});
+      if (url.includes('/rest/v1/rpc/book_portal')) return Response.json({can_upload:true});
+      assert.equal(url,'https://pone.rs/upload');
+      assert.equal(options.headers.Authorization,undefined);
+      return Response.json({success:true,files:[{url:'https://u.pone.rs/testbook.pdf'}]});
+    };
+    assert.deepEqual(await (await upload(request('parent'))).json(),{url:'https://u.pone.rs/testbook.pdf'});
     global.fetch = async url => url.includes('/auth/v1/user') ? Response.json({ app_metadata: { site_admin: true } }) : Response.json({ success: false });
     assert.ok((await (await upload(request('administrator'))).json()).error);
     for (const source of ['https://u.pone.rs/testbook.pdf', 'http://127.0.0.1/private']) {
@@ -57,6 +65,7 @@ const path = require('node:path');
     const managed = await context.window.BookReader.library({getJSON:async()=>[{id:'existing'},{id:'other'},{id:'third'}]});
     assert.deepEqual(Array.from(managed, book=>book.id), ['third','other'], 'Deleted bundled books stay removed and cloud order applies');
     delete context.window.STORYFOX_SUPABASE;
+    context.window.BookCommunity = {searchForm:()=>'',bindSearch:()=>{}};
     const element = { innerHTML: '', querySelectorAll: () => [] };
     const app = { getJSON: async file => JSON.parse(fs.readFileSync(file, 'utf8')), el: () => element, escapeHtml: value => value.replace(/[&<>"']/g, char => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[char])) };
     await context.window.BookReader.renderList(app);

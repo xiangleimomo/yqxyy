@@ -8,6 +8,7 @@ window.BookReader = {
   localPdfFiles: new Map(),
 
   cleanup() {
+    window.BookCommunity?.flushProgress();
     if (this.pdfOrientationLocked) { try { screen.orientation?.unlock?.(); } catch (_) {} }
     this.pdfOrientationLocked = false;
     if (this.pdfFullscreenHost && document.fullscreenElement === this.pdfFullscreenHost) document.exitFullscreen?.().catch(() => {});
@@ -60,7 +61,7 @@ window.BookReader = {
       const merged = new Map(books.map(book => [book.id, book]));
       for (const row of rows) {
         if (!/^[a-z0-9-]{1,100}$/.test(row.id) || !/^https:\/\/u\.pone\.rs\/[A-Za-z0-9]+\.pdf$/.test(row.source_url)) continue;
-        merged.set(row.id, { ...merged.get(row.id), id: row.id, title: row.title, titleZh: row.title_zh, level: row.level, description: row.description, coverUrl: row.cover_url, sourceUrl: row.source_url, format: 'pdf', downloadUrl: '/book-download/' + row.id + '.pdf' });
+        merged.set(row.id, { ...merged.get(row.id), id: row.id, title: row.title, titleZh: row.title_zh, level: row.level, description: row.description, coverUrl: row.cover_url, sourceUrl: row.source_url, ownerId: row.owner_id, uploaderNickname: row.uploader_nickname, audioUrl: row.audio_url, videoUrl: row.video_url, format: 'pdf', downloadUrl: '/book-download/' + row.id + '.pdf' });
       }
       return [...merged.values()].filter(book => !states.get(book.id)?.deleted)
         .sort((a, b) => (states.get(a.id)?.sort_order ?? 2147483647) - (states.get(b.id)?.sort_order ?? 2147483647));
@@ -72,7 +73,7 @@ window.BookReader = {
   },
 
   readingNavigation(local = false) {
-    return `<nav class="book-reading-tabs" aria-label="绘本阅读方式"><a href="#/reading"${local ? '' : ' aria-current="page"'}>线上绘本</a><a href="#/reading/local"${local ? ' aria-current="page"' : ''}>本地绘本</a>${window.SFCloud?.isAdmin() ? '<a class="book-admin-entry" href="#/reading/admin">管理绘本</a>' : ''}</nav>`;
+    return `<nav class="book-reading-tabs" aria-label="绘本阅读方式"><a href="#/reading"${local ? '' : ' aria-current="page"'}>线上绘本</a><a href="#/reading/local"${local ? ' aria-current="page"' : ''}>本地绘本</a><a href="#/reading/upload">上传绘本</a><a href="#/reading/mine/uploads">我的上传</a><a href="#/reading/mine/favorites">我的收藏</a><a href="#/reading/mine/recent">最近阅读</a>${window.SFCloud?.isAdmin() ? '<a class="book-admin-entry" href="#/reading/admin">管理绘本</a>' : ''}</nav>`;
   },
 
   refreshNavigation() {
@@ -89,11 +90,14 @@ window.BookReader = {
       const label = e(item.titleZh || item.title);
       const primary = '<a href="' + e(href) + '"' + (direct ? ' target="_blank" rel="noopener noreferrer"' : '') + '>' + (direct ? '直接观看' : '打开绘本') + '</a>';
       const readerLink = direct ? '<a href="#/reader/' + e(item.id) + (seriesId ? '/' + e(seriesId) : '') + '">本站阅览器</a>' : '';
-      return '<article class="book-card"><div class="book-cover"><button type="button" class="book-cover-trigger" aria-label="选择' + label + '的阅读方式">' + cover + '</button><div class="book-actions" aria-label="' + label + '阅读方式">' + primary + readerLink + '</div></div><div class="book-card-body"><h2>' + label + '</h2></div></article>';
+      const author = item.uploaderNickname ? '<a class="book-uploader" href="#/reading/search/' + encodeURIComponent(item.uploaderNickname) + '">上传者：' + e(item.uploaderNickname) + '</a>' : '';
+      const media = (item.audioUrl ? '<a href="' + e(item.audioUrl) + '" target="_blank" rel="noopener noreferrer">配套音频</a>' : '') + (item.videoUrl ? '<a href="' + e(item.videoUrl) + '" target="_blank" rel="noopener noreferrer">配套视频</a>' : '');
+      return '<article class="book-card" data-book-id="' + e(item.id) + '"><div class="book-cover"><button type="button" class="book-cover-trigger" aria-label="选择' + label + '的阅读方式">' + cover + '</button><div class="book-actions" aria-label="' + label + '阅读方式">' + primary + readerLink + '</div></div><div class="book-card-body"><h2>' + label + '</h2>' + author + '<div class="book-resource-links">' + media + '</div><button class="book-personal-button" type="button">收藏 / 分类</button></div></article>';
     }).join('')}</div>`;
   },
 
   bindBookCards(app) {
+    app.el().querySelectorAll('.book-personal-button').forEach(button => { button.onclick = () => window.BookCommunity.personalDialog(app,button.closest('[data-book-id]').dataset.bookId); });
     app.el().querySelectorAll('.book-cover-trigger').forEach(button => {
       button.onclick = () => {
         if (window.matchMedia('(hover: none)').matches) button.parentElement.classList.toggle('book-actions-open');
@@ -103,7 +107,8 @@ window.BookReader = {
 
   async renderList(app) {
     const books = (await this.library(app)).filter(book => !book.seriesIds?.length);
-    app.el().innerHTML = this.readingNavigation() + this.bookCards(app, books);
+    app.el().innerHTML = this.readingNavigation() + window.BookCommunity.searchForm(app) + this.bookCards(app, books);
+    window.BookCommunity.bindSearch(app);
     this.bindBookCards(app);
   },
 
@@ -150,6 +155,7 @@ window.BookReader = {
       return;
     }
     this.readerReturnHref = item.seriesIds?.length ? '#/series-books/' + (item.seriesIds.includes(seriesId) ? seriesId : item.seriesIds[0]) : '#/reading';
+    await window.BookCommunity.restoreProgress(item);
     const e = value => this.escape(app, value);
     if (item.format === 'pdf') {
       const localFile = this.localPdfFiles.get(item.id);
@@ -290,6 +296,7 @@ window.BookReader = {
   },
 
   renderPdfReader(app, item) {
+    this.readerApp = app;
     const e = value => this.escape(app, value);
     app.el().classList.add('book-reader-shell');
     document.body.classList.add('flipbook-active');
@@ -342,7 +349,7 @@ window.BookReader = {
       // Fit phone pixels instead of rasterizing desktop-sized lossless images.
       const mobileScale = Math.min(3, Math.sqrt(1600000 / (baseViewport.width * baseViewport.height)) * .999, Math.max(.5, Math.max(240, root.clientWidth) * Math.min(devicePixelRatio || 1, 2) * 1.1 / baseViewport.width));
       const scale = mobile ? mobileScale : desktopScale;
-      const savedPage = Number(localStorage.getItem(`storyfox-pdf-progress:${item.id}`) || 0);
+      const savedPage = Number(localStorage.getItem(window.BookCommunity.progressKey(item.id)) || 0);
       let initialPage = mobile && Number.isInteger(savedPage) && savedPage >= 0 && savedPage < pageCount ? savedPage + 1 : 1;
       if (this.pdfPhoneLandscape && initialPage > 1 && initialPage % 2 === 1) initialPage--;
       const placeholder = 'data:image/svg+xml,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="${pageWidth}" height="${pageHeight}"><rect width="100%" height="100%" fill="white"/><text x="50%" y="50%" text-anchor="middle" fill="#789" font-size="24">正在加载书页…</text></svg>`);
@@ -556,7 +563,7 @@ window.BookReader = {
         window.setTimeout(() => { if (this.pdfSession === session) { this.viewportResizeHandler?.(); this.pageFlip?.update(); } }, 100);
       };
       document.addEventListener('fullscreenchange', this.fullscreenHandler);
-      this.setupPdfTools(item, { reader, root, pageUrls, pageTexts, outlineItems, pageCount, ensureTextIndex, ensureOutline });
+      this.setupPdfTools(item, { app:this.readerApp, reader, root, pageUrls, pageTexts, outlineItems, pageCount, ensureTextIndex, ensureOutline });
       if (mobile) {
         let pump = null, rerun = false;
         const nearbyPages = current => {
@@ -614,7 +621,7 @@ window.BookReader = {
         if (this.pdfSession === session) setStatus('全部书页已就绪，高清页面已缓存。');
       };
       loadRemaining().catch(error => { if (this.pdfSession === session) { console.error(error); setStatus('部分书页加载失败，请重新打开绘本重试。'); } });
-      setStatus('PDF 阅读进度保存在此设备。');
+      setStatus(window.SFCloud?.user && !item.id.startsWith('local-') ? '阅读位置会保存到您的账号，可从最近阅读继续。' : 'PDF 阅读进度保存在此设备。');
     } catch (error) {
       if (this.pdfSession !== session || !root.isConnected) return;
       if (librariesReady) {
@@ -627,7 +634,7 @@ window.BookReader = {
     }
   },
 
-  setupPdfTools(item, { reader, root, pageUrls, pageTexts, outlineItems, pageCount, ensureTextIndex, ensureOutline }) {
+  setupPdfTools(item, { app, reader, root, pageUrls, pageTexts, outlineItems, pageCount, ensureTextIndex, ensureOutline }) {
     const controls = reader.querySelector('.flipbook-controls');
     let controlsTimer;
     controls.addEventListener('pointerdown', event => {
@@ -648,6 +655,10 @@ window.BookReader = {
       tools.appendChild(button);
     });
     reader.querySelector('.flipbook-controls').prepend(tools);
+    if (!item.id.startsWith('local-')) {
+      const favorite = document.createElement('button'); favorite.type='button'; favorite.textContent='☆'; favorite.title='收藏 / 分类'; favorite.setAttribute('aria-label','收藏 / 分类');
+      favorite.onclick=()=>window.BookCommunity.personalDialog(app,item.id); tools.append(favorite);
+    }
     reader.querySelector('#bookZoomOut').hidden = true;
     reader.querySelector('#bookZoomIn').hidden = true;
     const share = document.createElement('button'); share.type = 'button'; share.title = '分享'; share.setAttribute('aria-label', '分享');
@@ -721,9 +732,10 @@ window.BookReader = {
       }
     };
     tools.onclick = event => { const name = event.target.closest('[data-tool]')?.dataset.tool; if (name) show(name); };
-    const progressKey = `storyfox-pdf-progress:${item.id}`;
-    this.pageFlip.on('flip', event => { localStorage.setItem(progressKey, String(event.data)); if (event.data >= pageCount - 1) notify('已经是最后一页了'); });
+    const progressKey = window.BookCommunity.progressKey(item.id);
+    this.pageFlip.on('flip', event => { window.BookCommunity.record(item,event.data); if (event.data >= pageCount - 1) notify('已经是最后一页了'); });
     const saved = Number(localStorage.getItem(progressKey) || 0); if (saved > 0 && saved < pageCount) go(saved);
+    window.BookCommunity.record(item, saved >= 0 && saved < pageCount ? saved : 0);
     reader.querySelector('#bookStageNext').onclick = () => { if (this.pageFlip.getCurrentPageIndex() >= pageCount - 1) notify('已经是最后一页了'); else this.pageFlip.flipNext(); };
   },
 
@@ -733,7 +745,7 @@ window.BookReader = {
     const status = document.getElementById('ebookStatus');
     const pageIndicator = document.getElementById('bookPageIndicator');
     const progress = document.getElementById('bookProgress');
-    const progressKey = `storyfox-book-progress:${item.id}`;
+    const progressKey = 'storyfox-book-progress:' + (window.SFCloud?.user?.id ? window.SFCloud.user.id + ':' : '') + item.id;
     let fontSize = Number(localStorage.getItem(`storyfox-book-font-size:${item.id}`) || 100);
     const setStatus = text => { if (status) status.textContent = text; };
 
@@ -796,6 +808,7 @@ window.BookReader = {
       };
       this.rendition.on('relocated', location => {
         localStorage.setItem(progressKey, location.start.cfi);
+        window.BookCommunity.record(item,0,location.start.cfi);
         updatePageIndicator(location);
       });
       updatePageIndicator(this.rendition.currentLocation?.());

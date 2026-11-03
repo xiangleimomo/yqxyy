@@ -1,24 +1,31 @@
-import { project, publishableKey, validPdf } from '../lib/book-cloud.js';
+import { project, publishableKey, validUpload } from '../lib/book-cloud.js';
 
 export default async function upload(request) {
   const reply = (status, error) => Response.json({ error }, { status, headers: { 'Cache-Control': 'no-store' } });
   if (request.method !== 'POST') return reply(405, '只支持上传请求。');
   const authorization = request.headers.get('authorization') || '';
-  if (!/^Bearer \S+$/.test(authorization)) return reply(401, '请先登录管理员账号。');
+  if (!/^Bearer \S+$/.test(authorization)) return reply(401, '请先登录家长账号。');
   try {
+    const kind = new URL(request.url).searchParams.get('kind') || 'pdf';
+    if (!['pdf','audio','video'].includes(kind)) return reply(400, '文件类型无效。');
     const auth = await fetch(`${project}/auth/v1/user`, { headers: { apikey: publishableKey, Authorization: authorization }, signal: request.signal });
-    if (!auth.ok || (await auth.json()).app_metadata?.site_admin !== true) return reply(403, '仅管理员可以上传绘本。');
+    if (!auth.ok) return reply(401, '登录已过期，请重新登录。');
+    const user = await auth.json();
+    if (user.app_metadata?.site_admin !== true) {
+      const access = await fetch(`${project}/rest/v1/rpc/book_portal`, { method: 'POST', headers: { apikey: publishableKey, Authorization: authorization, 'Content-Type': 'application/json' }, body: JSON.stringify({ p_action: 'access', p_payload: {} }), signal: request.signal });
+      if (!access.ok || !(await access.json()).can_upload) return reply(403, '请先在图书区域完成家长昵称设置。');
+    }
     const type = request.headers.get('content-type') || '';
-    if (!/^multipart\/form-data;\s*boundary=/i.test(type)) return reply(400, '请选择 PDF 文件。');
+    if (!/^multipart\/form-data;\s*boundary=/i.test(type)) return reply(400, '请选择文件。');
     const max = 1073741824 + 65536;
-    if (Number(request.headers.get('content-length')) > max) return reply(413, 'PDF 不能超过 1 GiB。');
+    if (Number(request.headers.get('content-length')) > max) return reply(413, '文件不能超过 1 GiB。');
     let bytes = 0;
     const body = request.body.pipeThrough(new TransformStream({ transform(chunk, controller) {
       bytes += chunk.byteLength;
       if (bytes > max) throw new Error('Upload too large');
       controller.enqueue(chunk);
     } }));
-    // Forward only the multipart body; never send the administrator token to Pone.
+    // Forward only the multipart body; never send the account token to Pone.
     // Send headers immediately: a large upload can exceed the edge header timeout.
     const encoder = new TextEncoder();
     const upstreamAbort = new AbortController();
@@ -35,7 +42,7 @@ export default async function upload(request) {
             const result = await fetch('https://pone.rs/upload', { method: 'POST', headers: { 'Content-Type': type }, body, duplex: 'half', signal: upstreamAbort.signal });
             if (!result.ok) throw new Error('Pone 上传失败，请稍后重试或填写已有直链。');
             const data = await result.json(), url = data.files?.[0]?.url;
-            if (data.success === false || !validPdf(url)) throw new Error('Pone 未返回有效 PDF 直链。');
+            if (data.success === false || !validUpload(url, kind)) throw new Error('Pone 未返回有效文件直链。');
             response = { url };
           } catch (error) { response = { error: error.message || '上传连接中断，请重试。' }; }
           finally { clearInterval(heartbeat); }

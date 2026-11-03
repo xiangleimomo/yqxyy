@@ -176,5 +176,6 @@ window.BookAdmin = {
     };
     drawShelf();
     preview();
+    await window.BookCommunity.renderReviews(app,app.el().querySelector('.book-admin'));
   }
 };

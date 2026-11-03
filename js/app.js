@@ -111,7 +111,13 @@ const App = {
       if(page === 'movie-hub') return await window.MovieHub.render(this,a==='search'?'':a,a==='search'?decodeURIComponent(b||''):'');
       if(page === 'movie-series') return await window.MovieClassroom.renderSeries(this, a);
       if(page === 'movie') return await window.MovieClassroom.renderWatch(this, a);
-      if(page === 'reading') return a === 'admin' ? await window.BookAdmin.render(this) : a === 'local' ? window.BookReader.renderLocalLibrary(this) : await window.BookReader.renderList(this);
+      if(page === 'reading') {
+        if(a === 'admin') return await window.BookAdmin.render(this);
+        if(a === 'upload') return await window.BookCommunity.renderUpload(this);
+        if(a === 'mine') return await window.BookCommunity.renderMine(this,b || 'all');
+        if(a === 'search') return await window.BookCommunity.renderSearch(this,decodeURIComponent(b || ''));
+        return a === 'local' ? window.BookReader.renderLocalLibrary(this) : await window.BookReader.renderList(this);
+      }
       if(page === 'series-books') return await window.BookReader.renderSeriesLibrary(this, a);
       if(page === 'reader') return await window.BookReader.renderReader(this, a, b);
       if(page === 'home') return this.renderHome();

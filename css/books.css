@@ -14,3 +14,27 @@
 
 .book-reading-tabs .book-admin-entry{margin-left:auto;font-size:15px}.book-admin{max-width:900px;margin:auto;padding:24px;border:1px solid var(--line);border-radius:14px;background:white}.book-admin h1{margin:0}.book-admin label{display:flex;flex-direction:column;gap:7px;margin:18px 0;font-weight:600}.book-admin input,.book-admin select,.book-admin textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:7px;font:inherit}.book-admin textarea{min-height:90px}.book-admin-columns{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:32px}.book-admin aside{padding-top:12px;text-align:center}.book-admin aside img{max-width:200px;max-height:280px;object-fit:contain}.book-admin aside h3{overflow-wrap:anywhere}#bookAdminStatus{min-height:25px;white-space:pre-wrap}@media(max-width:650px){.book-admin{padding:16px}.book-admin-columns{grid-template-columns:1fr}.book-reading-tabs{gap:14px}.book-reading-tabs .book-admin-entry{font-size:13px}}
 .book-admin-shelf{margin:28px 0 36px;padding-bottom:28px;border-bottom:1px solid var(--line)}.book-admin-shelf h2{margin-bottom:8px}.book-admin-shelf>p{color:var(--muted)}.book-admin-shelf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:16px}.book-admin-shelf-card{position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;padding:12px;border:2px solid transparent;border-radius:12px;background:#f4f8fc}.book-admin-shelf-card img{width:100%;height:140px;object-fit:contain}.book-admin-shelf-card strong{font-size:14px;text-align:center;overflow-wrap:anywhere}.book-drag-handle{align-self:flex-start;cursor:grab;border:0;background:transparent;color:#53728e;font-size:26px;line-height:1}.book-drag-handle:active{cursor:grabbing}.book-delete{margin-top:auto;padding:6px 16px;border:1px solid #f1c5c5;border-radius:7px;color:#b42318;background:#fff;cursor:pointer}.book-admin-shelf-card.is-dragging{opacity:.45}.book-admin-shelf-card.is-drop-target{border-color:var(--blue);background:#e3f2ff}.book-shelf-placeholder{display:grid;place-items:center;height:140px;font-size:48px}.book-admin-shelf button:disabled{opacity:.5;cursor:wait}.book-shelf-status{min-height:22px}
+.book-reading-tabs { flex-wrap:wrap; gap:12px 24px; }
+.book-reading-tabs a { font-size:17px; white-space:nowrap; }
+.book-search { display:flex; gap:12px; margin:24px 0; }
+.book-search input { flex:1; min-width:0; padding:12px 16px; border:1px solid #cdddeb; border-radius:10px; background:white; }
+.book-personal-tabs { display:flex; flex-wrap:wrap; gap:16px; margin:20px 0; }
+.book-personal-tabs [aria-current] { color:#176ac0; font-weight:700; border-bottom:2px solid; }
+.book-card-body { text-align:center; }
+.book-uploader,.book-history-note { display:block; font-size:13px; color:#65788f; margin:8px 0; text-align:center; overflow-wrap:anywhere; }
+.book-personal-button,.book-request-button { background:#edf5ff; color:#2167a8; border:1px solid #d2e5f8; border-radius:8px; padding:7px 12px; cursor:pointer; margin:6px 3px; }
+.book-resource-links { display:flex; justify-content:center; gap:12px; font-size:13px; }
+.book-personal-dialog { width:min(540px,92vw); max-height:85vh; overflow:auto; border:0; border-radius:18px; padding:28px; box-shadow:0 16px 65px #193b6350; }
+.book-personal-dialog::backdrop { background:#102b5260; }
+.book-personal-dialog label,.book-admin fieldset label { display:block; margin:14px 0; }
+.book-personal-dialog input:not([type=checkbox]),.book-personal-dialog textarea { width:100%; box-sizing:border-box; border:1px solid #cdddeb; border-radius:8px; padding:10px; }
+.book-admin fieldset { border:1px solid #d8e4ef; border-radius:12px; padding:18px; margin:20px 0; }
+.book-admin input[type=checkbox] { width:auto; }
+#parentBookPreview { display:flex; flex-direction:column; align-items:center; gap:10px; margin:22px 0; }
+#parentBookPreview img { width:180px; max-height:260px; object-fit:contain; border-radius:8px; }
+.book-review-list { margin-top:35px; border-top:1px solid #d8e4ef; padding-top:22px; }
+.book-review-list article,.book-request { background:white; border:1px solid #d8e4ef; padding:18px; border-radius:12px; margin:14px 0; }
+.book-review-list pre { white-space:pre-wrap; overflow-wrap:anywhere; max-height:300px; overflow:auto; }
+.book-review-list input { margin:10px; max-width:85%; }
+.book-media-results { display:grid; gap:12px; margin:18px 0; }
+@media(max-width:600px) { .book-reading-tabs { gap:10px 15px; } .book-reading-tabs a { font-size:14px; } .book-search { gap:8px; } }
