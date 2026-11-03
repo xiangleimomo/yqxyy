@@ -24,6 +24,8 @@ if(process.argv.includes('--create-sql')){
  delete from sf_medals_private.assets where owner_id in ${predicate};
  delete from sf_medals_private.completions where child_id in ${predicate};
  delete from sf_medals_private.audit_events where actor_id in ${predicate};
+ delete from sf_medals_private.resources where resource_id in(select id from public.story_books where owner_id in ${predicate});
+ delete from public.story_books where owner_id in ${predicate};
  delete from auth.sessions where user_id in ${predicate};
  delete from auth.users where id in ${predicate} and raw_user_meta_data->>'medals_fixture'=${q(fixture.tag)};
  commit;select count(*) as remaining_test_accounts from auth.users where id in ${predicate};`);

@@ -8,7 +8,7 @@ window.BookAdmin = {
     }
     const books = await window.BookReader.shelfLibrary(app, true);
     const e = value => app.escapeHtml(String(value || ''));
-    app.el().innerHTML = `${window.BookReader.readingNavigation()}<section class="book-admin"><header><h1>管理${label}</h1><p>上传 PDF 或填写已有 Pone 直链，核对预览后发布到全站书架。</p></header><form id="bookAdminForm"><label>新增或更新<select name="existing"><option value="">新增${label}</option>${books.map(book => `<option value="${e(book.id)}">${e(book.titleZh || book.title)}</option>`).join('')}</select></label><div class="book-admin-columns"><div><label>PDF 文件<input name="pdf" type="file" accept="application/pdf,.pdf"></label><button type="button" class="btn secondary" id="bookUpload">上传至 Pone</button><p class="muted">文件上传成功后会自动填写直链。已有直链可直接填写。</p><label>PDF 直链<input name="source" type="url" required placeholder="https://u.pone.rs/xxxxxxxx.pdf"></label><label>英文名称<input name="title" required maxlength="180"></label><label>中文名称<input name="titleZh" maxlength="180"></label><label>分级<input name="level" maxlength="40" placeholder="例如 Level 5 或双语绘本"></label><label>简介<textarea name="description" maxlength="1000"></textarea></label><label>封面图片（可选）<input name="cover" type="file" accept="image/jpeg,image/png,image/webp"></label></div><aside><h2>发布预览</h2><div id="bookAdminPreview"></div></aside></div><p id="bookAdminStatus" role="status" aria-live="polite"></p><button type="submit" class="btn" id="bookPublish">确认发布</button> <a href="${base}">返回书架</a></form></section>`;
+    app.el().innerHTML = `${window.BookReader.readingNavigation()}<section class="book-admin"><header><h1>管理${label}</h1><p>上传 PDF 或填写已有 Pone 直链，核对预览后发布到全站书架。</p></header><form id="bookAdminForm"><label>新增或更新<select name="existing"><option value="">新增${label}</option>${books.map(book => `<option value="${e(book.id)}">${e(book.titleZh || book.title)}</option>`).join('')}</select></label><div class="book-admin-columns"><div><label>PDF 文件<input name="pdf" type="file" accept="application/pdf,.pdf"></label><button type="button" class="btn secondary" id="bookUpload">上传至 Pone</button><p class="muted">文件上传成功后会自动填写直链。已有直链可直接填写。</p><label>PDF 直链<input name="source" type="url" required placeholder="https://u.pone.rs/xxxxxxxx.pdf"></label><label>英文名称<input name="title" required maxlength="180"></label><label>中文名称<input name="titleZh" maxlength="180"></label><label>分级<input name="level" maxlength="40" placeholder="例如 Level 5 或双语绘本"></label><label>简介<textarea name="description" maxlength="1000"></textarea></label><label>封面图片（可选）<input name="cover" type="file" accept="image/jpeg,image/png,image/webp"></label>${window.SFMedals.uploadFields()}</div><aside><h2>发布预览</h2><div id="bookAdminPreview"></div></aside></div><p id="bookAdminStatus" role="status" aria-live="polite"></p><button type="submit" class="btn" id="bookPublish">确认发布</button> <a href="${base}">返回书架</a></form></section>`;
     const form = app.el().querySelector('#bookAdminForm');
     const field = name => form.elements.namedItem(name);
     const status = form.querySelector('#bookAdminStatus');
@@ -94,7 +94,7 @@ window.BookAdmin = {
       selection++;
       const book = books.find(book => book.id === field('existing').value);
       for (const [name, key] of [['title','title'],['titleZh','titleZh'],['source','sourceUrl'],['level','level'],['description','description']]) field(name).value = book?.[key] || '';
-      field('pdf').value = ''; field('cover').value = '';
+      field('pdf').value = ''; field('cover').value = '';field('badge_images').value='';field('badge_rights').checked=false;
       coverUrl = book?.coverUrl || ''; status.textContent = ''; preview();
     };
     const imageData = image => {
@@ -152,15 +152,17 @@ window.BookAdmin = {
       lock(true);
       try {
         await auth();
+        const badgeAssets=await window.SFMedals.uploadWorkImages(form,status);
         coverUrl=await window.BookCommunity.publishCover(coverUrl,status);
         const id = field('existing').value || 'book-' + crypto.randomUUID();
         const row = { id, content_kind:base==='#/magazines'?'magazine':'book', title: field('title').value.trim(), title_zh: field('titleZh').value.trim(), level: field('level').value.trim(), description: field('description').value.trim(), source_url: field('source').value.trim(), cover_url: coverUrl, updated_at: new Date().toISOString() };
         const { error } = await window.SFCloud.client.from('story_books').upsert(row, { onConflict: 'id' });
         if (error) throw error;
+        if(![...field('existing').options].some(option=>option.value===id)){const option=new Option(row.title_zh||row.title,id);field('existing').append(option);}
+        field('existing').value=id;
+        if(badgeAssets.length)await window.SFMedals.rpc('work_upload',{resource_key:row.content_kind+':'+id,assets:badgeAssets,rights_confirmed:true});
+        field('badge_images').value='';field('badge_rights').checked=false;
         status.textContent = '发布成功，所有访客刷新书架即可看到。';
-        if (!books.some(book => book.id === id)) {
-          const option = document.createElement('option'); option.value = id; option.textContent = row.title_zh || row.title; field('existing').append(option);
-        }
         const saved = { id, kind:row.content_kind, title: row.title, titleZh: row.title_zh, level: row.level, description: row.description, sourceUrl: row.source_url, coverUrl: row.cover_url };
         const index = books.findIndex(book => book.id === id); if (index < 0) books.push(saved); else books[index] = saved;
         field('existing').value = id;

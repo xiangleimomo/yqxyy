@@ -57,9 +57,9 @@ end $$;
 select set_config('request.jwt.claims',jsonb_build_object('sub',current_setting('medals.pa'),'role','authenticated','app_metadata','{}'::jsonb)::text,true);
 select public.sf_medals('share',jsonb_build_object('id',current_setting('medals.template'),'rights_confirmed',true));
 select set_config('request.jwt.claims',jsonb_build_object('sub',current_setting('medals.pb'),'role','authenticated','app_metadata','{}'::jsonb)::text,true);
-do $$begin if exists(select 1 from jsonb_array_elements(public.sf_medals('templates','{"mode":"public"}')) item where item->>'id'=current_setting('medals.template')) then raise exception 'Pending design public';end if;end $$;
+do $$begin if not exists(select 1 from jsonb_array_elements(public.sf_medals('templates','{"mode":"public"}')) item where item->>'id'=current_setting('medals.template')) then raise exception 'Direct listing not public immediately';end if;end $$;
 select set_config('request.jwt.claims',jsonb_build_object('sub',current_setting('medals.ad'),'role','authenticated','app_metadata',jsonb_build_object('site_admin',true))::text,true);
-select public.sf_medals('review',jsonb_build_object('id',current_setting('medals.template'),'decision','approved','note','确认原创授权'));
+-- Sharing is immediately public; no admin review is necessary.
 select set_config('request.jwt.claims',jsonb_build_object('sub',current_setting('medals.pb'),'role','authenticated','app_metadata','{}'::jsonb)::text,true);
 select public.sf_medals('collect',jsonb_build_object('id',current_setting('medals.template'),'collect',true));
 select set_config('medals.intent',gen_random_uuid()::text,true);
@@ -77,9 +77,9 @@ do $$declare result jsonb;begin
  if jsonb_array_length(result)<>1 or result->0->>'giver'<>'家长乙' or result->0->>'creator'<>'家长甲' then raise exception 'Designer/giver separation or uncollect history failed';end if;
 end $$;
 select set_config('request.jwt.claims',jsonb_build_object('sub',current_setting('medals.pa'),'role','authenticated','app_metadata','{}'::jsonb)::text,true);
-select public.sf_medals('template_save',jsonb_build_object('id',current_setting('medals.template'),'title','修改设计需重审','asset_id',current_setting('medals.asset'),'rights_confirmed',true));
+select public.sf_medals('template_save',jsonb_build_object('id',current_setting('medals.template'),'title','修改设计后自行上架','asset_id',current_setting('medals.asset'),'rights_confirmed',true));
 select set_config('request.jwt.claims',jsonb_build_object('sub',current_setting('medals.pb'),'role','authenticated','app_metadata','{}'::jsonb)::text,true);
-do $$begin if exists(select 1 from jsonb_array_elements(public.sf_medals('templates','{"mode":"public"}')) item where item->>'id'=current_setting('medals.template')) then raise exception 'Edited image bypassed re-review';end if;end $$;
+do $$begin if exists(select 1 from jsonb_array_elements(public.sf_medals('templates','{"mode":"public"}')) item where item->>'id'=current_setting('medals.template')) then raise exception 'Edited image should become private until owner relists';end if;end $$;
 select set_config('request.jwt.claims',jsonb_build_object('sub',current_setting('medals.ad'),'role','authenticated','app_metadata',jsonb_build_object('site_admin',true))::text,true);
 select public.sf_medals('review',jsonb_build_object('id',current_setting('medals.template'),'decision','removed','note','测试下架'));
 select set_config('request.jwt.claims',jsonb_build_object('sub',current_setting('medals.cd'),'role','authenticated','app_metadata','{}'::jsonb)::text,true);
@@ -90,4 +90,4 @@ do $$declare denied boolean:=false;result jsonb;begin
  if not denied then raise exception 'Removed image still served';end if;
 end $$;
 rollback;
-select 'PASS: separate libraries, idempotent child unlock, quiz/series rules, roles, active binding, private/pending moderation, creator/giver, award retry, uncollect history, re-review and removed image denial' as result;
+select 'PASS: separate libraries, idempotent child unlock, quiz/series rules, roles, active binding, private drafts and direct listing, creator/giver, award retry, uncollect history, owner relisting and removed image denial' as result;

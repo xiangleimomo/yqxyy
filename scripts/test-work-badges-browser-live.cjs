@@ -1,0 +1,21 @@
+const fs=require('node:fs'),assert=require('node:assert/strict');
+const {chromium}=require(process.env.STORYFOX_PLAYWRIGHT||'C:/Users/lenovo/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const fixture=JSON.parse(fs.readFileSync('supabase/.temp/medal-test-users.json','utf8')),base=process.env.STORYFOX_TEST_URL||'http://127.0.0.1:8127';
+(async()=>{const browser=await chromium.launch({headless:true,channel:'msedge'});try{
+ const page=await browser.newPage({viewport:{width:1280,height:900}});await page.goto(base+'/#/reading/upload');await page.waitForFunction(()=>window.SFCloud?.client);
+ await page.evaluate(async user=>{const {error}=await SFCloud.client.auth.signInWithPassword(user);if(error)throw Error(error.message);},fixture.users.find(u=>u.key==='pa'));
+ await page.locator('#parentBookForm').waitFor({timeout:60000});const title='浏览器多徽章测试 '+Date.now();
+ await page.locator('[name=title]').fill(title);await page.locator('[name=pdf_url]').fill('https://u.pone.rs/test.pdf');
+ await page.locator('[name=badge_images]').setInputFiles(['supabase/.temp/medal-seed/work-book.png','supabase/.temp/medal-seed/work-film.png']);
+ await page.locator('#parentBookPublish').click();await page.getByText('发布未完成：请确认作品徽章图片的授权',{exact:true}).waitFor();
+ await page.locator('[name=badge_rights]').check();await page.locator('#parentBookPublish').click();await page.waitForURL('**/#/reading/mine/uploads',{timeout:180000});
+ const rows=await page.evaluate(()=>SFMedals.rpc('work_list'));assert.equal(rows.length,2);assert.equal(new Set(rows.map(r=>r.resource_key)).size,1);
+ await page.evaluate(()=>{location.hash='#/honors/mine';});await page.locator('.medal-uploaded-works .medal-template').first().waitFor({timeout:60000});
+ const card=page.locator('.medal-uploaded-works .medal-template').first(),actions=card.locator('.medal-card-actions');await page.mouse.move(0,0);assert.equal(await actions.evaluate(n=>getComputedStyle(n).pointerEvents),'none');await card.hover();assert.equal(await actions.evaluate(n=>getComputedStyle(n).pointerEvents),'auto');await card.getByRole('button',{name:'下架',exact:true}).click();await page.getByText('作品徽章已下架',{exact:true}).waitFor();
+ assert.equal((await page.evaluate(()=>SFMedals.rpc('work_list'))).filter(r=>r.active).length,1);
+ await page.evaluate(()=>{location.hash='#/magazines/upload';});await page.locator('#parentBookForm').waitFor();await page.locator('[name=title]').fill('浏览器无徽章期刊 '+Date.now());await page.locator('[name=pdf_url]').fill('https://u.pone.rs/test.pdf');await page.locator('#parentBookPublish').click();await page.waitForURL('**/#/magazines/mine/uploads',{timeout:60000});
+ const magazine=await page.evaluate(async()=>{const books=await BookReader.library(App,true);return books.find(b=>b.kind==='magazine'&&b.ownerId===SFCloud.user.id);});assert.ok(magazine);
+ await page.evaluate(()=>{location.hash='#/honors/mine';});await page.locator('#medalAddWork').waitFor();await page.locator('#medalAddWork').click();await page.locator('dialog [name=work]').selectOption('magazine:'+magazine.id);await page.locator('dialog [name=badge_images]').setInputFiles('supabase/.temp/medal-seed/work-book.png');await page.locator('dialog [name=badge_rights]').check();await page.getByRole('button',{name:'上传并上架',exact:true}).click();await page.getByText('作品徽章已上传并上架。',{exact:true}).waitFor({timeout:150000});
+ assert.ok((await page.evaluate(()=>SFMedals.rpc('work_list'))).some(r=>r.resource_key==='magazine:'+magazine.id&&r.active));
+ console.log('PASS: real book upload with two Pone badges, optional authorization, hover actions, owner withdrawal, magazine without badges and later linked upload.');
+}finally{await browser.close();}})().catch(error=>{console.error(error);process.exitCode=1;});
