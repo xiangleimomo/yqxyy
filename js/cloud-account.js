@@ -109,9 +109,24 @@ window.SFCloud = {
   },
   updateHeader(){
     const link=document.getElementById('accountLink');
-    if(link){link.textContent=this.user?`${this.isAdmin()?'🛠 管理员':'👤'} ${this.user.email?.split('@')[0]||'我的账户'}`:'👤 注册 / 登录';}
+    if(link){link.textContent=this.user?`${this.isAdmin()?'🛠 管理员':'👤'} ${this.nickname()||'我的账户'}`:'👤 注册 / 登录';}
     const state=document.getElementById('syncState');
     if(state){state.textContent=this.isAdmin()?'开发调试管理员 · 已发布课程与全部游戏免解锁、游戏不扣积分':this.user?'已登录 · 学习记录可云端同步':'游客模式 · 记录仅在本设备';}
+  },
+  nickname(){return String(this.user?.user_metadata?.display_name||'').trim();},
+  async saveNickname(){
+    const button=document.querySelector('#accountNicknameForm button'),uid=this.user?.id;
+    if(!uid||!this.client)return;
+    const nickname=document.getElementById('accountProfileNickname').value.trim();
+    if(nickname.length<2||nickname.length>40){this.setMessage('昵称需要 2–40 个字。',true);return;}
+    button.disabled=true;
+    try{
+      const {data,error}=await this.client.auth.updateUser({data:{display_name:nickname}});
+      if(error)throw error;
+      if(this.user?.id!==uid)return;
+      this.user=data.user;this.updateHeader();document.getElementById('accountEmailLabel').textContent=this.nickname();
+      this.setMessage('昵称已保存，上传绘本会使用这个昵称。');await this.app?.render();
+    }catch(error){this.setMessage('昵称保存失败：'+error.message,true);}finally{button.disabled=false;}
   },
   async loadLibrary(){
     if(window.supabase?.createClient) return;
@@ -135,6 +150,8 @@ window.SFCloud = {
     document.getElementById('accountLogout')?.addEventListener('click',()=>this.signOut());
     document.getElementById('accountImport')?.addEventListener('click',()=>this.importGuest());
     document.getElementById('accountSync')?.addEventListener('click',()=>this.sync(true));
+    document.getElementById('accountNicknameForm')?.addEventListener('submit',e=>{e.preventDefault();this.saveNickname();});
+    document.getElementById('accountMyBooks')?.addEventListener('click',()=>this.close());
     window.addEventListener('online',()=>this.schedule());
     window.addEventListener('focus',()=>this.pull());
     document.addEventListener('visibilitychange',()=>{if(!document.hidden)this.pull();});
@@ -147,7 +164,7 @@ window.SFCloud = {
       this.client.auth.onAuthStateChange((event, session)=>{
         if(event==='SIGNED_OUT') this.onSignedOut();
         else if(event==='PASSWORD_RECOVERY') { this.open();this.mode('newPassword');this.setMessage('请设置一个新密码。'); }
-        else if(['SIGNED_IN','INITIAL_SESSION','TOKEN_REFRESHED'].includes(event) && session?.user){
+        else if(['SIGNED_IN','INITIAL_SESSION','TOKEN_REFRESHED','USER_UPDATED'].includes(event) && session?.user){
           // Auth calls must run after the callback releases the SDK's session lock.
           setTimeout(()=>this.onSession(session.user),0);
         }
@@ -159,7 +176,7 @@ window.SFCloud = {
     }catch(e){this.setMessage('云端连接失败：'+e.message,true);this.updateHeader();}
   },
   async onSession(user){
-    if(this.user?.id===user.id && this.active){const before=this.isAdmin();await this.verifyAdmin(user);this.updateHeader();if(before!==this.isAdmin()){this.app?.windowLayer?.replaceChildren();this.app?.updateUtilityNav();await this.app?.render();}return;}
+    if(this.user?.id===user.id && this.active){this.user=user;const before=this.isAdmin();await this.verifyAdmin(user);this.updateHeader();if(before!==this.isAdmin()){this.app?.windowLayer?.replaceChildren();this.app?.updateUtilityNav();await this.app?.render();}return;}
     if(this.loginTask) return this.loginTask;
     this.loginTask=this.enterAccount(user).finally(()=>{this.loginTask=null;});
     return this.loginTask;
@@ -257,6 +274,9 @@ window.SFCloud = {
   close(){const modal=document.getElementById('accountDialog');if(modal)modal.hidden=true;if(window.SFFamily)window.SFFamily.settingsVersion++;},
   mode(mode){
     this.authMode=mode;
+    document.getElementById('authNicknameRow').hidden=mode!=='signup';
+    document.getElementById('accountNickname').required=mode==='signup';
+    if(mode==='account')document.getElementById('accountProfileNickname').value=this.nickname();
     if(mode==='account')window.SFFamily?.renderSettings();
     else {if(window.SFFamily)window.SFFamily.settingsVersion++;document.getElementById('familyAccountSettings')?.replaceChildren();}
     document.getElementById('accountForm').hidden=mode==='account';
@@ -269,7 +289,7 @@ window.SFCloud = {
     document.getElementById('accountSignup').hidden=mode==='account';
     document.getElementById('accountLogin').hidden=mode==='account';
     document.getElementById('accountReset').hidden=mode==='account';
-    document.getElementById('accountEmailLabel').textContent=this.user?.email||'';
+    document.getElementById('accountEmailLabel').textContent=this.user?(this.nickname()||'请设置账号昵称'):'';
     this.setMessage(!this.configured()?'网站管理员尚未配置 Supabase；暂时只能使用游客模式。':'');
   },
   async submit(){
@@ -285,10 +305,12 @@ window.SFCloud = {
         result=await this.client.auth.updateUser({password});
       }else if(this.authMode==='signup'){
         if(password.length<8)throw new Error('密码至少需要 8 位。');
+        const nickname=document.getElementById('accountNickname').value.trim();
+        if(nickname.length<2||nickname.length>40)throw new Error('昵称需要 2–40 个字。');
         const lookup=await this.client.rpc('sf_email_registered',{candidate:email});
         if(lookup.error)throw new Error('暂时无法检查邮箱，请稍后重试。');
         if(lookup.data===true)throw new Error('该邮箱已注册，请更换其他邮箱注册使用。');
-        result=await this.client.auth.signUp({email,password,options:{emailRedirectTo:location.origin+location.pathname}});
+        result=await this.client.auth.signUp({email,password,options:{data:{display_name:nickname},emailRedirectTo:location.origin+location.pathname}});
         if(result.error?.code==='user_already_exists'||(!result.error&&Array.isArray(result.data?.user?.identities)&&result.data.user.identities.length===0))throw new Error('该邮箱已注册，请更换其他邮箱注册使用。');
       }else if(this.authMode==='reset'){
         result=await this.client.auth.resetPasswordForEmail(email,{redirectTo:location.origin+location.pathname});

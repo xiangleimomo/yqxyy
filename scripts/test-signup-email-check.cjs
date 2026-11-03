@@ -3,12 +3,12 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 
 async function check({exists=false,lookupError=null,response={data:{user:{identities:[{}]},session:null}},expected,signupCalls=0}) {
-  const elements={accountEmail:{value:'test@example.com'},accountPassword:{value:'password123'},accountSubmit:{disabled:false}};
+  const elements={accountNickname:{value:'测试家长'},accountEmail:{value:'test@example.com'},accountPassword:{value:'password123'},accountSubmit:{disabled:false}};
   let calls=0, message='';
   const context={window:{},document:{getElementById:id=>elements[id]},location:{origin:'https://example.com',pathname:'/'}};
   vm.runInNewContext(fs.readFileSync('js/cloud-account.js','utf8'),context);
   const cloud=context.window.SFCloud;
-  cloud.client={rpc:async()=>({data:exists,error:lookupError}),auth:{signUp:async()=>{calls++;return response;}}};
+  cloud.client={rpc:async()=>({data:exists,error:lookupError}),auth:{signUp:async(args)=>{assert.equal(args.options.data.display_name,'测试家长');calls++;return response;}}};
   cloud.authMode='signup'; cloud.setMessage=text=>{message=text;};
   await cloud.submit();
   assert.match(message,expected); assert.equal(calls,signupCalls); assert.equal(elements.accountSubmit.disabled,false);

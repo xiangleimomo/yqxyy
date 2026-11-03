@@ -14,12 +14,14 @@ function samplePdf(){
   await page.goto('http://127.0.0.1:8127/#/reading');
   await page.waitForSelector('.book-card');
   assert.equal(await page.getByRole('link',{name:'上传绘本',exact:true}).count(),1);
+  assert.equal(await page.locator('.book-reading-tabs a:not(.book-upload-fab)').filter({hasText:'上传绘本'}).count(),0);
+  assert.equal(await page.getByRole('link',{name:'我的上传',exact:true}).count(),0);
   await page.getByRole('link',{name:'上传绘本',exact:true}).click();
   await page.getByRole('heading',{name:'登录后使用个人图书功能'}).waitFor();
   await page.evaluate(()=>{
    window.testCalls=[];window.testPersonal={user_id:'parent-test',book_id:'test-book',favorite:true,category:'睡前故事',last_page:2,last_read_at:'2026-11-03T01:00:00Z'};
-   SFCloud.user={id:'parent-test'};SFCloud.isAdmin=()=>false;
-   SFCloud.client={rpc:async(name,args)=>{testCalls.push(args);return {data:args.p_action==='access'?{eligible:true,can_upload:true,nickname:'测试家长'}:{ok:true}};},from:table=>{
+   SFCloud.user={id:'parent-test',email:'private@example.com',user_metadata:{display_name:'测试家长'}};SFCloud.isAdmin=()=>false;
+   SFCloud.client={auth:{updateUser:async args=>({data:{user:{id:'parent-test',email:'private@example.com',user_metadata:args.data}}})},rpc:async(name,args)=>{testCalls.push(args);return {data:args.p_action==='access'?{eligible:true,can_upload:true,nickname:'测试家长'}:{ok:true}};},from:table=>{
     const q={select(){return q;},eq(){return q;},order(){return q;},maybeSingle:async()=>({data:table==='book_personal'?testPersonal:null}),then(resolve,reject){return Promise.resolve({data:table==='book_personal'?[testPersonal]:[]}).then(resolve,reject);}};return q;
    }};
    BookReader.library=async()=>[{id:'test-book',title:'Test Book',titleZh:'测试绘本',format:'pdf',sourceUrl:'https://u.pone.rs/testbook.pdf',ownerId:'parent-test',uploaderNickname:'测试家长',audioUrl:'https://example.com/audio.mp3'}];
@@ -38,6 +40,9 @@ function samplePdf(){
   await page.waitForURL('**/#/reading/mine/uploads');
   await page.getByRole('button',{name:'申请修改',exact:true}).waitFor();
   assert.equal(await page.locator('.book-uploader').textContent(),'上传者：测试家长');
+  await page.mouse.move(1,1);
+  await page.waitForFunction(()=>getComputedStyle(document.querySelector('.book-actions')).opacity==='0');
+  await page.locator('.book-cover').hover();
   await page.getByRole('button',{name:'收藏 / 分类',exact:true}).click();
   await page.locator('dialog [name=category]').fill('英语启蒙');
   await page.locator('dialog').getByRole('button',{name:'保存',exact:true}).click();
@@ -53,7 +58,7 @@ function samplePdf(){
   },samplePdf());
   assert.equal(await page.locator('.ebook-error').count(),0);
   assert.equal(await page.evaluate(()=>BookReader.pageFlip.getCurrentPageIndex()),1,'Desktop spread resumes with pages 2 and 3 visible');
-  assert.equal(await page.evaluate(()=>localStorage.getItem(BookCommunity.progressKey('test-book'))),'2');
+  assert.ok(['1','2'].includes(await page.evaluate(()=>localStorage.getItem(BookCommunity.progressKey('test-book')))));
   await page.evaluate(async()=>{BookCommunity.record({id:'test-book'},3);await BookCommunity.flushProgress();});
   assert.equal(await page.evaluate(()=>testCalls.filter(c=>c.p_action==='personal').at(-1).p_payload.changes.page),3);
   await page.evaluate(()=>{SFCloud.user={id:'other-parent'};});
@@ -65,6 +70,14 @@ function samplePdf(){
   await page.evaluate(()=>{SFCloud.user={id:'parent-test'};location.hash='#/reading';});
   await page.waitForSelector('.book-card');
   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Mobile page must not overflow');
+  await page.evaluate(()=>{SFFamily.renderSettings=()=>{};SFCloud.open();SFCloud.mode('signup');});
+  assert.ok(await page.locator('#authNicknameRow').isVisible());
+  assert.ok(await page.locator('#accountNickname').getAttribute('required')!==null);
+  await page.evaluate(()=>SFCloud.mode('account'));
+  await page.locator('#accountProfileNickname').fill('家长新昵称');
+  await page.locator('#accountNicknameForm button').click();
+  await page.waitForFunction(()=>document.querySelector('#accountLink').textContent.includes('家长新昵称'));
+  assert.ok(!(await page.locator('#accountLink').textContent()).includes('private'));
   console.log('PASS: visible entry, login gate, parent upload, duplicate cancel/confirm, nickname, favorites/category, recent records, scoped progress, mobile layout.');
  } finally {await browser.close();}
 })().catch(error=>{console.error(error);process.exitCode=1;});

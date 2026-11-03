@@ -135,18 +135,9 @@ window.BookAdmin = {
       if (!file) { status.textContent = '请先选择 PDF 文件。'; return; }
       lock(true);
       try {
-        const token = await auth();
+        await auth();
         if (file.size > 1073741824 || !(await file.slice(0, 1024).text()).includes('%PDF-')) throw new Error('请选择不超过 1 GiB 的有效 PDF。');
-        const body = new FormData(); body.append('files[]', file);
-        const url = await new Promise((resolve, reject) => {
-          const xhr = new XMLHttpRequest(); xhr.open('POST', '/book-admin/upload'); xhr.setRequestHeader('Authorization', 'Bearer ' + token); xhr.responseType = 'json';
-          xhr.timeout = 1800000;
-          xhr.upload.onload = () => { status.textContent = '正在生成直链…'; };
-          xhr.upload.onprogress = event => { status.textContent = event.lengthComputable ? `正在上传… ${Math.min(99, Math.floor(event.loaded / event.total * 100))}%` : '正在上传…'; };
-          xhr.onload = () => xhr.status === 200 && this.validPdf(xhr.response?.url) ? resolve(xhr.response.url) : reject(new Error(xhr.response?.error || '上传失败，请稍后重试。'));
-          xhr.onerror = xhr.ontimeout = () => reject(new Error('上传连接失败，可重试或填写已有直链。'));
-          status.textContent = '正在上传…'; xhr.send(body);
-        });
+        const url = await window.BookCommunity.upload(file,'pdf',status);
         field('source').value = url; status.textContent = '上传成功。请核对名称和封面，再点击确认发布。'; preview();
       } catch (error) { status.textContent = error.message; }
       finally { lock(false); }
@@ -159,6 +150,7 @@ window.BookAdmin = {
       lock(true);
       try {
         await auth();
+        coverUrl=await window.BookCommunity.publishCover(coverUrl,status);
         const id = field('existing').value || 'book-' + crypto.randomUUID();
         const row = { id, title: field('title').value.trim(), title_zh: field('titleZh').value.trim(), level: field('level').value.trim(), description: field('description').value.trim(), source_url: field('source').value.trim(), cover_url: coverUrl, updated_at: new Date().toISOString() };
         const { error } = await window.SFCloud.client.from('story_books').upsert(row, { onConflict: 'id' });

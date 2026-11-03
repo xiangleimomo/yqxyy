@@ -73,7 +73,7 @@ window.BookReader = {
   },
 
   readingNavigation(local = false) {
-    return `<nav class="book-reading-tabs" aria-label="绘本阅读方式"><a href="#/reading"${local ? '' : ' aria-current="page"'}>线上绘本</a><a href="#/reading/local"${local ? ' aria-current="page"' : ''}>本地绘本</a><a href="#/reading/upload">上传绘本</a><a href="#/reading/mine/uploads">我的上传</a><a href="#/reading/mine/favorites">我的收藏</a><a href="#/reading/mine/recent">最近阅读</a>${window.SFCloud?.isAdmin() ? '<a class="book-admin-entry" href="#/reading/admin">管理绘本</a>' : ''}</nav>`;
+    return `<nav class="book-reading-tabs" aria-label="绘本阅读方式"><a href="#/reading"${local ? '' : ' aria-current="page"'}>线上绘本</a><a href="#/reading/local"${local ? ' aria-current="page"' : ''}>本地绘本</a><a href="#/reading/mine/favorites">我的收藏</a><a href="#/reading/mine/recent">最近阅读</a>${window.SFCloud?.isAdmin() ? '<a class="book-admin-entry" href="#/reading/admin">管理绘本</a>' : ''}<a class="book-upload-fab" href="#/reading/upload" aria-label="上传绘本" title="上传绘本">＋</a></nav>`;
   },
 
   refreshNavigation() {
@@ -92,7 +92,7 @@ window.BookReader = {
       const readerLink = direct ? '<a href="#/reader/' + e(item.id) + (seriesId ? '/' + e(seriesId) : '') + '">本站阅览器</a>' : '';
       const author = item.uploaderNickname ? '<a class="book-uploader" href="#/reading/search/' + encodeURIComponent(item.uploaderNickname) + '">上传者：' + e(item.uploaderNickname) + '</a>' : '';
       const media = (item.audioUrl ? '<a href="' + e(item.audioUrl) + '" target="_blank" rel="noopener noreferrer">配套音频</a>' : '') + (item.videoUrl ? '<a href="' + e(item.videoUrl) + '" target="_blank" rel="noopener noreferrer">配套视频</a>' : '');
-      return '<article class="book-card" data-book-id="' + e(item.id) + '"><div class="book-cover"><button type="button" class="book-cover-trigger" aria-label="选择' + label + '的阅读方式">' + cover + '</button><div class="book-actions" aria-label="' + label + '阅读方式">' + primary + readerLink + '</div></div><div class="book-card-body"><h2>' + label + '</h2>' + author + '<div class="book-resource-links">' + media + '</div><button class="book-personal-button" type="button">收藏 / 分类</button></div></article>';
+      return '<article class="book-card" data-book-id="' + e(item.id) + '"><div class="book-cover"><button type="button" class="book-cover-trigger" aria-label="选择' + label + '的阅读方式">' + cover + '</button><div class="book-actions" aria-label="' + label + '阅读方式">' + primary + readerLink + '<button class="book-personal-button" type="button">收藏 / 分类</button></div></div><div class="book-card-body"><h2>' + label + '</h2>' + author + '<div class="book-resource-links">' + media + '</div></div></article>';
     }).join('')}</div>`;
   },
 

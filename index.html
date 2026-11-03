@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="css/pronunciation.css?v=20261009-1" />
   <link rel="stylesheet" href="css/movies.css?v=20261029-movie-hub" />
   <link rel="stylesheet" href="css/movie-study.css?v=20261018-1" />
-  <link rel="stylesheet" href="css/books.css?v=20261103-parent-books-1" />
+  <link rel="stylesheet" href="css/books.css?v=20261103-book-account-2" />
   <link rel="stylesheet" href="css/reader-enhancements.css?v=20261102-phone-spreads" />
   <link rel="stylesheet" href="css/read-dictionary.css?v=20261001-1" />
 </head>
@@ -65,25 +65,26 @@
       <div id="accountNotice" class="account-notice" role="status" aria-live="polite"></div>
       <div class="account-modes"><button type="button" id="accountLogin" data-auth-mode="login">登录</button><button type="button" id="accountSignup" data-auth-mode="signup">注册</button><button type="button" id="accountReset" data-auth-mode="reset">忘记密码</button></div>
       <form id="accountForm">
+        <div id="authNicknameRow" hidden><label for="accountNickname">账号昵称</label><input id="accountNickname" minlength="2" maxlength="40" autocomplete="nickname" placeholder="2–40 个字，公开显示"></div>
         <div id="authEmailRow"><label for="accountEmail">邮箱</label><input id="accountEmail" type="email" autocomplete="email" required placeholder="you@example.com"></div>
         <div id="authPasswordRow"><label for="accountPassword">密码</label><input id="accountPassword" type="password" minlength="8" autocomplete="current-password" placeholder="至少 8 位"></div>
         <button class="account-primary" id="accountSubmit" type="submit">登录</button>
       </form>
-      <div id="accountActions" hidden><p id="accountEmailLabel"></p><div id="familyAccountSettings"></div><button type="button" id="accountSync">立即同步</button><button type="button" id="accountImport">导入本设备游客记录</button><button type="button" id="accountLogout">退出账户</button></div>
+      <div id="accountActions" hidden><p id="accountEmailLabel"></p><form id="accountNicknameForm"><label for="accountProfileNickname">账号昵称</label><input id="accountProfileNickname" required minlength="2" maxlength="40" autocomplete="nickname" placeholder="设置公开昵称"><button type="submit">保存昵称</button></form><p><a href="#/reading/mine/uploads" id="accountMyBooks">管理我的绘本</a></p><div id="familyAccountSettings"></div><button type="button" id="accountSync">立即同步</button><button type="button" id="accountImport">导入本设备游客记录</button><button type="button" id="accountLogout">退出账户</button></div>
       <small class="account-footnote">登录后同步学习进度、测验、收藏和积分；未登录仍可作为游客学习。</small>
     </section>
   </div>
   <script src="js/supabase-config.js"></script>
-  <script src="js/cloud-account.js?v=20261103-parent-books-1"></script>
+  <script src="js/cloud-account.js?v=20261103-book-account-2"></script>
   <script src="js/read-dictionary.js?v=20261001-2"></script>
   <script src="js/client-protection.js?v=20261101-1"></script>
   <script src="js/dytt-ad-skip.js?v=20261017-1"></script>
   <script src="source-lab/core.js?v=20261030-dulo-session"></script>
   <script src="js/movie-subtitles.js?v=20261020-1"></script>
   <script src="js/movies.js?v=20261030-dulo-host"></script>
-  <script src="js/books.js?v=20261103-parent-books-1"></script>
-  <script src="js/book-admin.js?v=20261103-parent-books-1"></script>
-  <script src="js/book-community.js?v=20261103-parent-books-1"></script>
+  <script src="js/books.js?v=20261103-book-account-2"></script>
+  <script src="js/book-admin.js?v=20261103-book-account-2"></script>
+  <script src="js/book-community.js?v=20261103-book-account-2"></script>
   <script src="js/episode-games.js?v=20261009-6"></script>
   <script src="js/pronunciation.js?v=20261009-1"></script>
   <script src="js/family.js?v=20261027-reminder-1"></script>

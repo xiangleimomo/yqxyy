@@ -1,0 +1,3 @@
+[functions.pone-upload]
+# The handler validates the bearer token with Auth before forwarding any bytes.
+verify_jwt = false

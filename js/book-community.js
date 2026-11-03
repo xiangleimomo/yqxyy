@@ -52,14 +52,22 @@ window.BookCommunity = {
     if (error || !data.session?.access_token) throw new Error('登录已过期。');
     const body = new FormData(); body.append('files[]', file);
     return new Promise((resolve, reject) => {
-      const xhr = new XMLHttpRequest(); xhr.open('POST', '/book-admin/upload?kind=' + kind); xhr.responseType = 'json'; xhr.timeout = 1800000;
+      const config=window.STORYFOX_SUPABASE;
+      const xhr = new XMLHttpRequest(); xhr.open('POST', config.url + '/functions/v1/pone-upload?kind=' + kind); xhr.responseType = 'json'; xhr.timeout = 140000;
       xhr.setRequestHeader('Authorization', 'Bearer ' + data.session.access_token);
+      xhr.setRequestHeader('apikey',config.publishableKey);
       xhr.upload.onprogress = event => { status.textContent = event.lengthComputable ? `正在上传… ${Math.min(99, Math.floor(event.loaded / event.total * 100))}%` : '正在上传…'; };
       xhr.upload.onload = () => { status.textContent = '正在生成直链…'; };
       xhr.onload = () => xhr.status === 200 && xhr.response?.url ? resolve(xhr.response.url) : reject(new Error(xhr.response?.error || '上传失败，请重试。'));
       xhr.onerror = xhr.ontimeout = () => reject(new Error('上传连接失败，请重试。'));
       xhr.send(body);
     });
+  },
+  async publishCover(value,status){
+    if(!value.startsWith('data:'))return value;
+    const blob=await (await fetch(value)).blob();
+    status.textContent='正在上传封面至 Pone…';
+    return this.upload(new File([blob],'cover.jpg',{type:'image/jpeg'}),'image',status);
   },
   imageData(image) {
     const canvas = document.createElement('canvas'), width = image.width, height = image.height;
@@ -85,8 +93,10 @@ window.BookCommunity = {
     const access = await this.access(), e = value => this.e(app, value);
     if (!access.eligible) { app.el().innerHTML = `${window.BookReader.readingNavigation()}<section class="empty"><p>请使用家长账号，并完成新账号的邮箱验证。</p></section>`; return; }
     if (!access.nickname) {
-      app.el().innerHTML = `${window.BookReader.readingNavigation()}<section class="book-admin"><h1>设置家长上传昵称</h1><p>昵称将公开展示在您上传的绘本旁，不会公开邮箱。已有账号继续有效。</p><form id="bookNickname"><label>公开昵称<input name="nickname" required minlength="2" maxlength="40" autocomplete="nickname"></label><label><input type="checkbox" required>我以家长身份使用此图书区域</label><button class="btn">保存并继续</button><p role="status"></p></form></section>`;
-      const form = app.el().querySelector('form'); form.onsubmit = async event => { event.preventDefault(); try { await this.rpc('setup', { nickname: form.elements.nickname.value.trim() }); await this.renderUpload(app); } catch (error) { form.querySelector('[role=status]').textContent = error.message; } }; return;
+      const nickname=window.SFCloud.nickname();
+      if(nickname){await this.rpc('setup',{nickname});return this.renderUpload(app);}
+      app.el().innerHTML = `${window.BookReader.readingNavigation()}<section class="empty"><h1>请先完善账号昵称</h1><p>在账号管理中设置一次昵称，即可用于绘本上传。</p><button class="btn" id="bookAccountSettings">打开账号管理</button></section>`;
+      app.el().querySelector('#bookAccountSettings').onclick=()=>window.SFCloud.open();return;
     }
     app.el().innerHTML = `${window.BookReader.readingNavigation()}<section class="book-admin"><h1>上传绘本</h1><p>上传者：${e(access.nickname)}。发布后不能自行修改或删除，可提交管理员审核申请。</p><form id="parentBookForm"><label>书籍名称<input name="title" required maxlength="180"></label><label>中文名称（可选）<input name="title_zh" maxlength="180"></label><button type="button" class="btn secondary" id="checkBookDuplicate">先检索已有资源</button><div id="bookDuplicateResults"></div><label>分级<input name="level" maxlength="40"></label><label>简介<textarea name="description" maxlength="1000"></textarea></label>${[['pdf','PDF 绘本','application/pdf,.pdf'],['audio','配套音频（可选）','audio/mpeg,audio/mp4,audio/ogg,audio/wav,.mp3,.m4a,.aac'],['video','配套视频（可选）','video/mp4,video/webm,video/quicktime']].map(([kind,label,accept]) => `<fieldset><legend>${label}</legend><input type="file" name="${kind}_file" accept="${accept}"><button type="button" class="btn secondary" data-upload="${kind}">上传${kind === 'pdf' ? '绘本' : kind === 'audio' ? '音频' : '视频'}</button><label>或填写 HTTPS 直链<input type="url" name="${kind}_url" ${kind === 'pdf' ? 'required' : ''}></label></fieldset>`).join('')}<label>另选封面（可选）<input name="cover_file" type="file" accept="image/jpeg,image/png,image/webp"></label><div id="parentBookPreview"></div><p id="parentBookStatus" role="status" aria-live="polite"></p><button class="btn" id="parentBookPublish">核对后发布</button></form></section>`;
     const form = app.el().querySelector('#parentBookForm'), field = name => form.elements.namedItem(name), status = form.querySelector('#parentBookStatus');
@@ -120,6 +130,7 @@ window.BookCommunity = {
         lock(true);
         if (!window.BookAdmin.validPdf(field('pdf_url').value.trim())) throw new Error('请上传 PDF 或填写有效 Pone PDF 直链。');
         if (confirmed !== signature()) await check();
+        cover=await this.publishCover(cover,status);
         const payload = { title: field('title').value.trim(), title_zh: field('title_zh').value.trim(), level: field('level').value.trim(), description: field('description').value.trim(), source_url: field('pdf_url').value.trim(), audio_url: field('audio_url').value.trim(), video_url: field('video_url').value.trim(), cover_url: cover, duplicate_confirmed: confirmed === signature() };
         for (const key of ['audio_url','video_url']) if (payload[key]) { const url = new URL(payload[key]); if (url.protocol !== 'https:' || url.username || url.password) throw new Error('音视频请使用不含账号密码的 HTTPS 直链。'); }
         await this.rpc('publish', payload); location.hash = '#/reading/mine/uploads';

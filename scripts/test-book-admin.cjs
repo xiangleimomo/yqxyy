@@ -11,7 +11,8 @@ const path = require('node:path');
     const module = await import(pathToFileURL(path.resolve('netlify/edge-functions', entry.name)));
     assert.ok(typeof module.default === 'function' || typeof module.default?.fetch === 'function', `${entry.name} must export an edge handler; put shared modules outside the entry directory`);
   }
-  const upload = (await import(pathToFileURL(path.resolve('netlify/edge-functions/book-upload.js')))).default;
+  const {handlePoneUpload} = await import(pathToFileURL(path.resolve('supabase/functions/pone-upload/handler.mjs')));
+  const upload = request => handlePoneUpload(request,{env:name=>name==='SUPABASE_URL'?'https://project.supabase.co':'public'});
   const download = (await import(pathToFileURL(path.resolve('netlify/edge-functions/book-download.js')))).default;
   const nativeFetch = global.fetch;
   let calls = [];
@@ -20,15 +21,19 @@ const path = require('node:path');
     return new Request('https://site.test/book-admin/upload', { method: 'POST', headers: token ? { Authorization: 'Bearer ' + token } : {}, body: form });
   };
   try {
+    const origin='https://yqxyy.netlify.app';
+    const preflight=await upload(new Request('https://relay.test',{method:'OPTIONS',headers:{Origin:origin}}));
+    assert.equal(preflight.status,204);assert.equal(preflight.headers.get('access-control-allow-origin'),origin);
+    assert.equal((await upload(new Request('https://relay.test',{method:'OPTIONS',headers:{Origin:'https://untrusted.example'}}))).status,403);
     global.fetch = async () => { throw new Error('Unauthorized request must not reach upstream'); };
     assert.equal((await upload(request())).status, 401);
-    global.fetch = async url => { calls.push(url); return Response.json({ app_metadata: { site_admin: false }, user_metadata: { site_admin: true } }); };
+    global.fetch = async url => { calls.push(url); return Response.json({ id:'ordinary',app_metadata: { site_admin: false }, user_metadata: { site_admin: true } }); };
     assert.equal((await upload(request('ordinary-user'))).status, 403);
     assert.ok(calls.every(url => url.includes('/auth/v1/user') || url.includes('/rest/v1/rpc/book_portal')));
     calls = [];
     global.fetch = async (url, options) => {
       calls.push(url);
-      if (url.includes('/auth/v1/user')) return Response.json({ app_metadata: { site_admin: true } });
+      if (url.includes('/auth/v1/user')) return Response.json({ id:'admin',app_metadata: { site_admin: true } });
       assert.equal(url, 'https://pone.rs/upload');
       assert.equal(options.headers.Authorization, undefined, 'Never leak login token to Pone');
       assert.ok((await new Response(options.body).text()).includes('files[]'));
@@ -37,13 +42,24 @@ const path = require('node:path');
     assert.deepEqual(await (await upload(request('administrator'))).json(), { url: 'https://u.pone.rs/testbook.pdf' });
     assert.equal(calls.length, 2);
     global.fetch = async (url, options) => {
-      if (url.includes('/auth/v1/user')) return Response.json({app_metadata:{},user_metadata:{site_admin:true}});
+      if (url.includes('/auth/v1/user')) return Response.json({id:'parent',app_metadata:{},user_metadata:{site_admin:true}});
       if (url.includes('/rest/v1/rpc/book_portal')) return Response.json({can_upload:true});
       assert.equal(url,'https://pone.rs/upload');
       assert.equal(options.headers.Authorization,undefined);
       return Response.json({success:true,files:[{url:'https://u.pone.rs/testbook.pdf'}]});
     };
     assert.deepEqual(await (await upload(request('parent'))).json(),{url:'https://u.pone.rs/testbook.pdf'});
+    let forwarded=0;
+    global.fetch=async(url,options)=>{
+      if(url.includes('/auth/v1/user'))return Response.json({id:'admin',app_metadata:{site_admin:true}});
+      assert.equal(url,'https://pone.rs/upload');assert.equal(options.headers.authorization,undefined);assert.equal(options.headers.apikey,undefined);
+      assert.ok(options.body instanceof ReadableStream);
+      for await(const chunk of options.body)forwarded+=chunk.byteLength;
+      return Response.json({success:true,files:[{url:'https://u.pone.rs/testcover.jpg'}]});
+    };
+    const imageForm=new FormData();imageForm.append('files[]',new Blob([new Uint8Array(5*1024*1024)],{type:'image/jpeg'}),'cover.jpg');
+    const imageResponse=await upload(new Request('https://relay.test?kind=image',{method:'POST',headers:{Authorization:'Bearer admin'},body:imageForm}));
+    assert.deepEqual(await imageResponse.json(),{url:'https://u.pone.rs/testcover.jpg'});assert.ok(forwarded>5*1024*1024);
     global.fetch = async url => url.includes('/auth/v1/user') ? Response.json({ app_metadata: { site_admin: true } }) : Response.json({ success: false });
     assert.ok((await (await upload(request('administrator'))).json()).error);
     for (const source of ['https://u.pone.rs/testbook.pdf', 'http://127.0.0.1/private']) {
@@ -82,6 +98,18 @@ const path = require('node:path');
         assert.ok(!element.innerHTML.includes('pan.quark.cn'));
       }
     }
-    console.log('PASS: administrator enforcement, untrusted metadata rejection, upload forwarding, token isolation, Pone errors, dynamic PDF lookup, URL restrictions, and catalogue merge.');
+    let sent;
+    const uploadContext={window:{STORYFOX_SUPABASE:{url:'https://project.supabase.co',publishableKey:'public'},SFCloud:{user:{id:'parent'},client:{rpc:async()=>({data:{can_upload:true}}),auth:{getSession:async()=>({data:{session:{access_token:'login-token'}}})}}}},FormData,File,fetch:nativeFetch,XMLHttpRequest:class{
+      constructor(){this.upload={};this.headers={};}open(method,url){this.url=url;}setRequestHeader(key,value){this.headers[key]=value;}send(body){sent={url:this.url,headers:this.headers,body};this.status=200;this.response={url:this.url.endsWith('kind=image')?'https://u.pone.rs/cover.jpg':'https://u.pone.rs/book.pdf'};this.onload();}
+    }};
+    vm.createContext(uploadContext);vm.runInContext(fs.readFileSync('js/book-community.js','utf8'),uploadContext);
+    const community=uploadContext.window.BookCommunity;
+    assert.equal(await community.upload(new File(['%PDF-test'],'book.pdf'),'pdf',{}),'https://u.pone.rs/book.pdf');
+    assert.equal(sent.url,'https://project.supabase.co/functions/v1/pone-upload?kind=pdf');
+    assert.equal(sent.headers.apikey,'public');
+    assert.equal(await community.publishCover('data:image/jpeg;base64,dGVzdA==',{}),'https://u.pone.rs/cover.jpg');
+    assert.equal(sent.body.get('files[]').type,'image/jpeg');
+    assert.equal(await community.publishCover('https://u.pone.rs/cover.jpg',{}),'https://u.pone.rs/cover.jpg');
+    console.log('PASS: authorization, Supabase streaming relay, CORS, token isolation, Pone errors, cover URL persistence, dynamic PDF lookup, and catalogue merge.');
   } finally { global.fetch = nativeFetch; }
 })().catch(error => { console.error(error); process.exitCode = 1; });
