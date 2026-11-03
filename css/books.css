@@ -63,3 +63,6 @@
 .media-level-filters { margin:0 0 24px; gap:10px; }
 .media-unavailable { font-size:14px; color:white; }
 .media-related-grid { margin:20px 0; }
+.main-nav .search-box { flex:1; min-width:160px; }
+.main-nav .search-box input { flex:1; min-width:0; width:100%; }
+@media(max-width:780px) { .main-tabs { flex-wrap:wrap; row-gap:4px; } .main-nav .search-box { flex:auto; min-width:0; width:100%; } }

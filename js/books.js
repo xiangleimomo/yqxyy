@@ -6,6 +6,9 @@ window.BookReader = {
   libraryPromise: null,
   pdfLibraryPromise: null,
   localPdfFiles: new Map(),
+  shelfBase() { return typeof location!=='undefined' && /^#\/(magazines|magazine-reader)(\/|$)/.test(location.hash) ? '#/magazines' : '#/reading'; },
+  shelfLabel() { return this.shelfBase()==='#/magazines' ? '期刊' : '绘本'; },
+  async shelfLibrary(app,strict=false) { const kind=this.shelfBase()==='#/magazines'?'magazine':'book'; return (await this.library(app,strict)).filter(book=>(book.kind||'book')===kind); },
 
   cleanup() {
     window.BookCommunity?.flushProgress();
@@ -61,7 +64,7 @@ window.BookReader = {
       const merged = new Map(books.map(book => [book.id, book]));
       for (const row of rows) {
         if (!/^[a-z0-9-]{1,100}$/.test(row.id) || !/^https:\/\/u\.pone\.rs\/[A-Za-z0-9]+\.pdf$/.test(row.source_url)) continue;
-        merged.set(row.id, { ...merged.get(row.id), id: row.id, title: row.title, titleZh: row.title_zh, level: row.level, description: row.description, coverUrl: row.cover_url, sourceUrl: row.source_url, ownerId: row.owner_id, uploaderNickname: row.uploader_nickname, audioUrl: row.audio_url, videoUrl: row.video_url, format: 'pdf', downloadUrl: '/book-download/' + row.id + '.pdf' });
+        merged.set(row.id, { ...merged.get(row.id), id: row.id, kind: row.content_kind||'book', title: row.title, titleZh: row.title_zh, level: row.level, description: row.description, coverUrl: row.cover_url, sourceUrl: row.source_url, ownerId: row.owner_id, uploaderNickname: row.uploader_nickname, audioUrl: row.audio_url, videoUrl: row.video_url, format: 'pdf', downloadUrl: '/book-download/' + row.id + '.pdf' });
       }
       return [...merged.values()].filter(book => !states.get(book.id)?.deleted)
         .sort((a, b) => (states.get(a.id)?.sort_order ?? 2147483647) - (states.get(b.id)?.sort_order ?? 2147483647));
@@ -73,26 +76,27 @@ window.BookReader = {
   },
 
   readingNavigation(local = false) {
-    const route=typeof location==='undefined'?'#/reading':location.hash;
-    const current=local?'#/reading/local':route.startsWith('#/reading/mine/favorites')?'#/reading/mine/favorites':route.startsWith('#/reading/mine/recent')?'#/reading/mine/recent':route==='#/reading'||route.startsWith('#/reading/search')?'#/reading':'';
-    return `<nav class="book-reading-tabs" aria-label="绘本阅读方式">${[['#/reading','线上绘本'],['#/reading/local','本地绘本'],['#/reading/mine/favorites','我的收藏'],['#/reading/mine/recent','最近阅读']].map(([href,label])=>`<a href="${href}"${href===current?' aria-current="page"':''}>${label}</a>`).join('')}${window.SFCloud?.isAdmin() ? '<a class="book-admin-entry" href="#/reading/admin">管理绘本</a>' : ''}<a class="book-upload-fab" href="#/reading/upload" aria-label="上传绘本" title="上传绘本">＋</a></nav>`;
+    const base=this.shelfBase(),label=this.shelfLabel(),route=typeof location==='undefined'?base:location.hash;
+    const current=local?base+'/local':route.startsWith(base+'/mine/favorites')?base+'/mine/favorites':route.startsWith(base+'/mine/recent')?base+'/mine/recent':route===base||route.startsWith(base+'/search')?base:'';
+    return `<nav class="book-reading-tabs" data-book-navigation aria-label="${label}阅读方式">${[[base,'线上'+label],[base+'/local','本地'+label],[base+'/mine/favorites','我的收藏'],[base+'/mine/recent','最近阅读']].map(([href,title])=>`<a href="${href}"${href===current?' aria-current="page"':''}>${title}</a>`).join('')}${window.SFCloud?.isAdmin() ? `<a class="book-admin-entry" href="${base}/admin">管理${label}</a>` : ''}<a class="book-upload-fab" href="${base}/upload" aria-label="上传${label}" title="上传${label}">＋</a></nav>`;
   },
 
   refreshNavigation() {
-    const navigation = document.querySelector('.book-reading-tabs');
-    if (navigation) navigation.outerHTML = this.readingNavigation(location.hash.startsWith('#/reading/local'));
+    const navigation = document.querySelector('[data-book-navigation]');
+    if (navigation) navigation.outerHTML = this.readingNavigation(location.hash===this.shelfBase()+'/local');
   },
 
   bookCards(app, books, seriesId = '', options = {}) {
     const e = value => this.escape(app, value);
     return `<div class="book-grid">${books.map(item => {
       const direct = item.format === 'pdf' && item.sourceUrl;
-      const href = direct ? item.sourceUrl : '#/reader/' + item.id;
+      const readerBase=item.kind==='magazine'?'#/magazine-reader/':'#/reader/';
+      const href = direct ? item.sourceUrl : readerBase + item.id;
       const cover = item.coverUrl ? '<img src="' + e(item.coverUrl) + '" alt="" loading="lazy" decoding="async">' : '<b>' + e(item.titleZh || item.title) + '</b>';
       const label = e(item.titleZh || item.title);
       const primary = '<a href="' + e(href) + '"' + (direct ? ' target="_blank" rel="noopener noreferrer"' : '') + '>' + (direct ? '直接观看' : '打开绘本') + '</a>';
-      const readerLink = direct ? '<a href="#/reader/' + e(item.id) + (seriesId ? '/' + e(seriesId) : '') + '">' + (options.resume ? '继续阅读' : '本站阅览器') + '</a>' : '';
-      const author = !options.compact && item.uploaderNickname ? '<a class="book-uploader" href="#/reading/search/' + encodeURIComponent(item.uploaderNickname) + '">上传者：' + e(item.uploaderNickname) + '</a>' : '';
+      const readerLink = direct ? '<a href="' + readerBase + e(item.id) + (seriesId ? '/' + e(seriesId) : '') + '">' + (options.resume ? '继续阅读' : '本站阅览器') + '</a>' : '';
+      const author = !options.compact && item.uploaderNickname ? '<a class="book-uploader" href="'+(item.kind==='magazine'?'#/magazines':'#/reading')+'/search/' + encodeURIComponent(item.uploaderNickname) + '">上传者：' + e(item.uploaderNickname) + '</a>' : '';
       const media = options.compact ? '' : (item.audioUrl ? '<a href="' + e(item.audioUrl) + '" target="_blank" rel="noopener noreferrer">配套音频</a>' : '') + (item.videoUrl ? '<a href="' + e(item.videoUrl) + '" target="_blank" rel="noopener noreferrer">配套视频</a>' : '');
       return '<article class="book-card" data-book-id="' + e(item.id) + '"><div class="book-cover"><button type="button" class="book-cover-trigger" aria-label="选择' + label + '的阅读方式">' + cover + '</button><div class="book-actions" aria-label="' + label + '阅读方式">' + primary + readerLink + '<button class="book-personal-button" type="button">收藏 / 分类</button></div></div><div class="book-card-body"><h2>' + label + '</h2>' + author + '<div class="book-resource-links">' + media + '</div></div></article>';
     }).join('')}</div>`;
@@ -109,9 +113,9 @@ window.BookReader = {
 
   async renderList(app) {
     const route=typeof location==='undefined'?null:location.hash;
-    const books = (await this.library(app)).filter(book => !book.seriesIds?.length);
+    const books = (await this.shelfLibrary(app)).filter(book => !book.seriesIds?.length);
     if(route!==null&&location.hash!==route)return;
-    app.el().innerHTML = this.readingNavigation() + this.bookCards(app, books);
+    app.el().innerHTML = this.readingNavigation() + this.bookCards(app, books) + (books.length?'':`<div class="empty">暂无线上${this.shelfLabel()}，点击右下角“＋”上传。</div>`);
     this.bindBookCards(app);
   },
 
@@ -136,17 +140,17 @@ window.BookReader = {
     input.className = 'book-local-file'; label.appendChild(input);
     input.onchange = () => {
       const file = input.files?.[0]; if (!file) return;
-      this.localPdfFile = file; location.hash = '#/reader/local-pdf';
+      this.localPdfFile = file; location.hash = (this.shelfBase()==='#/magazines'?'#/magazine-reader/':'#/reader/')+'local-pdf';
     };
     app.el().querySelector('.book-local-library').appendChild(label);
   },
 
   async renderReader(app, id, seriesId = '') {
-    this.readerReturnHref = '#/reading';
+    this.readerReturnHref = this.shelfBase();
     if (id === 'local-pdf') {
-      if (!this.localPdfFile) { location.hash = '#/reading'; return; }
+      if (!this.localPdfFile) { location.hash = this.shelfBase()+'/local'; return; }
       const file = this.localPdfFile;
-      const item = { id: `local-${file.name}-${file.size}-${file.lastModified}`, title: file.name, titleZh: file.name.replace(/\.pdf$/i, ''), format: 'pdf', level: '本地文件', localFile: file };
+      const item = { id: `local-${file.name}-${file.size}-${file.lastModified}`, kind:this.shelfBase()==='#/magazines'?'magazine':'book', title: file.name, titleZh: file.name.replace(/\.pdf$/i, ''), format: 'pdf', level: '本地文件', localFile: file };
       this.renderPdfReader(app, item);
       await this.openPdfFlipbook(item);
       return;
@@ -154,10 +158,10 @@ window.BookReader = {
     const books = await this.library(app);
     const item = books.find(book => book.id === id);
     if (!item) {
-      app.el().innerHTML = '<div class="empty"><h2>绘本不存在</h2><p><a class="btn" href="#/reading">返回绘本阅读</a></p></div>';
+      app.el().innerHTML = `<div class="empty"><h2>${this.shelfLabel()}不存在</h2><p><a class="btn" href="${this.shelfBase()}">返回书架</a></p></div>`;
       return;
     }
-    this.readerReturnHref = item.seriesIds?.length ? '#/series-books/' + (item.seriesIds.includes(seriesId) ? seriesId : item.seriesIds[0]) : '#/reading';
+    this.readerReturnHref = item.kind==='magazine'?'#/magazines':item.seriesIds?.length ? '#/series-books/' + (item.seriesIds.includes(seriesId) ? seriesId : item.seriesIds[0]) : '#/reading';
     await window.BookCommunity.restoreProgress(item);
     const e = value => this.escape(app, value);
     if (item.format === 'pdf') {
@@ -170,7 +174,7 @@ window.BookReader = {
     }
     app.el().classList.add('book-reader-shell');
     document.body.classList.add('flipbook-active');
-    app.el().innerHTML = `<section class="flipbook-reader" id="ebookReader"><header class="flipbook-topbar"><a href="${e(this.readerReturnHref || '#/reading')}" class="flipbook-back" aria-label="返回书架">←</a><span>绘本阅读</span><button type="button" id="bookFullscreen" aria-label="全屏阅读">⛶</button></header><div class="flipbook-stage" id="ebookStage"><button type="button" class="flipbook-turn flipbook-turn-prev" id="bookStagePrev" aria-label="上一页">‹</button><div class="flipbook-surface"><div id="epubViewport" class="epub-viewport"><div class="ebook-loading">正在打开电子书…</div></div></div><button type="button" class="flipbook-turn flipbook-turn-next" id="bookStageNext" aria-label="下一页">›</button><div class="ebook-page-turn" aria-hidden="true"></div><div class="flipbook-controls"><span class="book-page-indicator" id="bookPageIndicator">正在定位页码…</span><input type="range" id="bookProgress" min="0" max="1" value="0" step="1" aria-label="阅读进度"><button type="button" id="bookZoomOut" aria-label="缩小">−</button><button type="button" id="bookZoomIn" aria-label="放大">＋</button><button type="button" id="bookFullscreenBottom" aria-label="全屏">⛶</button></div></div><footer class="flipbook-footer"><div><h1>${e(item.title)}</h1><p>${e(item.titleZh)} · ${e(item.level)} · EPUB</p></div><span>使用左右箭头或点击页边翻页</span></footer><p class="ebook-status" id="ebookStatus" role="status" aria-live="polite">正在准备阅读器…</p></section>`;
+    app.el().innerHTML = `<section class="flipbook-reader" id="ebookReader"><header class="flipbook-topbar"><a href="${e(this.readerReturnHref || '#/reading')}" class="flipbook-back" aria-label="返回书架">←</a><span>${e(item.kind==='magazine'?'期刊阅读':'绘本阅读')}</span><button type="button" id="bookFullscreen" aria-label="全屏阅读">⛶</button></header><div class="flipbook-stage" id="ebookStage"><button type="button" class="flipbook-turn flipbook-turn-prev" id="bookStagePrev" aria-label="上一页">‹</button><div class="flipbook-surface"><div id="epubViewport" class="epub-viewport"><div class="ebook-loading">正在打开电子书…</div></div></div><button type="button" class="flipbook-turn flipbook-turn-next" id="bookStageNext" aria-label="下一页">›</button><div class="ebook-page-turn" aria-hidden="true"></div><div class="flipbook-controls"><span class="book-page-indicator" id="bookPageIndicator">正在定位页码…</span><input type="range" id="bookProgress" min="0" max="1" value="0" step="1" aria-label="阅读进度"><button type="button" id="bookZoomOut" aria-label="缩小">−</button><button type="button" id="bookZoomIn" aria-label="放大">＋</button><button type="button" id="bookFullscreenBottom" aria-label="全屏">⛶</button></div></div><footer class="flipbook-footer"><div><h1>${e(item.title)}</h1><p>${e(item.titleZh)} · ${e(item.level)} · EPUB</p></div><span>使用左右箭头或点击页边翻页</span></footer><p class="ebook-status" id="ebookStatus" role="status" aria-live="polite">正在准备阅读器…</p></section>`;
 
     if (item.format !== 'epub') {
       document.getElementById('ebookStatus').textContent = '该格式的阅读器正在接入。';
@@ -303,7 +307,7 @@ window.BookReader = {
     const e = value => this.escape(app, value);
     app.el().classList.add('book-reader-shell');
     document.body.classList.add('flipbook-active');
-    app.el().innerHTML = `<section class="flipbook-reader pdf-flipbook-reader" id="ebookReader"><header class="flipbook-topbar"><a href="${e(this.readerReturnHref || '#/reading')}" class="flipbook-back" aria-label="返回书架">←</a><span>绘本阅读</span><button type="button" id="bookFullscreen" aria-label="全屏阅读">⛶</button></header><div class="flipbook-stage" id="ebookStage"><button type="button" class="flipbook-turn flipbook-turn-prev" id="bookStagePrev" aria-label="上一页">‹</button><div class="pdf-flipbook-surface"><div id="pdfFlipbook" class="pdf-pageflip"><div class="ebook-loading">正在解析 PDF 绘本…</div></div></div><button type="button" class="flipbook-turn flipbook-turn-next" id="bookStageNext" aria-label="下一页">›</button><div class="flipbook-controls"><span class="book-page-indicator" id="bookPageIndicator">正在加载…</span><input type="range" id="bookProgress" min="0" max="1" value="0" step="1" aria-label="阅读进度"><button type="button" id="bookZoomOut" aria-label="缩小">−</button><button type="button" id="bookZoomIn" aria-label="放大">＋</button><button type="button" id="bookFullscreenBottom" aria-label="全屏">⛶</button></div></div><footer class="flipbook-footer"><div><h1>${e(item.title)}</h1><p>${e(item.titleZh)} · ${e(item.level)} · PDF</p></div><span>拖动书页、点击页角或使用左右箭头翻页</span></footer><p class="ebook-status" id="ebookStatus" role="status" aria-live="polite">正在准备 PDF 阅读器…</p></section>`;
+    app.el().innerHTML = `<section class="flipbook-reader pdf-flipbook-reader" id="ebookReader"><header class="flipbook-topbar"><a href="${e(this.readerReturnHref || '#/reading')}" class="flipbook-back" aria-label="返回书架">←</a><span>${e(item.kind==='magazine'?'期刊阅读':'绘本阅读')}</span><button type="button" id="bookFullscreen" aria-label="全屏阅读">⛶</button></header><div class="flipbook-stage" id="ebookStage"><button type="button" class="flipbook-turn flipbook-turn-prev" id="bookStagePrev" aria-label="上一页">‹</button><div class="pdf-flipbook-surface"><div id="pdfFlipbook" class="pdf-pageflip"><div class="ebook-loading">正在解析 PDF 绘本…</div></div></div><button type="button" class="flipbook-turn flipbook-turn-next" id="bookStageNext" aria-label="下一页">›</button><div class="flipbook-controls"><span class="book-page-indicator" id="bookPageIndicator">正在加载…</span><input type="range" id="bookProgress" min="0" max="1" value="0" step="1" aria-label="阅读进度"><button type="button" id="bookZoomOut" aria-label="缩小">−</button><button type="button" id="bookZoomIn" aria-label="放大">＋</button><button type="button" id="bookFullscreenBottom" aria-label="全屏">⛶</button></div></div><footer class="flipbook-footer"><div><h1>${e(item.title)}</h1><p>${e(item.titleZh)} · ${e(item.level)} · PDF</p></div><span>拖动书页、点击页角或使用左右箭头翻页</span></footer><p class="ebook-status" id="ebookStatus" role="status" aria-live="polite">正在准备 PDF 阅读器…</p></section>`;
     const reader = document.getElementById('ebookReader');
     this.pdfPhoneLandscape = matchMedia('(pointer:coarse)').matches && Math.min(screen.width, screen.height) <= 760;
     if (this.pdfPhoneLandscape) {
@@ -632,7 +636,7 @@ window.BookReader = {
         try { const cache = await caches.open('storyfox-pdf-files-v1'); await cache.delete(this.pdfFileCacheKey(item)); } catch (_) {}
       }
       console.error(error);
-      root.innerHTML = `<div class="ebook-error"><strong>暂时无法打开本地 PDF</strong><span>${librariesReady ? '文件可能未完整下载或已损坏，请返回书架重新打开。' : '阅读组件暂时加载失败，请返回书架重试，已下载的文件会保留。'}</span><a href="#/reading">返回书架</a></div>`;
+      root.innerHTML = `<div class="ebook-error"><strong>暂时无法打开本地 PDF</strong><span>${librariesReady ? '文件可能未完整下载或已损坏，请返回书架重新打开。' : '阅读组件暂时加载失败，请返回书架重试，已下载的文件会保留。'}</span><a href="${this.readerReturnHref || this.shelfBase()}">返回书架</a></div>`;
       setStatus(error.message || 'PDF 阅读器加载失败。');
     }
   },

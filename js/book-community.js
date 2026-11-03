@@ -20,7 +20,7 @@ window.BookCommunity = {
   },
   async find(app, query, includeMedia = true) {
     const needle = this.norm(query); if (!needle) return { books: [], media: [] };
-    const [books, series] = await Promise.all([window.BookReader.library(app, true), includeMedia ? app.getJSON('data/series-list.json') : []]);
+    const [books, series] = await Promise.all([window.BookReader.shelfLibrary(app, true), includeMedia && window.BookReader.shelfBase()!=='#/magazines' ? app.getJSON('data/series-list.json') : []]);
     const matches = (...values) => values.some(value => { const text = this.norm(value); return text && (text.includes(needle) || needle.includes(text)); });
     return { books: books.filter(book => matches(book.title, book.titleZh, book.uploaderNickname)), media: series.filter(item => matches(item.title, item.titleZh)) };
   },
@@ -29,7 +29,7 @@ window.BookCommunity = {
     const result = await this.find(app, query, false), e = value => this.e(app, value);
     if(location.hash!==route)return;
     document.getElementById('globalSearch').value=query;
-    app.el().innerHTML = `${window.BookReader.readingNavigation()}<p class="book-search-result">${e(query)} · ${result.books.length} 本</p>${window.BookReader.bookCards(app, result.books)}${result.books.length?'':'<div class="empty">暂无匹配绘本。</div>'}`;
+    app.el().innerHTML = `${window.BookReader.readingNavigation()}<p class="book-search-result">${e(query)} · ${result.books.length} 本</p>${window.BookReader.bookCards(app, result.books)}${result.books.length?'':`<div class="empty">暂无匹配${window.BookReader.shelfLabel()}。</div>`}`;
     window.BookReader.bindBookCards(app);
   },
   async checkDuplicate(app, title) {
@@ -86,15 +86,16 @@ window.BookCommunity = {
   },
   async renderUpload(app) {
     if (!this.requireLogin(app)) return;
+    const base=window.BookReader.shelfBase(),label=window.BookReader.shelfLabel();
     const access = await this.access(), e = value => this.e(app, value);
     if (!access.eligible) { app.el().innerHTML = `${window.BookReader.readingNavigation()}<section class="empty"><p>请使用家长账号，并完成新账号的邮箱验证。</p></section>`; return; }
     if (!access.nickname) {
       const nickname=window.SFCloud.nickname();
       if(nickname){await this.rpc('setup',{nickname});return this.renderUpload(app);}
-      app.el().innerHTML = `${window.BookReader.readingNavigation()}<section class="empty"><h1>请先完善账号昵称</h1><p>在账号管理中设置一次昵称，即可用于绘本上传。</p><button class="btn" id="bookAccountSettings">打开账号管理</button></section>`;
+      app.el().innerHTML = `${window.BookReader.readingNavigation()}<section class="empty"><h1>请先完善账号昵称</h1><p>在账号管理中设置一次昵称，即可用于${label}上传。</p><button class="btn" id="bookAccountSettings">打开账号管理</button></section>`;
       app.el().querySelector('#bookAccountSettings').onclick=()=>window.SFCloud.open();return;
     }
-    app.el().innerHTML = `${window.BookReader.readingNavigation()}<section class="book-admin"><h1>上传绘本</h1><p>上传者：${e(access.nickname)}。发布后不能自行修改或删除，可提交管理员审核申请。</p><form id="parentBookForm"><label>书籍名称<input name="title" required maxlength="180"></label><label>中文名称（可选）<input name="title_zh" maxlength="180"></label><button type="button" class="btn secondary" id="checkBookDuplicate">先检索已有资源</button><div id="bookDuplicateResults"></div><label>分级<input name="level" maxlength="40"></label><label>简介<textarea name="description" maxlength="1000"></textarea></label>${[['pdf','PDF 绘本','application/pdf,.pdf'],['audio','配套音频（可选）','audio/mpeg,audio/mp4,audio/ogg,audio/wav,.mp3,.m4a,.aac'],['video','配套视频（可选）','video/mp4,video/webm,video/quicktime']].map(([kind,label,accept]) => `<fieldset><legend>${label}</legend><input type="file" name="${kind}_file" accept="${accept}"><button type="button" class="btn secondary" data-upload="${kind}">上传${kind === 'pdf' ? '绘本' : kind === 'audio' ? '音频' : '视频'}</button><label>或填写 HTTPS 直链<input type="url" name="${kind}_url" ${kind === 'pdf' ? 'required' : ''}></label></fieldset>`).join('')}<label>另选封面（可选）<input name="cover_file" type="file" accept="image/jpeg,image/png,image/webp"></label><div id="parentBookPreview"></div><p id="parentBookStatus" role="status" aria-live="polite"></p><button class="btn" id="parentBookPublish">核对后发布</button></form></section>`;
+    app.el().innerHTML = `${window.BookReader.readingNavigation()}<section class="book-admin"><h1>上传${label}</h1><p>上传者：${e(access.nickname)}。发布后不能自行修改或删除，可提交管理员审核申请。</p><form id="parentBookForm"><label>${label}名称<input name="title" required maxlength="180"></label><label>中文名称（可选）<input name="title_zh" maxlength="180"></label><button type="button" class="btn secondary" id="checkBookDuplicate">先检索已有资源</button><div id="bookDuplicateResults"></div><label>分级<input name="level" maxlength="40"></label><label>简介<textarea name="description" maxlength="1000"></textarea></label>${[['pdf','PDF '+label,'application/pdf,.pdf'],['audio','配套音频（可选）','audio/mpeg,audio/mp4,audio/ogg,audio/wav,.mp3,.m4a,.aac'],['video','配套视频（可选）','video/mp4,video/webm,video/quicktime']].map(([kind,label,accept]) => `<fieldset><legend>${label}</legend><input type="file" name="${kind}_file" accept="${accept}"><button type="button" class="btn secondary" data-upload="${kind}">上传${kind === 'pdf' ? label : kind === 'audio' ? '音频' : '视频'}</button><label>或填写 HTTPS 直链<input type="url" name="${kind}_url" ${kind === 'pdf' ? 'required' : ''}></label></fieldset>`).join('')}<label>另选封面（可选）<input name="cover_file" type="file" accept="image/jpeg,image/png,image/webp"></label><div id="parentBookPreview"></div><p id="parentBookStatus" role="status" aria-live="polite"></p><button class="btn" id="parentBookPublish">核对后发布</button></form></section>`;
     const form = app.el().querySelector('#parentBookForm'), field = name => form.elements.namedItem(name), status = form.querySelector('#parentBookStatus');
     let cover = '', busy = false, confirmed = '', coverVersion = 0;
     const signature = () => field('title').value.trim() + '\n' + field('title_zh').value.trim();
@@ -102,7 +103,7 @@ window.BookCommunity = {
     const preview = () => { form.querySelector('#parentBookPreview').innerHTML = `${cover ? `<img src="${e(cover)}" alt="封面预览">` : ''}<strong>${e(field('title_zh').value || field('title').value)}</strong><span>上传者：${e(access.nickname)}</span>`; };
     const check = async () => { if (!field('title').value.trim()) throw new Error('请先填写书籍名称。'); const duplicate = await this.checkDuplicate(app, [field('title').value.trim(),field('title_zh').value.trim()]); confirmed = duplicate ? signature() : ''; return duplicate; };
     form.querySelector('#checkBookDuplicate').onclick = async () => {
-      try { if (!field('title').value.trim()) throw new Error('请先填写书名。'); const result = await this.find(app, field('title_zh').value || field('title').value); form.querySelector('#bookDuplicateResults').innerHTML = `<p>找到 ${result.books.length} 本绘本和 ${result.media.length} 个动画系列。</p><a href="#/reading/search/${encodeURIComponent(field('title_zh').value || field('title').value)}" target="_blank" rel="noopener">查看已有绘本、上传者和配套资源</a>`; } catch (error) { status.textContent = error.message; }
+      try { if (!field('title').value.trim()) throw new Error('请先填写书名。'); const result = await this.find(app, field('title_zh').value || field('title').value); form.querySelector('#bookDuplicateResults').innerHTML = `<p>找到 ${result.books.length} 本${label}${base==='#/magazines'?'':'和 '+result.media.length+' 个动画系列'}。</p><a href="${base}/search/${encodeURIComponent(field('title_zh').value || field('title').value)}" target="_blank" rel="noopener">查看已有${label}、上传者和配套资源</a>`; } catch (error) { status.textContent = error.message; }
     };
     form.oninput = preview;
     field('pdf_file').onchange = async () => {
@@ -127,9 +128,9 @@ window.BookCommunity = {
         if (!window.BookAdmin.validPdf(field('pdf_url').value.trim())) throw new Error('请上传 PDF 或填写有效 Pone PDF 直链。');
         if (confirmed !== signature()) await check();
         cover=await this.publishCover(cover,status);
-        const payload = { title: field('title').value.trim(), title_zh: field('title_zh').value.trim(), level: field('level').value.trim(), description: field('description').value.trim(), source_url: field('pdf_url').value.trim(), audio_url: field('audio_url').value.trim(), video_url: field('video_url').value.trim(), cover_url: cover, duplicate_confirmed: confirmed === signature() };
+        const payload = { content_kind:base==='#/magazines'?'magazine':'book', title: field('title').value.trim(), title_zh: field('title_zh').value.trim(), level: field('level').value.trim(), description: field('description').value.trim(), source_url: field('pdf_url').value.trim(), audio_url: field('audio_url').value.trim(), video_url: field('video_url').value.trim(), cover_url: cover, duplicate_confirmed: confirmed === signature() };
         for (const key of ['audio_url','video_url']) if (payload[key]) { const url = new URL(payload[key]); if (url.protocol !== 'https:' || url.username || url.password) throw new Error('音视频请使用不含账号密码的 HTTPS 直链。'); }
-        await this.rpc('publish', payload); location.hash = '#/reading/mine/uploads';
+        await this.rpc('publish', payload); location.hash = base+'/mine/uploads';
       } catch (error) { status.textContent = '发布未完成：' + error.message; } finally { lock(false); }
     };
   },
@@ -142,15 +143,16 @@ window.BookCommunity = {
     const dialog = document.createElement('dialog'); dialog.className = 'book-personal-dialog';
     dialog.innerHTML = `<form><h2>${options.media?'收藏 / 分类':'个人图书管理'}</h2><label><input type="checkbox" name="favorite" ${data?.favorite ? 'checked' : ''}>${options.media?'收藏此内容':'收藏这本书'}</label><label>我的分类<input name="category" maxlength="60" value="${this.e(app, data?.category)}" placeholder="例如 睡前故事、英语启蒙"></label><p role="status"></p><button class="btn">保存</button> <button type="button" data-close>取消</button></form>`;
     (document.fullscreenElement || document.body).append(dialog); dialog.showModal(); dialog.querySelector('[data-close]').onclick = () => dialog.close(); dialog.onclose = () => dialog.remove();
-    dialog.querySelector('form').onsubmit = async event => { event.preventDefault(); try { const form = event.currentTarget; await this.rpc('personal', { book_id: id, changes: { favorite: form.elements.favorite.checked, category: form.elements.category.value.trim() } }); dialog.close(); if(options.onSave)await options.onSave();else if(/^#\/reading\/mine\/(favorites|recent)$/.test(location.hash))await this.renderMine(app,location.hash.split('/')[3]); } catch (error) { if(dialog.isConnected)dialog.querySelector('[role=status]').textContent = error.message; } };
+    dialog.querySelector('form').onsubmit = async event => { event.preventDefault(); try { const form = event.currentTarget; await this.rpc('personal', { book_id: id, changes: { favorite: form.elements.favorite.checked, category: form.elements.category.value.trim() } }); dialog.close(); if(options.onSave)await options.onSave();else if(/^#\/(reading|magazines)\/mine\/(favorites|recent)$/.test(location.hash))await this.renderMine(app,location.hash.split('/')[3]); } catch (error) { if(dialog.isConnected)dialog.querySelector('[role=status]').textContent = error.message; } };
   },
   async renderMine(app, mode = 'all') {
     if (!this.requireLogin(app)) return;
-    const route=location.hash;
+    const route=location.hash,base=window.BookReader.shelfBase();
     const uid = window.SFCloud.user.id;
-    const [books, personal, requests] = await Promise.all([window.BookReader.library(app, true), window.SFCloud.client.from('book_personal').select('*').eq('user_id', uid), ['favorites','recent'].includes(mode) ? {data:[]} : window.SFCloud.client.from('book_change_requests').select('*').eq('user_id', uid).order('created_at', { ascending: false })]);
+    const [books, personal, requests] = await Promise.all([window.BookReader.shelfLibrary(app, true), window.SFCloud.client.from('book_personal').select('*').eq('user_id', uid), ['favorites','recent'].includes(mode) ? {data:[]} : window.SFCloud.client.from('book_change_requests').select('*').eq('user_id', uid).order('created_at', { ascending: false })]);
     if(window.SFCloud?.user?.id!==uid||location.hash!==route)return;
     if (personal.error || requests.error) throw new Error(personal.error?.message || requests.error.message);
+    const ownRequests=requests.data.filter(row=>books.some(book=>book.id===row.book_id));
     const states = new Map(personal.data.map(row => [row.book_id, row])), e = value => this.e(app, value);
     let shown = books.filter(book => mode === 'uploads' ? book.ownerId === uid : mode === 'favorites' ? states.get(book.id)?.favorite : mode === 'recent' ? states.get(book.id)?.last_read_at : book.ownerId === uid || states.has(book.id));
     if (mode === 'recent') shown=shown.sort((a,b) => String(states.get(b.id).last_read_at).localeCompare(String(states.get(a.id).last_read_at))).slice(0,5);
@@ -159,13 +161,13 @@ window.BookCommunity = {
       const groups=new Map();
       if(mode==='favorites')for(const book of shown){const name=states.get(book.id)?.category||'未分类';if(!groups.has(name))groups.set(name,[]);groups.get(name).push(book);}
       const shelves=[...groups].sort(([a],[b])=>a.localeCompare(b,'zh-CN')).map(([name,list])=>`<details class="book-category-shelf"><summary><span>${e(name)}</span><small>${list.length} 本</small></summary>${cards(list)}</details>`).join('');
-      app.el().innerHTML=window.BookReader.readingNavigation()+(shown.length?(mode==='favorites'?`<section class="book-category-shelves">${shelves}</section>`:cards(shown)):`<div class="empty">${mode==='favorites'?'暂无收藏绘本。':'暂无阅读记录。'}</div>`);
+      app.el().innerHTML=window.BookReader.readingNavigation()+(shown.length?(mode==='favorites'?`<section class="book-category-shelves">${shelves}</section>`:cards(shown)):`<div class="empty">${mode==='favorites'?'暂无收藏'+window.BookReader.shelfLabel()+'。':'暂无阅读记录。'}</div>`);
       const sections=app.el().querySelectorAll('.book-category-shelf');
       sections.forEach(section=>section.addEventListener('toggle',()=>{if(section.open)sections.forEach(other=>{if(other!==section)other.open=false;});}));
       window.BookReader.bindBookCards(app);return;
     }
-    const categories = [...new Set(personal.data.map(row => row.category).filter(Boolean))].sort();
-    app.el().innerHTML = `${window.BookReader.readingNavigation()}<h1>我的图书</h1><nav class="book-personal-tabs">${[['all','全部'],['uploads','我的上传'],['favorites','我的收藏'],['recent','最近阅读']].map(([key,label]) => `<a href="#/reading/mine/${key}" ${key===mode?'aria-current="page"':''}>${label}</a>`).join('')}</nav><label>按我的分类筛选 <select id="bookCategoryFilter"><option value="">全部分类</option>${categories.map(value => `<option>${e(value)}</option>`).join('')}</select></label>${window.BookReader.bookCards(app, shown)}<h2>我的修改／删除申请</h2>${requests.data.map(row => `<article class="book-request"><strong>${e(books.find(book => book.id === row.book_id)?.titleZh || books.find(book => book.id === row.book_id)?.title || row.book_id)}</strong><p>${row.kind==='delete'?'删除':'修改'} · ${{pending:'待审核',approved:'已通过',rejected:'未通过'}[row.status]}${row.review_note?' · '+e(row.review_note):''}</p></article>`).join('') || '<p>暂无申请。</p>'}`;
+    const categories = [...new Set(personal.data.filter(row=>books.some(book=>book.id===row.book_id)).map(row => row.category).filter(Boolean))].sort();
+    app.el().innerHTML = `${window.BookReader.readingNavigation()}<h1>${base==='#/magazines'?'我的期刊':'我的图书'}</h1><nav class="book-personal-tabs">${[['all','全部'],['uploads','我的上传'],['favorites','我的收藏'],['recent','最近阅读']].map(([key,label]) => `<a href="${base}/mine/${key}" ${key===mode?'aria-current="page"':''}>${label}</a>`).join('')}</nav><label>按我的分类筛选 <select id="bookCategoryFilter"><option value="">全部分类</option>${categories.map(value => `<option>${e(value)}</option>`).join('')}</select></label>${window.BookReader.bookCards(app, shown)}<h2>我的修改／删除申请</h2>${ownRequests.map(row => `<article class="book-request"><strong>${e(books.find(book => book.id === row.book_id)?.titleZh || books.find(book => book.id === row.book_id)?.title || row.book_id)}</strong><p>${row.kind==='delete'?'删除':'修改'} · ${{pending:'待审核',approved:'已通过',rejected:'未通过'}[row.status]}${row.review_note?' · '+e(row.review_note):''}</p></article>`).join('') || '<p>暂无申请。</p>'}`;
     window.BookReader.bindBookCards(app);
     const cards = app.el().querySelectorAll('.book-card');
     if (!cards.length) { const empty=document.createElement('p'); empty.className='empty'; empty.textContent=mode==='recent'?'使用本站阅览器阅读后，这里会显示阅读记录和继续阅读入口。':mode==='favorites'?'点击书籍下方的“收藏 / 分类”，即可加入我的收藏。':'暂无图书，可从上传或收藏开始建立自己的书架。'; app.el().querySelector('.book-grid').after(empty); }
@@ -189,9 +191,10 @@ window.BookCommunity = {
   async renderReviews(app, host) {
     const { data, error } = await window.SFCloud.client.from('book_change_requests').select('*').eq('status','pending').order('created_at');
     if (error) throw error;
-    const books = await window.BookReader.library(app), e = value => this.e(app,value);
+    const books = await window.BookReader.shelfLibrary(app), e = value => this.e(app,value);
+    const pending=data.filter(row=>books.some(book=>book.id===row.book_id));
     const section = document.createElement('section'); section.className = 'book-review-list';
-    section.innerHTML = `<h2>家长修改／删除申请 · ${data.length}</h2>${data.map(row => { const book = books.find(book => book.id===row.book_id); return `<article data-request="${e(row.id)}"><h3>${e(book?.titleZh || book?.title || row.book_id)}</h3><p>上传者：${e(book?.uploaderNickname)} · ${row.kind==='delete'?'申请删除':'申请修改'}</p><p>${e(row.reason)}</p>${row.kind==='edit'?`<pre>${e(JSON.stringify(row.changes,null,2))}</pre>`:''}<label>审核说明<input name="note" maxlength="1000"></label><button type="button" data-approve="true">通过并生效</button> <button type="button" data-approve="false">拒绝</button><p role="status"></p></article>`; }).join('') || '<p>暂无待审核申请。</p>'}`;
+    section.innerHTML = `<h2>家长修改／删除申请 · ${pending.length}</h2>${pending.map(row => { const book = books.find(book => book.id===row.book_id); return `<article data-request="${e(row.id)}"><h3>${e(book?.titleZh || book?.title || row.book_id)}</h3><p>上传者：${e(book?.uploaderNickname)} · ${row.kind==='delete'?'申请删除':'申请修改'}</p><p>${e(row.reason)}</p>${row.kind==='edit'?`<pre>${e(JSON.stringify(row.changes,null,2))}</pre>`:''}<label>审核说明<input name="note" maxlength="1000"></label><button type="button" data-approve="true">通过并生效</button> <button type="button" data-approve="false">拒绝</button><p role="status"></p></article>`; }).join('') || '<p>暂无待审核申请。</p>'}`;
     host.append(section);
     section.querySelectorAll('[data-approve]').forEach(button => button.onclick = async () => { const article = button.closest('[data-request]'); article.querySelectorAll('button').forEach(node => { node.disabled=true; }); try { await this.rpc('review',{request_id:article.dataset.request,approve:button.dataset.approve==='true',note:article.querySelector('input').value.trim()}); article.replaceChildren(document.createTextNode('审核已完成。')); } catch(error) { article.querySelector('[role=status]').textContent=error.message; article.querySelectorAll('button').forEach(node=>{node.disabled=false;}); } });
   },

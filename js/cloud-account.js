@@ -152,6 +152,7 @@ window.SFCloud = {
     document.getElementById('accountSync')?.addEventListener('click',()=>this.sync(true));
     document.getElementById('accountNicknameForm')?.addEventListener('submit',e=>{e.preventDefault();this.saveNickname();});
     document.getElementById('accountMyBooks')?.addEventListener('click',()=>this.close());
+    document.getElementById('accountMyMagazines')?.addEventListener('click',()=>this.close());
     window.addEventListener('online',()=>this.schedule());
     window.addEventListener('focus',()=>this.pull());
     document.addEventListener('visibilitychange',()=>{if(!document.hidden)this.pull();});
