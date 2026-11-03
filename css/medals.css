@@ -11,3 +11,5 @@
 .medal-grid .medal-card:hover .medal-card-caption,.medal-grid .medal-card:focus-visible .medal-card-caption,.medal-template:hover .medal-card-actions,.medal-template:focus-within .medal-card-actions,.medal-grid .medal-template:hover>button:not(.medal-preview),.medal-grid .medal-template:focus-within>button:not(.medal-preview){opacity:1;transform:none;pointer-events:auto}
 .work-badge-upload{margin:20px 0;padding:16px;border:1px solid #d8e3ee;border-radius:12px}.work-badge-upload p{font-size:13px;color:#748398;line-height:1.7}
 @media(hover:none){.medal-grid .medal-card-actions,.medal-grid .medal-template>button:not(.medal-preview){opacity:1;transform:none;pointer-events:auto}}
+
+.medal-shell>.medal-nav{margin-top:0;margin-bottom:16px}#medalNotice:empty{display:none}#medalNotice{min-height:0;margin:0 0 12px}
