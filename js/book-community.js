@@ -95,7 +95,7 @@ window.BookCommunity = {
       app.el().innerHTML = `${window.BookReader.readingNavigation()}<section class="empty"><h1>请先完善账号昵称</h1><p>在账号管理中设置一次昵称，即可用于${label}上传。</p><button class="btn" id="bookAccountSettings">打开账号管理</button></section>`;
       app.el().querySelector('#bookAccountSettings').onclick=()=>window.SFCloud.open();return;
     }
-    app.el().innerHTML = `${window.BookReader.readingNavigation()}<section class="book-admin"><h1>上传${label}</h1><p>上传者：${e(access.nickname)}。发布后不能自行修改或删除，可提交管理员审核申请。</p><form id="parentBookForm"><label>${label}名称<input name="title" required maxlength="180"></label><label>中文名称（可选）<input name="title_zh" maxlength="180"></label><button type="button" class="btn secondary" id="checkBookDuplicate">先检索已有资源</button><div id="bookDuplicateResults"></div><label>分级<input name="level" maxlength="40"></label><label>简介<textarea name="description" maxlength="1000"></textarea></label>${[['pdf','PDF '+label,'application/pdf,.pdf'],['audio','配套音频（可选）','audio/mpeg,audio/mp4,audio/ogg,audio/wav,.mp3,.m4a,.aac'],['video','配套视频（可选）','video/mp4,video/webm,video/quicktime']].map(([kind,label,accept]) => `<fieldset><legend>${label}</legend><input type="file" name="${kind}_file" accept="${accept}"><button type="button" class="btn secondary" data-upload="${kind}">上传${kind === 'pdf' ? label : kind === 'audio' ? '音频' : '视频'}</button><input type="hidden" name="${kind}_url"></fieldset>`).join('')}<label>另选封面（可选）<input name="cover_file" type="file" accept="image/jpeg,image/png,image/webp"></label>${window.SFMedals.uploadFields()}<div id="parentBookPreview"></div><p id="parentBookStatus" role="status" aria-live="polite"></p><button class="btn" id="parentBookPublish">核对后发布</button></form></section>`;
+    app.el().innerHTML = `${window.BookReader.readingNavigation()}<section class="book-admin"><h1>上传${label}</h1><p>上传者：${e(access.nickname)}。发布后不能自行修改或删除，可提交管理员审核申请。</p><form id="parentBookForm"><label>${label}名称<input name="title" required maxlength="180"></label><label>中文名称（可选）<input name="title_zh" maxlength="180"></label><button type="button" class="btn secondary" id="checkBookDuplicate">先检索已有资源</button><div id="bookDuplicateResults"></div><label>分级<input name="level" maxlength="40"></label><label>简介<textarea name="description" maxlength="1000"></textarea></label>${[['pdf','PDF '+label,'application/pdf,.pdf'],['audio','配套音频（可选）','audio/mpeg,audio/mp4,audio/ogg,audio/wav,.mp3,.m4a,.aac'],['video','配套视频（可选）','video/mp4,video/webm,video/quicktime']].map(([kind,label,accept]) => `<fieldset><legend>${label}</legend><input type="file" name="${kind}_file" accept="${accept}"><button type="button" class="btn secondary" data-upload="${kind}">上传${kind === 'pdf' ? label : kind === 'audio' ? '音频' : '视频'}</button><label>已有${kind === 'pdf' ? ' PDF' : kind === 'audio' ? '音频' : '视频'}链接（可选）<input type="url" name="${kind}_link" placeholder="https://..."></label><input type="hidden" name="${kind}_url"></fieldset>`).join('')}<p class="muted">可以上传文件，也可以填写已有的文件直链；PDF 链接需为本站支持的 PDF 直链。</p><label>另选封面（可选）<input name="cover_file" type="file" accept="image/jpeg,image/png,image/webp"></label>${window.SFMedals.uploadFields()}<div id="parentBookPreview"></div><p id="parentBookStatus" role="status" aria-live="polite"></p><button class="btn" id="parentBookPublish">核对后发布</button></form></section>`;
     const form = app.el().querySelector('#parentBookForm'), field = name => form.elements.namedItem(name), status = form.querySelector('#parentBookStatus');
     let cover = '', busy = false, confirmed = '', coverVersion = 0;
     const signature = () => field('title').value.trim() + '\n' + field('title_zh').value.trim();
@@ -108,13 +108,18 @@ window.BookCommunity = {
     form.oninput = preview;
     field('pdf_file').onchange = async () => {
       const file = field('pdf_file').files[0], version = ++coverVersion; if (!file) return;
-      field('pdf_url').value = ''; if (!field('title').value) field('title').value = file.name.replace(/\.pdf$/i, '').slice(0,180);
+      field('pdf_link').value = ''; field('pdf_url').value = ''; if (!field('title').value) field('title').value = file.name.replace(/\.pdf$/i, '').slice(0,180);
       if (file.size > 1073741824) { status.textContent = 'PDF 不能超过 1 GiB。'; field('pdf_file').value = ''; return; }
       status.textContent = '正在提取竖版封面…';
       try { const data = await this.pdfCover(file); if (version === coverVersion) { cover = data; preview(); status.textContent = '封面已就绪，请检索资源后上传。'; } }
       catch { if (version === coverVersion) status.textContent = '封面无法自动提取，可另选封面后继续。'; }
     };
     field('cover_file').onchange = async () => { const file = field('cover_file').files[0]; if (!file) return; ++coverVersion; try { const image = await createImageBitmap(file); cover = this.imageData(image); image.close(); preview(); } catch (error) { status.textContent = error.message; } };
+    for (const kind of ['pdf','audio','video']) field(kind + '_link').oninput = () => {
+      const value = field(kind + '_link').value.trim();
+      field(kind + '_url').value = value;
+      if (value) field(kind + '_file').value = '';
+    };
     form.querySelectorAll('[data-upload]').forEach(button => button.onclick = async () => {
       if (busy) return;
       const kind = button.dataset.upload;
@@ -125,7 +130,7 @@ window.BookCommunity = {
       event.preventDefault(); if (busy) return;
       try {
         lock(true);
-        if (!window.BookAdmin.validPdf(field('pdf_url').value.trim())) throw new Error('请先上传有效的 PDF 文件。');
+        if (!window.BookAdmin.validPdf(field('pdf_url').value.trim())) throw new Error('请上传有效 PDF，或填写本站支持的 PDF 直链。');
         if (confirmed !== signature()) await check();
         const badgeAssets=await window.SFMedals.uploadWorkImages(form,status);
         cover=await this.publishCover(cover,status);
