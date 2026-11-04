@@ -51,16 +51,20 @@ window.MovieClassroom = {
     if (this.player) { this.player.pause(); this.player.removeAttribute('src'); this.player.load(); this.player = null; }
   },
   async getLibrary(app) {
-    const catalog = await app.getJSON('data/movie-series.json');
+    const [catalog,settings,hub]=await Promise.all([app.getJSON('data/movie-series.json'),app.getJSON('data/movie-playback.json'),app.getJSON('data/movie-hub-catalog.json')]);
     const series = await Promise.all(catalog.map(async item => ({
       ...item,
       ...(await app.getJSON(`data/movies/${item.id}/movies.json`))
     })));
-    const playable = series.flatMap(item => item.sources || []).filter(item => this.playbackSource(item).url);
+    const legacy=settings.mode==='legacy'&&settings.legacyPrimaryEnabled===true,ids=new Map(hub.films.map(film=>[film.id,film.tmdbId]));
+    const playable=legacy?series.flatMap(item=>item.sources||[]).filter(item=>this.playbackSource(item).url):series.flatMap(group=>group.films.map(([id,title,titleZh,year])=>{
+      const tmdb=ids.get(id);return {...(group.sources||[]).find(item=>item.id===id),id,title,titleZh,year,playerMode:'dulo',embedUrl:Number.isSafeInteger(tmdb)&&tmdb>0?'https://dulo.mov/watch/movie/'+tmdb:'',sourceLabel:'Dulo 播放器'};
+    })).filter(item=>item.embedUrl);
     return { series, playable, playableById: new Map(playable.map(item => [item.id, item])) };
   },
   stars(rating) { return '★'.repeat(rating) + '☆'.repeat(5 - rating); },
   backupSources(movie) {
+    if(movie.playerMode==='dulo')return [];
     const sources = [...(movie.backupSources || [])];
     if (movie.backupHlsUrl) sources.push({url: movie.backupHlsUrl});
     return sources.filter((item, index) => {
@@ -140,7 +144,6 @@ window.MovieClassroom = {
     app.el().innerHTML = `<div class="breadcrumb"><a href="#/movies">光影课堂</a> › <a href="#/movie-series/${e(group.id)}">${e(group.titleZh)}</a> › ${e(movie.titleZh)}</div><section class="movie-watch-head"><div><h1>${e(movie.titleZh)}</h1><p>${e(movie.title)} · ${e(movie.year)}</p></div><a class="btn secondary" href="#/movie-series/${e(group.id)}">返回系列</a></section>${movie.descriptionZh ? `<p class="movie-description">${e(movie.descriptionZh)}</p>` : ''}${movie.description ? `<p class="movie-description muted">${e(movie.description)}</p>` : ''}${studyLink}<div class="movie-watch-frame"><video controls playsinline preload="metadata" aria-label="${e(movie.titleZh)}">${subtitleTrack}</video></div><div class="movie-player-status" id="moviePlayerStatus" role="status" aria-live="polite">正在加载影片，请稍候…</div><div class="movie-watch-actions">${sourceControl}<a class="btn secondary" href="#/movie-hub/${e(id)}">🌐 尝试其他播放平台</a><button type="button" class="btn secondary" id="movieRetry">重新加载</button>${directLink}<span class="muted">Watch 看电影 · ${e(usingBackup ? `备用片源 ${index + 1}` : movie.sourceLabel || '授权播放源')}${movie.subtitleUrl ? ' · English subtitles' : ''}</span></div><div class="movie-section-heading"><h2>同系列影片</h2></div><div class="book-grid media-related-grid">${group.films.filter(([filmId]) => filmId !== id).map(film => this.movieCard(app, group, film, playableById)).join('')}</div>`;
     const player = app.el().querySelector('video');
     window.MediaShelf.bindCards(app);
-    window.SFMedals?.attach(app,'movie:'+id,app.el().querySelector('.movie-watch-head'));
     document.getElementById('movieRetry').onclick = () => { this.cleanup(); this.renderWatch(app, id, selectedChoice).catch(() => {}); };
     if (hasBackup) document.getElementById('movieSource').onchange = event => { const choice = event.target.value; this.cleanup(); this.renderWatch(app, id, choice).catch(() => {}); };
     const report = (message, failed=false) => { if (generation !== this.generation) return; const status = document.getElementById('moviePlayerStatus'); if (status) { status.textContent = message; status.classList.toggle('failed', failed); } };
@@ -152,13 +155,15 @@ window.MovieClassroom = {
       frame.referrerPolicy = 'no-referrer';
       frame.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms allow-presentation');
       frame.addEventListener('load', () => {report('播放器页面已加载，请在画面内点击播放；若空白，请重新加载。');if(generation===this.generation)window.MediaShelf.record('film-'+id,{href:'#/movie/'+id});});
-      frame.addEventListener('error', () => report('播放器页面加载失败，请重新加载或打开片源页面。', true));
+      frame.addEventListener('error', () => report('播放器页面加载失败，请重新加载或尝试其他播放平台。', true));
       this.frame = frame;
       app.el().querySelector('.movie-watch-frame').replaceChildren(frame);
-      const open = document.createElement('a');
-      open.className = 'btn secondary'; open.textContent = '打开片源页面';
-      open.href = sourceUrl; open.target = '_blank'; open.rel = 'noopener noreferrer';
-      app.el().querySelector('.movie-watch-actions').append(open);
+      if(movie.playerMode!=='dulo'){
+        const open = document.createElement('a');
+        open.className = 'btn secondary'; open.textContent = '打开片源页面';
+        open.href = sourceUrl; open.target = '_blank'; open.rel = 'noopener noreferrer';
+        app.el().querySelector('.movie-watch-actions').append(open);
+      }
       report('正在加载播放器页面，请稍候…');
       frame.src = sourceUrl;
       return;

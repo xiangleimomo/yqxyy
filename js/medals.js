@@ -201,7 +201,7 @@ window.SFMedals={
  },
  async attach(app,resourceKey,host){
   this.app=app;const uid=window.SFCloud?.user?.id,run=this.generation;if(!uid||!host?.isConnected)return;
-  if(!resourceKey.startsWith('movie:')&&host.id!=='medalReaderEntry')return;
+  if(host.id!=='medalReaderEntry')return;
   try{const badges=await this.rpc('available',{resource_key:resourceKey});if(uid!==window.SFCloud?.user?.id||run!==this.generation||!host.isConnected)return;
    const choices=host.id==='medalReaderEntry'?badges:badges.filter(row=>row.rule==='movie_quiz');if(!choices.length)return;
    const panel=document.createElement('div');panel.className=host.id==='medalReaderEntry'?'medal-reader-choices':'medal-quiz-entry';panel.innerHTML=choices.map(row=>`<button type="button" class="btn secondary" data-medal-claim="${this.e(row.id)}">${row.rule==='movie_quiz'?'本片答题':this.e(row.title)+' · 查看 / 领取'}</button>`).join('');host.append(panel);
