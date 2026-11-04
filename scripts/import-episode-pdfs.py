@@ -64,6 +64,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--apply', action='store_true')
     parser.add_argument('--check', action='store_true')
+    parser.add_argument('--content-id', action='append', default=[], help='Check only one or more Cxxxxxxx IDs')
     args = parser.parse_args()
     rows, missing, conflicts = discover()
     if conflicts:
@@ -71,7 +72,10 @@ def main():
     previous = json.loads(INDEX.read_text(encoding='utf-8')) if INDEX.exists() else []
     checked = {row['pdfUrl']: row.get('availability', 'unverified') for row in previous}
     verified = {row['pdfUrl'] for row in previous if row.get('availability') == 'pdf' and row.get('verification') == 'pdf-header-v2'}
-    urls = sorted({row['pdfUrl'] for row in rows} - verified)
+    requested_ids = set(args.content_id)
+    if any(not ID.fullmatch(content_id) for content_id in requested_ids):
+        raise SystemExit('Invalid --content-id value')
+    urls = sorted({row['pdfUrl'] for row in rows if not requested_ids or row['contentId'] in requested_ids} - verified)
     if args.check:
         with concurrent.futures.ThreadPoolExecutor(max_workers=16) as pool:
             for number, (url, result) in enumerate(zip(urls, pool.map(check, urls)), 1):

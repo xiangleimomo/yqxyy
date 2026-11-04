@@ -37,9 +37,9 @@ function updateCookie(headers) {
 }
 async function request(target, options = {}) {
   let error;
-  for (let attempt = 1; attempt <= 4; attempt += 1) {
+  for (let attempt = 1; attempt <= 2; attempt += 1) {
     try {
-      const response = await fetch(new URL(target, BASE_URL), { redirect: 'manual', ...options, headers: { ...(cookie ? { cookie } : {}), ...(options.headers || {}) } });
+      const response = await fetch(new URL(target, BASE_URL), { redirect: 'manual', signal: AbortSignal.timeout(15000), ...options, headers: { ...(cookie ? { cookie } : {}), ...(options.headers || {}) } });
       updateCookie(response.headers);
       if (response.status >= 300 && response.status < 400 && response.headers.get('location')) return request(response.headers.get('location'));
       if (response.ok) return response;
@@ -99,8 +99,15 @@ async function detail(item, episode) {
 }
 async function main() {
   await login();
-  const catalogue = [];
-  for (let level = 1; level <= 9; level += 1) catalogue.push(...parseCatalog(await (await request(`/fox${String(level).padStart(2, '0')}.php`)).text(), level));
+  const catalogue = (await Promise.all(Array.from({ length: 9 }, async (_, index) => {
+    const level = index + 1;
+    try {
+      return parseCatalog(await (await request(`/fox${String(level).padStart(2, '0')}.php`)).text(), level);
+    } catch (error) {
+      console.warn(`Skipped Level ${level}: ${error.message}`);
+      return [];
+    }
+  }))).flat();
   const selectedCatalogue = fsIdFilter ? catalogue.filter(item => item.fsId === fsIdFilter) : titleFilter ? catalogue.filter(item => item.title === titleFilter) : catalogue;
   if ((fsIdFilter || titleFilter) && !selectedCatalogue.length) throw new Error(`Requested series was not found in the XET catalogue.`);
   const seriesListPath = path.join(DATA_ROOT, 'series-list.json');

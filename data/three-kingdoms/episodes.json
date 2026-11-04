@@ -384,5 +384,36 @@
       "pdfUrl": "https://res.littlefox.com/en/supplement/load_pdf/C0013408",
       "availability": "pdf"
     }
+  },
+  {
+    "episodeId": 13,
+    "sourceContentId": "C0013409",
+    "title": "Cruel and Heartless",
+    "titleZh": "",
+    "releaseDate": "",
+    "status": "published",
+    "sourceType": "abc-catalog",
+    "unlockRequiresQuiz": false,
+    "video": {
+      "source": "hls",
+      "hlsUrl": "https://cdn.littlefox.com/contents_5/hls/720/6a4409a7d1/1793066883251ea3991fd165bfd231aa53cd439968/stream.m3u8?_=1793066889",
+      "backupHlsUrl": "https://cdn.littlefox.co.kr/contents_5/hls/720/6a4409a7d1/1793066883251ea3991fd165bfd231aa53cd439968/stream.m3u8"
+    },
+    "modules": {
+      "watch": true,
+      "read": true,
+      "words": true,
+      "vocabulary": true,
+      "phrases": false,
+      "grammar": false,
+      "quiz": false,
+      "review": false
+    },
+    "storyBook": {
+      "contentId": "C0013409",
+      "bookId": "littlefox-c0013409",
+      "pdfUrl": "https://res.littlefox.com/en/supplement/load_pdf/C0013409",
+      "availability": "pdf"
+    }
   }
 ]
