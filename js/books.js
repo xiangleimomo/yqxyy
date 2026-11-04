@@ -56,7 +56,7 @@ window.BookReader = {
     const [bundled, episodePdfs] = await Promise.all([app.getJSON('data/books.json'), app.getJSON('data/littlefox-episode-pdfs.json')]);
     const official = new Map();
     for (const row of episodePdfs) {
-      if (row.availability !== 'pdf' || !/^C\d{7}$/.test(row.contentId)) continue;
+      if (Number(row.level) === 0 || row.availability !== 'pdf' || !/^C\d{7}$/.test(row.contentId)) continue;
       const id = 'littlefox-' + row.contentId.toLowerCase();
       const existing = official.get(id);
       if (existing) { if (!existing.seriesIds.includes(row.seriesId)) existing.seriesIds.push(row.seriesId); continue; }
@@ -183,6 +183,15 @@ window.BookReader = {
     const books = await this.library(app);
     const item = books.find(book => book.id === id);
     if (!item) {
+      if (/^littlefox-c\d{7}$/.test(id)) {
+        const entries = await app.getJSON('data/littlefox-episode-pdfs.json');
+        const unavailable = entries.find(row => 'littlefox-' + row.contentId.toLowerCase() === id && row.availability === 'unavailable');
+        if (unavailable) {
+          const back = '#/series/' + this.escape(app, unavailable.seriesId);
+          app.el().innerHTML = `<div class="empty"><h2>本集暂无可用绘本</h2><p>官方暂未提供可用的 PDF，您仍可使用视频和听读。</p><a class="btn" href="${back}">返回课程</a></div>`;
+          return;
+        }
+      }
       app.el().innerHTML = `<div class="empty"><h2>${this.shelfLabel()}不存在</h2><p><a class="btn" href="${this.shelfBase()}">返回书架</a></p></div>`;
       return;
     }
@@ -264,7 +273,7 @@ window.BookReader = {
         const url = new URL(item.downloadUrl, location.origin);
         if (!item.downloadUrl || url.protocol !== 'https:' || url.username || url.password || url.origin !== location.origin) throw new Error('绘本加载地址不可用。');
         const response = await fetch(url.href, { signal: controller.signal, credentials: 'omit' });
-        if (!response.ok) throw new Error(`加载失败（${response.status}），请重试。`);
+        if (!response.ok) throw new Error(response.status === 404 && item.sourceContentId ? '本集暂未提供可用的官方绘本，您仍可使用视频和听读。' : `加载失败（${response.status}），请重试。`);
         if (response.headers.has('content-range')) throw new Error('收到不完整的 PDF，请重新加载。');
         const total = Number(response.headers.get('content-length')) || 0;
         const update = received => {

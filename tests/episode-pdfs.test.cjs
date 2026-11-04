@@ -13,6 +13,7 @@ const path = require('node:path');
     const episodes = JSON.parse(fs.readFileSync(`data/${row.seriesId}/episodes.json`));
     const episode = episodes.find(item => item.episodeId === row.episodeId);
     assert.equal(episode.sourceContentId, row.contentId);
+    if (Number(row.level) === 0) { assert.equal(episode.storyBook, undefined); continue; }
     assert.equal(episode.storyBook.contentId, row.contentId);
     assert.equal(episode.storyBook.pdfUrl, `https://res.littlefox.com/en/supplement/load_pdf/${row.contentId}`);
     assert.equal(episode.storyBook.bookId, 'littlefox-' + row.contentId.toLowerCase());
@@ -25,7 +26,7 @@ const path = require('node:path');
   assert.equal(ids.size, books.length);
   for (const row of rows) {
     const book = books.find(book=>book.id==='littlefox-'+row.contentId.toLowerCase());
-    if (row.availability !== 'pdf') { assert(!book); continue; }
+    if (Number(row.level) === 0 || row.availability !== 'pdf') { assert(!book); continue; }
     assert(book.seriesIds.includes(row.seriesId));
     assert.equal(book.sourceUrl,row.pdfUrl);
     assert.equal(book.downloadUrl,`/book-download/${book.id}.pdf`);
@@ -45,6 +46,8 @@ const path = require('node:path');
     assert.equal((await download(new Request('https://site.test/book-download/littlefox-c0006421.pdf',{method:'POST'}))).status,405);
     global.fetch=async()=>new Response('<html>not a PDF</html>',{headers:{'content-type':'text/html'}});
     assert.equal((await download(new Request('https://site.test/book-download/littlefox-c0006421.pdf'))).status,502);
+    global.fetch=async()=>new Response('<div>A PHP Error was encountered</div>',{headers:{'content-type':'application/pdf'}});
+    assert.equal((await download(new Request('https://site.test/book-download/littlefox-c0000108.pdf'))).status,404,'A mislabeled PHP error is not a PDF');
   } finally { global.fetch=originalFetch; }
   console.log(`PASS: ${rows.length} episode/content-ID mappings, verified-only library, deduplication, and fixed-origin PDF relay`);
 })().catch(error=>{console.error(error);process.exitCode=1;});

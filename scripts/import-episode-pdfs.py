@@ -1,7 +1,8 @@
 """Build episode PDF mappings from stored official Read/content IDs, never titles.
 
 python scripts/import-episode-pdfs.py --check --apply
-HEAD checks do not download the PDFs. Re-running reuses successful checks.
+Checks read only the PDF header, not the full document. Re-running reuses
+successful checks made by this content-aware verifier.
 """
 import argparse
 import concurrent.futures
@@ -48,11 +49,12 @@ def check(url):
         local.session = requests.Session()
     for attempt in range(2):
         try:
-            response = local.session.head(url, timeout=20, allow_redirects=True)
-            if response.status_code == 200 and 'application/pdf' in response.headers.get('Content-Type', '').lower():
-                return 'pdf'
-            if response.status_code in (404, 410) or (response.status_code == 200 and 'text/html' in response.headers.get('Content-Type', '')):
-                return 'unavailable'
+            with local.session.get(url, headers={'Range': 'bytes=0-1023'}, stream=True, timeout=20) as response:
+                if response.status_code in (200, 206):
+                    header = response.raw.read(1024, decode_content=True)
+                    return 'pdf' if b'%PDF-' in header else 'unavailable'
+                if response.status_code in (404, 410):
+                    return 'unavailable'
         except requests.RequestException:
             pass
     return 'unverified'
@@ -68,7 +70,8 @@ def main():
         raise SystemExit('Conflicting IDs: ' + repr(conflicts))
     previous = json.loads(INDEX.read_text(encoding='utf-8')) if INDEX.exists() else []
     checked = {row['pdfUrl']: row.get('availability', 'unverified') for row in previous}
-    urls = sorted({row['pdfUrl'] for row in rows} - {url for url, status in checked.items() if status == 'pdf'})
+    verified = {row['pdfUrl'] for row in previous if row.get('availability') == 'pdf' and row.get('verification') == 'pdf-header-v2'}
+    urls = sorted({row['pdfUrl'] for row in rows} - verified)
     if args.check:
         with concurrent.futures.ThreadPoolExecutor(max_workers=16) as pool:
             for number, (url, result) in enumerate(zip(urls, pool.map(check, urls)), 1):
@@ -77,6 +80,8 @@ def main():
                     print(f'Checked {number}/{len(urls)}', flush=True)
     for row in rows:
         row['availability'] = checked.get(row['pdfUrl'], 'unverified')
+        if row['pdfUrl'] in verified or (args.check and row['availability'] != 'unverified'):
+            row['verification'] = 'pdf-header-v2'
     summary = dict(mapped=len(rows), uniqueContentIds=len({row['contentId'] for row in rows}),
                    pdf=sum(row['availability'] == 'pdf' for row in rows),
                    unavailable=sum(row['availability'] == 'unavailable' for row in rows),
@@ -88,8 +93,14 @@ def main():
         by_episode = {(row['seriesId'], row['episodeId']): row for row in rows}
         for file in sorted((ROOT / 'data').glob('*/episodes.json')):
             episodes = json.loads(file.read_text(encoding='utf-8-sig'))
+            info = json.loads(file.with_name('series.json').read_text(encoding='utf-8-sig'))
             changed = False
             for episode in episodes:
+                if str(info.get('level')) == '0':
+                    if 'storyBook' in episode:
+                        del episode['storyBook']
+                        changed = True
+                    continue
                 row = by_episode.get((file.parent.name, episode['episodeId']))
                 if not row:
                     continue
@@ -103,13 +114,6 @@ def main():
                     changed = True
             if changed:
                 file.write_text(json.dumps(episodes, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-            if any(row['availability'] == 'pdf' for row in rows if row['seriesId'] == file.parent.name):
-                info_file = file.with_name('series.json')
-                info = json.loads(info_file.read_text(encoding='utf-8-sig'))
-                library = dict(title='全集绘本库', url='#/series-books/' + file.parent.name)
-                if info.get('storyBookLibrary') != library:
-                    info['storyBookLibrary'] = library
-                    info_file.write_text(json.dumps(info, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({key: value for key, value in summary.items() if key != 'missing'}, ensure_ascii=False), flush=True)
 
 

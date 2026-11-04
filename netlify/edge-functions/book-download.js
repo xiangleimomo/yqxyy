@@ -16,9 +16,41 @@ export default async function bookDownload(request) {
       await upstream.body?.cancel();
       return new Response('PDF download unavailable', { status: 502 });
     }
+    // Some official endpoints label PHP error pages as HTTP 200 application/pdf.
+    // Verify actual bytes before forwarding, while streaming the remaining file.
+    let body = upstream.body;
+    if (request.method === 'GET') {
+      if (!body) return new Response('PDF not available', { status: 404, headers: { 'Cache-Control': 'no-store' } });
+      const reader = body.getReader(), chunks = [];
+      let length = 0;
+      while (length < 1024) {
+        const { value, done } = await reader.read();
+        if (done) break;
+        chunks.push(value); length += value.byteLength;
+      }
+      const prefix = new Uint8Array(Math.min(length, 1024));
+      let offset = 0;
+      for (const chunk of chunks) {
+        const part = chunk.subarray(0, prefix.length - offset);
+        prefix.set(part, offset); offset += part.length;
+        if (offset === prefix.length) break;
+      }
+      if (!new TextDecoder().decode(prefix).includes('%PDF-')) {
+        await reader.cancel();
+        return new Response('PDF not available', { status: 404, headers: { 'Cache-Control': 'no-store' } });
+      }
+      body = new ReadableStream({
+        start(controller) { for (const chunk of chunks) controller.enqueue(chunk); },
+        async pull(controller) {
+          try { const { value, done } = await reader.read(); if (done) controller.close(); else controller.enqueue(value); }
+          catch (error) { controller.error(error); }
+        },
+        cancel(reason) { return reader.cancel(reason); }
+      });
+    }
     const headers = new Headers({ 'Content-Type': 'application/pdf', 'Content-Disposition': 'inline', 'Cache-Control': dynamic ? 'no-store' : 'public, max-age=3600', 'X-Content-Type-Options': 'nosniff', 'X-Robots-Tag': 'noindex, noarchive' });
     if (!upstream.headers.get('content-encoding') && upstream.headers.has('content-length')) headers.set('Content-Length', upstream.headers.get('content-length'));
-    return new Response(request.method === 'HEAD' ? null : upstream.body, { status: 200, headers });
+    return new Response(request.method === 'HEAD' ? null : body, { status: 200, headers });
   } catch (_) { return new Response('PDF download unavailable', { status: 502 }); }
 }
 export const config = { path: '/book-download/*' };
