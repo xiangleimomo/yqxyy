@@ -6,9 +6,10 @@ export default async function bookDownload(request) {
   const match = /^\/book-download\/([a-z0-9-]+)\.pdf$/.exec(new URL(request.url).pathname);
   if (!match) return new Response('Book not found', { status: 404 });
   try {
-    const dynamic = await cloudSource(match[1], request.signal).catch(() => null);
-    const source = dynamic || SOURCES[match[1]];
-    if (!validPdf(source)) return new Response('Book not found', { status: 404 });
+    const officialId = /^littlefox-c(\d{7})$/.exec(match[1]);
+    const dynamic = officialId ? null : await cloudSource(match[1], request.signal).catch(() => null);
+    const source = officialId ? 'https://res.littlefox.com/en/supplement/load_pdf/C' + officialId[1] : dynamic || SOURCES[match[1]];
+    if (!officialId && !validPdf(source)) return new Response('Book not found', { status: 404 });
     // Deliberately omit Range/Cookie: obtain one complete, anonymous file.
     const upstream = await fetch(source, { method: request.method, signal: request.signal });
     if (upstream.status !== 200 || !/application\/(?:pdf|octet-stream)/i.test(upstream.headers.get('content-type') || '')) {

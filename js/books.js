@@ -53,7 +53,16 @@ window.BookReader = {
   },
 
   async library(app, strict = false) {
-    const books = await app.getJSON('data/books.json');
+    const [bundled, episodePdfs] = await Promise.all([app.getJSON('data/books.json'), app.getJSON('data/littlefox-episode-pdfs.json')]);
+    const official = new Map();
+    for (const row of episodePdfs) {
+      if (row.availability !== 'pdf' || !/^C\d{7}$/.test(row.contentId)) continue;
+      const id = 'littlefox-' + row.contentId.toLowerCase();
+      const existing = official.get(id);
+      if (existing) { if (!existing.seriesIds.includes(row.seriesId)) existing.seriesIds.push(row.seriesId); continue; }
+      official.set(id, { id, title: `Episode ${row.episodeId} · ${row.title}`, titleZh: row.titleZh ? `第${row.episodeId}集 · ${row.titleZh}` : `Episode ${row.episodeId} · ${row.title}`, level: row.level, description: 'Little Fox 官方剧集绘本', coverUrl: row.coverUrl, format: 'pdf', kind: 'book', sourceContentId: row.contentId, episodeId: row.episodeId, seriesIds: [row.seriesId], sourceUrl: row.pdfUrl, downloadUrl: '/book-download/' + id + '.pdf' });
+    }
+    const books = [...bundled, ...official.values()];
     const config = window.STORYFOX_SUPABASE;
     if (!config?.url || !config.publishableKey) return books;
     try {
@@ -177,7 +186,7 @@ window.BookReader = {
       app.el().innerHTML = `<div class="empty"><h2>${this.shelfLabel()}不存在</h2><p><a class="btn" href="${this.shelfBase()}">返回书架</a></p></div>`;
       return;
     }
-    this.readerReturnHref = item.kind==='magazine'?'#/magazines':item.seriesIds?.length ? '#/series-books/' + (item.seriesIds.includes(seriesId) ? seriesId : item.seriesIds[0]) : '#/reading';
+    this.readerReturnHref = item.sourceContentId && seriesId && item.seriesIds.includes(seriesId) ? '#/series/' + seriesId : item.kind==='magazine'?'#/magazines':item.seriesIds?.length ? '#/series-books/' + (item.seriesIds.includes(seriesId) ? seriesId : item.seriesIds[0]) : '#/reading';
     await window.BookCommunity.restoreProgress(item);
     const e = value => this.escape(app, value);
     if (item.format === 'pdf') {
