@@ -34,6 +34,9 @@
 [functions."movie-study-subtitles"]
   included_files = ["data/movie-harry-potter-1/alignment.json"]
 
+[functions."movie-stream"]
+  included_files = ["data/movie-hub-catalog.json"]
+
 [[headers]]
   for = "/data/movie-harry-potter-2/hls/*"
   [headers.values]

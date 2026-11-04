@@ -64,7 +64,7 @@ window.MovieClassroom = {
   },
   stars(rating) { return '★'.repeat(rating) + '☆'.repeat(5 - rating); },
   backupSources(movie) {
-    if(movie.playerMode==='dulo')return [];
+    if(['dulo','dulo-direct'].includes(movie.playerMode))return [];
     const sources = [...(movie.backupSources || [])];
     if (movie.backupHlsUrl) sources.push({url: movie.backupHlsUrl});
     return sources.filter((item, index) => {
@@ -127,9 +127,23 @@ window.MovieClassroom = {
     const generation = this.generation;
     const { series, playableById } = await this.getLibrary(app);
     if (generation !== this.generation) return;
-    const movie = playableById.get(id);
+    let movie = playableById.get(id);
     const group = series.find(item => item.films.some(([filmId]) => filmId === id));
     if (!movie || !group) { app.el().innerHTML = '<div class="empty">这部影片暂未添加授权播放源。<p><a class="btn" href="#/movies">返回光影课堂</a></p></div>'; return; }
+    if(transportChoice==='dulo-direct'){
+      app.el().innerHTML='<section class="empty"><p role="status">正在获取本片当前可用线路…</p></section>';
+      try{
+        const response=await fetch('/.netlify/functions/movie-stream?id='+encodeURIComponent(id),{cache:'no-store',signal:AbortSignal.timeout(15000)}),data=await response.json();
+        if(generation!==this.generation)return;
+        if(!response.ok||!data.url)throw Error(data.error||'暂未获取到播放线路');
+        movie={...movie,embedUrl:'',hlsUrl:data.url,playerMode:'dulo-direct',sourceLabel:'Dulo 实时直链'};
+      }catch(error){
+        if(generation!==this.generation)return;
+        app.el().innerHTML=`<section class="empty"><h2>暂未获取到影片线路</h2><p>${this.escape(app,error.message)}</p><button type="button" class="btn" id="movieResolveRetry">重试获取</button> <button type="button" class="btn secondary" id="movieReturnDulo">使用 Dulo 播放器</button></section>`;
+        document.getElementById('movieResolveRetry').onclick=()=>{this.cleanup();this.renderWatch(app,id,'primary','dulo-direct');};
+        document.getElementById('movieReturnDulo').onclick=()=>{this.cleanup();this.renderWatch(app,id);};return;
+      }
+    }
     const backups = this.backupSources(movie);
     const hasBackup = backups.length > 0;
     const index = sourceChoice === 'backup' ? 0 : /^backup-\d+$/.test(sourceChoice) ? Number(sourceChoice.slice(7)) : -1;
@@ -144,7 +158,11 @@ window.MovieClassroom = {
     app.el().innerHTML = `<div class="breadcrumb"><a href="#/movies">光影课堂</a> › <a href="#/movie-series/${e(group.id)}">${e(group.titleZh)}</a> › ${e(movie.titleZh)}</div><section class="movie-watch-head"><div><h1>${e(movie.titleZh)}</h1><p>${e(movie.title)} · ${e(movie.year)}</p></div><a class="btn secondary" href="#/movie-series/${e(group.id)}">返回系列</a></section>${movie.descriptionZh ? `<p class="movie-description">${e(movie.descriptionZh)}</p>` : ''}${movie.description ? `<p class="movie-description muted">${e(movie.description)}</p>` : ''}${studyLink}<div class="movie-watch-frame"><video controls playsinline preload="metadata" aria-label="${e(movie.titleZh)}">${subtitleTrack}</video></div><div class="movie-player-status" id="moviePlayerStatus" role="status" aria-live="polite">正在加载影片，请稍候…</div><div class="movie-watch-actions">${sourceControl}<a class="btn secondary" href="#/movie-hub/${e(id)}">🌐 尝试其他播放平台</a><button type="button" class="btn secondary" id="movieRetry">重新加载</button>${directLink}<span class="muted">Watch 看电影 · ${e(usingBackup ? `备用片源 ${index + 1}` : movie.sourceLabel || '授权播放源')}${movie.subtitleUrl ? ' · English subtitles' : ''}</span></div><div class="movie-section-heading"><h2>同系列影片</h2></div><div class="book-grid media-related-grid">${group.films.filter(([filmId]) => filmId !== id).map(film => this.movieCard(app, group, film, playableById)).join('')}</div>`;
     const player = app.el().querySelector('video');
     window.MediaShelf.bindCards(app);
-    document.getElementById('movieRetry').onclick = () => { this.cleanup(); this.renderWatch(app, id, selectedChoice).catch(() => {}); };
+    document.getElementById('movieRetry').onclick = () => { this.cleanup(); this.renderWatch(app, id, selectedChoice,transportChoice).catch(() => {}); };
+    if(['dulo','dulo-direct'].includes(movie.playerMode)){
+      const switchPlayer=document.createElement('button');switchPlayer.type='button';switchPlayer.className='btn secondary';switchPlayer.textContent=movie.playerMode==='dulo'?'本站直链播放':'使用 Dulo 播放器';
+      switchPlayer.onclick=()=>{this.cleanup();this.renderWatch(app,id,'primary',movie.playerMode==='dulo'?'dulo-direct':'auto').catch(()=>{});};app.el().querySelector('.movie-watch-actions').prepend(switchPlayer);
+    }
     if (hasBackup) document.getElementById('movieSource').onchange = event => { const choice = event.target.value; this.cleanup(); this.renderWatch(app, id, choice).catch(() => {}); };
     const report = (message, failed=false) => { if (generation !== this.generation) return; const status = document.getElementById('moviePlayerStatus'); if (status) { status.textContent = message; status.classList.toggle('failed', failed); } };
     if (embedded) {
@@ -171,7 +189,7 @@ window.MovieClassroom = {
     this.player = player;
     window.MediaShelf.bindPlayer(player,'film-'+id,{href:'#/movie/'+id},{resume:!usingBackup});
     this.disposeSubtitles = window.MovieSubtitles?.mount(app.el(), player, movie, () => this.hls);
-    const mediaUrl = this.mediaUrl(sourceUrl);
+    const mediaUrl = movie.playerMode==='dulo-direct'?sourceUrl:this.mediaUrl(sourceUrl);
     const native = player.canPlayType('application/vnd.apple.mpegurl');
     const safari = /Safari/i.test(navigator.userAgent) && !/Chrome|Chromium|CriOS|Edg|Android/i.test(navigator.userAgent);
     // Native media requests do not need fetch/XHR CORS access. On supported
@@ -194,7 +212,7 @@ window.MovieClassroom = {
     player.addEventListener('waiting', () => { if (!player.paused) report(directLink ? '正在缓冲，请稍候；若持续转圈，可点击“直接打开播放”。' : '正在缓冲，请稍候…'); });
     player.addEventListener('error', () => {
       if (directNative) { fallback(); return; }
-      report(hasBackup && !usingBackup ? '主片源加载失败，请选择备用片源或重新加载。' : directLink ? '影片加载失败，请重试或点击“直接打开播放”。' : '影片加载失败，请重新加载或切换片源。', true);
+      report(movie.playerMode==='dulo-direct'?'已获取视频地址，但当前网络未能加载视频；可重新获取线路或切换 Dulo 播放器。':hasBackup && !usingBackup ? '主片源加载失败，请选择备用片源或重新加载。' : directLink ? '影片加载失败，请重试或点击“直接打开播放”。' : '影片加载失败，请重新加载或切换片源。', true);
     });
     const useNative = url => { player.src = url; this.disposeAdSkip = window.DyttAdSkip?.attach(player, sourceUrl); };
     if (directNative) {
@@ -207,7 +225,7 @@ window.MovieClassroom = {
     if (native && safari) { useNative(mediaUrl); return; }
     try {
       if (!window.Hls) {
-        if (!this.libraryPromise) this.libraryPromise = new Promise((resolve, reject) => { const script = document.createElement('script'); script.src = 'https://cdn.jsdelivr.net/npm/hls.js@1.5.20/dist/hls.min.js'; script.onload = resolve; script.onerror = () => reject(new Error('播放器组件加载失败')); document.head.append(script); }).catch(error => { this.libraryPromise = null; throw error; });
+        if (!this.libraryPromise) this.libraryPromise = new Promise((resolve, reject) => { const script = document.createElement('script'); script.src = 'assets/vendor/hlsjs-1.5.20/hls.min.js'; script.onload = resolve; script.onerror = () => reject(new Error('播放器组件加载失败')); document.head.append(script); }).catch(error => { this.libraryPromise = null; throw error; });
         await this.libraryPromise;
       }
       if (generation !== this.generation || !player.isConnected) return;
@@ -215,8 +233,8 @@ window.MovieClassroom = {
         if (native) { useNative(mediaUrl); return; }
         throw new Error('当前浏览器不支持 HLS 播放');
       }
-      const hls = new window.Hls(); this.hls = hls;
-      hls.on(window.Hls.Events.ERROR, (_event, data) => { if (data.fatal) { hls.stopLoad(); report(hasBackup && !usingBackup ? '主片源加载失败，请选择备用片源或重新加载。' : '影片加载失败：片源可能已过期，或存在网络／跨站访问限制。请重试；仍失败时需要更新片源地址。', true); } });
+      const hls = new window.Hls(movie.playerMode==='dulo-direct'?{xhrSetup:(xhr,url)=>{try{const source=new URL(sourceUrl),target=new URL(url,sourceUrl),token=source.searchParams.get('_rb'),prefix=source.pathname.slice(0,source.pathname.lastIndexOf('/')+1);if(token&&target.origin===source.origin&&target.pathname.startsWith(prefix)){target.searchParams.set('_rb',token);if(target.href!==url)xhr.open('GET',target.href,true);}}catch{}}}:{}); this.hls = hls;
+      hls.on(window.Hls.Events.ERROR, (_event, data) => { if (data.fatal) { hls.stopLoad(); report(movie.playerMode==='dulo-direct'?'已获取视频地址，但视频线路在当前网络下加载失败。请重新获取线路；如果仍失败，需要可直连线路或视频中转。':hasBackup && !usingBackup ? '主片源加载失败，请选择备用片源或重新加载。' : '影片加载失败：片源可能已过期，或存在网络／跨站访问限制。请重试；仍失败时需要更新片源地址。', true); } });
       this.disposeAdSkip = window.DyttAdSkip?.attach(player, sourceUrl, hls);
       hls.loadSource(mediaUrl); hls.attachMedia(player);
     } catch (error) { report(error.message + '，请点击重新加载。', true); }
