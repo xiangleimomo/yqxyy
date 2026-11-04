@@ -37,8 +37,8 @@ export async function handleMedalAssets(req,{env,fetcher=fetch}={}){
   let image,small;try{image=await validatePng(await full.arrayBuffer());small=await validatePng(await thumb.arrayBuffer(),{thumbnail:true});if(Math.abs(image.width/image.height-small.width/small.height)>.03)throw Error('缩略图比例不一致');}catch(error){return json({error:error.message},400);}
   const upload=async(png,label)=>{
    const encrypted=await encryptImage(png,asset.key),payload=new FormData();payload.append('files[]',new Blob([encrypted.cipher],{type:'application/octet-stream'}),asset.id+'-'+label+'.bin');
-   const r=await fetcher('https://pone.rs/upload',{method:'POST',body:payload,redirect:'error',signal:AbortSignal.timeout(45000)});if(!r.ok)throw Error('Pone 上传失败');const data=await r.json(),url=data.files?.[0]?.url;
-   if(!data.success||data.files?.length!==1||!/^https:\/\/u\.pone\.rs\/[A-Za-z0-9]+\.bin$/.test(url||''))throw Error('Pone 未返回有效文件地址');return {url,iv:encrypted.iv};
+   const r=await fetcher('https://pone.rs/upload',{method:'POST',body:payload,redirect:'error',signal:AbortSignal.timeout(45000)});if(!r.ok)throw Error('图片上传失败');const data=await r.json(),url=data.files?.[0]?.url;
+  if(!data.success||data.files?.length!==1||!/^https:\/\/u\.pone\.rs\/[A-Za-z0-9]+\.bin$/.test(url||''))throw Error('图片保存失败，请重试');return {url,iv:encrypted.iv};
   };
   const [large,tiny]=await Promise.all([upload(image.bytes,'full'),upload(small.bytes,'thumb')]);
   await service('finalize',{id:asset.id,full_url:large.url,thumb_url:tiny.url,full_iv:large.iv,thumb_iv:tiny.iv,width:image.width,height:image.height});

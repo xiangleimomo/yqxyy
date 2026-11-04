@@ -29,9 +29,9 @@ export async function handlePoneUpload(req, { env, fetcher = fetch } = {}) {
     // The body remains a stream: no local file, Storage bucket, or database blob.
     const body=req.body.pipeThrough(new TransformStream({transform(chunk,controller){bytes+=chunk.byteLength;if(bytes>max)throw Error('too large');controller.enqueue(chunk);}}));
     const upstream=await fetcher('https://pone.rs/upload',{method:'POST',headers:{'Content-Type':contentType},body,duplex:'half',signal:AbortSignal.timeout(130000),redirect:'error'});
-    if(!upstream.ok)return json({error:'Pone 上传失败，请重试。'},502);
+    if(!upstream.ok)return json({error:'文件上传失败，请重试。'},502);
     const result=await upstream.json(), url=result.files?.[0]?.url;
     if(!result.success || result.files?.length!==1 || !new RegExp('^https://u\\.pone\\.rs/[A-Za-z0-9]+\\.('+extensions[kind]+')$','i').test(url||''))throw Error('invalid Pone response');
     return json({url});
-  }catch{return json({error:'上传超时或连接中断，请重试或填写已有 Pone 直链。'},502);}
+  }catch{return json({error:'上传超时或连接中断，请重试。'},502);}
 }

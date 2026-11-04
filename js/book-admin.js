@@ -8,7 +8,7 @@ window.BookAdmin = {
     }
     const books = await window.BookReader.shelfLibrary(app, true);
     const e = value => app.escapeHtml(String(value || ''));
-    app.el().innerHTML = `${window.BookReader.readingNavigation()}<section class="book-admin"><header><h1>管理${label}</h1><p>上传 PDF 或填写已有 Pone 直链，核对预览后发布到全站书架。</p></header><form id="bookAdminForm"><label>新增或更新<select name="existing"><option value="">新增${label}</option>${books.map(book => `<option value="${e(book.id)}">${e(book.titleZh || book.title)}</option>`).join('')}</select></label><div class="book-admin-columns"><div><label>PDF 文件<input name="pdf" type="file" accept="application/pdf,.pdf"></label><button type="button" class="btn secondary" id="bookUpload">上传至 Pone</button><p class="muted">文件上传成功后会自动填写直链。已有直链可直接填写。</p><label>PDF 直链<input name="source" type="url" required placeholder="https://u.pone.rs/xxxxxxxx.pdf"></label><label>英文名称<input name="title" required maxlength="180"></label><label>中文名称<input name="titleZh" maxlength="180"></label><label>分级<input name="level" maxlength="40" placeholder="例如 Level 5 或双语绘本"></label><label>简介<textarea name="description" maxlength="1000"></textarea></label><label>封面图片（可选）<input name="cover" type="file" accept="image/jpeg,image/png,image/webp"></label>${window.SFMedals.uploadFields()}</div><aside><h2>发布预览</h2><div id="bookAdminPreview"></div></aside></div><p id="bookAdminStatus" role="status" aria-live="polite"></p><button type="submit" class="btn" id="bookPublish">确认发布</button> <a href="${base}">返回书架</a></form></section>`;
+    app.el().innerHTML = `${window.BookReader.readingNavigation()}<section class="book-admin"><header><h1>管理${label}</h1><p>上传 PDF 或填写已有存储直链，核对预览后发布到全站书架。</p></header><form id="bookAdminForm"><label>新增或更新<select name="existing"><option value="">新增${label}</option>${books.map(book => `<option value="${e(book.id)}">${e(book.titleZh || book.title)}</option>`).join('')}</select></label><div class="book-admin-columns"><div><label>PDF 文件<input name="pdf" type="file" accept="application/pdf,.pdf"></label><button type="button" class="btn secondary" id="bookUpload">上传文件</button><p class="muted">文件上传成功后会自动填写内部存储地址。</p><label>PDF 存储地址<input name="source" type="url" required placeholder="管理员内部地址"></label><label>英文名称<input name="title" required maxlength="180"></label><label>中文名称<input name="titleZh" maxlength="180"></label><label>分级<input name="level" maxlength="40" placeholder="例如 Level 5 或双语绘本"></label><label>简介<textarea name="description" maxlength="1000"></textarea></label><label>封面图片（可选）<input name="cover" type="file" accept="image/jpeg,image/png,image/webp"></label>${window.SFMedals.uploadFields()}</div><aside><h2>发布预览</h2><div id="bookAdminPreview"></div></aside></div><p id="bookAdminStatus" role="status" aria-live="polite"></p><button type="submit" class="btn" id="bookPublish">确认发布</button> <a href="${base}">返回书架</a></form></section>`;
     const form = app.el().querySelector('#bookAdminForm');
     const field = name => form.elements.namedItem(name);
     const status = form.querySelector('#bookAdminStatus');
@@ -147,7 +147,7 @@ window.BookAdmin = {
     form.oninput = preview;
     form.onsubmit = async event => {
       event.preventDefault(); if (busy) return;
-      if (!this.validPdf(field('source').value.trim())) { status.textContent = '请填写有效 Pone PDF 直链。'; return; }
+      if (!this.validPdf(field('source').value.trim())) { status.textContent = '请填写有效的 PDF 存储地址。'; return; }
       if (!field('title').value.trim()) { status.textContent = '请填写绘本名称。'; return; }
       lock(true);
       try {

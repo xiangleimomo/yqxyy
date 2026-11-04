@@ -104,7 +104,7 @@ window.SFMedals={
    await this.rpc(action,payload);await this.render(this.app,...this.app.route().slice(1));
   }));
  },
- uploadFields(){return '<fieldset class="work-badge-upload"><legend>作品专属徽章（可选）</legend><input name="badge_images" type="file" multiple accept="image/png,image/webp,image/jpeg"><p>可不上传，也可选择最多 8 张图片。图片上传至 Pone，发布后自动绑定本作品；每张至少 512×512 像素。</p><label class="medal-check"><input name="badge_rights" type="checkbox">我确认这些徽章图片为本人原创或已获必要授权，同意在作品徽章库展示。</label></fieldset>';},
+ uploadFields(){return '<fieldset class="work-badge-upload"><legend>作品专属徽章（可选）</legend><input name="badge_images" type="file" multiple accept="image/png,image/webp,image/jpeg"><p>可不上传，也可选择最多 8 张图片。图片会安全保存并自动绑定本作品；每张至少 512×512 像素。</p><label class="medal-check"><input name="badge_rights" type="checkbox">我确认这些徽章图片为本人原创或已获必要授权，同意在作品徽章库展示。</label></fieldset>';},
  async uploadWorkImages(form,status){
   const files=[...form.elements.badge_images.files];if(!files.length)return [];
   if(files.length>8)throw Error('每次最多上传 8 张作品徽章图片');
@@ -158,7 +158,7 @@ window.SFMedals={
  },
  async uploadImage(file,status){
   status.textContent='正在转换和校验图片…';const images=await this.imageFiles(file),headers=await this.sessionHeaders(),uid=window.SFCloud.user.id,body=new FormData();body.append('full',images.full,'full.png');body.append('thumbnail',images.thumbnail,'thumbnail.png');
-  status.textContent='正在加密上传至 Pone…';const response=await fetch(window.STORYFOX_SUPABASE.url+'/functions/v1/medals-assets',{method:'POST',headers,body,signal:AbortSignal.timeout(130000)}),data=await response.json();
+  status.textContent='正在安全保存徽章…';const response=await fetch(window.STORYFOX_SUPABASE.url+'/functions/v1/medals-assets',{method:'POST',headers,body,signal:AbortSignal.timeout(130000)}),data=await response.json();
   if(uid!==window.SFCloud?.user?.id)throw Error('账号已切换');if(!response.ok||!data.id)throw Error(data.error||'图片上传失败');status.textContent='图片已就绪';return data.id;
  },
  async templateEditor(row={}){
