@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="css/reader-enhancements.css?v=20261104-study-collections-1" />
   <link rel="stylesheet" href="css/medals.css?v=20261103-mainline-7" />
   <link rel="stylesheet" href="css/read-dictionary.css?v=20261001-1" />
+  <link rel="stylesheet" href="css/account-center.css?v=20261104-compact-center-1" />
 </head>
 <body>
   <header class="topbar">
@@ -31,9 +32,9 @@
       <nav class="utility-nav" aria-label="学习工具">
         <a href="#/checkin">📅 签到</a>
         <a href="#/homework" id="navHomework">📬 打卡作业 <span id="homeworkBadge" class="homework-count" hidden></span></a>
-        <a href="#/account" id="accountLink">👤 注册 / 登录</a>
-        <a href="#/honors" id="navHonors">🏅 我的荣誉馆</a>
         <a href="#/rewards" id="navRewards">🎁 积分奖励 <span class="nav-points-badge">0</span></a>
+        <a href="#/honors" id="navHonors">🏅 我的荣誉馆</a>
+        <a href="#/account" id="accountLink">👤 注册 / 登录</a>
       </nav>
     </div>
     <div class="main-nav">
@@ -68,12 +69,12 @@
         <div id="authPasswordRow"><label for="accountPassword">密码</label><input id="accountPassword" type="password" minlength="8" autocomplete="current-password" placeholder="至少 8 位"></div>
         <button class="account-primary" id="accountSubmit" type="submit">登录</button>
       </form>
-      <div id="accountActions" hidden><p id="accountEmailLabel"></p><form id="accountNicknameForm"><label for="accountProfileNickname">账号昵称</label><input id="accountProfileNickname" required minlength="2" maxlength="40" autocomplete="nickname" placeholder="设置公开昵称"><button type="submit">保存昵称</button></form><p><a href="#/reading/mine/uploads" id="accountMyBooks">管理我的绘本</a> · <a href="#/magazines/mine/uploads" id="accountMyMagazines">管理我的期刊</a></p><div id="familyAccountSettings"></div><button type="button" id="accountSync">立即同步</button><button type="button" id="accountImport">导入本设备游客记录</button><button type="button" id="accountLogout">退出账户</button></div>
+      <div id="accountActions" hidden><p id="accountEmailLabel"></p><form id="accountNicknameForm"><label for="accountProfileNickname">账号昵称</label><input id="accountProfileNickname" required minlength="2" maxlength="40" autocomplete="nickname" placeholder="设置公开昵称"><button type="submit">保存昵称</button></form><p class="account-library-links"><a href="#/reading/mine/uploads" id="accountMyBooks">管理我的绘本</a><a href="#/magazines/mine/uploads" id="accountMyMagazines">管理我的期刊</a></p><div id="familyAccountSettings"></div><div class="account-data-actions"><button type="button" id="accountSync">立即同步</button><button type="button" id="accountImport">导入本设备游客记录</button><button type="button" id="accountLogout">退出账户</button></div></div>
       <small class="account-footnote">登录后同步学习进度、测验、收藏和积分；未登录仍可作为游客学习。</small>
     </section>
   </div>
   <script src="js/supabase-config.js"></script>
-  <script src="js/cloud-account.js?v=20261104-study-collections-1"></script>
+  <script src="js/cloud-account.js?v=20261104-compact-center-1"></script>
   <script src="js/read-dictionary.js?v=20261104-study-collections-1"></script>
   <script src="js/client-protection.js?v=20261101-1"></script>
   <script src="js/dytt-ad-skip.js?v=20261017-1"></script>
@@ -88,9 +89,9 @@
   <script src="js/medals.js?v=20261103-mainline-7"></script>
   <script src="js/episode-games.js?v=20261009-6"></script>
   <script src="js/pronunciation.js?v=20261009-1"></script>
-  <script src="js/family.js?v=20261027-reminder-1"></script>
+  <script src="js/family.js?v=20261104-compact-center-1"></script>
   <script src="js/movie-hub.js?v=20261029-1"></script>
-  <script src="js/app.js?v=20261104-study-collections-1"></script>
+  <script src="js/app.js?v=20261104-compact-center-1"></script>
   <script src="js/mobile-games.js?v=20261009-1"></script>
 <div id="readingPopup" class="reading-popup"></div>
 </body>

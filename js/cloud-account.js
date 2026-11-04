@@ -112,7 +112,7 @@ window.SFCloud = {
     const link=document.getElementById('accountLink');
     if(link){link.textContent=this.user?`${this.isAdmin()?'🛠 管理员':'👤'} ${this.nickname()||'我的账户'}`:'👤 注册 / 登录';}
     const state=document.getElementById('syncState');
-    if(state){state.textContent=this.isAdmin()?'开发调试管理员 · 已发布课程与全部游戏免解锁、游戏不扣积分':this.user?'已登录 · 学习记录可云端同步':'游客模式 · 记录仅在本设备';}
+    if(state){state.textContent=this.isAdmin()?'管理员账号 · 课程和游戏已开放':this.user?'已登录 · 学习记录可云端同步':'游客模式 · 记录仅在本设备';}
   },
   nickname(){return String(this.user?.user_metadata?.display_name||'').trim();},
   async saveNickname(){
@@ -277,7 +277,7 @@ window.SFCloud = {
   },
   close(){const modal=document.getElementById('accountDialog');if(modal)modal.hidden=true;if(window.SFFamily)window.SFFamily.settingsVersion++;},
   mode(mode){
-    this.authMode=mode;
+    this.authMode=mode;document.querySelector('.account-modes').hidden=mode==='account';
     document.getElementById('authNicknameRow').hidden=mode!=='signup';
     document.getElementById('accountNickname').required=mode==='signup';
     if(mode==='account')document.getElementById('accountProfileNickname').value=this.nickname();

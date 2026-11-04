@@ -1324,23 +1324,7 @@ updateUtilityNav(){
       {points:200,reward:'获得一次阶段大奖，可由家长自定义'}
     ];
     const next=rules.find(r=>points<r.points);
-    this.el().innerHTML=`<section class="hero"><div><h1>积分奖励</h1><p>单词拼写挑战中，每拼对 1 个单词可获得 5 积分。Games 每开始或重玩一局消耗 2 积分，余额不足时不能开始。</p></div><div class="hero-badge">可用积分：${points}</div></section>
-      <div class="personal-grid">
-        <div class="personal-card"><h3>可用积分</h3><div class="point-highlight">${points}</div><div class="points-note">登录可跨设备同步；游客仅保存本机</div></div>
-        <div class="personal-card"><h3>积分来源</h3><p>Words 模块中的 Typing Practice 拼写挑战。</p><p class="muted">答对 1 个单词 = +5 积分</p></div>
-        <div class="personal-card"><h3>下一档奖励</h3>${next?`<div class="point-highlight">${next.points}</div><div class="points-note">还差 ${next.points-points} 分可兑换：${next.reward}</div>`:`<div class="point-highlight">已满级</div><div class="points-note">当前已达到最高档奖励，可继续累计积分。</div>`}</div>
-      </div>
-      <div class="content-panel" style="margin-top:16px">
-        <h2>积分奖励规则</h2>
-        <div class="reward-grid">
-          ${rules.map(rule=>`<article class="reward-card ${points>=rule.points?'unlocked':'locked'}">
-              <div class="reward-points">🎁 ${rule.points} 积分</div>
-              <h3>${rule.reward}</h3>
-              <div class="reward-status ${points>=rule.points?'done':'todo'}">${points>=rule.points?'已解锁':'未解锁'}</div>
-            </article>`).join('')}
-        </div>
-        <p class="points-note">说明：以上奖励方案可作为默认规则，也可以后续按家庭需要自行调整。</p>
-      </div>`;
+    this.el().innerHTML=`<section class="rewards-page"><header class="center-page-heading"><h1>积分奖励</h1><p>每一次练习，都在积累进步。</p></header><div class="rewards-balance"><div><span>可用积分</span><strong>${points}<small>分</small></strong><p>登录后可跨设备同步</p></div><div class="rewards-next"><span>${next?'下一档奖励':'奖励里程碑'}</span><h2>${next?next.reward:'已达到全部参考档位'}</h2><p>${next?'还差 '+(next.points-points)+' 分，目标 '+next.points+' 分':'继续练习，积累更多进步。'}</p><progress value="${next?Math.min(points,next.points):1}" max="${next?next.points:1}" aria-label="下一档奖励进度"></progress></div></div><div class="rewards-points-rules"><div><b>＋5</b><span>拼写挑战答对 1 个单词</span></div><div><b>−2</b><span>开始或重玩 1 局 Games</span></div></div><section class="rewards-reference"><h2>家庭奖励参考</h2><div class="rewards-list">${rules.map((rule,i)=>`<article class="rewards-row ${points>=rule.points?'reached':''}"><span class="rewards-gift" aria-hidden="true">${['🌟','🍎','🎈','📚','🏆'][i]}</span><div><strong>${rule.reward}</strong><small>${rule.points} 积分</small></div><span class="rewards-tier">${points>=rule.points?'✓ 已达到':'还差 '+(rule.points-points)+' 分'}</span></article>`).join('')}</div><p class="center-page-note">以上为家庭奖励参考，具体奖励由家长安排。游戏积分不足时不能开始。</p></section></section>`;
   },
 recordTypingCorrect(seriesId,episodeId,word){
     const progress=this.storage('progress')||{},key=`${seriesId}:${episodeId}`,spelling=String(word||'').trim().toLowerCase();
@@ -1467,12 +1451,23 @@ addPoints(n=1){
     const rows=Object.values(p).sort((a,b)=>new Date(b.updatedAt)-new Date(a.updatedAt));
     this.el().innerHTML=`<section class="hero"><div><h1>学习记录</h1><p>登录后学习记录会同步到云端，可在其他设备使用同一账户继续学习；游客记录只保存在当前设备。</p></div></section><div class="personal-grid"><div class="personal-card"><h3>已学习课程</h3><p style="font-size:34px;font-weight:900">${rows.length}</p></div><div class="personal-card"><h3>单词收藏</h3><p style="font-size:34px;font-weight:900">${(this.storage('wordbank')||[]).length}</p></div><div class="personal-card"><h3>句子收藏</h3><p style="font-size:34px;font-weight:900">${(this.storage('sentences')||[]).length}</p></div><div class="personal-card"><h3>累计积分</h3><p style="font-size:34px;font-weight:900">${this.getPoints()}</p></div></div><div class="content-panel" style="margin-top:16px"><h2>最近学习</h2>${rows.length?rows.map(r=>`<p><strong>${r.seriesId}</strong> Episode ${r.episodeId} · ${Object.keys(r.modules).join(', ')} · ${(r.updatedAt||'').slice(0,10)} ${q[`${r.seriesId}:${r.episodeId}`]?`· Quiz ${q[`${r.seriesId}:${r.episodeId}`].score}/${q[`${r.seriesId}:${r.episodeId}`].total}`:''}</p>`).join(''):'<div class="empty">还没有学习记录。</div>'}</div>`;
   },
-  renderCheckin(){
-    const p=this.storage('progress') || {}; const dates=new Set([...(this.storage('checkins')||[]),...Object.values(p).map(x=>(x.updatedAt||'').slice(0,10))]);
-    const now=new Date(); const y=now.getFullYear(), m=now.getMonth(); const first=new Date(y,m,1); const days=new Date(y,m+1,0).getDate(); const blanks=(first.getDay()+6)%7;
-    let cells=''; for(let i=0;i<blanks;i++) cells+='<div></div>';
-    for(let d=1; d<=days; d++){const ds=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`; cells+=`<div class="day ${dates.has(ds)?'done':''}"><span>${d}</span><span>${dates.has(ds)?'✓':''}</span></div>`;}
-    this.el().innerHTML=`<section class="hero"><div><h1>签到</h1><p>每天完成任意学习模块后，当天会自动点亮。</p></div><div class="hero-badge">${y}年${m+1}月</div></section><div class="content-panel"><div class="calendar">${['一','二','三','四','五','六','日'].map(x=>`<strong style="text-align:center">${x}</strong>`).join('')}${cells}</div></div>`;
+  renderCheckin(selectedMonth=''){
+    const key=date=>`${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`,now=new Date(),today=key(now),currentMonth=today.slice(0,7);
+    const valid=value=>{if(typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(value)||value>today||Number(value.slice(0,4))<2000)return false;const date=new Date(value+'T12:00:00');return Number.isFinite(date.getTime())&&key(date)===value;};
+    const dates=new Set((this.storage('checkins')||[]).filter(valid));
+    for(const row of Object.values(this.storage('progress')||{})){const date=new Date(row.updatedAt);if(Number.isFinite(date.getTime())){const value=key(date);if(valid(value))dates.add(value);}}
+    const sorted=[...dates].sort(),earliest=sorted[0]?.slice(0,7)||currentMonth;
+    const month=/^\d{4}-(0[1-9]|1[0-2])$/.test(selectedMonth)?(selectedMonth<earliest?earliest:selectedMonth>currentMonth?currentMonth:selectedMonth):currentMonth;
+    const [year,m]=month.split('-').map(Number),first=new Date(year,m-1,1),days=new Date(year,m,0).getDate(),offset=(first.getDay()+6)%7,monthCount=sorted.filter(date=>date.startsWith(month)).length;
+    const counts=new Map();for(const date of sorted){const name=date.slice(0,7);counts.set(name,(counts.get(name)||0)+1);}
+    let streak=0,cursor=new Date(now.getFullYear(),now.getMonth(),now.getDate(),12);if(!dates.has(today))cursor.setDate(cursor.getDate()-1);while(dates.has(key(cursor))){streak++;cursor.setDate(cursor.getDate()-1);}
+    let cells='<span class="checkin-blank" aria-hidden="true"></span>'.repeat(offset);
+    for(let day=1;day<=days;day++){const value=month+'-'+String(day).padStart(2,'0'),done=dates.has(value),isToday=value===today;cells+=`<div class="checkin-day ${done?'done':''} ${isToday?'today':''} ${value>today?'future':''}" ${isToday?'aria-current="date"':''} aria-label="${year}年${m}月${day}日${done?'已签到':'未签到'}"><span>${day}</span><small>${done?'✓':isToday?'今天':''}</small></div>`;}
+    cells+='<span class="checkin-blank" aria-hidden="true"></span>'.repeat((7-(offset+days)%7)%7);
+    this.el().innerHTML=`<section class="checkin-page"><header class="checkin-heading"><div><h1>签到</h1><p>完成任意学习模块，记录每天的进步。</p></div><span class="checkin-today-status ${dates.has(today)?'done':''}">${dates.has(today)?'✓ 今日已签到':'今日待签到'}</span></header><div class="checkin-stats"><div><strong>${dates.size}</strong><span>累计签到 / 天</span></div><div><strong>${monthCount}</strong><span>${m}月签到 / 天</span></div><div><strong>${streak}</strong><span>最近连续 / 天</span></div></div><div class="checkin-calendar-card"><div class="checkin-month-nav"><button type="button" id="checkinPrevious" aria-label="上个月" ${month<=earliest?'disabled':''}>‹</button><label><input id="checkinMonth" type="month" min="${earliest}" max="${currentMonth}" value="${month}" aria-label="查看签到月份"></label><button type="button" id="checkinNext" aria-label="下个月" ${month>=currentMonth?'disabled':''}>›</button><button type="button" id="checkinCurrent" ${month===currentMonth?'disabled':''}>本月</button></div><div class="checkin-calendar">${['一','二','三','四','五','六','日'].map((name,i)=>`<span class="checkin-weekday ${i>4?'weekend':''}">${name}</span>`).join('')}${cells}</div><p class="checkin-legend"><span>● 已签到</span><span>边框标记今天</span></p></div><section class="checkin-history"><h2>历史签到</h2>${counts.size?`<div class="checkin-history-months">${[...counts].reverse().map(([name,count])=>`<button type="button" data-checkin-month="${name}" ${name===month?'aria-current="true"':''}><span>${name.replace('-','年')}月</span><strong>${count} 天</strong></button>`).join('')}</div>`:'<p class="muted">完成学习后，签到记录会显示在这里。</p>'}<p class="checkin-history-note">可切换月份查看已保存的签到记录。</p></section></section>`;
+    const move=delta=>this.renderCheckin(key(new Date(year,m-1+delta,1,12)).slice(0,7));
+    this.el().querySelector('#checkinPrevious').onclick=()=>move(-1);this.el().querySelector('#checkinNext').onclick=()=>move(1);this.el().querySelector('#checkinCurrent').onclick=()=>this.renderCheckin();
+    this.el().querySelector('#checkinMonth').onchange=event=>this.renderCheckin(event.target.value);this.el().querySelectorAll('[data-checkin-month]').forEach(button=>button.onclick=()=>this.renderCheckin(button.dataset.checkinMonth));
   },
   async renderBookshelf(){
     const all=await this.getJSON('data/series-list.json'); const list=this.isGuest()?all.filter(s=>!this.isGuestRestrictedLevel(s.level)):all; const p=this.storage('progress') || {};
