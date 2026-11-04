@@ -30,12 +30,17 @@ window.BookReader = {
     this.pdfDocument?.destroy();
     this.pdfDocument = null;
     if (this.keyHandler) document.removeEventListener('keydown', this.keyHandler);
+    if (this.printHandler) document.removeEventListener('keydown', this.printHandler, true);
+    if (this.readerContextHandler && this.readerContextHost) this.readerContextHost.removeEventListener('contextmenu', this.readerContextHandler);
     if (this.fullscreenHandler) document.removeEventListener('fullscreenchange', this.fullscreenHandler);
     if (this.viewportResizeHandler) window.removeEventListener('resize', this.viewportResizeHandler);
     this.resizeObserver?.disconnect();
     try { this.pageFlip?.destroy(); } catch (_) {}
     this.pdfObjectUrls.forEach(url => URL.revokeObjectURL(url));
     this.keyHandler = null;
+    this.printHandler = null;
+    this.readerContextHandler = null;
+    this.readerContextHost = null;
     this.fullscreenHandler = null;
     this.viewportResizeHandler = null;
     this.resizeObserver = null;
@@ -75,6 +80,18 @@ window.BookReader = {
     return app.escapeHtml(String(value || ''));
   },
 
+  lockReaderActions(reader) {
+    this.printHandler = event => {
+      if ((event.ctrlKey || event.metaKey) && String(event.key || '').toLowerCase() === 'p') {
+        event.preventDefault(); event.stopImmediatePropagation();
+      }
+    };
+    document.addEventListener('keydown', this.printHandler, true);
+    this.readerContextHandler = event => event.preventDefault();
+    this.readerContextHost = reader;
+    reader.addEventListener('contextmenu', this.readerContextHandler);
+  },
+
   readingNavigation(local = false) {
     const base=this.shelfBase(),label=this.shelfLabel(),route=typeof location==='undefined'?base:location.hash;
     const current=local?base+'/local':route.startsWith(base+'/mine/favorites')?base+'/mine/favorites':route.startsWith(base+'/mine/recent')?base+'/mine/recent':route===base||route.startsWith(base+'/search')?base:'';
@@ -89,13 +106,12 @@ window.BookReader = {
   bookCards(app, books, seriesId = '', options = {}) {
     const e = value => this.escape(app, value);
     return `<div class="book-grid">${books.map(item => {
-      const direct = item.format === 'pdf' && item.sourceUrl;
       const readerBase=item.kind==='magazine'?'#/magazine-reader/':'#/reader/';
-      const href = direct ? item.sourceUrl : readerBase + item.id;
+      const href = readerBase + item.id + (seriesId ? '/' + e(seriesId) : '');
       const cover = item.coverUrl ? '<img src="' + e(item.coverUrl) + '" alt="" loading="lazy" decoding="async">' : '<b>' + e(item.titleZh || item.title) + '</b>';
       const label = e(item.titleZh || item.title);
-      const primary = '<a href="' + e(href) + '"' + (direct ? ' target="_blank" rel="noopener noreferrer"' : '') + '>' + (direct ? '直接观看' : '打开绘本') + '</a>';
-      const readerLink = direct ? '<a href="' + readerBase + e(item.id) + (seriesId ? '/' + e(seriesId) : '') + '">' + (options.resume ? '继续阅读' : '本站阅览器') + '</a>' : '';
+      const primary = '<a href="' + e(href) + '">' + (options.resume ? '继续阅读' : '本站阅读') + '</a>';
+      const readerLink = '';
       const author = !options.compact && item.uploaderNickname ? '<a class="book-uploader" href="'+(item.kind==='magazine'?'#/magazines':'#/reading')+'/search/' + encodeURIComponent(item.uploaderNickname) + '">上传者：' + e(item.uploaderNickname) + '</a>' : '';
       const media = options.compact ? '' : (item.audioUrl ? '<a href="' + e(item.audioUrl) + '" target="_blank" rel="noopener noreferrer">配套音频</a>' : '') + (item.videoUrl ? '<a href="' + e(item.videoUrl) + '" target="_blank" rel="noopener noreferrer">配套视频</a>' : '');
       return '<article class="book-card" data-book-id="' + e(item.id) + '"><div class="book-cover"><button type="button" class="book-cover-trigger" aria-label="选择' + label + '的阅读方式">' + cover + '</button><div class="book-actions" aria-label="' + label + '阅读方式">' + primary + readerLink + '<button class="book-personal-button" type="button">收藏 / 分类</button></div></div><div class="book-card-body"><h2>' + label + '</h2>' + author + '<div class="book-resource-links">' + media + '</div></div></article>';
@@ -204,8 +220,9 @@ window.BookReader = {
 
   pdfFileCacheKey(item) {
     const key = new URL('/__pdf-files/' + encodeURIComponent(item.id), location.origin);
-    key.searchParams.set('source', item.sourceUrl || item.downloadUrl || '');
-    key.searchParams.set('version', item.version || '1');
+    // This key is local browser-cache metadata only; changing a catalogued
+    // source refreshes a previously cached reader file without exposing a link.
+    key.searchParams.set('version', item.version || item.sourceUrl || '1');
     return key.href;
   },
 
@@ -235,10 +252,8 @@ window.BookReader = {
       } catch (_) {}
       if (!current()) return;
       if (!blob) {
-        const url = new URL(item.downloadUrl || item.sourceUrl, location.origin);
-        // Replacing a PDF under the same book ID must bypass older HTTP responses.
-        if (item.downloadUrl && item.sourceUrl) url.searchParams.set('source', item.sourceUrl);
-        if (url.protocol !== 'https:' || url.username || url.password || (item.downloadUrl && url.origin !== location.origin)) throw new Error('绘本加载地址不可用。');
+        const url = new URL(item.downloadUrl, location.origin);
+        if (!item.downloadUrl || url.protocol !== 'https:' || url.username || url.password || url.origin !== location.origin) throw new Error('绘本加载地址不可用。');
         const response = await fetch(url.href, { signal: controller.signal, credentials: 'omit' });
         if (!response.ok) throw new Error(`加载失败（${response.status}），请重试。`);
         if (response.headers.has('content-range')) throw new Error('收到不完整的 PDF，请重新加载。');
@@ -310,6 +325,7 @@ window.BookReader = {
     document.body.classList.add('flipbook-active');
     app.el().innerHTML = `<section class="flipbook-reader pdf-flipbook-reader" id="ebookReader"><header class="flipbook-topbar"><a href="${e(this.readerReturnHref || '#/reading')}" class="flipbook-back" aria-label="返回书架">←</a><span>${e(item.kind==='magazine'?'期刊阅读':'绘本阅读')}</span><button type="button" id="bookFullscreen" aria-label="全屏阅读">⛶</button></header><div class="flipbook-stage" id="ebookStage"><button type="button" class="flipbook-turn flipbook-turn-prev" id="bookStagePrev" aria-label="上一页">‹</button><div class="pdf-flipbook-surface"><div id="pdfFlipbook" class="pdf-pageflip"><div class="ebook-loading">正在解析 PDF 绘本…</div></div></div><button type="button" class="flipbook-turn flipbook-turn-next" id="bookStageNext" aria-label="下一页">›</button><div class="flipbook-controls"><span class="book-page-indicator" id="bookPageIndicator">正在加载…</span><input type="range" id="bookProgress" min="0" max="1" value="0" step="1" aria-label="阅读进度"><button type="button" id="bookZoomOut" aria-label="缩小">−</button><button type="button" id="bookZoomIn" aria-label="放大">＋</button><button type="button" id="bookFullscreenBottom" aria-label="全屏">⛶</button></div></div><footer class="flipbook-footer"><div><h1>${e(item.title)}</h1><p>${e(item.titleZh)} · ${e(item.level)} · PDF</p></div><span>拖动书页、点击页角或使用左右箭头翻页</span></footer><p class="ebook-status" id="ebookStatus" role="status" aria-live="polite">正在准备 PDF 阅读器…</p></section>`;
     const reader = document.getElementById('ebookReader');
+    this.lockReaderActions(reader);
     if(!item.id.startsWith('local-'))window.SFMedals?.readerButton(app,(item.kind==='magazine'?'magazine:':'book:')+item.id,reader.querySelector('.flipbook-topbar'));
     this.pdfPhoneLandscape = matchMedia('(pointer:coarse)').matches && Math.min(screen.width, screen.height) <= 760;
     if (this.pdfPhoneLandscape) {

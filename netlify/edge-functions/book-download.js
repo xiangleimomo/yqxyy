@@ -15,7 +15,7 @@ export default async function bookDownload(request) {
       await upstream.body?.cancel();
       return new Response('PDF download unavailable', { status: 502 });
     }
-    const headers = new Headers({ 'Content-Type': 'application/pdf', 'Cache-Control': dynamic ? 'no-store' : 'public, max-age=3600', 'X-Content-Type-Options': 'nosniff' });
+    const headers = new Headers({ 'Content-Type': 'application/pdf', 'Content-Disposition': 'inline', 'Cache-Control': dynamic ? 'no-store' : 'public, max-age=3600', 'X-Content-Type-Options': 'nosniff', 'X-Robots-Tag': 'noindex, noarchive' });
     if (!upstream.headers.get('content-encoding') && upstream.headers.has('content-length')) headers.set('Content-Length', upstream.headers.get('content-length'));
     return new Response(request.method === 'HEAD' ? null : upstream.body, { status: 200, headers });
   } catch (_) { return new Response('PDF download unavailable', { status: 502 }); }
