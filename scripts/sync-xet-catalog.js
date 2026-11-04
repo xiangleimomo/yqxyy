@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 /*
- * Discovers Little Fox video releases from the authorised XET catalogue.
- * New episodes receive XET timed VTT only after official Read and video timeline validation.
+ * Discovers Little Fox video releases from the authorised ABC catalogue.
+ * New episodes receive timed VTT only after official Read and video timeline validation.
  * Public Read text and generated study material are added by
  * enrich-new-lessons.mjs, which fetches Little Fox's supplement/org/Cxxxx page.
  */
@@ -10,7 +10,7 @@ const fs = require('node:fs/promises');
 const path = require('node:path');
 const { execFileSync } = require('node:child_process');
 
-const BASE_URL = 'http://xet.bolinzhiyin.cn';
+const BASE_URL = process.env.LITTLEFOX_SYNC_BASE_URL || 'http://abc.bolinzhiyin.cn';
 const DATA_ROOT = path.resolve(__dirname, '..', 'data');
 const args = new Set(process.argv.slice(2));
 const apply = args.has('--apply');
@@ -21,9 +21,9 @@ if ([...args].some(value => !['--apply', '--dry-run'].includes(value) && !value.
 const overrides = { 'Journey to the West': 'journey-to-the-west', 'Romance of the Three Kingdoms': 'three-kingdoms' };
 const SERIALIZING_SERIES_IDS = new Set(['three-kingdoms', 'little-fox-nero-the-talking-dog-fs0183', 'little-fox-the-happy-prince-fs0181', 'little-fox-red-magic-fs0059', 'little-fox-daisy-dolittle-fs0175']);
 const courseStatus = seriesId => SERIALIZING_SERIES_IDS.has(seriesId) ? 'serializing' : 'completed';
-const account = process.env.XET_ACCOUNT;
-const password = process.env.XET_PASSWORD;
-if (!account || !password) throw new Error('Set XET_ACCOUNT and XET_PASSWORD before running this collector.');
+const account = process.env.LITTLEFOX_SYNC_ACCOUNT || process.env.XET_ACCOUNT;
+const password = process.env.LITTLEFOX_SYNC_PASSWORD || process.env.XET_PASSWORD;
+if (!account || !password) throw new Error('Set LITTLEFOX_SYNC_ACCOUNT and LITTLEFOX_SYNC_PASSWORD before running this collector.');
 let cookie = '';
 
 const clean = value => String(value || '').replace(/\[n@/g, ' ').replace(/\s+/g, ' ').trim();
@@ -50,8 +50,18 @@ async function request(target, options = {}) {
   throw error;
 }
 async function login() {
-  await request('/login_check.php', { method: 'POST', headers: { 'content-type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ account, password }).toString() });
-  if (!(await (await request('/fox01.php')).text()).includes("Mrs. Kelly's Class")) throw new Error('XET authentication failed: Little Fox catalogue is unavailable.');
+  await request('/login.php', { method: 'POST', headers: { 'content-type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ username: account, password }).toString() });
+  if (!(await (await request('/fox01.php')).text()).includes("Mrs. Kelly's Class")) throw new Error('ABC catalogue authentication failed: Little Fox catalogue is unavailable.');
+}
+function littleFoxHlsSources(value) {
+  const original = new URL(value);
+  if (!['cdn.littlefox.com', 'cdn.littlefox.co.kr'].includes(original.hostname)) throw new Error(`Unexpected Little Fox HLS host: ${original.hostname}`);
+  const international = new URL(original);
+  international.hostname = 'cdn.littlefox.com';
+  const korea = new URL(original);
+  korea.hostname = 'cdn.littlefox.co.kr';
+  korea.search = '';
+  return { source: 'hls', hlsUrl: international.href, backupHlsUrl: korea.href };
 }
 function parseCatalog(html, level) {
   const output = [];
@@ -116,7 +126,7 @@ async function main() {
       const remoteDetail = await detail(item, remote);
       const hlsUrl = remoteDetail.video_url || remote.url || '';
       if (!hlsUrl) throw new Error(`No video URL returned for ${item.fsId}/${remote.fc_id}.`);
-      const row = { episodeId: nextId++, sourceContentId: remote.fc_id, title: clean(remote.title), titleZh: '', releaseDate: '', status: 'published', sourceType: 'xet-catalog', unlockRequiresQuiz: false, video: { source: 'hls', hlsUrl }, modules: { watch: true, read: false, words: false, vocabulary: false, phrases: false, grammar: false, quiz: false, review: false } };
+      const row = { episodeId: nextId++, sourceContentId: remote.fc_id, title: clean(remote.title), titleZh: '', releaseDate: '', status: 'published', sourceType: 'abc-catalog', unlockRequiresQuiz: false, video: littleFoxHlsSources(hlsUrl), modules: { watch: true, read: false, words: false, vocabulary: false, phrases: false, grammar: false, quiz: false, review: false } };
       episodes.push(row); newRows.push(row);
     }
     discovered[seriesId] = newRows.length;

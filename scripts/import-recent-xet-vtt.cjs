@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /* Scoped subtitle audit. Credentials stay in environment; exports contain no
- * cookies or passwords. Any video candidate is a public fixed-CDN URL. Raw XET timing is never spread over Read.
+ * cookies or passwords. Any video candidate is a public fixed-CDN URL. Raw catalogue timing is never spread over Read.
  * Run: node scripts/import-recent-xet-vtt.cjs [--output-dir=subtitle-review]
  */
 const fs=require('node:fs/promises'),path=require('node:path'),crypto=require('node:crypto');
-const root=path.resolve(__dirname,'..'),base='http://xet.bolinzhiyin.cn';
+const root=path.resolve(__dirname,'..'),base=process.env.LITTLEFOX_SYNC_BASE_URL||'http://abc.bolinzhiyin.cn';
 const option=process.argv.slice(2);if(option.some(a=>a!=='--apply'&&!a.startsWith('--manifest=')&&!a.startsWith('--lesson=')&&!a.startsWith('--output-dir=')))throw Error('Unknown option');
 const out=path.resolve(option.find(a=>a.startsWith('--output-dir='))?.slice(13)||'subtitle-review');
 const clean=s=>String(s||'').replace(/\[n@/g,' ').replace(/\[(?:i|b|u|g)@|@(?:i|b|u|g)\]/gi,'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim().replace(/^\[caption_out@(?:\])?$/i,'');
@@ -19,11 +19,11 @@ async function request(target,options={}){
  const cookies=new Map(cookie.split('; ').filter(Boolean).map(x=>{const at=x.indexOf('=');return [x.slice(0,at),x.slice(at+1)];}));
  for(const v of r.headers.getSetCookie()){const kv=v.split(';')[0],at=kv.indexOf('=');cookies.set(kv.slice(0,at),kv.slice(at+1));}cookie=[...cookies].map(([k,v])=>k+'='+v).join('; ');
  if(r.status>=300&&r.status<400)return request(new URL(r.headers.get('location'),url));
- if(!r.ok)throw Error('XET HTTP '+r.status+' at '+url.pathname);return r;
+ if(!r.ok)throw Error('Catalogue HTTP '+r.status+' at '+url.pathname);return r;
 }
 async function duration(url){
  for(let depth=0;depth<3;depth++){
-  const u=new URL(url);if(u.hostname!=='cdn.littlefox.co.kr'||u.protocol!=='https:')throw Error('Unexpected video playlist host');
+  const u=new URL(url);if(!['cdn.littlefox.com','cdn.littlefox.co.kr'].includes(u.hostname)||u.protocol!=='https:')throw Error('Unexpected video playlist host');
   const r=await fetchSafe(u,{signal:AbortSignal.timeout(30000)});if(!r.ok)throw Error('Video playlist HTTP '+r.status);
   const text=await r.text();if(!text.startsWith('#EXTM3U'))throw Error('Video response is not HLS');
   const parts=[...text.matchAll(/#EXTINF:([\d.]+)/g)].map(x=>Number(x[1]));if(parts.length)return {durationMs:Math.round(parts.reduce((a,b)=>a+b,0)*1000),segmentCount:parts.length,segmentsMs:parts.map(x=>x*1000),timelineHash:crypto.createHash('sha256').update(JSON.stringify(parts)).digest('hex')};
@@ -37,9 +37,10 @@ async function official(contentId){
  const paragraphs=[...box.matchAll(/<div class='talk'><span>([\s\S]*?)<\/span><\/div>/gi)].map(x=>decode(x[1]));if(!paragraphs.length)throw Error('Official Read is empty');return paragraphs;
 }
 async function main(){
- if(!process.env.XET_ACCOUNT||!process.env.XET_PASSWORD)throw Error('XET environment credentials required');
- const landingResponse=await request('/login_check.php',{method:'POST',headers:{'content-type':'application/x-www-form-urlencoded'},body:new URLSearchParams({account:process.env.XET_ACCOUNT,password:process.env.XET_PASSWORD}).toString()});
- const catalog=await(await request('/fox05.php')).text();if(catalog.includes('<title>登录'))throw Error('XET login failed');
+ const account=process.env.LITTLEFOX_SYNC_ACCOUNT||process.env.XET_ACCOUNT,password=process.env.LITTLEFOX_SYNC_PASSWORD||process.env.XET_PASSWORD;
+ if(!account||!password)throw Error('Little Fox sync environment credentials required');
+ const landingResponse=await request('/login.php',{method:'POST',headers:{'content-type':'application/x-www-form-urlencoded'},body:new URLSearchParams({username:account,password}).toString()});
+ const catalog=await(await request('/fox05.php')).text();if(catalog.includes('<title>登录'))throw Error('ABC catalogue login failed');
  const cards=[...catalog.matchAll(/location\.href='xhl_play\.php\?fs_id=([A-Z0-9]+)'[\s\S]*?<div class="card-title">([\s\S]*?)<\/div>/g)];
  const three=cards.find(x=>clean(x[2])==='Romance of the Three Kingdoms')?.[1];if(!three)throw Error('Three Kingdoms series ID not found; catalogue title: '+(catalog.match(/<title>(.*?)<\/title>/s)?.[1]||'')+'; links: '+[...catalog.matchAll(/href=["']([^"']+)/g)].map(x=>x[1]).filter(x=>/^[a-z_0-9]+\.php/i.test(x)).slice(0,20).join(', '));
  const bank=JSON.parse(await fs.readFile(path.join(root,'scripts/quiz-revisions/2026-10-23.json'),'utf8'));
@@ -48,7 +49,7 @@ async function main(){
  const selected=manifestArg?JSON.parse(await fs.readFile(path.resolve(manifestArg),'utf8')).lessons:requested.length?requested:bank.lessons.map(({seriesId,episodeId})=>({seriesId,episodeId}));if(!manifestArg&&!requested.length)selected.push({seriesId:'little-fox-daisy-dolittle-fs0175',episodeId:35});
  for(const row of selected)if(!/^[a-z0-9-]+$/.test(row.seriesId)||!Number.isInteger(row.episodeId)||row.episodeId<1)throw Error('Invalid manifest selector');
  const playlistCache=new Map();
- const report={source:'XET timed subtitles and Little Fox official public Read',lessons:[],failures:[]};
+ const report={source:'ABC catalogue timed subtitles and Little Fox official public Read',lessons:[],failures:[]};
  let next=0;
  await Promise.all(Array.from({length:Math.min(3,selected.length)},async()=>{while(next<selected.length){const item=selected[next++];try{
   const dir=path.join(root,'data',item.seriesId),episodes=JSON.parse(await fs.readFile(path.join(dir,'episodes.json'),'utf8')),ep=episodes.find(e=>e.episodeId===item.episodeId);
@@ -59,7 +60,7 @@ async function main(){
   const remote=playlist.find(e=>e.fc_id===ep.sourceContentId);if(!remote||norm(remote.title)!==norm(ep.title))throw Error('Episode identity/title mismatch for '+item.seriesId+'/'+item.episodeId);
   const detail=await(await request('/xhl_play.php?ajax=episode&fc_id='+ep.sourceContentId+'&fs_id='+fsId)).json();
   const cues=(detail.subtitle||remote.subtitle||[]).map(c=>({startMs:Number(c.start_ms),endMs:Number(c.end_ms),text:clean(c.text)})).filter(c=>c.text);
-  if(!cues.length)throw Error('No XET cues for '+ep.sourceContentId);
+  if(!cues.length)throw Error('No catalogue cues for '+ep.sourceContentId);
   for(let i=0;i<cues.length;i++){const c=cues[i];if(!Number.isInteger(c.startMs)||!Number.isInteger(c.endMs)||c.startMs<0||c.endMs<=c.startMs||!c.text||i&&c.startMs<cues[i-1].startMs)throw Error('Invalid cue '+i+' for '+ep.sourceContentId);}
   const published=ep.video.hlsUrl,remoteUrl=detail.video_url||remote.video_url||remote.url;
   const sameVideoPath=!!remoteUrl&&new URL(published).pathname===new URL(remoteUrl).pathname;
@@ -69,7 +70,7 @@ async function main(){
   if(videoInfo.segmentCount===remoteInfo.segmentCount)for(let n=0;n<videoInfo.segmentCount;n++){publishedBoundary+=videoInfo.segmentsMs[n];remoteBoundary+=remoteInfo.segmentsMs[n];maxBoundaryDriftMs=Math.max(maxBoundaryDriftMs,Math.abs(publishedBoundary-remoteBoundary));}
   else maxBoundaryDriftMs=null;
   const timelineMatchesRemote=videoInfo.timelineHash===remoteInfo.timelineHash||(maxBoundaryDriftMs!==null&&maxBoundaryDriftMs<=42);
-  if(!timelineMatchesRemote&&option.includes('--apply'))throw Error('Published/XET video timeline mismatch requires review: '+ep.sourceContentId);
+  if(!timelineMatchesRemote&&option.includes('--apply'))throw Error('Published/catalogue video timeline mismatch requires review: '+ep.sourceContentId);
   if(option.includes('--apply')&&cues.at(-1).endMs>videoDurationMs+250)throw Error('Subtitle exceeds published video for '+ep.sourceContentId);
   const reading=JSON.parse(await fs.readFile(path.join(dir,'reading-lessons.json'),'utf8'))[String(item.episodeId)];
   const localRead=reading?.paragraphs?.map(p=>p.text||p).join(' ')||'',sourceText=cues.map(c=>c.text).join(' '),officialText=publicParagraphs.join(' ');

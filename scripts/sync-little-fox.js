@@ -5,10 +5,12 @@
  *
  * --dry-run (default): checks the authorised video catalogue and reports
  *                       new courses or episodes without changing the repository.
- * --apply:              adds video releases from XET, then fetches each new
+ * --apply:              adds video releases from the ABC catalogue, then fetches each new
  *                       Read from Little Fox's public supplement page.
  *
- * Required only for catalogue discovery: XET_ACCOUNT and XET_PASSWORD.
+ * Required only for catalogue discovery: LITTLEFOX_SYNC_ACCOUNT and
+ * LITTLEFOX_SYNC_PASSWORD. The base URL defaults to abc.bolinzhiyin.cn and
+ * can be overridden locally with LITTLEFOX_SYNC_BASE_URL.
  * Keep those values in local environment variables or GitHub Actions secrets;
  * never place them in this repository.
  */
@@ -27,8 +29,15 @@ const run = (script, scriptArgs) => {
   if (result.status) throw new Error(`${script} failed with exit code ${result.status}.`);
 };
 
-// XET is used only to discover videos/content IDs. Read is fetched separately
+// The authorised ABC catalogue is used only to discover videos/content IDs. Read is fetched separately
 // from Little Fox public supplement/org/Cxxxx pages. New episodes also receive
 // timed VTT after a fail-closed comparison with official Read and the video timeline.
 if (!apply) process.stderr.write('Dry run: no files will be written.\n');
 run('sync-xet-catalog.js', [apply ? '--apply' : '--dry-run']);
+if (apply) {
+  // Build/refresh official episode PDF mappings after Read source IDs are present.
+  const python = process.platform === 'win32' ? 'python' : 'python3';
+  const result = spawnSync(python, [path.join(__dirname, 'import-episode-pdfs.py'), '--apply'], { stdio: 'inherit' });
+  if (result.error) throw result.error;
+  if (result.status) throw new Error(`import-episode-pdfs.py failed with exit code ${result.status}.`);
+}
