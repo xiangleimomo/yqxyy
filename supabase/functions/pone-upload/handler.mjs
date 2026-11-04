@@ -9,7 +9,7 @@ export async function handlePoneUpload(req, { env, fetcher = fetch } = {}) {
   const authorization=req.headers.get('authorization')||'';
   if(!/^Bearer \S+$/.test(authorization))return json({error:'请先登录。'},401);
   const kind=new URL(req.url).searchParams.get('kind')||'pdf';
-  const extensions={pdf:'pdf',audio:'mp3|m4a|wav|ogg|aac|flac',video:'mp4|webm|mov',image:'jpg|jpeg|png|webp|gif|avif'};
+  const extensions={pdf:'pdf',audio:'mp3|m4a|wav|ogg|aac|flac',video:'mp4|webm|mov',image:'jpg|jpeg|png|webp|gif|avif',homework:'jpg|jpeg|png|webp|gif|heic|heif|pdf|doc|docx|xls|xlsx|ppt|pptx|txt'};
   if(!extensions[kind])return json({error:'文件类型无效。'},400);
   try {
     const project=env('SUPABASE_URL'), apikey=env('SUPABASE_ANON_KEY');
@@ -17,7 +17,10 @@ export async function handlePoneUpload(req, { env, fetcher = fetch } = {}) {
     if(!auth.ok)return json({error:'登录已过期。'},401);
     const user=await auth.json();
     if(!user.id)return json({error:'登录已过期。'},401);
-    if(user.app_metadata?.site_admin!==true){
+    if(kind==='homework'){
+      const family=await fetcher(project+'/rest/v1/rpc/sf_family',{method:'POST',headers:{authorization,apikey,'Content-Type':'application/json'},body:JSON.stringify({p_action:'dashboard',p_payload:{}}),signal:AbortSignal.timeout(10000)});
+      if(!family.ok || !['parent','child'].includes((await family.json()).profile?.role))return json({error:'请先在账号管理中设置家长或孩子身份。'},403);
+    } else if(user.app_metadata?.site_admin!==true){
       const access=await fetcher(project+'/rest/v1/rpc/book_portal',{method:'POST',headers:{authorization,apikey,'Content-Type':'application/json'},body:JSON.stringify({p_action:'access',p_payload:{}}),signal:AbortSignal.timeout(10000)});
       if(!access.ok || !(await access.json()).can_upload)return json({error:'请使用已设置账号昵称的家长账号。'},403);
     }

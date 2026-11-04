@@ -38,6 +38,14 @@ window.SFFamily = {
   if(error)throw Error(error.code==='PGRST202'?'家庭功能正在部署，请稍后刷新。':error.message);
   return data;
  },
+ async assignmentRewards(){
+  const {data,error}=await window.SFCloud.client.rpc('sf_family_assignment_rewards');
+  if(error)throw Error(error.message);return data||[];
+ },
+ async setAssignmentReward(assignmentId,templateId){
+  const {error}=await window.SFCloud.client.rpc('sf_family_set_assignment_reward',{p_assignment:assignmentId,p_template:templateId||null});
+  if(error)throw Error(error.message);
+ },
  async prepare(series,episode){
   const uid=window.SFCloud?.user?.id;
   const {data,error}=await window.SFCloud.client.functions.invoke('family-lesson-catalog',{body:{series_id:series,episode_id:Number(episode)}});
@@ -93,7 +101,7 @@ window.SFFamily = {
   if(!uid){root.innerHTML='<section class="family-shell"><div class="family-hero"><div><span>HOMEWORK</span><h1>打卡作业</h1><p>家长布置作业，孩子在同一条作业下回复、上传材料并打卡。</p></div></div><div class="family-panel"><h2>登录后查看你的作业</h2><p>每个账号对应自己的身份。身份设置和亲子绑定统一在“我的账户”中管理。</p><button class="btn" id="familyLogin">注册 / 登录</button></div></section>';root.querySelector('#familyLogin').onclick=()=>window.SFCloud?.open();return;}
   root.innerHTML='<section class="family-shell"><p role="status">正在读取作业…</p></section>';
   try{
-   const data=await this.rpc('dashboard');if(run!==this.generation||window.SFCloud?.user?.id!==uid)return;
+   const data=await this.rpc('dashboard');const rewards=await this.assignmentRewards();if(run!==this.generation||window.SFCloud?.user?.id!==uid)return;const rewardByAssignment=new Map(rewards.map(row=>[row.assignment_id,row]));data.assignments.forEach(row=>Object.assign(row,rewardByAssignment.get(row.id)));
    data.assignments.forEach(a=>a.modules.sort((x,y)=>Object.keys(this.labels).indexOf(x)-Object.keys(this.labels).indexOf(y)));
    this.data=data;this.uid=uid;this.reminderVersion++;this.updateReminder();
    const parent=data.profile?.role==='parent',active=data.links.filter(l=>l.status==='active');
@@ -129,12 +137,6 @@ window.SFFamily = {
    root.querySelectorAll('[data-unlink]').forEach(b=>b.onclick=()=>{if(window.confirm('解除后，双方将不能查看彼此的作业与学习记录。确定继续？'))action(b,()=>this.rpc('unlink',{user_id:b.dataset.unlink}));});
   }catch(err){if(run===this.settingsVersion)root.textContent='账号绑定暂时无法加载：'+err.message;}
  },
- parseLinks(text){
-  if(text.length>3000)throw Error('链接和提取码说明请控制在 3000 字以内');
-  const urls=[...new Set(text.match(/https?:\/\/[^\s<>"'，。；）]+/gi)||[])];
-  if(urls.length>10)throw Error('每项作业最多 10 个链接');
-  return urls.map(raw=>{const u=new URL(raw);if(!['http:','https:'].includes(u.protocol)||u.username||u.password)throw Error('链接地址无效');return {url:u.href};});
- },
  async upload(files){
   const uid=window.SFCloud?.user?.id;
   const types={jpg:'image/jpeg',jpeg:'image/jpeg',png:'image/png',webp:'image/webp',gif:'image/gif',heic:'image/heic',heif:'image/heif',pdf:'application/pdf',doc:'application/msword',docx:'application/vnd.openxmlformats-officedocument.wordprocessingml.document',xls:'application/vnd.ms-excel',xlsx:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',ppt:'application/vnd.ms-powerpoint',pptx:'application/vnd.openxmlformats-officedocument.presentationml.presentation',txt:'text/plain'};
@@ -143,26 +145,27 @@ window.SFFamily = {
   const result=[];
   for(const file of files){
    if(window.SFCloud?.user?.id!==uid)throw Error('账号已切换');
-   const name='attachment.'+file.name.split('.').pop().toLowerCase();
-   const path=uid+'/'+crypto.randomUUID()+'/'+name,mime=types[file.name.split('.').pop().toLowerCase()];
-   const {error}=await window.SFCloud.client.storage.from('family-homework').upload(path,file,{upsert:false,contentType:mime});
-   if(error)throw Error('附件上传失败，请检查网络后重试');
-   result.push({path,name:file.name.slice(0,200),size:file.size});
+   const {data,error}=await window.SFCloud.client.auth.getSession();if(error||!data.session?.access_token)throw Error('登录已失效，请重新登录后上传');
+   const body=new FormData();body.append('files[]',file,file.name);
+   const response=await fetch(window.STORYFOX_SUPABASE.url+'/functions/v1/pone-upload?kind=homework',{method:'POST',headers:{Authorization:'Bearer '+data.session.access_token,apikey:window.STORYFOX_SUPABASE.publishableKey},body,signal:AbortSignal.timeout(140000)}),payload=await response.json();
+   if(!response.ok||!payload?.url)throw Error(payload?.error||'附件上传失败，请检查网络后重试');
+   result.push({url:payload.url,name:file.name.slice(0,200),size:file.size,mime:types[file.name.split('.').pop().toLowerCase()]});
   }
   return result;
  },
  resources(files=[],links=[],text=''){
   const e=v=>this.escape(v);
-  return `${text?`<p class="family-note">${e(text)}</p>`:''}<div class="family-resources">${files.map(f=>`<button type="button" class="family-file" data-file="${e(f.path)}">📎 ${e(f.name)}${Number(f.size)>0?` <small>${Math.ceil(Number(f.size)/1024)} KB</small>`:''}</button>`).join('')}${links.map((l,i)=>`<a class="family-resource-link" href="${e(l.url)}" target="_blank" rel="noopener noreferrer">🔗 打开资料链接 ${i+1}</a>`).join('')}</div>`;
+  return `${text?`<p class="family-note">${e(text)}</p>`:''}<div class="family-resources">${files.map(f=>f.url?`<a class="family-file" href="${e(f.url)}" target="_blank" rel="noopener noreferrer">📎 ${e(f.name)}${Number(f.size)>0?` <small>${Math.ceil(Number(f.size)/1024)} KB</small>`:''}</a>`:`<button type="button" class="family-file" data-file="${e(f.path)}">📎 ${e(f.name)}${Number(f.size)>0?` <small>${Math.ceil(Number(f.size)/1024)} KB</small>`:''}</button>`).join('')}</div>`;
  },
  bindFiles(root){root.querySelectorAll('[data-file]').forEach(b=>b.onclick=()=>this.action(b,async()=>{
   const popup=window.open('about:blank','_blank');if(popup)popup.opener=null;
   try{const {data,error}=await window.SFCloud.client.storage.from('family-homework').createSignedUrl(b.dataset.file,60);if(error||!data?.signedUrl)throw Error('附件暂时无法读取，请重新登录或刷新后再试');if(popup)popup.location.href=data.signedUrl;else this.notice('浏览器阻止了新窗口，请允许弹出窗口后再点击附件。',true);}catch(err){popup?.close();throw err;}
  }));},
  fileInput(name){return `<input type="file" name="${name}" multiple accept=".jpg,.jpeg,.png,.webp,.gif,.heic,.heif,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt"><small class="muted">可选，最多 5 个；图片、PDF、Office、TXT，单个不超过 10 MB。</small>`;},
- assignmentForm(links){const e=v=>this.escape(v);return `<form id="familyAssignmentForm"><label>布置给谁<select name="child_id" required>${links.map(l=>`<option value="${e(l.child_id)}">${e(l.name)}</option>`).join('')}</select></label><label>作业方式<select name="kind"><option value="general">自由作业 · 文字 / 附件 / 链接</option><option value="course">站内课程作业（可选）</option></select></label><label>作业标题<input name="title" maxlength="120" required placeholder="例如：完成数学同步练习第 2 页"></label><label>作业说明<textarea name="note" maxlength="1000" rows="4" placeholder="写清需要做什么、做到哪里，也可以写鼓励的话。"></textarea></label><label>附件${this.fileInput('attachments')}</label><label>资料链接 / 网盘分享<textarea name="links_text" maxlength="3000" rows="3" placeholder="可直接粘贴网盘分享文字、链接和提取码；也可以填写多个网页链接。"></textarea></label><label>截止日期（可选，北京时间）<input name="due_on" type="date"></label><div data-course hidden><label>课程系列<select name="series_id"><option value="">请选择课程系列</option></select></label><label>集数<select name="episode_id" disabled><option value="">先选择系列</option></select></label><fieldset id="familyModuleChoices"><legend>学习任务</legend><span class="muted">选择课程后显示可布置的模块。</span></fieldset><label>Quiz 要求（%）<input name="quiz_min" type="number" min="0" max="100" value="80"></label></div><button class="btn" type="submit">发布作业</button></form>`;},
+ assignmentForm(links){const e=v=>this.escape(v);return `<form id="familyAssignmentForm"><label>布置给谁<select name="child_id" required>${links.map(l=>`<option value="${e(l.child_id)}">${e(l.name)}</option>`).join('')}</select></label><label>作业方式<select name="kind"><option value="general">自由作业 · 文字 / 附件</option><option value="course">站内课程作业（可选）</option></select></label><label>作业标题<input name="title" maxlength="120" required placeholder="例如：完成数学同步练习第 2 页"></label><label>作业说明<textarea name="note" maxlength="1000" rows="4" placeholder="写清需要做什么、做到哪里，也可以写鼓励的话。"></textarea></label><label>附件${this.fileInput('attachments')}</label><label>完成奖励徽章（可选）<select name="reward_template_id"><option value="">不设置奖励</option></select><small class="muted">孩子提交完成作业后会自动获得该枚徽章。</small></label><label>截止日期（可选，北京时间）<input name="due_on" type="date"></label><div data-course hidden><label>课程系列<select name="series_id"><option value="">请选择课程系列</option></select></label><label>集数<select name="episode_id" disabled><option value="">先选择系列</option></select></label><fieldset id="familyModuleChoices"><legend>学习任务</legend><span class="muted">选择课程后显示可布置的模块。</span></fieldset><label>Quiz 要求（%）<input name="quiz_min" type="number" min="0" max="100" value="80"></label></div><button class="btn" type="submit">发布作业</button></form>`;},
  async bindAssignmentForm(run){
   const form=this.app.el().querySelector('#familyAssignmentForm'),series=form.elements.series_id,episode=form.elements.episode_id,button=form.querySelector('[type=submit]'),kind=form.elements.kind;
+  try{const [mine,collected]=await Promise.all([window.SFMedals.rpc('templates',{mode:'mine'}),window.SFMedals.rpc('templates',{mode:'collections'})]);if(run!==this.generation)return;const options=[...new Map([...mine,...collected].filter(row=>row.asset_id&&row.review_status!=='removed'&&row.review_status!=='rejected').map(row=>[row.id,row])).values()];form.elements.reward_template_id.replaceChildren(new Option('不设置奖励',''),...options.map(row=>new Option(`${row.title} · ${row.medal_type==='work'?'作品徽章':'荣誉纪念章'}`,row.id)));}catch{this.notice('奖励徽章暂时无法读取，仍可先发布不含奖励的作业。',true);}
   let change=0,course,loaded=false;
   kind.onchange=async()=>{
    const courseMode=kind.value==='course';form.querySelector('[data-course]').hidden=!courseMode;button.disabled=courseMode&&!episode.value;
@@ -186,9 +189,9 @@ window.SFFamily = {
   form.onsubmit=ev=>{ev.preventDefault();const f=new FormData(form),courseMode=f.get('kind')==='course',modules=courseMode?f.getAll('modules'):[];
    if(courseMode&&(!modules.length||!episode.value)){this.notice('请先选择课程、集数和学习模块。',true);return;}
    form.dataset.requestId ||= crypto.randomUUID();
-   const payload={id:form.dataset.requestId,kind:f.get('kind'),child_id:f.get('child_id'),series_id:f.get('series_id'),episode_id:Number(f.get('episode_id')),title:f.get('title'),note:f.get('note'),due_on:f.get('due_on'),quiz_min:Number(f.get('quiz_min')),modules,links_text:f.get('links_text')};
+   const payload={id:form.dataset.requestId,kind:f.get('kind'),child_id:f.get('child_id'),series_id:f.get('series_id'),episode_id:Number(f.get('episode_id')),title:f.get('title'),note:f.get('note'),due_on:f.get('due_on'),quiz_min:Number(f.get('quiz_min')),modules,reward_template_id:f.get('reward_template_id')};
    const files=Array.from(form.elements.attachments.files);
-   this.action(button,async()=>{payload.links=this.parseLinks(payload.links_text);if(courseMode)await this.prepare(payload.series_id,payload.episode_id);this.notice(files.length?'正在上传附件，请稍候…':'正在发布作业…');payload.attachments=await this.upload(files);await this.rpc('create',payload);await this.render(this.app);this.notice('作业已发布，孩子刷新作业列表即可收到。');});
+   this.action(button,async()=>{if(courseMode)await this.prepare(payload.series_id,payload.episode_id);this.notice(files.length?'正在安全上传附件，请稍候…':'正在发布作业…');payload.attachments=await this.upload(files);const created=await this.rpc('create',payload);if(payload.reward_template_id)await this.setAssignmentReward(created.id,payload.reward_template_id);await this.render(this.app);this.notice('作业已发布，孩子刷新作业列表即可收到。');});
   };
  },
  renderAssignments(){
@@ -197,7 +200,7 @@ window.SFFamily = {
   const rows=this.data.assignments.filter(a=>(child==='all'||a.child_id===child)&&(status==='all'||status==='todo'&&['assigned','revision'].includes(a.status)||a.status===status));
   box.innerHTML=rows.length?rows.map(a=>{
    const active=['assigned','revision'].includes(a.status),late=active&&a.due_on&&a.due_on<this.today(),general=a.kind==='general';
-   return `<article class="family-assignment homework-thread" data-task="${e(a.id)}"><div class="family-section-head homework-subject"><div><span class="family-status ${e(a.status)}">${e(this.statuses[a.status])}</span>${late?'<span class="family-overdue">已逾期</span>':''}<h3>${e(a.title)}</h3></div><small>发给 ${e(a.child_name)}</small></div><section class="homework-message homework-request"><header><strong>✉ 家长布置 · ${e(a.parent_name)}</strong><small>${e(this.time(a.created_at))}</small></header>${!general?`<p class="muted">${e(a.series_title)} · 第 ${e(a.episode_id)} 集 · ${e(a.episode_title)}</p>`:''}<p class="family-deadline">${a.due_on?'截止：'+e(a.due_on)+'（北京时间）':'无截止日期'}${!general&&a.modules.includes('quiz')?' · Quiz ≥ '+e(a.quiz_min)+'%':''}</p>${a.note?`<p class="homework-text">${e(a.note)}</p>`:''}${this.resources(a.attachments,a.links,a.links_text)}${!general?`<div class="family-tasks">${a.modules.map(m=>`<button type="button" class="family-lesson" data-series="${e(a.series_id)}" data-episode="${e(a.episode_id)}" data-module="${e(m)}"><span data-done="${e(m)}">${a.submission?.done?.[m]&&!active?'✓':'○'}</span> ${e(this.labels[m])}</button>`).join('')}</div>`:''}</section>${a.submission?`<section class="homework-message homework-reply family-submission"><header><strong>↳ 孩子完成 · ${e(a.child_name)}</strong><small>${e(this.time(a.submitted_at))}</small></header><p class="homework-text">${e(a.submission.note||'已提交打卡。')}</p>${this.resources(a.submission.attachments,a.submission.links,a.submission.links_text)}</section>`:''}${a.feedback?`<section class="homework-message homework-feedback"><header><strong>家长反馈 · ${e(a.parent_name)}</strong></header><p class="homework-text">${e(a.feedback)}</p></section>`:''}${active?`<section class="homework-message homework-compose-reply"><header><strong>${parent?'等待孩子'+(a.status==='revision'?'补做后':'')+'回复':'↳ 回复作业 · '+e(a.child_name)}</strong></header><p class="muted" data-progress>${general?(parent?'孩子提交后，完成情况和照片会显示在这条作业下方。':'按说明完成后，可以填写完成情况或上传照片并打卡。'):'正在核对本次任务进度…'}</p>${!parent?`<label>完成情况 / 回复<textarea data-child-note maxlength="1000" rows="3" placeholder="例如：第 2 页已完成，照片在下面。"></textarea></label><label>作业照片或附件（可选）${this.fileInput('child_attachments')}</label><label>提交链接（可选）<textarea data-child-links maxlength="3000" rows="2" placeholder="也可以粘贴作业的网盘链接"></textarea></label><button class="btn" data-submit>提交打卡 / Submit</button>`:''}</section>`:'<p class="muted" data-progress></p>'}${parent&&a.status==='submitted'?'<section class="homework-message homework-review"><label>给孩子的反馈（可选）<textarea data-feedback maxlength="1000" rows="2"></textarea></label><div class="family-actions"><button class="btn" data-review="approved">确认完成</button><button class="btn secondary" data-review="revision">请孩子补做</button></div></section>':''}${parent&&!['approved','cancelled'].includes(a.status)?'<button class="btn secondary small" data-cancel>取消作业</button>':''}</article>`;
+   return `<article class="family-assignment homework-thread" data-task="${e(a.id)}"><div class="family-section-head homework-subject"><div><span class="family-status ${e(a.status)}">${e(this.statuses[a.status])}</span>${late?'<span class="family-overdue">已逾期</span>':''}<h3>${e(a.title)}</h3></div><small>发给 ${e(a.child_name)}</small></div><section class="homework-message homework-request"><header><strong>✉ 家长布置 · ${e(a.parent_name)}</strong><small>${e(this.time(a.created_at))}</small></header>${!general?`<p class="muted">${e(a.series_title)} · 第 ${e(a.episode_id)} 集 · ${e(a.episode_title)}</p>`:''}<p class="family-deadline">${a.due_on?'截止：'+e(a.due_on)+'（北京时间）':'无截止日期'}${!general&&a.modules.includes('quiz')?' · Quiz ≥ '+e(a.quiz_min)+'%':''}</p>${a.note?`<p class="homework-text">${e(a.note)}</p>`:''}${a.reward_title?`<p class="homework-reward">🏅 完成奖励：${e(a.reward_title)}${a.reward_awarded?' · 已自动发放':''}</p>`:''}${this.resources(a.attachments)}${!general?`<div class="family-tasks">${a.modules.map(m=>`<button type="button" class="family-lesson" data-series="${e(a.series_id)}" data-episode="${e(a.episode_id)}" data-module="${e(m)}"><span data-done="${e(m)}">${a.submission?.done?.[m]&&!active?'✓':'○'}</span> ${e(this.labels[m])}</button>`).join('')}</div>`:''}</section>${a.submission?`<section class="homework-message homework-reply family-submission"><header><strong>↳ 孩子完成 · ${e(a.child_name)}</strong><small>${e(this.time(a.submitted_at))}</small></header><p class="homework-text">${e(a.submission.note||'已提交打卡。')}</p>${this.resources(a.submission.attachments)}</section>`:''}${a.feedback?`<section class="homework-message homework-feedback"><header><strong>家长反馈 · ${e(a.parent_name)}</strong></header><p class="homework-text">${e(a.feedback)}</p></section>`:''}${active?`<section class="homework-message homework-compose-reply"><header><strong>${parent?'等待孩子'+(a.status==='revision'?'补做后':'')+'回复':'↳ 回复作业 · '+e(a.child_name)}</strong></header><p class="muted" data-progress>${general?(parent?'孩子提交后，完成情况和照片会显示在这条作业下方。':'按说明完成后，可以填写完成情况或上传照片并打卡。'):'正在核对本次任务进度…'}</p>${!parent?`<label>完成情况 / 回复<textarea data-child-note maxlength="1000" rows="3" placeholder="例如：第 2 页已完成，照片在下面。"></textarea></label><label>作业照片或附件（可选）${this.fileInput('child_attachments')}</label><button class="btn" data-submit>提交打卡 / Submit</button>`:''}</section>`:'<p class="muted" data-progress></p>'}${parent&&a.status==='submitted'?'<section class="homework-message homework-review"><label>给孩子的反馈（可选）<textarea data-feedback maxlength="1000" rows="2"></textarea></label><div class="family-actions"><button class="btn" data-review="approved">确认完成</button><button class="btn secondary" data-review="revision">请孩子补做</button></div></section>':''}${parent&&!['approved','cancelled'].includes(a.status)?'<button class="btn secondary small" data-cancel>取消作业</button>':''}</article>`;
   }).join(''):'<div class="family-empty">这里还没有作业。'+(parent?'为孩子发布第一项任务吧。':'家长布置后，作业会显示在这里。')+'</div>';
   box.querySelectorAll('textarea,input[type=file]').forEach(input=>input.addEventListener('input',()=>{input.dataset.dirty='true';}));
   this.bindFiles(box);
@@ -207,10 +210,10 @@ window.SFFamily = {
    if(a.kind!=='general'&&['assigned','revision'].includes(a.status))this.rpc('task_progress',{id}).then(p=>{if(!card.isConnected)return;let count=0;for(const [module,done]of Object.entries(p.done)){if(done)count++;const node=card.querySelector(`[data-done="${module}"]`);if(node)node.textContent=done?'✓':'○';}card.querySelector('[data-progress]').textContent=`本次任务已完成 ${count}/${a.modules.length} 项${a.status==='revision'?' · 补做需重新完成任务':''}`;if(count&&a.status==='assigned')card.querySelector('.family-status').textContent='进行中';}).catch(err=>{if(card.isConnected)card.querySelector('[data-progress]').textContent='进度暂未同步：'+err.message;});
    card.querySelector('[data-submit]')?.addEventListener('click',ev=>this.action(ev.currentTarget,async()=>{
     if(a.kind!=='general'){await this.flush();if(this.queue(this.uid).length)throw Error('仍有学习记录未上传，请联网刷新后再提交。'+this.lastError);}
-    const links_text=card.querySelector('[data-child-links]').value,links=this.parseLinks(links_text),files=Array.from(card.querySelector('[name=child_attachments]').files);
+    const files=Array.from(card.querySelector('[name=child_attachments]').files);
     this.notice(files.length?'正在上传作业材料…':'正在提交打卡…');
     const attachments=await this.upload(files);
-    await this.rpc('submit',{id,note:card.querySelector('[data-child-note]').value,links_text,links,attachments});await this.render(this.app);this.notice('打卡已提交，等待家长确认。');
+    await this.rpc('submit',{id,note:card.querySelector('[data-child-note]').value,attachments});await this.render(this.app);this.notice(a.reward_title?'打卡已提交，奖励徽章已自动发放。':'打卡已提交，等待家长确认。');
    }));
    card.querySelectorAll('[data-review]').forEach(b=>b.onclick=()=>this.action(b,async()=>{await this.rpc('review',{id,decision:b.dataset.review,feedback:card.querySelector('[data-feedback]').value});await this.render(this.app);}));
    card.querySelector('[data-cancel]')?.addEventListener('click',ev=>{if(window.confirm('确定取消这项作业？'))this.action(ev.currentTarget,async()=>{await this.rpc('cancel',{id});await this.render(this.app);});});
