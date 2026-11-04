@@ -420,6 +420,16 @@ window.BookReader = {
       if (this.pdfSession !== session) return;
       const outlineItems = [];
       let textIndexPromise, outlinePromise;
+      const textPages=new Set();
+      const ensurePageText=async number=>{
+        if(!Number.isInteger(number)||number<1||number>pageCount||this.pdfSession!==session)return '';
+        if(!pageTexts[number-1]&&!textPages.has(number)){
+          const page=await documentProxy.getPage(number),text=await page.getTextContent();
+          if(this.pdfSession!==session)return '';
+          pageTexts[number-1]=text.items.map(part=>(part.str||'')+(part.hasEOL?'\n':' ')).join('');textPages.add(number);
+        }
+        return pageTexts[number-1];
+      };
       const ensureTextIndex = () => textIndexPromise ||= (async () => {
         for (let number = 1; number <= pageCount; number++) {
           if (this.pdfSession !== session) return;
@@ -572,7 +582,7 @@ window.BookReader = {
         window.setTimeout(() => { if (this.pdfSession === session) { this.viewportResizeHandler?.(); this.pageFlip?.update(); } }, 100);
       };
       document.addEventListener('fullscreenchange', this.fullscreenHandler);
-      this.setupPdfTools(item, { app:this.readerApp, reader, root, pageUrls, pageTexts, outlineItems, pageCount, ensureTextIndex, ensureOutline });
+      this.setupPdfTools(item, { app:this.readerApp, reader, root, pageUrls, pageTexts, outlineItems, pageCount, ensureTextIndex, ensureOutline,ensurePageText });
       if (mobile) {
         let pump = null, rerun = false;
         const nearbyPages = current => {
@@ -643,7 +653,7 @@ window.BookReader = {
     }
   },
 
-  setupPdfTools(item, { app, reader, root, pageUrls, pageTexts, outlineItems, pageCount, ensureTextIndex, ensureOutline }) {
+  setupPdfTools(item, { app, reader, root, pageUrls, pageTexts, outlineItems, pageCount, ensureTextIndex, ensureOutline,ensurePageText }) {
     const controls = reader.querySelector('.flipbook-controls');
     let controlsTimer;
     controls.addEventListener('pointerdown', event => {
@@ -655,11 +665,12 @@ window.BookReader = {
     const toolbar = reader.querySelector('.flipbook-footer');
     const tools = document.createElement('div');
     tools.className = 'pdf-reader-tools';
-    const labels = { zoom: '放大', search: '搜索', thumbnails: '缩略图', audio: '声音' };
+    const labels = { zoom: '放大', search: '搜索', thumbnails: '缩略图', text:'文字 / 划词收藏',audio: '声音' };
     const icons = { zoom: '<path d="M12 4v16M4 12h16"/>', search: '<circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/>', thumbnails: '<path d="M3 3h6v6H3zM15 3h6v6h-6zM3 15h6v6H3zM15 15h6v6h-6z"/>', audio: '<path d="M3 9h4l5-4v14l-5-4H3zM16 8q4 4 0 8M19 5q7 7 0 14"/>' };
     Object.entries(labels).forEach(([name, label]) => {
       const button = document.createElement('button');
       button.type = 'button'; button.innerHTML = `<svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[name]}</svg>`; button.dataset.tool = name;
+      if(name==='text')button.innerHTML='<span aria-hidden="true">Aa</span>';
       button.title = label; button.setAttribute('aria-label', label); button.setAttribute('aria-expanded', 'false');
       tools.appendChild(button);
     });
@@ -702,7 +713,24 @@ window.BookReader = {
       tools.querySelectorAll('button').forEach(button => button.setAttribute('aria-expanded', String(button.dataset.tool === name)));
       const close = document.createElement('button'); close.textContent = '关闭 ×'; close.onclick = () => { panel.hidden = true; }; panel.appendChild(close);
       const heading = document.createElement('h3'); heading.textContent = labels[name]; panel.appendChild(heading);
-      if (name === 'search') {
+      if(name==='text'){
+        panel.insertAdjacentHTML('beforeend',window.ReadDictionary.controls());
+        const navigation=document.createElement('div');navigation.className='pdf-text-navigation';
+        const previous=document.createElement('button'),next=document.createElement('button'),pageInput=document.createElement('input');
+        previous.textContent='上一页';next.textContent='下一页';pageInput.type='number';pageInput.min='1';pageInput.max=String(pageCount);pageInput.setAttribute('aria-label','文字页码');
+        navigation.append(previous,pageInput,document.createTextNode('/ '+pageCount+' 页'),next);panel.append(navigation);
+        const text=document.createElement('div');text.className='pdf-selectable-text';text.dataset.dictionaryReader='';
+        Object.assign(text.dataset,{sourceType:item.kind==='magazine'?'magazine':'book',sourceId:item.id,sourceTitle:item.titleZh||item.title,sourceHref:location.hash});panel.append(text);
+        let request=0;
+        panel.showTextPage=async number=>{
+          number=Math.min(pageCount,Math.max(1,Number(number)||1));pageInput.value=String(number);previous.disabled=number===1;next.disabled=number===pageCount;
+          const current=++request;text.textContent='正在读取本页文字…';text.dataset.page=String(number);
+          try{const content=await ensurePageText(number);if(current===request&&reader.isConnected&&!panel.hidden&&panel.dataset.tool==='text')text.textContent=content.trim()||'本页没有可提取的文字，可能是扫描图片页；可继续翻页查看其他页面。';}
+          catch{if(current===request&&text.isConnected)text.textContent='本页文字暂时读取失败，请切换页面后重试。';}
+        };
+        const change=number=>{go(number-1);panel.showTextPage(number);};previous.onclick=()=>change(Number(pageInput.value)-1);next.onclick=()=>change(Number(pageInput.value)+1);pageInput.onchange=()=>change(Number(pageInput.value));
+        await panel.showTextPage(this.pageFlip.getCurrentPageIndex()+1);
+      } else if (name === 'search') {
         const input = document.createElement('input'); input.type = 'search'; input.placeholder = '搜索本书文字'; panel.appendChild(input);
         const results = document.createElement('div'); panel.appendChild(results);
         let searchRequest = 0;
@@ -742,7 +770,7 @@ window.BookReader = {
     };
     tools.onclick = event => { const name = event.target.closest('[data-tool]')?.dataset.tool; if (name) show(name); };
     const progressKey = window.BookCommunity.progressKey(item.id);
-    this.pageFlip.on('flip', event => { window.BookCommunity.record(item,event.data); const visible=this.pageFlip.getOrientation()==='landscape'?2:1;if(event.data+visible>=pageCount)window.SFMedals?.readingFinished(item);if (event.data >= pageCount - 1) notify('已经是最后一页了'); });
+    this.pageFlip.on('flip', event => {if(!panel.hidden&&panel.dataset.tool==='text')panel.showTextPage?.(event.data+1); window.BookCommunity.record(item,event.data); const visible=this.pageFlip.getOrientation()==='landscape'?2:1;if(event.data+visible>=pageCount)window.SFMedals?.readingFinished(item);if (event.data >= pageCount - 1) notify('已经是最后一页了'); });
     const saved = Number(localStorage.getItem(progressKey) || 0); if (saved > 0 && saved < pageCount) go(saved);
     window.BookCommunity.record(item, saved >= 0 && saved < pageCount ? saved : 0);
     reader.querySelector('#bookStageNext').onclick = () => { if (this.pageFlip.getCurrentPageIndex() >= pageCount - 1) notify('已经是最后一页了'); else this.pageFlip.flipNext(); };
@@ -775,6 +803,9 @@ window.BookReader = {
       const initialSize = viewportSize();
       this.rendition = this.book.renderTo(stage, { width: initialSize.width, height: initialSize.height, spread: 'auto', minSpreadWidth: 720, flow: 'paginated' });
       this.rendition.themes.fontSize(`${fontSize}%`);
+      Object.assign(reader.dataset,{sourceType:item.kind==='magazine'?'magazine':'book',sourceId:item.id,sourceTitle:item.titleZh||item.title,sourceHref:location.hash});
+      this.rendition.hooks.content.register(contents=>window.ReadDictionary?.bindDocument(contents.document,reader));
+      const dictionaryButton=document.createElement('button');dictionaryButton.type='button';dictionaryButton.textContent='Aa';dictionaryButton.title='开启划词查译和收藏';dictionaryButton.setAttribute('aria-label',dictionaryButton.title);dictionaryButton.onclick=()=>{window.ReadDictionary.enable();setStatus('选中英文单词或句子，即可查译、朗读和收藏。');};reader.querySelector('.flipbook-topbar').append(dictionaryButton);
       await this.rendition.display(localStorage.getItem(progressKey) || undefined);
       const resizeRendition = () => {
         const size = viewportSize();
@@ -817,7 +848,7 @@ window.BookReader = {
       };
       this.rendition.on('relocated', location => {
         localStorage.setItem(progressKey, location.start.cfi);
-        window.BookCommunity.record(item,0,location.start.cfi);
+        window.BookCommunity.record(item,0,location.start.cfi);reader.dataset.page=String(Number(location.start.index)+1);
         if(location.atEnd)window.SFMedals?.readingFinished(item);
         updatePageIndicator(location);
       });

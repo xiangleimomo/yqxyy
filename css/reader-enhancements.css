@@ -47,3 +47,5 @@ body.flipbook-active .pdf-mobile-landscape .pdf-tools-panel[data-tool=thumbnails
 body.flipbook-active .pdf-mobile-landscape .stf__block{touch-action:none}
 
 @media(orientation:portrait){body.flipbook-active .pdf-mobile-landscape #bookFullscreen{margin-right:64px}}
+
+.pdf-tools-panel[data-tool=text]{width:min(560px,calc(100% - 32px))!important;background:#f9fbfff7!important;color:#254563;max-height:calc(100% - 145px)}.pdf-tools-panel[data-tool=text] h3{color:#254563;border-color:#d5e0ef}.pdf-tools-panel[data-tool=text]>.read-dictionary-tools{padding:0;font-size:12px}.pdf-tools-panel[data-tool=text] .read-dictionary-tools input[type=checkbox]{width:auto;margin:0}.pdf-selectable-text{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.9;font-size:17px;padding:14px 4px;user-select:text!important;-webkit-user-select:text!important;touch-action:pan-y}.pdf-text-navigation{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:12px}.pdf-text-navigation input[type=number]{width:65px;margin:0;padding:6px}.pdf-text-navigation button{padding:6px 8px;font-size:12px}

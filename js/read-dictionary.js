@@ -10,7 +10,13 @@
   card.setAttribute('role','dialog'); card.setAttribute('aria-label','划词词典');
   document.body.appendChild(card);
   function close(){clearTimeout(timer);version++;controller?.abort();audio?.pause();card.hidden=true;}
-  window.ReadDictionary={controls:()=>`<div class="read-dictionary-tools"><label><input type="checkbox" data-dictionary-toggle ${enabled?'checked':''}> 内置划词词典</label><span>双击英文单词或划选句子查中文</span></div>`};
+  const boundDocuments=new WeakSet();
+  window.ReadDictionary={enable(){enabled=true;write('enabled',true);document.querySelectorAll('[data-dictionary-toggle]').forEach(input=>input.checked=true);},controls:()=>`<div class="read-dictionary-tools"><label><input type="checkbox" data-dictionary-toggle ${enabled?'checked':''}> 划词查译 / 收藏</label><span>选中英文单词或句子，可收藏到单词表或英文写作</span></div>`,bindDocument(doc,host){
+    if(!doc||boundDocuments.has(doc))return;boundDocuments.add(doc);
+    for(const name of ['mouseup','dblclick','touchend'])doc.addEventListener(name,event=>selected(event,doc,host));
+    doc.addEventListener('keyup',event=>{if(event.shiftKey&&event.key.startsWith('Arrow'))selected(event,doc,host);});
+    doc.addEventListener('mousedown',close);doc.addEventListener('scroll',close,true);
+  }};
   document.addEventListener('change',e=>{
     if(!e.target.matches('[data-dictionary-toggle]'))return;
     enabled=e.target.checked;write('enabled',enabled);close();
@@ -21,18 +27,19 @@
   window.addEventListener('hashchange',close);window.addEventListener('resize',close);
   document.addEventListener('scroll',e=>{if(!card.contains(e.target))close();},true);
   new MutationObserver(()=>{if(!card.hidden&&!reader?.isConnected)close();}).observe(document.body,{childList:true,subtree:true});
-  function selected(event){
+  function selected(event,doc=document,externalHost=null){
     if(!enabled)return;
-    const s=window.getSelection();if(!s?.rangeCount||s.isCollapsed)return;
+    const s=doc.getSelection();if(!s?.rangeCount||s.isCollapsed)return;
     const range=s.getRangeAt(0), node=range.startContainer;
-    const host=(node.nodeType===1?node:node.parentElement)?.closest('[data-dictionary-reader]');
-    if(!host||!host.contains(range.endContainer))return;
-    if(event&&['mouseup','dblclick'].includes(event.type)&&!host.contains(event.target))return;
+    const host=externalHost||(node.nodeType===1?node:node.parentElement)?.closest('[data-dictionary-reader]');
+    if(!host?.isConnected||!(externalHost?doc.documentElement:host).contains(range.endContainer))return;
+    if(!externalHost&&event&&['mouseup','dblclick'].includes(event.type)&&!host.contains(event.target))return;
     const text=s.toString().trim().replace(/\s+/g,' ');if(!/[a-z]/i.test(text))return;
-    const rect=range.getBoundingClientRect();clearTimeout(timer);
+    let rect=range.getBoundingClientRect();if(externalHost){const frame=doc.defaultView?.frameElement?.getBoundingClientRect();if(frame)rect={left:rect.left+frame.left,bottom:rect.bottom+frame.top};}clearTimeout(timer);
     timer=setTimeout(()=>lookup(text,rect,host),180);
   }
   document.addEventListener('mouseup',selected);document.addEventListener('dblclick',selected);
+  document.addEventListener('touchend',selected);
   document.addEventListener('keyup',e=>{if(e.shiftKey&&e.key.startsWith('Arrow'))selected(e);});
   function position(rect){
     card.style.left=Math.max(8,Math.min(rect.left,innerWidth-card.offsetWidth-8))+'px';
@@ -46,6 +53,7 @@
     finally{clearTimeout(timeout);signal.removeEventListener('abort',abort);}
   }
   async function lookup(text,rect,host){
+    (document.fullscreenElement||document.body).appendChild(card);
     close();reader=host;const id=version;
     const word=/^[a-z]+(?:['’\-][a-z]+)*$/i.test(text),key=word?text.toLowerCase():text;
     const header=`<div class="read-dictionary-head"><strong>${escape(text)}</strong><button type="button" data-close aria-label="关闭词典">×</button></div>`;
@@ -55,6 +63,7 @@
     const current=new AbortController();controller=current;
     let result=read('query_'+key);
     if(!result||Date.now()-result.at>30*86400000)result={at:Date.now(),phonetic:'',audio:'',meanings:[],translated:''};
+    const uid=window.SFCloud?.user?.id;
     let translationPending=!result.translated, dictionaryPending=word&&!result.meanings.length, saved=false;
     function update(){
       if(id!==version||!host.isConnected)return;
@@ -69,7 +78,7 @@
     }
     function render(){
     if(id!==version||!host.isConnected)return;
-    card.innerHTML=header+`<div class="read-dictionary-body" aria-live="polite">${result.phonetic?`<p>${escape(result.phonetic)}</p>`:''}<p>${escape(result.translated||(translationPending?'中文翻译查询中…':'中文翻译暂不可用，请稍后重试。'))}</p>${word?result.meanings.map(m=>`<p><b>${escape(m.partOfSpeech)}</b> ${escape(m.definitions?.[0]?.definition)}</p>`).join('')||`<p>${dictionaryPending?'音标和英文释义加载中…':'英文词典暂不可用，可继续使用中文翻译和朗读。'}</p>`:''}</div><div class="read-dictionary-actions"><button type="button" data-speak>🔊 发音</button>${word?`<button type="button" data-save ${saved||!result.translated&&!result.meanings.length?'disabled':''}>${saved?'已加入 ✓':'☆ 加入生词本'}</button>`:''}<button type="button" data-retry>重试</button></div>`;
+    card.innerHTML=header+`<div class="read-dictionary-body" aria-live="polite">${result.phonetic?`<p>${escape(result.phonetic)}</p>`:''}<p>${escape(result.translated||(translationPending?'中文翻译查询中…':'中文翻译暂不可用，请稍后重试。'))}</p>${word?result.meanings.map(m=>`<p><b>${escape(m.partOfSpeech)}</b> ${escape(m.definitions?.[0]?.definition)}</p>`).join('')||`<p>${dictionaryPending?'音标和英文释义加载中…':'英文词典暂不可用，可继续使用中文翻译和朗读。'}</p>`:''}</div><div class="read-dictionary-actions"><button type="button" data-speak>🔊 发音</button><button type="button" data-save ${saved?'disabled':''}>${saved?'已收藏 ✓':word?'☆ 加入单词表':'☆ 收藏句子'}</button><button type="button" data-retry>重试</button></div>`;
     position(rect);card.querySelector('[data-close]').onclick=close;
     card.querySelector('[data-retry]').onclick=()=>{write('query_'+key,null);lookup(text,rect,host);};
     card.querySelector('[data-speak]').onclick=()=>{
@@ -79,7 +88,7 @@
       audio?.pause();audio=new Audio(url);audio.onerror=fallback;audio.play().catch(fallback);
     };
     const save=card.querySelector('[data-save]');if(save)save.onclick=()=>{
-      try{App.saveWord({type:'word',word:key,meaning:result.translated||result.meanings[0]?.definitions?.[0]?.definition||'',seriesId:host.dataset.series,episodeId:Number(host.dataset.episode)});saved=true;save.textContent='已加入 ✓';save.disabled=true;}
+      try{if(uid!==window.SFCloud?.user?.id){save.textContent='账号已切换，请重新选择';return;}const source={seriesId:host.dataset.series||'',episodeId:Number(host.dataset.episode)||0,sourceType:host.dataset.sourceType||(String(host.dataset.series||'').startsWith('movie-')?'movie':'animation'),sourceId:host.dataset.sourceId||host.dataset.series||'',sourceTitle:host.dataset.sourceTitle||'',sourceHref:host.dataset.sourceHref||'',page:Number(host.dataset.page)||0};if(word)App.saveWord({...source,type:'word',word:key,meaning:result.translated||result.meanings[0]?.definitions?.[0]?.definition||''});else App.saveSentence({...source,sentence:text,translation:result.translated||''});saved=true;save.textContent='已加入 ✓';save.disabled=true;}
       catch{save.textContent='保存失败，请重试';}
     };
     }

@@ -3,19 +3,20 @@ window.MediaShelf = {
   e(app,value){return app.escapeHtml(String(value??''));},
   nav(scope,mode='all'){
     const base=scope==='movies'?'movies':'home',label=scope==='movies'?'全部影片':'全部动画';
-    return `<nav class="book-reading-tabs" aria-label="${scope==='movies'?'光影课堂':'动画故事'}书架">${[['all',label],['favorites','我的收藏'],['recent','观看记录']].map(([key,title])=>`<a href="#/${base}${key==='all'?'':'/'+key}"${mode===key?' aria-current="page"':''}>${title}</a>`).join('')}${scope==='movies'?'<a class="book-admin-entry" href="#/movie-hub">多平台播放</a>':''}</nav>`;
+    return `<nav class="book-reading-tabs" aria-label="${scope==='movies'?'光影课堂':'动画故事'}书架">${[['all',label],['favorites','我的收藏'],['recent','观看记录']].map(([key,title])=>`<a href="#/${base}${key==='all'?'':'/'+key}"${mode===key?' aria-current="page"':''}>${title}</a>`).join('')}${scope==='animation'?`<a href="#/wordbank"${mode==='wordbank'?' aria-current="page"':''}>单词表</a><a href="#/writing"${mode==='writing'?' aria-current="page"':''}>英文写作</a>`:''}${scope==='movies'?'<a class="book-admin-entry" href="#/movie-hub">多平台播放</a>':''}</nav>`;
   },
-  animation(series){return {key:'anim-'+series.seriesId,scope:'animation',id:series.seriesId,title:series.titleZh||series.title,cover:series.cover,href:'#/series/'+series.seriesId,level:Number(series.level||0),disabled:['coming','locked'].includes(series.status),landscape:true};},
+  animation(series){return {key:'anim-'+series.seriesId,scope:'animation',id:series.seriesId,title:series.titleZh||series.title,cover:series.cover,href:'#/series/'+series.seriesId,level:Number(series.level||0),disabled:['coming','locked'].includes(series.status),landscape:true,totalEpisodes:Number(series.episodeCount||series.readyEpisodes||0)};},
   movieSeries(series){return {key:'film-series-'+series.id,scope:'movies',id:series.id,title:series.titleZh||series.title,search:series.title+' '+series.titleZh,cover:series.cover||window.MovieClassroom.seriesCovers[series.id],href:'#/movie-series/'+series.id,level:series.level};},
   movieFilm(series,film,playable){const [id,title,titleZh]=film;const item=playable.get(id);return {key:'film-'+id,scope:'movies',id,title:titleZh||title,courseId:item?.studyCourse?.seriesId,search:[title,titleZh,series.title,series.titleZh].join(' '),cover:window.MovieClassroom.filmCovers[id]||item?.cover||window.MovieClassroom.seriesCovers[series.id],href:'#/movie/'+id,level:series.level,disabled:!item};},
-  card(app,item,resume=''){
+  card(app,item,resume='',learning=false){
     const e=value=>this.e(app,value);
+    const learned=learning?new Set(Object.values(app.storage('progress')||{}).filter(row=>row.seriesId===item.id&&Object.values(row.modules||{}).some(Boolean)).map(row=>Number(row.episodeId))).size:0,total=Math.max(item.totalEpisodes||0,learned);
     const cover=item.cover?`<img src="${e(item.cover)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">`:`<b>${e(item.title)}</b>`;
-    const link=item.disabled?'<span class="media-unavailable">待上线</span>':`<a href="${e(resume||item.href)}">${resume?'继续观看':item.key.startsWith('film-series-')?'查看系列':item.scope==='animation'?'进入故事':'开始观看'}</a>`;
-    return `<article class="book-card media-card" data-media-key="${e(item.key)}"><div class="book-cover${item.landscape?' media-animation-cover':''}"><button class="book-cover-trigger" type="button" aria-label="${e(item.title)}观看操作">${cover}</button><div class="book-actions">${link}<button type="button" class="book-personal-button media-favorite">收藏 / 分类</button></div></div><div class="book-card-body"><h2>${e(item.title)}</h2></div></article>`;
+    const link=item.disabled?'<span class="media-unavailable">待上线</span>':`<a href="${e(resume||item.href)}">${resume?(learning?'继续学习':'继续观看'):item.key.startsWith('film-series-')?'查看系列':item.scope==='animation'?'进入故事':'开始观看'}</a>`;
+    return `<article class="book-card media-card" data-media-key="${e(item.key)}"><div class="book-cover${item.landscape?' media-animation-cover':''}"><button class="book-cover-trigger" type="button" aria-label="${e(item.title)}观看操作">${cover}</button><div class="book-actions">${link}<button type="button" class="book-personal-button media-favorite">收藏 / 分类</button></div></div><div class="book-card-body"><h2>${e(item.title)}</h2>${learning?`<div class="media-study-progress"><span>已学 ${learned} / ${total} 集</span><progress value="${learned}" max="${total||1}" aria-label="学习进度"></progress></div>`:''}</div></article>`;
   },
   resumeHref(item,row){const meta=this.metadata(row),episode=Number(meta.episodeId),seriesId=item.scope==='animation'?item.id:item.courseId;return seriesId&&Number.isInteger(episode)&&episode>0&&meta.href===`#/lesson/${seriesId}/${episode}`?meta.href:item.href;},
-  cards(app,items,states=new Map(),recent=false){return `<div class="book-grid">${items.map(item=>this.card(app,item,recent?this.resumeHref(item,states.get(item.key)):'')).join('')}</div>`;},
+  cards(app,items,states=new Map(),recent=false,learning=false){if(learning)for(const item of items){if(!this.metadata(states.get(item.key)).episodeId){const last=Object.values(app.storage('progress')||{}).filter(row=>row.seriesId===item.id).sort((a,b)=>String(b.updatedAt).localeCompare(String(a.updatedAt)))[0];if(last)states.set(item.key,{...states.get(item.key),last_cfi:JSON.stringify({episodeId:last.episodeId,href:`#/lesson/${item.id}/${last.episodeId}`})});}}return `<div class="book-grid">${items.map(item=>this.card(app,item,recent?this.resumeHref(item,states.get(item.key)):'',learning)).join('')}</div>`;},
   bindCards(app,root=app.el()){
     root.querySelectorAll('.media-favorite').forEach(button=>button.onclick=()=>window.BookCommunity.personalDialog(app,button.closest('[data-media-key]').dataset.mediaKey,{media:true,onSave:()=>app.render()}));
     root.querySelectorAll('.media-card .book-cover-trigger').forEach(button=>button.onclick=()=>{if(matchMedia('(hover: none)').matches)button.parentElement.classList.toggle('book-actions-open');});
@@ -65,7 +66,7 @@ window.MediaShelf = {
     let content;
     if(mode==='favorites'){
       const groups=new Map();for(const item of items){const name=states.get(item.key)?.category||'未分类';if(!groups.has(name))groups.set(name,[]);groups.get(name).push(item);}
-      content=[...groups].sort(([a],[b])=>a.localeCompare(b,'zh-CN')).map(([name,list])=>`<details class="book-category-shelf"><summary><span>${e(name)}</span><small>${list.length} 部</small></summary>${this.cards(app,list)}</details>`).join('');
+      content=[...groups].sort(([a],[b])=>a.localeCompare(b,'zh-CN')).map(([name,list])=>`<details class="book-category-shelf"><summary><span>${e(name)}</span><small>${list.length} 部</small></summary>${this.cards(app,list,states,scope==='animation',scope==='animation')}</details>`).join('');
     }else if(mode==='recent')content=items.length?this.cards(app,items,states,true):'';
     else{
       const levels=[...new Set(items.map(row=>row.level))].sort((a,b)=>scope==='animation'?a-b:String(a).localeCompare(String(b)));

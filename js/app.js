@@ -138,9 +138,9 @@ const App = {
       if(page === 'home') return ['favorites','recent'].includes(a) ? window.MediaShelf.render(this,'animation',{mode:a}) : this.renderHome();
       if(page === 'series') return this.renderSeries(a);
       if(page === 'lesson') return this.renderLesson(a, Number(b || 1));
-      if(page === 'records') return this.renderRecords();
+      if(page === 'records'){location.hash='#/home/recent';return;}
       if(page === 'checkin') return this.renderCheckin();
-      if(page === 'bookshelf') return this.renderBookshelf();
+      if(page === 'bookshelf'){location.hash='#/home/favorites';return;}
       if(page === 'wordbank') return this.renderWordbank();
       if(page === 'writing') return this.renderWriting();
       if(page === 'rewards') return this.renderRewards();
@@ -1455,12 +1455,12 @@ addPoints(n=1){
     if(result) result.insertAdjacentHTML('beforeend',this.requiresQuizUnlock(seriesId)?'<p>🎉 已通过！后续已发布课程将按顺序解锁。</p>':'<p>🎉 已通过！本系列可自由选择已发布课程。</p>');
   },
   saveWord(item){
-    const arr=this.storage('wordbank') || []; const id=`${item.type}:${item.seriesId}:${item.episodeId}:${item.word}`;
-    if(!arr.find(x=>x.id===id)) arr.push({...item,id,date:new Date().toISOString()}); this.storage('wordbank',arr);
+    const arr=this.storage('wordbank') || []; const id=item.sourceId&&['book','magazine'].includes(item.sourceType)?`${item.type}:${item.sourceType}:${item.sourceId}:${item.page||0}:${item.word}`:`${item.type}:${item.seriesId}:${item.episodeId}:${item.word}`;
+    const index=arr.findIndex(x=>x.id===id),now=new Date().toISOString();if(index<0)arr.push({...item,id,date:now,updatedAt:now});else if(arr[index].deletedAt){arr[index]={...arr[index],...item,updatedAt:now};delete arr[index].deletedAt;}this.storage('wordbank',arr);
   },
   saveSentence(item){
-    const arr=this.storage('sentences') || []; const id=`${item.seriesId}:${item.episodeId}:${item.sentence.slice(0,40)}`;
-    if(!arr.find(x=>x.id===id)) arr.push({...item,id,date:new Date().toISOString()}); this.storage('sentences',arr);
+    const arr=this.storage('sentences') || []; const id=item.sourceId&&['book','magazine'].includes(item.sourceType)?`${item.sourceType}:${item.sourceId}:${item.page||0}:${item.sentence}`:`${item.seriesId}:${item.episodeId}:${item.sentence.slice(0,40)}`;
+    const index=arr.findIndex(x=>x.id===id),now=new Date().toISOString();if(index<0)arr.push({...item,id,date:now,updatedAt:now});else if(arr[index].deletedAt){arr[index]={...arr[index],...item,updatedAt:now};delete arr[index].deletedAt;}this.storage('sentences',arr);
   },
   async renderRecords(){
     const p=this.storage('progress') || {}; const q=this.storage('quizScores') || {};
@@ -1478,13 +1478,26 @@ addPoints(n=1){
     const all=await this.getJSON('data/series-list.json'); const list=this.isGuest()?all.filter(s=>!this.isGuestRestrictedLevel(s.level)):all; const p=this.storage('progress') || {};
     this.el().innerHTML=`<section class="hero"><div><h1>书架</h1><p>这里收集正在学习和已经学过的故事系列。</p></div></section><div class="series-grid">${list.map(s=>{const done=Object.values(p).filter(x=>x.seriesId===s.seriesId).length;return `<article class="series-card"><img class="cover" src="${s.cover}" alt=""><div class="series-info"><h3>${s.title}</h3><div class="zh">${s.titleZh||''}</div><p>学习进度：${done}/${s.episodeCount || 0}</p><div class="progress-bar"><span style="width:${s.episodeCount?Math.min(100,done/s.episodeCount*100):0}%"></span></div><p><a class="btn small" href="#/series/${s.seriesId}">进入系列</a></p></div></article>`}).join('')}</div>`;
   },
-  renderWordbank(){
-    const arr=this.storage('wordbank') || [];
-    this.el().innerHTML=`<section class="hero"><div><h1>单词表</h1><p>这里收集你在各集课程中收藏的单词和短语。</p></div></section><div class="cards-grid">${arr.length?arr.map(w=>`<article class="mini-card"><h3>${this.escapeHtml(w.word)}</h3><div class="meaning">${this.escapeHtml(w.meaning||'')}</div>${w.example?`<div class="example">${this.escapeHtml(w.example)}</div>`:''}<p class="muted">${this.escapeHtml(w.seriesId)} · Episode ${Number(w.episodeId)}</p></article>`).join(''):'<div class="empty">还没有收藏单词或短语。</div>'}</div>`;
-  },
-  renderWriting(){
-    const arr=this.storage('sentences') || [];
-    this.el().innerHTML=`<section class="hero"><div><h1>英文写作</h1><p>先从收藏喜欢的英文句子开始，后期可以升级为仿写练习。</p></div></section><div class="content-panel">${arr.length?arr.map(s=>`<div class="read-paragraph"><strong>${s.sentence}</strong><div class="muted">${s.seriesId} · Episode ${s.episodeId}</div></div>`).join(''):'<div class="empty">还没有收藏句子。进入 Read 页面可以收藏好句。</div>'}</div>`;
+  renderWordbank(){return this.renderStudyCollection('wordbank');},
+  renderWriting(){return this.renderStudyCollection('sentences');},
+  async renderStudyCollection(kind){
+    const route=location.hash,uid=window.SFCloud?.user?.id,word=kind==='wordbank',e=value=>this.escapeHtml(String(value||''));
+    const series=await this.getJSON('data/series-list.json');if(route!==location.hash||uid!==window.SFCloud?.user?.id)return;
+    const titles=new Map(series.map(row=>[row.seriesId,row.titleZh||row.title])),labels={animation:'动画故事',movie:'光影课堂',book:'绘本',magazine:'期刊'};
+    this.el().innerHTML=window.MediaShelf.nav('animation',word?'wordbank':'writing')+`<section class="study-collection"><h1>${word?'单词表':'英文写作'}</h1><p class="muted">${word?'收藏喜欢的单词和短语':'整理收藏的英文句子'}，支持动画、绘本和期刊来源。</p><div class="study-collection-filters"><input id="studyCollectionSearch" type="search" placeholder="${word?'搜索单词、释义或来源':'搜索句子、译文或来源'}"><select id="studyCollectionSource" aria-label="来源"><option value="">全部来源</option>${Object.entries(labels).map(([key,label])=>`<option value="${key}">${label}</option>`).join('')}</select><select id="studyCollectionCategory" aria-label="我的分类"></select></div><p id="studyCollectionCount" class="muted"></p><div id="studyCollectionItems" class="cards-grid"></div></section>`;
+    const host=this.el(),search=host.querySelector('#studyCollectionSearch'),sourceFilter=host.querySelector('#studyCollectionSource'),categoryFilter=host.querySelector('#studyCollectionCategory');
+    const draw=()=>{
+      const rows=this.storage(kind)||[],selected=categoryFilter.value,categories=[...new Set(rows.filter(row=>!row.deletedAt).map(row=>row.category).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'zh-CN'));
+      categoryFilter.innerHTML='<option value="">全部分类</option><option value="__uncategorized">未分类</option>'+categories.map(name=>`<option value="${e(name)}">${e(name)}</option>`).join('');if([...categoryFilter.options].some(option=>option.value===selected))categoryFilter.value=selected;
+      const query=search.value.trim().toLowerCase();
+      const filtered=rows.map((row,index)=>{const type=row.sourceType||(String(row.seriesId||'').startsWith('movie-')?'movie':'animation'),title=row.sourceTitle||titles.get(row.seriesId)||row.seriesId||labels[type]||'收藏',href=row.sourceHref||(row.seriesId&&row.episodeId?`#/lesson/${encodeURIComponent(row.seriesId)}/${Number(row.episodeId)}`:'');return {row,index,type,title,href};}).filter(({row,type,title})=>!row.deletedAt&&(!sourceFilter.value||type===sourceFilter.value)&&(!categoryFilter.value||(categoryFilter.value==='__uncategorized'?!row.category:row.category===categoryFilter.value))&&(!query||[row.word,row.meaning,row.sentence,row.translation,title,row.category].join(' ').toLowerCase().includes(query))).reverse();
+      host.querySelector('#studyCollectionCount').textContent=`${filtered.length} ${word?'条单词 / 短语':'条句子'}`;
+      host.querySelector('#studyCollectionItems').innerHTML=filtered.map(({row,index,type,title,href})=>`<article class="mini-card study-collection-card"><${word?'h3':'p'}>${e(word?row.word:row.sentence)}</${word?'h3':'p'}>${row.meaning||row.translation?`<div class="meaning">${e(row.meaning||row.translation)}</div>`:''}${row.example?`<div class="example">${e(row.example)}</div>`:''}<p class="muted">${e(labels[type])} · ${e(title)}${row.page?' · 第 '+Number(row.page)+' 页':row.episodeId?' · 第 '+Number(row.episodeId)+' 集':''}${row.category?' · '+e(row.category):''}</p><div class="study-collection-actions">${href.startsWith('#/')?`<a href="${e(href)}">查看来源</a>`:''}<button type="button" data-study-speak="${index}">朗读</button><button type="button" data-study-category="${index}">分类</button><button type="button" data-study-remove="${index}">移除</button></div></article>`).join('')||'<div class="empty">暂无匹配收藏。在动画阅读或绘本、期刊的可选文字中选中英文，即可收藏。</div>';
+      host.querySelectorAll('[data-study-speak]').forEach(button=>button.onclick=()=>{const row=rows[Number(button.dataset.studySpeak)];this.speakText(row.word||row.sentence);});
+      host.querySelectorAll('[data-study-remove]').forEach(button=>button.onclick=()=>{const row=rows[Number(button.dataset.studyRemove)];row.deletedAt=new Date().toISOString();row.updatedAt=row.deletedAt;this.storage(kind,rows);draw();});
+      host.querySelectorAll('[data-study-category]').forEach(button=>button.onclick=()=>{const row=rows[Number(button.dataset.studyCategory)],name=prompt('分类名称（留空取消分类，最多 60 个字）',row.category||'');if(name===null)return;row.category=name.trim().slice(0,60);row.updatedAt=new Date().toISOString();this.storage(kind,rows);draw();});
+    };
+    for(const field of [search,sourceFilter,categoryFilter])field.oninput=draw;draw();
   },
   async renderSearch(q){
     const all=await this.getJSON('data/series-list.json');

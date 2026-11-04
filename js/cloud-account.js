@@ -82,7 +82,8 @@ window.SFCloud = {
       const m=new Map();
       for(const item of [...(Array.isArray(xs)?xs:[]),...(Array.isArray(ys)?ys:[])]){
         const key=item.id || [item.seriesId,item.episodeId,item.word||item.sentence||''].join(':');
-        m.set(key,item);
+        const old=m.get(key),stamp=value=>String(value?.updatedAt||value?.deletedAt||value?.date||'');
+        if(!old||stamp(item)>=stamp(old))m.set(key,item);
       }
       return [...m.values()];
     };
