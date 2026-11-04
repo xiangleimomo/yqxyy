@@ -222,7 +222,7 @@ window.MovieClassroom = {
       return;
     }
     // Retain the previous playback path for other upstreams and old backups.
-    if (native && safari) { useNative(mediaUrl); return; }
+    if (native && (safari || movie.playerMode==='dulo-direct')) { useNative(mediaUrl); return; }
     try {
       if (!window.Hls) {
         if (!this.libraryPromise) this.libraryPromise = new Promise((resolve, reject) => { const script = document.createElement('script'); script.src = 'assets/vendor/hlsjs-1.5.20/hls.min.js'; script.onload = resolve; script.onerror = () => reject(new Error('播放器组件加载失败')); document.head.append(script); }).catch(error => { this.libraryPromise = null; throw error; });
