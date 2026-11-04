@@ -61,7 +61,9 @@ window.MovieClassroom = {
       const tmdb=ids.get(id),validTmdb=Number.isSafeInteger(tmdb)&&tmdb>0;
       if(useVidMario){
         const base=validTmdb?'https://player.vidmario.net/embed/movie/'+tmdb:'';
-        return {...(group.sources||[]).find(item=>item.id===id),id,title,titleZh,year,playerMode:'vidmario',embedUrl:base?base+'?server=Pythagoras':'',sourceLabel:'111MoviesNet 主片源',backupSources:base?[{url:base+'?server=Fermat',embedded:true,label:'111MoviesNet 备用片源'}]:[]};
+        // VidMario intentionally rejects iframe embedding. Keep both 111MoviesNet
+        // routes selectable here, then open the selected official player page.
+        return {...(group.sources||[]).find(item=>item.id===id),id,title,titleZh,year,playerMode:'vidmario-external',embedUrl:base?base+'?server=Pythagoras':'',sourceLabel:'111MoviesNet 主片源',backupSources:base?[{url:base+'?server=Fermat',embedded:true,label:'111MoviesNet 备用片源'}]:[]};
       }
       return {...(group.sources||[]).find(item=>item.id===id),id,title,titleZh,year,playerMode:'dulo',embedUrl:validTmdb?'https://dulo.mov/watch/movie/'+tmdb:'',sourceLabel:'Dulo 播放器'};
     })).filter(item=>item.embedUrl);
@@ -156,7 +158,7 @@ window.MovieClassroom = {
     const selectedChoice = usingBackup ? (index === 0 ? 'backup' : `backup-${index}`) : 'primary';
     const {url: sourceUrl, embedded} = this.playbackSource(movie, usingBackup ? backups[index] : false);
     const e = value => this.escape(app, value);
-    const sourceControl = hasBackup ? `<label class="movie-source-control">播放源 <select id="movieSource" aria-label="选择播放源"><option value="primary"${usingBackup ? '' : ' selected'}>${e(movie.sourceLabel || '主片源')}</option>${backups.map((source, i) => `<option value="${i === 0 ? 'backup' : `backup-${i}`}"${usingBackup && index === i ? ' selected' : ''}>${e(source.label || `备用片源 ${i + 1}`)}${window.DyttAdSkip?.enabled?.(source.url) ? '（广告自动跳过）' : ''}</option>`).join('')}</select></label><small class="muted">切换片源将从头播放。</small>` : '';
+    const sourceControl = hasBackup ? `<label class="movie-source-control">播放源 <select id="movieSource" aria-label="选择播放源"><option value="primary"${usingBackup ? '' : ' selected'}>${e(movie.sourceLabel || '主片源')}</option>${backups.map((source, i) => `<option value="${i === 0 ? 'backup' : `backup-${i}`}"${usingBackup && index === i ? ' selected' : ''}>${e(source.label || `备用片源 ${i + 1}`)}${window.DyttAdSkip?.enabled?.(source.url) ? '（广告自动跳过）' : ''}</option>`).join('')}</select></label><small class="muted">${movie.playerMode==='vidmario-external' ? '切换线路后重新打开播放器。' : '切换片源将从头播放。'}</small>` : '';
     const studyLink = movie.studyCourse ? `<p class="movie-study-entry"><a class="btn" href="#/series/${e(movie.studyCourse.seriesId)}">📖 剧情分集学习 · ${e(movie.studyCourse.episodeCount)} 集</a> <span class="muted">英文字幕 · Words · Quiz · Games</span></p>` : '';
     const directLink = !embedded && this.mediaUrl(sourceUrl) !== sourceUrl ? `<a class="btn secondary" href="${e(sourceUrl)}" target="_blank" rel="noopener noreferrer">直接打开播放</a>` : '';
     const subtitleTrack = movie.subtitleUrl ? `<track kind="subtitles" src="${e(movie.subtitleUrl)}" srclang="${e(movie.subtitleLang || 'en')}" label="${e(movie.subtitleLabel || 'English')}" default>` : '';
@@ -171,6 +173,17 @@ window.MovieClassroom = {
     if (hasBackup) document.getElementById('movieSource').onchange = event => { const choice = event.target.value; this.cleanup(); this.renderWatch(app, id, choice).catch(() => {}); };
     const report = (message, failed=false) => { if (generation !== this.generation) return; const status = document.getElementById('moviePlayerStatus'); if (status) { status.textContent = message; status.classList.toggle('failed', failed); } };
     if (embedded) {
+      if (movie.playerMode === 'vidmario-external') {
+        const stage = app.el().querySelector('.movie-watch-frame');
+        const sourceName = usingBackup ? (backups[index].label || `备用片源 ${index + 1}`) : (movie.sourceLabel || '111MoviesNet 播放源');
+        stage.classList.add('movie-external-stage');
+        stage.innerHTML = `<div class="movie-external-player"><span aria-hidden="true">▶</span><strong>使用 111MoviesNet 播放器观看</strong><p>该播放器不支持嵌入本站；将在新标签页直接打开所选线路。</p><a class="btn" href="${e(sourceUrl)}" target="_blank" rel="noopener noreferrer">打开 ${e(sourceName)}</a></div>`;
+        stage.querySelector('a').addEventListener('click', () => {
+          if (generation === this.generation) window.MediaShelf.record('film-'+id,{href:'#/movie/'+id});
+        });
+        report(`已选择${sourceName}，点击上方按钮即可播放。`);
+        return;
+      }
       const frame = document.createElement('iframe');
       frame.title = `${movie.titleZh} · 播放器`;
       frame.allow = 'autoplay; fullscreen; encrypted-media; picture-in-picture';
