@@ -494,9 +494,10 @@ async renderLesson(seriesId, episodeId){
   hlsVideoPanel(d, completionModule='hlsVideo'){
     const url=d.ep.video?.hlsUrl;
     if(!url) return `<div class="empty">本集 HLS 视频源暂未添加。</div>`;
+    const backupHls=d.ep.video?.backupHlsUrl || '';
     const fallback=d.ep.video?.mp4Url || d.ep.video?.directUrl || '';
     const hasSubtitle=true;
-    return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>Watch 看视频</h2><p class="muted">播放器加载失败时，会尝试本集备用视频。${hasSubtitle?' 本集提供时将自动加载英文外挂字幕。':''}</p></div></div><div class="video-wrap${hasSubtitle?' subtitle-video-wrap':''}"><video class="hls-video-player" controls playsinline preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="video-caption" aria-live="polite" hidden></div>${hasSubtitle?this.subtitleControls():''}</div><p class="muted direct-video-help"><span class="hls-load-status" role="status" aria-live="polite">正在连接视频…</span> ${fallback?`也可<a href="${this.escapeHtml(fallback)}" target="_blank" rel="noreferrer noopener">直接打开本集视频</a>。`:`若无法播放，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">打开视频源</a>。`}</p></section>${this.completeButton(d,completionModule)}`;
+    return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>Watch 看视频</h2><p class="muted">播放器加载失败时，会自动尝试备用播放源。${hasSubtitle?' 本集提供时将自动加载英文外挂字幕。':''}</p></div></div><div class="video-wrap${hasSubtitle?' subtitle-video-wrap':''}"><video class="hls-video-player" controls playsinline preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-backup-hls-src="${this.escapeHtml(backupHls)}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="video-caption" aria-live="polite" hidden></div>${hasSubtitle?this.subtitleControls():''}</div><p class="muted direct-video-help"><span class="hls-load-status" role="status" aria-live="polite">正在连接视频…</span> ${fallback?`也可<a href="${this.escapeHtml(fallback)}" target="_blank" rel="noreferrer noopener">直接打开本集视频</a>。`:`若无法播放，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">打开视频源</a>。`}</p></section>${this.completeButton(d,completionModule)}`;
   },
   subtitlePreferences(){
     const defaults={visible:true,size:20,color:'#ffffff',captionX:50,captionY:84,opacity:72};
@@ -759,20 +760,29 @@ async renderLesson(seriesId, episodeId){
     if(player.dataset.ready) return;
     player.dataset.ready='1';
     const source=player.dataset.hlsSrc;
+    const backupHls=player.dataset.backupHlsSrc;
     const fallback=player.dataset.fallbackSrc;
     const help=player.closest('.direct-video-panel')?.querySelector('.direct-video-help') || player.closest('.audio-player-card')?.querySelector('.audio-player-help');
     const loadStatus=player.closest('.direct-video-panel')?.querySelector('.hls-load-status');
-    let switched=false, disposed=false, wantsPlay=false, disposeAdSkip;
+    let switched=false, usedBackupHls=false, disposed=false, wantsPlay=false, disposeAdSkip;
     const onPlay=()=>{wantsPlay=true;};
     player.addEventListener('play',onPlay);
     const destroy=()=>{if(player._hls){player._hls.destroy();player._hls=null;}};
     const recover=()=>{
       if(disposed || switched) return;
-      switched=true;
       disposeAdSkip?.();
       clearTimeout(timer);
       const resume=wantsPlay || !player.paused;
       const position=Number.isFinite(player.currentTime)?player.currentTime:0;
+      if(backupHls && !usedBackupHls){
+        usedBackupHls=true;
+        if(loadStatus)loadStatus.textContent='主播放源加载失败，正在切换备用播放源。';else if(help)help.textContent='主播放源加载失败，正在切换备用播放源。';
+        player.addEventListener('loadedmetadata',()=>{if(!disposed&&resume)player.play().catch(()=>{});},{once:true});
+        if(player._hls){player._hls.loadSource(backupHls);disposeAdSkip=window.DyttAdSkip?.attach(player,backupHls,player._hls);}
+        else{player.src=backupHls;player.load();}
+        return;
+      }
+      switched=true;
       destroy();
       if(!fallback){if(loadStatus)loadStatus.textContent='本集暂时无法加载，请稍后重试。';else if(help)help.textContent='本集暂时无法加载，请稍后重试。';return;}
       if(loadStatus)loadStatus.textContent='已切换到备用视频。'; else if(help)help.textContent='已切换到备用视频，可点击播放继续。';
@@ -893,8 +903,8 @@ async renderLesson(seriesId, episodeId){
   hlsAudioPanel(d){
     const url=d.ep.video?.hlsUrl;
     if(!url) return `<section class="listen-header"><span class="audio-icon">🎧</span><div><h3>Listen and Read</h3><p>本集暂未添加音频播放源，可先阅读下方原文。</p></div></section>`;
-    const fallback=d.ep.video?.mp4Url || d.ep.video?.directUrl || '';
-    return `<section class="listen-read-audio" aria-label="本集音频播放"><div class="listen-header"><span class="audio-icon">🎧</span><div><h3>Listen and Read</h3><p>播放本集原声，同时阅读下方英文文本；此处只播放音频，不显示视频。</p></div></div><div class="audio-player-card"><div class="audio-player-label">本集音频</div><audio class="hls-audio-player" controls preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-fallback-src="${this.escapeHtml(fallback)}">当前浏览器不支持音频播放。</audio><p class="muted audio-player-help" role="status" aria-live="polite"></p></div></section>`;
+    const backupHls=d.ep.video?.backupHlsUrl || '',fallback=d.ep.video?.mp4Url || d.ep.video?.directUrl || '';
+    return `<section class="listen-read-audio" aria-label="本集音频播放"><div class="listen-header"><span class="audio-icon">🎧</span><div><h3>Listen and Read</h3><p>播放本集原声，同时阅读下方英文文本；此处只播放音频，不显示视频。</p></div></div><div class="audio-player-card"><div class="audio-player-label">本集音频</div><audio class="hls-audio-player" controls preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-backup-hls-src="${this.escapeHtml(backupHls)}" data-fallback-src="${this.escapeHtml(fallback)}">当前浏览器不支持音频播放。</audio><p class="muted audio-player-help" role="status" aria-live="polite"></p></div></section>`;
   },
   readPanel(d){
     const paras=(d.reading && d.reading.paragraphs) || [];
