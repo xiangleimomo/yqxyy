@@ -67,13 +67,9 @@ def validated_payload(row, folder):
         raise ValueError("Audio source does not belong to this episode")
     if digest(vtt)!=track.get("subtitleSha256"):
         raise ValueError("New VTT checksum differs from aligned words")
-    if not vtt.startswith("WEBVTT
-
-"):
+    if not vtt.startswith("WEBVTT\n\n"):
         raise ValueError("New captions are not WebVTT")
-    blocks=[x for x in re.split(r"
-\s*
-",vtt.strip()) if " --> " in x]
+    blocks=[x for x in re.split(r"\n\s*\n",vtt.strip()) if " --> " in x]
     if len(blocks)!=track.get("cueCount") or len(blocks)!=len(track.get("cues",[])):
         raise ValueError("Cue counts differ")
     flattened=[]
@@ -163,12 +159,10 @@ def main():
         "success":successes,"failures":failures}
     reports=ROOT/"reports"
     reports.mkdir(parents=True,exist_ok=True)
-    (reports/"whisperx-read-batch-latest.json").write_text(json.dumps(output,ensure_ascii=False,indent=2)+"
-",encoding="utf-8")
+    (reports/"whisperx-read-batch-latest.json").write_text(json.dumps(output,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     history=reports/"whisperx-read-batches"
     history.mkdir(parents=True,exist_ok=True)
-    (history/f"{args.run_id}.json").write_text(json.dumps(output,ensure_ascii=False,indent=2)+"
-",encoding="utf-8")
+    (history/f"{args.run_id}.json").write_text(json.dumps(output,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     failed_path=reports/"whisperx-read-failures.json"
     old={}
     if failed_path.is_file():
@@ -178,8 +172,7 @@ def main():
         except (ValueError,KeyError,TypeError):pass
     for success in successes:old.pop((success["seriesId"],success["episodeId"]),None)
     for failure in failures:old[(failure["seriesId"],failure["episodeId"])]=failure
-    failed_path.write_text(json.dumps({"failures":list(old.values())},ensure_ascii=False,indent=2)+"
-",encoding="utf-8")
+    failed_path.write_text(json.dumps({"failures":list(old.values())},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps({k:v for k,v in output.items() if k not in ("success","failures")},ensure_ascii=False,indent=2))
     # Do not fail the publishing job for one rejected episode: the quality gate
     # withheld that episode's files, while the report identifies it for retry.
