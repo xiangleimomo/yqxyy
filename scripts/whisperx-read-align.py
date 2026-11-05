@@ -281,7 +281,7 @@ def write_candidate(folder: Path, series: str, eid: int, canonical: list[str],
         "textAuthority":"littlefox-xml-paragraph-text",
         "xmlTextSha256":(xml_evidence or {}).get("sha256"),
         "xmlParagraphCount":(xml_evidence or {}).get("paragraphs"),
-        "recognizer":model,"cueCount":len(cues),"totalWords":info["totalXmlWords"],"captionedWords":len(mapped),"omittedUnalignedWords":info["totalXmlWords"]-len(mapped),
+        "recognizer":model,"cueCount":len(cues),"totalWords":info.get("totalXmlWords",len(canonical)),"captionedWords":len(mapped),"omittedUnalignedWords":info.get("totalXmlWords",len(canonical))-len(mapped),
         "speechMatchedWords":info["forcedAlignedWords"],
         "speechMatchedFraction":info["forcedAlignedFraction"],
         "cues":[{"words":c["words"]} for c in cues]
