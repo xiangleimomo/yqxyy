@@ -188,12 +188,78 @@ window.SFMedals={
  async renderAdmin(prefill=''){
   if(!this.state.admin)throw Error('仅管理员可进入');const host=this.content(),run=this.generation,[data]=await Promise.all([this.rpc('admin')]),e=v=>this.e(v);if(run!==this.generation||!host.isConnected)return;
   const configured=new Set(data.badges.filter(row=>row.active).map(row=>row.resource_key)),catalog=await this.catalog(),pendingCount=catalog.filter(row=>row.active!==false&&row.type!=='episode'&&!configured.has(row.key)).length;if(run!==this.generation||!host.isConnected)return;
-  this.content().innerHTML=`<div class="medal-toolbar"><h2>作品徽章管理</h2><button class="btn" id="medalNewBadge">＋ 配置作品徽章</button></div><p>待配置作品：${pendingCount} · 不自动生成作品徽章</p><p>主线勋章：Little Fox ${data.badges.filter(row=>row.unlock_rule==='series_quiz').length} 枚 · 电影 ${data.badges.filter(row=>row.unlock_rule==='movie_quiz').length} 枚。图片可逐个补充，不影响任务和已获得记录。</p><div class="medal-search"><select id="mainlineKind"><option value="">全部作品</option><option value="series_quiz">Little Fox 主线</option><option value="movie_quiz">电影主线</option><option value="other">其他作品</option></select><input id="mainlineSearch" placeholder="搜索系列或电影名称"><label><input type="checkbox" id="mainlineMissing">只看待配图</label></div><div class="medal-grid">${data.badges.map(row=>`<article class="medal-template" data-admin-kind="${e(['series_quiz','movie_quiz'].includes(row.unlock_rule)?row.unlock_rule:'other')}" data-search-title="${e(row.title)}" data-missing="${!row.asset_id}">${this.image(row.asset_id,row.title,false,['series_quiz','movie_quiz'].includes(row.unlock_rule))}<strong>${e(row.title)}</strong><p>${e(row.resource_title)}</p><small>${row.active?'启用':'停用'} · ${e(this.ruleLabel(row.unlock_rule))}</small><button data-badge-edit="${e(row.id)}">编辑配置</button></article>`).join('')}</div><details class="medal-version-tools"><summary>关联同一作品的其他文件版本</summary><div id="medalAlias">${this.resourcePicker('alias',true)}${this.resourcePicker('canonical',true)}<button class="btn secondary" id="medalLinkVersion">关联到主作品</button></div></details><h2>设计下架管理</h2><form class="medal-search" id="medalRemoveForm"><input name="id" required placeholder="需下架的模板 ID"><input name="reason" required minlength="2" placeholder="下架理由"><button>下架模板</button></form><p><a class="btn secondary" href="#/honors/issued">颁发记录管理</a></p><details><summary>最近操作记录</summary>${data.audit.map(row=>`<p>${e(new Date(row.created_at).toLocaleString())} · ${e(row.action)} · ${e(row.entity_id)} ${e(JSON.stringify(row.detail))}</p>`).join('')}</details>`;
+  this.content().innerHTML=`<div class="medal-toolbar"><h2>作品徽章管理</h2><button class="btn" id="medalNewBadge">＋ 配置作品徽章</button><button class="btn secondary" type="button" id="medalBatchImport">＋ 批量补图</button></div><p>待配置作品：${pendingCount} · 不自动生成作品徽章</p><p>主线勋章：Little Fox ${data.badges.filter(row=>row.unlock_rule==='series_quiz').length} 枚 · 电影 ${data.badges.filter(row=>row.unlock_rule==='movie_quiz').length} 枚。图片可逐个补充，不影响任务和已获得记录。</p><div class="medal-search"><select id="mainlineKind"><option value="">全部作品</option><option value="series_quiz">Little Fox 主线</option><option value="movie_quiz">电影主线</option><option value="other">其他作品</option></select><input id="mainlineSearch" placeholder="搜索系列或电影名称"><label><input type="checkbox" id="mainlineMissing">只看待配图</label></div><div class="medal-grid">${data.badges.map(row=>`<article class="medal-template" data-admin-kind="${e(['series_quiz','movie_quiz'].includes(row.unlock_rule)?row.unlock_rule:'other')}" data-search-title="${e(row.title)}" data-missing="${!row.asset_id}">${this.image(row.asset_id,row.title,false,['series_quiz','movie_quiz'].includes(row.unlock_rule))}<strong>${e(row.title)}</strong><p>${e(row.resource_title)}</p><small>${row.active?'启用':'停用'} · ${e(this.ruleLabel(row.unlock_rule))}</small><button data-badge-edit="${e(row.id)}">编辑配置</button></article>`).join('')}</div><details class="medal-version-tools"><summary>关联同一作品的其他文件版本</summary><div id="medalAlias">${this.resourcePicker('alias',true)}${this.resourcePicker('canonical',true)}<button class="btn secondary" id="medalLinkVersion">关联到主作品</button></div></details><h2>设计下架管理</h2><form class="medal-search" id="medalRemoveForm"><input name="id" required placeholder="需下架的模板 ID"><input name="reason" required minlength="2" placeholder="下架理由"><button>下架模板</button></form><p><a class="btn secondary" href="#/honors/issued">颁发记录管理</a></p><details><summary>最近操作记录</summary>${data.audit.map(row=>`<p>${e(new Date(row.created_at).toLocaleString())} · ${e(row.action)} · ${e(row.entity_id)} ${e(JSON.stringify(row.detail))}</p>`).join('')}</details>`;
   const filterBadges=()=>{const kind=host.querySelector('#mainlineKind').value,query=host.querySelector('#mainlineSearch').value.toLowerCase(),missing=host.querySelector('#mainlineMissing').checked;host.querySelectorAll('[data-admin-kind]').forEach(card=>card.hidden=!!((kind&&card.dataset.adminKind!==kind)||(query&&!card.dataset.searchTitle.toLowerCase().includes(query))||(missing&&card.dataset.missing!=='true')));};for(const id of ['mainlineKind','mainlineSearch','mainlineMissing'])host.querySelector('#'+id).oninput=filterBadges;
-  this.content().querySelector('#medalNewBadge').onclick=()=>this.badgeEditor({},prefill);this.content().querySelectorAll('[data-badge-edit]').forEach(button=>button.onclick=()=>this.badgeEditor(data.badges.find(row=>row.id===button.dataset.badgeEdit)));
+  this.content().querySelector('#medalNewBadge').onclick=()=>this.badgeEditor({},prefill);this.content().querySelector('#medalBatchImport').onclick=()=>this.batchImportMovieImages(data.badges);this.content().querySelectorAll('[data-badge-edit]').forEach(button=>button.onclick=()=>this.badgeEditor(data.badges.find(row=>row.id===button.dataset.badgeEdit)));
   this.content().querySelector('#medalRemoveForm').onsubmit=event=>{event.preventDefault();const form=event.currentTarget;this.act(form.querySelector('button'),async()=>{await this.rpc('review',{id:form.elements.id.value.trim(),decision:'removed',note:form.elements.reason.value.trim()});await this.render(this.app,'admin');});};
   const alias=this.content().querySelector('#medalAlias');await Promise.all([this.bindPicker(alias,'alias'),this.bindPicker(alias,'canonical')]);alias.querySelector('#medalLinkVersion').onclick=event=>this.act(event.currentTarget,async()=>{await this.prepareResource(alias.querySelector('[name=alias]').value);await this.prepareResource(alias.querySelector('[name=canonical]').value);await this.rpc('resource_link',{resource_key:alias.querySelector('[name=alias]').value,canonical_key:alias.querySelector('[name=canonical]').value});this.notice('文件版本已关联到同一主作品。');});if(prefill)this.badgeEditor({},prefill);
  },
+ async batchImportMovieImages(badges){
+  if(!this.state?.admin)throw Error('仅管理员可以批量补充图片');
+  const movieBadges=badges.filter(row=>row.unlock_rule==='movie_quiz');
+  const dlg=this.dialog(`<form class="medal-editor" id="movieMedalBatchForm">
+    <h2>批量补充电影专属勋章图片</h2>
+    <p>仅补充尚未配图的电影勋章，保留已有图片、勋章 ID、题库与达标规则。图片仍通过现有加密接口保存在 Pone。</p>
+    <p>请选择已解压的 PNG 图片（文件名格式：<code>movie-id.png</code>）。</p>
+    <label>选择电影勋章 PNG 文件<input type="file" name="images" accept="image/png" multiple required></label>
+    <div id="movieMedalBatchReview" role="status">尚未选择文件</div>
+    <label class="medal-check"><input type="checkbox" name="rights" required>确认这些原创勋章已获授权，可以用于网站展示</label>
+    <p id="movieMedalBatchProgress" role="status" aria-live="polite"></p>
+    <button class="btn" type="submit">开始批量上传并绑定</button>
+  </form>`);
+  const form=dlg.querySelector('form'),review=dlg.querySelector('#movieMedalBatchReview'),progress=dlg.querySelector('#movieMedalBatchProgress');
+  const lookup=new Map(movieBadges.map(row=>[row.resource_key.replace(/^movie:/,''),row]));
+  const validate=()=>{
+    const files=[...form.elements.images.files],seen=new Set(),ready=[],skipped=[],invalid=[];
+    for(const file of files){
+      const id=file.name.match(/^([a-z0-9-]+)\.png$/i)?.[1]?.toLowerCase();
+      if(!id||!lookup.has(id)){invalid.push(file.name);continue;}
+      if(seen.has(id)){invalid.push('重复文件：'+file.name);continue;}
+      seen.add(id);
+      const row=lookup.get(id);
+      if(row.asset_id){skipped.push(row.title);continue;}
+      ready.push({file,row});
+    }
+    review.innerHTML=`<p>选择 ${files.length} 张，准备补图 ${ready.length} 张，已有图片跳过 ${skipped.length} 张，未识别 ${invalid.length} 张。</p>`
+      + (ready.length?`<details><summary>查看待导入对应关系</summary><ol>${ready.map(item=>`<li>${this.e(item.file.name)} → ${this.e(item.row.resource_title||item.row.title)}</li>`).join('')}</ol></details>`:'')
+      + (invalid.length?`<p>未识别：${this.e(invalid.join('、'))}</p>`:'');
+    return {ready,invalid};
+  };
+  form.elements.images.onchange=validate;
+  form.onsubmit=async event=>{
+    event.preventDefault();
+    if(!form.elements.rights.checked)return;
+    const {ready,invalid}=validate();
+    if(invalid.length){progress.textContent='存在未识别或重复的文件，请确认文件名后重新选择。';return;}
+    if(!ready.length){progress.textContent='没有需要补图的电影。';return;}
+    const button=form.querySelector('[type=submit]');button.disabled=true;
+    let saved=0,skipped=0;
+    try{
+      const fresh=await this.rpc('admin');
+      const byKey=new Map(fresh.badges.filter(row=>row.unlock_rule==='movie_quiz').map(row=>[row.resource_key,row]));
+      for(let i=0;i<ready.length;i++){
+        const {file,row:original}=ready[i],row=byKey.get(original.resource_key);
+        if(!row||row.id!==original.id)throw Error('电影勋章记录已变化，请刷新重试：'+original.resource_key);
+        if(row.asset_id){skipped++;progress.textContent=`${i+1}/${ready.length} 已跳过有图片的电影：${row.title}`;continue;}
+        progress.textContent=`${i+1}/${ready.length} 正在上传：${row.resource_title||row.title}`;
+        await this.prepareResource(row.resource_key,row.unlock_rule);
+        const assetId=await this.uploadImage(file,progress);
+        await this.rpc('badge_save',{
+          id:row.id,title:row.title,description:row.description||'',
+          asset_id:assetId,resource_key:row.resource_key,
+          source_type:row.source_type||'story_inspired',
+          rights_note:row.rights_note||'作者原创电影主题勋章，已授权平台展示。',
+          unlock_rule:'movie_quiz',quiz_min:Number(row.quiz_min||80),active:row.active!==false
+        });
+        saved++;progress.textContent=`已成功绑定 ${saved} 张 / ${ready.length} 张：${row.resource_title||row.title}`;
+      }
+      dlg.close();
+      this.go('admin',`批量补图完成：新增 ${saved} 张，跳过已有图片 ${skipped} 张。`);
+    }catch(error){
+      progress.textContent=`已绑定 ${saved} 张，后续中断：${error.message}。可重新进入批量补图并选择同一批文件，已绑定的会自动跳过。`;
+    }finally{if(button.isConnected)button.disabled=false;}
+  };
+},
  async badgeEditor(row={},prefill=''){
   const mainline=['series_quiz','movie_quiz'].includes(row.unlock_rule),e=v=>this.e(v),dialog=this.dialog(`<form class="medal-editor"><h2>作品主题徽章配置</h2><label>名称<input name="title" required maxlength="100" value="${e(row.title)}"></label><label>说明<textarea name="description" maxlength="1500">${e(row.description)}</textarea></label><label>图片<input name="image" type="file" accept="image/png,image/webp,image/jpeg" ${row.asset_id||mainline?'':'required'}></label>${mainline?`<p>主线任务 · 题库已准备 ${e(row.quiz_ready_count)} / ${e(row.required_count)} ${row.unlock_rule==='series_quiz'?'集':'题'}。可先保存任务，稍后补图。</p>`:''}${this.resourcePicker('resource',true)}<label>素材来源<select name="source_type"><option value="original">平台原创</option><option value="story_inspired">原创作品主题设计</option><option value="licensed_official">已获许可的官方素材</option></select></label><label>素材来源与授权依据<textarea name="rights_note" required minlength="5" maxlength="2000">${e(row.rights_note)}</textarea></label><label>解锁规则<select name="unlock_rule"><option value="self_report">完成作品后用户自报</option><option value="quiz">服务端核对测验</option><option value="series_all">全部已发布分集完成</option><option value="series_quiz">Little Fox 全系列每集答题达标</option><option value="movie_quiz">电影专属答题达标</option></select></label><label>测验最低百分比<input name="quiz_min" type="number" min="1" max="100" value="${e(row.quiz_min||80)}"></label><label class="medal-check"><input name="active" type="checkbox" ${row.active===false?'':'checked'}>启用此徽章</label><p role="status"></p><button class="btn" type="submit">保存徽章配置</button></form>`);
   const form=dialog.querySelector('form');form.elements.source_type.value=row.source_type||'original';form.elements.unlock_rule.value=row.unlock_rule||'self_report';const pendingSubmit=form.querySelector('[type=submit]');form.onsubmit=event=>event.preventDefault();pendingSubmit.disabled=true;await this.bindPicker(dialog,'resource',row.resource_key||prefill);if(!dialog.isConnected)return;pendingSubmit.disabled=false;if(mainline){form.elements.unlock_rule.disabled=true;dialog.querySelectorAll('[data-picker=resource] input,[data-picker=resource] select,[data-picker=resource] button').forEach(node=>node.disabled=true);}else for(const option of form.elements.unlock_rule.options)if(['series_quiz','movie_quiz'].includes(option.value))option.disabled=true;let asset=row.asset_id,lastFile;
