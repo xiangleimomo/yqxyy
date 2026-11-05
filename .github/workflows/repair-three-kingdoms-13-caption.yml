@@ -45,8 +45,37 @@ jobs:
           for line in lines:
               try: rows.append(json.loads(line))
               except ValueError: continue
+          metadata={}
+          try:
+              import urllib.request, xml.etree.ElementTree as ET
+              from collections import Counter
+              u='https://cdn.littlefox.com/contents/caption/C0013409.xml'
+              req=urllib.request.Request(u,headers={'User-Agent':'yqxyy-caption-sync/1.0'})
+              with urllib.request.urlopen(req,timeout=18) as response:
+                  content=response.read(300000)
+              root=ET.fromstring(content)
+              names=lambda elem: elem.tag.rsplit('}',1)[-1]
+              all_nodes=list(root.iter())
+              metadata['rootTag']=names(root)
+              metadata['tagCounts']=dict(Counter(names(e) for e in all_nodes).most_common(30))
+              metadata['sampleNodes']=[]
+              sampled={}
+              for e in all_nodes:
+                  tag=names(e)
+                  if sampled.get(tag,0)>=3:continue
+                  sampled[tag]=sampled.get(tag,0)+1
+                  metadata['sampleNodes'].append({
+                    'tag':tag,
+                    'attributes':dict(list(e.attrib.items())[:12]),
+                    'childTags':[names(c) for c in list(e)[:8]],
+                    'textPreview':(' '.join(e.itertext())).strip()[:95]
+                  })
+                  if len(metadata['sampleNodes'])>=35:break
+          except Exception as error:
+              metadata['inspectionError']=str(error)
+                    payload={'contentId':'C0013409','status':'needs-review','results':rows,'xmlStructure':metadata}
           Path('reports/three-kingdoms-13-xml-check.json').write_text(
-              json.dumps({'contentId':'C0013409','status':'needs-review','results':rows},indent=2,ensure_ascii=False)+'\n',
+              json.dumps(payload,indent=2,ensure_ascii=False)+'\n',
               encoding='utf8'
           )
           PY
