@@ -676,7 +676,7 @@ async renderLesson(seriesId, episodeId){
     // For lessons without a published VTT, load the official sentence-level XML.
     // This is a lightweight runtime fallback; SFWordSync estimates word timing.
     // Existing VTT and verified .words.json remain the preferred sources.
-    if(!cues.length && /^[A-Z]\\d{7}$/.test(String(d.ep?.sourceContentId||''))){
+    if(!cues.length && /^[A-Z]\d{7}$/.test(String(d.ep?.sourceContentId||''))){
       const id=d.ep.sourceContentId;
       const hosts=['https://cdn.littlefox.com','https://cdn.littlefox.co.kr'];
       for(const host of hosts){
