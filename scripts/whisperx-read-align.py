@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Publishable engine: real Little Fox audio -> WhisperX ASR -> canonical Read -> forced alignment.
 
-No existing website VTT content or timestamps are used as inputs. Results remain
-isolated until the batch publishing gate validates them; never write live paths directly.
+Read serves as a lexical cross-check while official Little Fox XML Paragraph/Text
+provides final text and punctuation. XML timing and existing website VTT are ignored.
+Results remain isolated until the publishing gate validates them.
 """
 from __future__ import annotations
 
@@ -19,8 +20,11 @@ import tempfile
 import unicodedata
 from urllib.parse import urlparse
 import wave
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/"scripts"))
+from lib.littlefox_xml_text import download_xml, verify_against_read
 APPROVED_HOSTS = {"cdn.littlefox.com", "cdn.littlefox.co.kr"}
 WORD = re.compile(r"\S+", re.UNICODE)
 SENTENCE_END = re.compile(r'[.!?][\u201d\u2019"\'\u00bb)]*$')
@@ -269,7 +273,7 @@ def split_cues(aligned: list[dict]):
 
 
 def write_candidate(folder: Path, series: str, eid: int, read: list[str],
-                    mapped: list[dict], info: dict, media_path: str, model: str, source_id=None):
+                    mapped: list[dict], info: dict, media_path: str, model: str, source_id=None, xml_evidence=None):
     cues = split_cues(mapped)
     subtitle_text = "WEBVTT\n\n" + "\n\n".join(
         f"{idx}\n{format_vtt_time(c['startMs'])} --> {format_vtt_time(c['endMs'])}\n{c['text']}"
@@ -279,7 +283,11 @@ def write_candidate(folder: Path, series: str, eid: int, read: list[str],
     track = {
         "seriesId":series,"episodeId":eid,"sourceContentId":source_id,"mediaPath":media_path,
         "mediaFingerprint":hashlib.sha256(media_path.encode()).hexdigest(),
-        "subtitleSha256":digest,"method":"whisperx-asr-read-corrected-forced-alignment",
+        "subtitleSha256":digest,"method":"whisperx-asr-xml-text-verified-forced-alignment",
+        "textAuthority":"littlefox-xml-paragraph-text",
+        "xmlTextSha256":(xml_evidence or {}).get("sha256"),
+        "readXmlAgreement":(xml_evidence or {}).get("readAgreement"),
+        "xmlParagraphCount":(xml_evidence or {}).get("paragraphs"),
         "recognizer":model,"cueCount":len(cues),"totalWords":len(read),
         "speechMatchedWords":info["forcedAlignedWords"],
         "speechMatchedFraction":info["forcedAlignedFraction"],
@@ -345,6 +353,17 @@ def run_one(args):
               "model":args.model,"approved":False}
     (folder/"read-cleaned.txt").write_text(" ".join(read)+"\n",encoding="utf-8")
     try:
+        xml_url,xml_bytes=download_xml(episode.get("sourceContentId"))
+        xml_evidence=verify_against_read(xml_bytes,read)
+        (folder/"official-caption.xml").write_bytes(xml_bytes)
+        read=xml_evidence["words"]
+        (folder/"text-verified-from-xml.txt").write_text(" ".join(read)+"\n",encoding="utf-8")
+        report.update({"textAuthority":"littlefox-xml-paragraph-text",
+            "xmlContentId":episode.get("sourceContentId"),
+            "xmlTextSha256":xml_evidence["sha256"],
+            "xmlParagraphCount":xml_evidence["paragraphs"],
+            "readXmlAgreement":xml_evidence["readAgreement"],
+            "xmlWordCount":len(read)})
         import whisperx
         with tempfile.TemporaryDirectory(prefix="yqxyy-whisperx-") as tmp:
             wav = Path(tmp)/"audio.wav"
@@ -407,7 +426,7 @@ def run_one(args):
                 raise ValueError("Missing late-episode speech; candidate withheld")
             outliers = suspicious_word_spans(mapped)
             report["suspiciousLongWordSpans"] = outliers[:15]
-            cue_count = write_candidate(folder,series,eid,read,mapped,quality,media_path,args.model,episode.get("sourceContentId"))
+            cue_count = write_candidate(folder,series,eid,read,mapped,quality,media_path,args.model,episode.get("sourceContentId"),xml_evidence)
             report["candidateCueCount"] = cue_count
             if outliers:
                 # Keep a preview artifact for human review, never call it approved.
