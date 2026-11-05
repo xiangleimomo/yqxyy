@@ -1320,3 +1320,56 @@ html.sf-caption-screen-locked,body.sf-caption-screen-locked{overflow:hidden!impo
 @media(max-width:600px){
   .subtitle-video-wrap.sf-touch-stage .video-caption{max-width:90%;overflow-wrap:break-word}
 }
+
+
+/* Watch: mobile inline karaoke is a readable caption tray BELOW the video.
+ * The desktop player's draggable overlay is intentionally unchanged.
+ * Only JS-marked mobile stages get this layout; mobile native fullscreen
+ * cannot show website HTML subtitles and remains a separate limitation.
+ */
+.sf-mobile-caption-area{display:contents}
+.subtitle-video-wrap.sf-caption-below{
+  display:flex!important;flex-direction:column!important;
+  padding-top:0!important;height:auto!important;min-height:0!important;
+  overflow:visible!important;border-radius:12px;background:#10233d;
+}
+.subtitle-video-wrap.sf-caption-below .hls-video-player{
+  position:relative!important;inset:auto!important;display:block!important;
+  order:0;flex:0 0 auto;width:100%!important;height:auto!important;
+  aspect-ratio:16 / 9;object-fit:contain;
+}
+.subtitle-video-wrap.sf-caption-below .sf-mobile-caption-area{
+  display:flex!important;order:1;flex:0 0 auto;align-items:center;justify-content:center;
+  width:100%;min-height:68px;box-sizing:border-box;
+  padding:8px 12px;background:#17273d;
+}
+.subtitle-video-wrap.sf-caption-below .video-caption{
+  position:static!important;inset:auto!important;left:auto!important;
+  top:auto!important;transform:none!important;max-width:100%!important;
+  width:100%;box-sizing:border-box;padding:7px 9px;
+  border-radius:7px;text-align:center;white-space:normal;overflow-wrap:break-word;
+  font-size:clamp(14px,var(--caption-size,20px),22px);line-height:1.5;
+  cursor:default;touch-action:manipulation;user-select:text;
+}
+.subtitle-video-wrap.sf-caption-below .video-caption[hidden]{display:none!important}
+.subtitle-video-wrap.sf-caption-below .sf-touch-video-controls{
+  position:relative!important;inset:auto!important;left:auto!important;
+  right:auto!important;bottom:auto!important;order:2;flex:0 0 auto;
+  width:100%;min-height:46px;background:#0d1c31;border-radius:0 0 12px 12px;
+}
+.subtitle-video-wrap.sf-caption-below .sf-touch-video-hitarea{
+  position:absolute;inset:0 0 auto 0;width:100%;height:auto!important;aspect-ratio:16 / 9;
+}
+.subtitle-video-wrap.sf-caption-below .subtitle-settings-dock{
+  top:10px;right:8px;transform:none;z-index:12;
+}
+.subtitle-video-wrap.sf-caption-below .subtitle-controls-overlay{
+  top:0;transform:translateX(8px);max-height:min(72dvh,340px);overflow-y:auto;
+}
+.subtitle-video-wrap.sf-caption-below.subtitle-settings-open .subtitle-controls-overlay{
+  transform:translateX(0);
+}
+@media(max-width:420px){
+  .subtitle-video-wrap.sf-caption-below .sf-mobile-caption-area{padding:6px 8px;min-height:64px}
+  .subtitle-video-wrap.sf-caption-below .video-caption{padding:7px 8px}
+}
