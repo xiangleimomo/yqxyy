@@ -31,18 +31,18 @@ jobs:
   prepare:
     runs-on: ubuntu-latest
     outputs:
-      has_targets: \${{ steps.plan.outputs.has_targets }}
+      has_targets: ${{ steps.plan.outputs.has_targets }}
     steps:
       - uses: actions/checkout@v4
       - name: Build next whole-site batch
         id: plan
         env:
-          BATCH_SIZE: \${{ github.event.inputs.batch_size || '100' }}
-          RETRY_FAILED: \${{ github.event.inputs.retry_failed || 'false' }}
+          BATCH_SIZE: ${{ github.event.inputs.batch_size || '100' }}
+          RETRY_FAILED: ${{ github.event.inputs.retry_failed || 'false' }}
         run: |
           args=(--limit "$BATCH_SIZE" --output word-timing-targets.json)
           if [[ "$RETRY_FAILED" == "true" ]]; then args+=(--retry-failed); fi
-          python scripts/build-word-timing-manifest.py "\${args[@]}"
+          python scripts/build-word-timing-manifest.py "${args[@]}"
           count=$(python -c "import json;print(len(json.load(open('word-timing-targets.json'))['lessons']))")
           echo "has_targets=$([[ "$count" -gt 0 ]] && echo true || echo false)" >> "$GITHUB_OUTPUT"
           echo "Selected $count lessons"
@@ -78,16 +78,16 @@ jobs:
       - uses: actions/cache@v4
         with:
           path: /tmp/yqxyy-whisper-models
-          key: \${{ runner.os }}-yqxyy-word-whisper-\${{ github.event.inputs.model || 'tiny.en' }}-v1
+          key: ${{ runner.os }}-yqxyy-word-whisper-${{ github.event.inputs.model || 'tiny.en' }}-v1
       - name: Recognize speech and collect word timestamps
         env:
-          MODEL: \${{ github.event.inputs.model || 'tiny.en' }}
+          MODEL: ${{ github.event.inputs.model || 'tiny.en' }}
         run: |
-          python scripts/audit-subtitle-speech.py --manifest word-timing-targets.json --shard \${{ matrix.shard }} --shards 8 --model "$MODEL" --output speech-review --allow-failures
+          python scripts/audit-subtitle-speech.py --manifest word-timing-targets.json --shard ${{ matrix.shard }} --shards 8 --model "$MODEL" --output speech-review --allow-failures
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: speech-review-\${{ matrix.shard }}
+          name: speech-review-${{ matrix.shard }}
           path: speech-review/
           if-no-files-found: warn
           retention-days: 3
