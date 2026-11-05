@@ -108,6 +108,11 @@
     player.setAttribute('controlslist', 'nofullscreen noremoteplayback');
     player.setAttribute('disablepictureinpicture', '');
     let mobileFullscreenButton = null;
+    if (!isMobile) {
+      // Preserve the existing desktop native play/seek controls.
+      player.setAttribute('controls', '');
+      player.controls = true;
+    }
     if (isMobile) {
       stage.classList.add('sf-touch-stage');
       player.removeAttribute('controls');
