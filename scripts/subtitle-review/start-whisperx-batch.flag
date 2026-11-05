@@ -1,1 +1,1 @@
-First 100-episode batch: video audio -> WhisperX -> Read -> forced alignment -> new VTT and words.json; validated publishing only.
+XML Text proofreading batch 1: use each content ID's official Paragraph/Text only as canonical wording and punctuation; never use XML timestamps or legacy site VTT as inputs. Re-align the first 100 selected episodes with audio WhisperX and publish only verified VTT+words.json pairs.
