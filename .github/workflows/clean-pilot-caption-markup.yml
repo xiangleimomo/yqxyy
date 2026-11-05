@@ -1,0 +1,54 @@
+name: Clean Little Fox formatting in published pilot 101-103
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/clean-pilot-caption-markup.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Remove XML display markers from VTT and word tracks
+        run: |
+          python - <<'PY'
+          import json,re,hashlib
+          from pathlib import Path
+          base=Path('data/journey-to-the-west/subtitles')
+          pattern=re.compile(r'\[(?:g|i)@|@(?:g|i)\]')
+          for eid in (101,102,103):
+              vtt=base/f'{eid}.vtt';words=base/f'{eid}.words.json'
+              old=vtt.read_text(encoding='utf-8')
+              new=pattern.sub('',old)
+              obj=json.loads(words.read_text(encoding='utf-8'))
+              count=0
+              for cue in obj['cues']:
+                  for w in cue['words']:
+                      original=w['text'];w['text']=pattern.sub('',original)
+                      if original!=w['text']:count+=1
+                      assert w['text'].strip(),(eid,original)
+              # Verify cue text and word text agree, and no XML markers survive.
+              cue_lines=[line for line in new.splitlines() if line and not line.isdigit() and '-->' not in line and line!='WEBVTT']
+              assert len(cue_lines)==len(obj['cues']),(eid,len(cue_lines),len(obj['cues']))
+              for text,cue in zip(cue_lines,obj['cues']):
+                  assert text==' '.join(w['text'] for w in cue['words']),(eid,text)
+              assert not pattern.search(new)
+              assert obj['speechMatchedFraction']>=.90
+              obj['subtitleSha256']=hashlib.sha256(new.encode('utf-8')).hexdigest()
+              vtt.write_text(new,encoding='utf-8')
+              words.write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+              print(f'episode {eid}: cleaned {count} marked words; speech match {obj["speechMatchedFraction"]:.2%}')
+          PY
+      - name: Commit corrected caption files
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/journey-to-the-west/subtitles/{101,102,103}.vtt data/journey-to-the-west/subtitles/{101,102,103}.words.json
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git commit -m "Remove XML markup from published episodes 101-103"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
