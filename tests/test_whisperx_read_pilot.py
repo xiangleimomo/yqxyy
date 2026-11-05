@@ -60,6 +60,28 @@ class PilotReadTests(unittest.TestCase):
         self.assertEqual(words[2]["endMs"],11000)
         self.assertEqual(pilot.split_cues(words)[0]["text"],"Wukong was very happy.")
 
+
+    def test_rescue_only_a_few_short_bounded_gaps(self):
+        read=["The","Monkey","is","here."]
+        aligned=[
+            {"text":"The","startMs":1000,"endMs":1300,"source":"speech"},
+            None,
+            {"text":"is","startMs":2700,"endMs":2900,"source":"speech"},
+            {"text":"here.","startMs":3000,"endMs":3400,"source":"speech"}
+        ]
+        self.assertEqual(pilot.fill_rare_verified_gaps(aligned,read),1)
+        self.assertEqual(aligned[1]["source"],"estimated")
+        self.assertEqual(aligned[1]["startMs"],1300)
+        self.assertEqual(aligned[1]["endMs"],2700)
+        bad=[
+            {"text":"The","startMs":1000,"endMs":1300,"source":"speech"},
+            None,
+            {"text":"is","startMs":8000,"endMs":8200,"source":"speech"},
+            {"text":"here.","startMs":8400,"endMs":8600,"source":"speech"}
+        ]
+        self.assertEqual(pilot.fill_rare_verified_gaps(bad,read),0)
+        self.assertIsNone(bad[1])
+
     def test_pilot_uses_actual_hls_and_never_reads_old_vtt(self):
         script=(ROOT/"scripts/whisperx-read-pilot.py").read_text()
         self.assertNotIn("parse_vtt",script)
