@@ -7,8 +7,8 @@ from collections import Counter
 ROOT=Path(__file__).resolve().parents[1]
 def norm(s):return ''.join(c for c in unicodedata.normalize('NFKC',s.lower()) if c.isalnum())
 def clean(s):
- s=re.sub(r'\\[(?:g|i|n)@|@(?:g|i|n)\\]|\\[(?:g|i|n)@[^\\]]*\\]',' ',s,flags=re.I)
- return re.sub(r'\\s+',' ',s).strip()
+ s=re.sub(r'\[(?:g|i|n)@|@(?:g|i|n)\]|\[(?:g|i|n)@[^\]]*\]',' ',s,flags=re.I)
+ return re.sub(r'\s+',' ',s).strip()
 def stamp(ms):
  h,r=divmod(ms,3600000);m,r=divmod(r,60000);sec,ms=divmod(r,1000)
  return f'{h:02}:{m:02}:{sec:02}.{ms:03}'
@@ -42,11 +42,11 @@ def one(folder):
   return {'episode':eid,'status':'nonmonotonic'}
  cues=[];start=0
  for i,w in enumerate(words):
-  if (re.search(r'[.!?][”’"\\']?$',w['text']) and i-start>=1) or i-start>=17 or i==len(words)-1:
+  if (w['text'].rstrip('”’\"\'').endswith(('.', '!', '?')) and i-start>=1) or i-start>=17 or i==len(words)-1:
    cues.append(words[start:i+1]);start=i+1
- vtt='WEBVTT\\n\\n'+'\\n\\n'.join(
-  f'{j}\\n{stamp(g[0]["startMs"])} --> {stamp(g[-1]["endMs"])}\\n'+' '.join(w['text'] for w in g)
-  for j,g in enumerate(cues,1))+'\\n'
+ vtt='WEBVTT\n\n'+'\n\n'.join(
+  f'{j}\n{stamp(g[0]["startMs"])} --> {stamp(g[-1]["endMs"])}\n'+' '.join(w['text'] for w in g)
+  for j,g in enumerate(cues,1))+'\n'
  path=report['mediaPath'];source=report['xmlContentId']
  track={'seriesId':'journey-to-the-west','episodeId':eid,'sourceContentId':source,
   'mediaPath':path,'mediaFingerprint':hashlib.sha256(path.encode()).hexdigest(),
@@ -58,7 +58,7 @@ def one(folder):
   'speechMatchedFraction':round(coverage,4),'cues':[{'words':g} for g in cues]}
  dest=ROOT/'data/journey-to-the-west/subtitles';dest.mkdir(parents=True,exist_ok=True)
  (dest/f'{eid:03}.vtt').write_text(vtt)
- (dest/f'{eid:03}.words.json').write_text(json.dumps(track,ensure_ascii=False,indent=2)+'\\n')
+ (dest/f'{eid:03}.words.json').write_text(json.dumps(track,ensure_ascii=False,indent=2)+'\n')
  return {'episode':eid,'status':'published_candidate','coverage':round(coverage,4),
          'omittedWords':len(canonical)-len(words)}
 def main():
@@ -72,6 +72,6 @@ def main():
  if len(rows)!=100:raise ValueError(f'Expected 100 archive episodes, got {len(rows)}')
  (ROOT/'reports/whisperx-archive-threshold-release.json').write_text(json.dumps({
   'sourceRunId':42072397000,'threshold':0.90,'results':rows,
-  'counts':dict(Counter(r['status'] for r in rows))},ensure_ascii=False,indent=2)+'\\n')
+  'counts':dict(Counter(r['status'] for r in rows))},ensure_ascii=False,indent=2)+'\n')
  print(Counter(r['status'] for r in rows))
 if __name__=='__main__':main()
