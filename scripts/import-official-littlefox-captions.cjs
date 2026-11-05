@@ -75,6 +75,11 @@ async function main(){
   const contentId=episodes.find(x=>x.episodeId===item.episodeId)?.sourceContentId;
   if(!/^C\d{7}$/.test(contentId||''))throw Error('No verified episode content ID');
   const file=path.join(dir,'subtitles',String(item.episodeId).padStart(3,'0')+'.vtt'),before=await fs.readFile(file,'utf8');
+  const calibrated=file.replace(/\.vtt$/,'.timing.json');
+  if(await fs.access(calibrated).then(()=>true,()=>false)){
+   console.log(JSON.stringify({lesson:item.seriesId+':'+item.episodeId,status:'skipped-previously-calibrated'}));
+   continue;
+  }
   const url='https://cdn.littlefox.co.kr/contents/caption/'+contentId+'.xml';
   const resp=await fetch(url,{redirect:'error',signal:AbortSignal.timeout(15000)});
   if(!resp.ok)throw Error('Caption source HTTP '+resp.status);
