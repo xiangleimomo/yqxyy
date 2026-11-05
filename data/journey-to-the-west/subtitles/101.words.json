@@ -4,7 +4,7 @@
   "sourceContentId": "C0007015",
   "mediaPath": "/contents_5/hls/1080/765ba1d2e4/170383918469f8ea31de0c00502b2ae571fbab1f95/stream.m3u8",
   "mediaFingerprint": "cccde04613b9af6131878ea4370cbf862dc756a1d1415fbbdf16c8053acedfe1",
-  "subtitleSha256": "914598b94808d331b270ddf2ec8d8696d079b8538adb45d30a84a8c8c8df52e4",
+  "subtitleSha256": "2344a004ac069aac4e7fe158e7c0329e8b85e865c34d8a501a78b8c5742abbcd",
   "method": "whisperx-asr-xml-text-only-forced-alignment",
   "textAuthority": "littlefox-xml-paragraph-text",
   "xmlTextSha256": "2acca6ffba56b509d645e43b1b88df70feed00e0fd814fff6f381e5436dfa88e",
@@ -18,7 +18,7 @@
     {
       "words": [
         {
-          "text": "[g@\"This",
+          "text": "\"This",
           "startMs": 2221,
           "endMs": 4082,
           "source": "speech"
@@ -88,7 +88,7 @@
           "source": "speech"
         },
         {
-          "text": "arrest?\"@g]",
+          "text": "arrest?\"",
           "startMs": 17490,
           "endMs": 19171,
           "source": "estimated"
@@ -228,7 +228,7 @@
     {
       "words": [
         {
-          "text": "[g@\"What!\"",
+          "text": "\"What!\"",
           "startMs": 28700,
           "endMs": 29140,
           "source": "speech"
@@ -274,7 +274,7 @@
           "source": "speech"
         },
         {
-          "text": "somebody.@g]",
+          "text": "somebody.",
           "startMs": 31902,
           "endMs": 33363,
           "source": "estimated"
@@ -600,7 +600,7 @@
     {
       "words": [
         {
-          "text": "[g@The",
+          "text": "The",
           "startMs": 52313,
           "endMs": 53494,
           "source": "speech"
@@ -658,13 +658,13 @@
           "source": "speech"
         },
         {
-          "text": "[i@real@i]",
+          "text": "real",
           "startMs": 57968,
           "endMs": 58529,
           "source": "speech"
         },
         {
-          "text": "robbers?@g]",
+          "text": "robbers?",
           "startMs": 58529,
           "endMs": 59989,
           "source": "estimated"
@@ -700,7 +700,7 @@
           "source": "speech"
         },
         {
-          "text": "[i@real@i]",
+          "text": "real",
           "startMs": 61269,
           "endMs": 61949,
           "source": "speech"
@@ -728,7 +728,7 @@
           "source": "speech"
         },
         {
-          "text": "[g@Wukong",
+          "text": "Wukong",
           "startMs": 63190,
           "endMs": 65010,
           "source": "speech"
@@ -762,13 +762,13 @@
           "source": "speech"
         },
         {
-          "text": "go.\"@g]",
+          "text": "go.\"",
           "startMs": 67651,
           "endMs": 68011,
           "source": "estimated"
         },
         {
-          "text": "[g@The",
+          "text": "The",
           "startMs": 68011,
           "endMs": 69291,
           "source": "speech"
@@ -832,7 +832,7 @@
           "source": "speech"
         },
         {
-          "text": "you!\"@g]",
+          "text": "you!\"",
           "startMs": 73633,
           "endMs": 74873,
           "source": "estimated"
@@ -896,7 +896,7 @@
     {
       "words": [
         {
-          "text": "[g@By",
+          "text": "By",
           "startMs": 77514,
           "endMs": 81435,
           "source": "estimated"
@@ -984,7 +984,7 @@
           "source": "speech"
         },
         {
-          "text": "watch.@g]",
+          "text": "watch.",
           "startMs": 85596,
           "endMs": 88372,
           "source": "estimated"
@@ -1042,7 +1042,7 @@
     {
       "words": [
         {
-          "text": "[g@The",
+          "text": "The",
           "startMs": 90754,
           "endMs": 91995,
           "source": "speech"
@@ -1112,7 +1112,7 @@
           "source": "speech"
         },
         {
-          "text": "up!\"@g]",
+          "text": "up!\"",
           "startMs": 95397,
           "endMs": 96938,
           "source": "estimated"
@@ -1170,7 +1170,7 @@
     {
       "words": [
         {
-          "text": "[g@\"We",
+          "text": "\"We",
           "startMs": 99500,
           "endMs": 100601,
           "source": "speech"
@@ -1246,7 +1246,7 @@
           "source": "speech"
         },
         {
-          "text": "Buddha.\"@g]",
+          "text": "Buddha.\"",
           "startMs": 104264,
           "endMs": 106005,
           "source": "estimated"
@@ -1338,7 +1338,7 @@
     {
       "words": [
         {
-          "text": "[g@\"Killers?\"",
+          "text": "\"Killers?\"",
           "startMs": 110708,
           "endMs": 112450,
           "source": "speech"
@@ -1384,7 +1384,7 @@
           "source": "speech"
         },
         {
-          "text": "about?\"@g]",
+          "text": "about?\"",
           "startMs": 115072,
           "endMs": 117008,
           "source": "estimated"
@@ -1436,7 +1436,7 @@
     {
       "words": [
         {
-          "text": "[g@The",
+          "text": "The",
           "startMs": 119429,
           "endMs": 120310,
           "source": "speech"
@@ -1494,13 +1494,13 @@
           "source": "speech"
         },
         {
-          "text": "dead?\"@g]",
+          "text": "dead?\"",
           "startMs": 123071,
           "endMs": 123471,
           "source": "estimated"
         },
         {
-          "text": "[g@The",
+          "text": "The",
           "startMs": 123471,
           "endMs": 124691,
           "source": "speech"
@@ -1594,7 +1594,7 @@
           "source": "speech"
         },
         {
-          "text": "it.\"@g]",
+          "text": "it.\"",
           "startMs": 130094,
           "endMs": 134335,
           "source": "estimated"
@@ -1692,7 +1692,7 @@
     {
       "words": [
         {
-          "text": "[g@The",
+          "text": "The",
           "startMs": 138857,
           "endMs": 140138,
           "source": "speech"
@@ -1744,13 +1744,13 @@
           "source": "speech"
         },
         {
-          "text": "terrible!\"@g]",
+          "text": "terrible!\"",
           "startMs": 144219,
           "endMs": 147049,
           "source": "estimated"
         },
         {
-          "text": "[g@Bajie",
+          "text": "Bajie",
           "startMs": 147049,
           "endMs": 147349,
           "source": "speech"
@@ -1796,13 +1796,13 @@
           "source": "speech"
         },
         {
-          "text": "us!\"@g]",
+          "text": "us!\"",
           "startMs": 150773,
           "endMs": 151013,
           "source": "estimated"
         },
         {
-          "text": "[g@\"Yes,\"",
+          "text": "\"Yes,\"",
           "startMs": 151013,
           "endMs": 152554,
           "source": "speech"
@@ -1836,7 +1836,7 @@
           "source": "speech"
         },
         {
-          "text": "why?\"@g]",
+          "text": "why?\"",
           "startMs": 155136,
           "endMs": 158539,
           "source": "estimated"
@@ -1882,7 +1882,7 @@
     {
       "words": [
         {
-          "text": "[g@\"Thank",
+          "text": "\"Thank",
           "startMs": 160801,
           "endMs": 162183,
           "source": "speech"
@@ -1928,7 +1928,7 @@
           "source": "speech"
         },
         {
-          "text": "grateful.@g]",
+          "text": "grateful.",
           "startMs": 164084,
           "endMs": 165325,
           "source": "estimated"
@@ -2202,7 +2202,7 @@
     {
       "words": [
         {
-          "text": "[g@Imitating",
+          "text": "Imitating",
           "startMs": 186924,
           "endMs": 188785,
           "source": "speech"
@@ -2272,13 +2272,13 @@
           "source": "speech"
         },
         {
-          "text": "husband.\"@g]",
+          "text": "husband.\"",
           "startMs": 192728,
           "endMs": 193268,
           "source": "estimated"
         },
         {
-          "text": "[g@Lady",
+          "text": "Lady",
           "startMs": 193268,
           "endMs": 194629,
           "source": "speech"
@@ -2336,7 +2336,7 @@
           "source": "speech"
         },
         {
-          "text": "you?\"@g]",
+          "text": "you?\"",
           "startMs": 199651,
           "endMs": 201528,
           "source": "estimated"
@@ -2458,7 +2458,7 @@
     {
       "words": [
         {
-          "text": "[g@Lady",
+          "text": "Lady",
           "startMs": 206992,
           "endMs": 208153,
           "source": "speech"
@@ -2510,7 +2510,7 @@
           "source": "speech"
         },
         {
-          "text": "them.@g]",
+          "text": "them.",
           "startMs": 212216,
           "endMs": 213477,
           "source": "estimated"
@@ -2984,7 +2984,7 @@
     {
       "words": [
         {
-          "text": "[g@\"I",
+          "text": "\"I",
           "startMs": 244811,
           "endMs": 246852,
           "source": "speech"
@@ -3060,7 +3060,7 @@
           "source": "speech"
         },
         {
-          "text": "me!\"@g]",
+          "text": "me!\"",
           "startMs": 251774,
           "endMs": 254495,
           "source": "estimated"
