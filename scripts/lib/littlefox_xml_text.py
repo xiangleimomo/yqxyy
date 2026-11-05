@@ -15,8 +15,10 @@ CONTENT_ID=re.compile(r"C[0-9]{7}\Z")
 TOKEN=re.compile(r"\S+",re.UNICODE)
 
 def clean(value):
-    without_breaks=re.sub(r"\[n@(?:\])?"," ",str(value or ""),flags=re.IGNORECASE)
-    return re.sub(r"\s+"," ",without_breaks).strip()
+    value=re.sub(r"\[n@(?:\])?"," ",str(value or ""),flags=re.IGNORECASE)
+    # Inline g/i tags are formatting, not spoken words. Keep adjacent letters intact.
+    value=re.sub(r"\[(?:g|i)@|@(?:g|i)\]","",value,flags=re.IGNORECASE)
+    return re.sub(r"\s+"," ",value).strip()
 
 def normalized(token):
     return "".join(ch for ch in unicodedata.normalize("NFKC",token.lower()) if ch.isalnum())
