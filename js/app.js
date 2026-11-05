@@ -753,7 +753,7 @@ async renderLesson(seriesId, episodeId){
     // when .words.json is unavailable or slow. Apply exact word times later.
     const wordTimingPromise=syncWords?Promise.race([
         syncWords.load(d,cues),
-        new Promise(resolve=>setTimeout(()=>resolve(null),8000))
+        typeof setTimeout==='function'?new Promise(resolve=>setTimeout(()=>resolve(null),8000)):new Promise(()=>{})
       ]).then(track=>{
         if(!track||!caption.isConnected)return;
         if(prepared){prepared.splice(0,prepared.length,...track);effectiveWords=prepared;}
