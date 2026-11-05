@@ -499,6 +499,21 @@
       "seriesId": "journey-to-the-west",
       "episodeId": 100,
       "reason": "ValueError: Unaligned official XML Text words remain; candidate withheld"
+    },
+    {
+      "seriesId": "journey-to-the-west",
+      "episodeId": 101,
+      "reason": "ValueError: Unbounded missing speech timestamps; review required"
+    },
+    {
+      "seriesId": "journey-to-the-west",
+      "episodeId": 102,
+      "reason": "ValueError: Unbounded missing speech timestamps; review required"
+    },
+    {
+      "seriesId": "journey-to-the-west",
+      "episodeId": 103,
+      "reason": "ValueError: Unbounded missing speech timestamps; review required"
     }
   ]
 }

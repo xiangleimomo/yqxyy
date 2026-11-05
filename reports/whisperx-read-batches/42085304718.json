@@ -1,0 +1,30 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42085304718",
+  "completedAt": "2026-11-05T18:42:41.165888+00:00",
+  "batchSize": 100,
+  "selected": 3,
+  "published": 0,
+  "rejected": 3,
+  "websiteCommitRequired": true,
+  "totalWords": 0,
+  "speechMatchedWords": 0,
+  "success": [],
+  "failures": [
+    {
+      "seriesId": "journey-to-the-west",
+      "episodeId": 101,
+      "reason": "ValueError: Unbounded missing speech timestamps; review required"
+    },
+    {
+      "seriesId": "journey-to-the-west",
+      "episodeId": 102,
+      "reason": "ValueError: Unbounded missing speech timestamps; review required"
+    },
+    {
+      "seriesId": "journey-to-the-west",
+      "episodeId": 103,
+      "reason": "ValueError: Unbounded missing speech timestamps; review required"
+    }
+  ]
+}
