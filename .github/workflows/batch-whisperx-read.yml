@@ -1,4 +1,4 @@
-name: WhisperX + Read 100-episode subtitle and karaoke batch
+name: WhisperX + XML Text 100-episode subtitle and karaoke batch
 on:
   workflow_dispatch:
     inputs:
@@ -38,8 +38,9 @@ jobs:
           python-version: '3.11'
       - name: Run independent alignment unit tests
         run: |
-          python -m py_compile scripts/whisperx-read-align.py scripts/manifest-whisperx-read.py scripts/run-whisperx-read-batch.py scripts/publish-whisperx-read-batch.py
+          python -m py_compile scripts/lib/littlefox_xml_text.py scripts/whisperx-read-align.py scripts/manifest-whisperx-read.py scripts/run-whisperx-read-batch.py scripts/publish-whisperx-read-batch.py
           python -m unittest discover -s tests -p 'test_whisperx_read_align.py' -v
+          python -m unittest discover -s tests -p 'test_littlefox_xml_text.py' -v
       - name: Select batch without reading website subtitles
         id: select
         env:
@@ -99,7 +100,7 @@ jobs:
             /tmp/yqxyy-whisperx-hf
             /tmp/yqxyy-whisperx-model-cache
           key: ${{ runner.os }}-whisperx-read-small-en-cpu-v2
-      - name: Real audio to ASR to Read correction to forced word alignment
+      - name: Official XML Text proofreading, real audio ASR and forced word alignment
         run: |
           python scripts/run-whisperx-read-batch.py --manifest whisperx-batch-targets.json --shard ${{ matrix.shard }} --shards 10 --model small.en --output whisperx-batch-results
       - name: Preserve every successful candidate and every rejection
@@ -130,7 +131,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Recheck original Read, media identity, timestamps, quality and file pairs
+      - name: Recheck official XML Text, Read agreement, audio identity and timestamp quality
         run: |
           python scripts/publish-whisperx-read-batch.py --manifest whisperx-batch-targets.json --source whisperx-batch-results --run-id "${{ github.run_id }}"
           python -m py_compile scripts/whisperx-read-align.py scripts/publish-whisperx-read-batch.py
