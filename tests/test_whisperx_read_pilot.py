@@ -82,6 +82,18 @@ class PilotReadTests(unittest.TestCase):
         self.assertEqual(pilot.fill_rare_verified_gaps(bad,read),0)
         self.assertIsNone(bad[1])
 
+
+    def test_long_word_span_is_quarantined_not_counted_as_safe_alignment(self):
+        words=[
+            {"text":"Wukong","startMs":2600,"endMs":14600,"source":"speech"},
+            {"text":"led","startMs":14700,"endMs":14900,"source":"speech"}
+        ]
+        issues=pilot.suspicious_word_spans(words)
+        self.assertEqual(len(issues),1)
+        self.assertEqual(issues[0]["word"],"Wukong")
+        self.assertEqual(issues[0]["durationMs"],12000)
+
+
     def test_pilot_uses_actual_hls_and_never_reads_old_vtt(self):
         script=(ROOT/"scripts/whisperx-read-pilot.py").read_text()
         self.assertNotIn("parse_vtt",script)
