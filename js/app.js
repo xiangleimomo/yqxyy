@@ -504,7 +504,7 @@ async renderLesson(seriesId, episodeId){
     return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>Watch 看视频</h2><p class="muted">默认使用 1080P 国际站；播放不流畅时可切换为 720P。加载失败会依次尝试可用备用源。${hasSubtitle?' 本集提供时将自动加载英文外挂字幕。':''}</p></div>${sourceSelector}</div><div class="video-wrap${hasSubtitle?' subtitle-video-wrap':''}"><video class="hls-video-player" controls playsinline preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-hls-fallback-srcs="${this.escapeHtml(JSON.stringify(fallbacks))}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="video-caption" aria-live="polite" hidden></div>${hasSubtitle?this.subtitleControls():''}</div><p class="muted direct-video-help"><span class="hls-load-status" role="status" aria-live="polite">正在连接视频…</span> ${fallback?`也可<a href="${this.escapeHtml(fallback)}" target="_blank" rel="noreferrer noopener">直接打开本集视频</a>。`:`若无法播放，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">打开视频源</a>。`}</p></section>${this.completeButton(d,completionModule)}`;
   },
   subtitlePreferences(){
-    const defaults={visible:true,size:20,color:'#ffffff',captionX:50,captionY:84,opacity:72};
+    const defaults={visible:true,wordHighlight:true,size:20,color:'#ffffff',captionX:50,captionY:84,opacity:72};
     try{
       const saved=JSON.parse(localStorage.getItem('storyfox-subtitle-preferences')||'{}') || {};
       const legacyY={top:16,middle:50,bottom:84}[saved.position];
@@ -520,6 +520,7 @@ async renderLesson(seriesId, episodeId){
       <div class="subtitle-controls subtitle-controls-overlay" aria-label="字幕设置">
         <div class="subtitle-controls-header"><div class="subtitle-controls-title">字幕设置</div><button type="button" class="subtitle-reset-position">恢复默认设置 ↻</button></div>
         <div class="subtitle-setting-row"><span>显示字幕</span><button type="button" class="btn secondary small subtitle-toggle" aria-pressed="${prefs.visible}">${prefs.visible?'开启':'关闭'}</button></div>
+        <div class="subtitle-setting-row"><span>逐词高亮</span><button type="button" class="btn secondary small subtitle-word-toggle" aria-pressed="${prefs.wordHighlight}">${prefs.wordHighlight?'开启':'关闭'}</button></div>
         <div class="subtitle-setting-row"><span>字幕位置</span><span class="subtitle-drag-tip">直接拖动字幕</span></div>
         <label class="subtitle-setting-row"><span>字幕颜色</span><input class="subtitle-color" type="color" value="${prefs.color}"></label>
         <label class="subtitle-setting-row"><span>字幕大小</span><input class="subtitle-size" type="range" min="14" max="32" step="1" value="${prefs.size}"><output>${prefs.size}px</output></label>
@@ -610,14 +611,17 @@ async renderLesson(seriesId, episodeId){
     const save=patch=>{const next={...this.subtitlePreferences(),...patch};localStorage.setItem('storyfox-subtitle-preferences',JSON.stringify(next));this.applySubtitlePreferences(root);return next;};
     const toggle=controls.querySelector('.subtitle-toggle');
     toggle.addEventListener('click',()=>{const prefs=save({visible:!this.subtitlePreferences().visible});toggle.textContent=prefs.visible?'隐藏字幕':'显示字幕';toggle.setAttribute('aria-pressed',String(prefs.visible));root.querySelectorAll('.hls-video-player').forEach(player=>player.dispatchEvent(new Event('timeupdate')));});
+    const wordToggle=controls.querySelector('.subtitle-word-toggle');
+    wordToggle?.addEventListener('click',()=>{const prefs=save({wordHighlight:!this.subtitlePreferences().wordHighlight});wordToggle.textContent=prefs.wordHighlight?'开启':'关闭';wordToggle.setAttribute('aria-pressed',String(prefs.wordHighlight));root.querySelectorAll('.hls-video-player').forEach(player=>player.dispatchEvent(new Event('timeupdate')));});
     [['.subtitle-size','size','px'],['.subtitle-opacity','opacity','%']].forEach(([selector,key,suffix])=>{
       const input=controls.querySelector(selector);input.addEventListener('input',()=>{input.nextElementSibling.textContent=`${input.value}${suffix}`;save({[key]:Number(input.value)});});
     });
     controls.querySelector('.subtitle-color').addEventListener('input',event=>save({color:event.target.value}));
     controls.querySelector('.subtitle-reset-position').addEventListener('click',()=>{
-      const prefs=save({visible:true,size:20,color:'#ffffff',captionX:50,captionY:84,opacity:72});
+      const prefs=save({visible:true,wordHighlight:true,size:20,color:'#ffffff',captionX:50,captionY:84,opacity:72});
       toggle.textContent='开启';
       toggle.setAttribute('aria-pressed','true');
+      if(wordToggle){wordToggle.textContent='开启';wordToggle.setAttribute('aria-pressed','true');}
       controls.querySelector('.subtitle-size').value=prefs.size;
       controls.querySelector('.subtitle-size').nextElementSibling.textContent=`${prefs.size}px`;
       controls.querySelector('.subtitle-color').value=prefs.color;
@@ -689,7 +693,10 @@ async renderLesson(seriesId, episodeId){
     const syncNativeTrack=()=>{
       if(nativeTrack) nativeTrack.mode=isNativeFullscreen() && this.subtitlePreferences().visible?'showing':'hidden';
     };
-    let active=-1;
+    const syncWords=window.SFWordSync;
+    const prepared=syncWords?await syncWords.load(d,cues):null;
+    if(!caption.isConnected)return;
+    let active=-1,renderedMode=null,wordView=null,animation=0,lastPaint=0;
     const update=()=>{
       syncNativeTrack();
       if(isNativeFullscreen()){
@@ -698,20 +705,40 @@ async renderLesson(seriesId, episodeId){
       }
       const now=Math.round(player.currentTime*1000);
       const next=cues.findIndex(cue=>now>=cue.startMs && now<=cue.endMs);
-      if(next===active){
-        caption.hidden=next<0 || caption.dataset.subtitleVisible==='false';
-        return;
+      const wordEnabled=!!syncWords&&this.subtitlePreferences().wordHighlight!==false;
+      if(next!==active||renderedMode!==wordEnabled){
+        active=next;renderedMode=wordEnabled;wordView=null;
+        if(next<0){
+          caption.textContent='';
+        }else if(wordEnabled&&prepared?.[next]){
+          wordView=syncWords.render(prepared[next]);
+          caption.replaceChildren(wordView.fragment);
+          caption.dataset.wordTiming=prepared[next].verified?'speech':'estimated';
+        }else{
+          caption.textContent=cues[next].text;
+        }
       }
-      active=next;
       caption.hidden=next<0 || caption.dataset.subtitleVisible==='false';
-      caption.textContent=next<0?'':cues[next].text;
+      if(next>=0&&wordView)syncWords.paint(wordView,now,true);
     };
+    const paintFrame=(time)=>{
+      animation=0;
+      if(!player.isConnected||player.paused)return;
+      if(time-lastPaint>=55){lastPaint=time;update();}
+      animation=requestAnimationFrame(paintFrame);
+    };
+    const startPaint=()=>{if(!animation&&!player.paused)animation=requestAnimationFrame(paintFrame);};
+    const stopPaint=()=>{if(animation){cancelAnimationFrame(animation);animation=0;}};
     player.addEventListener('timeupdate',update);
     player.addEventListener('seeked',update);
-    player.addEventListener('ended',()=>{active=-1;caption.hidden=true;});
+    player.addEventListener('play',startPaint);
+    player.addEventListener('pause',stopPaint);
+    player.addEventListener('ended',()=>{stopPaint();active=-1;caption.hidden=true;});
     document.addEventListener('fullscreenchange',update);
     player.addEventListener('webkitbeginfullscreen',update);
     player.addEventListener('webkitendfullscreen',update);
+    update();
+    if(!player.paused)startPaint();
     if(caption.dataset.dragBound) return;
     caption.dataset.dragBound='1';
     caption.addEventListener('pointerdown',event=>{
