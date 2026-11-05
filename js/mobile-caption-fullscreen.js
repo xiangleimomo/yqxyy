@@ -46,6 +46,7 @@
       if (!pseudo) return;
       pseudo = false;
       stage.classList.remove('subtitle-page-fullscreen');
+      if (isMobile) stage.classList.add('sf-caption-below');
       document.documentElement.classList.remove('sf-caption-screen-locked');
       document.body.classList.remove('sf-caption-screen-locked');
       if (placeholder && placeholder.isConnected) placeholder.replaceWith(stage);
@@ -59,6 +60,7 @@
       stage.replaceWith(placeholder);
       document.body.appendChild(stage); // Escape transformed/clipped floating windows.
       pseudo = true;
+      stage.classList.remove('sf-caption-below');
       stage.classList.add('subtitle-page-fullscreen');
       document.documentElement.classList.add('sf-caption-screen-locked');
       document.body.classList.add('sf-caption-screen-locked');
@@ -114,7 +116,7 @@
       player.controls = true;
     }
     if (isMobile) {
-      stage.classList.add('sf-touch-stage');
+      stage.classList.add('sf-touch-stage', 'sf-caption-below');
       player.removeAttribute('controls');
       player.controls = false;
       // HTML hit surface prevents a tap on <video> from being claimed by
