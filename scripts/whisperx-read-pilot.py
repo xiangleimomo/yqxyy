@@ -189,6 +189,45 @@ def aligned_to_read(read: list[str], aligned_segments: list[dict], duration_ms: 
     }
 
 
+
+def fill_rare_verified_gaps(output: list, read: list[str]):
+    """For an otherwise >97.5% aligned transcript, estimate a few local gaps.
+
+    The rescued entries keep source='estimated' and never count toward
+    acoustic alignment coverage; long or unbounded gaps remain rejected.
+    """
+    missing = [i for i,w in enumerate(output) if w is None]
+    if not missing or len(missing) > min(6, max(3, round(len(output)*0.012))):
+        return 0
+    added = 0
+    pos = 0
+    while pos < len(output):
+        if output[pos] is not None:
+            pos += 1
+            continue
+        begin = pos
+        while pos < len(output) and output[pos] is None:
+            pos += 1
+        if begin == 0 or pos >= len(output) or pos-begin > 2:
+            continue
+        before,after = output[begin-1],output[pos]
+        gap = after["startMs"]-before["endMs"]
+        if gap <= 0 or gap > 2500:
+            continue
+        run = pos-begin
+        for j in range(run):
+            start_ms = before["endMs"]+round(gap*j/run)
+            end_ms = before["endMs"]+round(gap*(j+1)/run)
+            if end_ms <= start_ms:
+                break
+            output[begin+j] = {
+                "text":read[begin+j], "startMs":start_ms,
+                "endMs":end_ms, "source":"estimated"
+            }
+            added += 1
+    return added
+
+
 def format_vtt_time(ms: int) -> str:
     ms = max(0, ms)
     h, remain = divmod(ms, 3600000)
@@ -330,7 +369,18 @@ def run_one(args):
             )
             del align_model
             gc.collect()
+            (folder/"forced-alignment-raw.json").write_text(
+                json.dumps(aligned_result.get("segments") or [],ensure_ascii=False)+"\n",
+                encoding="utf-8"
+            )
             mapped, quality = aligned_to_read(read,aligned_result.get("segments") or [],duration_ms)
+            quality["missingWordExamples"] = [
+                {"index":i,"word":read[i]} for i,w in enumerate(mapped) if w is None
+            ][:20]
+            if quality["forcedAlignedFraction"] >= 0.975:
+                rescued = fill_rare_verified_gaps(mapped,read)
+                quality["shortGapEstimatedWords"] += rescued
+                quality["missingWords"] -= rescued
             report.update(quality)
             # Never publish partial transcripts: missing long gaps, very low
             # acoustic coverage or suspicious tail imply a failed pilot.
