@@ -60,7 +60,7 @@ def main():
             if (episode.get("modules") or {}).get("watch") is False:continue
             number=f"{eid:03d}"
             subtitle=directory/"subtitles"/(number+".vtt")
-            subtitle_url=(episode.get("video") or {}).get("subtitleUrl","")
+            subtitle_url=str((episode.get("video") or {}).get("subtitleUrl") or "")
             if subtitle.is_file():
                 stats["staticSubtitles"]+=1
                 subtitle_mode="static"

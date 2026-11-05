@@ -109,6 +109,7 @@ jobs:
       - name: Build verified per-word timing files
         run: |
           python -m py_compile scripts/build-word-timing-manifest.py scripts/audit-subtitle-speech.py scripts/build-word-timing.py
+          node --check js/word-sync.js
           python scripts/build-word-timing.py --speech-root speech-review --apply --report reports/word-timing-batch-latest.json
       - name: Commit successful word timing files and batch report
         run: |
