@@ -61,6 +61,8 @@ function makeScene({mobile = true, hasCues = true, hiddenByUser = false, highlig
 test('mobile embedded browser native fullscreen flag does not suppress separate subtitle tray', async()=>{
   const s=makeScene();
   await s.run();
+  await Promise.resolve();
+  await Promise.resolve();
   assert.equal(s.caption.hidden,false,'caption must be displayed below the embedded mobile video');
   assert.equal(s.nativeTrack.mode,'hidden','avoid native track duplicating custom site subtitles');
   assert.ok(s.caption.fragment,'word-level caption should render as interactive spans');

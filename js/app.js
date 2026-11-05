@@ -691,10 +691,14 @@ async renderLesson(seriesId, episodeId){
       if(nativeTrack) nativeTrack.mode=isNativeFullscreen() && !isMobileCaptionTray() && this.subtitlePreferences().visible?'showing':'hidden';
     };
     const syncWords=window.SFWordSync;
-    const prepared=syncWords?await syncWords.load(d,cues):null;
+    // The optional word-timing JSON must never block sentence subtitles.
+    // A slow mobile network or a stalled JSON request previously left the
+    // caption tray blank while the video kept playing.
+    const prepared=typeof syncWords?.prepare==='function'?syncWords.prepare(cues,null):null;
     if(!caption.isConnected)return;
     window.SFKaraokePractice?.attachVideo({player,caption,cues,prepared});
     let active=-1,renderedMode=null,wordView=null,animation=0,lastPaint=0;
+    let effectiveWords=prepared;
     const update=()=>{
       syncNativeTrack();
       if(isNativeFullscreen() && !isMobileCaptionTray()){
@@ -708,10 +712,10 @@ async renderLesson(seriesId, episodeId){
         active=next;renderedMode=wordEnabled;wordView=null;
         if(next<0){
           caption.textContent='';
-        }else if(wordEnabled&&prepared?.[next]){
-          wordView=syncWords.render(prepared[next],true);
+        }else if(wordEnabled&&effectiveWords?.[next]){
+          wordView=syncWords.render(effectiveWords[next],true);
           caption.replaceChildren(wordView.fragment);
-          caption.dataset.wordTiming=prepared[next].verified?'speech':'estimated';
+          caption.dataset.wordTiming=effectiveWords[next].verified?'speech':'estimated';
         }else{
           caption.textContent=cues[next].text;
         }
@@ -745,7 +749,19 @@ async renderLesson(seriesId, episodeId){
     player.addEventListener('webkitendfullscreen',update);
     update();
     if(!player.paused)startPaint();
-    if(caption.dataset.dragBound) return;
+    // Progressive enhancement: sentence text is visible immediately, even
+    // when .words.json is unavailable or slow. Apply exact word times later.
+    const wordTimingPromise=syncWords?Promise.race([
+        syncWords.load(d,cues),
+        typeof setTimeout==='function'?new Promise(resolve=>setTimeout(()=>resolve(null),8000)):new Promise(()=>{})
+      ]).then(track=>{
+        if(!track||!caption.isConnected)return;
+        if(prepared){prepared.splice(0,prepared.length,...track);effectiveWords=prepared;}
+        else effectiveWords=track;
+        active=-1;
+        update();
+      }).catch(()=>{}):Promise.resolve();
+    if(caption.dataset.dragBound) return wordTimingPromise;
     caption.dataset.dragBound='1';
     caption.addEventListener('pointerdown',event=>{
       if(caption.closest('.subtitle-video-wrap')?.classList.contains('sf-caption-below')) return;
@@ -774,6 +790,7 @@ async renderLesson(seriesId, episodeId){
       caption.addEventListener('pointercancel',finish);
       updatePosition(event);
     });
+    return wordTimingPromise;
   },
   async initializeHlsVideo(player){
     return this.initializeHlsMedia(player);
