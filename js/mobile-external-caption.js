@@ -18,7 +18,8 @@
     const hint=tray?.querySelector('.sf-mobile-caption-hint');
     if(!tray||!line||!hint||tray.dataset.bound==='1')return;
     tray.dataset.bound='1';
-    tray.classList.add('is-caption-ready');
+    tray.classList.add('is-caption-ready','is-mobile-external');
+    player.closest('.subtitle-video-wrap')?.classList.add('sf-external-caption-mode');
     const setHint=value=>{hint.textContent=value||'';hint.hidden=!value;};
     const sync=window.SFWordSync;
     let cues=[], prepared=[],active=-2,mode=null,wordView=null;
@@ -31,6 +32,8 @@
       const wordEnabled=prefs.wordHighlight!==false;
       const now=Math.max(0,Math.round((Number(player.currentTime)||0)*1000));
       tray.classList.toggle('is-caption-disabled',!visible);
+      const enable=tray.querySelector('.sf-mobile-caption-enable');
+      if(enable) enable.hidden=visible;
       if(!visible){
         line.textContent='';
         setHint('字幕已关闭：点击播放器上的「字幕」按钮重新开启。');
