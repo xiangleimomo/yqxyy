@@ -673,8 +673,31 @@ async renderLesson(seriesId, episodeId){
       if(response.ok) cues=this.parseVtt(await response.text());
     }catch{}
     if(subtitleStatus) subtitleStatus.textContent=cues.length?'英文字幕已加载 · 已匹配当前片源时间轴':'英文字幕暂时无法加载，请重新打开本集重试。视频仍可播放。';
+    // For lessons without a published VTT, load the official sentence-level XML.
+    // This is a lightweight runtime fallback; SFWordSync estimates word timing.
+    // Existing VTT and verified .words.json remain the preferred sources.
+    if(!cues.length && /^[A-Z]\\d{7}$/.test(String(d.ep?.sourceContentId||''))){
+      const id=d.ep.sourceContentId;
+      const hosts=['https://cdn.littlefox.com','https://cdn.littlefox.co.kr'];
+      for(const host of hosts){
+        try{
+          const response=await fetch(host+'/contents/caption/'+id+'.xml',{mode:'cors'});
+          if(!response.ok)continue;
+          const xml=new DOMParser().parseFromString(await response.text(),'application/xml');
+          if(xml.querySelector('parsererror'))continue;
+          const paragraphs=Array.from(xml.getElementsByTagName('Paragraph'));
+          const parsed=paragraphs.map(node=>{
+            const read=name=>node.getElementsByTagName(name)[0]?.textContent?.trim()||'';
+            const startMs=Number(read('StartMilliseconds')),endMs=Number(read('EndMilliseconds'));
+            const text=read('Text');
+            return {startMs,endMs,text};
+          }).filter(cue=>cue.text&&Number.isFinite(cue.startMs)&&Number.isFinite(cue.endMs)&&cue.endMs>cue.startMs);
+          if(parsed.length){cues=parsed;break;}
+        }catch{}
+      }
+    }
     if(!cues.length){
-      setMessage('本集英文字幕加载失败，请重新打开课程重试。');
+      setMessage('本集字幕未提供或官方 XML 不允许跨域读取，视频仍可播放。');
       return;
     }
     setMessage('等待对白开始…');
