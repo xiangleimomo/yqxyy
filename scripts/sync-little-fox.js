@@ -35,6 +35,17 @@ const run = (script, scriptArgs) => {
 if (!apply) process.stderr.write('Dry run: no files will be written.\n');
 run('sync-xet-catalog.js', [apply ? '--apply' : '--dry-run']);
 if (apply) {
+  // Prefer the verified official XML caption timeline for newly imported episodes.
+  // Episode 13 is also rechecked until its pending timing review is resolved.
+  // Unavailable/unsupported XML never replaces an existing VTT.
+  run('import-official-littlefox-captions.cjs', [
+    '--manifest=subtitle-review/new-lessons.json',
+    '--lesson=three-kingdoms:13',
+    '--apply',
+    '--skip-unavailable',
+  ]);
+}
+if (apply) {
   // Build/refresh official episode PDF mappings after Read source IDs are present.
   const python = process.platform === 'win32' ? 'python' : 'python3';
   const result = spawnSync(python, [path.join(__dirname, 'import-episode-pdfs.py'), '--apply'], { stdio: 'inherit' });
