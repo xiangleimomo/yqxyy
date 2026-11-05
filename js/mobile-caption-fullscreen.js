@@ -39,7 +39,7 @@
       trigger.classList.toggle('is-fullscreen', full);
       trigger.setAttribute('aria-label', full ? '退出全屏' : '全屏观看（保留逐词高亮字幕）');
       const label = trigger.querySelector('span');
-      if (label) label.textContent = full ? '退出' : '全屏';
+      if (label) label.textContent = full ? '退出' : (isMobile ? '网页全屏' : '全屏');
       if (mobileFullscreenButton) mobileFullscreenButton.setAttribute('aria-label', full ? '退出全屏' : '全屏观看（保留字幕）');
     };
     const restore = () => {
