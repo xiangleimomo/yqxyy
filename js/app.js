@@ -508,7 +508,7 @@ async renderLesson(seriesId, episodeId){
     const hasSubtitle=true;
     const fallbacks=[...(hls720 && hls720!==url?[hls720]:[]),...(backupHls?[backupHls]:[])];
     const sourceSelector=hls720?`<label class="hls-source-control">清晰度 / 播放源<select class="hls-source-select" aria-label="选择视频清晰度和播放源" data-hls-1080="${this.escapeHtml(url)}" data-hls-720="${this.escapeHtml(hls720)}" data-hls-korea="${this.escapeHtml(backupHls)}"><option value="1080">1080P 国际站（推荐）</option><option value="720">720P 国际站（更流畅）</option>${backupHls?'<option value="korea">韩国站备用源</option>':''}</select></label>`:'';
-    return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>Watch 看视频</h2><p class="muted">默认使用 1080P 国际站；播放不流畅时可切换为 720P。加载失败会依次尝试可用备用源。${hasSubtitle?' 本集提供时将自动加载英文外挂字幕。':''}</p></div>${sourceSelector}</div><div class="video-wrap${hasSubtitle?' subtitle-video-wrap':''}"><video class="hls-video-player" playsinline webkit-playsinline x5-playsinline="true" x5-video-player-type="h5" controlslist="nofullscreen noremoteplayback" disablepictureinpicture preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-hls-fallback-srcs="${this.escapeHtml(JSON.stringify(fallbacks))}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="sf-mobile-caption-area"><div class="video-caption" aria-live="polite" hidden></div><span class="sf-mobile-caption-message" role="status" hidden></span></div>${hasSubtitle?this.subtitleControls():''}</div><p class="muted direct-video-help"><span class="hls-load-status" role="status" aria-live="polite">正在连接视频…</span> ${fallback?`也可<a href="${this.escapeHtml(fallback)}" target="_blank" rel="noreferrer noopener">直接打开本集视频</a>。`:`若无法播放，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">打开视频源</a>。`}</p></section>${this.completeButton(d,completionModule)}`;
+    return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>Watch 看视频</h2><p class="muted">默认使用 1080P 国际站；播放不流畅时可切换为 720P。加载失败会依次尝试可用备用源。${hasSubtitle?' 本集提供时将自动加载英文外挂字幕。':''}</p></div>${sourceSelector}</div><div class="video-wrap${hasSubtitle?' subtitle-video-wrap':''}"><video class="hls-video-player" playsinline webkit-playsinline x5-playsinline="true" x5-video-player-type="h5" controlslist="nofullscreen noremoteplayback" disablepictureinpicture preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-hls-fallback-srcs="${this.escapeHtml(JSON.stringify(fallbacks))}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="sf-mobile-caption-area"><div class="video-caption" aria-live="polite" hidden></div><span class="sf-mobile-caption-message" role="status" hidden></span></div>${hasSubtitle?this.subtitleControls():''}</div><div class="sf-mobile-captions-outside" role="region" aria-label="手机英文逐词字幕"><div class="sf-mobile-caption-line" aria-live="off">字幕准备中…</div><div class="sf-mobile-caption-hint" role="status">字幕即将加载</div><button type="button" class="sf-mobile-caption-enable" hidden>开启英文字幕</button></div><p class="muted direct-video-help"><span class="hls-load-status" role="status" aria-live="polite">正在连接视频…</span> ${fallback?`也可<a href="${this.escapeHtml(fallback)}" target="_blank" rel="noreferrer noopener">直接打开本集视频</a>。`:`若无法播放，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">打开视频源</a>。`}</p></section>${this.completeButton(d,completionModule)}`;
   },
   subtitlePreferences(){
     const defaults={visible:true,wordHighlight:true,size:20,color:'#ffffff',captionX:50,captionY:84,opacity:72};
@@ -1314,7 +1314,20 @@ bindLessonPanel(tab,d,root=document){
   if(tab==='games') EpisodeGames.bind(root,d);
   window.MediaShelf?.bindLesson(root===document?document.getElementById('lessonPanel')||root:root,d);
   window.SFMedals?.attach(this,'episode:'+d.seriesId+':'+d.episodeId,root===document?document.getElementById('lessonPanel'):root);
-  root.querySelectorAll('.hls-video-player').forEach(player=>{this.initializeHlsVideo(player);this.bindSubtitleOverlay(player,d);});
+  root.querySelectorAll('.hls-video-player').forEach(player=>{
+    this.initializeHlsVideo(player);
+    // Mobile browser video layers can cover overlays inside .video-wrap.
+    // External subtitle DOM stays visible below proprietary player surfaces.
+    if(window.SFMobileCaption?.isApplicable?.()){
+      window.SFMobileCaption.attach({
+        player,d,vttUrl:this.subtitleVttUrl(d),
+        parseVtt:text=>this.parseVtt(text),
+        preferences:()=>this.subtitlePreferences()
+      });
+    }else{
+      this.bindSubtitleOverlay(player,d);
+    }
+  });
   this.applySubtitlePreferences(root);
   this.bindSubtitleControls(root);
   document.querySelectorAll('.hls-audio-player').forEach(player=>this.initializeHlsAudio(player));
