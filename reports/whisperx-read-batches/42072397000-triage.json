@@ -1,0 +1,21 @@
+{
+  "sourceRunId": 42072397000,
+  "classification": "preliminary-not-publishable",
+  "reviewedEpisodes": 100,
+  "rawAlignmentAvailable": 98,
+  "collectionFailures": [
+    {
+      "seriesId": "journey-to-the-west",
+      "episodeId": 8,
+      "reason": "HTTP 403 rate limit"
+    },
+    {
+      "seriesId": "journey-to-the-west",
+      "episodeId": 18,
+      "reason": "HTTP 403 rate limit"
+    }
+  ],
+  "pendingValidation": 98,
+  "publishedByThisReport": 0,
+  "note": "High forced-alignment coverage is not proof of full text and timing QA. Preserve existing ASR results, publish only validated VTT/words.json pairs; do not mark Netlify live without deployment evidence."
+}
