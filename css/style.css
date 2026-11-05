@@ -1261,3 +1261,9 @@ body.series-fixed-page .footer{
 .timed-sentence-item.is-looping .timed-sentence-loop-one{background:#1559a3;color:#fff}
 .timed-sentence-text:focus-visible,.timed-sentence-loop-one:focus-visible{outline:2px solid #1559a3;outline-offset:2px}
 @media(max-width:600px){.timed-sentence-study{padding:12px}.timed-sentence-list{max-height:260px}.timed-sentence-text{font-size:14px}.timed-sentence-actions{width:100%}}
+
+/* Karaoke word cursor: sentence stays visible; only the spoken word lights up. */
+.sf-karaoke-word{display:inline;border-radius:3px;transition:color .08s ease}
+.video-caption .sf-karaoke-word.is-karaoke-active{color:#ffe05a;font-weight:800;text-shadow:0 1px 2px #000,0 0 7px rgba(255,205,65,.44)}
+.timed-sentence-text .sf-karaoke-word.is-karaoke-active{color:#b45309;background:#fff0ac;font-weight:800;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.timed-sentence-item.is-active .sf-karaoke-word.is-karaoke-active{color:#994507}
