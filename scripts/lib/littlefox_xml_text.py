@@ -3,7 +3,6 @@
 Do NOT read Number, StartMilliseconds, EndMilliseconds, or any XML time value.
 Video audio and WhisperX remain the sole source of subtitle timestamps.
 """
-from difflib import SequenceMatcher
 import hashlib
 import re
 import unicodedata
@@ -16,7 +15,8 @@ CONTENT_ID=re.compile(r"C[0-9]{7}\Z")
 TOKEN=re.compile(r"\S+",re.UNICODE)
 
 def clean(value):
-    return re.sub(r"\s+"," ",str(value or "")).strip()
+    without_breaks=re.sub(r"\[n@(?:\])?"," ",str(value or ""),flags=re.IGNORECASE)
+    return re.sub(r"\s+"," ",without_breaks).strip()
 
 def normalized(token):
     return "".join(ch for ch in unicodedata.normalize("NFKC",token.lower()) if ch.isalnum())
@@ -51,20 +51,6 @@ def parse_text_only(xml_bytes):
     return {"paragraphs":len(texts),"words":words,
             "sha256":hashlib.sha256(" ".join(words).encode("utf-8")).hexdigest()}
 
-def verify_against_read(xml_bytes,read_words):
-    canonical=parse_text_only(xml_bytes)
-    expected=[normalized(word) for word in read_words if normalized(word)]
-    actual=[normalized(word) for word in canonical["words"]]
-    if not expected:
-        raise ValueError("Canonical Read text is unavailable for cross-check")
-    ratio=SequenceMatcher(None,expected,actual,autojunk=False).ratio()
-    coverage=min(len(expected),len(actual))/max(len(expected),len(actual))
-    # Allow a few spelling mistakes in Read; do not mix up episodes or omit a scene.
-    if ratio<0.975 or coverage<0.975:
-        raise ValueError(f"Read and official XML Text disagree: lexicalRatio={ratio:.3f}, lengthRatio={coverage:.3f}")
-    canonical.update(readAgreement=round(ratio,4),readLengthCoverage=round(coverage,4))
-    return canonical
-
 class SameHostRedirect(HTTPRedirectHandler):
     def redirect_request(self,request,fp,code,message,headers,new_url):
         parsed=urlparse(new_url)
@@ -78,7 +64,7 @@ def download_xml(content_id,timeout=22):
     url=f"https://{HOST}/contents/caption/{content_id}.xml"
     opener=build_opener(SameHostRedirect)
     with opener.open(Request(url,headers={
-        "User-Agent":"yqxyy-whisperx-read-xml-proofread/1.0",
+        "User-Agent":"yqxyy-whisperx-xml-text-only/1.0",
         "Accept":"application/xml,text/xml"
     }),timeout=timeout) as response:
         body=response.read(2_000_001)

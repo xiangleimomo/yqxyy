@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Publishable engine: real Little Fox audio -> WhisperX ASR -> canonical Read -> forced alignment.
+"""Publishable engine: real Little Fox audio -> WhisperX ASR -> official XML Text -> forced alignment.
 
-Read serves as a lexical cross-check while official Little Fox XML Paragraph/Text
-provides final text and punctuation. XML timing and existing website VTT are ignored.
+Official Little Fox XML Paragraph/Text is the only text source.
+XML timing and existing website VTT are ignored.
 Results remain isolated until the publishing gate validates them.
 """
 from __future__ import annotations
@@ -24,7 +24,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/"scripts"))
-from lib.littlefox_xml_text import download_xml, verify_against_read
+from lib.littlefox_xml_text import download_xml, parse_text_only
 APPROVED_HOSTS = {"cdn.littlefox.com", "cdn.littlefox.co.kr"}
 WORD = re.compile(r"\S+", re.UNICODE)
 SENTENCE_END = re.compile(r'[.!?][\u201d\u2019"\'\u00bb)]*$')
@@ -35,47 +35,32 @@ def normalize(value: str) -> str:
                    if c.isalnum())
 
 
-def words_from_read(episode: dict, lesson: dict) -> list[str]:
-    """Use only actual Read paragraphs. PDFs sometimes repeat their heading."""
-    paragraphs = lesson.get("paragraphs") or []
-    result = WORD.findall(" ".join(p.get("text", "") for p in paragraphs))
-    title = WORD.findall(lesson.get("title") or episode.get("title") or "")
-    if not result or not title:
-        raise ValueError("Read paragraphs or title are missing")
-    key = [normalize(t) for t in title]
-    while len(result) > len(title) and [normalize(t) for t in result[-len(title):]] == key:
-        result = result[:-len(title)]
-    # Read export sometimes contains standalone asterisks used as emphasis markers.
-    # Punctuation-only tokens have no corresponding spoken word; exclude them.
-    return [word for word in result if normalize(word)]
-
-
-def make_asr_mapping(read: list[str], segments: list[dict]):
-    """Map WhisperX recognition tokens onto the ordered Read tokens (not VTT)."""
+def make_asr_mapping(canonical: list[str], segments: list[dict]):
+    """Map WhisperX recognition tokens onto the ordered official XML Text tokens (not VTT)."""
     asr, segment_indices = [], []
     for index, seg in enumerate(segments):
         for token in WORD.findall(seg.get("text", "")):
             if normalize(token):
                 asr.append(token)
                 segment_indices.append(index)
-    read_norm = [normalize(t) for t in read]
+    xml_norm = [normalize(t) for t in canonical]
     asr_norm = [normalize(t) for t in asr]
     map_asr_to_read = {}
-    for block in SequenceMatcher(a=asr_norm, b=read_norm, autojunk=False).get_matching_blocks():
+    for block in SequenceMatcher(a=asr_norm, b=xml_norm, autojunk=False).get_matching_blocks():
         for offset in range(block.size):
             map_asr_to_read[block.a+offset] = block.b+offset
-    coverage_read = len(set(map_asr_to_read.values())) / max(1, len(read))
+    coverage_read = len(set(map_asr_to_read.values())) / max(1, len(canonical))
     coverage_asr = len(map_asr_to_read) / max(1, len(asr))
     return map_asr_to_read, segment_indices, coverage_read, coverage_asr, asr
 
 
-def correct_segments(read: list[str], segments: list[dict]):
-    """Replace ASR words with Read phrasing but KEEP ASR audio windows.
+def correct_segments(canonical: list[str], segments: list[dict]):
+    """Replace ASR words with official XML Text phrasing but KEEP ASR audio windows.
 
     Unrecognized stretches are flagged instead of being forced into unrelated
     audio: the pilot rejects poor coverage and never promotes guessed timing.
     """
-    links, origins, read_coverage, asr_coverage, recognized = make_asr_mapping(read, segments)
+    links, origins, xml_coverage, asr_coverage, recognized = make_asr_mapping(canonical, segments)
     per_seg = defaultdict(list)
     asr_size = defaultdict(int)
     for asr_index, seg_index in enumerate(origins):
@@ -98,7 +83,7 @@ def correct_segments(read: list[str], segments: list[dict]):
         span = end-prior
         if span > max(24, asr_size[i]*2.2):
             # A missing portion is a diagnostic failure, not a reason to force
-            # a huge Read paragraph into a short unrelated ASR time window.
+            # a huge official XML Text paragraph into a short unrelated ASR time window.
             rejected_segments += 1
             continue
         start_sec = float(seg.get("start", -1))
@@ -109,15 +94,15 @@ def correct_segments(read: list[str], segments: list[dict]):
         corrected.append({
             "start": max(0, start_sec-0.15),
             "end": end_sec+0.15,
-            "text": " ".join(read[prior:end]),
+            "text": " ".join(canonical[prior:end]),
         })
         prior = end
     return corrected, {
-        "readWords": len(read), "asrWords": len(recognized),
-        "readRecognizedFraction": round(read_coverage, 4),
-        "asrReadPrecision": round(asr_coverage, 4),
-        "readWordsAssigned": prior,
-        "readAssignedFraction": round(prior/max(1,len(read)),4),
+        "xmlWords": len(canonical), "asrWords": len(recognized),
+        "xmlRecognizedFraction": round(xml_coverage, 4),
+        "asrXmlPrecision": round(asr_coverage, 4),
+        "xmlWordsAssigned": prior,
+        "xmlAssignedFraction": round(prior/max(1,len(canonical)),4),
         "asrSegments": len(segments),
         "correctedSegments": len(corrected),
         "rejectedSegments": rejected_segments,
@@ -125,7 +110,7 @@ def correct_segments(read: list[str], segments: list[dict]):
     }
 
 
-def aligned_to_read(read: list[str], aligned_segments: list[dict], duration_ms: int):
+def aligned_to_official(canonical: list[str], aligned_segments: list[dict], duration_ms: int):
     """Take word timestamps only from actual wav2vec2 forced alignment."""
     found = []
     for seg in aligned_segments:
@@ -136,13 +121,13 @@ def aligned_to_read(read: list[str], aligned_segments: list[dict], duration_ms: 
     links = {}
     for block in SequenceMatcher(
         a=[normalize(w.get("word", "")) for w in found],
-        b=[normalize(w) for w in read], autojunk=False
+        b=[normalize(w) for w in canonical], autojunk=False
     ).get_matching_blocks():
         for i in range(block.size):
             links[block.b+i] = found[block.a+i]
-    output = [None] * len(read)
+    output = [None] * len(canonical)
     last_start = -1
-    for index in range(len(read)):
+    for index in range(len(canonical)):
         item = links.get(index)
         if item is None:
             continue
@@ -154,7 +139,7 @@ def aligned_to_read(read: list[str], aligned_segments: list[dict], duration_ms: 
         if start_ms < 0 or end_ms <= start_ms or end_ms > duration_ms + 150 or start_ms < last_start:
             continue
         output[index] = {
-            "text": read[index], "startMs": start_ms, "endMs": end_ms,
+            "text": canonical[index], "startMs": start_ms, "endMs": end_ms,
             "source": "speech", "alignmentScore": round(float(item.get("score") or 0), 3)
         }
         last_start = start_ms
@@ -181,22 +166,22 @@ def aligned_to_read(read: list[str], aligned_segments: list[dict], duration_ms: 
             end_ms = left["endMs"]+round(gap*(i+1)/length)
             if end_ms > start_ms:
                 output[begin+i] = {
-                    "text":read[begin+i], "startMs":start_ms,
+                    "text":canonical[begin+i], "startMs":start_ms,
                     "endMs":end_ms, "source":"estimated"
                 }
     aligned = sum(bool(w and w["source"]=="speech") for w in output)
     estimate = sum(bool(w and w["source"]=="estimated") for w in output)
     return output, {
-        "totalReadWords": len(read),
+        "totalXmlWords": len(canonical),
         "forcedAlignedWords": aligned,
         "shortGapEstimatedWords": estimate,
-        "missingWords": len(read)-aligned-estimate,
-        "forcedAlignedFraction": round(aligned/max(1,len(read)),4)
+        "missingWords": len(canonical)-aligned-estimate,
+        "forcedAlignedFraction": round(aligned/max(1,len(canonical)),4)
     }
 
 
 
-def fill_rare_verified_gaps(output: list, read: list[str]):
+def fill_rare_verified_gaps(output: list, canonical: list[str]):
     """For an otherwise >97.5% aligned transcript, estimate a few local gaps.
 
     The rescued entries keep source='estimated' and never count toward
@@ -227,7 +212,7 @@ def fill_rare_verified_gaps(output: list, read: list[str]):
             if end_ms <= start_ms:
                 break
             output[begin+j] = {
-                "text":read[begin+j], "startMs":start_ms,
+                "text":canonical[begin+j], "startMs":start_ms,
                 "endMs":end_ms, "source":"estimated"
             }
             added += 1
@@ -272,7 +257,7 @@ def split_cues(aligned: list[dict]):
     return cues
 
 
-def write_candidate(folder: Path, series: str, eid: int, read: list[str],
+def write_candidate(folder: Path, series: str, eid: int, canonical: list[str],
                     mapped: list[dict], info: dict, media_path: str, model: str, source_id=None, xml_evidence=None):
     cues = split_cues(mapped)
     subtitle_text = "WEBVTT\n\n" + "\n\n".join(
@@ -283,12 +268,11 @@ def write_candidate(folder: Path, series: str, eid: int, read: list[str],
     track = {
         "seriesId":series,"episodeId":eid,"sourceContentId":source_id,"mediaPath":media_path,
         "mediaFingerprint":hashlib.sha256(media_path.encode()).hexdigest(),
-        "subtitleSha256":digest,"method":"whisperx-asr-xml-text-verified-forced-alignment",
+        "subtitleSha256":digest,"method":"whisperx-asr-xml-text-only-forced-alignment",
         "textAuthority":"littlefox-xml-paragraph-text",
         "xmlTextSha256":(xml_evidence or {}).get("sha256"),
-        "readXmlAgreement":(xml_evidence or {}).get("readAgreement"),
         "xmlParagraphCount":(xml_evidence or {}).get("paragraphs"),
-        "recognizer":model,"cueCount":len(cues),"totalWords":len(read),
+        "recognizer":model,"cueCount":len(cues),"totalWords":len(canonical),
         "speechMatchedWords":info["forcedAlignedWords"],
         "speechMatchedFraction":info["forcedAlignedFraction"],
         "cues":[{"words":c["words"]} for c in cues]
@@ -347,23 +331,18 @@ def run_one(args):
     directory = ROOT / "data" / series
     episodes = json.loads((directory/"episodes.json").read_text())
     episode = next(e for e in episodes if int(e["episodeId"])==eid)
-    lessons = json.loads((directory/"reading-lessons.json").read_text())
-    read = words_from_read(episode,lessons[str(eid)])
-    report = {"seriesId":series,"episodeId":eid,"readWordCount":len(read),
-              "model":args.model,"approved":False}
-    (folder/"read-cleaned.txt").write_text(" ".join(read)+"\n",encoding="utf-8")
+    report={"seriesId":series,"episodeId":eid,"model":args.model,"approved":False}
     try:
         xml_url,xml_bytes=download_xml(episode.get("sourceContentId"))
-        xml_evidence=verify_against_read(xml_bytes,read)
+        xml_evidence=parse_text_only(xml_bytes)
         (folder/"official-caption.xml").write_bytes(xml_bytes)
-        read=xml_evidence["words"]
-        (folder/"text-verified-from-xml.txt").write_text(" ".join(read)+"\n",encoding="utf-8")
+        canonical=xml_evidence["words"]
+        (folder/"official-text-cleaned.txt").write_text(" ".join(canonical)+"\\n",encoding="utf-8")
         report.update({"textAuthority":"littlefox-xml-paragraph-text",
             "xmlContentId":episode.get("sourceContentId"),
             "xmlTextSha256":xml_evidence["sha256"],
             "xmlParagraphCount":xml_evidence["paragraphs"],
-            "readXmlAgreement":xml_evidence["readAgreement"],
-            "xmlWordCount":len(read)})
+            "xmlWordCount":len(canonical)})
         import whisperx
         with tempfile.TemporaryDirectory(prefix="yqxyy-whisperx-") as tmp:
             wav = Path(tmp)/"audio.wav"
@@ -379,17 +358,17 @@ def run_one(args):
             del model
             gc.collect()
             segments = asr_result.get("segments") or []
-            corrected, metrics = correct_segments(read,segments)
+            corrected, metrics = correct_segments(canonical,segments)
             asr_text = metrics.pop("asrText")
             (folder/"asr-raw.txt").write_text(asr_text+"\n",encoding="utf-8")
             report.update(metrics)
             # Catch wrong/missing audio before forced alignment, independently
             # of any old official VTT timestamps.
-            if (metrics["readRecognizedFraction"] < args.min_text_match
-                    or metrics["readAssignedFraction"] < args.min_text_match):
-                raise ValueError("ASR vs Read mismatch or truncated audio: "
-                                 f"{metrics['readRecognizedFraction']:.1%} matched, "
-                                 f"{metrics['readAssignedFraction']:.1%} assigned")
+            if (metrics["xmlRecognizedFraction"] < args.min_text_match
+                    or metrics["xmlAssignedFraction"] < args.min_text_match):
+                raise ValueError("ASR vs official XML Text mismatch or truncated audio: "
+                                 f"{metrics['xmlRecognizedFraction']:.1%} matched, "
+                                 f"{metrics['xmlAssignedFraction']:.1%} assigned")
             align_model, metadata = whisperx.load_align_model(language_code="en",device="cpu")
             aligned_result = whisperx.align(
                 corrected, align_model, metadata, audio, "cpu",
@@ -401,12 +380,12 @@ def run_one(args):
                 json.dumps(aligned_result.get("segments") or [],ensure_ascii=False)+"\n",
                 encoding="utf-8"
             )
-            mapped, quality = aligned_to_read(read,aligned_result.get("segments") or [],duration_ms)
+            mapped, quality = aligned_to_official(canonical,aligned_result.get("segments") or [],duration_ms)
             quality["missingWordExamples"] = [
-                {"index":i,"word":read[i]} for i,w in enumerate(mapped) if w is None
+                {"index":i,"word":canonical[i]} for i,w in enumerate(mapped) if w is None
             ][:20]
             if quality["forcedAlignedFraction"] >= 0.975:
-                rescued = fill_rare_verified_gaps(mapped,read)
+                rescued = fill_rare_verified_gaps(mapped,canonical)
                 quality["shortGapEstimatedWords"] += rescued
                 quality["missingWords"] -= rescued
             report.update(quality)
@@ -421,12 +400,12 @@ def run_one(args):
             if quality["forcedAlignedFraction"] < args.min_aligned:
                 raise ValueError(f"Forced word alignment low: {quality['forcedAlignedFraction']:.1%}")
             if any(word is None for word in mapped):
-                raise ValueError("Unaligned Read words remain; candidate withheld")
+                raise ValueError("Unaligned official XML Text words remain; candidate withheld")
             if not first or not last or last["endMs"] < duration_ms*0.75:
                 raise ValueError("Missing late-episode speech; candidate withheld")
             outliers = suspicious_word_spans(mapped)
             report["suspiciousLongWordSpans"] = outliers[:15]
-            cue_count = write_candidate(folder,series,eid,read,mapped,quality,media_path,args.model,episode.get("sourceContentId"),xml_evidence)
+            cue_count = write_candidate(folder,series,eid,canonical,mapped,quality,media_path,args.model,episode.get("sourceContentId"),xml_evidence)
             report["candidateCueCount"] = cue_count
             if outliers:
                 # Keep a preview artifact for human review, never call it approved.
@@ -443,7 +422,7 @@ def main():
     p=argparse.ArgumentParser()
     p.add_argument("--series",default="journey-to-the-west")
     p.add_argument("--episode",type=int,required=True)
-    p.add_argument("--output",default="whisperx-read-results")
+    p.add_argument("--output",default="whisperx-canonical-results")
     p.add_argument("--model",default="small.en")
     p.add_argument("--model-cache",default="/tmp/yqxyy-whisperx-models")
     p.add_argument("--min-text-match",type=float,default=0.82)

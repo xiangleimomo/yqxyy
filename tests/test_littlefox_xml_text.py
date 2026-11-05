@@ -25,12 +25,10 @@ TEXT=["The old farmer said, 'Please come in!' It is safe here.",
       "The next morning, the two friends rode away together."]
 
 class OfficialXmlTextTests(unittest.TestCase):
-    def test_punctuation_from_original_xml_not_read(self):
-        read=mod.spoken_tokens(" ".join(TEXT).replace("!",".").replace("?",".")) + ["***"]
-        result=mod.verify_against_read(fixture(TEXT,wrong_times=True),read)
+    def test_punctuation_from_official_xml_only(self):
+        result=mod.parse_text_only(fixture(TEXT,wrong_times=True))
         self.assertIn("'Please",result["words"])
         self.assertIn("in!'",result["words"])
-        self.assertEqual(result["readAgreement"],1)
         self.assertEqual(result["paragraphs"],3)
 
     def test_xml_time_values_do_not_affect_text(self):
@@ -41,15 +39,17 @@ class OfficialXmlTextTests(unittest.TestCase):
 
     def test_wrong_content_or_incomplete_transcript_is_rejected(self):
         with self.assertRaises(ValueError):
-            mod.verify_against_read(fixture(TEXT),["a completely unrelated story"]*12)
-        with self.assertRaises(ValueError):
             mod.parse_text_only(b"<html><body>Not captions</body></html>")
         with self.assertRaises(ValueError):
             mod.parse_text_only(b"<!DOCTYPE foo><Subtitle/>")
 
-    def test_nonspoken_scene_marker_is_removed(self):
-        sample=mod.spoken_tokens("The monkey spoke. *** And then ran! — ")
+    def test_nonspoken_scene_marker_and_n_break_code_are_removed(self):
+        sample=mod.spoken_tokens("The[n@monkey spoke. *** And[n@]then ran! — ")
         self.assertEqual(sample,["The","monkey","spoke.","And","then","ran!"])
+        source=fixture(["The[n@monkey spoke. ***","And[n@]then ran!","The farmer watched."])
+        actual=mod.parse_text_only(source)["words"]
+        self.assertNotIn("[n@",' '.join(actual))
+        self.assertNotIn("***",actual)
 
 if __name__=="__main__":
     unittest.main()

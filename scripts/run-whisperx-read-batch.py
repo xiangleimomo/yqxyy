@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run one shard of a 100-episode video→WhisperX→Read→forced-align batch."""
+"""Run one shard of a 100-episode video→WhisperX→XML Text→forced-align batch."""
 import argparse
 import importlib.util
 import json
@@ -22,7 +22,7 @@ def main():
     if args.shards<1 or args.shard<0 or args.shard>=args.shards:
         raise ValueError("Invalid shard")
     manifest=json.loads(Path(args.manifest).read_text(encoding="utf-8"))
-    if manifest.get("pipeline")!="audio-whisperx-read-forced-alignment" or manifest.get("usesExistingSiteSubtitlesAsInput") is not False:
+    if manifest.get("pipeline")!="audio-whisperx-xml-text-only-forced-alignment" or manifest.get("usesExistingSiteSubtitlesAsInput") is not False:
         raise ValueError("Refusing non-WhisperX or VTT-dependent batch")
     rows=manifest["lessons"][args.shard::args.shards]
     root=Path(args.output)

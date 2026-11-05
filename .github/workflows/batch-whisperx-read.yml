@@ -1,4 +1,4 @@
-name: WhisperX + XML Text 100-episode subtitle and karaoke batch
+name: WhisperX + official XML Text 100-episode karaoke batch
 on:
   workflow_dispatch:
     inputs:
@@ -27,7 +27,7 @@ concurrency:
 
 jobs:
   prepare:
-    name: Select 100 episodes from original video and Read
+    name: Select 100 episodes from original video and official XML
     runs-on: ubuntu-latest
     outputs:
       has_targets: ${{ steps.select.outputs.has_targets }}
@@ -64,7 +64,7 @@ jobs:
           retention-days: 7
 
   align:
-    name: WhisperX Read forced alignment (shard ${{ matrix.shard }})
+    name: WhisperX XML Text forced alignment (shard ${{ matrix.shard }})
     needs: prepare
     if: needs.prepare.outputs.has_targets == 'true'
     runs-on: ubuntu-latest
@@ -131,7 +131,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Recheck official XML Text, Read agreement, audio identity and timestamp quality
+      - name: Recheck official XML Text, XML transcript integrity, audio identity and timestamp quality
         run: |
           python scripts/publish-whisperx-read-batch.py --manifest whisperx-batch-targets.json --source whisperx-batch-results --run-id "${{ github.run_id }}"
           python -m py_compile scripts/whisperx-read-align.py scripts/publish-whisperx-read-batch.py
@@ -145,7 +145,7 @@ jobs:
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m "Publish WhisperX Read verified subtitle and karaoke batch ${{ github.run_id }}"
+          git commit -m "Publish WhisperX XML Text verified subtitle and karaoke batch ${{ github.run_id }}"
           git pull --rebase origin main
           git push origin HEAD:main
       - name: Preserve batch audit

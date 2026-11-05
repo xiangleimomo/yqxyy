@@ -15,7 +15,7 @@ import shutil
 from urllib.parse import urlparse
 
 ROOT=Path(__file__).resolve().parents[1]
-METHOD="whisperx-asr-xml-text-verified-forced-alignment"
+METHOD="whisperx-asr-xml-text-only-forced-alignment"
 SPEC=importlib.util.spec_from_file_location("whisperx_read_engine",ROOT/"scripts/whisperx-read-align.py")
 ENGINE=importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(ENGINE)
@@ -41,24 +41,19 @@ def validated_payload(row, folder):
     if track.get("method")!=METHOD or track.get("seriesId")!=sid or track.get("episodeId")!=eid:
         raise ValueError("Invalid new-method track metadata")
     ep_file=ROOT/"data"/sid/"episodes.json"
-    read_file=ROOT/"data"/sid/"reading-lessons.json"
     eps=json.loads(ep_file.read_text(encoding="utf-8"))
     ep=next(e for e in eps if int(e["episodeId"])==eid)
-    read=json.loads(read_file.read_text(encoding="utf-8"))
-    original_read=ENGINE.words_from_read(ep,read[str(eid)])
     xml_file=folder/"official-caption.xml"
     if not xml_file.is_file():
         raise ValueError("Official XML Text source artifact missing")
-    checked=ENGINE.verify_against_read(xml_file.read_bytes(),original_read)
+    checked=ENGINE.parse_text_only(xml_file.read_bytes())
     canonical=checked["words"]
     if report.get("textAuthority")!="littlefox-xml-paragraph-text" or track.get("textAuthority")!="littlefox-xml-paragraph-text":
-        raise ValueError("Candidate did not use official XML Text as canonical wording")
+        raise ValueError("Candidate did not use original XML Text")
     if report.get("xmlContentId")!=ep.get("sourceContentId"):
-        raise ValueError("XML content ID does not match the episode")
+        raise ValueError("Official XML content ID does not match episode")
     if checked["sha256"]!=report.get("xmlTextSha256") or checked["sha256"]!=track.get("xmlTextSha256"):
-        raise ValueError("Original XML Text checksum changed")
-    if abs(float(track.get("readXmlAgreement") or 0)-checked["readAgreement"])>0.0001:
-        raise ValueError("Read versus XML verification did not match")
+        raise ValueError("Official XML transcript hash mismatch")
     if row.get("sourceContentId")!=ep.get("sourceContentId") or track.get("sourceContentId")!=ep.get("sourceContentId"):
         raise ValueError("Source ID changed since selection")
     if not track.get("mediaPath") or not track.get("mediaFingerprint"):
@@ -126,7 +121,7 @@ def main():
     p.add_argument("--run-id",required=True)
     args=p.parse_args()
     plan=json.loads(Path(args.manifest).read_text(encoding="utf-8"))
-    if plan.get("pipeline")!="audio-whisperx-read-forced-alignment" or plan.get("usesExistingSiteSubtitlesAsInput") is not False:
+    if plan.get("pipeline")!="audio-whisperx-xml-text-only-forced-alignment" or plan.get("usesExistingSiteSubtitlesAsInput") is not False:
         raise ValueError("Publisher refused an obsolete VTT-based batch")
     if len(plan.get("lessons",[]))>100 or not plan.get("lessons"):
         raise ValueError("Batch must contain 1–100 episodes")

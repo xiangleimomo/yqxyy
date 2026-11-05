@@ -12,30 +12,13 @@ spec.loader.exec_module(pilot)
 
 
 class PilotReadTests(unittest.TestCase):
-    def test_read_text_removes_only_repeated_title_not_spoken_words(self):
-        episode={"title":"The Scared Boy"}
-        lesson={"title":"The Scared Boy","paragraphs":[
-            {"text":"Wukong asked, “Where is the Tang Monk?”"},
-            {"text":"The Scared Boy The Scared Boy"}]}
-        self.assertEqual(pilot.words_from_read(episode,lesson)[-5:],["“Where","is","the","Tang","Monk?”"])
-        actual=json.loads((ROOT/"data/journey-to-the-west/reading-lessons.json").read_text())
-        ep={"title":actual["48"]["title"]}
-        words=pilot.words_from_read(ep,actual["48"])
-        self.assertGreater(len(words),500)
-        self.assertNotEqual(words[-1].lower(),"boy")
-
-    def test_strip_standalone_markdown_markers_from_read(self):
-        episode={"title":"The Monkey"}
-        lesson={"title":"The Monkey","paragraphs":[{"text":"Hello * * * Wukong said hello."}]}
-        self.assertEqual(pilot.words_from_read(episode,lesson),["Hello","Wukong","said","hello."])
-
     def test_mapping_against_transcript_with_one_misheard_name(self):
         read=["The","monkey","Wukong","went","home.","The","boy","laughed."]
         asr=[{"start":1,"end":2.5,"text":"The monkey Wu Kong went home."},
              {"start":3,"end":4,"text":"The boy laughed."}]
         corrected,metrics=pilot.correct_segments(read,asr)
-        self.assertGreater(metrics["readRecognizedFraction"],.7)
-        self.assertEqual(metrics["readWordsAssigned"],8)
+        self.assertGreater(metrics["xmlRecognizedFraction"],.7)
+        self.assertEqual(metrics["xmlWordsAssigned"],8)
         self.assertEqual(len(corrected),2)
         self.assertIn("Wukong",corrected[0]["text"])
 
@@ -43,8 +26,8 @@ class PilotReadTests(unittest.TestCase):
         read=["Wukong","woke","up.","The","monk","slept."]+["missing"]*50
         asr=[{"start":11,"end":13,"text":"Wukong woke up."}]
         corrected,metrics=pilot.correct_segments(read,asr)
-        self.assertLess(metrics["readRecognizedFraction"],.2)
-        self.assertLess(metrics["readAssignedFraction"],.2)
+        self.assertLess(metrics["xmlRecognizedFraction"],.2)
+        self.assertLess(metrics["xmlAssignedFraction"],.2)
         self.assertEqual(len(corrected),1)
 
     def test_alignment_preserves_real_times_and_short_gap_only(self):
@@ -57,7 +40,7 @@ class PilotReadTests(unittest.TestCase):
           {"word":"big","start":12.2,"end":12.5,"score":.8},
           {"word":"tiger","start":12.6,"end":13,"score":.8},
           {"word":"appeared.","start":13.1,"end":13.5,"score":.9}]}]
-        words,stats=pilot.aligned_to_read(read,aligned,18000)
+        words,stats=pilot.aligned_to_official(read,aligned,18000)
         self.assertEqual(stats["forcedAlignedWords"],7)
         self.assertEqual(stats["shortGapEstimatedWords"],1)
         self.assertEqual(words[2]["source"],"estimated")
@@ -103,6 +86,8 @@ class PilotReadTests(unittest.TestCase):
         script=(ROOT/"scripts/whisperx-read-align.py").read_text()
         self.assertNotIn("parse_vtt",script)
         self.assertNotIn("subtitle_vtt",script)
+        self.assertNotIn("reading-lessons.json",script)
+        self.assertNotIn("words_from_read",script)
         media={"video":{"hlsUrl":"https://cdn.littlefox.com/media/a.m3u8",
                         "backupHlsUrl":"https://cdn.littlefox.co.kr/media/b.m3u8",
                         "directUrl":"https://evil.example/a.m3u8"}}

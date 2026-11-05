@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Select batches for audio→WhisperX→Read→forced alignment, never using old VTT."""
+"""Select batches for audio→WhisperX→XML Text→forced alignment, never using old VTT."""
 import argparse
 import json
 import re
@@ -8,7 +8,7 @@ from urllib.parse import urlparse
 
 ROOT=Path(__file__).resolve().parents[1]
 HOSTS={"cdn.littlefox.com","cdn.littlefox.co.kr"}
-METHOD="whisperx-asr-xml-text-verified-forced-alignment"
+METHOD="whisperx-asr-xml-text-only-forced-alignment"
 
 def source_ok(episode):
     video=episode.get("video") or {}
@@ -40,16 +40,14 @@ def select(limit=100,retry_failed=False,series_only=None):
                 failed.add((item["seriesId"],int(item["episodeId"])))
         except (ValueError,KeyError,TypeError):pass
     eligible=[]
-    stats={"seriesScanned":0,"episodesScanned":0,"missingRead":0,"missingVideo":0,
+    stats={"seriesScanned":0,"episodesScanned":0,"missingVideo":0,
            "alreadyPublishedNew":0,"failedHeld":0,"missingXmlContentId":0,"eligible":0}
     for directory in sorted((ROOT/"data").iterdir()):
         if series_only and directory.name!=series_only:continue
         episodes_file=directory/"episodes.json"
-        lessons_file=directory/"reading-lessons.json"
         if not episodes_file.is_file():continue
         try:
             episodes=json.loads(episodes_file.read_text(encoding="utf-8"))
-            lessons=json.loads(lessons_file.read_text(encoding="utf-8")) if lessons_file.is_file() else {}
         except ValueError:
             continue
         stats["seriesScanned"]+=1
@@ -59,16 +57,11 @@ def select(limit=100,retry_failed=False,series_only=None):
             except (ValueError,KeyError,TypeError):continue
             if episode.get("status") not in (None,"published"):continue
             if (episode.get("modules") or {}).get("watch") is False:continue
-            lesson=lessons.get(str(eid),{})
-            paragraphs=lesson.get("paragraphs") or []
-            if not paragraphs or not any((p.get("text") or "").strip() for p in paragraphs if isinstance(p,dict)):
-                stats["missingRead"]+=1
-                continue
             if not source_ok(episode):
                 stats["missingVideo"]+=1
                 continue
             source_id=episode.get("sourceContentId")
-            if not isinstance(source_id,str) or not re.fullmatch(r"C[0-9]{7}",source_id) or (lesson.get("sourceId") and lesson["sourceId"]!=source_id):
+            if not isinstance(source_id,str) or not re.fullmatch(r"C[0-9]{7}",source_id):
                 stats["missingXmlContentId"]+=1
                 continue
             if existing_new_version(directory,eid,episode):
@@ -80,7 +73,7 @@ def select(limit=100,retry_failed=False,series_only=None):
             eligible.append({"seriesId":directory.name,"episodeId":eid,"sourceContentId":episode.get("sourceContentId")})
     eligible.sort(key=lambda e:(0 if e["seriesId"]=="journey-to-the-west" else 1,e["seriesId"],e["episodeId"]))
     stats["eligible"]=len(eligible)
-    return {"pipeline":"audio-whisperx-read-forced-alignment",
+    return {"pipeline":"audio-whisperx-xml-text-only-forced-alignment",
             "usesExistingSiteSubtitlesAsInput":False,
             "batchSize":limit,"selected":len(eligible[:limit]),
             "stats":stats,"lessons":eligible[:limit]}
