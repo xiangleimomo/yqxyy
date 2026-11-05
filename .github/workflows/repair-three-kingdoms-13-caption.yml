@@ -13,6 +13,9 @@ jobs:
   caption:
     runs-on: ubuntu-latest
     timeout-minutes: 8
+    concurrency:
+      group: three-kingdoms-13-official-caption
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
         with:
@@ -20,21 +23,52 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Check caption importer syntax
+      - name: Validate importer
         run: python -m py_compile scripts/import-official-captions.py
-      - name: Fetch official XML, verify text and timing, and repair episode 13
-        run: python scripts/import-official-captions.py --lesson three-kingdoms:13 --apply
-      - name: Commit verified correction, if available
+      - name: Fetch real C0013409 XML and apply verified time codes
+        id: capture
+        shell: bash
+        run: |
+          set +e
+          python scripts/import-official-captions.py --lesson three-kingdoms:13 --apply --strict > /tmp/caption-13-result.log 2>&1
+          CODE=$?
+          set -e
+          cat /tmp/caption-13-result.log
+          echo "return_code=$CODE" >> "$GITHUB_OUTPUT"
+          if test "$CODE" -ne 0; then
+            mkdir -p reports
+            python - <<'PY'
+          import json
+          from pathlib import Path
+          lines=Path('/tmp/caption-13-result.log').read_text(encoding='utf8').splitlines()
+          rows=[]
+          for line in lines:
+              try: rows.append(json.loads(line))
+              except ValueError: continue
+          Path('reports/three-kingdoms-13-xml-check.json').write_text(
+              json.dumps({'contentId':'C0013409','status':'needs-review','results':rows},indent=2,ensure_ascii=False)+'\n',
+              encoding='utf8'
+          )
+          PY
+          fi
+      - name: Publish corrected VTT or diagnostic report
+        shell: bash
         run: |
           git add data/three-kingdoms/subtitles/013.vtt
           if test -f data/three-kingdoms/subtitles/013.timing.json; then
             git add data/three-kingdoms/subtitles/013.timing.json
           fi
+          if test -f reports/three-kingdoms-13-xml-check.json; then
+            git add reports/three-kingdoms-13-xml-check.json
+          fi
           if git diff --cached --quiet; then
-            echo 'No verified caption update available.'
+            echo 'No updated subtitle or diagnostic.'
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Align Three Kingdoms episode 13 to official caption XML"
+          git commit -m "Verify Three Kingdoms episode 13 official XML subtitle timing"
           git push
+      - name: Signal pending verification
+        if: steps.capture.outputs.return_code != '0'
+        run: exit 1
