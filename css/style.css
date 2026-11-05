@@ -1385,3 +1385,54 @@ html.sf-caption-screen-locked,body.sf-caption-screen-locked{overflow:hidden!impo
 .subtitle-video-wrap.sf-caption-below .sf-mobile-caption-area{position:relative!important;z-index:4!important;visibility:visible!important;opacity:1!important}
 .subtitle-video-wrap.sf-caption-below .sf-mobile-caption-area .video-caption:not([hidden]){display:block!important;visibility:visible!important;opacity:1!important;color:var(--caption-color,#fff)!important}
 .subtitle-video-wrap.sf-caption-below .sf-mobile-caption-area .sf-mobile-caption-message:not([hidden]){display:block!important;visibility:visible!important;opacity:1!important}
+
+
+/* Mobile Watch: independent subtitle panel BELOW the entire browser video layer.
+ * Do not position subtitles inside .video-wrap; proprietary Android video
+ * controls can cover anything in the same compositing surface.
+ * Desktop layout and draggable in-picture subtitles remain unchanged.
+ */
+.sf-mobile-captions-outside{display:none}
+.sf-mobile-captions-outside.is-mobile-external{
+  display:block!important;position:relative;z-index:1;
+  box-sizing:border-box;width:100%;min-height:82px;
+  padding:12px 14px 10px;margin:0 0 10px;
+  border-radius:0 0 12px 12px;
+  background:#132943;color:#fff;text-align:center;
+  border:1px solid rgba(90,160,200,.19);
+}
+.sf-mobile-captions-outside .sf-mobile-caption-line{
+  display:block;min-height:1.5em;
+  max-width:100%;overflow-wrap:anywhere;
+  font:600 18px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:#fff;white-space:normal;
+}
+.sf-mobile-captions-outside .sf-mobile-caption-hint{
+  display:block;font-size:12px;line-height:1.3;
+  margin-top:4px;color:#bacde0;
+}
+.sf-mobile-captions-outside .sf-mobile-caption-hint[hidden]{display:none!important}
+.sf-mobile-captions-outside .sf-mobile-caption-line.is-upcoming{opacity:.65}
+.sf-mobile-captions-outside .sf-karaoke-word{
+  cursor:pointer;touch-action:manipulation;
+  border-radius:3px;
+}
+.sf-mobile-captions-outside .sf-karaoke-word.is-karaoke-active{
+  color:#ffe05a!important;font-weight:850;
+  text-shadow:0 1px 2px #000,0 0 7px rgba(255,205,65,.48);
+}
+.sf-mobile-captions-outside .sf-mobile-caption-enable:not([hidden]){
+  display:inline-block;margin:7px auto 0;border:1px solid rgba(255,255,255,.45);
+  border-radius:8px;padding:6px 12px;color:#fff;background:#1559a3;
+}
+.sf-mobile-captions-outside .sf-mobile-caption-enable[hidden]{display:none!important}
+.subtitle-video-wrap.sf-external-caption-mode .sf-mobile-caption-area{display:none!important}
+.subtitle-video-wrap.sf-external-caption-mode .sf-touch-video-controls{
+  border-radius:0 0 12px 12px!important;
+}
+@media(max-width:480px){
+  .sf-mobile-captions-outside.is-mobile-external{
+    padding:10px 10px 9px;min-height:74px;
+  }
+  .sf-mobile-captions-outside .sf-mobile-caption-line{font-size:17px}
+}
