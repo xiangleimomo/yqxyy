@@ -67,9 +67,13 @@ def validated_payload(row, folder):
         raise ValueError("Audio source does not belong to this episode")
     if digest(vtt)!=track.get("subtitleSha256"):
         raise ValueError("New VTT checksum differs from aligned words")
-    if not vtt.startswith("WEBVTT\n\n"):
+    if not vtt.startswith("WEBVTT
+
+"):
         raise ValueError("New captions are not WebVTT")
-    blocks=[x for x in re.split(r"\n\s*\n",vtt.strip()) if " --> " in x]
+    blocks=[x for x in re.split(r"
+\s*
+",vtt.strip()) if " --> " in x]
     if len(blocks)!=track.get("cueCount") or len(blocks)!=len(track.get("cues",[])):
         raise ValueError("Cue counts differ")
     flattened=[]
@@ -102,7 +106,24 @@ def validated_payload(row, folder):
             total_speech+=word["source"]=="speech"
             flattened.append(word["text"])
             last=a
-    # Captioned words must be an in-order subsequence of the official XML.\n    # Unaligned words may be omitted but must never be silently timestamped.\n    cursor=0\n    for token in flattened:\n        while cursor<len(canonical) and canonical[cursor]!=token:\n            cursor+=1\n        if cursor>=len(canonical):\n            raise ValueError("Caption contains words outside ordered official XML")\n        cursor+=1\n    if (track.get("totalWords")!=len(canonical) or\n            track.get("captionedWords")!=len(flattened) or\n            track.get("omittedUnalignedWords")!=len(canonical)-len(flattened) or\n            track.get("speechMatchedWords")!=total_speech):\n        raise ValueError("Word totals inconsistent")\n    if total_speech/max(1,len(canonical))<.90:\n        raise ValueError("Forced acoustic alignment below threshold")\n    if report.get("suspiciousLongWordSpans"):\n        raise ValueError("Known abnormal spans")
+    # Captioned words must be an in-order subsequence of the official XML.
+    # Unaligned words may be omitted but must never be silently timestamped.
+    cursor=0
+    for token in flattened:
+        while cursor<len(canonical) and canonical[cursor]!=token:
+            cursor+=1
+        if cursor>=len(canonical):
+            raise ValueError("Caption contains words outside ordered official XML")
+        cursor+=1
+    if (track.get("totalWords")!=len(canonical) or
+            track.get("captionedWords")!=len(flattened) or
+            track.get("omittedUnalignedWords")!=len(canonical)-len(flattened) or
+            track.get("speechMatchedWords")!=total_speech):
+        raise ValueError("Word totals inconsistent")
+    if total_speech/max(1,len(canonical))<.90:
+        raise ValueError("Forced acoustic alignment below threshold")
+    if report.get("suspiciousLongWordSpans"):
+        raise ValueError("Known abnormal spans")
     return vtt,word_text,{"cues":len(blocks),"words":len(flattened),
                           "xmlTextVerified":True,"xmlParagraphs":checked["paragraphs"],
                           "speechWords":total_speech,"coverage":round(total_speech/len(canonical),4),"omittedWords":len(canonical)-len(flattened)}
@@ -142,10 +163,12 @@ def main():
         "success":successes,"failures":failures}
     reports=ROOT/"reports"
     reports.mkdir(parents=True,exist_ok=True)
-    (reports/"whisperx-read-batch-latest.json").write_text(json.dumps(output,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    (reports/"whisperx-read-batch-latest.json").write_text(json.dumps(output,ensure_ascii=False,indent=2)+"
+",encoding="utf-8")
     history=reports/"whisperx-read-batches"
     history.mkdir(parents=True,exist_ok=True)
-    (history/f"{args.run_id}.json").write_text(json.dumps(output,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    (history/f"{args.run_id}.json").write_text(json.dumps(output,ensure_ascii=False,indent=2)+"
+",encoding="utf-8")
     failed_path=reports/"whisperx-read-failures.json"
     old={}
     if failed_path.is_file():
@@ -155,7 +178,8 @@ def main():
         except (ValueError,KeyError,TypeError):pass
     for success in successes:old.pop((success["seriesId"],success["episodeId"]),None)
     for failure in failures:old[(failure["seriesId"],failure["episodeId"])]=failure
-    failed_path.write_text(json.dumps({"failures":list(old.values())},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    failed_path.write_text(json.dumps({"failures":list(old.values())},ensure_ascii=False,indent=2)+"
+",encoding="utf-8")
     print(json.dumps({k:v for k,v in output.items() if k not in ("success","failures")},ensure_ascii=False,indent=2))
     # Do not fail the publishing job for one rejected episode: the quality gate
     # withheld that episode's files, while the report identifies it for retry.
