@@ -1,1 +1,3751 @@
-{"seriesId":"journey-to-the-west","episodeId":14,"sourceContentId":"C0006434","mediaPath":"/contents_5/hls/720/022b1f276e/1703738210e7ba053d8ba932b77348b3987ea0e40b/stream.m3u8","mediaFingerprint":"746a62bdf96d2aa1e33b129e0868ac87e392d0f6929435087fea3df96997ff66","subtitleSha256":"46caa23d13dc16d0c8d3e8ab021419d0e6a02ac75ef177b1b0fb038252ae1936","method":"matched-asr-word-anchors-with-interpolation","recognizer":"faster-whisper tiny.en int8","cueCount":75,"totalWords":581,"speechMatchedWords":366,"speechMatchedFraction":0.6299,"cues":[{"words":[{"text":"The","startMs":12170,"endMs":12350,"source":"speech"},{"text":"Tang","startMs":12350,"endMs":12670,"source":"speech"},{"text":"Monk","startMs":12670,"endMs":13090,"source":"speech"},{"text":"trembled","startMs":13090,"endMs":13530,"source":"speech"},{"text":"with","startMs":13530,"endMs":13890,"source":"speech"},{"text":"fear.","startMs":13890,"endMs":14290,"source":"speech"}]},{"words":[{"text":"The","startMs":15619,"endMs":15702,"source":"estimated"},{"text":"angry","startMs":15702,"endMs":15810,"source":"estimated"},{"text":"voice","startMs":15810,"endMs":16250,"source":"speech"},{"text":"spoke","startMs":16250,"endMs":16530,"source":"speech"},{"text":"again.","startMs":16530,"endMs":17190,"source":"speech"}]},{"words":[{"text":"\"Who","startMs":17837,"endMs":18406,"source":"estimated"},{"text":"is","startMs":17837,"endMs":18130,"source":"speech"},{"text":"walking","startMs":18130,"endMs":18530,"source":"speech"},{"text":"on","startMs":18530,"endMs":18830,"source":"speech"},{"text":"my","startMs":18830,"endMs":19090,"source":"speech"},{"text":"mountain?\"","startMs":19090,"endMs":19690,"source":"speech"}]},{"words":[{"text":"\"Ahh!\"","startMs":21253,"endMs":21479,"source":"estimated"},{"text":"cried","startMs":21479,"endMs":21770,"source":"estimated"},{"text":"the","startMs":21770,"endMs":22010,"source":"speech"},{"text":"Tang","startMs":22010,"endMs":22290,"source":"speech"},{"text":"Monk.","startMs":22290,"endMs":22670,"source":"speech"}]},{"words":[{"text":"He","startMs":23802,"endMs":23847,"source":"estimated"},{"text":"fell","startMs":23847,"endMs":23910,"source":"estimated"},{"text":"off","startMs":23910,"endMs":24110,"source":"speech"},{"text":"his","startMs":24110,"endMs":24330,"source":"speech"},{"text":"horse","startMs":24330,"endMs":24650,"source":"speech"},{"text":"and","startMs":24650,"endMs":24990,"source":"speech"},{"text":"tumbled","startMs":24990,"endMs":25310,"source":"speech"},{"text":"down","startMs":25310,"endMs":25730,"source":"speech"},{"text":"the","startMs":25730,"endMs":25890,"source":"speech"},{"text":"mountain.","startMs":25890,"endMs":26230,"source":"speech"}]},{"words":[{"text":"At","startMs":30963,"endMs":31404,"source":"estimated"},{"text":"the","startMs":31404,"endMs":31945,"source":"estimated"},{"text":"bottom","startMs":31404,"endMs":31405,"source":"speech"},{"text":"he","startMs":31580,"endMs":31760,"source":"speech"},{"text":"saw","startMs":31760,"endMs":32080,"source":"speech"},{"text":"a","startMs":32080,"endMs":32460,"source":"speech"},{"text":"crack","startMs":33910,"endMs":34402,"source":"estimated"},{"text":"between","startMs":33910,"endMs":33911,"source":"speech"},{"text":"the","startMs":33910,"endMs":33911,"source":"speech"},{"text":"rocks.","startMs":33910,"endMs":35876,"source":"estimated"}]},{"words":[{"text":"The","startMs":35877,"endMs":36337,"source":"estimated"},{"text":"monk","startMs":36337,"endMs":36868,"source":"estimated"},{"text":"looked","startMs":36337,"endMs":36338,"source":"speech"},{"text":"in","startMs":36337,"endMs":36920,"source":"speech"},{"text":"and","startMs":37420,"endMs":37780,"source":"speech"},{"text":"saw","startMs":37780,"endMs":37980,"source":"speech"},{"text":"a","startMs":37980,"endMs":38240,"source":"speech"},{"text":"moss-covered","startMs":38240,"endMs":39320,"source":"estimated"},{"text":"monkey","startMs":39320,"endMs":39640,"source":"speech"},{"text":"peering","startMs":39640,"endMs":40260,"source":"speech"},{"text":"out","startMs":40260,"endMs":40620,"source":"speech"},{"text":"at","startMs":40620,"endMs":40820,"source":"speech"},{"text":"him.","startMs":40820,"endMs":41660,"source":"speech"}]},{"words":[{"text":"\"My","startMs":42324,"endMs":42380,"source":"estimated"},{"text":"name","startMs":42380,"endMs":42460,"source":"estimated"},{"text":"is","startMs":42460,"endMs":42720,"source":"speech"},{"text":"Sun","startMs":42720,"endMs":43167,"source":"estimated"},{"text":"Wukong,\"","startMs":43167,"endMs":43800,"source":"estimated"},{"text":"said","startMs":43800,"endMs":44000,"source":"speech"},{"text":"the","startMs":44000,"endMs":44200,"source":"speech"},{"text":"monkey.","startMs":44200,"endMs":44540,"source":"speech"}]},{"words":[{"text":"\"I","startMs":45733,"endMs":45744,"source":"estimated"},{"text":"am","startMs":45744,"endMs":45760,"source":"estimated"},{"text":"king","startMs":45760,"endMs":46040,"source":"speech"},{"text":"of","startMs":46040,"endMs":46200,"source":"speech"},{"text":"the","startMs":46200,"endMs":46400,"source":"speech"},{"text":"Fruit","startMs":46400,"endMs":46560,"source":"speech"},{"text":"and","startMs":46560,"endMs":46800,"source":"speech"},{"text":"Flower","startMs":46800,"endMs":47040,"source":"speech"},{"text":"Mountain.\"","startMs":47040,"endMs":47640,"source":"speech"}]},{"words":[{"text":"\"Why","startMs":49449,"endMs":49454,"source":"estimated"},{"text":"are","startMs":49454,"endMs":49460,"source":"estimated"},{"text":"you","startMs":49460,"endMs":49620,"source":"speech"},{"text":"in","startMs":49620,"endMs":49820,"source":"speech"},{"text":"there?\"","startMs":49820,"endMs":50160,"source":"speech"},{"text":"asked","startMs":50160,"endMs":50660,"source":"estimated"},{"text":"the","startMs":50660,"endMs":50940,"source":"speech"},{"text":"Tang","startMs":50940,"endMs":51180,"source":"speech"},{"text":"Monk.","startMs":51180,"endMs":51460,"source":"speech"}]},{"words":[{"text":"He","startMs":52442,"endMs":53217,"source":"estimated"},{"text":"stood","startMs":52442,"endMs":52480,"source":"speech"},{"text":"up.","startMs":52480,"endMs":53380,"source":"speech"}]},{"words":[{"text":"\"Buddha","startMs":54768,"endMs":54787,"source":"estimated"},{"text":"put","startMs":54787,"endMs":54800,"source":"estimated"},{"text":"me","startMs":54800,"endMs":55000,"source":"speech"},{"text":"here,\"","startMs":55000,"endMs":55540,"source":"speech"},{"text":"said","startMs":55760,"endMs":55820,"source":"speech"},{"text":"Wukong.","startMs":55820,"endMs":56320,"source":"speech"}]},{"words":[{"text":"\"I","startMs":57575,"endMs":57589,"source":"estimated"},{"text":"am","startMs":57589,"endMs":57609,"source":"estimated"},{"text":"being","startMs":57609,"endMs":57640,"source":"estimated"},{"text":"punished","startMs":57640,"endMs":57940,"source":"speech"},{"text":"for","startMs":57940,"endMs":58220,"source":"speech"},{"text":"causing","startMs":58220,"endMs":58540,"source":"speech"},{"text":"trouble","startMs":58540,"endMs":58880,"source":"speech"},{"text":"in","startMs":58880,"endMs":59120,"source":"speech"},{"text":"Heaven.","startMs":59120,"endMs":59440,"source":"speech"}]},{"words":[{"text":"Who","startMs":60687,"endMs":61283,"source":"estimated"},{"text":"are","startMs":61283,"endMs":61879,"source":"estimated"},{"text":"you?\"","startMs":61283,"endMs":61284,"source":"speech"}]},{"words":[{"text":"\"I'm","startMs":62477,"endMs":62495,"source":"estimated"},{"text":"just","startMs":62495,"endMs":62520,"source":"estimated"},{"text":"a","startMs":62520,"endMs":62640,"source":"speech"},{"text":"monk,\"","startMs":62640,"endMs":62880,"source":"speech"},{"text":"said","startMs":62880,"endMs":63568,"source":"estimated"},{"text":"the","startMs":63568,"endMs":64164,"source":"estimated"},{"text":"Tang","startMs":64164,"endMs":64853,"source":"estimated"},{"text":"Monk.","startMs":64853,"endMs":65541,"source":"estimated"}]},{"words":[{"text":"\"I'm","startMs":65542,"endMs":65819,"source":"estimated"},{"text":"going","startMs":65819,"endMs":66258,"source":"estimated"},{"text":"to","startMs":65819,"endMs":65820,"source":"speech"},{"text":"the","startMs":65819,"endMs":65880,"source":"speech"},{"text":"Western","startMs":65880,"endMs":66120,"source":"speech"},{"text":"Paradise","startMs":66120,"endMs":66440,"source":"speech"},{"text":"to","startMs":66440,"endMs":66700,"source":"speech"},{"text":"get","startMs":66700,"endMs":66920,"source":"speech"},{"text":"scriptures","startMs":66920,"endMs":67200,"source":"speech"},{"text":"from","startMs":67200,"endMs":68700,"source":"speech"},{"text":"Buddha.\"","startMs":68700,"endMs":69481,"source":"estimated"}]},{"words":[{"text":"Wukong","startMs":69482,"endMs":70141,"source":"estimated"},{"text":"gasped.","startMs":70141,"endMs":70800,"source":"estimated"},{"text":"\"You're","startMs":70800,"endMs":71220,"source":"speech"},{"text":"the","startMs":71220,"endMs":71480,"source":"speech"},{"text":"Tang","startMs":71480,"endMs":71780,"source":"speech"},{"text":"Monk!\"","startMs":71780,"endMs":72260,"source":"speech"},{"text":"he","startMs":72480,"endMs":72700,"source":"speech"},{"text":"cried.","startMs":72700,"endMs":73160,"source":"speech"}]},{"words":[{"text":"\"I'm","startMs":74240,"endMs":74253,"source":"estimated"},{"text":"supposed","startMs":74253,"endMs":74280,"source":"estimated"},{"text":"to","startMs":74280,"endMs":74460,"source":"speech"},{"text":"go","startMs":74460,"endMs":74640,"source":"speech"},{"text":"with","startMs":74640,"endMs":74840,"source":"speech"},{"text":"you!\"","startMs":74840,"endMs":75100,"source":"speech"}]},{"words":[{"text":"The","startMs":77072,"endMs":77150,"source":"estimated"},{"text":"Tang","startMs":77150,"endMs":77240,"source":"estimated"},{"text":"Monk","startMs":77240,"endMs":77680,"source":"speech"},{"text":"took","startMs":77680,"endMs":77960,"source":"speech"},{"text":"a","startMs":77960,"endMs":78220,"source":"speech"},{"text":"step","startMs":78220,"endMs":78400,"source":"speech"},{"text":"back.","startMs":78400,"endMs":78820,"source":"speech"}]},{"words":[{"text":"Was","startMs":80139,"endMs":80242,"source":"estimated"},{"text":"this","startMs":80242,"endMs":80360,"source":"estimated"},{"text":"strange","startMs":80360,"endMs":80780,"source":"speech"},{"text":"monkey","startMs":80780,"endMs":81180,"source":"speech"},{"text":"telling","startMs":81180,"endMs":81540,"source":"speech"},{"text":"the","startMs":81540,"endMs":81780,"source":"speech"},{"text":"truth?","startMs":81780,"endMs":82380,"source":"speech"}]},{"words":[{"text":"\"The","startMs":84040,"endMs":84207,"source":"estimated"},{"text":"bodhisattva","startMs":84207,"endMs":84525,"source":"estimated"},{"text":"Guanyin","startMs":84525,"endMs":84780,"source":"estimated"},{"text":"visited","startMs":84780,"endMs":85060,"source":"speech"},{"text":"me,\"","startMs":85060,"endMs":85640,"source":"speech"},{"text":"Wukong","startMs":85640,"endMs":86140,"source":"estimated"},{"text":"went","startMs":86140,"endMs":86340,"source":"speech"},{"text":"on.","startMs":86340,"endMs":86880,"source":"speech"}]},{"words":[{"text":"\"She","startMs":88411,"endMs":88679,"source":"estimated"},{"text":"said","startMs":88679,"endMs":88988,"source":"estimated"},{"text":"I'd","startMs":88679,"endMs":88680,"source":"speech"},{"text":"be","startMs":88679,"endMs":88760,"source":"speech"},{"text":"set","startMs":88760,"endMs":88980,"source":"estimated"},{"text":"free","startMs":88980,"endMs":89260,"source":"speech"},{"text":"if","startMs":89260,"endMs":89520,"source":"speech"},{"text":"I","startMs":89520,"endMs":89820,"source":"speech"},{"text":"promise","startMs":89820,"endMs":90000,"source":"estimated"},{"text":"to","startMs":90000,"endMs":90220,"source":"speech"},{"text":"protect","startMs":90220,"endMs":90460,"source":"speech"},{"text":"you","startMs":90460,"endMs":90720,"source":"speech"},{"text":"on","startMs":90720,"endMs":90860,"source":"speech"},{"text":"the","startMs":90860,"endMs":91680,"source":"speech"},{"text":"journey.","startMs":91680,"endMs":92744,"source":"estimated"}]},{"words":[{"text":"Set","startMs":92745,"endMs":92753,"source":"estimated"},{"text":"me","startMs":92753,"endMs":92760,"source":"estimated"},{"text":"free,","startMs":92760,"endMs":93220,"source":"speech"},{"text":"and","startMs":93240,"endMs":93360,"source":"speech"},{"text":"I'll","startMs":93360,"endMs":93540,"source":"speech"},{"text":"go","startMs":93540,"endMs":93740,"source":"speech"},{"text":"with","startMs":93740,"endMs":93860,"source":"speech"},{"text":"you","startMs":93860,"endMs":94000,"source":"speech"},{"text":"to","startMs":94000,"endMs":94160,"source":"speech"},{"text":"the","startMs":94160,"endMs":94240,"source":"speech"},{"text":"west.\"","startMs":94240,"endMs":94860,"source":"speech"}]},{"words":[{"text":"The","startMs":96024,"endMs":96078,"source":"estimated"},{"text":"Tang","startMs":96078,"endMs":96140,"source":"estimated"},{"text":"Monk","startMs":96140,"endMs":96420,"source":"speech"},{"text":"relaxed.","startMs":96420,"endMs":96980,"source":"speech"}]},{"words":[{"text":"He","startMs":98735,"endMs":99036,"source":"estimated"},{"text":"looked","startMs":99036,"endMs":99557,"source":"estimated"},{"text":"at","startMs":99036,"endMs":99037,"source":"speech"},{"text":"the","startMs":99036,"endMs":99060,"source":"speech"},{"text":"rocks.","startMs":99060,"endMs":99440,"source":"speech"}]},{"words":[{"text":"\"How","startMs":100792,"endMs":100796,"source":"estimated"},{"text":"can","startMs":100796,"endMs":100800,"source":"estimated"},{"text":"I","startMs":100800,"endMs":101020,"source":"speech"},{"text":"free","startMs":101020,"endMs":101240,"source":"speech"},{"text":"you?\"","startMs":101240,"endMs":101720,"source":"speech"}]},{"words":[{"text":"\"There's","startMs":102688,"endMs":103025,"source":"estimated"},{"text":"a","startMs":102688,"endMs":102760,"source":"speech"},{"text":"small","startMs":102760,"endMs":103000,"source":"speech"},{"text":"piece","startMs":103000,"endMs":103180,"source":"speech"},{"text":"of","startMs":103180,"endMs":103480,"source":"speech"},{"text":"paper","startMs":103480,"endMs":103600,"source":"speech"},{"text":"on","startMs":103600,"endMs":103780,"source":"speech"},{"text":"top","startMs":103780,"endMs":104020,"source":"speech"},{"text":"of","startMs":104020,"endMs":104100,"source":"speech"},{"text":"this","startMs":104100,"endMs":104280,"source":"speech"},{"text":"mountain,\"","startMs":104280,"endMs":104680,"source":"speech"},{"text":"said","startMs":105140,"endMs":105220,"source":"speech"},{"text":"Wukong.","startMs":105220,"endMs":105720,"source":"speech"}]},{"words":[{"text":"\"You","startMs":107076,"endMs":108577,"source":"estimated"},{"text":"must","startMs":107076,"endMs":107340,"source":"speech"},{"text":"remove","startMs":107340,"endMs":107620,"source":"speech"},{"text":"it.\"","startMs":107620,"endMs":108180,"source":"speech"}]},{"words":[{"text":"The","startMs":113083,"endMs":113147,"source":"estimated"},{"text":"Tang","startMs":113147,"endMs":113220,"source":"estimated"},{"text":"Monk","startMs":113220,"endMs":113560,"source":"speech"},{"text":"went","startMs":113560,"endMs":113880,"source":"speech"},{"text":"back","startMs":113880,"endMs":114160,"source":"speech"},{"text":"up","startMs":114160,"endMs":114380,"source":"speech"},{"text":"the","startMs":114380,"endMs":114540,"source":"speech"},{"text":"mountain.","startMs":114540,"endMs":114840,"source":"speech"}]},{"words":[{"text":"He","startMs":116339,"endMs":116376,"source":"estimated"},{"text":"pushed","startMs":116376,"endMs":116440,"source":"estimated"},{"text":"aside","startMs":116440,"endMs":117040,"source":"speech"},{"text":"shrubs","startMs":117040,"endMs":117400,"source":"speech"},{"text":"and","startMs":117400,"endMs":117720,"source":"speech"},{"text":"brambles","startMs":117720,"endMs":118240,"source":"speech"},{"text":"and","startMs":118240,"endMs":118600,"source":"speech"},{"text":"pulled","startMs":118600,"endMs":118780,"source":"speech"},{"text":"himself","startMs":118780,"endMs":119220,"source":"speech"},{"text":"over","startMs":119220,"endMs":119600,"source":"speech"},{"text":"large","startMs":119600,"endMs":120000,"source":"speech"},{"text":"boulders.","startMs":120000,"endMs":120700,"source":"speech"}]},{"words":[{"text":"Finally","startMs":127439,"endMs":127580,"source":"estimated"},{"text":"he","startMs":127580,"endMs":127980,"source":"speech"},{"text":"reached","startMs":127980,"endMs":128240,"source":"speech"},{"text":"the","startMs":128240,"endMs":128800,"source":"speech"},{"text":"mountain's","startMs":128800,"endMs":129220,"source":"speech"},{"text":"peak.","startMs":129220,"endMs":129360,"source":"speech"}]},{"words":[{"text":"The","startMs":136115,"endMs":136506,"source":"estimated"},{"text":"monk","startMs":136506,"endMs":136957,"source":"estimated"},{"text":"picked","startMs":136506,"endMs":136507,"source":"speech"},{"text":"up","startMs":136506,"endMs":136580,"source":"speech"},{"text":"the","startMs":136580,"endMs":137520,"source":"speech"},{"text":"paper.","startMs":137520,"endMs":138641,"source":"estimated"}]},{"words":[{"text":"Right","startMs":138642,"endMs":139115,"source":"estimated"},{"text":"away","startMs":138642,"endMs":138880,"source":"speech"},{"text":"a","startMs":138880,"endMs":139140,"source":"speech"},{"text":"breeze","startMs":139140,"endMs":139640,"source":"speech"},{"text":"swept","startMs":139640,"endMs":140040,"source":"speech"},{"text":"it","startMs":140040,"endMs":140300,"source":"speech"},{"text":"from","startMs":140300,"endMs":140440,"source":"speech"},{"text":"his","startMs":140440,"endMs":140680,"source":"speech"},{"text":"hand.","startMs":140680,"endMs":141050,"source":"speech"}]},{"words":[{"text":"The","startMs":142903,"endMs":142954,"source":"estimated"},{"text":"paper","startMs":142954,"endMs":143020,"source":"estimated"},{"text":"floated","startMs":143020,"endMs":143460,"source":"speech"},{"text":"up","startMs":143460,"endMs":143820,"source":"speech"},{"text":"and","startMs":143820,"endMs":143940,"source":"speech"},{"text":"then","startMs":143940,"endMs":144240,"source":"speech"},{"text":"disappeared","startMs":144240,"endMs":144680,"source":"speech"},{"text":"among","startMs":144680,"endMs":144980,"source":"speech"},{"text":"the","startMs":144980,"endMs":145200,"source":"speech"},{"text":"clouds.","startMs":145200,"endMs":145740,"source":"speech"}]},{"words":[{"text":"The","startMs":147671,"endMs":147722,"source":"estimated"},{"text":"monk","startMs":147722,"endMs":147780,"source":"estimated"},{"text":"hurried","startMs":147780,"endMs":148020,"source":"speech"},{"text":"back","startMs":148020,"endMs":148380,"source":"speech"},{"text":"down","startMs":148380,"endMs":148640,"source":"speech"},{"text":"the","startMs":148640,"endMs":148800,"source":"speech"},{"text":"mountain.","startMs":148800,"endMs":149340,"source":"speech"}]},{"words":[{"text":"\"The","startMs":152202,"endMs":152580,"source":"estimated"},{"text":"paper","startMs":152580,"endMs":153069,"source":"estimated"},{"text":"floated","startMs":152580,"endMs":152581,"source":"speech"},{"text":"away,\"","startMs":152580,"endMs":152920,"source":"speech"},{"text":"he","startMs":152920,"endMs":153340,"source":"speech"},{"text":"said","startMs":153340,"endMs":153560,"source":"speech"},{"text":"to","startMs":153560,"endMs":153680,"source":"speech"},{"text":"the","startMs":153680,"endMs":153840,"source":"speech"},{"text":"monkey.","startMs":153840,"endMs":154210,"source":"speech"}]},{"words":[{"text":"\"It","startMs":156107,"endMs":156145,"source":"estimated"},{"text":"returned","startMs":156145,"endMs":156220,"source":"estimated"},{"text":"to","startMs":156220,"endMs":156480,"source":"speech"},{"text":"Buddha,\"","startMs":156480,"endMs":156940,"source":"speech"},{"text":"said","startMs":156940,"endMs":157300,"source":"speech"},{"text":"Wukong.","startMs":157300,"endMs":157940,"source":"speech"}]},{"words":[{"text":"\"Now","startMs":158777,"endMs":158825,"source":"estimated"},{"text":"step","startMs":158825,"endMs":158880,"source":"estimated"},{"text":"back.\"","startMs":158880,"endMs":159420,"source":"speech"}]},{"words":[{"text":"The","startMs":160455,"endMs":160532,"source":"estimated"},{"text":"Tang","startMs":160532,"endMs":160620,"source":"estimated"},{"text":"Monk","startMs":160620,"endMs":161000,"source":"speech"},{"text":"took","startMs":161000,"endMs":161180,"source":"speech"},{"text":"a","startMs":161180,"endMs":161460,"source":"speech"},{"text":"step","startMs":161460,"endMs":161680,"source":"speech"},{"text":"back.","startMs":161680,"endMs":162050,"source":"speech"}]},{"words":[{"text":"\"Go","startMs":164607,"endMs":165326,"source":"estimated"},{"text":"farther,\"","startMs":164607,"endMs":164920,"source":"speech"},{"text":"said","startMs":164920,"endMs":165420,"source":"speech"},{"text":"Wukong.","startMs":165420,"endMs":166020,"source":"speech"}]},{"words":[{"text":"The","startMs":167486,"endMs":167904,"source":"estimated"},{"text":"monk","startMs":167904,"endMs":168386,"source":"estimated"},{"text":"took","startMs":167904,"endMs":167905,"source":"speech"},{"text":"another","startMs":167904,"endMs":168120,"source":"speech"},{"text":"step","startMs":168120,"endMs":168380,"source":"speech"},{"text":"back.","startMs":168380,"endMs":169520,"source":"speech"}]},{"words":[{"text":"\"Go","startMs":170188,"endMs":171247,"source":"estimated"},{"text":"farther,\"","startMs":170188,"endMs":170560,"source":"speech"},{"text":"said","startMs":171120,"endMs":171200,"source":"speech"},{"text":"Wukong","startMs":171200,"endMs":171620,"source":"speech"},{"text":"again.","startMs":171620,"endMs":172060,"source":"speech"}]},{"words":[{"text":"The","startMs":175486,"endMs":175530,"source":"estimated"},{"text":"Tang","startMs":175530,"endMs":175580,"source":"estimated"},{"text":"Monk","startMs":175580,"endMs":175840,"source":"speech"},{"text":"went","startMs":175840,"endMs":176220,"source":"speech"},{"text":"far","startMs":176220,"endMs":176580,"source":"speech"},{"text":"from","startMs":176580,"endMs":176900,"source":"speech"},{"text":"the","startMs":176900,"endMs":177580,"source":"speech"},{"text":"mountain.","startMs":177580,"endMs":179509,"source":"estimated"}]},{"words":[{"text":"He","startMs":179510,"endMs":179602,"source":"estimated"},{"text":"gasped","startMs":179602,"endMs":179760,"source":"estimated"},{"text":"as","startMs":179760,"endMs":180280,"source":"speech"},{"text":"the","startMs":180280,"endMs":180560,"source":"speech"},{"text":"entire","startMs":180560,"endMs":181020,"source":"speech"},{"text":"mountain","startMs":181020,"endMs":181500,"source":"speech"},{"text":"rose","startMs":181500,"endMs":181980,"source":"speech"},{"text":"into","startMs":181980,"endMs":182300,"source":"speech"},{"text":"the","startMs":182300,"endMs":182560,"source":"speech"},{"text":"air.","startMs":182560,"endMs":183120,"source":"speech"}]},{"words":[{"text":"Wukong","startMs":184545,"endMs":184660,"source":"estimated"},{"text":"stood","startMs":184660,"endMs":184920,"source":"speech"},{"text":"under","startMs":184920,"endMs":185180,"source":"speech"},{"text":"the","startMs":185180,"endMs":185360,"source":"speech"},{"text":"mountain,","startMs":185360,"endMs":185720,"source":"speech"},{"text":"holding","startMs":185720,"endMs":186380,"source":"speech"},{"text":"it","startMs":186380,"endMs":186600,"source":"speech"},{"text":"up","startMs":186600,"endMs":186800,"source":"speech"},{"text":"with","startMs":186800,"endMs":186960,"source":"speech"},{"text":"his","startMs":186960,"endMs":187160,"source":"speech"},{"text":"hands.","startMs":187160,"endMs":187840,"source":"speech"}]},{"words":[{"text":"He","startMs":190154,"endMs":190942,"source":"estimated"},{"text":"jumped","startMs":190154,"endMs":190270,"source":"speech"},{"text":"out,","startMs":190270,"endMs":190730,"source":"speech"},{"text":"and","startMs":190730,"endMs":191130,"source":"speech"},{"text":"the","startMs":191130,"endMs":191270,"source":"speech"},{"text":"mountain","startMs":191270,"endMs":191730,"source":"speech"},{"text":"crashed","startMs":191730,"endMs":192210,"source":"speech"},{"text":"down","startMs":192210,"endMs":192570,"source":"speech"},{"text":"behind","startMs":192570,"endMs":192970,"source":"speech"},{"text":"him.","startMs":192970,"endMs":193630,"source":"speech"}]},{"words":[{"text":"Wukong","startMs":198042,"endMs":198584,"source":"estimated"},{"text":"grabbed","startMs":198042,"endMs":198440,"source":"speech"},{"text":"the","startMs":198440,"endMs":198820,"source":"speech"},{"text":"Tang","startMs":198820,"endMs":198940,"source":"speech"},{"text":"Monk's","startMs":198940,"endMs":199800,"source":"speech"},{"text":"hands.","startMs":199800,"endMs":201298,"source":"estimated"}]},{"words":[{"text":"\"Thank","startMs":201299,"endMs":201311,"source":"estimated"},{"text":"you,","startMs":201311,"endMs":201320,"source":"estimated"},{"text":"Master!","startMs":201320,"endMs":201580,"source":"speech"},{"text":"I","startMs":202060,"endMs":202220,"source":"speech"},{"text":"will","startMs":202220,"endMs":202400,"source":"speech"},{"text":"help","startMs":202400,"endMs":202580,"source":"speech"},{"text":"you","startMs":202580,"endMs":202780,"source":"speech"},{"text":"reach","startMs":202780,"endMs":203000,"source":"speech"},{"text":"the","startMs":203000,"endMs":203520,"source":"speech"},{"text":"Western","startMs":203520,"endMs":203600,"source":"speech"},{"text":"Paradise.\"","startMs":203600,"endMs":204380,"source":"speech"}]},{"words":[{"text":"The","startMs":206666,"endMs":206682,"source":"estimated"},{"text":"Tang","startMs":206682,"endMs":206700,"source":"estimated"},{"text":"Monk","startMs":206700,"endMs":207040,"source":"speech"},{"text":"rode","startMs":207040,"endMs":207420,"source":"speech"},{"text":"the","startMs":207420,"endMs":207660,"source":"speech"},{"text":"horse","startMs":207660,"endMs":207900,"source":"speech"},{"text":"as","startMs":207900,"endMs":208120,"source":"speech"},{"text":"Wukong","startMs":208120,"endMs":208560,"source":"speech"},{"text":"walked.","startMs":208560,"endMs":208980,"source":"speech"}]},{"words":[{"text":"The","startMs":210427,"endMs":210753,"source":"estimated"},{"text":"monkey","startMs":210753,"endMs":211214,"source":"estimated"},{"text":"told","startMs":210753,"endMs":210754,"source":"speech"},{"text":"the","startMs":210753,"endMs":210860,"source":"speech"},{"text":"monk","startMs":210860,"endMs":211000,"source":"speech"},{"text":"about","startMs":211000,"endMs":211360,"source":"speech"},{"text":"himself.","startMs":211360,"endMs":212080,"source":"speech"}]},{"words":[{"text":"\"The","startMs":213185,"endMs":213706,"source":"estimated"},{"text":"Jade","startMs":213706,"endMs":214307,"source":"estimated"},{"text":"Emperor's","startMs":213706,"endMs":213740,"source":"speech"},{"text":"entire","startMs":213740,"endMs":214180,"source":"speech"},{"text":"army","startMs":214180,"endMs":214520,"source":"speech"},{"text":"couldn't","startMs":214520,"endMs":214860,"source":"speech"},{"text":"defeat","startMs":214860,"endMs":215100,"source":"speech"},{"text":"me.\"","startMs":215100,"endMs":215700,"source":"speech"},{"text":"He","startMs":216140,"endMs":216420,"source":"speech"},{"text":"laughed.","startMs":216420,"endMs":216760,"source":"speech"}]},{"words":[{"text":"\"So","startMs":218797,"endMs":219184,"source":"estimated"},{"text":"I","startMs":219184,"endMs":219457,"source":"estimated"},{"text":"said","startMs":219184,"endMs":219185,"source":"speech"},{"text":"I","startMs":219184,"endMs":219380,"source":"speech"},{"text":"should","startMs":219380,"endMs":219560,"source":"speech"},{"text":"be","startMs":219560,"endMs":219840,"source":"speech"},{"text":"in","startMs":219840,"endMs":219880,"source":"speech"},{"text":"charge","startMs":219880,"endMs":220100,"source":"speech"},{"text":"of","startMs":220100,"endMs":220340,"source":"speech"},{"text":"Heaven.\"","startMs":220340,"endMs":220620,"source":"speech"}]},{"words":[{"text":"\"What","startMs":222099,"endMs":222507,"source":"estimated"},{"text":"powers","startMs":222099,"endMs":222260,"source":"speech"},{"text":"do","startMs":222260,"endMs":222500,"source":"speech"},{"text":"you","startMs":222500,"endMs":222560,"source":"speech"},{"text":"have?\"","startMs":222560,"endMs":223020,"source":"speech"},{"text":"asked","startMs":223020,"endMs":223540,"source":"estimated"},{"text":"the","startMs":223540,"endMs":223800,"source":"speech"},{"text":"Tang","startMs":223800,"endMs":224020,"source":"speech"},{"text":"Monk.","startMs":224020,"endMs":224420,"source":"speech"}]},{"words":[{"text":"\"I","startMs":225780,"endMs":226296,"source":"estimated"},{"text":"can","startMs":226296,"endMs":227190,"source":"estimated"},{"text":"become","startMs":226296,"endMs":226297,"source":"speech"},{"text":"other","startMs":226296,"endMs":226297,"source":"speech"},{"text":"animals,\"","startMs":226296,"endMs":226700,"source":"speech"},{"text":"said","startMs":227360,"endMs":227440,"source":"speech"},{"text":"Wukong.","startMs":227440,"endMs":227940,"source":"speech"},{"text":"\"Watch","startMs":227940,"endMs":229220,"source":"speech"},{"text":"this!\"","startMs":229220,"endMs":229940,"source":"speech"}]},{"words":[{"text":"He","startMs":232129,"endMs":232453,"source":"estimated"},{"text":"quickly","startMs":232453,"endMs":233058,"source":"estimated"},{"text":"changed","startMs":233058,"endMs":233664,"source":"estimated"},{"text":"into","startMs":233664,"endMs":234121,"source":"estimated"},{"text":"a","startMs":234121,"endMs":234350,"source":"estimated"},{"text":"tiger.","startMs":234350,"endMs":234862,"source":"estimated"}]},{"words":[{"text":"The","startMs":234863,"endMs":235302,"source":"estimated"},{"text":"Tang","startMs":235302,"endMs":235810,"source":"estimated"},{"text":"Monk","startMs":235810,"endMs":236317,"source":"estimated"},{"text":"gulped.","startMs":236317,"endMs":236938,"source":"estimated"}]},{"words":[{"text":"Wukong","startMs":236939,"endMs":237498,"source":"estimated"},{"text":"changed","startMs":237498,"endMs":238101,"source":"estimated"},{"text":"into","startMs":238101,"endMs":238557,"source":"estimated"},{"text":"a","startMs":238557,"endMs":238785,"source":"estimated"},{"text":"snake,","startMs":238785,"endMs":239295,"source":"estimated"},{"text":"a","startMs":239295,"endMs":239523,"source":"estimated"},{"text":"vulture,","startMs":239523,"endMs":240126,"source":"estimated"},{"text":"and","startMs":240126,"endMs":240521,"source":"estimated"},{"text":"then","startMs":240521,"endMs":240977,"source":"estimated"},{"text":"back","startMs":240977,"endMs":241434,"source":"estimated"},{"text":"into","startMs":241434,"endMs":241890,"source":"estimated"},{"text":"himself.","startMs":241890,"endMs":242493,"source":"estimated"}]},{"words":[{"text":"\"And","startMs":242494,"endMs":242836,"source":"estimated"},{"text":"that's","startMs":242836,"endMs":243277,"source":"estimated"},{"text":"not","startMs":243277,"endMs":243618,"source":"estimated"},{"text":"all,\"","startMs":243618,"endMs":243960,"source":"estimated"},{"text":"he","startMs":243960,"endMs":244239,"source":"estimated"},{"text":"said.","startMs":244239,"endMs":244633,"source":"estimated"}]},{"words":[{"text":"\"I","startMs":244634,"endMs":245292,"source":"estimated"},{"text":"can","startMs":245292,"endMs":246432,"source":"estimated"},{"text":"grow","startMs":246432,"endMs":247749,"source":"estimated"},{"text":"big!\"","startMs":247749,"endMs":248889,"source":"estimated"}]},{"words":[{"text":"The","startMs":248890,"endMs":249256,"source":"estimated"},{"text":"monkey's","startMs":249256,"endMs":249815,"source":"estimated"},{"text":"body","startMs":249815,"endMs":250237,"source":"estimated"},{"text":"grew","startMs":250237,"endMs":250659,"source":"estimated"},{"text":"so","startMs":250659,"endMs":250958,"source":"estimated"},{"text":"big","startMs":250958,"endMs":251324,"source":"estimated"},{"text":"that","startMs":251324,"endMs":251746,"source":"estimated"},{"text":"his","startMs":251746,"endMs":252112,"source":"estimated"},{"text":"head","startMs":252112,"endMs":252534,"source":"estimated"},{"text":"reached","startMs":252534,"endMs":253093,"source":"estimated"},{"text":"the","startMs":253093,"endMs":253459,"source":"estimated"},{"text":"clouds.","startMs":253459,"endMs":253976,"source":"estimated"}]},{"words":[{"text":"\"And","startMs":253977,"endMs":254456,"source":"estimated"},{"text":"I","startMs":254456,"endMs":254732,"source":"estimated"},{"text":"can","startMs":254732,"endMs":255211,"source":"estimated"},{"text":"become","startMs":255211,"endMs":255889,"source":"estimated"},{"text":"tiny!\"","startMs":255889,"endMs":256442,"source":"estimated"},{"text":"said","startMs":256442,"endMs":256995,"source":"estimated"},{"text":"Wukong.","startMs":256995,"endMs":257672,"source":"estimated"}]},{"words":[{"text":"He","startMs":257673,"endMs":257934,"source":"estimated"},{"text":"shrank","startMs":257934,"endMs":258387,"source":"estimated"},{"text":"to","startMs":258387,"endMs":258649,"source":"estimated"},{"text":"the","startMs":258649,"endMs":258969,"source":"estimated"},{"text":"size","startMs":258969,"endMs":259339,"source":"estimated"},{"text":"of","startMs":259339,"endMs":259600,"source":"estimated"},{"text":"a","startMs":259600,"endMs":259785,"source":"estimated"},{"text":"bee","startMs":259785,"endMs":260105,"source":"estimated"},{"text":"and","startMs":260105,"endMs":260425,"source":"estimated"},{"text":"hopped","startMs":260425,"endMs":260878,"source":"estimated"},{"text":"onto","startMs":260878,"endMs":261248,"source":"estimated"},{"text":"the","startMs":261248,"endMs":261568,"source":"estimated"},{"text":"monk's","startMs":261568,"endMs":261981,"source":"estimated"},{"text":"head.","startMs":261981,"endMs":262351,"source":"estimated"}]},{"words":[{"text":"\"I","startMs":262352,"endMs":262679,"source":"estimated"},{"text":"can","startMs":262679,"endMs":263244,"source":"estimated"},{"text":"do","startMs":263244,"endMs":263706,"source":"estimated"},{"text":"more!\"","startMs":263706,"endMs":264359,"source":"estimated"},{"text":"said","startMs":264359,"endMs":265012,"source":"estimated"},{"text":"Wukong.","startMs":265012,"endMs":265812,"source":"estimated"}]},{"words":[{"text":"He","startMs":265813,"endMs":265885,"source":"estimated"},{"text":"changed","startMs":265885,"endMs":266020,"source":"estimated"},{"text":"back","startMs":266020,"endMs":266520,"source":"speech"},{"text":"to","startMs":266520,"endMs":266660,"source":"speech"},{"text":"his","startMs":266660,"endMs":266880,"source":"speech"},{"text":"normal","startMs":266880,"endMs":267280,"source":"speech"},{"text":"size.","startMs":267280,"endMs":267900,"source":"speech"}]},{"words":[{"text":"His","startMs":269086,"endMs":269204,"source":"estimated"},{"text":"iron","startMs":269204,"endMs":269340,"source":"estimated"},{"text":"bar","startMs":269340,"endMs":269680,"source":"speech"},{"text":"appeared","startMs":269680,"endMs":270200,"source":"speech"},{"text":"from","startMs":270200,"endMs":270520,"source":"speech"},{"text":"his","startMs":270520,"endMs":270740,"source":"speech"},{"text":"ear.","startMs":270740,"endMs":271080,"source":"speech"}]},{"words":[{"text":"The","startMs":274073,"endMs":274432,"source":"estimated"},{"text":"monkey","startMs":274432,"endMs":274940,"source":"estimated"},{"text":"spun","startMs":274432,"endMs":274580,"source":"speech"},{"text":"it","startMs":274580,"endMs":274740,"source":"speech"},{"text":"around","startMs":274740,"endMs":275240,"source":"speech"},{"text":"and","startMs":275240,"endMs":275380,"source":"speech"},{"text":"then","startMs":275380,"endMs":275700,"source":"speech"},{"text":"struck","startMs":275700,"endMs":275860,"source":"speech"},{"text":"a","startMs":275860,"endMs":276140,"source":"speech"},{"text":"huge","startMs":276140,"endMs":276480,"source":"speech"},{"text":"boulder.","startMs":276480,"endMs":277560,"source":"speech"}]},{"words":[{"text":"Smash!","startMs":278846,"endMs":279361,"source":"estimated"},{"text":"The","startMs":279361,"endMs":279760,"source":"estimated"},{"text":"boulder","startMs":279760,"endMs":280140,"source":"speech"},{"text":"exploded","startMs":280140,"endMs":280860,"source":"speech"},{"text":"into","startMs":280860,"endMs":281440,"source":"speech"},{"text":"tiny","startMs":281440,"endMs":281740,"source":"speech"},{"text":"pieces.","startMs":281740,"endMs":282820,"source":"speech"}]},{"words":[{"text":"The","startMs":284607,"endMs":285064,"source":"estimated"},{"text":"Tang","startMs":285064,"endMs":285591,"source":"estimated"},{"text":"Monk","startMs":285591,"endMs":286118,"source":"estimated"},{"text":"watched","startMs":286118,"endMs":286815,"source":"estimated"},{"text":"in","startMs":286815,"endMs":287188,"source":"estimated"},{"text":"horror.","startMs":287188,"endMs":287834,"source":"estimated"}]},{"words":[{"text":"Wukong","startMs":287835,"endMs":288407,"source":"estimated"},{"text":"laughed.","startMs":288407,"endMs":289025,"source":"estimated"},{"text":"\"Don't","startMs":289025,"endMs":289493,"source":"estimated"},{"text":"look","startMs":289493,"endMs":289960,"source":"estimated"},{"text":"so","startMs":289960,"endMs":290240,"source":"speech"},{"text":"scared,","startMs":290240,"endMs":290580,"source":"speech"},{"text":"Master.","startMs":290720,"endMs":290940,"source":"speech"}]},{"words":[{"text":"I'm","startMs":292104,"endMs":292121,"source":"estimated"},{"text":"protecting","startMs":292121,"endMs":292160,"source":"estimated"},{"text":"you!\"","startMs":292160,"endMs":292580,"source":"speech"}]},{"words":[{"text":"The","startMs":295116,"endMs":295128,"source":"estimated"},{"text":"two","startMs":295128,"endMs":295140,"source":"estimated"},{"text":"traveled","startMs":295140,"endMs":295460,"source":"speech"},{"text":"farther","startMs":295460,"endMs":295900,"source":"speech"},{"text":"until","startMs":295900,"endMs":296200,"source":"speech"},{"text":"they","startMs":296200,"endMs":296460,"source":"speech"},{"text":"saw","startMs":296460,"endMs":296580,"source":"speech"},{"text":"a","startMs":296580,"endMs":296760,"source":"speech"},{"text":"group","startMs":296760,"endMs":297020,"source":"speech"},{"text":"of","startMs":297020,"endMs":297280,"source":"speech"},{"text":"men","startMs":297280,"endMs":297580,"source":"speech"},{"text":"blocking","startMs":297580,"endMs":297980,"source":"speech"},{"text":"the","startMs":297980,"endMs":298240,"source":"speech"},{"text":"road.","startMs":298240,"endMs":298660,"source":"speech"}]},{"words":[{"text":"The","startMs":300398,"endMs":300758,"source":"estimated"},{"text":"men","startMs":300758,"endMs":301117,"source":"estimated"},{"text":"looked","startMs":300758,"endMs":300759,"source":"speech"},{"text":"rough","startMs":300758,"endMs":300980,"source":"speech"},{"text":"and","startMs":300980,"endMs":301260,"source":"speech"},{"text":"mean.","startMs":301260,"endMs":301660,"source":"speech"}]},{"words":[{"text":"They","startMs":302557,"endMs":302580,"source":"estimated"},{"text":"all","startMs":302580,"endMs":302600,"source":"estimated"},{"text":"had","startMs":302600,"endMs":302860,"source":"speech"},{"text":"weapons.","startMs":302860,"endMs":303260,"source":"speech"}]},{"words":[{"text":"One","startMs":305255,"endMs":305758,"source":"estimated"},{"text":"man","startMs":305255,"endMs":305480,"source":"speech"},{"text":"stepped","startMs":305480,"endMs":305820,"source":"speech"},{"text":"forward","startMs":305820,"endMs":306160,"source":"speech"},{"text":"and","startMs":306160,"endMs":306660,"source":"speech"},{"text":"waved","startMs":306660,"endMs":306820,"source":"speech"},{"text":"a","startMs":306820,"endMs":307200,"source":"speech"},{"text":"sword.","startMs":307200,"endMs":307700,"source":"speech"}]},{"words":[{"text":"\"Give","startMs":309284,"endMs":310508,"source":"estimated"},{"text":"us","startMs":310508,"endMs":311373,"source":"estimated"},{"text":"your","startMs":310508,"endMs":310509,"source":"speech"},{"text":"money,","startMs":310508,"endMs":310509,"source":"speech"},{"text":"or","startMs":310508,"endMs":310509,"source":"speech"},{"text":"you'll","startMs":310508,"endMs":310509,"source":"speech"},{"text":"be","startMs":310508,"endMs":310620,"source":"speech"},{"text":"sorry!\"","startMs":310620,"endMs":311160,"source":"speech"}]}]}
+{
+  "seriesId": "journey-to-the-west",
+  "episodeId": 14,
+  "sourceContentId": "C0006434",
+  "mediaPath": "/contents_5/hls/1080/022b1f276e/1703738212e7ba053d8ba932b77348b3987ea0e40b/stream.m3u8",
+  "mediaFingerprint": "907a86ce60fb2126e0d9d12cb36f8771fa234885d1a3c29ad0565ee9545a9612",
+  "subtitleSha256": "c76b02cc53a17c4c5cad2f396ac81a81d2a1f59493422ae2cd7e54150a54c8ba",
+  "method": "whisperx-asr-xml-text-only-forced-alignment",
+  "textAuthority": "littlefox-xml-paragraph-text",
+  "recognizer": "small.en",
+  "cueCount": 84,
+  "totalWords": 581,
+  "captionedWords": 566,
+  "omittedUnalignedWords": 15,
+  "speechMatchedWords": 566,
+  "speechMatchedFraction": 0.9742,
+  "cues": [
+    {
+      "words": [
+        {
+          "text": "The",
+          "startMs": 2369,
+          "endMs": 5832,
+          "source": "speech"
+        },
+        {
+          "text": "Monk",
+          "startMs": 12659,
+          "endMs": 12899,
+          "source": "speech"
+        },
+        {
+          "text": "trembled",
+          "startMs": 13079,
+          "endMs": 13499,
+          "source": "speech"
+        },
+        {
+          "text": "with",
+          "startMs": 13559,
+          "endMs": 13700,
+          "source": "speech"
+        },
+        {
+          "text": "fear.",
+          "startMs": 13800,
+          "endMs": 14060,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "angry",
+          "startMs": 15481,
+          "endMs": 15802,
+          "source": "speech"
+        },
+        {
+          "text": "voice",
+          "startMs": 15862,
+          "endMs": 16142,
+          "source": "speech"
+        },
+        {
+          "text": "spoke",
+          "startMs": 16242,
+          "endMs": 16502,
+          "source": "speech"
+        },
+        {
+          "text": "again.",
+          "startMs": 16562,
+          "endMs": 16823,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Who",
+          "startMs": 16843,
+          "endMs": 17783,
+          "source": "speech"
+        },
+        {
+          "text": "is",
+          "startMs": 17924,
+          "endMs": 18004,
+          "source": "speech"
+        },
+        {
+          "text": "walking",
+          "startMs": 18084,
+          "endMs": 18524,
+          "source": "speech"
+        },
+        {
+          "text": "on",
+          "startMs": 18624,
+          "endMs": 18724,
+          "source": "speech"
+        },
+        {
+          "text": "my",
+          "startMs": 18764,
+          "endMs": 18985,
+          "source": "speech"
+        },
+        {
+          "text": "mountain?\"",
+          "startMs": 19025,
+          "endMs": 19565,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Ahh!\"",
+          "startMs": 19645,
+          "endMs": 21207,
+          "source": "speech"
+        },
+        {
+          "text": "cried",
+          "startMs": 21547,
+          "endMs": 21807,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 21847,
+          "endMs": 21927,
+          "source": "speech"
+        },
+        {
+          "text": "Tang",
+          "startMs": 21968,
+          "endMs": 22228,
+          "source": "speech"
+        },
+        {
+          "text": "Monk.",
+          "startMs": 22268,
+          "endMs": 22488,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "He",
+          "startMs": 23389,
+          "endMs": 23509,
+          "source": "speech"
+        },
+        {
+          "text": "fell",
+          "startMs": 23629,
+          "endMs": 23849,
+          "source": "speech"
+        },
+        {
+          "text": "off",
+          "startMs": 23929,
+          "endMs": 24050,
+          "source": "speech"
+        },
+        {
+          "text": "his",
+          "startMs": 24090,
+          "endMs": 24210,
+          "source": "speech"
+        },
+        {
+          "text": "horse",
+          "startMs": 24270,
+          "endMs": 24570,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 24690,
+          "endMs": 24790,
+          "source": "speech"
+        },
+        {
+          "text": "tumbled",
+          "startMs": 24890,
+          "endMs": 25351,
+          "source": "speech"
+        },
+        {
+          "text": "down",
+          "startMs": 25431,
+          "endMs": 25651,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 25691,
+          "endMs": 25771,
+          "source": "speech"
+        },
+        {
+          "text": "mountain.",
+          "startMs": 25791,
+          "endMs": 26152,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "At",
+          "startMs": 30560,
+          "endMs": 30640,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 30680,
+          "endMs": 30780,
+          "source": "speech"
+        },
+        {
+          "text": "bottom",
+          "startMs": 30820,
+          "endMs": 31141,
+          "source": "speech"
+        },
+        {
+          "text": "he",
+          "startMs": 31501,
+          "endMs": 31621,
+          "source": "speech"
+        },
+        {
+          "text": "saw",
+          "startMs": 31681,
+          "endMs": 31901,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 31941,
+          "endMs": 31961,
+          "source": "speech"
+        },
+        {
+          "text": "crack",
+          "startMs": 32061,
+          "endMs": 32382,
+          "source": "speech"
+        },
+        {
+          "text": "between",
+          "startMs": 32522,
+          "endMs": 32862,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 32882,
+          "endMs": 32962,
+          "source": "speech"
+        },
+        {
+          "text": "rocks.",
+          "startMs": 33002,
+          "endMs": 33302,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "The",
+          "startMs": 35424,
+          "endMs": 35524,
+          "source": "speech"
+        },
+        {
+          "text": "monk",
+          "startMs": 35564,
+          "endMs": 35804,
+          "source": "speech"
+        },
+        {
+          "text": "looked",
+          "startMs": 35865,
+          "endMs": 36185,
+          "source": "speech"
+        },
+        {
+          "text": "in",
+          "startMs": 36285,
+          "endMs": 36405,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 37566,
+          "endMs": 37646,
+          "source": "speech"
+        },
+        {
+          "text": "saw",
+          "startMs": 37706,
+          "endMs": 37926,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 37986,
+          "endMs": 38006,
+          "source": "speech"
+        },
+        {
+          "text": "moss-covered",
+          "startMs": 38126,
+          "endMs": 38967,
+          "source": "speech"
+        },
+        {
+          "text": "monkey",
+          "startMs": 39087,
+          "endMs": 39447,
+          "source": "speech"
+        },
+        {
+          "text": "peering",
+          "startMs": 39668,
+          "endMs": 40148,
+          "source": "speech"
+        },
+        {
+          "text": "out",
+          "startMs": 40388,
+          "endMs": 40568,
+          "source": "speech"
+        },
+        {
+          "text": "at",
+          "startMs": 40648,
+          "endMs": 40708,
+          "source": "speech"
+        },
+        {
+          "text": "him.",
+          "startMs": 40749,
+          "endMs": 40949,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"My",
+          "startMs": 40969,
+          "endMs": 42150,
+          "source": "speech"
+        },
+        {
+          "text": "name",
+          "startMs": 42190,
+          "endMs": 42430,
+          "source": "speech"
+        },
+        {
+          "text": "is",
+          "startMs": 42470,
+          "endMs": 42550,
+          "source": "speech"
+        },
+        {
+          "text": "Sun",
+          "startMs": 42630,
+          "endMs": 42850,
+          "source": "speech"
+        },
+        {
+          "text": "Wukong,\"",
+          "startMs": 42890,
+          "endMs": 43471,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 43771,
+          "endMs": 43931,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 43971,
+          "endMs": 44051,
+          "source": "speech"
+        },
+        {
+          "text": "monkey.",
+          "startMs": 44091,
+          "endMs": 44412,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"I",
+          "startMs": 44432,
+          "endMs": 45432,
+          "source": "speech"
+        },
+        {
+          "text": "am",
+          "startMs": 45512,
+          "endMs": 45613,
+          "source": "speech"
+        },
+        {
+          "text": "king",
+          "startMs": 45733,
+          "endMs": 45993,
+          "source": "speech"
+        },
+        {
+          "text": "of",
+          "startMs": 46053,
+          "endMs": 46113,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 46153,
+          "endMs": 46233,
+          "source": "speech"
+        },
+        {
+          "text": "Fruit",
+          "startMs": 46293,
+          "endMs": 46533,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 46573,
+          "endMs": 46653,
+          "source": "speech"
+        },
+        {
+          "text": "Flower",
+          "startMs": 46693,
+          "endMs": 47034,
+          "source": "speech"
+        },
+        {
+          "text": "Mountain.\"",
+          "startMs": 47074,
+          "endMs": 47474,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "are",
+          "startMs": 49296,
+          "endMs": 49396,
+          "source": "speech"
+        },
+        {
+          "text": "you",
+          "startMs": 49416,
+          "endMs": 49536,
+          "source": "speech"
+        },
+        {
+          "text": "in",
+          "startMs": 49616,
+          "endMs": 49696,
+          "source": "speech"
+        },
+        {
+          "text": "there?\"",
+          "startMs": 49756,
+          "endMs": 49996,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "asked",
+          "startMs": 50416,
+          "endMs": 50617,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 50677,
+          "endMs": 50777,
+          "source": "speech"
+        },
+        {
+          "text": "Tang",
+          "startMs": 50817,
+          "endMs": 51137,
+          "source": "speech"
+        },
+        {
+          "text": "Monk.",
+          "startMs": 51177,
+          "endMs": 51397,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "He",
+          "startMs": 51998,
+          "endMs": 52118,
+          "source": "speech"
+        },
+        {
+          "text": "stood",
+          "startMs": 52218,
+          "endMs": 52498,
+          "source": "speech"
+        },
+        {
+          "text": "up.",
+          "startMs": 52578,
+          "endMs": 54340,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Buddha",
+          "startMs": 54420,
+          "endMs": 54620,
+          "source": "speech"
+        },
+        {
+          "text": "put",
+          "startMs": 54640,
+          "endMs": 54800,
+          "source": "speech"
+        },
+        {
+          "text": "me",
+          "startMs": 54840,
+          "endMs": 54940,
+          "source": "speech"
+        },
+        {
+          "text": "here,\"",
+          "startMs": 55000,
+          "endMs": 55200,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 55521,
+          "endMs": 55721,
+          "source": "speech"
+        },
+        {
+          "text": "Wukong.",
+          "startMs": 55781,
+          "endMs": 56241,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "am",
+          "startMs": 57222,
+          "endMs": 57302,
+          "source": "speech"
+        },
+        {
+          "text": "being",
+          "startMs": 57342,
+          "endMs": 57542,
+          "source": "speech"
+        },
+        {
+          "text": "punished",
+          "startMs": 57642,
+          "endMs": 57963,
+          "source": "speech"
+        },
+        {
+          "text": "for",
+          "startMs": 58003,
+          "endMs": 58103,
+          "source": "speech"
+        },
+        {
+          "text": "causing",
+          "startMs": 58163,
+          "endMs": 58483,
+          "source": "speech"
+        },
+        {
+          "text": "trouble",
+          "startMs": 58563,
+          "endMs": 58883,
+          "source": "speech"
+        },
+        {
+          "text": "in",
+          "startMs": 58923,
+          "endMs": 59004,
+          "source": "speech"
+        },
+        {
+          "text": "Heaven.",
+          "startMs": 59064,
+          "endMs": 59324,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Who",
+          "startMs": 60236,
+          "endMs": 60356,
+          "source": "speech"
+        },
+        {
+          "text": "are",
+          "startMs": 60416,
+          "endMs": 60496,
+          "source": "speech"
+        },
+        {
+          "text": "you?\"",
+          "startMs": 60516,
+          "endMs": 60696,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"I'm",
+          "startMs": 62077,
+          "endMs": 62217,
+          "source": "speech"
+        },
+        {
+          "text": "just",
+          "startMs": 62257,
+          "endMs": 62417,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 62457,
+          "endMs": 62497,
+          "source": "speech"
+        },
+        {
+          "text": "monk,\"",
+          "startMs": 62537,
+          "endMs": 62798,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 63158,
+          "endMs": 63338,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 63378,
+          "endMs": 63458,
+          "source": "speech"
+        },
+        {
+          "text": "Tang",
+          "startMs": 63498,
+          "endMs": 63778,
+          "source": "speech"
+        },
+        {
+          "text": "Monk.",
+          "startMs": 63818,
+          "endMs": 64038,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"I'm",
+          "startMs": 65159,
+          "endMs": 65299,
+          "source": "speech"
+        },
+        {
+          "text": "going",
+          "startMs": 65339,
+          "endMs": 65539,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 65579,
+          "endMs": 65639,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 65659,
+          "endMs": 65719,
+          "source": "speech"
+        },
+        {
+          "text": "Western",
+          "startMs": 65759,
+          "endMs": 66040,
+          "source": "speech"
+        },
+        {
+          "text": "Paradise",
+          "startMs": 66080,
+          "endMs": 66540,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 66560,
+          "endMs": 66640,
+          "source": "speech"
+        },
+        {
+          "text": "get",
+          "startMs": 66660,
+          "endMs": 66780,
+          "source": "speech"
+        },
+        {
+          "text": "scriptures",
+          "startMs": 66840,
+          "endMs": 67260,
+          "source": "speech"
+        },
+        {
+          "text": "from",
+          "startMs": 67320,
+          "endMs": 67440,
+          "source": "speech"
+        },
+        {
+          "text": "Buddha.\"",
+          "startMs": 67480,
+          "endMs": 67821,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Wukong",
+          "startMs": 69121,
+          "endMs": 69562,
+          "source": "speech"
+        },
+        {
+          "text": "gasped.",
+          "startMs": 69662,
+          "endMs": 70082,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"You're",
+          "startMs": 70102,
+          "endMs": 71163,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 71203,
+          "endMs": 71303,
+          "source": "speech"
+        },
+        {
+          "text": "Tang",
+          "startMs": 71343,
+          "endMs": 71703,
+          "source": "speech"
+        },
+        {
+          "text": "Monk!\"",
+          "startMs": 71783,
+          "endMs": 72183,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "he",
+          "startMs": 72503,
+          "endMs": 72603,
+          "source": "speech"
+        },
+        {
+          "text": "cried.",
+          "startMs": 72663,
+          "endMs": 73044,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"I'm",
+          "startMs": 73064,
+          "endMs": 73984,
+          "source": "speech"
+        },
+        {
+          "text": "supposed",
+          "startMs": 74024,
+          "endMs": 74304,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 74324,
+          "endMs": 74385,
+          "source": "speech"
+        },
+        {
+          "text": "go",
+          "startMs": 74425,
+          "endMs": 74545,
+          "source": "speech"
+        },
+        {
+          "text": "with",
+          "startMs": 74585,
+          "endMs": 74745,
+          "source": "speech"
+        },
+        {
+          "text": "you!\"",
+          "startMs": 74785,
+          "endMs": 74945,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Tang",
+          "startMs": 76786,
+          "endMs": 77166,
+          "source": "speech"
+        },
+        {
+          "text": "Monk",
+          "startMs": 77246,
+          "endMs": 77486,
+          "source": "speech"
+        },
+        {
+          "text": "took",
+          "startMs": 77727,
+          "endMs": 77907,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 77947,
+          "endMs": 77967,
+          "source": "speech"
+        },
+        {
+          "text": "step",
+          "startMs": 78047,
+          "endMs": 78327,
+          "source": "speech"
+        },
+        {
+          "text": "back.",
+          "startMs": 78387,
+          "endMs": 78627,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Was",
+          "startMs": 79668,
+          "endMs": 79848,
+          "source": "speech"
+        },
+        {
+          "text": "this",
+          "startMs": 79908,
+          "endMs": 80088,
+          "source": "speech"
+        },
+        {
+          "text": "strange",
+          "startMs": 80188,
+          "endMs": 80708,
+          "source": "speech"
+        },
+        {
+          "text": "monkey",
+          "startMs": 80788,
+          "endMs": 81129,
+          "source": "speech"
+        },
+        {
+          "text": "telling",
+          "startMs": 81209,
+          "endMs": 81509,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 81549,
+          "endMs": 81629,
+          "source": "speech"
+        },
+        {
+          "text": "truth?",
+          "startMs": 81669,
+          "endMs": 81969,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"The",
+          "startMs": 83590,
+          "endMs": 83690,
+          "source": "speech"
+        },
+        {
+          "text": "bodhisattva",
+          "startMs": 83710,
+          "endMs": 84250,
+          "source": "speech"
+        },
+        {
+          "text": "Guanyin",
+          "startMs": 84290,
+          "endMs": 84751,
+          "source": "speech"
+        },
+        {
+          "text": "visited",
+          "startMs": 84791,
+          "endMs": 85151,
+          "source": "speech"
+        },
+        {
+          "text": "me,\"",
+          "startMs": 85191,
+          "endMs": 85351,
+          "source": "speech"
+        },
+        {
+          "text": "Wukong",
+          "startMs": 85631,
+          "endMs": 86091,
+          "source": "speech"
+        },
+        {
+          "text": "went",
+          "startMs": 86152,
+          "endMs": 86312,
+          "source": "speech"
+        },
+        {
+          "text": "on.",
+          "startMs": 86452,
+          "endMs": 86532,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"She",
+          "startMs": 88008,
+          "endMs": 88128,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 88168,
+          "endMs": 88328,
+          "source": "speech"
+        },
+        {
+          "text": "I'd",
+          "startMs": 88348,
+          "endMs": 88488,
+          "source": "speech"
+        },
+        {
+          "text": "be",
+          "startMs": 88508,
+          "endMs": 88588,
+          "source": "speech"
+        },
+        {
+          "text": "set",
+          "startMs": 88648,
+          "endMs": 88848,
+          "source": "speech"
+        },
+        {
+          "text": "free",
+          "startMs": 88908,
+          "endMs": 89148,
+          "source": "speech"
+        },
+        {
+          "text": "if",
+          "startMs": 89368,
+          "endMs": 89448,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 89509,
+          "endMs": 89569,
+          "source": "speech"
+        },
+        {
+          "text": "promise",
+          "startMs": 89649,
+          "endMs": 89969,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 89989,
+          "endMs": 90049,
+          "source": "speech"
+        },
+        {
+          "text": "protect",
+          "startMs": 90109,
+          "endMs": 90489,
+          "source": "speech"
+        },
+        {
+          "text": "you",
+          "startMs": 90509,
+          "endMs": 90629,
+          "source": "speech"
+        },
+        {
+          "text": "on",
+          "startMs": 90689,
+          "endMs": 90749,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 90789,
+          "endMs": 90869,
+          "source": "speech"
+        },
+        {
+          "text": "journey.",
+          "startMs": 90929,
+          "endMs": 91269,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Set",
+          "startMs": 92349,
+          "endMs": 92509,
+          "source": "speech"
+        },
+        {
+          "text": "me",
+          "startMs": 92549,
+          "endMs": 92629,
+          "source": "speech"
+        },
+        {
+          "text": "free,",
+          "startMs": 92689,
+          "endMs": 92909,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 93210,
+          "endMs": 93290,
+          "source": "speech"
+        },
+        {
+          "text": "I'll",
+          "startMs": 93310,
+          "endMs": 93470,
+          "source": "speech"
+        },
+        {
+          "text": "go",
+          "startMs": 93530,
+          "endMs": 93650,
+          "source": "speech"
+        },
+        {
+          "text": "with",
+          "startMs": 93690,
+          "endMs": 93790,
+          "source": "speech"
+        },
+        {
+          "text": "you",
+          "startMs": 93810,
+          "endMs": 93890,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 93930,
+          "endMs": 94010,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 94030,
+          "endMs": 94110,
+          "source": "speech"
+        },
+        {
+          "text": "West.\"",
+          "startMs": 94150,
+          "endMs": 94490,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Tang",
+          "startMs": 95770,
+          "endMs": 96090,
+          "source": "speech"
+        },
+        {
+          "text": "Monk",
+          "startMs": 96130,
+          "endMs": 96330,
+          "source": "speech"
+        },
+        {
+          "text": "relaxed.",
+          "startMs": 96391,
+          "endMs": 96951,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "He",
+          "startMs": 98291,
+          "endMs": 98391,
+          "source": "speech"
+        },
+        {
+          "text": "looked",
+          "startMs": 98451,
+          "endMs": 98691,
+          "source": "speech"
+        },
+        {
+          "text": "at",
+          "startMs": 98731,
+          "endMs": 98771,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 98811,
+          "endMs": 98891,
+          "source": "speech"
+        },
+        {
+          "text": "rocks.",
+          "startMs": 98931,
+          "endMs": 99271,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"How",
+          "startMs": 100432,
+          "endMs": 100572,
+          "source": "speech"
+        },
+        {
+          "text": "can",
+          "startMs": 100612,
+          "endMs": 100772,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 100812,
+          "endMs": 100852,
+          "source": "speech"
+        },
+        {
+          "text": "free",
+          "startMs": 100952,
+          "endMs": 101172,
+          "source": "speech"
+        },
+        {
+          "text": "you?\"",
+          "startMs": 101192,
+          "endMs": 101352,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"There's",
+          "startMs": 101372,
+          "endMs": 102532,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 102572,
+          "endMs": 102592,
+          "source": "speech"
+        },
+        {
+          "text": "small",
+          "startMs": 102652,
+          "endMs": 102912,
+          "source": "speech"
+        },
+        {
+          "text": "piece",
+          "startMs": 102952,
+          "endMs": 103132,
+          "source": "speech"
+        },
+        {
+          "text": "of",
+          "startMs": 103172,
+          "endMs": 103233,
+          "source": "speech"
+        },
+        {
+          "text": "paper",
+          "startMs": 103273,
+          "endMs": 103593,
+          "source": "speech"
+        },
+        {
+          "text": "on",
+          "startMs": 103633,
+          "endMs": 103693,
+          "source": "speech"
+        },
+        {
+          "text": "top",
+          "startMs": 103753,
+          "endMs": 103933,
+          "source": "speech"
+        },
+        {
+          "text": "of",
+          "startMs": 103953,
+          "endMs": 104013,
+          "source": "speech"
+        },
+        {
+          "text": "this",
+          "startMs": 104033,
+          "endMs": 104193,
+          "source": "speech"
+        },
+        {
+          "text": "mountain,\"",
+          "startMs": 104253,
+          "endMs": 104593,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 104873,
+          "endMs": 105093,
+          "source": "speech"
+        },
+        {
+          "text": "Wukong.",
+          "startMs": 105173,
+          "endMs": 105693,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"You",
+          "startMs": 106694,
+          "endMs": 106854,
+          "source": "speech"
+        },
+        {
+          "text": "must",
+          "startMs": 106994,
+          "endMs": 107234,
+          "source": "speech"
+        },
+        {
+          "text": "remove",
+          "startMs": 107334,
+          "endMs": 107694,
+          "source": "speech"
+        },
+        {
+          "text": "it.\"",
+          "startMs": 107754,
+          "endMs": 107834,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "The",
+          "startMs": 112635,
+          "endMs": 112735,
+          "source": "speech"
+        },
+        {
+          "text": "Tang",
+          "startMs": 112775,
+          "endMs": 113175,
+          "source": "speech"
+        },
+        {
+          "text": "Monk",
+          "startMs": 113235,
+          "endMs": 113476,
+          "source": "speech"
+        },
+        {
+          "text": "went",
+          "startMs": 113576,
+          "endMs": 113776,
+          "source": "speech"
+        },
+        {
+          "text": "back",
+          "startMs": 113896,
+          "endMs": 114116,
+          "source": "speech"
+        },
+        {
+          "text": "up",
+          "startMs": 114196,
+          "endMs": 114276,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 114336,
+          "endMs": 114416,
+          "source": "speech"
+        },
+        {
+          "text": "mountain.",
+          "startMs": 114456,
+          "endMs": 114836,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "He",
+          "startMs": 115904,
+          "endMs": 116004,
+          "source": "speech"
+        },
+        {
+          "text": "pushed",
+          "startMs": 116084,
+          "endMs": 116425,
+          "source": "speech"
+        },
+        {
+          "text": "aside",
+          "startMs": 116485,
+          "endMs": 116845,
+          "source": "speech"
+        },
+        {
+          "text": "shrubs",
+          "startMs": 116985,
+          "endMs": 117405,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 117485,
+          "endMs": 117585,
+          "source": "speech"
+        },
+        {
+          "text": "brambles",
+          "startMs": 117646,
+          "endMs": 118166,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 118306,
+          "endMs": 118386,
+          "source": "speech"
+        },
+        {
+          "text": "pulled",
+          "startMs": 118466,
+          "endMs": 118766,
+          "source": "speech"
+        },
+        {
+          "text": "himself",
+          "startMs": 118826,
+          "endMs": 119187,
+          "source": "speech"
+        },
+        {
+          "text": "over",
+          "startMs": 119267,
+          "endMs": 119467,
+          "source": "speech"
+        },
+        {
+          "text": "large",
+          "startMs": 119527,
+          "endMs": 119907,
+          "source": "speech"
+        },
+        {
+          "text": "boulders.",
+          "startMs": 119987,
+          "endMs": 120468,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Finally",
+          "startMs": 127013,
+          "endMs": 127473,
+          "source": "speech"
+        },
+        {
+          "text": "he",
+          "startMs": 127714,
+          "endMs": 127834,
+          "source": "speech"
+        },
+        {
+          "text": "reached",
+          "startMs": 127914,
+          "endMs": 128214,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 128234,
+          "endMs": 128314,
+          "source": "speech"
+        },
+        {
+          "text": "mountain's",
+          "startMs": 128374,
+          "endMs": 128854,
+          "source": "speech"
+        },
+        {
+          "text": "peak.",
+          "startMs": 128975,
+          "endMs": 129335,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "monk",
+          "startMs": 135800,
+          "endMs": 136020,
+          "source": "speech"
+        },
+        {
+          "text": "picked",
+          "startMs": 136120,
+          "endMs": 136360,
+          "source": "speech"
+        },
+        {
+          "text": "up",
+          "startMs": 136420,
+          "endMs": 136521,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 136561,
+          "endMs": 136641,
+          "source": "speech"
+        },
+        {
+          "text": "paper.",
+          "startMs": 136661,
+          "endMs": 137001,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Right",
+          "startMs": 138282,
+          "endMs": 138522,
+          "source": "speech"
+        },
+        {
+          "text": "away",
+          "startMs": 138562,
+          "endMs": 138802,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 138822,
+          "endMs": 138842,
+          "source": "speech"
+        },
+        {
+          "text": "breeze",
+          "startMs": 138982,
+          "endMs": 139423,
+          "source": "speech"
+        },
+        {
+          "text": "swept",
+          "startMs": 139563,
+          "endMs": 140043,
+          "source": "speech"
+        },
+        {
+          "text": "it",
+          "startMs": 140083,
+          "endMs": 140123,
+          "source": "speech"
+        },
+        {
+          "text": "from",
+          "startMs": 140243,
+          "endMs": 140384,
+          "source": "speech"
+        },
+        {
+          "text": "his",
+          "startMs": 140424,
+          "endMs": 140544,
+          "source": "speech"
+        },
+        {
+          "text": "hand.",
+          "startMs": 140584,
+          "endMs": 140924,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "The",
+          "startMs": 142525,
+          "endMs": 142625,
+          "source": "speech"
+        },
+        {
+          "text": "paper",
+          "startMs": 142645,
+          "endMs": 142926,
+          "source": "speech"
+        },
+        {
+          "text": "floated",
+          "startMs": 143046,
+          "endMs": 143526,
+          "source": "speech"
+        },
+        {
+          "text": "up",
+          "startMs": 143626,
+          "endMs": 143706,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 143766,
+          "endMs": 143846,
+          "source": "speech"
+        },
+        {
+          "text": "then",
+          "startMs": 143866,
+          "endMs": 144006,
+          "source": "speech"
+        },
+        {
+          "text": "disappeared",
+          "startMs": 144087,
+          "endMs": 144727,
+          "source": "speech"
+        },
+        {
+          "text": "among",
+          "startMs": 144767,
+          "endMs": 144987,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 145027,
+          "endMs": 145087,
+          "source": "speech"
+        },
+        {
+          "text": "clouds.",
+          "startMs": 145127,
+          "endMs": 145568,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "The",
+          "startMs": 147264,
+          "endMs": 147364,
+          "source": "speech"
+        },
+        {
+          "text": "monk",
+          "startMs": 147404,
+          "endMs": 147644,
+          "source": "speech"
+        },
+        {
+          "text": "hurried",
+          "startMs": 147704,
+          "endMs": 148025,
+          "source": "speech"
+        },
+        {
+          "text": "back",
+          "startMs": 148105,
+          "endMs": 148305,
+          "source": "speech"
+        },
+        {
+          "text": "down",
+          "startMs": 148365,
+          "endMs": 148585,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 148605,
+          "endMs": 148685,
+          "source": "speech"
+        },
+        {
+          "text": "mountain.",
+          "startMs": 148705,
+          "endMs": 149086,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"The",
+          "startMs": 149106,
+          "endMs": 151828,
+          "source": "speech"
+        },
+        {
+          "text": "paper",
+          "startMs": 151868,
+          "endMs": 152108,
+          "source": "speech"
+        },
+        {
+          "text": "floated",
+          "startMs": 152148,
+          "endMs": 152468,
+          "source": "speech"
+        },
+        {
+          "text": "away,\"",
+          "startMs": 152508,
+          "endMs": 152809,
+          "source": "speech"
+        },
+        {
+          "text": "he",
+          "startMs": 153109,
+          "endMs": 153209,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 153289,
+          "endMs": 153489,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 153529,
+          "endMs": 153609,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 153649,
+          "endMs": 153709,
+          "source": "speech"
+        },
+        {
+          "text": "monkey.",
+          "startMs": 153749,
+          "endMs": 154050,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "returned",
+          "startMs": 155831,
+          "endMs": 156231,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 156271,
+          "endMs": 156351,
+          "source": "speech"
+        },
+        {
+          "text": "Buddha,\"",
+          "startMs": 156391,
+          "endMs": 156732,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 157032,
+          "endMs": 157192,
+          "source": "speech"
+        },
+        {
+          "text": "Wukong.",
+          "startMs": 157252,
+          "endMs": 157732,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Now",
+          "startMs": 157752,
+          "endMs": 158473,
+          "source": "speech"
+        },
+        {
+          "text": "step",
+          "startMs": 158553,
+          "endMs": 158813,
+          "source": "speech"
+        },
+        {
+          "text": "back.\"",
+          "startMs": 158873,
+          "endMs": 159134,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "The",
+          "startMs": 159994,
+          "endMs": 160114,
+          "source": "speech"
+        },
+        {
+          "text": "Tang",
+          "startMs": 160154,
+          "endMs": 160575,
+          "source": "speech"
+        },
+        {
+          "text": "Monk",
+          "startMs": 160635,
+          "endMs": 160855,
+          "source": "speech"
+        },
+        {
+          "text": "took",
+          "startMs": 160995,
+          "endMs": 161175,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 161215,
+          "endMs": 161235,
+          "source": "speech"
+        },
+        {
+          "text": "step",
+          "startMs": 161315,
+          "endMs": 161596,
+          "source": "speech"
+        },
+        {
+          "text": "back.",
+          "startMs": 161676,
+          "endMs": 161916,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Go",
+          "startMs": 161936,
+          "endMs": 164358,
+          "source": "speech"
+        },
+        {
+          "text": "farther,\"",
+          "startMs": 164418,
+          "endMs": 164818,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 165138,
+          "endMs": 165318,
+          "source": "speech"
+        },
+        {
+          "text": "Wukong.",
+          "startMs": 165379,
+          "endMs": 165879,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "The",
+          "startMs": 167100,
+          "endMs": 167180,
+          "source": "speech"
+        },
+        {
+          "text": "monk",
+          "startMs": 167220,
+          "endMs": 167440,
+          "source": "speech"
+        },
+        {
+          "text": "took",
+          "startMs": 167480,
+          "endMs": 167660,
+          "source": "speech"
+        },
+        {
+          "text": "another",
+          "startMs": 167720,
+          "endMs": 168041,
+          "source": "speech"
+        },
+        {
+          "text": "step",
+          "startMs": 168081,
+          "endMs": 168301,
+          "source": "speech"
+        },
+        {
+          "text": "back.",
+          "startMs": 168361,
+          "endMs": 168581,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Go",
+          "startMs": 168601,
+          "endMs": 170022,
+          "source": "speech"
+        },
+        {
+          "text": "farther,\"",
+          "startMs": 170102,
+          "endMs": 170603,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 170923,
+          "endMs": 171123,
+          "source": "speech"
+        },
+        {
+          "text": "Wukong",
+          "startMs": 171183,
+          "endMs": 171624,
+          "source": "speech"
+        },
+        {
+          "text": "again.",
+          "startMs": 171664,
+          "endMs": 171904,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "The",
+          "startMs": 175052,
+          "endMs": 175152,
+          "source": "speech"
+        },
+        {
+          "text": "Tang",
+          "startMs": 175192,
+          "endMs": 175512,
+          "source": "speech"
+        },
+        {
+          "text": "Monk",
+          "startMs": 175572,
+          "endMs": 175793,
+          "source": "speech"
+        },
+        {
+          "text": "went",
+          "startMs": 175853,
+          "endMs": 176033,
+          "source": "speech"
+        },
+        {
+          "text": "far",
+          "startMs": 176213,
+          "endMs": 176553,
+          "source": "speech"
+        },
+        {
+          "text": "from",
+          "startMs": 176653,
+          "endMs": 176813,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 176853,
+          "endMs": 176933,
+          "source": "speech"
+        },
+        {
+          "text": "mountain.",
+          "startMs": 176953,
+          "endMs": 177354,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "He",
+          "startMs": 179055,
+          "endMs": 179175,
+          "source": "speech"
+        },
+        {
+          "text": "gasped",
+          "startMs": 179255,
+          "endMs": 179735,
+          "source": "speech"
+        },
+        {
+          "text": "as",
+          "startMs": 180116,
+          "endMs": 180216,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 180276,
+          "endMs": 180356,
+          "source": "speech"
+        },
+        {
+          "text": "entire",
+          "startMs": 180436,
+          "endMs": 180936,
+          "source": "speech"
+        },
+        {
+          "text": "mountain",
+          "startMs": 181016,
+          "endMs": 181436,
+          "source": "speech"
+        },
+        {
+          "text": "rose",
+          "startMs": 181536,
+          "endMs": 181917,
+          "source": "speech"
+        },
+        {
+          "text": "into",
+          "startMs": 182017,
+          "endMs": 182277,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 182317,
+          "endMs": 182417,
+          "source": "speech"
+        },
+        {
+          "text": "air.",
+          "startMs": 182557,
+          "endMs": 182717,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Wukong",
+          "startMs": 184058,
+          "endMs": 184559,
+          "source": "speech"
+        },
+        {
+          "text": "stood",
+          "startMs": 184639,
+          "endMs": 184899,
+          "source": "speech"
+        },
+        {
+          "text": "under",
+          "startMs": 184959,
+          "endMs": 185139,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 185159,
+          "endMs": 185219,
+          "source": "speech"
+        },
+        {
+          "text": "mountain,",
+          "startMs": 185259,
+          "endMs": 185619,
+          "source": "speech"
+        },
+        {
+          "text": "holding",
+          "startMs": 185979,
+          "endMs": 186400,
+          "source": "speech"
+        },
+        {
+          "text": "it",
+          "startMs": 186460,
+          "endMs": 186520,
+          "source": "speech"
+        },
+        {
+          "text": "up",
+          "startMs": 186600,
+          "endMs": 186660,
+          "source": "speech"
+        },
+        {
+          "text": "with",
+          "startMs": 186740,
+          "endMs": 186880,
+          "source": "speech"
+        },
+        {
+          "text": "his",
+          "startMs": 186940,
+          "endMs": 187040,
+          "source": "speech"
+        },
+        {
+          "text": "hands.",
+          "startMs": 187100,
+          "endMs": 187460,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "He",
+          "startMs": 189762,
+          "endMs": 189902,
+          "source": "speech"
+        },
+        {
+          "text": "jumped",
+          "startMs": 189982,
+          "endMs": 190262,
+          "source": "speech"
+        },
+        {
+          "text": "out,",
+          "startMs": 190382,
+          "endMs": 190543,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 190963,
+          "endMs": 191063,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 191083,
+          "endMs": 191143,
+          "source": "speech"
+        },
+        {
+          "text": "mountain",
+          "startMs": 191183,
+          "endMs": 191523,
+          "source": "speech"
+        },
+        {
+          "text": "crashed",
+          "startMs": 191683,
+          "endMs": 192144,
+          "source": "speech"
+        },
+        {
+          "text": "down",
+          "startMs": 192224,
+          "endMs": 192464,
+          "source": "speech"
+        },
+        {
+          "text": "behind",
+          "startMs": 192524,
+          "endMs": 192884,
+          "source": "speech"
+        },
+        {
+          "text": "him.",
+          "startMs": 192944,
+          "endMs": 193064,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Wukong",
+          "startMs": 197547,
+          "endMs": 197968,
+          "source": "speech"
+        },
+        {
+          "text": "grabbed",
+          "startMs": 198028,
+          "endMs": 198428,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 198468,
+          "endMs": 198548,
+          "source": "speech"
+        },
+        {
+          "text": "Tang",
+          "startMs": 198608,
+          "endMs": 198908,
+          "source": "speech"
+        },
+        {
+          "text": "Monk's",
+          "startMs": 198948,
+          "endMs": 199188,
+          "source": "speech"
+        },
+        {
+          "text": "hands.",
+          "startMs": 199228,
+          "endMs": 199589,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Thank",
+          "startMs": 199609,
+          "endMs": 201030,
+          "source": "speech"
+        },
+        {
+          "text": "you,",
+          "startMs": 201050,
+          "endMs": 201170,
+          "source": "speech"
+        },
+        {
+          "text": "Master!",
+          "startMs": 201210,
+          "endMs": 201610,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 202090,
+          "endMs": 202130,
+          "source": "speech"
+        },
+        {
+          "text": "will",
+          "startMs": 202170,
+          "endMs": 202351,
+          "source": "speech"
+        },
+        {
+          "text": "help",
+          "startMs": 202391,
+          "endMs": 202531,
+          "source": "speech"
+        },
+        {
+          "text": "you",
+          "startMs": 202571,
+          "endMs": 202711,
+          "source": "speech"
+        },
+        {
+          "text": "reach",
+          "startMs": 202751,
+          "endMs": 202991,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 203011,
+          "endMs": 203091,
+          "source": "speech"
+        },
+        {
+          "text": "Western",
+          "startMs": 203131,
+          "endMs": 203511,
+          "source": "speech"
+        },
+        {
+          "text": "Paradise.\"",
+          "startMs": 203551,
+          "endMs": 204092,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "The",
+          "startMs": 206156,
+          "endMs": 206256,
+          "source": "speech"
+        },
+        {
+          "text": "Tang",
+          "startMs": 206296,
+          "endMs": 206636,
+          "source": "speech"
+        },
+        {
+          "text": "Monk",
+          "startMs": 206676,
+          "endMs": 206896,
+          "source": "speech"
+        },
+        {
+          "text": "rode",
+          "startMs": 207017,
+          "endMs": 207377,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 207417,
+          "endMs": 207517,
+          "source": "speech"
+        },
+        {
+          "text": "horse",
+          "startMs": 207557,
+          "endMs": 207837,
+          "source": "speech"
+        },
+        {
+          "text": "as",
+          "startMs": 207917,
+          "endMs": 207997,
+          "source": "speech"
+        },
+        {
+          "text": "Wukong",
+          "startMs": 208017,
+          "endMs": 208497,
+          "source": "speech"
+        },
+        {
+          "text": "walked.",
+          "startMs": 208537,
+          "endMs": 208898,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "The",
+          "startMs": 209938,
+          "endMs": 210038,
+          "source": "speech"
+        },
+        {
+          "text": "monkey",
+          "startMs": 210078,
+          "endMs": 210358,
+          "source": "speech"
+        },
+        {
+          "text": "told",
+          "startMs": 210398,
+          "endMs": 210618,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 210658,
+          "endMs": 210739,
+          "source": "speech"
+        },
+        {
+          "text": "monk",
+          "startMs": 210779,
+          "endMs": 210979,
+          "source": "speech"
+        },
+        {
+          "text": "about",
+          "startMs": 211039,
+          "endMs": 211279,
+          "source": "speech"
+        },
+        {
+          "text": "himself.",
+          "startMs": 211339,
+          "endMs": 211699,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"The",
+          "startMs": 211719,
+          "endMs": 212820,
+          "source": "speech"
+        },
+        {
+          "text": "Jade",
+          "startMs": 212860,
+          "endMs": 213120,
+          "source": "speech"
+        },
+        {
+          "text": "Emperor's",
+          "startMs": 213180,
+          "endMs": 213560,
+          "source": "speech"
+        },
+        {
+          "text": "entire",
+          "startMs": 213620,
+          "endMs": 214100,
+          "source": "speech"
+        },
+        {
+          "text": "army",
+          "startMs": 214220,
+          "endMs": 214481,
+          "source": "speech"
+        },
+        {
+          "text": "couldn't",
+          "startMs": 214521,
+          "endMs": 214781,
+          "source": "speech"
+        },
+        {
+          "text": "defeat",
+          "startMs": 214821,
+          "endMs": 215121,
+          "source": "speech"
+        },
+        {
+          "text": "me.\"",
+          "startMs": 215161,
+          "endMs": 215381,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "He",
+          "startMs": 216141,
+          "endMs": 216261,
+          "source": "speech"
+        },
+        {
+          "text": "laughed.",
+          "startMs": 216302,
+          "endMs": 216722,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"So",
+          "startMs": 217262,
+          "endMs": 218543,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 218583,
+          "endMs": 218643,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 218683,
+          "endMs": 218843,
+          "source": "speech"
+        },
+        {
+          "text": "should",
+          "startMs": 219323,
+          "endMs": 219523,
+          "source": "speech"
+        },
+        {
+          "text": "be",
+          "startMs": 219563,
+          "endMs": 219643,
+          "source": "speech"
+        },
+        {
+          "text": "in",
+          "startMs": 219683,
+          "endMs": 219743,
+          "source": "speech"
+        },
+        {
+          "text": "charge",
+          "startMs": 219803,
+          "endMs": 220064,
+          "source": "speech"
+        },
+        {
+          "text": "of",
+          "startMs": 220104,
+          "endMs": 220164,
+          "source": "speech"
+        },
+        {
+          "text": "Heaven.\"",
+          "startMs": 220204,
+          "endMs": 220504,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"What",
+          "startMs": 220524,
+          "endMs": 221864,
+          "source": "speech"
+        },
+        {
+          "text": "powers",
+          "startMs": 221905,
+          "endMs": 222245,
+          "source": "speech"
+        },
+        {
+          "text": "do",
+          "startMs": 222285,
+          "endMs": 222345,
+          "source": "speech"
+        },
+        {
+          "text": "you",
+          "startMs": 222385,
+          "endMs": 222485,
+          "source": "speech"
+        },
+        {
+          "text": "have?\"",
+          "startMs": 222525,
+          "endMs": 222805,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "asked",
+          "startMs": 223285,
+          "endMs": 223485,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 223545,
+          "endMs": 223625,
+          "source": "speech"
+        },
+        {
+          "text": "Tang",
+          "startMs": 223665,
+          "endMs": 223926,
+          "source": "speech"
+        },
+        {
+          "text": "Monk.",
+          "startMs": 223966,
+          "endMs": 224166,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"I",
+          "startMs": 224186,
+          "endMs": 225526,
+          "source": "speech"
+        },
+        {
+          "text": "can",
+          "startMs": 225546,
+          "endMs": 225687,
+          "source": "speech"
+        },
+        {
+          "text": "become",
+          "startMs": 225707,
+          "endMs": 225967,
+          "source": "speech"
+        },
+        {
+          "text": "other",
+          "startMs": 226027,
+          "endMs": 226187,
+          "source": "speech"
+        },
+        {
+          "text": "animals,\"",
+          "startMs": 226267,
+          "endMs": 226627,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 227147,
+          "endMs": 227327,
+          "source": "speech"
+        },
+        {
+          "text": "Wukong.",
+          "startMs": 227387,
+          "endMs": 227908,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Watch",
+          "startMs": 227928,
+          "endMs": 229228,
+          "source": "speech"
+        },
+        {
+          "text": "this!\"",
+          "startMs": 229268,
+          "endMs": 229529,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "quickly",
+          "startMs": 231810,
+          "endMs": 232170,
+          "source": "speech"
+        },
+        {
+          "text": "changed",
+          "startMs": 232290,
+          "endMs": 232790,
+          "source": "speech"
+        },
+        {
+          "text": "into",
+          "startMs": 232870,
+          "endMs": 233091,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 233151,
+          "endMs": 233171,
+          "source": "speech"
+        },
+        {
+          "text": "tiger.",
+          "startMs": 233251,
+          "endMs": 233651,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "The",
+          "startMs": 234411,
+          "endMs": 234511,
+          "source": "speech"
+        },
+        {
+          "text": "Tang",
+          "startMs": 234551,
+          "endMs": 234851,
+          "source": "speech"
+        },
+        {
+          "text": "Monk",
+          "startMs": 234891,
+          "endMs": 235052,
+          "source": "speech"
+        },
+        {
+          "text": "gulped.",
+          "startMs": 236488,
+          "endMs": 236688,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Wukong",
+          "startMs": 236748,
+          "endMs": 236928,
+          "source": "speech"
+        },
+        {
+          "text": "changed",
+          "startMs": 237048,
+          "endMs": 237469,
+          "source": "speech"
+        },
+        {
+          "text": "into",
+          "startMs": 237529,
+          "endMs": 237729,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 237769,
+          "endMs": 237809,
+          "source": "speech"
+        },
+        {
+          "text": "snake,",
+          "startMs": 237949,
+          "endMs": 238289,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 238789,
+          "endMs": 238829,
+          "source": "speech"
+        },
+        {
+          "text": "vulture,",
+          "startMs": 238889,
+          "endMs": 239349,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 239649,
+          "endMs": 239730,
+          "source": "speech"
+        },
+        {
+          "text": "then",
+          "startMs": 239770,
+          "endMs": 239930,
+          "source": "speech"
+        },
+        {
+          "text": "back",
+          "startMs": 240050,
+          "endMs": 240290,
+          "source": "speech"
+        },
+        {
+          "text": "into",
+          "startMs": 240350,
+          "endMs": 240570,
+          "source": "speech"
+        },
+        {
+          "text": "himself.",
+          "startMs": 240610,
+          "endMs": 241010,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "that's",
+          "startMs": 242231,
+          "endMs": 242451,
+          "source": "speech"
+        },
+        {
+          "text": "not",
+          "startMs": 242491,
+          "endMs": 242671,
+          "source": "speech"
+        },
+        {
+          "text": "all,\"",
+          "startMs": 242791,
+          "endMs": 242971,
+          "source": "speech"
+        },
+        {
+          "text": "he",
+          "startMs": 243151,
+          "endMs": 243251,
+          "source": "speech"
+        },
+        {
+          "text": "said.",
+          "startMs": 243331,
+          "endMs": 243591,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"I",
+          "startMs": 243611,
+          "endMs": 244251,
+          "source": "speech"
+        },
+        {
+          "text": "can",
+          "startMs": 244271,
+          "endMs": 244412,
+          "source": "speech"
+        },
+        {
+          "text": "grow",
+          "startMs": 244432,
+          "endMs": 244632,
+          "source": "speech"
+        },
+        {
+          "text": "big!\"",
+          "startMs": 244672,
+          "endMs": 244992,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "The",
+          "startMs": 248413,
+          "endMs": 248493,
+          "source": "speech"
+        },
+        {
+          "text": "monkey's",
+          "startMs": 248533,
+          "endMs": 248893,
+          "source": "speech"
+        },
+        {
+          "text": "body",
+          "startMs": 248954,
+          "endMs": 249234,
+          "source": "speech"
+        },
+        {
+          "text": "grew",
+          "startMs": 249274,
+          "endMs": 249514,
+          "source": "speech"
+        },
+        {
+          "text": "so",
+          "startMs": 249714,
+          "endMs": 249974,
+          "source": "speech"
+        },
+        {
+          "text": "big",
+          "startMs": 250094,
+          "endMs": 250374,
+          "source": "speech"
+        },
+        {
+          "text": "that",
+          "startMs": 250554,
+          "endMs": 250694,
+          "source": "speech"
+        },
+        {
+          "text": "his",
+          "startMs": 250734,
+          "endMs": 250854,
+          "source": "speech"
+        },
+        {
+          "text": "head",
+          "startMs": 250914,
+          "endMs": 251134,
+          "source": "speech"
+        },
+        {
+          "text": "reached",
+          "startMs": 251295,
+          "endMs": 251615,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 251655,
+          "endMs": 251735,
+          "source": "speech"
+        },
+        {
+          "text": "clouds.",
+          "startMs": 251775,
+          "endMs": 252255,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"And",
+          "startMs": 252275,
+          "endMs": 253916,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 253976,
+          "endMs": 254056,
+          "source": "speech"
+        },
+        {
+          "text": "can",
+          "startMs": 254076,
+          "endMs": 254236,
+          "source": "speech"
+        },
+        {
+          "text": "become",
+          "startMs": 254256,
+          "endMs": 254716,
+          "source": "speech"
+        },
+        {
+          "text": "tiny!\"",
+          "startMs": 254756,
+          "endMs": 255396,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "said",
+          "startMs": 255696,
+          "endMs": 255877,
+          "source": "speech"
+        },
+        {
+          "text": "Wukong.",
+          "startMs": 255937,
+          "endMs": 256477,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "He",
+          "startMs": 257257,
+          "endMs": 257357,
+          "source": "speech"
+        },
+        {
+          "text": "shrank",
+          "startMs": 257457,
+          "endMs": 257757,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 257817,
+          "endMs": 257937,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 257977,
+          "endMs": 258057,
+          "source": "speech"
+        },
+        {
+          "text": "size",
+          "startMs": 258097,
+          "endMs": 258358,
+          "source": "speech"
+        },
+        {
+          "text": "of",
+          "startMs": 258398,
+          "endMs": 258458,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 258518,
+          "endMs": 258538,
+          "source": "speech"
+        },
+        {
+          "text": "bee",
+          "startMs": 258598,
+          "endMs": 258858,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 259218,
+          "endMs": 259318,
+          "source": "speech"
+        },
+        {
+          "text": "hopped",
+          "startMs": 259418,
+          "endMs": 259738,
+          "source": "speech"
+        },
+        {
+          "text": "onto",
+          "startMs": 259818,
+          "endMs": 260078,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 260118,
+          "endMs": 260178,
+          "source": "speech"
+        },
+        {
+          "text": "monk's",
+          "startMs": 260218,
+          "endMs": 260459,
+          "source": "speech"
+        },
+        {
+          "text": "head.",
+          "startMs": 260479,
+          "endMs": 260679,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "can",
+          "startMs": 262059,
+          "endMs": 262199,
+          "source": "speech"
+        },
+        {
+          "text": "do",
+          "startMs": 262219,
+          "endMs": 262319,
+          "source": "speech"
+        },
+        {
+          "text": "more!\"",
+          "startMs": 262359,
+          "endMs": 262659,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "said",
+          "startMs": 262860,
+          "endMs": 263040,
+          "source": "speech"
+        },
+        {
+          "text": "Wukong.",
+          "startMs": 263080,
+          "endMs": 263560,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "He",
+          "startMs": 265344,
+          "endMs": 265444,
+          "source": "speech"
+        },
+        {
+          "text": "changed",
+          "startMs": 265524,
+          "endMs": 265965,
+          "source": "speech"
+        },
+        {
+          "text": "back",
+          "startMs": 266065,
+          "endMs": 266365,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 266465,
+          "endMs": 266585,
+          "source": "speech"
+        },
+        {
+          "text": "his",
+          "startMs": 266625,
+          "endMs": 266745,
+          "source": "speech"
+        },
+        {
+          "text": "normal",
+          "startMs": 266845,
+          "endMs": 267186,
+          "source": "speech"
+        },
+        {
+          "text": "size.",
+          "startMs": 267246,
+          "endMs": 267626,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "His",
+          "startMs": 268627,
+          "endMs": 268767,
+          "source": "speech"
+        },
+        {
+          "text": "iron",
+          "startMs": 269027,
+          "endMs": 269267,
+          "source": "speech"
+        },
+        {
+          "text": "bar",
+          "startMs": 269307,
+          "endMs": 269648,
+          "source": "speech"
+        },
+        {
+          "text": "appeared",
+          "startMs": 269708,
+          "endMs": 270188,
+          "source": "speech"
+        },
+        {
+          "text": "from",
+          "startMs": 270288,
+          "endMs": 270448,
+          "source": "speech"
+        },
+        {
+          "text": "his",
+          "startMs": 270488,
+          "endMs": 270609,
+          "source": "speech"
+        },
+        {
+          "text": "ear.",
+          "startMs": 270729,
+          "endMs": 270949,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "The",
+          "startMs": 273651,
+          "endMs": 273731,
+          "source": "speech"
+        },
+        {
+          "text": "monkey",
+          "startMs": 273771,
+          "endMs": 274091,
+          "source": "speech"
+        },
+        {
+          "text": "spun",
+          "startMs": 274232,
+          "endMs": 274552,
+          "source": "speech"
+        },
+        {
+          "text": "it",
+          "startMs": 274592,
+          "endMs": 274652,
+          "source": "speech"
+        },
+        {
+          "text": "around",
+          "startMs": 274712,
+          "endMs": 275072,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 275212,
+          "endMs": 275292,
+          "source": "speech"
+        },
+        {
+          "text": "then",
+          "startMs": 275332,
+          "endMs": 275473,
+          "source": "speech"
+        },
+        {
+          "text": "struck",
+          "startMs": 275573,
+          "endMs": 275853,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 275893,
+          "endMs": 275933,
+          "source": "speech"
+        },
+        {
+          "text": "huge",
+          "startMs": 276013,
+          "endMs": 276393,
+          "source": "speech"
+        },
+        {
+          "text": "boulder.",
+          "startMs": 276473,
+          "endMs": 276874,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "The",
+          "startMs": 279696,
+          "endMs": 279776,
+          "source": "speech"
+        },
+        {
+          "text": "boulder",
+          "startMs": 279816,
+          "endMs": 280136,
+          "source": "speech"
+        },
+        {
+          "text": "exploded",
+          "startMs": 280196,
+          "endMs": 280917,
+          "source": "speech"
+        },
+        {
+          "text": "into",
+          "startMs": 280977,
+          "endMs": 281217,
+          "source": "speech"
+        },
+        {
+          "text": "tiny",
+          "startMs": 281297,
+          "endMs": 281718,
+          "source": "speech"
+        },
+        {
+          "text": "pieces.",
+          "startMs": 281798,
+          "endMs": 282218,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "The",
+          "startMs": 284180,
+          "endMs": 284260,
+          "source": "speech"
+        },
+        {
+          "text": "Tang",
+          "startMs": 284300,
+          "endMs": 284640,
+          "source": "speech"
+        },
+        {
+          "text": "Monk",
+          "startMs": 284680,
+          "endMs": 284920,
+          "source": "speech"
+        },
+        {
+          "text": "watched",
+          "startMs": 285020,
+          "endMs": 285401,
+          "source": "speech"
+        },
+        {
+          "text": "in",
+          "startMs": 285481,
+          "endMs": 285561,
+          "source": "speech"
+        },
+        {
+          "text": "horror.",
+          "startMs": 285621,
+          "endMs": 285941,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "laughed.",
+          "startMs": 287923,
+          "endMs": 288363,
+          "source": "speech"
+        },
+        {
+          "text": "\"Don't",
+          "startMs": 288383,
+          "endMs": 289744,
+          "source": "speech"
+        },
+        {
+          "text": "look",
+          "startMs": 289784,
+          "endMs": 289945,
+          "source": "speech"
+        },
+        {
+          "text": "so",
+          "startMs": 289965,
+          "endMs": 290105,
+          "source": "speech"
+        },
+        {
+          "text": "scared,",
+          "startMs": 290165,
+          "endMs": 290565,
+          "source": "speech"
+        },
+        {
+          "text": "Master.",
+          "startMs": 290605,
+          "endMs": 291005,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I'm",
+          "startMs": 291686,
+          "endMs": 291806,
+          "source": "speech"
+        },
+        {
+          "text": "protecting",
+          "startMs": 291826,
+          "endMs": 292246,
+          "source": "speech"
+        },
+        {
+          "text": "you!\"",
+          "startMs": 294444,
+          "endMs": 294664,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "The",
+          "startMs": 294764,
+          "endMs": 294904,
+          "source": "speech"
+        },
+        {
+          "text": "two",
+          "startMs": 294924,
+          "endMs": 295004,
+          "source": "speech"
+        },
+        {
+          "text": "traveled",
+          "startMs": 295085,
+          "endMs": 295425,
+          "source": "speech"
+        },
+        {
+          "text": "farther",
+          "startMs": 295505,
+          "endMs": 295885,
+          "source": "speech"
+        },
+        {
+          "text": "until",
+          "startMs": 295925,
+          "endMs": 296165,
+          "source": "speech"
+        },
+        {
+          "text": "they",
+          "startMs": 296205,
+          "endMs": 296306,
+          "source": "speech"
+        },
+        {
+          "text": "saw",
+          "startMs": 296366,
+          "endMs": 296546,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 296606,
+          "endMs": 296646,
+          "source": "speech"
+        },
+        {
+          "text": "group",
+          "startMs": 296706,
+          "endMs": 296966,
+          "source": "speech"
+        },
+        {
+          "text": "of",
+          "startMs": 297046,
+          "endMs": 297146,
+          "source": "speech"
+        },
+        {
+          "text": "men",
+          "startMs": 297226,
+          "endMs": 297447,
+          "source": "speech"
+        },
+        {
+          "text": "blocking",
+          "startMs": 297567,
+          "endMs": 298027,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 298067,
+          "endMs": 298127,
+          "source": "speech"
+        },
+        {
+          "text": "road.",
+          "startMs": 298167,
+          "endMs": 298447,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "men",
+          "startMs": 300089,
+          "endMs": 300269,
+          "source": "speech"
+        },
+        {
+          "text": "looked",
+          "startMs": 300309,
+          "endMs": 300549,
+          "source": "speech"
+        },
+        {
+          "text": "rough",
+          "startMs": 300649,
+          "endMs": 300909,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 300990,
+          "endMs": 301090,
+          "source": "speech"
+        },
+        {
+          "text": "mean.",
+          "startMs": 301170,
+          "endMs": 301750,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "They",
+          "startMs": 302050,
+          "endMs": 302191,
+          "source": "speech"
+        },
+        {
+          "text": "all",
+          "startMs": 302331,
+          "endMs": 302491,
+          "source": "speech"
+        },
+        {
+          "text": "had",
+          "startMs": 302551,
+          "endMs": 302711,
+          "source": "speech"
+        },
+        {
+          "text": "weapons.",
+          "startMs": 302771,
+          "endMs": 303211,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "One",
+          "startMs": 304913,
+          "endMs": 305053,
+          "source": "speech"
+        },
+        {
+          "text": "man",
+          "startMs": 305093,
+          "endMs": 305313,
+          "source": "speech"
+        },
+        {
+          "text": "stepped",
+          "startMs": 305413,
+          "endMs": 305694,
+          "source": "speech"
+        },
+        {
+          "text": "forward",
+          "startMs": 305774,
+          "endMs": 306134,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 306174,
+          "endMs": 306274,
+          "source": "speech"
+        },
+        {
+          "text": "waved",
+          "startMs": 306394,
+          "endMs": 306794,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 306875,
+          "endMs": 306935,
+          "source": "speech"
+        },
+        {
+          "text": "sword.",
+          "startMs": 307015,
+          "endMs": 307415,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Give",
+          "startMs": 307435,
+          "endMs": 309016,
+          "source": "speech"
+        },
+        {
+          "text": "us",
+          "startMs": 309056,
+          "endMs": 309177,
+          "source": "speech"
+        },
+        {
+          "text": "your",
+          "startMs": 309217,
+          "endMs": 309377,
+          "source": "speech"
+        },
+        {
+          "text": "money,",
+          "startMs": 309417,
+          "endMs": 309697,
+          "source": "speech"
+        },
+        {
+          "text": "or",
+          "startMs": 309977,
+          "endMs": 310077,
+          "source": "speech"
+        },
+        {
+          "text": "you'll",
+          "startMs": 310097,
+          "endMs": 310337,
+          "source": "speech"
+        },
+        {
+          "text": "be",
+          "startMs": 310358,
+          "endMs": 310478,
+          "source": "speech"
+        },
+        {
+          "text": "sorry!\"",
+          "startMs": 310558,
+          "endMs": 311018,
+          "source": "speech"
+        }
+      ]
+    }
+  ]
+}
