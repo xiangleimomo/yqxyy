@@ -696,6 +696,7 @@ async renderLesson(seriesId, episodeId){
     const syncWords=window.SFWordSync;
     const prepared=syncWords?await syncWords.load(d,cues):null;
     if(!caption.isConnected)return;
+    window.SFKaraokePractice?.attachVideo({player,caption,cues,prepared});
     let active=-1,renderedMode=null,wordView=null,animation=0,lastPaint=0;
     const update=()=>{
       syncNativeTrack();
@@ -711,7 +712,7 @@ async renderLesson(seriesId, episodeId){
         if(next<0){
           caption.textContent='';
         }else if(wordEnabled&&prepared?.[next]){
-          wordView=syncWords.render(prepared[next]);
+          wordView=syncWords.render(prepared[next],true);
           caption.replaceChildren(wordView.fragment);
           caption.dataset.wordTiming=prepared[next].verified?'speech':'estimated';
         }else{
@@ -742,6 +743,7 @@ async renderLesson(seriesId, episodeId){
     if(caption.dataset.dragBound) return;
     caption.dataset.dragBound='1';
     caption.addEventListener('pointerdown',event=>{
+      if(event.target.closest('.sf-karaoke-word')) return;
       if(event.button!==undefined && event.button!==0) return;
       event.preventDefault();
       const stage=player.parentElement;
@@ -1069,8 +1071,11 @@ async renderLesson(seriesId, episodeId){
         wordViews.push(view);
       });
     }
-    const hasSpeech=prepared.some(row=>row.words.some(word=>word.source==='speech'));
-    status.textContent=`已加载 ${cues.length} 条字幕。逐词高亮：${hasSpeech?'语音时间对齐':'按句时长估算'}。点击句子播放；↻ 可单句循环。`;
+    const speechCount=prepared.reduce((count,row)=>count+row.words.filter(word=>word.source==='speech').length,0);
+    const totalWords=prepared.reduce((count,row)=>count+row.words.length,0);
+    const coverage=totalWords?Math.round(speechCount/totalWords*100):0;
+    status.textContent=`已加载 ${cues.length} 条字幕。词级时间轴：${speechCount?`语音对齐 ${coverage}%（其余估算）`:'按句时长估算'}。点击单词定位，↻ 可单句循环。`;
+    window.SFKaraokePractice?.attachAudio({panel,audio,cues,prepared});
     wordToggle.addEventListener('change',()=>{
       const prefs={...this.subtitlePreferences(),wordHighlight:wordToggle.checked};
       localStorage.setItem('storyfox-subtitle-preferences',JSON.stringify(prefs));

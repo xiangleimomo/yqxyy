@@ -82,7 +82,7 @@
     }
     return prepare(cues,track);
   }
-  function render(prepared){
+  function render(prepared,interactive=false){
     const fragment=document.createDocumentFragment(),nodes=[];
     for(const token of prepared.parts){
       if(SPACE.test(token)){
@@ -91,6 +91,8 @@
         const el=document.createElement('span');
         el.className='sf-karaoke-word';
         el.textContent=token;
+        el.dataset.wordIndex=String(nodes.length);
+        if(interactive){el.tabIndex=0;el.setAttribute('role','button');el.setAttribute('aria-label','从 '+token+' 开始播放');}
         nodes.push(el);
         fragment.appendChild(el);
       }
@@ -102,8 +104,10 @@
     let next=-1;
     if(enabled){
       for(let i=0;i<view.words.length;i++){
-        if(timeMs>=view.words[i].startMs) next=i;
-        else break;
+        const word=view.words[i];
+        if(timeMs<word.startMs) break;
+        if(timeMs<word.endMs) next=i;
+        else next=-1;
       }
     }
     if(next===view.current) return;
