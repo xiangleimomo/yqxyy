@@ -8,7 +8,7 @@ from urllib.parse import urlparse
 
 ROOT=Path(__file__).resolve().parents[1]
 HOSTS={"cdn.littlefox.com","cdn.littlefox.co.kr"}
-METHOD="whisperx-asr-read-corrected-forced-alignment"
+METHOD="whisperx-asr-xml-text-verified-forced-alignment"
 
 def source_ok(episode):
     video=episode.get("video") or {}
@@ -41,7 +41,7 @@ def select(limit=100,retry_failed=False,series_only=None):
         except (ValueError,KeyError,TypeError):pass
     eligible=[]
     stats={"seriesScanned":0,"episodesScanned":0,"missingRead":0,"missingVideo":0,
-           "alreadyPublishedNew":0,"failedHeld":0,"eligible":0}
+           "alreadyPublishedNew":0,"failedHeld":0,"missingXmlContentId":0,"eligible":0}
     for directory in sorted((ROOT/"data").iterdir()):
         if series_only and directory.name!=series_only:continue
         episodes_file=directory/"episodes.json"
@@ -66,6 +66,10 @@ def select(limit=100,retry_failed=False,series_only=None):
                 continue
             if not source_ok(episode):
                 stats["missingVideo"]+=1
+                continue
+            source_id=episode.get("sourceContentId")
+            if not isinstance(source_id,str) or not re.fullmatch(r"C[0-9]{7}",source_id) or (lesson.get("sourceId") and lesson["sourceId"]!=source_id):
+                stats["missingXmlContentId"]+=1
                 continue
             if existing_new_version(directory,eid,episode):
                 stats["alreadyPublishedNew"]+=1
