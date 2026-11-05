@@ -1280,3 +1280,6 @@ body.series-fixed-page .footer{
 .sf-audio-speed-control{display:inline-flex;align-items:center;gap:5px;font-size:12px;white-space:nowrap}
 .sf-audio-speed-control select{font:inherit;border:1px solid var(--border,#d9e1ef);border-radius:6px;padding:5px;background:var(--card,#fff);color:inherit}
 @media(max-width:600px){.subtitle-controls .sf-practice-hint,.subtitle-controls .sf-practice-quality{max-width:125px}}
+
+/* Keep expanded video caption settings reachable on small landscape players. */
+.subtitle-video-wrap .subtitle-controls-overlay{max-height:min(76vh, max(144px, min(32vw, 300px)));overflow-y:auto;overscroll-behavior:contain}
