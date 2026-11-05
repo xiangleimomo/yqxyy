@@ -24,7 +24,6 @@
     stage._sfFullscreenBound = true;
     let placeholder = null;
     let pseudo = false;
-    let closed = false;
     const isFull = () => pseudo || document.fullscreenElement === stage;
     const updateButton = () => {
       const full = isFull();
@@ -98,6 +97,7 @@
     player.setAttribute('disablepictureinpicture', '');
     let mobileFullscreenButton = null;
     if (coarsePointer()) {
+      stage.classList.add('sf-touch-stage');
       player.removeAttribute('controls');
       player.controls = false;
       const bar = document.createElement('div');
