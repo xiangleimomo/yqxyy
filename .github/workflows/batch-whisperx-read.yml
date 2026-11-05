@@ -23,7 +23,9 @@ permissions:
 
 concurrency:
   group: yqxyy-whisperx-publish-batches
-  cancel-in-progress: false
+  # Explicit replacement launches stop any still-running obsolete batch.
+  # Scheduled daily batches queue normally instead of interrupting work.
+  cancel-in-progress: ${{ github.event_name == 'push' }}
 
 jobs:
   prepare:
