@@ -25,6 +25,21 @@ jobs:
           python-version: '3.12'
       - name: Validate importer
         run: python -m py_compile scripts/import-official-captions.py
+      - name: Verify actual official XML parser and millisecond units
+        shell: bash
+        run: |
+          python - <<'PY'
+          import importlib.util
+          spec=importlib.util.spec_from_file_location('captions','scripts/import-official-captions.py')
+          mod=importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(mod)
+          url,body=mod.download('C0013409')
+          cues=mod.parse_xml(body)
+          assert len(cues)==61, f'Expected 61 official cues, got {len(cues)}'
+          assert cues[0]['startMs']==46 and cues[0]['endMs']==8443, 'Official millisecond parsing incorrect'
+          assert cues[-1]['endMs']==344977, 'Unexpected original timebase'
+          print('Verified: 61 official XML cues with native millisecond timing')
+          PY
       - name: Fetch real C0013409 XML and apply verified time codes
         id: capture
         shell: bash
