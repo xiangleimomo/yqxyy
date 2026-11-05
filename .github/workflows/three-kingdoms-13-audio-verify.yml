@@ -19,6 +19,8 @@ jobs:
       - name: Install speech recognizer and audio decoder
         run: |
           python -m pip install faster-whisper==1.2.1
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
           ffmpeg -version
       - name: Obtain timing evidence from current episode 13 media
         run: |
