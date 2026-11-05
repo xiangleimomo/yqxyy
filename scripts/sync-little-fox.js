@@ -40,11 +40,10 @@ if (apply) {
   const result = spawnSync(python, [path.join(__dirname, 'import-episode-pdfs.py'), '--apply'], { stdio: 'inherit' });
   if (result.error) throw result.error;
   if (result.status) throw new Error(`import-episode-pdfs.py failed with exit code ${result.status}.`);
-  // New episodes: prefer official caption XML identified by sourceContentId.
-  // Also retry episode 13 until its currently unverified VTT has been fixed.
-  // The importer never replaces an existing speech-verified timing sidecar and
-  // leaves the prior VTT intact when the XML is unavailable or inconsistent.
-  const captionResult = spawnSync(python, [path.join(__dirname, 'import-official-captions.py'), '--manifest', 'subtitle-review/new-lessons.json', '--lesson', 'three-kingdoms:13', '--apply'], { stdio: 'inherit' });
+  // New episodes: import official XML by verified sourceContentId.
+  // Preserve existing speech-calibrated timing, and leave VTT unchanged when
+  // official XML is unavailable or its transcript cannot be verified.
+  const captionResult = spawnSync(python, [path.join(__dirname, 'import-official-captions.py'), '--manifest', 'subtitle-review/new-lessons.json', '--apply'], { stdio: 'inherit' });
   if (captionResult.error) throw captionResult.error;
   if (captionResult.status) throw new Error(`import-official-captions.py failed with exit code ${captionResult.status}.`);
 }
