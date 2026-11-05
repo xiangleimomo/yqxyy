@@ -1373,3 +1373,10 @@ html.sf-caption-screen-locked,body.sf-caption-screen-locked{overflow:hidden!impo
   .subtitle-video-wrap.sf-caption-below .sf-mobile-caption-area{padding:6px 8px;min-height:64px}
   .subtitle-video-wrap.sf-caption-below .video-caption{padding:7px 8px}
 }
+
+/* Mobile subtitle tray status: never show an unexplained empty dark panel. */
+.sf-mobile-caption-message{display:none}
+.subtitle-video-wrap.sf-caption-below .sf-mobile-caption-message:not([hidden]){
+  display:block;color:#dcecff;text-align:center;width:100%;
+  font-size:13px;line-height:1.5;letter-spacing:.01em;
+}
