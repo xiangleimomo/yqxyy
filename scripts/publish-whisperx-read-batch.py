@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fail-closed publisher for 100-item WhisperX+official-XML-Text batch output.
+"""Fail-closed publisher for 10-item WhisperX+official-XML-Text batch output.
 
 Reads only freshly generated candidates and current canonical Read. It never
 uses the site's previous VTT or word timing as generation/validation input.
@@ -134,7 +134,7 @@ def main():
     if plan.get("pipeline")!="audio-whisperx-xml-text-only-forced-alignment" or plan.get("usesExistingSiteSubtitlesAsInput") is not False:
         raise ValueError("Publisher refused an obsolete VTT-based batch")
     if len(plan.get("lessons",[]))>100 or not plan.get("lessons"):
-        raise ValueError("Batch must contain 1–100 episodes")
+        raise ValueError("Batch must contain 1–10 episodes")
     root=Path(args.source)
     successes=[];failures=[]
     for row in plan["lessons"]:
