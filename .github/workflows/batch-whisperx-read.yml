@@ -1,12 +1,12 @@
-name: WhisperX + official XML Text 100-episode karaoke batch
+name: WhisperX + official XML Text 10-episode karaoke batch
 on:
   workflow_dispatch:
     inputs:
       batch_size:
-        description: "Number of episodes (max 100)"
+        description: "Number of episodes (max 10)"
         type: choice
-        options: ['100']
-        default: '100'
+        options: ['10']
+        default: '10'
       retry_failed:
         description: "Include previously rejected episodes"
         type: boolean
@@ -25,11 +25,11 @@ concurrency:
   group: yqxyy-whisperx-publish-batches
   # Explicit replacement launches stop any still-running obsolete batch.
   # Scheduled daily batches queue normally instead of interrupting work.
-  cancel-in-progress: ${{ github.event_name == 'push' }}
+  cancel-in-progress: false
 
 jobs:
   prepare:
-    name: Select 100 episodes from original video and official XML
+    name: Select 10 episodes from original video and official XML
     runs-on: ubuntu-latest
     outputs:
       has_targets: ${{ steps.select.outputs.has_targets }}
@@ -48,7 +48,7 @@ jobs:
         env:
           RETRY_FAILED: ${{ inputs.retry_failed || 'false' }}
         run: |
-          ARGS=(--limit 100 --output whisperx-batch-targets.json)
+          ARGS=(--limit 10 --output whisperx-batch-targets.json)
           if [[ "$RETRY_FAILED" == "true" ]]; then ARGS+=(--retry-failed); fi
           python scripts/manifest-whisperx-read.py "${ARGS[@]}"
           COUNT=$(python -c "import json;print(json.load(open('whisperx-batch-targets.json'))['selected'])")
@@ -63,7 +63,7 @@ jobs:
         with:
           name: whisperx-batch-targets
           path: whisperx-batch-targets.json
-          retention-days: 7
+          retention-days: 14
 
   align:
     name: WhisperX XML Text forced alignment (shard ${{ matrix.shard }})
@@ -73,9 +73,9 @@ jobs:
     timeout-minutes: 360
     strategy:
       fail-fast: false
-      max-parallel: 10
+      max-parallel: 5
       matrix:
-        shard: [0,1,2,3,4,5,6,7,8,9]
+        shard: [0,1,2,3,4]
     env:
       HF_HOME: /tmp/yqxyy-whisperx-hf
       OMP_NUM_THREADS: '4'
@@ -104,7 +104,7 @@ jobs:
           key: ${{ runner.os }}-whisperx-read-small-en-cpu-v2
       - name: Official XML Text proofreading, real audio ASR and forced word alignment
         run: |
-          python scripts/run-whisperx-read-batch.py --manifest whisperx-batch-targets.json --shard ${{ matrix.shard }} --shards 10 --model small.en --output whisperx-batch-results
+          python scripts/run-whisperx-read-batch.py --manifest whisperx-batch-targets.json --shard ${{ matrix.shard }} --shards 5 --model small.en --output whisperx-batch-results
       - name: Preserve every successful candidate and every rejection
         if: always()
         uses: actions/upload-artifact@v4
