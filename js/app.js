@@ -751,8 +751,7 @@ async renderLesson(seriesId, episodeId){
     if(!player.paused)startPaint();
     // Progressive enhancement: sentence text is visible immediately, even
     // when .words.json is unavailable or slow. Apply exact word times later.
-    if(syncWords){
-      Promise.race([
+    const wordTimingPromise=syncWords?Promise.race([
         syncWords.load(d,cues),
         new Promise(resolve=>setTimeout(()=>resolve(null),8000))
       ]).then(track=>{
@@ -761,9 +760,8 @@ async renderLesson(seriesId, episodeId){
         else effectiveWords=track;
         active=-1;
         update();
-      }).catch(()=>{});
-    }
-    if(caption.dataset.dragBound) return;
+      }).catch(()=>{}):Promise.resolve();
+    if(caption.dataset.dragBound) return wordTimingPromise;
     caption.dataset.dragBound='1';
     caption.addEventListener('pointerdown',event=>{
       if(caption.closest('.subtitle-video-wrap')?.classList.contains('sf-caption-below')) return;
@@ -792,6 +790,7 @@ async renderLesson(seriesId, episodeId){
       caption.addEventListener('pointercancel',finish);
       updatePosition(event);
     });
+    return wordTimingPromise;
   },
   async initializeHlsVideo(player){
     return this.initializeHlsMedia(player);
