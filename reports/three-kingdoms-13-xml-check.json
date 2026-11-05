@@ -7,5 +7,138 @@
       "status": "pending",
       "error": "No supported timed captions in source XML"
     }
-  ]
+  ],
+  "xmlStructure": {
+    "rootTag": "Subtitle",
+    "tagCounts": {
+      "Paragraph": 61,
+      "Number": 61,
+      "StartMilliseconds": 61,
+      "EndMilliseconds": 61,
+      "Text": 61,
+      "Subtitle": 1
+    },
+    "sampleNodes": [
+      {
+        "tag": "Subtitle",
+        "attributes": {},
+        "childTags": [
+          "Paragraph",
+          "Paragraph",
+          "Paragraph",
+          "Paragraph",
+          "Paragraph",
+          "Paragraph",
+          "Paragraph",
+          "Paragraph"
+        ],
+        "textPreview": "1 \n     46 \n     8443 \n     The soldiers brought Cao Cao to the local magistrate, Chen Gong. \n "
+      },
+      {
+        "tag": "Paragraph",
+        "attributes": {},
+        "childTags": [
+          "Number",
+          "StartMilliseconds",
+          "EndMilliseconds",
+          "Text"
+        ],
+        "textPreview": "1 \n     46 \n     8443 \n     The soldiers brought Cao Cao to the local magistrate, Chen Gong."
+      },
+      {
+        "tag": "Number",
+        "attributes": {},
+        "childTags": [],
+        "textPreview": "1"
+      },
+      {
+        "tag": "StartMilliseconds",
+        "attributes": {},
+        "childTags": [],
+        "textPreview": "46"
+      },
+      {
+        "tag": "EndMilliseconds",
+        "attributes": {},
+        "childTags": [],
+        "textPreview": "8443"
+      },
+      {
+        "tag": "Text",
+        "attributes": {},
+        "childTags": [],
+        "textPreview": "The soldiers brought Cao Cao to the local magistrate, Chen Gong."
+      },
+      {
+        "tag": "Paragraph",
+        "attributes": {},
+        "childTags": [
+          "Number",
+          "StartMilliseconds",
+          "EndMilliseconds",
+          "Text"
+        ],
+        "textPreview": "2 \n     8444 \n     14651 \n     Chen Gong glared at Cao Cao. \"You planned to assassinate Dong Zh"
+      },
+      {
+        "tag": "Number",
+        "attributes": {},
+        "childTags": [],
+        "textPreview": "2"
+      },
+      {
+        "tag": "StartMilliseconds",
+        "attributes": {},
+        "childTags": [],
+        "textPreview": "8444"
+      },
+      {
+        "tag": "EndMilliseconds",
+        "attributes": {},
+        "childTags": [],
+        "textPreview": "14651"
+      },
+      {
+        "tag": "Text",
+        "attributes": {},
+        "childTags": [],
+        "textPreview": "Chen Gong glared at Cao Cao. \"You planned to assassinate Dong Zhuo."
+      },
+      {
+        "tag": "Paragraph",
+        "attributes": {},
+        "childTags": [
+          "Number",
+          "StartMilliseconds",
+          "EndMilliseconds",
+          "Text"
+        ],
+        "textPreview": "3 \n     14652 \n     21704 \n     You're a traitor to the Han Dynasty.\""
+      },
+      {
+        "tag": "Number",
+        "attributes": {},
+        "childTags": [],
+        "textPreview": "3"
+      },
+      {
+        "tag": "StartMilliseconds",
+        "attributes": {},
+        "childTags": [],
+        "textPreview": "14652"
+      },
+      {
+        "tag": "EndMilliseconds",
+        "attributes": {},
+        "childTags": [],
+        "textPreview": "21704"
+      },
+      {
+        "tag": "Text",
+        "attributes": {},
+        "childTags": [],
+        "textPreview": "You're a traitor to the Han Dynasty.\""
+      }
+    ]
+  }
 }
