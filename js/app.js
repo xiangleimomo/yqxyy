@@ -913,11 +913,161 @@ async renderLesson(seriesId, episodeId){
     play.disabled=false;
     status.textContent=`已保存：${entry.name}（${(entry.size/1024/1024).toFixed(1)} MB）`;
   },
+  timedSentencePanel(){
+  return `<section class="timed-sentence-study" aria-label="逐句跟读">
+    <div class="timed-sentence-toolbar">
+      <strong>逐句跟读 · Sentence practice</strong>
+      <div class="timed-sentence-actions">
+        <button type="button" class="btn secondary small timed-sentence-prev" disabled>上一句</button>
+        <button type="button" class="btn secondary small timed-sentence-next" disabled>下一句</button>
+        <button type="button" class="btn secondary small timed-sentence-loop" aria-pressed="false" disabled>单句循环：关</button>
+        <label class="timed-sentence-follow-label"><input class="timed-sentence-follow" type="checkbox" checked> 自动跟随</label>
+      </div>
+    </div>
+    <p class="muted timed-sentence-status" role="status">正在加载逐句时间轴…</p>
+    <div class="timed-sentence-list" role="list" aria-label="同步英文字幕"></div>
+  </section>`;
+},
+  async bindTimedSentenceStudy(root,d){
+  const panel=root.querySelector('.timed-sentence-study');
+  const audio=root.querySelector('.hls-audio-player');
+  if(!panel || !audio || panel.dataset.bound) return;
+  panel.dataset.bound='1';
+  const list=panel.querySelector('.timed-sentence-list');
+  const status=panel.querySelector('.timed-sentence-status');
+  const prev=panel.querySelector('.timed-sentence-prev');
+  const next=panel.querySelector('.timed-sentence-next');
+  const loopToggle=panel.querySelector('.timed-sentence-loop');
+  const follow=panel.querySelector('.timed-sentence-follow');
+  let cues=[],active=-1,chosen=0,loopIndex=-1,frame=null;
+  const readIndex=()=> {
+    const ms=Math.round((Number(audio.currentTime)||0)*1000);
+    return cues.findIndex(c=>ms>=c.startMs && ms<c.endMs);
+  };
+  const buttons=()=>list.querySelectorAll('.timed-sentence-item');
+  const setLoop=(index)=>{
+    loopIndex=Number.isInteger(index)&&index>=0&&index<cues.length?index:-1;
+    loopToggle.setAttribute('aria-pressed',String(loopIndex>=0));
+    loopToggle.textContent=loopIndex>=0?`单句循环：第 ${loopIndex+1} 句`:'单句循环：关';
+    buttons().forEach((row,i)=>{
+      row.classList.toggle('is-looping',i===loopIndex);
+      row.querySelector('.timed-sentence-loop-one')?.setAttribute('aria-pressed',String(i===loopIndex));
+    });
+    if(loopIndex>=0&&!audio.paused) startFrame();
+    if(loopIndex<0&&frame!==null){cancelAnimationFrame(frame);frame=null;}
+  };
+  const setActive=(index)=>{
+    if(index===active) return;
+    if(active>=0){
+      const old=list.querySelector(`[data-cue-index="${active}"]`);
+      old?.classList.remove('is-active');
+      old?.querySelector('.timed-sentence-text')?.removeAttribute('aria-current');
+    }
+    active=index;
+    const row=index>=0?list.querySelector(`[data-cue-index="${index}"]`):null;
+    if(row){
+      row.classList.add('is-active');
+      row.querySelector('.timed-sentence-text')?.setAttribute('aria-current','true');
+      if(follow.checked){
+        const wanted=row.offsetTop-list.offsetTop-(list.clientHeight-row.offsetHeight)/2;
+        if(Math.abs(wanted-list.scrollTop)>list.clientHeight/3)list.scrollTo({top:Math.max(0,wanted),behavior:'smooth'});
+      }
+    }
+    prev.disabled=!cues.length;
+    next.disabled=!cues.length;
+  };
+  const update=()=>{
+    if(!panel.isConnected)return;
+    const now=Math.round((Number(audio.currentTime)||0)*1000);
+    if(loopIndex>=0&&!audio.paused){
+      const cue=cues[loopIndex];
+      if(now>=cue.endMs-35 || now<cue.startMs-250){
+        audio.currentTime=cue.startMs/1000;
+        setActive(loopIndex);
+        return;
+      }
+    }
+    const index=readIndex();
+    if(index>=0){chosen=index;setActive(index);}
+    else if(loopIndex<0)setActive(-1);
+  };
+  const tick=()=>{
+    frame=null;
+    if(!panel.isConnected||audio.paused||loopIndex<0)return;
+    update();
+    frame=requestAnimationFrame(tick);
+  };
+  const startFrame=()=>{
+    if(frame===null&&loopIndex>=0&&!audio.paused&&panel.isConnected)frame=requestAnimationFrame(tick);
+  };
+  const stopFrame=()=>{
+    if(frame!==null){cancelAnimationFrame(frame);frame=null;}
+  };
+  const seekTo=index=>{
+    if(index<0||index>=cues.length)return;
+    chosen=index;
+    const jump=()=>{if(panel.isConnected)audio.currentTime=cues[index].startMs/1000;};
+    if(audio.readyState===0)audio.addEventListener('loadedmetadata',jump,{once:true});
+    else jump();
+    setActive(index);
+    audio.play().catch(()=>{status.textContent='点击音频播放按钮后，可以继续逐句跟读。';});
+  };
+  try{
+    const url=this.subtitleVttUrl(d);
+    if(!url)throw Error('本集尚无字幕路径');
+    const response=await fetch(url);
+    if(!response.ok)throw Error('本集尚无有效时间轴');
+    cues=this.parseVtt(await response.text()).filter(c=>c.text&&Number.isFinite(c.startMs)&&c.endMs>c.startMs);
+    if(!cues.length)throw Error('字幕没有有效的逐句时间');
+    if(!panel.isConnected)return;
+    list.innerHTML=cues.map((c,i)=>`<div class="timed-sentence-item" role="listitem" data-cue-index="${i}">
+      <span class="timed-sentence-number">${i+1}</span>
+      <button type="button" class="timed-sentence-text" title="点击播放这一句">${this.escapeHtml(c.text)}</button>
+      <button type="button" class="timed-sentence-loop-one" aria-label="循环播放第 ${i+1} 句" aria-pressed="false" title="循环播放此句">↻</button>
+    </div>`).join('');
+    status.textContent=`已加载 ${cues.length} 条同步字幕。点击任意一句播放；↻ 可重复该句。`;
+    prev.disabled=false;next.disabled=false;loopToggle.disabled=false;
+    list.addEventListener('click',event=>{
+      const row=event.target.closest('.timed-sentence-item');
+      if(!row||!list.contains(row))return;
+      const index=Number(row.dataset.cueIndex);
+      if(event.target.closest('.timed-sentence-loop-one'))setLoop(loopIndex===index?-1:index);
+      else if(loopIndex>=0&&loopIndex!==index)setLoop(-1);
+      seekTo(index);
+    });
+    const step=delta=>{
+      const base=active>=0?active:chosen;
+      const index=Math.min(cues.length-1,Math.max(0,base+delta));
+      if(loopIndex>=0)setLoop(-1);
+      seekTo(index);
+    };
+    prev.addEventListener('click',()=>step(-1));
+    next.addEventListener('click',()=>step(1));
+    loopToggle.addEventListener('click',()=>{
+      if(loopIndex>=0)setLoop(-1);
+      else{
+        const index=active>=0?active:chosen;
+        setLoop(index);
+        seekTo(index);
+      }
+    });
+    audio.addEventListener('timeupdate',update);
+    audio.addEventListener('seeked',update);
+    audio.addEventListener('play',()=>{update();startFrame();});
+    audio.addEventListener('pause',stopFrame);
+    audio.addEventListener('ended',stopFrame);
+    audio.addEventListener('loadedmetadata',update);
+    update();
+  }catch(error){
+    if(panel.isConnected)status.textContent=`逐句跟读暂不可用：${error.message}。下方完整课文不受影响。`;
+  }
+},
   listenReadPanel(d){
     const audio=this.hlsAudioPanel(d);
     return `
     <div class="read-only-window">
       ${audio}
+      ${this.timedSentencePanel()}
       ${this.readPanel(d).replace('<h2>Read</h2>','').replace(/<button class="btn small mark-complete"[^>]*data-module="read"[^>]*>完成本模块<\/button>/,'')}
     </div>
     ${this.completeButton(d,'read')}`;
@@ -1083,6 +1233,7 @@ bindLessonPanel(tab,d,root=document){
   this.applySubtitlePreferences(root);
   this.bindSubtitleControls(root);
   document.querySelectorAll('.hls-audio-player').forEach(player=>this.initializeHlsAudio(player));
+  if(tab==='listenRead')this.bindTimedSentenceStudy(root,d);
   document.querySelectorAll('.mark-complete').forEach(btn=>btn.addEventListener('click', e=>{e.preventDefault(); this.markComplete(btn.dataset.series, btn.dataset.episode, btn.dataset.module); btn.textContent='已完成 ✓';}));
   document.querySelectorAll('.open-direct-video').forEach(btn=>btn.addEventListener('click',()=>{this.activeLessonTab='directVideo'; this.renderLesson(d.seriesId,d.episodeId);}));
   document.querySelectorAll('.open-bilibili-video').forEach(btn=>btn.addEventListener('click',()=>{this.activeLessonTab='watch'; this.renderLesson(d.seriesId,d.episodeId);}));
