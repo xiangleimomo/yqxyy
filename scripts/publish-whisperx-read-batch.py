@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fail-closed publisher for 100-item WhisperX+Read batch output.
+"""Fail-closed publisher for 100-item WhisperX+official-XML-Text batch output.
 
 Reads only freshly generated candidates and current canonical Read. It never
 uses the site's previous VTT or word timing as generation/validation input.
@@ -15,7 +15,7 @@ import shutil
 from urllib.parse import urlparse
 
 ROOT=Path(__file__).resolve().parents[1]
-METHOD="whisperx-asr-read-corrected-forced-alignment"
+METHOD="whisperx-asr-xml-text-verified-forced-alignment"
 SPEC=importlib.util.spec_from_file_location("whisperx_read_engine",ROOT/"scripts/whisperx-read-align.py")
 ENGINE=importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(ENGINE)
@@ -45,9 +45,20 @@ def validated_payload(row, folder):
     eps=json.loads(ep_file.read_text(encoding="utf-8"))
     ep=next(e for e in eps if int(e["episodeId"])==eid)
     read=json.loads(read_file.read_text(encoding="utf-8"))
-    canonical=ENGINE.words_from_read(ep,read[str(eid)])
-    if not canonical:
-        raise ValueError("Canonical Read is empty")
+    original_read=ENGINE.words_from_read(ep,read[str(eid)])
+    xml_file=folder/"official-caption.xml"
+    if not xml_file.is_file():
+        raise ValueError("Official XML Text source artifact missing")
+    checked=ENGINE.verify_against_read(xml_file.read_bytes(),original_read)
+    canonical=checked["words"]
+    if report.get("textAuthority")!="littlefox-xml-paragraph-text" or track.get("textAuthority")!="littlefox-xml-paragraph-text":
+        raise ValueError("Candidate did not use official XML Text as canonical wording")
+    if report.get("xmlContentId")!=ep.get("sourceContentId"):
+        raise ValueError("XML content ID does not match the episode")
+    if checked["sha256"]!=report.get("xmlTextSha256") or checked["sha256"]!=track.get("xmlTextSha256"):
+        raise ValueError("Original XML Text checksum changed")
+    if abs(float(track.get("readXmlAgreement") or 0)-checked["readAgreement"])>0.0001:
+        raise ValueError("Read versus XML verification did not match")
     if row.get("sourceContentId")!=ep.get("sourceContentId") or track.get("sourceContentId")!=ep.get("sourceContentId"):
         raise ValueError("Source ID changed since selection")
     if not track.get("mediaPath") or not track.get("mediaFingerprint"):
@@ -105,6 +116,7 @@ def validated_payload(row, folder):
     if report.get("suspiciousLongWordSpans") or report.get("missingWords",0):
         raise ValueError("Known abnormal/missing spans")
     return vtt,word_text,{"cues":len(blocks),"words":len(flattened),
+                          "xmlTextVerified":True,"xmlParagraphs":checked["paragraphs"],
                           "speechWords":total_speech,"coverage":round(total_speech/len(flattened),4)}
 
 def main():
