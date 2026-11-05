@@ -119,12 +119,21 @@ def aligned_to_official(canonical: list[str], aligned_segments: list[dict], dura
             if normalize(token):
                 found.append(item)
     links = {}
-    for block in SequenceMatcher(
-        a=[normalize(w.get("word", "")) for w in found],
-        b=[normalize(w) for w in canonical], autojunk=False
-    ).get_matching_blocks():
-        for i in range(block.size):
-            links[block.b+i] = found[block.a+i]
+    asr_norm = [normalize(w.get("word", "")) for w in found]
+    xml_norm = [normalize(w) for w in canonical]
+    matcher = SequenceMatcher(a=asr_norm, b=xml_norm, autojunk=False)
+    for tag, a0, a1, b0, b1 in matcher.get_opcodes():
+        if tag == "equal":
+            for offset in range(a1-a0):
+                links[b0+offset] = found[a0+offset]
+        elif tag == "replace" and 0 < a1-a0 == b1-b0 <= 3:
+            # A like/love substitution has a genuine WhisperX timestamp.
+            # Require a matching context anchor on both sides where available.
+            left = a0 == 0 or (b0 > 0 and asr_norm[a0-1] == xml_norm[b0-1])
+            right = a1 == len(found) or (b1 < len(canonical) and asr_norm[a1] == xml_norm[b1])
+            if left and right:
+                for offset in range(a1-a0):
+                    links[b0+offset] = found[a0+offset]
     output = [None] * len(canonical)
     last_start = -1
     for index in range(len(canonical)):
@@ -384,7 +393,7 @@ def run_one(args):
             quality["missingWordExamples"] = [
                 {"index":i,"word":canonical[i]} for i,w in enumerate(mapped) if w is None
             ][:20]
-            if quality["forcedAlignedFraction"] >= 0.975:
+            if quality["forcedAlignedFraction"] >= args.min_aligned:
                 rescued = fill_rare_verified_gaps(mapped,canonical)
                 quality["shortGapEstimatedWords"] += rescued
                 quality["missingWords"] -= rescued
@@ -399,8 +408,10 @@ def run_one(args):
             )
             if quality["forcedAlignedFraction"] < args.min_aligned:
                 raise ValueError(f"Forced word alignment low: {quality['forcedAlignedFraction']:.1%}")
+            # Retain all official words; a small missing ASR gap may be estimated
+            # only when it is bounded by genuine timestamps.
             if any(word is None for word in mapped):
-                raise ValueError("Unaligned official XML Text words remain; candidate withheld")
+                raise ValueError("Unbounded missing speech timestamps; review required")
             if not first or not last or last["endMs"] < duration_ms*0.75:
                 raise ValueError("Missing late-episode speech; candidate withheld")
             outliers = suspicious_word_spans(mapped)
