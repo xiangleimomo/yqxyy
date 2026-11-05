@@ -54,6 +54,13 @@
       return {cue,parts:parts(cue.text),words,verified:words.length>0&&words.every(word=>word.source==='speech')};
     });
   }
+  function mediaPath(value){
+    if(!value)return '';
+    try{
+      const parsed=new URL(String(value),location.href);
+      return parsed.pathname.replace(/^\/+/, '');
+    }catch{return String(value).split(/[?#]/)[0].replace(/^\/+/, '');}
+  }
   async function load(d,cues){
     let track=null;
     const number=Number(d.ep?.episodeId??d.episodeId),id=String(d.seriesId||'');
@@ -63,8 +70,13 @@
         const response=await fetch(url);
         if(response.ok){
           const candidate=await response.json();
-          if(!candidate.sourceContentId||
-            candidate.sourceContentId===d.ep?.sourceContentId) track=candidate;
+          const video=d.ep?.video||{};
+          const currentPaths=['hlsUrl','backupHlsUrl','hls720Url','originalHlsUrl'].map(key=>mediaPath(video[key])).filter(Boolean);
+          const identityOk=(!candidate.seriesId||candidate.seriesId===id)&&
+            (!Number.isFinite(Number(candidate.episodeId))||Number(candidate.episodeId)===number)&&
+            (!candidate.sourceContentId||!d.ep?.sourceContentId||candidate.sourceContentId===d.ep.sourceContentId);
+          const mediaOk=!candidate.mediaPath||!currentPaths.length||currentPaths.includes(mediaPath(candidate.mediaPath));
+          if(identityOk&&mediaOk)track=candidate;
         }
       }catch{}
     }
