@@ -1,0 +1,34 @@
+name: Recover and publish first 98 Little Fox episodes
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/subtitle-review/recover-first-batch.py
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download original first-batch artifacts (no WhisperX rerun)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh run download 42072397000 --repo ${{ github.repository }} --dir recovered-artifacts
+      - name: Recover and verify original XML and word timestamps
+        run: python scripts/subtitle-review/recover-first-batch.py recovered-artifacts
+      - name: Commit verified episode pairs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/journey-to-the-west/subtitles/*.vtt data/journey-to-the-west/subtitles/*.words.json reports/whisperx-first-batch-recovery.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish first-batch recovered XML subtitles and word timing"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
