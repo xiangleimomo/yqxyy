@@ -45,13 +45,13 @@ def make_asr_mapping(canonical: list[str], segments: list[dict]):
                 segment_indices.append(index)
     xml_norm = [normalize(t) for t in canonical]
     asr_norm = [normalize(t) for t in asr]
-    map_asr_to_read = {}
+    map_asr_to_xml = {}
     for block in SequenceMatcher(a=asr_norm, b=xml_norm, autojunk=False).get_matching_blocks():
         for offset in range(block.size):
-            map_asr_to_read[block.a+offset] = block.b+offset
-    coverage_read = len(set(map_asr_to_read.values())) / max(1, len(canonical))
-    coverage_asr = len(map_asr_to_read) / max(1, len(asr))
-    return map_asr_to_read, segment_indices, coverage_read, coverage_asr, asr
+            map_asr_to_xml[block.a+offset] = block.b+offset
+    coverage_xml = len(set(map_asr_to_xml.values())) / max(1, len(canonical))
+    coverage_asr = len(map_asr_to_xml) / max(1, len(asr))
+    return map_asr_to_xml, segment_indices, coverage_xml, coverage_asr, asr
 
 
 def correct_segments(canonical: list[str], segments: list[dict]):
@@ -337,7 +337,7 @@ def run_one(args):
         xml_evidence=parse_text_only(xml_bytes)
         (folder/"official-caption.xml").write_bytes(xml_bytes)
         canonical=xml_evidence["words"]
-        (folder/"official-text-cleaned.txt").write_text(" ".join(canonical)+"\\n",encoding="utf-8")
+        (folder/"official-text-cleaned.txt").write_text(" ".join(canonical)+"\n",encoding="utf-8")
         report.update({"textAuthority":"littlefox-xml-paragraph-text",
             "xmlContentId":episode.get("sourceContentId"),
             "xmlTextSha256":xml_evidence["sha256"],
