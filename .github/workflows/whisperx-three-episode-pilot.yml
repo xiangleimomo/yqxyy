@@ -1,0 +1,72 @@
+name: Pilot three new Little Fox episodes (101-103)
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/whisperx-three-episode-pilot.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: yqxyy-whisperx-three-episode-pilot
+  cancel-in-progress: false
+jobs:
+  align:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      HF_HOME: /tmp/yqxyy-whisperx-hf
+      OMP_NUM_THREADS: '4'
+      TOKENIZERS_PARALLELISM: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify new three-episode manifest
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          episodes=json.loads(Path('data/journey-to-the-west/episodes.json').read_text())
+          selected=[e for e in episodes if e['episodeId'] in (101,102,103)]
+          assert [e['episodeId'] for e in selected]==[101,102,103]
+          manifest={'pipeline':'audio-whisperx-xml-text-only-forced-alignment','usesExistingSiteSubtitlesAsInput':False,'lessons':[{'seriesId':'journey-to-the-west','episodeId':e['episodeId'],'sourceContentId':e['sourceContentId']} for e in selected]}
+          Path('three-episode-manifest.json').write_text(json.dumps(manifest))
+          PY
+      - name: Install CPU WhisperX
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          python -m pip install --no-cache-dir 'torch==2.8.0' 'torchvision==0.23.0' 'torchaudio==2.8.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'whisperx==3.8.6'
+      - uses: actions/cache@v4
+        with:
+          path: |
+            /tmp/yqxyy-whisperx-hf
+            /tmp/yqxyy-whisperx-model-cache
+          key: ${{ runner.os }}-whisperx-read-small-en-cpu-v2
+      - name: Recognize and align episodes 101, 102, 103
+        run: python scripts/run-whisperx-read-batch.py --manifest three-episode-manifest.json --shard 0 --shards 1 --model small.en --output whisperx-batch-results
+      - name: Publish episodes passing 90 percent and timing checks
+        run: python scripts/publish-whisperx-read-batch.py --manifest three-episode-manifest.json --source whisperx-batch-results --run-id "${{ github.run_id }}"
+      - name: Upload audit and rejected alignment artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: three-episode-pilot-audit
+          path: |
+            whisperx-batch-results/
+            reports/whisperx-read-batch-latest.json
+          retention-days: 7
+      - name: Commit validated subtitle pairs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/journey-to-the-west/subtitles/*.vtt data/journey-to-the-west/subtitles/*.words.json reports/whisperx-read-*.json reports/whisperx-read-batches/*.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish 3-episode WhisperX pilot 101-103"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
