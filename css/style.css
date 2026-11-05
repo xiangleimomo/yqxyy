@@ -1301,3 +1301,6 @@ html.sf-caption-screen-locked,body.sf-caption-screen-locked{overflow:hidden!impo
 .sf-touch-video-controls button:focus-visible,.sf-touch-video-controls input:focus-visible{outline:2px solid #ffe05a;outline-offset:2px}
 @media (max-width:600px){.sf-touch-video-controls{gap:4px;padding-left:5px;padding-right:5px}.sf-touch-video-controls .sf-touch-time{font-size:10px}.subtitle-video-wrap:fullscreen .subtitle-settings-dock,.subtitle-video-wrap.subtitle-page-fullscreen .subtitle-settings-dock{right:7px;top:40%}}
 @media (orientation:landscape) and (max-height:500px){.sf-touch-video-controls{min-height:40px;padding-top:3px;padding-bottom:calc(3px + env(safe-area-inset-bottom,0px))}.subtitle-video-wrap:fullscreen .video-caption,.subtitle-video-wrap.subtitle-page-fullscreen .video-caption{max-width:86vw}}
+
+/* Allow the user's caption position but keep long karaoke lines above touch controls. */
+.subtitle-video-wrap.sf-touch-stage .video-caption{top:min(var(--caption-y,84%),calc(100% - 94px))}
