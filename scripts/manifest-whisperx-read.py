@@ -30,8 +30,8 @@ def existing_new_version(directory, eid, episode):
         return obj.get("method")==METHOD and obj.get("sourceContentId")==episode.get("sourceContentId")
     except (ValueError,OSError):return False
 
-def select(limit=100,retry_failed=False,series_only=None):
-    if limit<1 or limit>100:raise ValueError("Batch size cannot exceed 100")
+def select(limit=10,retry_failed=False,series_only=None):
+    if limit<1 or limit>10:raise ValueError("Batch size cannot exceed 10")
     failed=set()
     failure_file=ROOT/"reports/whisperx-read-failures.json"
     if not retry_failed and failure_file.is_file():
@@ -80,7 +80,7 @@ def select(limit=100,retry_failed=False,series_only=None):
 
 def main():
     p=argparse.ArgumentParser()
-    p.add_argument("--limit",type=int,default=100)
+    p.add_argument("--limit",type=int,default=10)
     p.add_argument("--output",default="whisperx-batch-targets.json")
     p.add_argument("--retry-failed",action="store_true")
     p.add_argument("--series",default="")
