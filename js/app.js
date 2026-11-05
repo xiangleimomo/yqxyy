@@ -948,6 +948,7 @@ async renderLesson(seriesId, episodeId){
         <button type="button" class="btn secondary small timed-sentence-prev" disabled>上一句</button>
         <button type="button" class="btn secondary small timed-sentence-next" disabled>下一句</button>
         <button type="button" class="btn secondary small timed-sentence-loop" aria-pressed="false" disabled>单句循环：关</button>
+        <label class="timed-sentence-follow-label"><input class="timed-sentence-word-highlight" type="checkbox" ${this.subtitlePreferences().wordHighlight!==false?'checked':''}> 逐词高亮</label>
         <label class="timed-sentence-follow-label"><input class="timed-sentence-follow" type="checkbox" checked> 自动跟随</label>
       </div>
     </div>
@@ -966,7 +967,9 @@ async renderLesson(seriesId, episodeId){
   const next=panel.querySelector('.timed-sentence-next');
   const loopToggle=panel.querySelector('.timed-sentence-loop');
   const follow=panel.querySelector('.timed-sentence-follow');
-  let cues=[],active=-1,chosen=0,loopIndex=-1,frame=null;
+  const wordToggle=panel.querySelector('.timed-sentence-word-highlight');
+  const wordSync=window.SFWordSync;
+  let cues=[],prepared=[],wordViews=[],wordActive=-1,active=-1,chosen=0,loopIndex=-1,frame=null,lastPaint=0;
   const readIndex=()=> {
     const ms=Math.round((Number(audio.currentTime)||0)*1000);
     return cues.findIndex(c=>ms>=c.startMs && ms<c.endMs);
@@ -981,7 +984,6 @@ async renderLesson(seriesId, episodeId){
       row.querySelector('.timed-sentence-loop-one')?.setAttribute('aria-pressed',String(i===loopIndex));
     });
     if(loopIndex>=0&&!audio.paused) startFrame();
-    if(loopIndex<0&&frame!==null){cancelAnimationFrame(frame);frame=null;}
   };
   const setActive=(index)=>{
     if(index===active) return;
@@ -1017,15 +1019,22 @@ async renderLesson(seriesId, episodeId){
     const index=readIndex();
     if(index>=0){chosen=index;setActive(index);}
     else if(loopIndex<0)setActive(-1);
+    if(wordSync){
+      if(wordActive!==index){
+        if(wordActive>=0)wordSync.paint(wordViews[wordActive],-1,false);
+        wordActive=index;
+      }
+      if(index>=0)wordSync.paint(wordViews[index],now,wordToggle.checked);
+    }
   };
-  const tick=()=>{
+  const tick=(time)=>{
     frame=null;
-    if(!panel.isConnected||audio.paused||loopIndex<0)return;
-    update();
+    if(!panel.isConnected||audio.paused)return;
+    if(time-lastPaint>=55){lastPaint=time;update();}
     frame=requestAnimationFrame(tick);
   };
   const startFrame=()=>{
-    if(frame===null&&loopIndex>=0&&!audio.paused&&panel.isConnected)frame=requestAnimationFrame(tick);
+    if(frame===null&&!audio.paused&&panel.isConnected)frame=requestAnimationFrame(tick);
   };
   const stopFrame=()=>{
     if(frame!==null){cancelAnimationFrame(frame);frame=null;}
@@ -1046,13 +1055,27 @@ async renderLesson(seriesId, episodeId){
     if(!response.ok)throw Error('本集尚无有效时间轴');
     cues=this.parseVtt(await response.text()).filter(c=>c.text&&Number.isFinite(c.startMs)&&c.endMs>c.startMs);
     if(!cues.length)throw Error('字幕没有有效的逐句时间');
+    prepared=wordSync?await wordSync.load(d,cues):[];
     if(!panel.isConnected)return;
     list.innerHTML=cues.map((c,i)=>`<div class="timed-sentence-item" role="listitem" data-cue-index="${i}">
       <span class="timed-sentence-number">${i+1}</span>
       <button type="button" class="timed-sentence-text" title="点击播放这一句">${this.escapeHtml(c.text)}</button>
       <button type="button" class="timed-sentence-loop-one" aria-label="循环播放第 ${i+1} 句" aria-pressed="false" title="循环播放此句">↻</button>
     </div>`).join('');
-    status.textContent=`已加载 ${cues.length} 条同步字幕。点击任意一句播放；↻ 可重复该句。`;
+    if(wordSync){
+      list.querySelectorAll('.timed-sentence-item').forEach((row,i)=>{
+        const view=wordSync.render(prepared[i]);
+        row.querySelector('.timed-sentence-text').replaceChildren(view.fragment);
+        wordViews.push(view);
+      });
+    }
+    const hasSpeech=prepared.some(row=>row.words.some(word=>word.source==='speech'));
+    status.textContent=`已加载 ${cues.length} 条字幕。逐词高亮：${hasSpeech?'语音时间对齐':'按句时长估算'}。点击句子播放；↻ 可单句循环。`;
+    wordToggle.addEventListener('change',()=>{
+      const prefs={...this.subtitlePreferences(),wordHighlight:wordToggle.checked};
+      localStorage.setItem('storyfox-subtitle-preferences',JSON.stringify(prefs));
+      update();
+    });
     prev.disabled=false;next.disabled=false;loopToggle.disabled=false;
     list.addEventListener('click',event=>{
       const row=event.target.closest('.timed-sentence-item');
