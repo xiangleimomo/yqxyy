@@ -1240,3 +1240,24 @@ body.series-fixed-page .footer{
 .movie-subtitles input[type=number] { width: 110px; }
 .movie-subtitle-results { display: flex; flex-direction: column; gap: 8px; max-height: 320px; overflow: auto; }
 .movie-subtitle-results button { text-align: left; overflow-wrap: anywhere; white-space: normal; }
+
+/* Listen and Read — audio-synchronized sentence practice */
+.timed-sentence-study{margin:16px 0 22px;padding:16px;border:1px solid var(--border,#d9e1ef);border-radius:14px;background:var(--card,#fff)}
+.timed-sentence-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.timed-sentence-toolbar strong{font-size:15px}
+.timed-sentence-actions{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.timed-sentence-actions button{min-height:34px}
+.timed-sentence-follow-label{display:inline-flex;align-items:center;gap:5px;font-size:13px;white-space:nowrap;cursor:pointer}
+.timed-sentence-status{margin:9px 0 10px;font-size:12px}
+.timed-sentence-list{max-height:320px;overflow-y:auto;overscroll-behavior:contain;border:1px solid var(--border,#e0e7f3);border-radius:10px;background:rgba(126,158,192,.04)}
+.timed-sentence-item{display:flex;align-items:center;gap:9px;border-bottom:1px solid rgba(130,152,175,.15);padding:7px 8px;transition:background-color .16s}
+.timed-sentence-item:last-child{border-bottom:0}
+.timed-sentence-number{font-variant-numeric:tabular-nums;font-size:11px;color:#64748b;min-width:23px;text-align:right;flex-shrink:0}
+.timed-sentence-text{flex:1;text-align:left;background:transparent;border:0;padding:7px 6px;line-height:1.55;color:inherit;border-radius:6px;font-size:15px;cursor:pointer}
+.timed-sentence-text:hover{background:rgba(50,126,214,.08)}
+.timed-sentence-loop-one{flex-shrink:0;border:1px solid var(--border,#d9e1ef);background:transparent;border-radius:8px;min-width:35px;min-height:35px;font-size:19px;cursor:pointer;color:inherit}
+.timed-sentence-item.is-active{background:rgba(48,131,235,.12);box-shadow:inset 3px 0 #2477d2}
+.timed-sentence-item.is-active .timed-sentence-text{font-weight:650;color:#1559a3}
+.timed-sentence-item.is-looping .timed-sentence-loop-one{background:#1559a3;color:#fff}
+.timed-sentence-text:focus-visible,.timed-sentence-loop-one:focus-visible{outline:2px solid #1559a3;outline-offset:2px}
+@media(max-width:600px){.timed-sentence-study{padding:12px}.timed-sentence-list{max-height:260px}.timed-sentence-text{font-size:14px}.timed-sentence-actions{width:100%}}
