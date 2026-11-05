@@ -694,7 +694,7 @@ async renderLesson(seriesId, episodeId){
     // The optional word-timing JSON must never block sentence subtitles.
     // A slow mobile network or a stalled JSON request previously left the
     // caption tray blank while the video kept playing.
-    const prepared=syncWords?syncWords.prepare(cues,null):null;
+    const prepared=typeof syncWords?.prepare==='function'?syncWords.prepare(cues,null):null;
     if(!caption.isConnected)return;
     window.SFKaraokePractice?.attachVideo({player,caption,cues,prepared});
     let active=-1,renderedMode=null,wordView=null,animation=0,lastPaint=0;
@@ -757,8 +757,8 @@ async renderLesson(seriesId, episodeId){
         new Promise(resolve=>setTimeout(()=>resolve(null),8000))
       ]).then(track=>{
         if(!track||!caption.isConnected)return;
-        prepared.splice(0,prepared.length,...track);
-        effectiveWords=prepared;
+        if(prepared){prepared.splice(0,prepared.length,...track);effectiveWords=prepared;}
+        else effectiveWords=track;
         active=-1;
         update();
       }).catch(()=>{});
