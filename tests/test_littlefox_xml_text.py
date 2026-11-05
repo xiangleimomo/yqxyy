@@ -37,6 +37,10 @@ class OfficialXmlTextTests(unittest.TestCase):
         self.assertEqual(a["words"],b["words"])
         self.assertEqual(a["sha256"],b["sha256"])
 
+    def test_g_i_formatting_tags_are_not_spoken_words(self):
+        self.assertEqual(mod.spoken_tokens("[g@He ate a peach.@g] [i@Hello!@i]"),
+                         ["He","ate","a","peach.","Hello!"])
+
     def test_wrong_content_or_incomplete_transcript_is_rejected(self):
         with self.assertRaises(ValueError):
             mod.parse_text_only(b"<html><body>Not captions</body></html>")
