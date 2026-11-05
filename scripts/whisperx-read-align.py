@@ -269,7 +269,7 @@ def split_cues(aligned: list[dict]):
 
 
 def write_candidate(folder: Path, series: str, eid: int, read: list[str],
-                    mapped: list[dict], info: dict, media_path: str, model: str):
+                    mapped: list[dict], info: dict, media_path: str, model: str, source_id=None):
     cues = split_cues(mapped)
     subtitle_text = "WEBVTT\n\n" + "\n\n".join(
         f"{idx}\n{format_vtt_time(c['startMs'])} --> {format_vtt_time(c['endMs'])}\n{c['text']}"
@@ -277,7 +277,7 @@ def write_candidate(folder: Path, series: str, eid: int, read: list[str],
     )+"\n"
     digest = hashlib.sha256(subtitle_text.encode()).hexdigest()
     track = {
-        "seriesId":series,"episodeId":eid,"mediaPath":media_path,
+        "seriesId":series,"episodeId":eid,"sourceContentId":source_id,"mediaPath":media_path,
         "mediaFingerprint":hashlib.sha256(media_path.encode()).hexdigest(),
         "subtitleSha256":digest,"method":"whisperx-asr-read-corrected-forced-alignment",
         "recognizer":model,"cueCount":len(cues),"totalWords":len(read),
@@ -407,7 +407,7 @@ def run_one(args):
                 raise ValueError("Missing late-episode speech; candidate withheld")
             outliers = suspicious_word_spans(mapped)
             report["suspiciousLongWordSpans"] = outliers[:15]
-            cue_count = write_candidate(folder,series,eid,read,mapped,quality,media_path,args.model)
+            cue_count = write_candidate(folder,series,eid,read,mapped,quality,media_path,args.model,episode.get("sourceContentId"))
             report["candidateCueCount"] = cue_count
             if outliers:
                 # Keep a preview artifact for human review, never call it approved.
