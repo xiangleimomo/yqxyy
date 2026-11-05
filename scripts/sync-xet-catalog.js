@@ -2,7 +2,7 @@
 
 /*
  * Discovers Little Fox video releases from the authorised ABC catalogue.
- * New episodes receive timed VTT only after official Read and video timeline validation.
+ * New episodes receive captions only through the separate audio + WhisperX + Read pipeline.
  * Public Read text and generated study material are added by
  * enrich-new-lessons.mjs, which fetches Little Fox's supplement/org/Cxxxx page.
  */
@@ -145,7 +145,7 @@ async function main() {
       if (listing) { listing.readyEpisodes = episodes.length; if (!listing.episodeCount) listing.episodeCount = episodes.length; listing.tagline = `${listing.readyEpisodes} video lessons · Content in progress`; }
       changed.push(seriesId);
       execFileSync(process.execPath, [path.join(__dirname, 'enrich-new-lessons.mjs'), seriesId, ...newRows.map(row => String(row.episodeId))], { stdio: 'inherit' });
-      execFileSync(process.execPath, [path.join(__dirname, 'import-recent-xet-vtt.cjs'), '--apply', '--output-dir=subtitle-review', ...newRows.map(row => `--lesson=${seriesId}:${row.episodeId}`)], { stdio: 'inherit' });
+
       newSubtitleLessons.push(...newRows.map(row=>({seriesId,episodeId:row.episodeId})));
     }
   }

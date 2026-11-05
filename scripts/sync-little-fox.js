@@ -30,8 +30,7 @@ const run = (script, scriptArgs) => {
 };
 
 // The authorised ABC catalogue is used only to discover videos/content IDs. Read is fetched separately
-// from Little Fox public supplement/org/Cxxxx pages. New episodes also receive
-// timed VTT after a fail-closed comparison with official Read and the video timeline.
+// from Little Fox public supplement/org/Cxxxx pages. New subtitle and word data are generated only by the separate audio/WhisperX/Read batch.
 if (!apply) process.stderr.write('Dry run: no files will be written.\n');
 run('sync-xet-catalog.js', [apply ? '--apply' : '--dry-run']);
 if (apply) {
@@ -40,10 +39,4 @@ if (apply) {
   const result = spawnSync(python, [path.join(__dirname, 'import-episode-pdfs.py'), '--apply'], { stdio: 'inherit' });
   if (result.error) throw result.error;
   if (result.status) throw new Error(`import-episode-pdfs.py failed with exit code ${result.status}.`);
-  // New episodes: import official XML by verified sourceContentId.
-  // Preserve existing speech-calibrated timing, and leave VTT unchanged when
-  // official XML is unavailable or its transcript cannot be verified.
-  const captionResult = spawnSync(python, [path.join(__dirname, 'import-official-captions.py'), '--manifest', 'subtitle-review/new-lessons.json', '--apply'], { stdio: 'inherit' });
-  if (captionResult.error) throw captionResult.error;
-  if (captionResult.status) throw new Error(`import-official-captions.py failed with exit code ${captionResult.status}.`);
 }

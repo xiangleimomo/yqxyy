@@ -1,14 +1,10 @@
-name: Sync Little Fox catalogue
-
+name: Sync Little Fox catalogue and public Read
 on:
   workflow_dispatch:
   schedule:
-    # 15:00 Asia/Shanghai (UTC+8), Monday–Friday.
     - cron: '0 7 * * 1-5'
-
 permissions:
   contents: write
-
 jobs:
   sync:
     concurrency:
@@ -19,51 +15,23 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
-      - name: Synchronize licensed catalogue
+          node-version: '22'
+      - name: Synchronize video catalogue and Read, without creating old subtitle tracks
         env:
           XET_ACCOUNT: ${{ secrets.XET_ACCOUNT }}
           XET_PASSWORD: ${{ secrets.XET_PASSWORD }}
         run: node scripts/sync-little-fox.js --apply
-      - name: Check source bindings before publishing
-        run: node scripts/check-course-bindings.cjs
-      - name: Detect newly imported subtitle lessons
-        id: new_subtitles
-        run: node -e "const fs=require('fs');const p='subtitle-review/new-lessons.json';const count=fs.existsSync(p)?JSON.parse(fs.readFileSync(p)).lessons.length:0;fs.appendFileSync(process.env.GITHUB_OUTPUT,'has_new='+String(count>0)+'\n');"
-      - uses: actions/setup-python@v5
-        if: steps.new_subtitles.outputs.has_new == 'true'
-        with:
-          python-version: '3.12'
-      - name: Install speech alignment tools
-        if: steps.new_subtitles.outputs.has_new == 'true'
+      - name: Validate course bindings
         run: |
-          python -m pip install faster-whisper==1.2.1
-          sudo apt-get update -qq
-          sudo apt-get install -y ffmpeg
-      - uses: actions/cache@v4
-        if: steps.new_subtitles.outputs.has_new == 'true'
-        with:
-          path: /tmp/yqxyy-whisper-models
-          key: littlefox-whisper-tiny-en-v1
-      - name: Align new captions with the actual video audio
-        if: steps.new_subtitles.outputs.has_new == 'true'
-        run: |
-          python scripts/audit-subtitle-speech.py --manifest subtitle-review/new-lessons.json --output speech-review-new
-          python scripts/apply-speech-subtitle-repairs.py --speech-root speech-review-new --manifest subtitle-review/new-lessons.json --report subtitle-review/new-speech-report.json --apply
-      - name: Generate per-word highlight timing from verified speech
-        if: steps.new_subtitles.outputs.has_new == 'true'
-        run: python scripts/build-word-timing.py --speech-root speech-review-new --apply
-      - name: Verify aligned data
-        run: |
-          python -m py_compile scripts/build-word-timing.py
           node scripts/check-course-bindings.cjs
           node --check js/app.js
           git diff --check
-      - name: Commit changes, if any
+      - name: Commit catalogue changes only
         run: |
           git add data
           if git diff --cached --quiet; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Sync Little Fox catalogue"
-          git push
+          git commit -m "Sync Little Fox catalogue and Read metadata"
+          git pull --rebase origin main
+          git push origin HEAD:main
