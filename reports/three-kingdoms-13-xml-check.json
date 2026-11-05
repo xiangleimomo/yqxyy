@@ -1,6 +1,6 @@
 {
   "contentId": "C0013409",
-  "status": "needs-review",
+  "status": "resolved",
   "results": [
     {
       "lesson": "three-kingdoms:13",
@@ -140,5 +140,12 @@
         "textPreview": "You're a traitor to the Han Dynasty.\""
       }
     ]
+  },
+  "resolution": {
+    "commit": "a8318be63342f0bba9bf272d397a30d30c7133a4",
+    "finding": "Official XML has 61 cues with the same unshifted timestamps as the previous VTT",
+    "correction": "Applied +12346 milliseconds to all cues using independently matched speech anchors",
+    "resultingSubtitle": "data/three-kingdoms/subtitles/013.vtt",
+    "timingMetadata": "data/three-kingdoms/subtitles/013.timing.json"
   }
 }
