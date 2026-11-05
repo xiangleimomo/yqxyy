@@ -22,9 +22,9 @@ DATA=ROOT/'data'
 HOST='cdn.littlefox.com'
 ID=re.compile(r'C\d{7}\Z')
 SERIES=re.compile(r'[a-z0-9-]+\Z')
-CUE_TAGS={'p','cue','item','entry','line','text','caption','subtitle','sentence'}
-START=('begin','start','starttime','start_time','startms','start_ms','from','stime','time')
-END=('end','stop','endtime','end_time','endms','end_ms','to','etime')
+CUE_TAGS={'paragraph','p','cue','item','entry','line','text','caption','subtitle','sentence'}
+START=('startmilliseconds','begin','start','starttime','start_time','startms','start_ms','from','stime','time')
+END=('endmilliseconds','end','stop','endtime','end_time','endms','end_ms','to','etime')
 DURATION=('duration','dur')
 WORDS=('text','sentence','script','content','caption','subtitle','value','words')
 
@@ -46,7 +46,7 @@ def ms(value,key=''):
         value,factor=value[:-2],1
     elif value.endswith('s'):
         value=value[:-1]
-    elif key.endswith('ms'):
+    elif key.endswith('ms') or key.endswith('milliseconds'):
         factor=1
     if re.fullmatch(r'\d+(?:\.\d+)?',value):
         return round(float(value)*factor)

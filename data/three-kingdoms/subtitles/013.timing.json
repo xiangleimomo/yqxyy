@@ -1,0 +1,32 @@
+{
+  "seriesId": "three-kingdoms",
+  "episodeId": 13,
+  "sourceContentId": "C0013409",
+  "title": "Cruel and Heartless",
+  "xmlSource": "https://cdn.littlefox.com/contents/caption/C0013409.xml",
+  "xmlTimeFields": [
+    "Paragraph.StartMilliseconds",
+    "Paragraph.EndMilliseconds"
+  ],
+  "method": "official-xml-timebase+speech-verified-fixed-media-offset",
+  "originalCueCount": 61,
+  "correctedCueCount": 61,
+  "originalFirstMs": 46,
+  "originalLastMs": 344977,
+  "correctedFirstMs": 12392,
+  "correctedLastMs": 357323,
+  "mediaDurationMs": 363691,
+  "offsetMs": 12346,
+  "audioEvidence": {
+    "runId": 42007531097,
+    "artifactId": 13405501581,
+    "artifactSha256": "69981f0daeb6a7d3889aecc2f3c050f947c8c2823a149755684e8358e1cce8f2",
+    "mediaFingerprint": "2fd1dc06b7ca0eca2088527438a3873b484456ead2bfba12959ceab690ef98ae",
+    "recognizedModel": "faster-whisper small.en int8",
+    "speechWordCoverage": 0.9518,
+    "robustAnchorCount": 52,
+    "medianStartDifferenceMs": 12346,
+    "medianAbsoluteDeviationMs": 117.5
+  },
+  "textUnchanged": true
+}
