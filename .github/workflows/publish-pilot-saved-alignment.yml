@@ -98,7 +98,7 @@ jobs:
               # Cue boundaries follow original XML punctuation, and each word is preserved.
               cues=[];start=0
               for i,w in enumerate(mapped):
-                  if not ((re.search(r'[.!?][\\"\'’”)]*$',w['text']) and i-start>=1) or i-start>=17 or i==len(mapped)-1):continue
+                  if not ((re.search(r'[.!?]$',w['text']) and i-start>=1) or i-start>=17 or i==len(mapped)-1):continue
                   group=mapped[start:i+1]
                   cues.append({'startMs':group[0]['startMs'],'endMs':max(x['endMs'] for x in group),
                                'text':' '.join(x['text'] for x in group),'words':group})
