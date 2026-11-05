@@ -20,7 +20,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh run download 42072397000 --repo ${{ github.repository }} --dir recovered-artifacts
-      - name: Recover and verify original XML and word timestamps
+      - name: Pack downloaded artifact directories for offline recovery\n        run: |\n          python - <<'PY'\n          from pathlib import Path\n          import zipfile\n          root=Path('recovered-artifacts')\n          for folder in root.iterdir():\n              if not folder.is_dir(): continue\n              with zipfile.ZipFile(root/(folder.name+'.zip'),'w',zipfile.ZIP_DEFLATED) as z:\n                  for f in folder.rglob('*'):\n                      if f.is_file(): z.write(f,f.relative_to(folder))\n          PY\n      - name: Recover and verify original XML and word timestamps
         run: python scripts/subtitle-review/recover-first-batch.py recovered-artifacts
       - name: Commit verified episode pairs
         run: |
