@@ -107,6 +107,7 @@ function makeHarness({touch = true, fullscreenAPI = false, agent = ''} = {}) {
 test('iOS-style fallback portals the whole video and karaoke caption to body, then restores', async () => {
   const x = makeHarness({touch:true,fullscreenAPI:false});
   assert.equal(x.player.controls, false, 'mobile must not expose native video fullscreen control');
+  assert.equal(x.stage.classNames.has('sf-caption-below'), true, 'mobile inline mode keeps caption below video');
   assert.equal(x.player.attributes.playsinline, '');
   assert.equal(x.stage.children.some(node => node.classNames.has('sf-touch-video-controls')), false);
   assert.equal(x.stage.children.some(node => node.className === 'sf-touch-video-controls'), true);
@@ -117,6 +118,7 @@ test('iOS-style fallback portals the whole video and karaoke caption to body, th
   assert.equal(x.caption.parentNode, x.stage);
   assert.equal(x.player.parentNode, x.stage);
   assert.equal(x.stage.classNames.has('subtitle-page-fullscreen'), true);
+  assert.equal(x.stage.classNames.has('sf-caption-below'), false, 'web fullscreen restores overlay arrangement');
   assert.equal(x.body.classNames.has('sf-caption-screen-locked'), true);
   assert.equal(x.trigger.label.textContent, '退出');
   await x.api.toggle();
@@ -124,6 +126,7 @@ test('iOS-style fallback portals the whole video and karaoke caption to body, th
   assert.equal(x.stage.parentNode, x.floating);
   assert.equal(x.caption.parentNode, x.stage);
   assert.equal(x.body.classNames.has('sf-caption-screen-locked'), false);
+  assert.equal(x.stage.classNames.has('sf-caption-below'), true, 'exiting fullscreen restores caption dock');
 });
 
 test('mobile bypasses Fullscreen API even if available (avoids native player handoff)', async () => {
@@ -133,15 +136,18 @@ test('mobile bypasses Fullscreen API even if available (avoids native player han
   assert.equal(x.document.fullscreenElement, null);
   assert.equal(x.stage.parentNode, x.body);
   assert.equal(x.caption.parentNode, x.stage);
+  assert.equal(x.stage.classNames.has('sf-caption-below'), false);
   assert.equal(x.api.isFull(), true);
   await x.api.toggle();
   assert.equal(x.stage.parentNode, x.floating);
   assert.equal(x.api.isFull(), false);
+  assert.equal(x.stage.classNames.has('sf-caption-below'), true);
 });
 
 test('mobile user agent triggers webpage video controls even if pointer is reported fine', async () => {
   const x = makeHarness({touch:false,fullscreenAPI:true,agent:'Mozilla/5.0 (Linux; Android 13) Quark/7.0 Mobile'});
   assert.equal(x.player.controls, false);
+  assert.equal(x.stage.classNames.has('sf-caption-below'), true);
   assert.equal(x.stage.children.some(node => node.className === 'sf-touch-video-hitarea'), true);
   await x.api.toggle();
   assert.equal(x.document.fullscreenElement, null);
@@ -150,6 +156,7 @@ test('mobile user agent triggers webpage video controls even if pointer is repor
 
 test('desktop stage fullscreen stays functional', async () => {
   const x = makeHarness({touch:false,fullscreenAPI:true,agent:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/123'});
+  assert.equal(x.stage.classNames.has('sf-caption-below'), false, 'desktop stays overlay mode');
   await x.api.toggle();
   assert.equal(x.document.fullscreenElement, x.stage);
   assert.equal(x.stage.parentNode, x.floating);
@@ -175,4 +182,19 @@ test('Watch uses custom fullscreen helper; mobile receives nofullscreen controls
   assert.match(app, /SFCaptionFullscreen\?\.attach/);
   assert.match(app, /controlslist="nofullscreen noremoteplayback"/);
   assert.doesNotMatch(app, /else await stage\.requestFullscreen\(\)/);
+});
+
+
+test('only mobile inline Watch has a separate caption tray under the picture', () => {
+  const app = fs.readFileSync('js/app.js', 'utf8');
+  const css = fs.readFileSync('css/style.css', 'utf8');
+  assert.match(app, /<div class="sf-mobile-caption-area"><div class="video-caption"/);
+  assert.match(app, /classList\.contains\('sf-caption-below'\)/);
+  assert.match(css, /\.sf-mobile-caption-area\{display:contents\}/);
+  assert.match(css, /\.subtitle-video-wrap\.sf-caption-below \.sf-mobile-caption-area\{/);
+  assert.match(css, /\.subtitle-video-wrap\.sf-caption-below \.video-caption\{/);
+  assert.match(css, /\.subtitle-video-wrap\.sf-caption-below \.hls-video-player\{/);
+  assert.match(css, /\.subtitle-video-wrap\.sf-caption-below \.sf-touch-video-controls\{/);
+  assert.match(css, /min-height:68px/, 'caption tray reserves space in speech pauses');
+  assert.doesNotMatch(css, /\.subtitle-video-wrap(?<!sf-caption-below) \.video-caption\{position:static/);
 });
