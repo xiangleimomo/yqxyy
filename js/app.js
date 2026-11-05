@@ -501,7 +501,7 @@ async renderLesson(seriesId, episodeId){
     const hasSubtitle=true;
     const fallbacks=[...(hls720 && hls720!==url?[hls720]:[]),...(backupHls?[backupHls]:[])];
     const sourceSelector=hls720?`<label class="hls-source-control">清晰度 / 播放源<select class="hls-source-select" aria-label="选择视频清晰度和播放源" data-hls-1080="${this.escapeHtml(url)}" data-hls-720="${this.escapeHtml(hls720)}" data-hls-korea="${this.escapeHtml(backupHls)}"><option value="1080">1080P 国际站（推荐）</option><option value="720">720P 国际站（更流畅）</option>${backupHls?'<option value="korea">韩国站备用源</option>':''}</select></label>`:'';
-    return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>Watch 看视频</h2><p class="muted">默认使用 1080P 国际站；播放不流畅时可切换为 720P。加载失败会依次尝试可用备用源。${hasSubtitle?' 本集提供时将自动加载英文外挂字幕。':''}</p></div>${sourceSelector}</div><div class="video-wrap${hasSubtitle?' subtitle-video-wrap':''}"><video class="hls-video-player" controls playsinline preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-hls-fallback-srcs="${this.escapeHtml(JSON.stringify(fallbacks))}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="video-caption" aria-live="polite" hidden></div>${hasSubtitle?this.subtitleControls():''}</div><p class="muted direct-video-help"><span class="hls-load-status" role="status" aria-live="polite">正在连接视频…</span> ${fallback?`也可<a href="${this.escapeHtml(fallback)}" target="_blank" rel="noreferrer noopener">直接打开本集视频</a>。`:`若无法播放，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">打开视频源</a>。`}</p></section>${this.completeButton(d,completionModule)}`;
+    return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>Watch 看视频</h2><p class="muted">默认使用 1080P 国际站；播放不流畅时可切换为 720P。加载失败会依次尝试可用备用源。${hasSubtitle?' 本集提供时将自动加载英文外挂字幕。':''}</p></div>${sourceSelector}</div><div class="video-wrap${hasSubtitle?' subtitle-video-wrap':''}"><video class="hls-video-player" controls playsinline webkit-playsinline controlslist="nofullscreen noremoteplayback" preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-hls-fallback-srcs="${this.escapeHtml(JSON.stringify(fallbacks))}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="video-caption" aria-live="polite" hidden></div>${hasSubtitle?this.subtitleControls():''}</div><p class="muted direct-video-help"><span class="hls-load-status" role="status" aria-live="polite">正在连接视频…</span> ${fallback?`也可<a href="${this.escapeHtml(fallback)}" target="_blank" rel="noreferrer noopener">直接打开本集视频</a>。`:`若无法播放，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">打开视频源</a>。`}</p></section>${this.completeButton(d,completionModule)}`;
   },
   subtitlePreferences(){
     const defaults={visible:true,wordHighlight:true,size:20,color:'#ffffff',captionX:50,captionY:84,opacity:72};
@@ -581,38 +581,20 @@ async renderLesson(seriesId, episodeId){
         showControls();
         if(!open) hideControlsLater();
       });
-      fullscreenTrigger?.addEventListener('click',async()=>{
-        if(stage.classList.contains('subtitle-page-fullscreen')){
-          stage.classList.remove('subtitle-page-fullscreen');
-          fullscreenTrigger.setAttribute('aria-label','全屏观看（保留字幕设置）');
-          fullscreenTrigger.querySelector('span').textContent='全屏';
-          return;
-        }
-        try{
-          if(document.fullscreenElement===stage) await document.exitFullscreen();
-          else await stage.requestFullscreen();
-        }catch{
-          stage.classList.add('subtitle-page-fullscreen');
-          fullscreenTrigger.setAttribute('aria-label','退出全屏');
-          fullscreenTrigger.querySelector('span').textContent='退出';
-        }
-      });
-      document.addEventListener('fullscreenchange',()=>{
-        const isFullscreen=document.fullscreenElement===stage;
-        fullscreenTrigger?.classList.toggle('is-fullscreen',isFullscreen);
-        fullscreenTrigger?.setAttribute('aria-label',isFullscreen?'退出全屏':'全屏观看（保留字幕设置）');
-        if(fullscreenTrigger) fullscreenTrigger.querySelector('span').textContent=isFullscreen?'退出':'全屏';
-      });
+      // Fullscreen the entire stage (video + DOM subtitles), never the video
+      // alone. iOS receives a fixed body-level fallback with the same caption.
+      window.SFCaptionFullscreen?.attach({stage,player,trigger:fullscreenTrigger,showControls});
       stage.addEventListener('focusin',showControls);
       player.addEventListener('play',hideControlsLater);
       player.addEventListener('pause',showControls);
       player.addEventListener('ended',showControls);
     }
-    const save=patch=>{const next={...this.subtitlePreferences(),...patch};localStorage.setItem('storyfox-subtitle-preferences',JSON.stringify(next));this.applySubtitlePreferences(root);return next;};
+    const save=patch=>{const next={...this.subtitlePreferences(),...patch};localStorage.setItem('storyfox-subtitle-preferences',JSON.stringify(next));this.applySubtitlePreferences(root);this.applySubtitlePreferences(stage);return next;};
+    const refreshCaption=()=>{root.querySelectorAll('.hls-video-player').forEach(el=>el.dispatchEvent(new Event('timeupdate')));if(!root.contains(player))player.dispatchEvent(new Event('timeupdate'));};
     const toggle=controls.querySelector('.subtitle-toggle');
-    toggle.addEventListener('click',()=>{const prefs=save({visible:!this.subtitlePreferences().visible});toggle.textContent=prefs.visible?'隐藏字幕':'显示字幕';toggle.setAttribute('aria-pressed',String(prefs.visible));root.querySelectorAll('.hls-video-player').forEach(player=>player.dispatchEvent(new Event('timeupdate')));});
+    toggle.addEventListener('click',()=>{const prefs=save({visible:!this.subtitlePreferences().visible});toggle.textContent=prefs.visible?'隐藏字幕':'显示字幕';toggle.setAttribute('aria-pressed',String(prefs.visible));refreshCaption();});
     const wordToggle=controls.querySelector('.subtitle-word-toggle');
-    wordToggle?.addEventListener('click',()=>{const prefs=save({wordHighlight:!this.subtitlePreferences().wordHighlight});wordToggle.textContent=prefs.wordHighlight?'开启':'关闭';wordToggle.setAttribute('aria-pressed',String(prefs.wordHighlight));root.querySelectorAll('.hls-video-player').forEach(player=>player.dispatchEvent(new Event('timeupdate')));});
+    wordToggle?.addEventListener('click',()=>{const prefs=save({wordHighlight:!this.subtitlePreferences().wordHighlight});wordToggle.textContent=prefs.wordHighlight?'开启':'关闭';wordToggle.setAttribute('aria-pressed',String(prefs.wordHighlight));refreshCaption();});
     [['.subtitle-size','size','px'],['.subtitle-opacity','opacity','%']].forEach(([selector,key,suffix])=>{
       const input=controls.querySelector(selector);input.addEventListener('input',()=>{input.nextElementSibling.textContent=`${input.value}${suffix}`;save({[key]:Number(input.value)});});
     });
@@ -627,7 +609,7 @@ async renderLesson(seriesId, episodeId){
       controls.querySelector('.subtitle-color').value=prefs.color;
       controls.querySelector('.subtitle-opacity').value=prefs.opacity;
       controls.querySelector('.subtitle-opacity').nextElementSibling.textContent=`${prefs.opacity}%`;
-      root.querySelectorAll('.hls-video-player').forEach(player=>player.dispatchEvent(new Event('timeupdate')));
+      refreshCaption();
     });
   },
   subtitleVttUrl(d){
