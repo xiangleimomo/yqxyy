@@ -73,7 +73,7 @@ jobs:
                   if len(metadata['sampleNodes'])>=35:break
           except Exception as error:
               metadata['inspectionError']=str(error)
-                    payload={'contentId':'C0013409','status':'needs-review','results':rows,'xmlStructure':metadata}
+          payload={'contentId':'C0013409','status':'needs-review','results':rows,'xmlStructure':metadata}
           Path('reports/three-kingdoms-13-xml-check.json').write_text(
               json.dumps(payload,indent=2,ensure_ascii=False)+'\n',
               encoding='utf8'
