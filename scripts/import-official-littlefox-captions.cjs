@@ -80,7 +80,7 @@ async function main(){
    console.log(JSON.stringify({lesson:item.seriesId+':'+item.episodeId,status:'skipped-previously-calibrated'}));
    continue;
   }
-  const url='https://cdn.littlefox.co.kr/contents/caption/'+contentId+'.xml';
+  const url='https://cdn.littlefox.com/contents/caption/'+contentId+'.xml';
   const resp=await fetch(url,{redirect:'error',signal:AbortSignal.timeout(15000)});
   if(!resp.ok)throw Error('Caption source HTTP '+resp.status);
   const remote=xmlCues(await resp.text()),after=toVtt(align(parseVtt(before),remote));
