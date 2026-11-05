@@ -27,7 +27,8 @@ jobs:
           cat > /tmp/episode13.json <<'JSON'
           {"lessons":[{"seriesId":"three-kingdoms","episodeId":13,"hlsUrl":"https://cdn.littlefox.co.kr/contents_5/hls/720/6a4409a7d1/1793066883251ea3991fd165bfd231aa53cd439968/stream.m3u8"}]}
           JSON
-          python scripts/audit-subtitle-speech.py --manifest /tmp/episode13.json --model base.en --shard 0 --shards 1
+          sed -i "s/choices=\['tiny.en','base.en'\]/choices=['tiny.en','base.en','small.en']/" scripts/audit-subtitle-speech.py
+          python scripts/audit-subtitle-speech.py --manifest /tmp/episode13.json --model small.en --shard 0 --shards 1
       - uses: actions/upload-artifact@v4
         if: always()
         with:
