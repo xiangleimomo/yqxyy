@@ -102,17 +102,10 @@ def validated_payload(row, folder):
             total_speech+=word["source"]=="speech"
             flattened.append(word["text"])
             last=a
-    if flattened!=canonical:
-        raise ValueError("Fresh transcript does not match canonical Read")
-    if track.get("totalWords")!=len(flattened) or track.get("speechMatchedWords")!=total_speech:
-        raise ValueError("Word totals inconsistent")
-    if total_speech/max(1,len(flattened))<.90:
-        raise ValueError("Forced acoustic alignment below threshold")
-    if report.get("suspiciousLongWordSpans") or report.get("missingWords",0):
-        raise ValueError("Known abnormal/missing spans")
+    # Captioned words must be an in-order subsequence of the official XML.\n    # Unaligned words may be omitted but must never be silently timestamped.\n    cursor=0\n    for token in flattened:\n        while cursor<len(canonical) and canonical[cursor]!=token:\n            cursor+=1\n        if cursor>=len(canonical):\n            raise ValueError("Caption contains words outside ordered official XML")\n        cursor+=1\n    if (track.get("totalWords")!=len(canonical) or\n            track.get("captionedWords")!=len(flattened) or\n            track.get("omittedUnalignedWords")!=len(canonical)-len(flattened) or\n            track.get("speechMatchedWords")!=total_speech):\n        raise ValueError("Word totals inconsistent")\n    if total_speech/max(1,len(canonical))<.90:\n        raise ValueError("Forced acoustic alignment below threshold")\n    if report.get("suspiciousLongWordSpans"):\n        raise ValueError("Known abnormal spans")
     return vtt,word_text,{"cues":len(blocks),"words":len(flattened),
                           "xmlTextVerified":True,"xmlParagraphs":checked["paragraphs"],
-                          "speechWords":total_speech,"coverage":round(total_speech/len(flattened),4)}
+                          "speechWords":total_speech,"coverage":round(total_speech/len(canonical),4),"omittedWords":len(canonical)-len(flattened)}
 
 def main():
     p=argparse.ArgumentParser()
