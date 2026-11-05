@@ -1,0 +1,157 @@
+name: WhisperX + Read 100-episode subtitle and karaoke batch
+on:
+  workflow_dispatch:
+    inputs:
+      batch_size:
+        description: "Number of episodes (max 100)"
+        type: choice
+        options: ['100']
+        default: '100'
+      retry_failed:
+        description: "Include previously rejected episodes"
+        type: boolean
+        default: false
+  schedule:
+    - cron: '0 0 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/subtitle-review/start-whisperx-batch.flag'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: yqxyy-whisperx-publish-batches
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    name: Select 100 episodes from original video and Read
+    runs-on: ubuntu-latest
+    outputs:
+      has_targets: ${{ steps.select.outputs.has_targets }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run independent alignment unit tests
+        run: |
+          python -m py_compile scripts/whisperx-read-align.py scripts/manifest-whisperx-read.py scripts/run-whisperx-read-batch.py scripts/publish-whisperx-read-batch.py
+          python -m unittest discover -s tests -p 'test_whisperx_read_align.py' -v
+      - name: Select batch without reading website subtitles
+        id: select
+        env:
+          RETRY_FAILED: ${{ inputs.retry_failed || 'false' }}
+        run: |
+          ARGS=(--limit 100 --output whisperx-batch-targets.json)
+          if [[ "$RETRY_FAILED" == "true" ]]; then ARGS+=(--retry-failed); fi
+          python scripts/manifest-whisperx-read.py "${ARGS[@]}"
+          COUNT=$(python -c "import json;print(json.load(open('whisperx-batch-targets.json'))['selected'])")
+          if [[ "$COUNT" -gt 0 ]]; then
+            echo 'has_targets=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'has_targets=false' >> "$GITHUB_OUTPUT"
+          fi
+          echo "Selected $COUNT episodes"
+      - uses: actions/upload-artifact@v4
+        if: steps.select.outputs.has_targets == 'true'
+        with:
+          name: whisperx-batch-targets
+          path: whisperx-batch-targets.json
+          retention-days: 7
+
+  align:
+    name: WhisperX Read forced alignment (shard ${{ matrix.shard }})
+    needs: prepare
+    if: needs.prepare.outputs.has_targets == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      max-parallel: 10
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9]
+    env:
+      HF_HOME: /tmp/yqxyy-whisperx-hf
+      OMP_NUM_THREADS: '4'
+      TOKENIZERS_PARALLELISM: 'false'
+      HF_HUB_DISABLE_TELEMETRY: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: whisperx-batch-targets
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install FFmpeg and CPU WhisperX
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          python -m pip install --no-cache-dir 'torch==2.8.0' 'torchvision==0.23.0' 'torchaudio==2.8.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'whisperx==3.8.6'
+      - uses: actions/cache@v4
+        with:
+          path: |
+            /tmp/yqxyy-whisperx-hf
+            /tmp/yqxyy-whisperx-model-cache
+          key: ${{ runner.os }}-whisperx-read-small-en-cpu-v2
+      - name: Real audio to ASR to Read correction to forced word alignment
+        run: |
+          python scripts/run-whisperx-read-batch.py --manifest whisperx-batch-targets.json --shard ${{ matrix.shard }} --shards 10 --model small.en --output whisperx-batch-results
+      - name: Preserve every successful candidate and every rejection
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: whisperx-results-${{ matrix.shard }}
+          path: whisperx-batch-results/
+          if-no-files-found: warn
+          retention-days: 7
+
+  publish:
+    name: Verify and publish generated VTT plus word highlights
+    needs: [prepare, align]
+    if: always() && needs.prepare.result == 'success' && needs.prepare.outputs.has_targets == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: whisperx-batch-targets
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: whisperx-results-*
+          merge-multiple: true
+          path: whisperx-batch-results
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Recheck original Read, media identity, timestamps, quality and file pairs
+        run: |
+          python scripts/publish-whisperx-read-batch.py --manifest whisperx-batch-targets.json --source whisperx-batch-results --run-id "${{ github.run_id }}"
+          python -m py_compile scripts/whisperx-read-align.py scripts/publish-whisperx-read-batch.py
+          git diff --check
+      - name: Publish successful episode pairs without changing unrelated site files
+        run: |
+          git add data/*/subtitles/*.vtt data/*/subtitles/*.words.json reports/whisperx-read-*.json reports/whisperx-read-batches/*.json
+          if git diff --cached --quiet; then
+            echo 'No validated episode pairs or new report'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "Publish WhisperX Read verified subtitle and karaoke batch ${{ github.run_id }}"
+          git pull --rebase origin main
+          git push origin HEAD:main
+      - name: Preserve batch audit
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: whisperx-batch-publish-report
+          path: reports/whisperx-read-*.json
+          if-no-files-found: warn
+          retention-days: 14
