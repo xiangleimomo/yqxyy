@@ -46,7 +46,7 @@ class OfficialXmlTextTests(unittest.TestCase):
     def test_nonspoken_scene_marker_and_n_break_code_are_removed(self):
         sample=mod.spoken_tokens("The[n@monkey spoke. *** And[n@]then ran! — ")
         self.assertEqual(sample,["The","monkey","spoke.","And","then","ran!"])
-        source=fixture(["The[n@monkey spoke. ***","And[n@]then ran!","The farmer watched."])
+        source=fixture(["The[n@monkey spoke. *** "+TEXT[0],"And[n@]then ran! "+TEXT[1],TEXT[2]])
         actual=mod.parse_text_only(source)["words"]
         self.assertNotIn("[n@",' '.join(actual))
         self.assertNotIn("***",actual)
