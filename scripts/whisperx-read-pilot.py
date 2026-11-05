@@ -228,6 +228,17 @@ def fill_rare_verified_gaps(output: list, read: list[str]):
     return added
 
 
+
+def suspicious_word_spans(words: list[dict], threshold_ms: int = 3500):
+    """Identify implausibly long single-word spans (e.g. intro music as a word)."""
+    return [
+        {"index":i,"word":word["text"],"durationMs":word["endMs"]-word["startMs"],
+         "startMs":word["startMs"],"endMs":word["endMs"]}
+        for i,word in enumerate(words)
+        if word and word["endMs"]-word["startMs"] > threshold_ms
+    ]
+
+
 def format_vtt_time(ms: int) -> str:
     ms = max(0, ms)
     h, remain = divmod(ms, 3600000)
@@ -396,8 +407,14 @@ def run_one(args):
                 raise ValueError("Unaligned Read words remain; candidate withheld")
             if not first or not last or last["endMs"] < duration_ms*0.75:
                 raise ValueError("Missing late-episode speech; candidate withheld")
+            outliers = suspicious_word_spans(mapped)
+            report["suspiciousLongWordSpans"] = outliers[:15]
             cue_count = write_candidate(folder,series,eid,read,mapped,quality,media_path,args.model)
-            report.update({"approved":True,"candidateCueCount":cue_count})
+            report["candidateCueCount"] = cue_count
+            if outliers:
+                # Keep a preview artifact for human review, never call it approved.
+                raise ValueError(f"{len(outliers)} suspect long-word intervals; manual review required")
+            report["approved"] = True
     except Exception as exc:
         report["failure"] = f"{type(exc).__name__}: {str(exc)[:350]}"
     (folder/"pilot-report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
