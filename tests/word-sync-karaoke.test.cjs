@@ -44,8 +44,8 @@ test('speech-timed words are clickable, receive indices, and clear highlight dur
   const [row] = sync.prepare(cues, track);
   assert.equal(row.verified, true);
   const view = sync.render(row, true);
-  assert.deepEqual(view.nodes.map(node => node.dataset.wordIndex), ['0', '1', '2']);
-  assert.deepEqual(view.nodes.map(node => node.attrs.role), ['button', 'button', 'button']);
+  assert.deepEqual(Array.from(view.nodes, node => node.dataset.wordIndex), ['0', '1', '2']);
+  assert.deepEqual(Array.from(view.nodes, node => node.attrs.role), ['button', 'button', 'button']);
   sync.paint(view, 1100);
   assert.equal(view.nodes[0].active, true);
   sync.paint(view, 1450);
