@@ -19,7 +19,7 @@ import xml.etree.ElementTree as ET
 
 ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/'data'
-HOST='cdn.littlefox.co.kr'
+HOST='cdn.littlefox.com'
 ID=re.compile(r'C\d{7}\Z')
 SERIES=re.compile(r'[a-z0-9-]+\Z')
 CUE_TAGS={'p','cue','item','entry','line','text','caption','subtitle','sentence'}
