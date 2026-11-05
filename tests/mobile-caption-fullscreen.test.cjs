@@ -56,13 +56,13 @@ class FakeNode {
   matches() { return false; }
 }
 
-function makeHarness({touch = true, fullscreenAPI = false} = {}) {
+function makeHarness({touch = true, fullscreenAPI = false, agent = ''} = {}) {
   const body = new FakeNode('body');
   body.isDocumentRoot = true;
   const html = new FakeNode('html');
   html.isDocumentRoot = true;
   const window = {
-    navigator: {maxTouchPoints: touch ? 5 : 0},
+    navigator: {maxTouchPoints: touch ? 5 : 0, userAgent: agent},
     matchMedia: () => ({matches: touch}),
     listeners: {},
     addEventListener(name, fn) { (this.listeners[name] ||= []).push(fn); }
@@ -110,6 +110,7 @@ test('iOS-style fallback portals the whole video and karaoke caption to body, th
   assert.equal(x.player.attributes.playsinline, '');
   assert.equal(x.stage.children.some(node => node.classNames.has('sf-touch-video-controls')), false);
   assert.equal(x.stage.children.some(node => node.className === 'sf-touch-video-controls'), true);
+  assert.equal(x.stage.children.some(node => node.className === 'sf-touch-video-hitarea'), true);
   await x.api.toggle();
   assert.equal(x.api.isFull(), true);
   assert.equal(x.stage.parentNode, x.body);
@@ -125,8 +126,30 @@ test('iOS-style fallback portals the whole video and karaoke caption to body, th
   assert.equal(x.body.classNames.has('sf-caption-screen-locked'), false);
 });
 
-test('standard element fullscreen uses stage, never the video itself', async () => {
+test('mobile bypasses Fullscreen API even if available (avoids native player handoff)', async () => {
   const x = makeHarness({touch:true,fullscreenAPI:true});
+  x.stage.requestFullscreen = async () => { throw Error('Mobile should NEVER invoke fullscreen API'); };
+  await x.api.toggle();
+  assert.equal(x.document.fullscreenElement, null);
+  assert.equal(x.stage.parentNode, x.body);
+  assert.equal(x.caption.parentNode, x.stage);
+  assert.equal(x.api.isFull(), true);
+  await x.api.toggle();
+  assert.equal(x.stage.parentNode, x.floating);
+  assert.equal(x.api.isFull(), false);
+});
+
+test('mobile user agent triggers webpage video controls even if pointer is reported fine', async () => {
+  const x = makeHarness({touch:false,fullscreenAPI:true,agent:'Mozilla/5.0 (Linux; Android 13) Quark/7.0 Mobile'});
+  assert.equal(x.player.controls, false);
+  assert.equal(x.stage.children.some(node => node.className === 'sf-touch-video-hitarea'), true);
+  await x.api.toggle();
+  assert.equal(x.document.fullscreenElement, null);
+  assert.equal(x.stage.parentNode, x.body);
+});
+
+test('desktop stage fullscreen stays functional', async () => {
+  const x = makeHarness({touch:false,fullscreenAPI:true,agent:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/123'});
   await x.api.toggle();
   assert.equal(x.document.fullscreenElement, x.stage);
   assert.equal(x.stage.parentNode, x.floating);
