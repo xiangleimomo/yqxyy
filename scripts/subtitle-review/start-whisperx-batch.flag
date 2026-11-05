@@ -3,3 +3,5 @@ Launch XML-TEXT-ONLY batch #1: cancel previous Read-dependent run; first 100 epi
 2026-11-06: Re-run quality-threshold publisher. >=90% genuine timed word coverage passes; omit unaligned words with explicit metadata; publish validated episode pairs independently. Requested immediate launch.
 
 2026-11-06 retry: fix preflight unit-test regression in write_candidate totalXmlWords fallback; rerun batch.
+
+2026-11-06: Start first 10-episode incremental batch; 5 shards x up to 2 episodes; publish >=90% speech-aligned words; omit missing or implausibly long words, no full-match gate. Continue daily 10-episode batches without duplicate subtitles.
