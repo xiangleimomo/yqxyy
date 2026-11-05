@@ -26,7 +26,8 @@ jobs:
           run-id: 42072397000
           github-token: ${{ secrets.GITHUB_TOKEN }}
           pattern: whisperx-results-*
-          path: whisperx-archive-zips
+          merge-multiple: true
+          path: whisperx-archive
       - name: Build captions directly from archived alignment
         run: |
           python -m py_compile scripts/publish-archived-whisperx.py
