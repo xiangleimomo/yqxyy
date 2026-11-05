@@ -1,0 +1,40 @@
+name: Verify official Three Kingdoms episode 13 captions
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/repair-three-kingdoms-13-caption.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  caption:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check caption importer syntax
+        run: python -m py_compile scripts/import-official-captions.py
+      - name: Fetch official XML, verify text and timing, and repair episode 13
+        run: python scripts/import-official-captions.py --lesson three-kingdoms:13 --apply
+      - name: Commit verified correction, if available
+        run: |
+          git add data/three-kingdoms/subtitles/013.vtt
+          if test -f data/three-kingdoms/subtitles/013.timing.json; then
+            git add data/three-kingdoms/subtitles/013.timing.json
+          fi
+          if git diff --cached --quiet; then
+            echo 'No verified caption update available.'
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Align Three Kingdoms episode 13 to official caption XML"
+          git push
