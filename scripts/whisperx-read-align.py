@@ -269,10 +269,17 @@ def split_cues(aligned: list[dict]):
 def write_candidate(folder: Path, series: str, eid: int, canonical: list[str],
                     mapped: list[dict], info: dict, media_path: str, model: str, source_id=None, xml_evidence=None):
     cues = split_cues(mapped)
-    subtitle_text = "WEBVTT\n\n" + "\n\n".join(
-        f"{idx}\n{format_vtt_time(c['startMs'])} --> {format_vtt_time(c['endMs'])}\n{c['text']}"
+    subtitle_text = "WEBVTT
+
+" + "
+
+".join(
+        f"{idx}
+{format_vtt_time(c['startMs'])} --> {format_vtt_time(c['endMs'])}
+{c['text']}"
         for idx,c in enumerate(cues,1)
-    )+"\n"
+    )+"
+"
     digest = hashlib.sha256(subtitle_text.encode()).hexdigest()
     track = {
         "seriesId":series,"episodeId":eid,"sourceContentId":source_id,"mediaPath":media_path,
@@ -287,7 +294,8 @@ def write_candidate(folder: Path, series: str, eid: int, canonical: list[str],
         "cues":[{"words":c["words"]} for c in cues]
     }
     (folder / f"{eid:03}.vtt").write_text(subtitle_text,encoding="utf-8")
-    (folder / f"{eid:03}.words.json").write_text(json.dumps(track,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    (folder / f"{eid:03}.words.json").write_text(json.dumps(track,ensure_ascii=False,indent=2)+"
+",encoding="utf-8")
     return len(cues)
 
 
@@ -346,7 +354,8 @@ def run_one(args):
         xml_evidence=parse_text_only(xml_bytes)
         (folder/"official-caption.xml").write_bytes(xml_bytes)
         canonical=xml_evidence["words"]
-        (folder/"official-text-cleaned.txt").write_text(" ".join(canonical)+"\n",encoding="utf-8")
+        (folder/"official-text-cleaned.txt").write_text(" ".join(canonical)+"
+",encoding="utf-8")
         report.update({"textAuthority":"littlefox-xml-paragraph-text",
             "xmlContentId":episode.get("sourceContentId"),
             "xmlTextSha256":xml_evidence["sha256"],
@@ -369,7 +378,8 @@ def run_one(args):
             segments = asr_result.get("segments") or []
             corrected, metrics = correct_segments(canonical,segments)
             asr_text = metrics.pop("asrText")
-            (folder/"asr-raw.txt").write_text(asr_text+"\n",encoding="utf-8")
+            (folder/"asr-raw.txt").write_text(asr_text+"
+",encoding="utf-8")
             report.update(metrics)
             # Catch wrong/missing audio before forced alignment, independently
             # of any old official VTT timestamps.
@@ -386,7 +396,8 @@ def run_one(args):
             del align_model
             gc.collect()
             (folder/"forced-alignment-raw.json").write_text(
-                json.dumps(aligned_result.get("segments") or [],ensure_ascii=False)+"\n",
+                json.dumps(aligned_result.get("segments") or [],ensure_ascii=False)+"
+",
                 encoding="utf-8"
             )
             mapped, quality = aligned_to_official(canonical,aligned_result.get("segments") or [],duration_ms)
@@ -407,8 +418,7 @@ def run_one(args):
             quality["missingWords"] = len(mapped) - quality["forcedAlignedWords"] - quality["shortGapEstimatedWords"]
             quality["forcedAlignedFraction"] = round(quality["forcedAlignedWords"] / max(1,len(mapped)),4)
             report.update(quality)
-            # Never publish partial transcripts: missing long gaps, very low
-            # acoustic coverage or suspicious tail imply a failed pilot.
+            # Reject only genuinely insufficient acoustic coverage or missing audio tail.
             first = next((w for w in mapped if w is not None),None)
             last = next((w for w in reversed(mapped) if w is not None),None)
             report["lastAlignedMs"] = last["endMs"] if last else None
@@ -417,9 +427,9 @@ def run_one(args):
             )
             if quality["forcedAlignedFraction"] < args.min_aligned:
                 raise ValueError(f"Forced word alignment low: {quality['forcedAlignedFraction']:.1%}")
-            # Retain all official words; a small missing ASR gap may be estimated
-            # only when it is bounded by genuine timestamps.
-            # Publish verified timed words when acoustic coverage passes the threshold.\n            # Missing words are explicitly omitted, never given fabricated timestamps.\n            publishable = [word for word in mapped if word is not None]
+            # Publish verified timed words when acoustic coverage passes the threshold.
+            # Missing words are explicitly omitted, never given fabricated timestamps.
+            publishable = [word for word in mapped if word is not None]
             if not first or not last or last["endMs"] < duration_ms*0.75:
                 raise ValueError("Missing late-episode speech; candidate withheld")
             report["omittedLongWordSpans"] = outliers[:15]
@@ -429,7 +439,8 @@ def run_one(args):
             report["approved"] = True
     except Exception as exc:
         report["failure"] = f"{type(exc).__name__}: {str(exc)[:350]}"
-    (folder/"alignment-report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    (folder/"alignment-report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"
+",encoding="utf-8")
     print(json.dumps(report,ensure_ascii=False),flush=True)
     return 0 if report["approved"] else 2
 
