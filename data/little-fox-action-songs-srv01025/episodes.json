@@ -258,8 +258,9 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://cdn.littlefox.com/contents_5/hls/720/c888527d72/1672277357ac597b7eca2b4a550ad15962eeeee42a/stream.m3u8?_=1672277402",
-      "backupHlsUrl": "https://cdn.littlefox.co.kr/contents_5/hls/720/c888527d72/1672277357ac597b7eca2b4a550ad15962eeeee42a/stream.m3u8"
+      "hlsUrl": "https://cdn.littlefox.com/contents_5/hls/1080/c888527d72/1672277358ac597b7eca2b4a550ad15962eeeee42a/stream.m3u8",
+      "backupHlsUrl": "https://cdn.littlefox.co.kr/contents_5/hls/720/c888527d72/1672277357ac597b7eca2b4a550ad15962eeeee42a/stream.m3u8",
+      "hls720Url": "https://cdn.littlefox.com/contents_5/hls/720/c888527d72/1672277357ac597b7eca2b4a550ad15962eeeee42a/stream.m3u8?_=1672277402"
     },
     "modules": {
       "watch": true,

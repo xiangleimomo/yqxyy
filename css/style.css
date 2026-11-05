@@ -132,6 +132,7 @@ button{font-family:inherit}
 .video-source-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:14px}
 .video-source-head h2{margin:0 0 4px}
 .video-source-head p{margin:0}
+.hls-source-control{display:flex;align-items:center;gap:8px;flex:0 0 auto;color:#36536f;font-size:14px;font-weight:700;white-space:nowrap}.hls-source-select{min-width:196px;border:1px solid #bdd3e8;border-radius:9px;background:#fff;color:#17395d;font:inherit;padding:8px 10px}
 .direct-video-card{border-color:#9bd8be;background:#f4fff8}
 
 /* HLS uses the same 16:9 stage as direct video. Without this rule the video
@@ -1200,6 +1201,9 @@ body.series-fixed-page .footer{
   .floating-watch .video-wrap iframe,.floating-watch iframe{min-height:0!important}
   .floating-listenRead .read-only-window{padding:4px 0;overflow:auto}
   .floating-words .floating-content{padding:14px}
+  .video-source-head{flex-direction:column}
+  .hls-source-control{width:100%;justify-content:space-between}
+  .hls-source-select{min-width:0;max-width:68%}
   .module-grid{gap:12px;margin-top:18px}
   .app-shell.series-page-shell .module-grid{grid-template-columns:1fr}
   .module-card{height:118px}

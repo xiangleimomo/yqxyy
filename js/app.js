@@ -496,9 +496,12 @@ async renderLesson(seriesId, episodeId){
     const url=d.ep.video?.hlsUrl;
     if(!url) return `<div class="empty">本集 HLS 视频源暂未添加。</div>`;
     const backupHls=d.ep.video?.backupHlsUrl || '';
+    const hls720=d.ep.video?.hls720Url || '';
     const fallback=d.ep.video?.mp4Url || d.ep.video?.directUrl || '';
     const hasSubtitle=true;
-    return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>Watch 看视频</h2><p class="muted">播放器加载失败时，会自动尝试备用播放源。${hasSubtitle?' 本集提供时将自动加载英文外挂字幕。':''}</p></div></div><div class="video-wrap${hasSubtitle?' subtitle-video-wrap':''}"><video class="hls-video-player" controls playsinline preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-backup-hls-src="${this.escapeHtml(backupHls)}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="video-caption" aria-live="polite" hidden></div>${hasSubtitle?this.subtitleControls():''}</div><p class="muted direct-video-help"><span class="hls-load-status" role="status" aria-live="polite">正在连接视频…</span> ${fallback?`也可<a href="${this.escapeHtml(fallback)}" target="_blank" rel="noreferrer noopener">直接打开本集视频</a>。`:`若无法播放，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">打开视频源</a>。`}</p></section>${this.completeButton(d,completionModule)}`;
+    const fallbacks=[...(hls720 && hls720!==url?[hls720]:[]),...(backupHls?[backupHls]:[])];
+    const sourceSelector=hls720?`<label class="hls-source-control">清晰度 / 播放源<select class="hls-source-select" aria-label="选择视频清晰度和播放源" data-hls-1080="${this.escapeHtml(url)}" data-hls-720="${this.escapeHtml(hls720)}" data-hls-korea="${this.escapeHtml(backupHls)}"><option value="1080">1080P 国际站（推荐）</option><option value="720">720P 国际站（更流畅）</option>${backupHls?'<option value="korea">韩国站备用源</option>':''}</select></label>`:'';
+    return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>Watch 看视频</h2><p class="muted">默认使用 1080P 国际站；播放不流畅时可切换为 720P。加载失败会依次尝试可用备用源。${hasSubtitle?' 本集提供时将自动加载英文外挂字幕。':''}</p></div>${sourceSelector}</div><div class="video-wrap${hasSubtitle?' subtitle-video-wrap':''}"><video class="hls-video-player" controls playsinline preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-hls-fallback-srcs="${this.escapeHtml(JSON.stringify(fallbacks))}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="video-caption" aria-live="polite" hidden></div>${hasSubtitle?this.subtitleControls():''}</div><p class="muted direct-video-help"><span class="hls-load-status" role="status" aria-live="polite">正在连接视频…</span> ${fallback?`也可<a href="${this.escapeHtml(fallback)}" target="_blank" rel="noreferrer noopener">直接打开本集视频</a>。`:`若无法播放，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">打开视频源</a>。`}</p></section>${this.completeButton(d,completionModule)}`;
   },
   subtitlePreferences(){
     const defaults={visible:true,size:20,color:'#ffffff',captionX:50,captionY:84,opacity:72};
@@ -761,11 +764,15 @@ async renderLesson(seriesId, episodeId){
     if(player.dataset.ready) return;
     player.dataset.ready='1';
     const source=player.dataset.hlsSrc;
-    const backupHls=player.dataset.backupHlsSrc;
+    let hlsFallbacks=[];
+    try{hlsFallbacks=JSON.parse(player.dataset.hlsFallbackSrcs||'[]');}catch{hlsFallbacks=[];}
+    if(!Array.isArray(hlsFallbacks)) hlsFallbacks=[];
+    if(player.dataset.backupHlsSrc && !hlsFallbacks.includes(player.dataset.backupHlsSrc)) hlsFallbacks.push(player.dataset.backupHlsSrc);
     const fallback=player.dataset.fallbackSrc;
     const help=player.closest('.direct-video-panel')?.querySelector('.direct-video-help') || player.closest('.audio-player-card')?.querySelector('.audio-player-help');
     const loadStatus=player.closest('.direct-video-panel')?.querySelector('.hls-load-status');
-    let switched=false, usedBackupHls=false, disposed=false, wantsPlay=false, disposeAdSkip;
+    let switched=false, fallbackIndex=0, disposed=false, wantsPlay=player.dataset.resumeOnLoad==='1', disposeAdSkip;
+    delete player.dataset.resumeOnLoad;
     const onPlay=()=>{wantsPlay=true;};
     player.addEventListener('play',onPlay);
     const destroy=()=>{if(player._hls){player._hls.destroy();player._hls=null;}};
@@ -775,12 +782,12 @@ async renderLesson(seriesId, episodeId){
       clearTimeout(timer);
       const resume=wantsPlay || !player.paused;
       const position=Number.isFinite(player.currentTime)?player.currentTime:0;
-      if(backupHls && !usedBackupHls){
-        usedBackupHls=true;
-        if(loadStatus)loadStatus.textContent='主播放源加载失败，正在切换备用播放源。';else if(help)help.textContent='主播放源加载失败，正在切换备用播放源。';
+      const nextHls=hlsFallbacks[fallbackIndex++];
+      if(nextHls){
+        if(loadStatus)loadStatus.textContent='当前播放源加载失败，正在切换备用播放源。';else if(help)help.textContent='当前播放源加载失败，正在切换备用播放源。';
         player.addEventListener('loadedmetadata',()=>{if(!disposed&&resume)player.play().catch(()=>{});},{once:true});
-        if(player._hls){player._hls.loadSource(backupHls);disposeAdSkip=window.DyttAdSkip?.attach(player,backupHls,player._hls);}
-        else{player.src=backupHls;player.load();}
+        if(player._hls){player._hls.loadSource(nextHls);disposeAdSkip=window.DyttAdSkip?.attach(player,nextHls,player._hls);}
+        else{player.src=nextHls;player.load();}
         return;
       }
       switched=true;
@@ -822,6 +829,20 @@ async renderLesson(seriesId, episodeId){
     }catch(error){
       recover();
     }
+  },
+  switchHlsSource(player,source,fallbacks=[]){
+    if(!source) return;
+    const resume=!player.paused;
+    player._disposeHls?.();
+    player.removeAttribute('src');
+    player.load();
+    player.dataset.hlsSrc=source;
+    player.dataset.hlsFallbackSrcs=JSON.stringify(fallbacks.filter(url=>url && url!==source));
+    if(resume) player.dataset.resumeOnLoad='1';
+    delete player.dataset.ready;
+    const status=player.closest('.direct-video-panel')?.querySelector('.hls-load-status');
+    if(status) status.textContent='正在切换播放源…';
+    this.initializeHlsMedia(player);
   },
   localVideoPanel(d){
     return `<section class="local-video-panel" data-series="${d.seriesId}" data-episode="${d.episodeId}">
@@ -904,8 +925,9 @@ async renderLesson(seriesId, episodeId){
   hlsAudioPanel(d){
     const url=d.ep.video?.hlsUrl;
     if(!url) return `<section class="listen-header"><span class="audio-icon">🎧</span><div><h3>Listen and Read</h3><p>本集暂未添加音频播放源，可先阅读下方原文。</p></div></section>`;
-    const backupHls=d.ep.video?.backupHlsUrl || '',fallback=d.ep.video?.mp4Url || d.ep.video?.directUrl || '';
-    return `<section class="listen-read-audio" aria-label="本集音频播放"><div class="listen-header"><span class="audio-icon">🎧</span><div><h3>Listen and Read</h3><p>播放本集原声，同时阅读下方英文文本；此处只播放音频，不显示视频。</p></div></div><div class="audio-player-card"><div class="audio-player-label">本集音频</div><audio class="hls-audio-player" controls preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-backup-hls-src="${this.escapeHtml(backupHls)}" data-fallback-src="${this.escapeHtml(fallback)}">当前浏览器不支持音频播放。</audio><p class="muted audio-player-help" role="status" aria-live="polite"></p></div></section>`;
+    const backupHls=d.ep.video?.backupHlsUrl || '',hls720=d.ep.video?.hls720Url || '',fallback=d.ep.video?.mp4Url || d.ep.video?.directUrl || '';
+    const fallbacks=[...(hls720 && hls720!==url?[hls720]:[]),...(backupHls?[backupHls]:[])];
+    return `<section class="listen-read-audio" aria-label="本集音频播放"><div class="listen-header"><span class="audio-icon">🎧</span><div><h3>Listen and Read</h3><p>播放本集原声，同时阅读下方英文文本；此处只播放音频，不显示视频。</p></div></div><div class="audio-player-card"><div class="audio-player-label">本集音频</div><audio class="hls-audio-player" controls preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-hls-fallback-srcs="${this.escapeHtml(JSON.stringify(fallbacks))}" data-fallback-src="${this.escapeHtml(fallback)}">当前浏览器不支持音频播放。</audio><p class="muted audio-player-help" role="status" aria-live="polite"></p></div></section>`;
   },
   readPanel(d){
     const paras=(d.reading && d.reading.paragraphs) || [];
@@ -1064,6 +1086,14 @@ bindLessonPanel(tab,d,root=document){
   document.querySelectorAll('.mark-complete').forEach(btn=>btn.addEventListener('click', e=>{e.preventDefault(); this.markComplete(btn.dataset.series, btn.dataset.episode, btn.dataset.module); btn.textContent='已完成 ✓';}));
   document.querySelectorAll('.open-direct-video').forEach(btn=>btn.addEventListener('click',()=>{this.activeLessonTab='directVideo'; this.renderLesson(d.seriesId,d.episodeId);}));
   document.querySelectorAll('.open-bilibili-video').forEach(btn=>btn.addEventListener('click',()=>{this.activeLessonTab='watch'; this.renderLesson(d.seriesId,d.episodeId);}));
+  root.querySelectorAll('.hls-source-select').forEach(select=>select.addEventListener('change',()=>{
+    const player=select.closest('.direct-video-panel')?.querySelector('.hls-video-player');
+    if(!player) return;
+    const is720=select.value==='720', isKorea=select.value==='korea';
+    const source=is720?select.dataset.hls720:(isKorea?select.dataset.hlsKorea:select.dataset.hls1080);
+    const fallbacks=is720?[select.dataset.hlsKorea]:isKorea?[]:[select.dataset.hls720,select.dataset.hlsKorea];
+    this.switchHlsSource(player,source,fallbacks.filter(Boolean));
+  }));
   document.querySelectorAll('.local-video-panel').forEach(panel=>{
     if(panel.dataset.bound) return;
     panel.dataset.bound='1';

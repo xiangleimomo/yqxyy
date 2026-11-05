@@ -101,8 +101,9 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://cdn.littlefox.com/contents_5/hls/720/9afd7cf5e4/1661730821836a0dcbf5d22652569dc3a708274c16/stream.m3u8?_=1661730866",
-      "backupHlsUrl": "https://cdn.littlefox.co.kr/contents_5/hls/720/9afd7cf5e4/1661730821836a0dcbf5d22652569dc3a708274c16/stream.m3u8"
+      "hlsUrl": "https://cdn.littlefox.com/contents_5/hls/1080/9afd7cf5e4/1661730822836a0dcbf5d22652569dc3a708274c16/stream.m3u8",
+      "backupHlsUrl": "https://cdn.littlefox.co.kr/contents_5/hls/720/9afd7cf5e4/1661730821836a0dcbf5d22652569dc3a708274c16/stream.m3u8",
+      "hls720Url": "https://cdn.littlefox.com/contents_5/hls/720/9afd7cf5e4/1661730821836a0dcbf5d22652569dc3a708274c16/stream.m3u8?_=1661730866"
     },
     "modules": {
       "watch": true,
@@ -504,8 +505,9 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://cdn.littlefox.com/contents_5/hls/720/d4eeeb44d3/16103507880a988fc2992add2d3233e19c7aadfdea/stream.m3u8?_=1610350789",
-      "backupHlsUrl": "https://cdn.littlefox.co.kr/contents_5/hls/720/d4eeeb44d3/16103507880a988fc2992add2d3233e19c7aadfdea/stream.m3u8"
+      "hlsUrl": "https://cdn.littlefox.com/contents_5/hls/1080/d4eeeb44d3/16103507880a988fc2992add2d3233e19c7aadfdea/stream.m3u8",
+      "backupHlsUrl": "https://cdn.littlefox.co.kr/contents_5/hls/720/d4eeeb44d3/16103507880a988fc2992add2d3233e19c7aadfdea/stream.m3u8",
+      "hls720Url": "https://cdn.littlefox.com/contents_5/hls/720/d4eeeb44d3/16103507880a988fc2992add2d3233e19c7aadfdea/stream.m3u8?_=1610350789"
     },
     "modules": {
       "watch": true,
