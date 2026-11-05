@@ -281,7 +281,7 @@ def write_candidate(folder: Path, series: str, eid: int, canonical: list[str],
         "textAuthority":"littlefox-xml-paragraph-text",
         "xmlTextSha256":(xml_evidence or {}).get("sha256"),
         "xmlParagraphCount":(xml_evidence or {}).get("paragraphs"),
-        "recognizer":model,"cueCount":len(cues),"totalWords":len(canonical),
+        "recognizer":model,"cueCount":len(cues),"totalWords":info["totalXmlWords"],"captionedWords":len(mapped),"omittedUnalignedWords":info["totalXmlWords"]-len(mapped),
         "speechMatchedWords":info["forcedAlignedWords"],
         "speechMatchedFraction":info["forcedAlignedFraction"],
         "cues":[{"words":c["words"]} for c in cues]
@@ -410,13 +410,12 @@ def run_one(args):
                 raise ValueError(f"Forced word alignment low: {quality['forcedAlignedFraction']:.1%}")
             # Retain all official words; a small missing ASR gap may be estimated
             # only when it is bounded by genuine timestamps.
-            if any(word is None for word in mapped):
-                raise ValueError("Unbounded missing speech timestamps; review required")
+            # Publish verified timed words when acoustic coverage passes the threshold.\n            # Missing words are explicitly omitted, never given fabricated timestamps.\n            publishable = [word for word in mapped if word is not None]
             if not first or not last or last["endMs"] < duration_ms*0.75:
                 raise ValueError("Missing late-episode speech; candidate withheld")
             outliers = suspicious_word_spans(mapped)
             report["suspiciousLongWordSpans"] = outliers[:15]
-            cue_count = write_candidate(folder,series,eid,canonical,mapped,quality,media_path,args.model,episode.get("sourceContentId"),xml_evidence)
+            cue_count = write_candidate(folder,series,eid,canonical,publishable,quality,media_path,args.model,episode.get("sourceContentId"),xml_evidence)
             report["candidateCueCount"] = cue_count
             if outliers:
                 # Keep a preview artifact for human review, never call it approved.
