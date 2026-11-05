@@ -1,3 +1,5 @@
 Launch XML-TEXT-ONLY batch #1: cancel previous Read-dependent run; first 100 episodes, official XML Paragraph/Text (strip [n@) -> ASR/WhisperX -> forced alignment -> new VTT + word highlights. No Read or XML timing inputs. Quality-gated publishing and notification.
 
 2026-11-06: Re-run quality-threshold publisher. >=90% genuine timed word coverage passes; omit unaligned words with explicit metadata; publish validated episode pairs independently. Requested immediate launch.
+
+2026-11-06 retry: fix preflight unit-test regression in write_candidate totalXmlWords fallback; rerun batch.
