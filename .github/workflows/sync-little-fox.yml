@@ -50,8 +50,12 @@ jobs:
         run: |
           python scripts/audit-subtitle-speech.py --manifest subtitle-review/new-lessons.json --output speech-review-new
           python scripts/apply-speech-subtitle-repairs.py --speech-root speech-review-new --manifest subtitle-review/new-lessons.json --report subtitle-review/new-speech-report.json --apply
+      - name: Generate per-word highlight timing from verified speech
+        if: steps.new_subtitles.outputs.has_new == 'true'
+        run: python scripts/build-word-timing.py --speech-root speech-review-new --apply
       - name: Verify aligned data
         run: |
+          python -m py_compile scripts/build-word-timing.py
           node scripts/check-course-bindings.cjs
           node --check js/app.js
           git diff --check
