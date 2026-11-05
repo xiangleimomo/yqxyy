@@ -757,7 +757,8 @@ async renderLesson(seriesId, episodeId){
         new Promise(resolve=>setTimeout(()=>resolve(null),8000))
       ]).then(track=>{
         if(!track||!caption.isConnected)return;
-        effectiveWords=track;
+        prepared.splice(0,prepared.length,...track);
+        effectiveWords=prepared;
         active=-1;
         update();
       }).catch(()=>{});
