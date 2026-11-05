@@ -1,0 +1,28 @@
+name: Karaoke interactive practice checks
+on:
+  pull_request:
+    paths:
+      - 'js/app.js'
+      - 'js/word-sync.js'
+      - 'js/karaoke-practice.js'
+      - 'css/style.css'
+      - 'index.html'
+      - 'tests/word-sync-karaoke.test.cjs'
+      - '.github/workflows/karaoke-practice-check.yml'
+  push:
+    branches:
+      - 'feature/karaoke-interactive-practice-*'
+permissions:
+  contents: read
+jobs:
+  syntax-and-word-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check js/app.js
+      - run: node --check js/word-sync.js
+      - run: node --check js/karaoke-practice.js
+      - run: node --test tests/word-sync-karaoke.test.cjs
