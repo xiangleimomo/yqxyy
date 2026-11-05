@@ -1,0 +1,25 @@
+name: Mobile karaoke fullscreen checks
+on:
+  push:
+    branches:
+      - 'fix/mobile-karaoke-fullscreen-*'
+  pull_request:
+    paths:
+      - 'js/mobile-caption-fullscreen.js'
+      - 'js/app.js'
+      - 'css/style.css'
+      - 'index.html'
+      - 'tests/mobile-caption-fullscreen.test.cjs'
+      - '.github/workflows/mobile-caption-fullscreen-check.yml'
+permissions:
+  contents: read
+jobs:
+  mobile-karaoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check js/app.js && node --check js/mobile-caption-fullscreen.js
+      - run: node --test tests/mobile-caption-fullscreen.test.cjs tests/word-sync-karaoke.test.cjs
