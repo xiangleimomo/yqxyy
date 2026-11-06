@@ -1,65 +1,102 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42145719797",
-  "completedAt": "2026-11-06T01:45:32.797959+00:00",
+  "runId": "42147229320",
+  "completedAt": "2026-11-06T02:07:12.903165+00:00",
   "batchSize": 10,
   "selected": 10,
-  "published": 0,
-  "rejected": 10,
+  "published": 6,
+  "rejected": 4,
   "websiteCommitRequired": true,
-  "totalWords": 0,
-  "speechMatchedWords": 0,
-  "success": [],
-  "failures": [
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 16,
-      "reason": "Missing alignment report"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 17,
-      "reason": "Missing alignment report"
-    },
+  "totalWords": 7060,
+  "speechMatchedWords": 7060,
+  "success": [
     {
       "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
       "episodeId": 18,
-      "reason": "Missing alignment report"
+      "cues": 114,
+      "words": 1165,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 1165,
+      "coverage": 1.0,
+      "omittedWords": 0
     },
     {
       "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
       "episodeId": 19,
-      "reason": "Missing alignment report"
+      "cues": 121,
+      "words": 1181,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 1181,
+      "coverage": 0.9992,
+      "omittedWords": 1
     },
     {
       "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
       "episodeId": 20,
-      "reason": "Missing alignment report"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 21,
-      "reason": "Missing alignment report"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 22,
-      "reason": "Missing alignment report"
+      "cues": 107,
+      "words": 1164,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 1164,
+      "coverage": 1.0,
+      "omittedWords": 0
     },
     {
       "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
       "episodeId": 23,
-      "reason": "Missing alignment report"
+      "cues": 111,
+      "words": 1201,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 1201,
+      "coverage": 1.0,
+      "omittedWords": 0
     },
     {
       "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
       "episodeId": 24,
-      "reason": "Missing alignment report"
+      "cues": 112,
+      "words": 1154,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 82,
+      "speechWords": 1154,
+      "coverage": 0.9991,
+      "omittedWords": 1
     },
     {
       "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
       "episodeId": 25,
-      "reason": "Missing alignment report"
+      "cues": 115,
+      "words": 1195,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 1195,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    }
+  ],
+  "failures": [
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 16,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 17,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (5-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 21,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 22,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (5-minute limit)"
     }
   ]
 }

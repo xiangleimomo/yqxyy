@@ -839,6 +839,26 @@
       "seriesId": "little-fox-a-little-princess-fs0079",
       "episodeId": 24,
       "reason": "NameError: name 'publishable' is not defined"
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 16,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 17,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (5-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 21,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 22,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (5-minute limit)"
     }
   ]
 }
