@@ -154,3 +154,53 @@ body.flipbook-active .pdf-flipbook-reader .flipbook-stage{
     opacity:.96;transform:none;
   }
 }
+
+
+/* Final reader composition: center the book in the viewport and float controls over its lower area. */
+body.flipbook-active .pdf-flipbook-reader .pdf-flipbook-surface{
+  padding:18px 64px!important;
+  place-items:center!important;
+}
+body.flipbook-active .pdf-flipbook-reader .pdf-pageflip{
+  width:min(100%,1500px)!important;
+  height:100%!important;
+  margin:auto!important;
+  place-self:center!important;
+}
+body.flipbook-active .pdf-flipbook-reader .pdf-pageflip .stf__parent{
+  margin:auto!important;
+}
+body.flipbook-active .pdf-flipbook-reader .flipbook-controls{
+  left:7%!important;
+  right:7%!important;
+  bottom:9vh!important;
+  width:auto!important;
+  background:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+  padding:4px 8px!important;
+  text-shadow:0 1px 3px rgba(0,0,0,.72)!important;
+}
+body.flipbook-active .pdf-flipbook-reader .flipbook-controls button,
+body.flipbook-active .pdf-flipbook-reader .flipbook-controls .reader-control-back,
+body.flipbook-active .pdf-flipbook-reader .flipbook-controls .medal-reader-trigger,
+body.flipbook-active .pdf-flipbook-reader .flipbook-controls .reader-dictionary-trigger{
+  background:transparent!important;
+  border-color:transparent!important;
+  box-shadow:none!important;
+}
+@media(max-width:760px){
+  body.flipbook-active .pdf-flipbook-reader .pdf-flipbook-surface{
+    padding:10px 34px!important;
+  }
+  body.flipbook-active .pdf-flipbook-reader .flipbook-controls{
+    left:4%!important;
+    right:4%!important;
+    bottom:max(8vh,env(safe-area-inset-bottom) + 4vh)!important;
+    padding:3px 4px!important;
+  }
+}
