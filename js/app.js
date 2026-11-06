@@ -628,7 +628,6 @@ async renderLesson(seriesId, episodeId){
     });
   },
   subtitleVttUrl(d){
-    if(d.seriesId==='movie-harry-potter-1') return 'data/movie-harry-potter-1/subtitles/full-film.en.vtt';
     if(d.ep?.video?.subtitleUrl){
       const url=new URL(d.ep.video.subtitleUrl,location.href);
       if(url.origin===location.origin) return url.href;
