@@ -49,3 +49,65 @@ body.flipbook-active .pdf-mobile-landscape .stf__block{touch-action:none}
 @media(orientation:portrait){body.flipbook-active .pdf-mobile-landscape #bookFullscreen{margin-right:64px}}
 
 .pdf-tools-panel[data-tool=text]{width:min(560px,calc(100% - 32px))!important;background:#f9fbfff7!important;color:#254563;max-height:calc(100% - 145px)}.pdf-tools-panel[data-tool=text] h3{color:#254563;border-color:#d5e0ef}.pdf-tools-panel[data-tool=text]>.read-dictionary-tools{padding:0;font-size:12px}.pdf-tools-panel[data-tool=text] .read-dictionary-tools input[type=checkbox]{width:auto;margin:0}.pdf-selectable-text{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.9;font-size:17px;padding:14px 4px;user-select:text!important;-webkit-user-select:text!important;touch-action:pan-y}.pdf-text-navigation{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:12px}.pdf-text-navigation input[type=number]{width:65px;margin:0;padding:6px}.pdf-text-navigation button{padding:6px 8px;font-size:12px}
+
+
+/* Full-bleed book reader: controls share one compact bottom toolbar. */
+body.flipbook-active .app-shell.book-reader-shell{
+  position:fixed;inset:0;width:100vw;height:100dvh;max-width:none;margin:0;padding:0;
+  overflow:hidden;background:#cda77e;
+}
+body.flipbook-active .pdf-flipbook-reader{
+  position:relative;width:100vw;height:100dvh;min-height:0;margin:0;padding:0;
+  border:0;border-radius:0;background:#cda77e;overflow:hidden;
+}
+body.flipbook-active .pdf-flipbook-reader .flipbook-topbar{display:none!important}
+body.flipbook-active .pdf-flipbook-reader .flipbook-stage{
+  position:absolute;inset:0;width:100%;height:100dvh;min-height:0;flex:none;
+  background-color:#cda77e;
+  background-image:radial-gradient(ellipse at center,#e4c9a5 0,#c59b6c 72%,#b88d60 100%);
+  perspective:2600px;
+}
+body.flipbook-active .pdf-flipbook-reader .pdf-flipbook-surface{
+  width:100%;height:100%;padding:18px 64px 76px;box-sizing:border-box;
+  display:grid;place-items:center;overflow:hidden;
+}
+body.flipbook-active .pdf-flipbook-reader .pdf-pageflip{
+  width:min(100%, min(1500px, 94vw));height:100%;max-height:100%;
+  margin:auto;display:grid;place-items:center;
+}
+body.flipbook-active .pdf-flipbook-reader .pdf-pageflip .stf__parent{margin:auto;max-height:100%}
+body.flipbook-active .pdf-flipbook-reader .flipbook-controls{
+  position:absolute;z-index:35;left:18px;right:18px;bottom:max(10px,env(safe-area-inset-bottom));
+  width:auto;min-height:42px;padding:6px 10px;box-sizing:border-box;
+  display:flex;align-items:center;gap:10px;
+  background:linear-gradient(90deg,rgba(35,31,27,.66),rgba(35,31,27,.38));
+  border:1px solid rgba(255,255,255,.2);border-radius:12px;
+  backdrop-filter:blur(10px);opacity:.94;text-shadow:0 1px 2px #0008;
+}
+.pdf-flipbook-reader .reader-control-back{
+  display:inline-grid;place-items:center;flex:0 0 32px;width:32px;height:32px;
+  border:0;border-radius:8px;background:transparent;color:#fff;
+  font-size:23px;line-height:1;text-decoration:none;cursor:pointer;
+}
+.pdf-flipbook-reader .reader-control-back:hover{background:#ffffff26}
+.pdf-flipbook-reader .flipbook-controls .medal-reader-trigger{
+  display:inline-grid;place-items:center;flex:0 0 32px;width:32px;height:32px;
+  padding:0;border:0;border-radius:8px;background:transparent;color:#fff;
+  font-size:20px;line-height:1;box-shadow:none;cursor:pointer;
+}
+.pdf-flipbook-reader .flipbook-controls .medal-reader-trigger:hover{background:#ffffff26}
+body.flipbook-active .pdf-flipbook-reader .flipbook-controls .book-page-indicator{min-width:48px;color:#fff}
+body.flipbook-active .pdf-flipbook-reader .flipbook-controls input[type=range]{min-width:60px}
+body.flipbook-active .pdf-flipbook-reader .pdf-flipbook-surface{padding-bottom:76px}
+body.flipbook-active .pdf-flipbook-reader .pdf-tools-panel[data-tool=thumbnails]{bottom:76px}
+body.flipbook-active .pdf-flipbook-reader .pdf-tools-panel[data-tool=audio]{bottom:76px}
+@media(max-width:760px){
+  body.flipbook-active .pdf-flipbook-reader .pdf-flipbook-surface{padding:10px 34px 70px}
+  body.flipbook-active .pdf-flipbook-reader .pdf-pageflip{width:100%;height:100%}
+  body.flipbook-active .pdf-flipbook-reader .flipbook-controls{left:8px;right:8px;bottom:max(6px,env(safe-area-inset-bottom));gap:5px;padding:5px 7px;border-radius:10px}
+  body.flipbook-active .pdf-flipbook-reader .reader-control-back,
+  .pdf-flipbook-reader .flipbook-controls .medal-reader-trigger{flex-basis:28px;width:28px;height:30px}
+  body.flipbook-active .pdf-flipbook-reader .flipbook-controls .book-page-indicator{min-width:40px;font-size:11px}
+  body.flipbook-active .pdf-flipbook-reader .flipbook-controls button{width:26px;height:28px}
+  body.flipbook-active .pdf-flipbook-reader .flipbook-controls input[type=range]{min-width:35px}
+}
