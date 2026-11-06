@@ -1,23 +1,16 @@
 [
   {
-    "id": "vidsrc",
-    "name": "VidSrc",
+    "id": "111movies-pythagoras",
+    "name": "111Movies · Pythagoras",
     "mode": "embed",
-    "movieUrl": "https://vidsrc.sh/embed/movie/{tmdbId}?autoplay=0&ds_lang=en",
-    "documentation": "https://vidsrc.sh/vidsrc/docs/"
+    "movieUrl": "https://player.vidmario.net/embed/movie/{tmdbId}?server=Pythagoras",
+    "note": "与已验证测试播放器使用同一嵌入地址"
   },
   {
-    "id": "vidlink",
-    "name": "VidLink",
+    "id": "111movies-fermat",
+    "name": "111Movies · Fermat",
     "mode": "embed",
-    "movieUrl": "https://vidlink.pro/movie/{tmdbId}?autoplay=false",
-    "documentation": "https://vidlink.pro/"
-  },
-  {
-    "id": "dulo",
-    "name": "Dulo",
-    "mode": "embed",
-    "movieUrl": "https://dulo.mov/watch/movie/{tmdbId}",
-    "documentation": "现有 Dulo 嵌入播放器入口"
+    "movieUrl": "https://player.vidmario.net/embed/movie/{tmdbId}?server=Fermat",
+    "note": "同一播放器的备用线路"
   }
 ]
