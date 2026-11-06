@@ -1,0 +1,329 @@
+name: WhisperX recovery B - failed episodes only
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+
+permissions:
+  contents: write
+  actions: write
+  issues: write
+
+concurrency:
+  group: yqxyy-whisperx-ten-episode-v2
+  # One in-flight batch. The next workflow_dispatch queues until this batch finishes.
+  # Do not interrupt a batch that has already consumed expensive WhisperX compute.
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    name: Select up to 10 recoverable failed episodes
+    runs-on: ubuntu-latest
+    outputs:
+      has_targets: ${{ steps.select.outputs.has_targets }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run independent alignment unit tests
+        run: |
+          python -m py_compile scripts/lib/littlefox_xml_text.py scripts/whisperx-read-align.py scripts/manifest-whisperx-read.py scripts/run-whisperx-read-batch.py scripts/publish-whisperx-read-batch.py
+          python -m unittest discover -s tests -p 'test_whisperx_read_align.py' -v
+          python -m unittest discover -s tests -p 'test_littlefox_xml_text.py' -v
+          python -m py_compile scripts/manifest-whisperx-recovery.py
+      - name: Select batch without reading website subtitles
+        id: select
+        env:
+          RETRY_FAILED: ${{ inputs.retry_failed || 'false' }}
+        run: |
+          python scripts/manifest-whisperx-recovery.py --limit 10 --output whisperx-batch-targets.json
+          COUNT=$(python -c "import json;print(json.load(open('whisperx-batch-targets.json'))['selected'])")
+          if [[ "$COUNT" -gt 0 ]]; then
+            echo 'has_targets=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'has_targets=false' >> "$GITHUB_OUTPUT"
+          fi
+          echo "Selected $COUNT recoverable failed episodes."
+      - uses: actions/upload-artifact@v4
+        if: steps.select.outputs.has_targets == 'true'
+        with:
+          name: whisperx-batch-targets
+          path: whisperx-batch-targets.json
+          retention-days: 14
+
+  setup_whisperx:
+    name: Build reusable CPU WhisperX environment
+    needs: prepare
+    if: needs.prepare.outputs.has_targets == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Set up Python
+        id: python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check reusable WhisperX environment cache without downloading it
+        id: whisperx-env
+        uses: actions/cache/restore@v4
+        continue-on-error: true
+        with:
+          path: .venv
+          key: ${{ runner.os }}-py${{ steps.python.outputs.python-version }}-whisperx-3.8.6-torch-2.8.0-cpu-v1
+          lookup-only: true
+      - name: Install CPU WhisperX only on cache miss (10-minute limit)
+        id: install-whisperx
+        if: steps.whisperx-env.outputs.cache-hit != 'true'
+        timeout-minutes: 10
+        continue-on-error: true
+        run: |
+          python -m venv .venv
+          .venv/bin/python -m pip install --upgrade pip
+          .venv/bin/python -m pip install 'torch==2.8.0' 'torchvision==0.23.0' 'torchaudio==2.8.0' --index-url https://download.pytorch.org/whl/cpu
+          .venv/bin/python -m pip install 'whisperx==3.8.6'
+      - name: Verify newly built CPU environment
+        id: verify-whisperx
+        if: steps.install-whisperx.outcome == 'success'
+        continue-on-error: true
+        run: |
+          .venv/bin/python -c "import torch, whisperx; print('torch=' + torch.__version__); print('whisperx import=ok')"
+      - name: Save reusable WhisperX environment cache
+        if: steps.install-whisperx.outcome == 'success' && steps.verify-whisperx.outcome == 'success'
+        uses: actions/cache/save@v4
+        continue-on-error: true
+        with:
+          path: .venv
+          key: ${{ runner.os }}-py${{ steps.python.outputs.python-version }}-whisperx-3.8.6-torch-2.8.0-cpu-v1
+          
+  align:
+    name: WhisperX XML Text forced alignment (shard ${{ matrix.shard }})
+    needs: [prepare, setup_whisperx]
+    if: needs.prepare.outputs.has_targets == 'true' && needs.setup_whisperx.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        shard: [0]
+    env:
+      HF_HOME: /tmp/yqxyy-whisperx-hf
+      OMP_NUM_THREADS: '4'
+      TOKENIZERS_PARALLELISM: 'false'
+      HF_HUB_DISABLE_TELEMETRY: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: whisperx-batch-targets
+      - uses: actions/setup-python@v5
+        id: python
+        with:
+          python-version: '3.11'
+      - name: Restore reusable WhisperX environment
+        id: whisperx-env
+        uses: actions/cache@v4
+        continue-on-error: true
+        timeout-minutes: 5
+        with:
+          path: .venv
+          key: ${{ runner.os }}-py${{ steps.python.outputs.python-version }}-whisperx-3.8.6-torch-2.8.0-cpu-v1
+      - name: Install CPU WhisperX only if shared cache is unavailable (10-minute limit)
+        id: install-whisperx
+        if: steps.whisperx-env.outputs.cache-hit != 'true'
+        timeout-minutes: 10
+        continue-on-error: true
+        run: |
+          python -m venv .venv
+          .venv/bin/python -m pip install --upgrade pip
+          .venv/bin/python -m pip install 'torch==2.8.0' 'torchvision==0.23.0' 'torchaudio==2.8.0' --index-url https://download.pytorch.org/whl/cpu
+          .venv/bin/python -m pip install 'whisperx==3.8.6'
+      - name: Ensure FFmpeg is available (10-minute limit)
+        id: install-ffmpeg
+        if: steps.whisperx-env.outputs.cache-hit == 'true' || steps.install-whisperx.outcome == 'success'
+        timeout-minutes: 10
+        continue-on-error: true
+        run: |
+          if command -v ffmpeg >/dev/null 2>&1; then
+            echo "FFmpeg is already available on this GitHub runner."
+          else
+            sudo apt-get update -qq
+            sudo apt-get install -y ffmpeg
+          fi
+          ffmpeg -version | head -n 1
+      - name: Verify cached WhisperX environment
+        id: verify-whisperx
+        if: steps.whisperx-env.outputs.cache-hit == 'true' || steps.install-whisperx.outcome == 'success'
+        continue-on-error: true
+        run: |
+          .venv/bin/python -c "import torch, whisperx; print('torch=' + torch.__version__); print('whisperx import=ok')"
+      - uses: actions/cache@v4
+        if: success() && (steps.whisperx-env.outputs.cache-hit == 'true' || steps.install-whisperx.outcome == 'success') && steps.install-ffmpeg.outcome == 'success' && steps.verify-whisperx.outcome == 'success'
+        continue-on-error: true
+        timeout-minutes: 5
+        with:
+          path: |
+            /tmp/yqxyy-whisperx-hf
+            /tmp/yqxyy-whisperx-model-cache
+          key: ${{ runner.os }}-whisperx-read-small-en-cpu-v2
+      - name: Official XML Text proofreading, real audio ASR and forced word alignment
+        if: success() && (steps.whisperx-env.outputs.cache-hit == 'true' || steps.install-whisperx.outcome == 'success') && steps.install-ffmpeg.outcome == 'success' && steps.verify-whisperx.outcome == 'success'
+        run: |
+          .venv/bin/python scripts/run-whisperx-read-batch.py --manifest whisperx-batch-targets.json --shard ${{ matrix.shard }} --shards 1 --model small.en --output whisperx-batch-results
+      - name: Record this shard as skipped when environment setup fails or times out
+        if: always() && ((steps.whisperx-env.outputs.cache-hit != 'true' && steps.install-whisperx.outcome != 'success') || steps.install-ffmpeg.outcome == 'failure' || steps.verify-whisperx.outcome == 'failure')
+        env:
+          SHARD: ${{ matrix.shard }}
+          CACHE_HIT: ${{ steps.whisperx-env.outputs.cache-hit }}
+          WHISPERX_INSTALL_OUTCOME: ${{ steps.install-whisperx.outcome }}
+          FFMPEG_INSTALL_OUTCOME: ${{ steps.install-ffmpeg.outcome }}
+          VERIFY_OUTCOME: ${{ steps.verify-whisperx.outcome }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          shard = int(os.environ["SHARD"])
+          if os.environ.get("CACHE_HIT") != "true" and os.environ.get("WHISPERX_INSTALL_OUTCOME") != "success":
+              reason = "WhisperX dependency installation failed or timed out (10-minute limit)"
+          elif os.environ.get("FFMPEG_INSTALL_OUTCOME") == "failure":
+              reason = "FFmpeg installation failed or timed out (10-minute limit)"
+          else:
+              reason = "WhisperX environment verification failed"
+          manifest = json.loads(Path("whisperx-batch-targets.json").read_text(encoding="utf-8"))
+          root = Path("whisperx-batch-results")
+          root.mkdir(parents=True, exist_ok=True)
+          skipped = []
+          for row in manifest["lessons"][shard::5]:
+              folder = root / f'{row["seriesId"]}-{int(row["episodeId"]):03}'
+              folder.mkdir(parents=True, exist_ok=True)
+              report = {"approved": False, "failure": f"Shard {shard} skipped: {reason}"}
+              (folder / "alignment-report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+              skipped.append({"seriesId": row["seriesId"], "episodeId": int(row["episodeId"]), "reason": report["failure"]})
+          (root / f"shard-{shard:02}-setup-skipped.json").write_text(json.dumps({"shard": shard, "status": "skipped", "reason": reason, "episodes": skipped}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          print(json.dumps({"shard": shard, "status": "skipped", "reason": reason, "episodes": skipped}, ensure_ascii=False))
+          PY
+      - name: Preserve every successful candidate and every rejection
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: whisperx-results-${{ matrix.shard }}
+          path: whisperx-batch-results/
+          if-no-files-found: warn
+          retention-days: 7
+
+  publish:
+    name: Commit validated VTT plus word highlights to GitHub
+    needs: [prepare, align]
+    if: always() && needs.prepare.result == 'success' && needs.prepare.outputs.has_targets == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: whisperx-batch-targets
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: whisperx-results-*
+          merge-multiple: true
+          path: whisperx-batch-results
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Refresh checkout before writing validated subtitles
+        run: |
+          # The long-running alignment jobs may have started on an older main.
+          # Refresh BEFORE writing this run's report, preventing obsolete
+          # reports on the old commit from conflicting with current main.
+          git fetch origin main
+          git reset --hard origin/main
+      - name: Recheck official XML Text, XML transcript integrity, audio identity and timestamp quality
+        run: |
+          python scripts/publish-whisperx-read-batch.py --manifest whisperx-batch-targets.json --source whisperx-batch-results --run-id "${{ github.run_id }}" --report-prefix whisperx-recovery
+          python -m py_compile scripts/whisperx-read-align.py scripts/publish-whisperx-read-batch.py
+          git diff --check
+      - name: Publish successful episode pairs without changing unrelated site files
+        run: |
+          git add data/*/subtitles/*.vtt data/*/subtitles/*.words.json reports/whisperx-recovery-*.json reports/whisperx-recovery-batches/*.json reports/whisperx-read-failures.json
+          if git diff --cached --quiet; then
+            echo 'No validated episode pairs or new report'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "Publish WhisperX XML Text verified subtitle and karaoke batch ${{ github.run_id }}"
+          # Keep the generated report from this run when the remote branch
+          # has changed while expensive WhisperX shards were processing.
+          # We own the current run's report, and do not overwrite subtitle
+          # files on main that another workflow has already published.
+          git fetch origin main
+          if ! git rebase origin/main; then
+            if git ls-files -u | grep -q .; then
+              conflicted=$(git diff --name-only --diff-filter=U)
+              if [[ "$conflicted" == "reports/whisperx-recovery-batch-latest.json" ]]; then
+                git checkout --theirs reports/whisperx-read-batch-latest.json
+                git add reports/whisperx-read-batch-latest.json
+                GIT_EDITOR=true git -c core.editor=true rebase --continue
+              else
+                echo "Unexpected conflict: $conflicted"
+                exit 1
+              fi
+            else
+              exit 1
+            fi
+          fi
+          git push origin HEAD:main
+      - name: Save batch result summary
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: whisperx-recovery-publish-report
+          path: reports/whisperx-recovery-*.json
+          if-no-files-found: warn
+          retention-days: 14
+
+
+  report_failure:
+    name: Publish diagnostic report for ChatGPT repair
+    needs: [prepare, align, publish]
+    if: ${{ always() && (needs.prepare.result == 'failure' || needs.align.result == 'failure' || needs.publish.result == 'failure') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Collect run failure details and open GitHub issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/yqxyy-failure-report
+          gh run download "$GITHUB_RUN_ID" --repo "$GITHUB_REPOSITORY" --name whisperx-recovery-publish-report --dir /tmp/yqxyy-failure-report || true
+          cat > /tmp/yqxyy-failure-report/issue.md <<EOF
+          ## WhisperX batch failure — automated ChatGPT triage
+          
+          **Run:** https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}
+          **Commit:** ${GITHUB_SHA}
+          **Batch policy:** up to 10 recoverable failed episodes; >=90% authentic speech alignment.
+          
+          The workflow stopped rather than repeatedly processing an unreliable batch.
+          Please inspect the failed job logs and the episode-level JSON below.
+          The connected ChatGPT GitHub supervisor should diagnose the root cause,
+          fix the smallest necessary code path, test it, and restart only after
+          verifying that prior successful subtitles are retained.
+          
+          EOF
+          python - <<'PY' >> /tmp/yqxyy-failure-report/issue.md
+          import json
+          from pathlib import Path
+          p=Path("/tmp/yqxyy-failure-report/whisperx-read-batch-latest.json")
+          if not p.is_file():
+              print("**Episode report:** Not generated; check preflight and job logs.")
+          else:
+              r=json.loads(p.read_text(encoding="utf-8"))
+              print(f"**Processed:** {r.get('selected','?')} | **Published:** {r.get('published','?')} | **Rejected:** {r.get('rejected','?')}")
+              print("\n### Rejected episodes")
+              for x in r.get("failures",[])[:10]:
+                  print(f"- {x.get('seriesId')} / {x.get('episodeId')}: {x.get('reason','unknown')}")
+          PY
+          gh issue create --repo "$GITHUB_REPOSITORY" --title "[subtitle-recovery-diagnosis] Run $GITHUB_RUN_ID failed" --body-file /tmp/yqxyy-failure-report/issue.md
