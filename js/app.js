@@ -885,7 +885,22 @@ async renderLesson(seriesId, episodeId){
       // without adding a second playback bar below the player.
       let initialized=false;
       const clamp=time=>Math.min(clipEnd,Math.max(clipStart,time));
-      player.controls=true;
+      // Hide native controls when idle; reveal on pointer/touch interaction.
+      // Retain native playback controls, rather than adding a second toolbar.
+      let hideControlsTimer=null;
+      const showControls=()=>{
+        player.controls=true;
+        clearTimeout(hideControlsTimer);
+        hideControlsTimer=setTimeout(()=>{if(!player.matches(':hover'))player.controls=false;},3500);
+      };
+      player.controls=false;
+      player.addEventListener('pointerenter',showControls);
+      player.addEventListener('pointermove',showControls);
+      player.addEventListener('pointerdown',showControls);
+      player.addEventListener('touchstart',showControls,{passive:true});
+      player.addEventListener('focus',showControls);
+      player.addEventListener('keydown',showControls);
+      player.addEventListener('play',()=>{clearTimeout(hideControlsTimer);hideControlsTimer=setTimeout(()=>{player.controls=false;},3500);});
       const initialize=()=>{
         if(initialized||player.readyState<1)return;
         initialized=true;
