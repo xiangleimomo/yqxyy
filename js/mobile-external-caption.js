@@ -83,7 +83,7 @@
       }
       line.classList.toggle('is-upcoming',gap);
       line.style.fontSize=(Number.isFinite(Number(prefs.size))?Math.max(14,Math.min(28,Number(prefs.size))):20)+'px';
-      line.style.color=d.seriesId==='movie-harry-potter-1'?'#253447':(prefs.color||'#ffffff');
+      line.style.setProperty('color',d.seriesId==='movie-harry-potter-1'?'#343a40':(prefs.color||'#ffffff'),'important');
       if(d.seriesId==='movie-harry-potter-1'){
         line.style.fontWeight='500';
         line.style.textShadow='none';
