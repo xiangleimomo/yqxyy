@@ -8,7 +8,9 @@ exports.handler = async event => {
   if(verify){
     if(!/^\d{1,12}$/.test(verify)) return {statusCode:400,headers,body:JSON.stringify({error:'TMDB ID 无效'})};
     try{
-      const response=await fetch(`https://player.vidmario.net/embed/movie/${verify}?server=Pythagoras`,{method:'HEAD',signal:AbortSignal.timeout(10000),redirect:'error'});
+      // Some providers reject HEAD requests from serverless networks even though their embed page is playable.
+      // Read only the response headers/body stream; this does not fetch or store any video media.
+      const response=await fetch(`https://player.vidmario.net/embed/movie/${verify}?server=Pythagoras`,{headers:{Accept:'text/html,application/xhtml+xml','User-Agent':'Mozilla/5.0'},signal:AbortSignal.timeout(10000),redirect:'follow'});
       if(!response.ok) throw Error('unavailable');
       return {statusCode:200,headers,body:JSON.stringify({playbackAvailable:true})};
     }catch{return {statusCode:422,headers,body:JSON.stringify({playbackAvailable:false,error:'现有播放架构暂未匹配到本片，请换一个搜索结果或稍后重试。'})};}
