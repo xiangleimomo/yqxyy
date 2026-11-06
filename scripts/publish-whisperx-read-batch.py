@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fail-closed publisher for 10-item WhisperX+official-XML-Text batch output.
+"""Fail-closed publisher for up to 50-item WhisperX+official-XML-Text batch output.
 
 Reads only freshly generated candidates and current canonical Read. It never
 uses the site's previous VTT or word timing as generation/validation input.
@@ -133,8 +133,8 @@ def main():
     plan=json.loads(Path(args.manifest).read_text(encoding="utf-8"))
     if plan.get("pipeline")!="audio-whisperx-xml-text-only-forced-alignment" or plan.get("usesExistingSiteSubtitlesAsInput") is not False:
         raise ValueError("Publisher refused an obsolete VTT-based batch")
-    if len(plan.get("lessons",[]))>10 or not plan.get("lessons"):
-        raise ValueError("Batch must contain 1–10 episodes")
+    if len(plan.get("lessons",[]))>50 or not plan.get("lessons"):
+        raise ValueError("Batch must contain 1–50 episodes")
     root=Path(args.source)
     successes=[];failures=[]
     for row in plan["lessons"]:
@@ -152,7 +152,7 @@ def main():
     now=datetime.now(timezone.utc).isoformat()
     output={
         "pipeline":METHOD,"runId":str(args.run_id),"completedAt":now,
-        "batchSize":plan.get("batchSize",10),"selected":len(plan["lessons"]),"published":len(successes),
+        "batchSize":plan.get("batchSize",50),"selected":len(plan["lessons"]),"published":len(successes),
         "rejected":len(failures),"websiteCommitRequired":True,
         "totalWords":sum(x["words"] for x in successes),
         "speechMatchedWords":sum(x["speechWords"] for x in successes),
