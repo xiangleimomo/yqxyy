@@ -1,0 +1,265 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42169243779",
+  "completedAt": "2026-11-06T05:46:23.061265+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 0,
+  "rejected": 50,
+  "websiteCommitRequired": true,
+  "totalWords": 0,
+  "speechMatchedWords": 0,
+  "success": [],
+  "failures": [
+    {
+      "seriesId": "little-fox-arsene-lupin-fs0020",
+      "episodeId": 10,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-arsene-lupin-fs0020",
+      "episodeId": 11,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 94.2% assigned"
+    },
+    {
+      "seriesId": "little-fox-arsene-lupin-fs0020",
+      "episodeId": 12,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 94.7% assigned"
+    },
+    {
+      "seriesId": "little-fox-arsene-lupin-fs0020",
+      "episodeId": 13,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-arsene-lupin-fs0020",
+      "episodeId": 14,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.0% matched, 98.9% assigned"
+    },
+    {
+      "seriesId": "little-fox-arsene-lupin-fs0020",
+      "episodeId": 15,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-arsene-lupin-fs0020",
+      "episodeId": 16,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 95.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-arsene-lupin-fs0020",
+      "episodeId": 17,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.7% matched, 94.7% assigned"
+    },
+    {
+      "seriesId": "little-fox-arsene-lupin-fs0020",
+      "episodeId": 18,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 2,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 3,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 4,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 5,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 6,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 7,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 8,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 9,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 10,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 11,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 12,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 13,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.4% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 14,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 15,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 16,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 17,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 18,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 19,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 20,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 21,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.6% matched, 3.9% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 22,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 23,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.7% matched, 4.6% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 24,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 25,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 26,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 27,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 28,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.1% matched, 0.6% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 29,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 30,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 31,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 32,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 33,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 34,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 35,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 36,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 37,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 38,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 39,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 40,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-bat-and-friends-fs0056",
+      "episodeId": 41,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+    }
+  ]
+}
