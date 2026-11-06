@@ -1,0 +1,446 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42309989809",
+  "completedAt": "2026-11-06T23:35:40.633737+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 30,
+  "rejected": 20,
+  "websiteCommitRequired": true,
+  "totalWords": 21732,
+  "speechMatchedWords": 21732,
+  "success": [
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 29,
+      "cues": 84,
+      "words": 987,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 987,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 1,
+      "cues": 39,
+      "words": 341,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 39,
+      "speechWords": 341,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 2,
+      "cues": 40,
+      "words": 272,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 34,
+      "speechWords": 272,
+      "coverage": 0.9891,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 4,
+      "cues": 56,
+      "words": 651,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 52,
+      "speechWords": 651,
+      "coverage": 0.9985,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 6,
+      "cues": 73,
+      "words": 543,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 543,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 7,
+      "cues": 47,
+      "words": 447,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 46,
+      "speechWords": 447,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 9,
+      "cues": 47,
+      "words": 459,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 47,
+      "speechWords": 459,
+      "coverage": 0.9957,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 11,
+      "cues": 48,
+      "words": 364,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 42,
+      "speechWords": 364,
+      "coverage": 0.9973,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 12,
+      "cues": 84,
+      "words": 853,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 853,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 14,
+      "cues": 72,
+      "words": 845,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 845,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 16,
+      "cues": 59,
+      "words": 772,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 45,
+      "speechWords": 772,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 17,
+      "cues": 72,
+      "words": 784,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 784,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 19,
+      "cues": 56,
+      "words": 403,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 51,
+      "speechWords": 403,
+      "coverage": 0.9975,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 21,
+      "cues": 69,
+      "words": 664,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 664,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 22,
+      "cues": 97,
+      "words": 882,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 882,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 2,
+      "cues": 85,
+      "words": 801,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 801,
+      "coverage": 0.9988,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 4,
+      "cues": 61,
+      "words": 774,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 774,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 5,
+      "cues": 65,
+      "words": 802,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 802,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 7,
+      "cues": 87,
+      "words": 805,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 805,
+      "coverage": 0.9975,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 9,
+      "cues": 79,
+      "words": 1010,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 1010,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 10,
+      "cues": 74,
+      "words": 914,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 914,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 12,
+      "cues": 71,
+      "words": 818,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 55,
+      "speechWords": 818,
+      "coverage": 0.9988,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 14,
+      "cues": 69,
+      "words": 894,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 894,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 15,
+      "cues": 76,
+      "words": 875,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 875,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 17,
+      "cues": 61,
+      "words": 783,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 46,
+      "speechWords": 783,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 19,
+      "cues": 63,
+      "words": 765,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 52,
+      "speechWords": 765,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 20,
+      "cues": 69,
+      "words": 797,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 54,
+      "speechWords": 797,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 22,
+      "cues": 78,
+      "words": 788,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 788,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 24,
+      "cues": 81,
+      "words": 926,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 926,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 25,
+      "cues": 63,
+      "words": 713,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 45,
+      "speechWords": 713,
+      "coverage": 1.0,
+      "omittedWords": 0
+    }
+  ],
+  "failures": [
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 28,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 30,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 3,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 5,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 8,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 10,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 13,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 15,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 18,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 20,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 1,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 3,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 6,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 8,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 11,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 13,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 16,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 18,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 21,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 23,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    }
+  ]
+}

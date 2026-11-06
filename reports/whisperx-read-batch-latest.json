@@ -1,476 +1,446 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42306707125",
-  "completedAt": "2026-11-06T23:10:01.294420+00:00",
+  "runId": "42309989809",
+  "completedAt": "2026-11-06T23:35:40.633737+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 35,
-  "rejected": 15,
+  "published": 30,
+  "rejected": 20,
   "websiteCommitRequired": true,
-  "totalWords": 35012,
-  "speechMatchedWords": 35012,
+  "totalWords": 21732,
+  "speechMatchedWords": 21732,
   "success": [
     {
-      "seriesId": "little-fox-olympic-champion-fs0077",
-      "episodeId": 50,
-      "cues": 130,
-      "words": 982,
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 29,
+      "cues": 84,
+      "words": 987,
       "xmlTextVerified": true,
-      "xmlParagraphs": 80,
-      "speechWords": 982,
-      "coverage": 0.999,
-      "omittedWords": 1
+      "xmlParagraphs": 58,
+      "speechWords": 987,
+      "coverage": 1.0,
+      "omittedWords": 0
     },
     {
-      "seriesId": "little-fox-oscar-wilde-fs0021",
+      "seriesId": "little-fox-people-history-1-fs0145",
       "episodeId": 1,
-      "cues": 105,
-      "words": 1133,
+      "cues": 39,
+      "words": 341,
       "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 1133,
+      "xmlParagraphs": 39,
+      "speechWords": 341,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
-      "seriesId": "little-fox-oscar-wilde-fs0021",
+      "seriesId": "little-fox-people-history-1-fs0145",
       "episodeId": 2,
-      "cues": 106,
-      "words": 1226,
+      "cues": 40,
+      "words": 272,
       "xmlTextVerified": true,
-      "xmlParagraphs": 70,
-      "speechWords": 1226,
-      "coverage": 0.9992,
+      "xmlParagraphs": 34,
+      "speechWords": 272,
+      "coverage": 0.9891,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 4,
+      "cues": 56,
+      "words": 651,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 52,
+      "speechWords": 651,
+      "coverage": 0.9985,
       "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-oscar-wilde-fs0021",
-      "episodeId": 3,
-      "cues": 114,
-      "words": 1254,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 78,
-      "speechWords": 1254,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-oscar-wilde-fs0021",
-      "episodeId": 4,
-      "cues": 120,
-      "words": 1307,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 83,
-      "speechWords": 1307,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-oscar-wilde-fs0021",
-      "episodeId": 5,
-      "cues": 106,
-      "words": 1134,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 68,
-      "speechWords": 1134,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-oscar-wilde-fs0021",
+      "seriesId": "little-fox-people-history-1-fs0145",
       "episodeId": 6,
-      "cues": 89,
-      "words": 1047,
+      "cues": 73,
+      "words": 543,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 543,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 7,
+      "cues": 47,
+      "words": 447,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 46,
+      "speechWords": 447,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 9,
+      "cues": 47,
+      "words": 459,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 47,
+      "speechWords": 459,
+      "coverage": 0.9957,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 11,
+      "cues": 48,
+      "words": 364,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 42,
+      "speechWords": 364,
+      "coverage": 0.9973,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 12,
+      "cues": 84,
+      "words": 853,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 853,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 14,
+      "cues": 72,
+      "words": 845,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 845,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 16,
+      "cues": 59,
+      "words": 772,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 45,
+      "speechWords": 772,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 17,
+      "cues": 72,
+      "words": 784,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 784,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 19,
+      "cues": 56,
+      "words": 403,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 51,
+      "speechWords": 403,
+      "coverage": 0.9975,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 21,
+      "cues": 69,
+      "words": 664,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 664,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 22,
+      "cues": 97,
+      "words": 882,
       "xmlTextVerified": true,
       "xmlParagraphs": 69,
-      "speechWords": 1047,
+      "speechWords": 882,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 2,
+      "cues": 85,
+      "words": 801,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 801,
+      "coverage": 0.9988,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 4,
+      "cues": 61,
+      "words": 774,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 774,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 5,
+      "cues": 65,
+      "words": 802,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 802,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 7,
+      "cues": 87,
+      "words": 805,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 805,
+      "coverage": 0.9975,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 9,
+      "cues": 79,
+      "words": 1010,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 1010,
       "coverage": 0.999,
       "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-oscar-wilde-fs0021",
-      "episodeId": 7,
-      "cues": 107,
-      "words": 1268,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 76,
-      "speechWords": 1268,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 1,
-      "cues": 84,
-      "words": 927,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 57,
-      "speechWords": 927,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 2,
-      "cues": 72,
-      "words": 907,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 56,
-      "speechWords": 907,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 3,
-      "cues": 78,
-      "words": 918,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 57,
-      "speechWords": 918,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 4,
-      "cues": 77,
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 10,
+      "cues": 74,
       "words": 914,
       "xmlTextVerified": true,
-      "xmlParagraphs": 55,
+      "xmlParagraphs": 58,
       "speechWords": 914,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 5,
-      "cues": 79,
-      "words": 933,
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 12,
+      "cues": 71,
+      "words": 818,
       "xmlTextVerified": true,
-      "xmlParagraphs": 56,
-      "speechWords": 933,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 6,
-      "cues": 83,
-      "words": 985,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 60,
-      "speechWords": 985,
-      "coverage": 0.999,
+      "xmlParagraphs": 55,
+      "speechWords": 818,
+      "coverage": 0.9988,
       "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 7,
-      "cues": 78,
-      "words": 964,
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 14,
+      "cues": 69,
+      "words": 894,
       "xmlTextVerified": true,
-      "xmlParagraphs": 56,
-      "speechWords": 964,
+      "xmlParagraphs": 60,
+      "speechWords": 894,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 8,
-      "cues": 79,
-      "words": 938,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 55,
-      "speechWords": 938,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 9,
-      "cues": 83,
-      "words": 945,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 55,
-      "speechWords": 945,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 10,
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 15,
       "cues": 76,
-      "words": 897,
+      "words": 875,
       "xmlTextVerified": true,
-      "xmlParagraphs": 49,
-      "speechWords": 897,
+      "xmlParagraphs": 61,
+      "speechWords": 875,
       "coverage": 0.9989,
       "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 11,
-      "cues": 76,
-      "words": 896,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 50,
-      "speechWords": 896,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 12,
-      "cues": 73,
-      "words": 940,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 47,
-      "speechWords": 940,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 13,
-      "cues": 77,
-      "words": 964,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 50,
-      "speechWords": 964,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 14,
-      "cues": 84,
-      "words": 974,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 50,
-      "speechWords": 974,
-      "coverage": 0.999,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 15,
-      "cues": 81,
-      "words": 988,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 58,
-      "speechWords": 988,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 16,
-      "cues": 77,
-      "words": 991,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 52,
-      "speechWords": 991,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "seriesId": "little-fox-people-history-2-fs0146",
       "episodeId": 17,
-      "cues": 74,
-      "words": 947,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 52,
-      "speechWords": 947,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 18,
-      "cues": 79,
-      "words": 941,
+      "cues": 61,
+      "words": 783,
       "xmlTextVerified": true,
       "xmlParagraphs": 46,
-      "speechWords": 941,
-      "coverage": 1.0,
-      "omittedWords": 0
+      "speechWords": 783,
+      "coverage": 0.9987,
+      "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "seriesId": "little-fox-people-history-2-fs0146",
       "episodeId": 19,
-      "cues": 83,
-      "words": 970,
+      "cues": 63,
+      "words": 765,
       "xmlTextVerified": true,
-      "xmlParagraphs": 58,
-      "speechWords": 970,
-      "coverage": 0.999,
-      "omittedWords": 1
+      "xmlParagraphs": 52,
+      "speechWords": 765,
+      "coverage": 1.0,
+      "omittedWords": 0
     },
     {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "seriesId": "little-fox-people-history-2-fs0146",
       "episodeId": 20,
-      "cues": 76,
-      "words": 946,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 56,
-      "speechWords": 946,
-      "coverage": 0.9989,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 21,
-      "cues": 74,
-      "words": 960,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 50,
-      "speechWords": 960,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 22,
-      "cues": 82,
-      "words": 978,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 60,
-      "speechWords": 978,
-      "coverage": 0.999,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 23,
-      "cues": 76,
-      "words": 949,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 55,
-      "speechWords": 949,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 24,
-      "cues": 77,
-      "words": 975,
+      "cues": 69,
+      "words": 797,
       "xmlTextVerified": true,
       "xmlParagraphs": 54,
-      "speechWords": 975,
+      "speechWords": 797,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 25,
-      "cues": 82,
-      "words": 967,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 56,
-      "speechWords": 967,
-      "coverage": 0.999,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 26,
-      "cues": 82,
-      "words": 983,
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 22,
+      "cues": 78,
+      "words": 788,
       "xmlTextVerified": true,
       "xmlParagraphs": 60,
-      "speechWords": 983,
-      "coverage": 0.999,
-      "omittedWords": 1
+      "speechWords": 788,
+      "coverage": 1.0,
+      "omittedWords": 0
     },
     {
-      "seriesId": "little-fox-our-world-landmarks-fs0057",
-      "episodeId": 27,
-      "cues": 83,
-      "words": 964,
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 24,
+      "cues": 81,
+      "words": 926,
       "xmlTextVerified": true,
-      "xmlParagraphs": 51,
-      "speechWords": 964,
+      "xmlParagraphs": 63,
+      "speechWords": 926,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 25,
+      "cues": 63,
+      "words": 713,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 45,
+      "speechWords": 713,
       "coverage": 1.0,
       "omittedWords": 0
     }
   ],
   "failures": [
     {
-      "seriesId": "little-fox-olympic-champion-fs0077",
-      "episodeId": 35,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.8% matched, 11.6% assigned"
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 28,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-olympic-champion-fs0077",
-      "episodeId": 36,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.0% matched, 0.0% assigned"
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 30,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-olympic-champion-fs0077",
-      "episodeId": 37,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.0% matched, 0.0% assigned"
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 3,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-olympic-champion-fs0077",
-      "episodeId": 38,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.8% matched, 0.0% assigned"
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 5,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-olympic-champion-fs0077",
-      "episodeId": 39,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 6.1% matched, 0.0% assigned"
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 8,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-olympic-champion-fs0077",
-      "episodeId": 40,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 3.9% matched, 0.0% assigned"
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 10,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-olympic-champion-fs0077",
-      "episodeId": 41,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.1% matched, 0.0% assigned"
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 13,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-olympic-champion-fs0077",
-      "episodeId": 42,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.6% matched, 0.0% assigned"
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 15,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-olympic-champion-fs0077",
-      "episodeId": 43,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 3.8% matched, 0.0% assigned"
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 18,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-olympic-champion-fs0077",
-      "episodeId": 44,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.7% matched, 0.0% assigned"
+      "seriesId": "little-fox-people-history-1-fs0145",
+      "episodeId": 20,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-olympic-champion-fs0077",
-      "episodeId": 45,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.4% matched, 0.0% assigned"
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 1,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-olympic-champion-fs0077",
-      "episodeId": 46,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.8% matched, 0.0% assigned"
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 3,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-olympic-champion-fs0077",
-      "episodeId": 47,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.6% matched, 16.4% assigned"
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 6,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-olympic-champion-fs0077",
-      "episodeId": 48,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.3% matched, 0.0% assigned"
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 8,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-olympic-champion-fs0077",
-      "episodeId": 49,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.2% matched, 0.0% assigned"
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 11,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 13,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 16,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 18,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 21,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-people-history-2-fs0146",
+      "episodeId": 23,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     }
   ]
 }
