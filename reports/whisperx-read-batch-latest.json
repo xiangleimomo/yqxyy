@@ -1,515 +1,125 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42129660480",
-  "completedAt": "2026-11-06T00:16:16.532321+00:00",
+  "runId": "42135554047",
+  "completedAt": "2026-11-06T00:32:39.854658+00:00",
   "batchSize": 100,
-  "selected": 100,
-  "published": 0,
-  "rejected": 100,
+  "selected": 10,
+  "published": 10,
+  "rejected": 0,
   "websiteCommitRequired": true,
-  "totalWords": 0,
-  "speechMatchedWords": 0,
-  "success": [],
-  "failures": [
+  "totalWords": 8841,
+  "speechMatchedWords": 8841,
+  "success": [
     {
       "seriesId": "journey-to-the-west",
       "episodeId": 104,
-      "reason": "NameError: name 'publishable' is not defined"
+      "cues": 86,
+      "words": 590,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 590,
+      "coverage": 0.9983,
+      "omittedWords": 1
     },
     {
       "seriesId": "journey-to-the-west",
       "episodeId": 105,
-      "reason": "NameError: name 'publishable' is not defined"
+      "cues": 82,
+      "words": 593,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 593,
+      "coverage": 0.9983,
+      "omittedWords": 1
     },
     {
       "seriesId": "journey-to-the-west",
       "episodeId": 106,
-      "reason": "NameError: name 'publishable' is not defined"
+      "cues": 83,
+      "words": 596,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 596,
+      "coverage": 1.0,
+      "omittedWords": 0
     },
     {
       "seriesId": "journey-to-the-west",
       "episodeId": 107,
-      "reason": "NameError: name 'publishable' is not defined"
+      "cues": 87,
+      "words": 592,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 592,
+      "coverage": 0.9983,
+      "omittedWords": 1
     },
     {
       "seriesId": "journey-to-the-west",
       "episodeId": 108,
-      "reason": "NameError: name 'publishable' is not defined"
+      "cues": 83,
+      "words": 597,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 597,
+      "coverage": 0.9967,
+      "omittedWords": 2
     },
     {
       "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
       "episodeId": 1,
-      "reason": "NameError: name 'publishable' is not defined"
+      "cues": 94,
+      "words": 1162,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 1162,
+      "coverage": 0.9991,
+      "omittedWords": 1
     },
     {
       "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
       "episodeId": 2,
-      "reason": "NameError: name 'publishable' is not defined"
+      "cues": 105,
+      "words": 1158,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 1158,
+      "coverage": 1.0,
+      "omittedWords": 0
     },
     {
       "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
       "episodeId": 3,
-      "reason": "NameError: name 'publishable' is not defined"
+      "cues": 108,
+      "words": 1179,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 1179,
+      "coverage": 1.0,
+      "omittedWords": 0
     },
     {
       "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
       "episodeId": 4,
-      "reason": "NameError: name 'publishable' is not defined"
+      "cues": 104,
+      "words": 1180,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 1180,
+      "coverage": 0.9992,
+      "omittedWords": 1
     },
     {
       "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
       "episodeId": 5,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 6,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 7,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 8,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 9,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 10,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 11,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 12,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 13,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 14,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 15,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 16,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 17,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 18,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 19,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 20,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 21,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 22,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 23,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 24,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 25,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 26,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 27,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 28,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 29,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
-      "episodeId": 30,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 1,
-      "reason": "URLError: <urlopen error _ssl.c:1001: The handshake operation timed out>"
-    },
-    {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 2,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 3,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 4,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 5,
-      "reason": "Missing alignment report"
-    },
-    {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 6,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 7,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 8,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 9,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 10,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 11,
-      "reason": "TimeoutError: The read operation timed out"
-    },
-    {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 12,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 13,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 14,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 15,
-      "reason": "Missing alignment report"
-    },
-    {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 16,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 17,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 18,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 19,
-      "reason": "URLError: <urlopen error timed out>"
-    },
-    {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 20,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 1,
-      "reason": "URLError: <urlopen error timed out>"
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 2,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 3,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 4,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 5,
-      "reason": "Missing alignment report"
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 6,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 7,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 8,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 9,
-      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: ffmpeg failed; cdn.littlefox.com: ffmpeg failed; cdn.littlefox.co.kr: ffmpeg failed"
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 10,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 11,
-      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: ffmpeg failed; cdn.littlefox.com: incomplete audio (10219 ms); cdn.littlefox.co.kr: ffmpeg failed"
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 12,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 13,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 14,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 15,
-      "reason": "Missing alignment report"
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 16,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 1,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 2,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 3,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 4,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 5,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 6,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 7,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 8,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 9,
-      "reason": "Missing alignment report"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 10,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 11,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 12,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 13,
-      "reason": "URLError: <urlopen error timed out>"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 14,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 15,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 16,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 17,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 18,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 19,
-      "reason": "Missing alignment report"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 20,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 21,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 22,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 23,
-      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: ffmpeg failed; cdn.littlefox.com: ffmpeg failed; cdn.littlefox.co.kr: ffmpeg failed"
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 24,
-      "reason": "NameError: name 'publishable' is not defined"
-    },
-    {
-      "seriesId": "little-fox-abc-book-fs0070",
-      "episodeId": 1,
-      "reason": "ValueError: Official XML transcript is incomplete"
-    },
-    {
-      "seriesId": "little-fox-abc-book-fs0070",
-      "episodeId": 2,
-      "reason": "ValueError: Official XML transcript is incomplete"
-    },
-    {
-      "seriesId": "little-fox-abc-book-fs0070",
-      "episodeId": 3,
-      "reason": "ValueError: Official XML transcript is incomplete"
-    },
-    {
-      "seriesId": "little-fox-abc-book-fs0070",
-      "episodeId": 4,
-      "reason": "ValueError: Official XML transcript is incomplete"
-    },
-    {
-      "seriesId": "little-fox-abc-book-fs0070",
-      "episodeId": 5,
-      "reason": "Missing alignment report"
+      "cues": 130,
+      "words": 1194,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 1194,
+      "coverage": 1.0,
+      "omittedWords": 0
     }
-  ]
+  ],
+  "failures": []
 }

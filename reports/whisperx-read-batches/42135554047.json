@@ -1,0 +1,125 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42135554047",
+  "completedAt": "2026-11-06T00:32:39.854658+00:00",
+  "batchSize": 100,
+  "selected": 10,
+  "published": 10,
+  "rejected": 0,
+  "websiteCommitRequired": true,
+  "totalWords": 8841,
+  "speechMatchedWords": 8841,
+  "success": [
+    {
+      "seriesId": "journey-to-the-west",
+      "episodeId": 104,
+      "cues": 86,
+      "words": 590,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 590,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "journey-to-the-west",
+      "episodeId": 105,
+      "cues": 82,
+      "words": 593,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 593,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "journey-to-the-west",
+      "episodeId": 106,
+      "cues": 83,
+      "words": 596,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 596,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "journey-to-the-west",
+      "episodeId": 107,
+      "cues": 87,
+      "words": 592,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 592,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "journey-to-the-west",
+      "episodeId": 108,
+      "cues": 83,
+      "words": 597,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 597,
+      "coverage": 0.9967,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 1,
+      "cues": 94,
+      "words": 1162,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 1162,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 2,
+      "cues": 105,
+      "words": 1158,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 1158,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 3,
+      "cues": 108,
+      "words": 1179,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 1179,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 4,
+      "cues": 104,
+      "words": 1180,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 1180,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 5,
+      "cues": 130,
+      "words": 1194,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 1194,
+      "coverage": 1.0,
+      "omittedWords": 0
+    }
+  ],
+  "failures": []
+}
