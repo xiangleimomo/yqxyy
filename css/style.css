@@ -1464,6 +1464,7 @@ html.sf-caption-screen-locked,body.sf-caption-screen-locked{overflow:hidden!impo
 .utility-nav a:hover{transform:translateY(-2px);background:#eaf3ff;box-shadow:0 5px 13px rgba(39,91,153,.12)}
 .utility-nav a:focus-visible{outline:3px solid rgba(47,139,223,.28);outline-offset:3px}
 .utility-icon{display:block;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.utility-nav a[href="#/checkin"]{background:#eef7ff;color:#397fc5;border-color:#dcecff}
 .utility-nav #navHomework{background:#f3f0ff;color:#7762c7;border-color:#e5defb}
 .utility-nav #navRewards{background:#fff8e9;color:#c58a24;border-color:#f6e6c4}
 .utility-nav #navHonors{background:#eaf9f7;color:#258f83;border-color:#d6efeb}
