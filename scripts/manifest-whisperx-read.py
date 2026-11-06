@@ -37,6 +37,11 @@ def select(limit=10,retry_failed=False,series_only=None):
     if not retry_failed and failure_file.is_file():
         try:
             for item in json.loads(failure_file.read_text()).get("failures",[]):
+                reason=str(item.get("reason",""))
+                # Old 100%-coverage and unbounded-word rejection rules are retired.
+                # Retrying these is safe under the current >=90% speech gate.
+                if "Unaligned official XML Text words remain" in reason or "Unbounded missing speech timestamps" in reason:
+                    continue
                 failed.add((item["seriesId"],int(item["episodeId"])))
         except (ValueError,KeyError,TypeError):pass
     eligible=[]
