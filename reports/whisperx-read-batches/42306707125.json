@@ -1,0 +1,476 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42306707125",
+  "completedAt": "2026-11-06T23:10:01.294420+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 35,
+  "rejected": 15,
+  "websiteCommitRequired": true,
+  "totalWords": 35012,
+  "speechMatchedWords": 35012,
+  "success": [
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 50,
+      "cues": 130,
+      "words": 982,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 80,
+      "speechWords": 982,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-oscar-wilde-fs0021",
+      "episodeId": 1,
+      "cues": 105,
+      "words": 1133,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 1133,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-oscar-wilde-fs0021",
+      "episodeId": 2,
+      "cues": 106,
+      "words": 1226,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 1226,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-oscar-wilde-fs0021",
+      "episodeId": 3,
+      "cues": 114,
+      "words": 1254,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 1254,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-oscar-wilde-fs0021",
+      "episodeId": 4,
+      "cues": 120,
+      "words": 1307,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 83,
+      "speechWords": 1307,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-oscar-wilde-fs0021",
+      "episodeId": 5,
+      "cues": 106,
+      "words": 1134,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 1134,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-oscar-wilde-fs0021",
+      "episodeId": 6,
+      "cues": 89,
+      "words": 1047,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 1047,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-oscar-wilde-fs0021",
+      "episodeId": 7,
+      "cues": 107,
+      "words": 1268,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 1268,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 1,
+      "cues": 84,
+      "words": 927,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 927,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 2,
+      "cues": 72,
+      "words": 907,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 56,
+      "speechWords": 907,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 3,
+      "cues": 78,
+      "words": 918,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 918,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 4,
+      "cues": 77,
+      "words": 914,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 55,
+      "speechWords": 914,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 5,
+      "cues": 79,
+      "words": 933,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 56,
+      "speechWords": 933,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 6,
+      "cues": 83,
+      "words": 985,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 985,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 7,
+      "cues": 78,
+      "words": 964,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 56,
+      "speechWords": 964,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 8,
+      "cues": 79,
+      "words": 938,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 55,
+      "speechWords": 938,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 9,
+      "cues": 83,
+      "words": 945,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 55,
+      "speechWords": 945,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 10,
+      "cues": 76,
+      "words": 897,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 49,
+      "speechWords": 897,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 11,
+      "cues": 76,
+      "words": 896,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 50,
+      "speechWords": 896,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 12,
+      "cues": 73,
+      "words": 940,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 47,
+      "speechWords": 940,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 13,
+      "cues": 77,
+      "words": 964,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 50,
+      "speechWords": 964,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 14,
+      "cues": 84,
+      "words": 974,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 50,
+      "speechWords": 974,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 15,
+      "cues": 81,
+      "words": 988,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 988,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 16,
+      "cues": 77,
+      "words": 991,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 52,
+      "speechWords": 991,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 17,
+      "cues": 74,
+      "words": 947,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 52,
+      "speechWords": 947,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 18,
+      "cues": 79,
+      "words": 941,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 46,
+      "speechWords": 941,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 19,
+      "cues": 83,
+      "words": 970,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 970,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 20,
+      "cues": 76,
+      "words": 946,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 56,
+      "speechWords": 946,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 21,
+      "cues": 74,
+      "words": 960,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 50,
+      "speechWords": 960,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 22,
+      "cues": 82,
+      "words": 978,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 978,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 23,
+      "cues": 76,
+      "words": 949,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 55,
+      "speechWords": 949,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 24,
+      "cues": 77,
+      "words": 975,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 54,
+      "speechWords": 975,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 25,
+      "cues": 82,
+      "words": 967,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 56,
+      "speechWords": 967,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 26,
+      "cues": 82,
+      "words": 983,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 983,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-our-world-landmarks-fs0057",
+      "episodeId": 27,
+      "cues": 83,
+      "words": 964,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 51,
+      "speechWords": 964,
+      "coverage": 1.0,
+      "omittedWords": 0
+    }
+  ],
+  "failures": [
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 35,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.8% matched, 11.6% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 36,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 37,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 38,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 39,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 6.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 40,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 3.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 41,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 42,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 43,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 3.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 44,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 45,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 46,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 47,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.6% matched, 16.4% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 48,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 49,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.2% matched, 0.0% assigned"
+    }
+  ]
+}
