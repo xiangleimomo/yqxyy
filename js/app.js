@@ -310,7 +310,7 @@ async renderSeries(seriesId){
           ${ep.modules?.read?'<button class="module-card" data-go="listenRead">🎧<b>Listen and Read</b><span>听读</span></button>':''}
           ${(ep.modules?.words || ep.modules?.vocabulary)?'<button class="module-card" data-go="words">🔤<b>Words</b><span>单词</span></button>':''}
           ${ep.modules?.quiz?'<button class="module-card" data-go="quiz">✅<b>Quiz</b><span>测验</span></button>':''}
-          ${Number(series.level) !== 0 && ep.storyBook?.availability === 'pdf' ? `<a class="module-card" href="#/reader/${this.escapeHtml(ep.storyBook.bookId)}/${this.escapeHtml(seriesId)}">📖<b>Story Book</b><span>本集绘本</span></a>` : ''}
+          ${Number(series.level) !== 0 && ep.storyBook?.availability === 'pdf' ? `<a class="module-card" href="#/reader/${this.escapeHtml(ep.storyBook.bookId)}/${this.escapeHtml(seriesId)}">📖<b>Story Book</b><span>绘本</span></a>` : ''}
           ${(ep.modules?.words || ep.modules?.vocabulary)?'<button class="module-card" data-go="games">🎮<b>Games</b><span>游戏</span></button>':''}
         </div>`;
       this.bindEpisodeCovers(document.getElementById('episodeWorkspace'));
@@ -378,7 +378,7 @@ async renderLesson(seriesId, episodeId){
       <div class="breadcrumb"><a href="${series.movieId?'#/movies':'#/home'}">${series.movieId?'光影课堂':'动画故事'}</a><span>›</span><a href="#/series/${seriesId}">${series.seriesTitle}</a><span>›</span><span>Episode ${episodeId}</span></div>
       <section class="lesson-head">
         <h1>Episode ${episodeId} · ${ep.title}</h1>
-        ${Number(series.level) !== 0 && ep.storyBook?.availability === 'pdf' ? `<a class="btn secondary" href="#/reader/${this.escapeHtml(ep.storyBook.bookId)}/${this.escapeHtml(seriesId)}">📖 本集绘本 · Story Book</a>` : ''}
+        ${Number(series.level) !== 0 && ep.storyBook?.availability === 'pdf' ? `<a class="btn secondary" href="#/reader/${this.escapeHtml(ep.storyBook.bookId)}/${this.escapeHtml(seriesId)}">📖 绘本</a>` : ''}
         <div class="muted">${ep.titleZh || ''} · ${series.seriesTitleZh || ''}</div>
         <div class="lesson-tabs">
           ${this.lessonTabs(ep, tab)}
