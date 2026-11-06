@@ -1,284 +1,446 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42243712432",
-  "completedAt": "2026-11-06T15:44:31.044514+00:00",
+  "runId": "42245863407",
+  "completedAt": "2026-11-06T16:04:48.944552+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 3,
-  "rejected": 47,
+  "published": 30,
+  "rejected": 20,
   "websiteCommitRequired": true,
-  "totalWords": 1751,
-  "speechMatchedWords": 1751,
+  "totalWords": 32802,
+  "speechMatchedWords": 32802,
   "success": [
     {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 58,
-      "cues": 81,
-      "words": 588,
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 1,
+      "cues": 122,
+      "words": 1090,
       "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 588,
-      "coverage": 0.9949,
-      "omittedWords": 3
+      "xmlParagraphs": 66,
+      "speechWords": 1090,
+      "coverage": 1.0,
+      "omittedWords": 0
     },
     {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 59,
-      "cues": 97,
-      "words": 592,
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 2,
+      "cues": 119,
+      "words": 1097,
       "xmlTextVerified": true,
-      "xmlParagraphs": 84,
-      "speechWords": 592,
-      "coverage": 0.9966,
-      "omittedWords": 2
+      "xmlParagraphs": 67,
+      "speechWords": 1097,
+      "coverage": 0.9991,
+      "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 60,
-      "cues": 83,
-      "words": 571,
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 3,
+      "cues": 118,
+      "words": 1099,
       "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 571,
-      "coverage": 0.9983,
+      "xmlParagraphs": 63,
+      "speechWords": 1099,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 4,
+      "cues": 109,
+      "words": 1079,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 1079,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 5,
+      "cues": 108,
+      "words": 1108,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 1108,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 6,
+      "cues": 116,
+      "words": 1098,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 1098,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 7,
+      "cues": 105,
+      "words": 1083,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 1083,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 8,
+      "cues": 129,
+      "words": 1103,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 1103,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 9,
+      "cues": 106,
+      "words": 1088,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 1088,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 10,
+      "cues": 115,
+      "words": 1097,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 1097,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 11,
+      "cues": 111,
+      "words": 1100,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 1100,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 12,
+      "cues": 126,
+      "words": 1091,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 1091,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 13,
+      "cues": 123,
+      "words": 1101,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 1101,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 14,
+      "cues": 114,
+      "words": 1085,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 1085,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 15,
+      "cues": 121,
+      "words": 1098,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 1098,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 16,
+      "cues": 130,
+      "words": 1095,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 1095,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 17,
+      "cues": 110,
+      "words": 1091,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 1091,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 18,
+      "cues": 103,
+      "words": 1073,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 53,
+      "speechWords": 1073,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 19,
+      "cues": 115,
+      "words": 1084,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 1084,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 20,
+      "cues": 106,
+      "words": 1103,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 1103,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 21,
+      "cues": 119,
+      "words": 1106,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 1106,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 22,
+      "cues": 116,
+      "words": 1080,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 59,
+      "speechWords": 1080,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 23,
+      "cues": 126,
+      "words": 1096,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 1096,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 24,
+      "cues": 102,
+      "words": 1093,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 1093,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 25,
+      "cues": 117,
+      "words": 1100,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 1100,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 26,
+      "cues": 127,
+      "words": 1096,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 1096,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 27,
+      "cues": 100,
+      "words": 1102,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 1102,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 28,
+      "cues": 112,
+      "words": 1093,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 1093,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 29,
+      "cues": 115,
+      "words": 1092,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 1092,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-jane-eyre-fs0061",
+      "episodeId": 30,
+      "cues": 112,
+      "words": 1081,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 1081,
+      "coverage": 0.9991,
       "omittedWords": 1
     }
   ],
   "failures": [
     {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
-      "episodeId": 1,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
-      "episodeId": 2,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
-      "episodeId": 3,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
-      "episodeId": 4,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
-      "episodeId": 5,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.4% assigned"
-    },
-    {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
-      "episodeId": 6,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
-      "episodeId": 7,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
-      "episodeId": 8,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
-      "episodeId": 9,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
-      "episodeId": 10,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
-      "episodeId": 11,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 0.1% assigned"
-    },
-    {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
-      "episodeId": 12,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
-      "episodeId": 13,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
-      "episodeId": 14,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
-      "episodeId": 15,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
-      "episodeId": 16,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
-      "episodeId": 17,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
-      "episodeId": 18,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
-      "episodeId": 19,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
-      "episodeId": 20,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
-      "episodeId": 21,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
-      "episodeId": 22,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
-      "episodeId": 23,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
       "episodeId": 24,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.0% assigned"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "seriesId": "little-fox-learning-songs-srv01031",
       "episodeId": 1,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.2% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "seriesId": "little-fox-learning-songs-srv01031",
       "episodeId": 2,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "seriesId": "little-fox-learning-songs-srv01031",
       "episodeId": 3,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "seriesId": "little-fox-learning-songs-srv01031",
       "episodeId": 4,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "seriesId": "little-fox-learning-songs-srv01031",
       "episodeId": 5,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.8% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "seriesId": "little-fox-learning-songs-srv01031",
       "episodeId": 6,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "seriesId": "little-fox-learning-songs-srv01031",
       "episodeId": 7,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "seriesId": "little-fox-learning-songs-srv01031",
       "episodeId": 8,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.6% matched, 0.1% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "seriesId": "little-fox-learning-songs-srv01031",
       "episodeId": 9,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.3% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "seriesId": "little-fox-learning-songs-srv01031",
       "episodeId": 10,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.2% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "seriesId": "little-fox-learning-songs-srv01031",
       "episodeId": 11,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.3% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "seriesId": "little-fox-learning-songs-srv01031",
       "episodeId": 12,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.7% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "seriesId": "little-fox-learning-songs-srv01031",
       "episodeId": 13,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.3% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "seriesId": "little-fox-learning-songs-srv01031",
       "episodeId": 14,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.2% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "seriesId": "little-fox-learning-songs-srv01031",
       "episodeId": 15,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.9% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "seriesId": "little-fox-learning-songs-srv01031",
       "episodeId": 16,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.2% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "seriesId": "little-fox-learning-songs-srv01031",
       "episodeId": 17,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.8% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "seriesId": "little-fox-learning-songs-srv01031",
       "episodeId": 18,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.1% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "seriesId": "little-fox-learning-songs-srv01031",
       "episodeId": 19,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.3% matched, 0.5% assigned"
-    },
-    {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
-      "episodeId": 20,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
-      "episodeId": 21,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.8% matched, 0.1% assigned"
-    },
-    {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
-      "episodeId": 22,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
-      "episodeId": 23,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.1% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     }
   ]
 }
