@@ -40,7 +40,11 @@ def select(limit=10,retry_failed=False,series_only=None):
                 reason=str(item.get("reason",""))
                 # Old 100%-coverage and unbounded-word rejection rules are retired.
                 # Retrying these is safe under the current >=90% speech gate.
-                if "Unaligned official XML Text words remain" in reason or "Unbounded missing speech timestamps" in reason:
+                if any(obsolete in reason for obsolete in (
+                    "Unaligned official XML Text words remain",
+                    "Unbounded missing speech timestamps",
+                    "NameError: name 'publishable' is not defined",
+                )):
                     continue
                 failed.add((item["seriesId"],int(item["episodeId"])))
         except (ValueError,KeyError,TypeError):pass
