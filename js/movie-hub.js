@@ -37,7 +37,7 @@ window.MovieHub={
     if(!film){app.el().innerHTML='<div class="empty">没有找到这部影片。<p><a href="#/movie-hub">返回聚合播放</a></p></div>';return;}
     const links=providers.map(p=>({...p,url:this.providerUrl(p,film)})).filter(p=>p.url);
     const embeds=links.filter(p=>p.mode==='embed');
-    app.el().innerHTML=`<div class="breadcrumb"><a href="#/movies">光影课堂</a> › <a href="#/movie-hub">多平台聚合</a> › ${e(film.titleZh)}</div><section class="movie-watch-head"><div><h1>${e(film.titleZh)}</h1><p>${e(film.title)} · ${e(film.year)}</p></div><a class="btn secondary" href="${library.playableById.has(id)?`#/movie/${e(id)}`:`#/movie-series/${e(film.seriesId)}`}">返回原播放页</a></section><p class="muted">选择下方平台尝试播放。若画面提示无资源，可切换平台；若限制站内播放，可新页打开。</p><div class="hub-providers">${links.map(p=>p.mode==='embed'?`<button class="hub-provider" type="button" data-hub-provider="${e(p.id)}" aria-pressed="false"><strong>${e(p.name)}</strong><span>站内播放器</span><small data-hub-state="${e(p.id)}">待尝试</small></button>`:`<a class="hub-provider" href="${e(p.url)}" target="_blank" rel="noopener noreferrer"><strong>${e(p.name)} ↗</strong><span>新页打开</span><small>${e(p.note)}</small></a>`).join('')}</div>${links.length?'':'<div class="empty">本片的对应编号尚未确认，暂不生成播放入口。</div>'}<div class="hub-player" id="hubPlayer"><div class="hub-placeholder">${links.length?'点击上方平台，加载本片播放器。':'您仍可返回原播放页。'}</div></div><p class="movie-player-status" id="hubStatus" role="status" aria-live="polite">尚未加载播放器。</p><div class="movie-watch-actions"><button class="btn secondary" id="hubRetry" disabled>重新加载</button><button class="btn secondary" id="hubNext" ${embeds.length?'':'disabled'}>尝试下个平台</button><button class="btn secondary" id="hubStop" disabled>关闭播放器</button><a class="btn secondary" id="hubOpen" target="_blank" rel="noopener noreferrer" hidden>新页打开当前平台</a></div>`;
+    app.el().innerHTML=`<div class="breadcrumb"><a href="#/movies">光影课堂</a> › <a href="#/movie-hub">多平台聚合</a> › ${e(film.titleZh)}</div><section class="movie-watch-head"><div><h1>${e(film.titleZh)}</h1><p>${e(film.title)} · ${e(film.year)}</p></div><a class="btn secondary" href="${library.playableById.has(id)?`#/movie/${e(id)}`:`#/movie-series/${e(film.seriesId)}`}">返回原播放页</a></section><p class="muted">下方平台均在本站播放器内嵌入。若当前线路无法播放，可切换下一条线路。</p><div class="hub-providers">${links.map(p=>`<button class="hub-provider" type="button" data-hub-provider="${e(p.id)}" aria-pressed="false"><strong>${e(p.name)}</strong><span>站内嵌入</span><small data-hub-state="${e(p.id)}">待尝试</small></button>`).join('')}</div>${links.length?'':'<div class="empty">本片的对应编号尚未确认，暂不生成播放入口。</div>'}<div class="hub-player" id="hubPlayer"><div class="hub-placeholder">${links.length?'点击上方平台，加载本片播放器。':'您仍可返回原播放页。'}</div></div><p class="movie-player-status" id="hubStatus" role="status" aria-live="polite">尚未加载播放器。</p><div class="movie-watch-actions"><button class="btn secondary" id="hubRetry" disabled>重新加载</button><button class="btn secondary" id="hubNext" ${embeds.length?'':'disabled'}>尝试下个平台</button><button class="btn secondary" id="hubStop" disabled>关闭播放器</button> </div>`;
     let selected=null;
     const report=text=>{document.getElementById('hubStatus').textContent=text;};
     const reset=()=>{
@@ -77,9 +77,8 @@ window.MovieHub={
       window.addEventListener('message',this.listener);
       document.getElementById('hubPlayer').replaceChildren(frame);
       report(`正在加载 ${provider.name}，请稍候…`);
-      this.timer=setTimeout(()=>{if(current()&&!playing)report('尚未确认播放。若持续转圈或提示无资源，可切换平台或新页打开。');},20000);
-      const open=document.getElementById('hubOpen');open.href=provider.url;open.hidden=false;
-      document.getElementById('hubRetry').disabled=false;document.getElementById('hubStop').disabled=false;
+      this.timer=setTimeout(()=>{if(current()&&!playing)report('尚未确认播放。若持续转圈或提示无资源，可切换下一条嵌入线路。');},20000);
+       document.getElementById('hubRetry').disabled=false;document.getElementById('hubStop').disabled=false;
       frame.src=provider.url;
     };
     app.el().querySelectorAll('[data-hub-provider]').forEach(b=>b.onclick=()=>select(embeds.find(p=>p.id===b.dataset.hubProvider)));
