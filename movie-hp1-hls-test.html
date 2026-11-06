@@ -1,23 +1,26 @@
 <!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><title>哈利波特1 · M3U8 播放测试</title><style>body{margin:0;background:#10151d;color:#f1f5f9;font:16px system-ui;padding:20px}main{max-width:900px;margin:auto}video{width:100%;background:#000;aspect-ratio:16/9}button,a{color:#fff}button{padding:10px 16px;background:#2463b5;border:0;border-radius:8px}p{line-height:1.6}</style></head>
-<body><main><p><a href="/#/series/movie-harry-potter-1">← 返回哈利波特分集学习</a></p><h1>哈利波特1 · 新直链播放测试</h1><p>仅测试你提供的完整电影 M3U8；不替换原有24集和字幕。</p><video id="player" controls playsinline preload="none"></video><p><button id="start">加载并播放测试片源</button></p><p id="status" role="status">尚未加载</p><p>如果出现跨域（CORS）、403 或网络错误，请把错误信息发给我。此页面只用于测试，不代表已完成分集切割。</p></main>
+<body><main><p><a href="/#/series/movie-harry-potter-1">← 返回哈利波特分集学习</a></p><h1>哈利波特1 · 新直链播放测试</h1><p>粘贴你自己的 M3U8 或 MP4 直链，点击测试。不会修改现有24集课程和字幕。</p><label for="url">视频直链（HTTPS）</label><textarea id="url" rows="4" spellcheck="false" style="box-sizing:border-box;width:100%;padding:12px;margin:8px 0 16px;border-radius:8px;background:#fff;color:#111;overflow-wrap:anywhere"></textarea><video id="player" controls playsinline preload="none"></video><p><button id="start">测试这个视频链接</button></p><p id="status" role="status">尚未加载</p><p>如果出现跨域（CORS）、403 或网络错误，请把错误信息发给我。此页面只用于测试，不代表已完成分集切割。</p></main>
 <script src="https://cdn.jsdelivr.net/npm/hls.js@1.6.13/dist/hls.min.js"></script><script>
 (()=>{'use strict';
-const url='https://cdn2.fastcloud.live/movie/ie9yUpTjDFHg1h6GDrB_dNI4t-fQtbGlNSlaW1tRilA.1nFCu7P3/bigtits.m3u8';
+const defaultUrl='https://cdn2.fastcloud.live/movie/ie9yUpTjDFHg1h6GDrB_dNI4t-fQtbGlNSlaW1tRilA.1nFCu7P3/bigtits.m3u8';
+const urlField=document.getElementById('url');urlField.value=new URLSearchParams(location.search).get('url')||defaultUrl;
 const player=document.getElementById('player'),status=document.getElementById('status'),button=document.getElementById('start');let hls;
 const report=message=>status.textContent=message;
 button.onclick=()=>{
- button.disabled=true;report('正在加载 M3U8…');
- if(window.Hls&&Hls.isSupported()){
+ const url=urlField.value.trim();let parsed;try{parsed=new URL(url);if(parsed.protocol!=='https:'&&!['http:'].includes(parsed.protocol))throw Error('仅支持 HTTP/HTTPS');}catch(e){report('请输入有效的视频直链');return;}
+ if(hls){hls.destroy();hls=null;}player.pause();player.removeAttribute('src');player.load();button.disabled=true;report('正在加载视频…');
+ if(/\.mp4(?:[?#]|$)/i.test(parsed.pathname)&&!url.includes('.m3u8')){player.src=url;player.play().catch(e=>report('请点击视频播放：'+e.message));button.disabled=false;}
+ else if(window.Hls&&Hls.isSupported()){
    hls=new Hls({enableWorker:true});
-   hls.on(Hls.Events.MANIFEST_PARSED,()=>{report('播放列表已加载，正在尝试播放…');player.play().catch(e=>report('请手动点击视频播放：'+e.message));});
+   hls.on(Hls.Events.MANIFEST_PARSED,()=>{report('播放列表已加载，正在尝试播放…');button.disabled=false;player.play().catch(e=>report('请手动点击视频播放：'+e.message));});
    hls.on(Hls.Events.ERROR,(_event,data)=>{if(data.fatal){report('播放失败：'+data.type+' / '+data.details+(data.response?.code?' (HTTP '+data.response.code+')':''));button.disabled=false;hls.destroy();hls=null;}});
    hls.loadSource(url);hls.attachMedia(player);
- }else if(player.canPlayType('application/vnd.apple.mpegurl')){player.src=url;player.play().catch(e=>report('请点击视频播放：'+e.message));}
+ }else if(player.canPlayType('application/vnd.apple.mpegurl')){player.src=url;player.play().catch(e=>report('请点击视频播放：'+e.message));button.disabled=false;}
  else{report('浏览器不支持 HLS，且 hls.js 未能加载');button.disabled=false;}
 };
-player.addEventListener('playing',()=>report('已开始播放，视频和音频请实际检查'));
-player.addEventListener('error',()=>report('视频元素错误，代码 '+(player.error?.code||'未知')));
+player.addEventListener('playing',()=>{report('已开始播放，视频和音频请实际检查');button.disabled=false;});
+player.addEventListener('error',()=>{report('视频元素错误，代码 '+(player.error?.code||'未知'));button.disabled=false;});
 window.addEventListener('pagehide',()=>hls?.destroy());
 })();
 </script></body></html>
