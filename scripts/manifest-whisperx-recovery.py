@@ -23,6 +23,17 @@ def select(limit=10):
         raise ValueError("Recovery batch must contain 1-10 episodes")
     failures_path = ROOT / "reports/whisperx-read-failures.json"
     failures = json.loads(failures_path.read_text(encoding="utf-8")).get("failures", []) if failures_path.is_file() else []
+    attempts = {}
+    history = ROOT / "reports/whisperx-recovery-batches"
+    if history.is_dir():
+        for report in history.glob("*.json"):
+            try:
+                past = json.loads(report.read_text(encoding="utf-8"))
+                for row in past.get("failures", []) + past.get("success", []):
+                    key = (row["seriesId"], int(row["episodeId"]))
+                    attempts[key] = attempts.get(key, 0) + 1
+            except (OSError, ValueError, KeyError, TypeError):
+                continue
     lessons = []
     held = []
     seen = set()
@@ -36,7 +47,7 @@ def select(limit=10):
         if key in seen:
             continue
         seen.add(key)
-        if not recoverable(str(item.get("reason", ""))):
+        if attempts.get(key, 0) >= 2 or not recoverable(str(item.get("reason", ""))):
             held.append(key)
             continue
         directory = ROOT / "data" / str(sid)
