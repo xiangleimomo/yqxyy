@@ -3794,6 +3794,11 @@
       "seriesId": "little-fox-cultures-landmarks-2-fs0150",
       "episodeId": 10,
       "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-cultures-landmarks-3-fs0151",
+      "episodeId": 11,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 100.0% assigned"
     }
   ]
 }
