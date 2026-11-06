@@ -1,0 +1,114 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42148264748",
+  "completedAt": "2026-11-06T02:14:47.088242+00:00",
+  "batchSize": 10,
+  "selected": 10,
+  "published": 8,
+  "rejected": 2,
+  "websiteCommitRequired": true,
+  "totalWords": 7675,
+  "speechMatchedWords": 7675,
+  "success": [
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 26,
+      "cues": 108,
+      "words": 1201,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 1201,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 27,
+      "cues": 101,
+      "words": 1149,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 1149,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 28,
+      "cues": 114,
+      "words": 1197,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 1197,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 30,
+      "cues": 115,
+      "words": 1198,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 1198,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-a-christmas-carol-fs0174",
+      "episodeId": 2,
+      "cues": 81,
+      "words": 733,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 733,
+      "coverage": 0.9986,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-a-christmas-carol-fs0174",
+      "episodeId": 3,
+      "cues": 90,
+      "words": 730,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 730,
+      "coverage": 0.9973,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-a-christmas-carol-fs0174",
+      "episodeId": 4,
+      "cues": 88,
+      "words": 740,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 740,
+      "coverage": 0.9973,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-a-christmas-carol-fs0174",
+      "episodeId": 7,
+      "cues": 83,
+      "words": 727,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 727,
+      "coverage": 0.9986,
+      "omittedWords": 1
+    }
+  ],
+  "failures": [
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 29,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (5-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-a-christmas-carol-fs0174",
+      "episodeId": 6,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (5-minute limit)"
+    }
+  ]
+}
