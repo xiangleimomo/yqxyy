@@ -59,7 +59,7 @@ window.MediaShelf = {
         }));
         items=courses.filter(course=>course&&course.status!=='coming').map(course=>({
           key:`film-course-${course.seriesId}`,scope:'movies',id:course.seriesId,
-          title:(course.seriesTitleZh||course.seriesTitle||course.seriesId).replace(/\\s*[·|]\\s*剧情分集学习$/,''),
+          title:(course.seriesTitleZh||course.seriesTitle||course.seriesId).replace(/\s*[·|]\\s*剧情分集学习$/,''),
           search:`${course.seriesTitle||''} ${course.seriesTitleZh||''} ${course.seriesId}`,
           cover:course.coverImage,href:`#/series/${course.seriesId}`,level:course.level,
           totalEpisodes:Number(course.totalEpisodes||0),disabled:course.status==='coming'
