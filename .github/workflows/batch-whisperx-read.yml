@@ -65,10 +65,39 @@ jobs:
           path: whisperx-batch-targets.json
           retention-days: 14
 
-  align:
-    name: WhisperX XML Text forced alignment (shard ${{ matrix.shard }})
+  setup_whisperx:
+    name: Build reusable CPU WhisperX environment
     needs: prepare
     if: needs.prepare.outputs.has_targets == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Set up Python
+        id: python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Restore reusable WhisperX environment
+        id: whisperx-env
+        uses: actions/cache@v4
+        with:
+          path: .venv
+          key: ${{ runner.os }}-py${{ steps.python.outputs.python-version }}-whisperx-3.8.6-torch-2.8.0-cpu-v1
+      - name: Install CPU WhisperX only on cache miss
+        if: steps.whisperx-env.outputs.cache-hit != 'true'
+        run: |
+          python -m venv .venv
+          .venv/bin/python -m pip install --upgrade pip
+          .venv/bin/python -m pip install 'torch==2.8.0' 'torchvision==0.23.0' 'torchaudio==2.8.0' --index-url https://download.pytorch.org/whl/cpu
+          .venv/bin/python -m pip install 'whisperx==3.8.6'
+      - name: Verify reusable CPU environment
+        run: |
+          .venv/bin/python -c "import torch, whisperx; print('torch=' + torch.__version__); print('whisperx=' + whisperx.__version__)"
+          
+  align:
+    name: WhisperX XML Text forced alignment (shard ${{ matrix.shard }})
+    needs: [prepare, setup_whisperx]
+    if: needs.prepare.outputs.has_targets == 'true' && needs.setup_whisperx.result == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 360
     strategy:
@@ -89,13 +118,26 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Install FFmpeg and CPU WhisperX
+      - name: Restore reusable WhisperX environment
+        id: whisperx-env
+        uses: actions/cache@v4
+        with:
+          path: .venv
+          key: ${{ runner.os }}-py${{ steps.python.outputs.python-version }}-whisperx-3.8.6-torch-2.8.0-cpu-v1
+      - name: Install CPU WhisperX only if shared cache is unavailable
+        if: steps.whisperx-env.outputs.cache-hit != 'true'
+        run: |
+          python -m venv .venv
+          .venv/bin/python -m pip install --upgrade pip
+          .venv/bin/python -m pip install 'torch==2.8.0' 'torchvision==0.23.0' 'torchaudio==2.8.0' --index-url https://download.pytorch.org/whl/cpu
+          .venv/bin/python -m pip install 'whisperx==3.8.6'
+      - name: Install FFmpeg
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y ffmpeg
-          python -m pip install --upgrade pip
-          python -m pip install --no-cache-dir 'torch==2.8.0' 'torchvision==0.23.0' 'torchaudio==2.8.0' --index-url https://download.pytorch.org/whl/cpu
-          python -m pip install --no-cache-dir 'whisperx==3.8.6'
+      - name: Verify cached WhisperX environment
+        run: |
+          .venv/bin/python -c "import torch, whisperx; print('torch=' + torch.__version__); print('whisperx=' + whisperx.__version__)"
       - uses: actions/cache@v4
         with:
           path: |
@@ -104,7 +146,7 @@ jobs:
           key: ${{ runner.os }}-whisperx-read-small-en-cpu-v2
       - name: Official XML Text proofreading, real audio ASR and forced word alignment
         run: |
-          python scripts/run-whisperx-read-batch.py --manifest whisperx-batch-targets.json --shard ${{ matrix.shard }} --shards 5 --model small.en --output whisperx-batch-results
+          .venv/bin/python scripts/run-whisperx-read-batch.py --manifest whisperx-batch-targets.json --shard ${{ matrix.shard }} --shards 5 --model small.en --output whisperx-batch-results
       - name: Preserve every successful candidate and every rejection
         if: always()
         uses: actions/upload-artifact@v4
