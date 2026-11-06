@@ -80,24 +80,31 @@ jobs:
       - name: Check reusable WhisperX environment cache without downloading it
         id: whisperx-env
         uses: actions/cache/restore@v4
+        continue-on-error: true
         with:
           path: .venv
           key: ${{ runner.os }}-py${{ steps.python.outputs.python-version }}-whisperx-3.8.6-torch-2.8.0-cpu-v1
           lookup-only: true
-      - name: Install CPU WhisperX only on cache miss
+      - name: Install CPU WhisperX only on cache miss (10-minute limit)
+        id: install-whisperx
         if: steps.whisperx-env.outputs.cache-hit != 'true'
+        timeout-minutes: 10
+        continue-on-error: true
         run: |
           python -m venv .venv
           .venv/bin/python -m pip install --upgrade pip
           .venv/bin/python -m pip install 'torch==2.8.0' 'torchvision==0.23.0' 'torchaudio==2.8.0' --index-url https://download.pytorch.org/whl/cpu
           .venv/bin/python -m pip install 'whisperx==3.8.6'
       - name: Verify newly built CPU environment
-        if: steps.whisperx-env.outputs.cache-hit != 'true'
+        id: verify-whisperx
+        if: steps.install-whisperx.outcome == 'success'
+        continue-on-error: true
         run: |
           .venv/bin/python -c "import torch, whisperx; print('torch=' + torch.__version__); print('whisperx=' + whisperx.__version__)"
       - name: Save reusable WhisperX environment cache
-        if: steps.whisperx-env.outputs.cache-hit != 'true'
+        if: steps.install-whisperx.outcome == 'success' && steps.verify-whisperx.outcome == 'success'
         uses: actions/cache/save@v4
+        continue-on-error: true
         with:
           path: .venv
           key: ${{ runner.os }}-py${{ steps.python.outputs.python-version }}-whisperx-3.8.6-torch-2.8.0-cpu-v1
@@ -130,32 +137,80 @@ jobs:
       - name: Restore reusable WhisperX environment
         id: whisperx-env
         uses: actions/cache@v4
+        continue-on-error: true
+        timeout-minutes: 5
         with:
           path: .venv
           key: ${{ runner.os }}-py${{ steps.python.outputs.python-version }}-whisperx-3.8.6-torch-2.8.0-cpu-v1
-      - name: Install CPU WhisperX only if shared cache is unavailable
+      - name: Install CPU WhisperX only if shared cache is unavailable (10-minute limit)
+        id: install-whisperx
         if: steps.whisperx-env.outputs.cache-hit != 'true'
+        timeout-minutes: 10
+        continue-on-error: true
         run: |
           python -m venv .venv
           .venv/bin/python -m pip install --upgrade pip
           .venv/bin/python -m pip install 'torch==2.8.0' 'torchvision==0.23.0' 'torchaudio==2.8.0' --index-url https://download.pytorch.org/whl/cpu
           .venv/bin/python -m pip install 'whisperx==3.8.6'
       - name: Install FFmpeg
+        id: install-ffmpeg
+        if: steps.whisperx-env.outputs.cache-hit == 'true' || steps.install-whisperx.outcome == 'success'
+        timeout-minutes: 5
+        continue-on-error: true
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y ffmpeg
       - name: Verify cached WhisperX environment
+        id: verify-whisperx
+        if: steps.whisperx-env.outputs.cache-hit == 'true' || steps.install-whisperx.outcome == 'success'
+        continue-on-error: true
         run: |
           .venv/bin/python -c "import torch, whisperx; print('torch=' + torch.__version__); print('whisperx=' + whisperx.__version__)"
       - uses: actions/cache@v4
+        if: success() && (steps.whisperx-env.outputs.cache-hit == 'true' || steps.install-whisperx.outcome == 'success') && steps.install-ffmpeg.outcome == 'success' && steps.verify-whisperx.outcome == 'success'
+        continue-on-error: true
+        timeout-minutes: 5
         with:
           path: |
             /tmp/yqxyy-whisperx-hf
             /tmp/yqxyy-whisperx-model-cache
           key: ${{ runner.os }}-whisperx-read-small-en-cpu-v2
       - name: Official XML Text proofreading, real audio ASR and forced word alignment
+        if: success() && (steps.whisperx-env.outputs.cache-hit == 'true' || steps.install-whisperx.outcome == 'success') && steps.install-ffmpeg.outcome == 'success' && steps.verify-whisperx.outcome == 'success'
         run: |
           .venv/bin/python scripts/run-whisperx-read-batch.py --manifest whisperx-batch-targets.json --shard ${{ matrix.shard }} --shards 5 --model small.en --output whisperx-batch-results
+      - name: Record this shard as skipped when environment setup fails or times out
+        if: always() && ((steps.whisperx-env.outputs.cache-hit != 'true' && steps.install-whisperx.outcome != 'success') || steps.install-ffmpeg.outcome == 'failure' || steps.verify-whisperx.outcome == 'failure')
+        env:
+          SHARD: ${{ matrix.shard }}
+          CACHE_HIT: ${{ steps.whisperx-env.outputs.cache-hit }}
+          WHISPERX_INSTALL_OUTCOME: ${{ steps.install-whisperx.outcome }}
+          FFMPEG_INSTALL_OUTCOME: ${{ steps.install-ffmpeg.outcome }}
+          VERIFY_OUTCOME: ${{ steps.verify-whisperx.outcome }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          shard = int(os.environ["SHARD"])
+          if os.environ.get("CACHE_HIT") != "true" and os.environ.get("WHISPERX_INSTALL_OUTCOME") != "success":
+              reason = "WhisperX dependency installation failed or timed out (10-minute limit)"
+          elif os.environ.get("FFMPEG_INSTALL_OUTCOME") == "failure":
+              reason = "FFmpeg installation failed or timed out (5-minute limit)"
+          else:
+              reason = "WhisperX environment verification failed"
+          manifest = json.loads(Path("whisperx-batch-targets.json").read_text(encoding="utf-8"))
+          root = Path("whisperx-batch-results")
+          root.mkdir(parents=True, exist_ok=True)
+          skipped = []
+          for row in manifest["lessons"][shard::5]:
+              folder = root / f'{row["seriesId"]}-{int(row["episodeId"]):03}'
+              folder.mkdir(parents=True, exist_ok=True)
+              report = {"approved": False, "failure": f"Shard {shard} skipped: {reason}"}
+              (folder / "alignment-report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+              skipped.append({"seriesId": row["seriesId"], "episodeId": int(row["episodeId"]), "reason": report["failure"]})
+          (root / f"shard-{shard:02}-setup-skipped.json").write_text(json.dumps({"shard": shard, "status": "skipped", "reason": reason, "episodes": skipped}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          print(json.dumps({"shard": shard, "status": "skipped", "reason": reason, "episodes": skipped}, ensure_ascii=False))
+          PY
       - name: Preserve every successful candidate and every rejection
         if: always()
         uses: actions/upload-artifact@v4
