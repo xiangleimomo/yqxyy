@@ -1,518 +1,320 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42203731671",
-  "completedAt": "2026-11-06T10:48:53.128855+00:00",
+  "runId": "42205528202",
+  "completedAt": "2026-11-06T11:02:52.235335+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 42,
-  "rejected": 8,
+  "published": 9,
+  "rejected": 41,
   "websiteCommitRequired": true,
-  "totalWords": 14654,
-  "speechMatchedWords": 14654,
+  "totalWords": 3427,
+  "speechMatchedWords": 3427,
   "success": [
     {
       "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 35,
-      "cues": 47,
-      "words": 309,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 45,
-      "speechWords": 309,
-      "coverage": 0.9904,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 38,
-      "cues": 53,
-      "words": 300,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 47,
-      "speechWords": 300,
-      "coverage": 0.9836,
-      "omittedWords": 5
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 40,
-      "cues": 57,
-      "words": 327,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 53,
-      "speechWords": 327,
-      "coverage": 0.9909,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 41,
-      "cues": 52,
-      "words": 299,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 48,
-      "speechWords": 299,
-      "coverage": 0.9803,
-      "omittedWords": 6
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 42,
-      "cues": 55,
-      "words": 296,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 52,
-      "speechWords": 296,
-      "coverage": 0.9801,
-      "omittedWords": 6
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 43,
-      "cues": 49,
-      "words": 298,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 44,
-      "speechWords": 298,
-      "coverage": 0.9967,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 44,
+      "episodeId": 85,
       "cues": 63,
-      "words": 420,
+      "words": 400,
       "xmlTextVerified": true,
-      "xmlParagraphs": 62,
-      "speechWords": 420,
-      "coverage": 0.9929,
+      "xmlParagraphs": 60,
+      "speechWords": 400,
+      "coverage": 0.9926,
       "omittedWords": 3
     },
     {
       "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 46,
-      "cues": 63,
-      "words": 378,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 59,
-      "speechWords": 378,
-      "coverage": 0.9921,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 47,
-      "cues": 57,
-      "words": 346,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 53,
-      "speechWords": 346,
-      "coverage": 0.9858,
-      "omittedWords": 5
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 48,
-      "cues": 55,
-      "words": 367,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 50,
-      "speechWords": 367,
-      "coverage": 0.9946,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 49,
+      "episodeId": 86,
       "cues": 61,
-      "words": 339,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 53,
-      "speechWords": 339,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 50,
-      "cues": 56,
-      "words": 323,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 50,
-      "speechWords": 323,
-      "coverage": 0.9908,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 51,
-      "cues": 62,
-      "words": 375,
+      "words": 386,
       "xmlTextVerified": true,
       "xmlParagraphs": 55,
-      "speechWords": 375,
-      "coverage": 0.9973,
-      "omittedWords": 1
+      "speechWords": 386,
+      "coverage": 0.9923,
+      "omittedWords": 3
     },
     {
       "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 52,
-      "cues": 65,
-      "words": 381,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 56,
-      "speechWords": 381,
-      "coverage": 0.9974,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 53,
-      "cues": 59,
-      "words": 339,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 51,
-      "speechWords": 339,
-      "coverage": 0.9971,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 54,
-      "cues": 54,
-      "words": 385,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 53,
-      "speechWords": 385,
-      "coverage": 0.9948,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 55,
-      "cues": 52,
-      "words": 304,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 49,
-      "speechWords": 304,
-      "coverage": 0.9967,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 56,
-      "cues": 56,
-      "words": 340,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 52,
-      "speechWords": 340,
-      "coverage": 0.9971,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 57,
-      "cues": 62,
-      "words": 364,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 54,
-      "speechWords": 364,
-      "coverage": 0.9973,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 59,
-      "cues": 57,
-      "words": 347,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 53,
-      "speechWords": 347,
-      "coverage": 0.9943,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 61,
-      "cues": 49,
-      "words": 311,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 43,
-      "speechWords": 311,
-      "coverage": 0.9968,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 62,
-      "cues": 60,
-      "words": 355,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 56,
-      "speechWords": 355,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 63,
-      "cues": 57,
-      "words": 335,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 51,
-      "speechWords": 335,
-      "coverage": 0.9941,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 64,
-      "cues": 54,
-      "words": 332,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 51,
-      "speechWords": 332,
-      "coverage": 0.9765,
-      "omittedWords": 8
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 65,
-      "cues": 64,
-      "words": 379,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 50,
-      "speechWords": 379,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 66,
-      "cues": 56,
-      "words": 293,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 49,
-      "speechWords": 293,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 67,
-      "cues": 55,
-      "words": 325,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 47,
-      "speechWords": 325,
-      "coverage": 0.9939,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 68,
-      "cues": 54,
-      "words": 344,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 50,
-      "speechWords": 344,
-      "coverage": 0.9971,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 69,
-      "cues": 62,
-      "words": 474,
+      "episodeId": 87,
+      "cues": 61,
+      "words": 329,
       "xmlTextVerified": true,
       "xmlParagraphs": 58,
-      "speechWords": 474,
-      "coverage": 0.9958,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 70,
-      "cues": 58,
-      "words": 318,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 51,
-      "speechWords": 318,
-      "coverage": 0.9876,
+      "speechWords": 329,
+      "coverage": 0.988,
       "omittedWords": 4
     },
     {
       "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 71,
-      "cues": 62,
-      "words": 340,
+      "episodeId": 90,
+      "cues": 53,
+      "words": 350,
       "xmlTextVerified": true,
-      "xmlParagraphs": 52,
-      "speechWords": 340,
-      "coverage": 0.9971,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 72,
-      "cues": 67,
-      "words": 425,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 58,
-      "speechWords": 425,
-      "coverage": 0.9977,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 73,
-      "cues": 59,
-      "words": 326,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 55,
-      "speechWords": 326,
-      "coverage": 0.9909,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 75,
-      "cues": 65,
-      "words": 362,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 53,
-      "speechWords": 362,
+      "xmlParagraphs": 51,
+      "speechWords": 350,
       "coverage": 0.9972,
       "omittedWords": 1
     },
     {
       "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 76,
-      "cues": 59,
-      "words": 352,
+      "episodeId": 91,
+      "cues": 74,
+      "words": 458,
       "xmlTextVerified": true,
-      "xmlParagraphs": 54,
-      "speechWords": 352,
-      "coverage": 0.9944,
+      "xmlParagraphs": 68,
+      "speechWords": 458,
+      "coverage": 0.9957,
       "omittedWords": 2
     },
     {
       "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 77,
-      "cues": 51,
-      "words": 290,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 50,
-      "speechWords": 290,
-      "coverage": 0.9831,
-      "omittedWords": 5
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 79,
-      "cues": 56,
-      "words": 350,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 53,
-      "speechWords": 350,
-      "coverage": 0.9915,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 80,
-      "cues": 57,
-      "words": 342,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 50,
-      "speechWords": 342,
-      "coverage": 0.9913,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 81,
-      "cues": 61,
-      "words": 405,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 57,
-      "speechWords": 405,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 82,
-      "cues": 55,
-      "words": 400,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 51,
-      "speechWords": 400,
-      "coverage": 0.995,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 83,
-      "cues": 55,
-      "words": 386,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 52,
-      "speechWords": 386,
-      "coverage": 0.9948,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 84,
-      "cues": 61,
-      "words": 373,
+      "episodeId": 92,
+      "cues": 58,
+      "words": 356,
       "xmlTextVerified": true,
       "xmlParagraphs": 56,
-      "speechWords": 373,
-      "coverage": 0.9868,
+      "speechWords": 356,
+      "coverage": 0.9861,
       "omittedWords": 5
+    },
+    {
+      "seriesId": "little-fox-danny-s-adventures-fs0034",
+      "episodeId": 94,
+      "cues": 56,
+      "words": 352,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 53,
+      "speechWords": 352,
+      "coverage": 0.9888,
+      "omittedWords": 4
+    },
+    {
+      "seriesId": "little-fox-danny-s-adventures-fs0034",
+      "episodeId": 95,
+      "cues": 72,
+      "words": 416,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 416,
+      "coverage": 0.9976,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-danny-s-adventures-fs0034",
+      "episodeId": 99,
+      "cues": 52,
+      "words": 380,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 47,
+      "speechWords": 380,
+      "coverage": 0.9974,
+      "omittedWords": 1
     }
   ],
   "failures": [
     {
       "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 36,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 80.5% matched, 98.8% assigned"
+      "episodeId": 88,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
       "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 37,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 82.0% matched, 100.0% assigned"
+      "episodeId": 89,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 81.9% matched, 100.0% assigned"
     },
     {
       "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 39,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 81.5% matched, 100.0% assigned"
+      "episodeId": 93,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
       "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 45,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 80.4% matched, 100.0% assigned"
+      "episodeId": 96,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 81.6% matched, 100.0% assigned"
     },
     {
       "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 58,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 76.7% matched, 90.4% assigned"
+      "episodeId": 97,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 78.7% matched, 100.0% assigned"
     },
     {
       "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 60,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 79.6% matched, 100.0% assigned"
+      "episodeId": 98,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
       "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 74,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 81.2% matched, 100.0% assigned"
+      "episodeId": 100,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 80.2% matched, 100.0% assigned"
     },
     {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 78,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 78.3% matched, 100.0% assigned"
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 2,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 3,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 4,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 5,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 6,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.1% matched, 0.4% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 7,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 8,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 9,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 10,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 11,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 4.5% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 12,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 13,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 14,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 15,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 16,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 17,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 18,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 19,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.7% matched, 4.4% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 20,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 21,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 22,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 23,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 24,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 25,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 26,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 27,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 28,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 29,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 30,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 31,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 32,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 33,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 34,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.0% matched, 0.0% assigned"
     }
   ]
 }
