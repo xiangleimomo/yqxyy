@@ -22,7 +22,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: yqxyy-whisperx-publish-batches
+  group: yqxyy-whisperx-ten-episode-v2
   # Explicit replacement launches stop any still-running obsolete batch.
   # Scheduled daily batches queue normally instead of interrupting work.
   cancel-in-progress: false
