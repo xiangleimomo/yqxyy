@@ -4479,6 +4479,111 @@
       "seriesId": "little-fox-dr-dolittle-fs0028",
       "episodeId": 12,
       "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "episodeId": 17,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "episodeId": 22,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "episodeId": 24,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "episodeId": 27,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "episodeId": 32,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "episodeId": 37,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "episodeId": 42,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "episodeId": 47,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "seriesId": "little-fox-dracula-fs0016",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 97.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-dracula-fs0016",
+      "episodeId": 2,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 94.7% assigned"
+    },
+    {
+      "seriesId": "little-fox-dracula-fs0016",
+      "episodeId": 3,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "seriesId": "little-fox-dracula-fs0016",
+      "episodeId": 4,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 16.9% matched, 97.6% assigned"
+    },
+    {
+      "seriesId": "little-fox-dracula-fs0016",
+      "episodeId": 5,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.9% matched, 98.6% assigned"
+    },
+    {
+      "seriesId": "little-fox-dracula-fs0016",
+      "episodeId": 6,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 94.2% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.5% matched, 3.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 2,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 3,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 4,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 5,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 6,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.6% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 7,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
     }
   ]
 }
