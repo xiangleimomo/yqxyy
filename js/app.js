@@ -1622,8 +1622,9 @@ updateUtilityNav(){
     const nav=document.getElementById('navRewards');
     if(!nav) return;
     const points=this.getPoints();
-    nav.innerHTML=`🎁 积分奖励 <span class="nav-points-badge">${points}</span>`;
-    nav.setAttribute('title', `当前可用积分：${points}`);
+    nav.innerHTML=`<svg class="utility-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16v11H4zM3 6.5h18V10H3zM12 6.5V21M12 6.5H8.2a2.2 2.2 0 1 1 2.2-2.2c0 1.2 1.6 2.2 1.6 2.2ZM12 6.5h3.8a2.2 2.2 0 1 0-2.2-2.2c0 1.2-1.6 2.2-1.6 2.2Z"/></svg><span class="nav-points-badge">${points}</span>`;
+    nav.setAttribute('aria-label', `积分奖励：${points} 积分`);
+    nav.setAttribute('title', `积分奖励：${points} 积分`);
   },
   renderRewards(){
     const points=this.getPoints();
