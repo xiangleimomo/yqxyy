@@ -129,6 +129,7 @@ def main():
     p.add_argument("--manifest",required=True)
     p.add_argument("--source",default="whisperx-batch-results")
     p.add_argument("--run-id",required=True)
+    p.add_argument("--report-prefix", choices=["whisperx-read", "whisperx-recovery"], default="whisperx-read")
     args=p.parse_args()
     plan=json.loads(Path(args.manifest).read_text(encoding="utf-8"))
     if plan.get("pipeline")!="audio-whisperx-xml-text-only-forced-alignment" or plan.get("usesExistingSiteSubtitlesAsInput") is not False:
@@ -159,8 +160,8 @@ def main():
         "success":successes,"failures":failures}
     reports=ROOT/"reports"
     reports.mkdir(parents=True,exist_ok=True)
-    (reports/"whisperx-read-batch-latest.json").write_text(json.dumps(output,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    history=reports/"whisperx-read-batches"
+    (reports/f"{args.report_prefix}-batch-latest.json").write_text(json.dumps(output,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    history=reports/f"{args.report_prefix}-batches"
     history.mkdir(parents=True,exist_ok=True)
     (history/f"{args.run_id}.json").write_text(json.dumps(output,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     failed_path=reports/"whisperx-read-failures.json"
