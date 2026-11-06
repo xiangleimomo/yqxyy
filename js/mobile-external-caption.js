@@ -24,13 +24,30 @@
     const sync=window.SFWordSync;
     let cues=[], prepared=[],active=-2,mode=null,wordView=null;
     let animation=0,lastTick=0;
+    const offsetHost=panel?.querySelector('.sf-subtitle-offset');
+    const offsetKey='storyfox-subtitle-offset:'+String(d.seriesId||'');
+    const clampOffset=value=>Math.max(-30,Math.min(30,Math.round(value*2)/2));
+    let offsetSeconds=0;
+    try{offsetSeconds=clampOffset(Number(localStorage.getItem(offsetKey))||0);}catch{}
+    const label=offsetHost?.querySelector('.sf-offset-label');
+    const updateLabel=()=>{if(label)label.textContent=(offsetSeconds>0?'+':'')+offsetSeconds.toFixed(1)+'s';};
+    const changeOffset=value=>{
+      offsetSeconds=clampOffset(value);
+      try{localStorage.setItem(offsetKey,String(offsetSeconds));}catch{}
+      updateLabel();active=-2;repaint();
+    };
+    offsetHost?.querySelector('.sf-offset-minus')?.addEventListener('click',()=>changeOffset(offsetSeconds-0.5));
+    offsetHost?.querySelector('.sf-offset-plus')?.addEventListener('click',()=>changeOffset(offsetSeconds+0.5));
+    offsetHost?.querySelector('.sf-offset-reset')?.addEventListener('click',()=>changeOffset(0));
+    updateLabel();
+
 
     const repaint=()=>{
       if(!tray.isConnected)return;
       const prefs=preferences();
       const visible=prefs.visible!==false;
       const wordEnabled=prefs.wordHighlight!==false;
-      const now=Math.max(0,Math.round((Number(player.currentTime)||0)*1000));
+      const now=Math.max(0,Math.round(((Number(player.currentTime)||0)-offsetSeconds)*1000));
       tray.classList.toggle('is-caption-disabled',!visible);
       const enable=tray.querySelector('.sf-mobile-caption-enable');
       if(enable) enable.hidden=visible;
@@ -94,7 +111,7 @@
       const idx=Number(word.dataset.wordIndex);
       const target=prepared[active]?.words[idx];
       if(!target||!Number.isFinite(target.startMs))return;
-      player.currentTime=Math.max(0,target.startMs/1000);
+      player.currentTime=Math.max(0,target.startMs/1000+offsetSeconds);
       const result=player.play();
       result?.catch?.(()=>{});
     });
@@ -103,12 +120,13 @@
       setHint('英文字幕正在加载…');
       if(!vttUrl){setHint('当前课程暂无英文字幕文件');return;}
       try{
-        const response=await fetch(vttUrl,{cache:'no-cache'});
+        const response=await fetch(new URL(vttUrl,location.href).href,{cache:'no-store'});
         if(!response.ok)throw Error('HTTP '+response.status);
         cues=parseVtt(await response.text());
         if(!cues.length)throw Error('No subtitle cues');
       }catch(error){
-        setHint('英文字幕加载失败，请重新打开课程。');
+        console.warn('Mobile subtitle fetch failed',vttUrl,error);
+        setHint('英文字幕加载失败（'+String(error.message||'网络错误')+'），请检查网络或刷新页面。');
         line.textContent='字幕暂时无法显示';
         return;
       }
