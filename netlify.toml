@@ -7,11 +7,6 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-[[headers]]
-  for = "/data/movie-harry-potter-1/hls/*"
-  [headers.values]
-    Content-Type = "application/vnd.apple.mpegurl"
-
 # Fixed upstream only; keep before the SPA catch-all. A 200 rewrite proxies
 # manifests and relative HLS assets without a cross-origin browser request.
 [[redirects]]
