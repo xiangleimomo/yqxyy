@@ -100,7 +100,7 @@ jobs:
         if: steps.install-whisperx.outcome == 'success'
         continue-on-error: true
         run: |
-          .venv/bin/python -c "import torch, whisperx; print('torch=' + torch.__version__); print('whisperx=' + whisperx.__version__)"
+          .venv/bin/python -c "import torch, whisperx; print('torch=' + torch.__version__); print('whisperx import=ok')"
       - name: Save reusable WhisperX environment cache
         if: steps.install-whisperx.outcome == 'success' && steps.verify-whisperx.outcome == 'success'
         uses: actions/cache/save@v4
@@ -165,7 +165,7 @@ jobs:
         if: steps.whisperx-env.outputs.cache-hit == 'true' || steps.install-whisperx.outcome == 'success'
         continue-on-error: true
         run: |
-          .venv/bin/python -c "import torch, whisperx; print('torch=' + torch.__version__); print('whisperx=' + whisperx.__version__)"
+          .venv/bin/python -c "import torch, whisperx; print('torch=' + torch.__version__); print('whisperx import=ok')"
       - uses: actions/cache@v4
         if: success() && (steps.whisperx-env.outputs.cache-hit == 'true' || steps.install-whisperx.outcome == 'success') && steps.install-ffmpeg.outcome == 'success' && steps.verify-whisperx.outcome == 'success'
         continue-on-error: true
