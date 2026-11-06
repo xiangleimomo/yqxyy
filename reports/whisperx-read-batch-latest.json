@@ -1,452 +1,374 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42150147123",
-  "completedAt": "2026-11-06T02:42:54.888007+00:00",
+  "runId": "42152076275",
+  "completedAt": "2026-11-06T02:57:40.738653+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 31,
-  "rejected": 19,
+  "published": 18,
+  "rejected": 32,
   "websiteCommitRequired": true,
-  "totalWords": 21184,
-  "speechMatchedWords": 21184,
+  "totalWords": 8147,
+  "speechMatchedWords": 8147,
   "success": [
     {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 2,
-      "cues": 54,
-      "words": 549,
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 1,
+      "cues": 44,
+      "words": 213,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 30,
+      "speechWords": 213,
+      "coverage": 0.9771,
+      "omittedWords": 5
+    },
+    {
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 3,
+      "cues": 36,
+      "words": 244,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 34,
+      "speechWords": 244,
+      "coverage": 0.9919,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 4,
+      "cues": 77,
+      "words": 420,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 420,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 6,
+      "cues": 57,
+      "words": 400,
       "xmlTextVerified": true,
       "xmlParagraphs": 54,
+      "speechWords": 400,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 8,
+      "cues": 77,
+      "words": 506,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 506,
+      "coverage": 0.998,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 9,
+      "cues": 72,
+      "words": 558,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 558,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 11,
+      "cues": 56,
+      "words": 395,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 47,
+      "speechWords": 395,
+      "coverage": 0.9975,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 13,
+      "cues": 74,
+      "words": 406,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 406,
+      "coverage": 0.9927,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 14,
+      "cues": 62,
+      "words": 370,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 49,
+      "speechWords": 370,
+      "coverage": 0.9946,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 16,
+      "cues": 49,
+      "words": 325,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 39,
+      "speechWords": 325,
+      "coverage": 0.9939,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 18,
+      "cues": 70,
+      "words": 394,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 52,
+      "speechWords": 394,
+      "coverage": 0.9975,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 19,
+      "cues": 63,
+      "words": 388,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 53,
+      "speechWords": 388,
+      "coverage": 0.9923,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 21,
+      "cues": 138,
+      "words": 1193,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 80,
+      "speechWords": 1193,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 23,
+      "cues": 63,
+      "words": 499,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 55,
+      "speechWords": 499,
+      "coverage": 0.998,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 24,
+      "cues": 40,
+      "words": 349,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 36,
+      "speechWords": 349,
+      "coverage": 0.9971,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 26,
+      "cues": 46,
+      "words": 294,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 37,
+      "speechWords": 294,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 28,
+      "cues": 78,
+      "words": 549,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 53,
       "speechWords": 549,
       "coverage": 0.9982,
       "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 3,
-      "cues": 54,
-      "words": 548,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 53,
-      "speechWords": 548,
-      "coverage": 0.9982,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 4,
-      "cues": 46,
-      "words": 536,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 46,
-      "speechWords": 536,
-      "coverage": 0.9981,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 6,
-      "cues": 45,
-      "words": 505,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 41,
-      "speechWords": 505,
-      "coverage": 0.998,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 7,
-      "cues": 56,
-      "words": 469,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 54,
-      "speechWords": 469,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 8,
-      "cues": 58,
-      "words": 540,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 57,
-      "speechWords": 540,
-      "coverage": 0.9982,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 10,
-      "cues": 52,
-      "words": 530,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 51,
-      "speechWords": 530,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 12,
-      "cues": 49,
-      "words": 500,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 50,
-      "speechWords": 500,
-      "coverage": 0.998,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 13,
-      "cues": 62,
-      "words": 536,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 60,
-      "speechWords": 536,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 14,
-      "cues": 64,
-      "words": 503,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 60,
-      "speechWords": 503,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
-      "episodeId": 16,
-      "cues": 61,
-      "words": 539,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 60,
-      "speechWords": 539,
-      "coverage": 0.9963,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 1,
-      "cues": 96,
-      "words": 780,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 77,
-      "speechWords": 780,
-      "coverage": 0.9987,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 2,
-      "cues": 91,
-      "words": 762,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 762,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 3,
-      "cues": 104,
-      "words": 780,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 76,
-      "speechWords": 780,
-      "coverage": 0.9987,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 4,
-      "cues": 92,
-      "words": 748,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 748,
-      "coverage": 0.9987,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 5,
-      "cues": 94,
-      "words": 756,
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 29,
+      "cues": 82,
+      "words": 644,
       "xmlTextVerified": true,
       "xmlParagraphs": 74,
-      "speechWords": 756,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 6,
-      "cues": 89,
-      "words": 781,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 781,
-      "coverage": 0.9987,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 7,
-      "cues": 87,
-      "words": 763,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 72,
-      "speechWords": 763,
-      "coverage": 0.9987,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 8,
-      "cues": 101,
-      "words": 765,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 74,
-      "speechWords": 765,
-      "coverage": 0.9974,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 10,
-      "cues": 94,
-      "words": 791,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 76,
-      "speechWords": 791,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 11,
-      "cues": 102,
-      "words": 763,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 76,
-      "speechWords": 763,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 12,
-      "cues": 83,
-      "words": 782,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 72,
-      "speechWords": 782,
-      "coverage": 0.9987,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 14,
-      "cues": 87,
-      "words": 780,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 780,
-      "coverage": 0.9987,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 15,
-      "cues": 89,
-      "words": 777,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 69,
-      "speechWords": 777,
-      "coverage": 0.9987,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 16,
-      "cues": 104,
-      "words": 766,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 76,
-      "speechWords": 766,
-      "coverage": 0.9974,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 17,
-      "cues": 92,
-      "words": 763,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 77,
-      "speechWords": 763,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 18,
-      "cues": 112,
-      "words": 779,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 79,
-      "speechWords": 779,
-      "coverage": 0.9987,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 20,
-      "cues": 100,
-      "words": 756,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 756,
-      "coverage": 0.9987,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 21,
-      "cues": 90,
-      "words": 771,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 771,
-      "coverage": 0.9987,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 22,
-      "cues": 118,
-      "words": 782,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 80,
-      "speechWords": 782,
-      "coverage": 0.9987,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-a-little-princess-fs0079",
-      "episodeId": 24,
-      "cues": 100,
-      "words": 784,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 79,
-      "speechWords": 784,
-      "coverage": 0.9987,
+      "speechWords": 644,
+      "coverage": 0.9984,
       "omittedWords": 1
     }
   ],
   "failures": [
     {
       "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 20,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 21,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 22,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 23,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 24,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 25,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 26,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-action-songs-srv01025",
       "episodeId": 1,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-action-songs-srv01025",
       "episodeId": 2,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-action-songs-srv01025",
       "episodeId": 3,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-action-songs-srv01025",
       "episodeId": 4,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-action-songs-srv01025",
       "episodeId": 5,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-action-songs-srv01025",
       "episodeId": 6,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-action-songs-srv01025",
       "episodeId": 7,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-action-songs-srv01025",
       "episodeId": 8,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-action-songs-srv01025",
       "episodeId": 9,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-action-songs-srv01025",
       "episodeId": 10,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-action-songs-srv01025",
       "episodeId": 11,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-action-songs-srv01025",
       "episodeId": 12,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-action-songs-srv01025",
       "episodeId": 13,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
-      "episodeId": 14,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 2,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 5,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 7,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 10,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 12,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
       "episodeId": 15,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
-      "episodeId": 16,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
       "episodeId": 17,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
-      "episodeId": 18,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 20,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
-      "episodeId": 19,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 22,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 25,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 27,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-aesop-s-fables-fs0131",
+      "episodeId": 30,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     }
   ]
 }
