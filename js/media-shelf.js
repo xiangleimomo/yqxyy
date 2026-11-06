@@ -64,7 +64,7 @@ window.MediaShelf = {
         const publishedFilms=allItems.filter(row=>row.id.startsWith('tmdb-')&&series.find(group=>group.films.some(([id])=>id===row.id))?.dynamicCategory==='animated');
         items=[...originalCollections,...publishedFilms];
       }
-      if(mode==='documentary')items=allItems.filter(row=>row.id.startsWith('tmdb-')&&series.find(group=>group.films.some(([id])=>id===row.id))?.dynamicCategory==='documentary');
+      if(mode==='documentary')items=series.filter(group=>group.dynamicCategory==='documentary').flatMap(group=>group.films.map(film=>this.movieFilm(group,film,playableById)));
       if(mode==='episodes'){
         const courseIds=[...new Set(series.flatMap(group=>group.films.map(([filmId])=>playableById.get(filmId)?.studyCourse?.seriesId).filter(Boolean)))];
         const courses=await Promise.all(courseIds.map(async seriesId=>{
@@ -79,7 +79,11 @@ window.MediaShelf = {
         }));
       }
     }
-    const states=['all','episodes'].includes(mode)?new Map():await this.states(app);
+    // A personal bookmarks query failure must never blank the public documentary catalogue.
+    let states=new Map();
+    if(!['all','episodes','animated','documentary'].includes(mode)){
+      try{states=await this.states(app);}catch(error){console.warn('Media personal state unavailable',error);states=new Map(Object.entries(this.local()));}
+    }
     if(location.hash!==route||window.SFCloud?.user?.id!==uid)return;
     if(scope==='movies'&&mode==='recent'){
       const existingHistory=new Set([...states].filter(([,row])=>row.last_read_at).map(([key])=>key));
