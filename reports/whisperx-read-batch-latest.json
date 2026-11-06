@@ -1,265 +1,410 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42186525360",
-  "completedAt": "2026-11-06T08:28:17.491202+00:00",
+  "runId": "42187915051",
+  "completedAt": "2026-11-06T08:48:58.626609+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 0,
-  "rejected": 50,
+  "published": 24,
+  "rejected": 26,
   "websiteCommitRequired": true,
-  "totalWords": 0,
-  "speechMatchedWords": 0,
-  "success": [],
+  "totalWords": 12159,
+  "speechMatchedWords": 12159,
+  "success": [
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 1,
+      "cues": 92,
+      "words": 504,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 504,
+      "coverage": 0.9941,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 2,
+      "cues": 79,
+      "words": 506,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 506,
+      "coverage": 0.998,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 3,
+      "cues": 86,
+      "words": 500,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 500,
+      "coverage": 0.994,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 4,
+      "cues": 97,
+      "words": 495,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 495,
+      "coverage": 0.998,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 5,
+      "cues": 86,
+      "words": 528,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 528,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 6,
+      "cues": 90,
+      "words": 504,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 504,
+      "coverage": 0.996,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 7,
+      "cues": 85,
+      "words": 511,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 511,
+      "coverage": 0.9942,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 8,
+      "cues": 85,
+      "words": 508,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 508,
+      "coverage": 0.9941,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 9,
+      "cues": 93,
+      "words": 512,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 512,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 10,
+      "cues": 83,
+      "words": 497,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 497,
+      "coverage": 0.994,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 11,
+      "cues": 84,
+      "words": 506,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 506,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 12,
+      "cues": 95,
+      "words": 509,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 509,
+      "coverage": 0.998,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 13,
+      "cues": 82,
+      "words": 503,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 503,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 14,
+      "cues": 77,
+      "words": 500,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 500,
+      "coverage": 0.998,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 15,
+      "cues": 87,
+      "words": 513,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 513,
+      "coverage": 0.9961,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 16,
+      "cues": 91,
+      "words": 505,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 505,
+      "coverage": 0.9941,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 17,
+      "cues": 88,
+      "words": 501,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 501,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 18,
+      "cues": 82,
+      "words": 516,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 516,
+      "coverage": 0.9981,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 19,
+      "cues": 78,
+      "words": 511,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 511,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 20,
+      "cues": 83,
+      "words": 508,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 508,
+      "coverage": 0.9961,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 21,
+      "cues": 88,
+      "words": 511,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 511,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 22,
+      "cues": 84,
+      "words": 500,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 500,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 23,
+      "cues": 81,
+      "words": 507,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 507,
+      "coverage": 0.998,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-cooking-with-kids-central-friends-fs0171",
+      "episodeId": 24,
+      "cues": 81,
+      "words": 504,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 504,
+      "coverage": 0.998,
+      "omittedWords": 1
+    }
+  ],
   "failures": [
     {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
-      "episodeId": 17,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
-      "episodeId": 18,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
-      "episodeId": 19,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
-      "episodeId": 20,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
-      "episodeId": 21,
-      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
-      "episodeId": 22,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
-      "episodeId": 23,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
-      "episodeId": 24,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
-      "episodeId": 25,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
-      "episodeId": 26,
-      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
-      "episodeId": 27,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
-      "episodeId": 28,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
-      "episodeId": 29,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
-      "episodeId": 30,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
       "episodeId": 31,
-      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
       "episodeId": 32,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
       "episodeId": 33,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
       "episodeId": 34,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
       "episodeId": 35,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
-      "episodeId": 36,
-      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "seriesId": "little-fox-cora-s-compass-fs0124",
       "episodeId": 1,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.3% assigned"
     },
     {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "seriesId": "little-fox-cora-s-compass-fs0124",
       "episodeId": 2,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.6% assigned"
     },
     {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "seriesId": "little-fox-cora-s-compass-fs0124",
       "episodeId": 3,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "seriesId": "little-fox-cora-s-compass-fs0124",
       "episodeId": 4,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "seriesId": "little-fox-cora-s-compass-fs0124",
       "episodeId": 5,
-      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "seriesId": "little-fox-cora-s-compass-fs0124",
       "episodeId": 6,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.5% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "seriesId": "little-fox-cora-s-compass-fs0124",
       "episodeId": 7,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "seriesId": "little-fox-cora-s-compass-fs0124",
       "episodeId": 8,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "seriesId": "little-fox-cora-s-compass-fs0124",
       "episodeId": 9,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "seriesId": "little-fox-cora-s-compass-fs0124",
       "episodeId": 10,
-      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "seriesId": "little-fox-cora-s-compass-fs0124",
       "episodeId": 11,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "seriesId": "little-fox-cora-s-compass-fs0124",
       "episodeId": 12,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "seriesId": "little-fox-cora-s-compass-fs0124",
       "episodeId": 13,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "seriesId": "little-fox-cora-s-compass-fs0124",
       "episodeId": 14,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "seriesId": "little-fox-cora-s-compass-fs0124",
       "episodeId": 15,
-      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "seriesId": "little-fox-cora-s-compass-fs0124",
       "episodeId": 16,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "seriesId": "little-fox-cora-s-compass-fs0124",
       "episodeId": 17,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "seriesId": "little-fox-cora-s-compass-fs0124",
       "episodeId": 18,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.5% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "seriesId": "little-fox-cora-s-compass-fs0124",
       "episodeId": 19,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "seriesId": "little-fox-cora-s-compass-fs0124",
       "episodeId": 20,
-      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "seriesId": "little-fox-cora-s-compass-fs0124",
       "episodeId": 21,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
-      "episodeId": 22,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
-      "episodeId": 23,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
-      "episodeId": 24,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
-      "episodeId": 25,
-      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
-      "episodeId": 26,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
-      "episodeId": 27,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
-      "episodeId": 28,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
-      "episodeId": 29,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-2-srv01035",
-      "episodeId": 30,
-      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 0.0% assigned"
     }
   ]
 }
