@@ -1,0 +1,422 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42237057866",
+  "completedAt": "2026-11-06T15:04:40.177562+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 26,
+  "rejected": 24,
+  "websiteCommitRequired": true,
+  "totalWords": 15168,
+  "speechMatchedWords": 15168,
+  "success": [
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 2,
+      "cues": 48,
+      "words": 551,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 46,
+      "speechWords": 551,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 3,
+      "cues": 61,
+      "words": 539,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 54,
+      "speechWords": 539,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 4,
+      "cues": 60,
+      "words": 567,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 51,
+      "speechWords": 567,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 5,
+      "cues": 58,
+      "words": 588,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 53,
+      "speechWords": 588,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 7,
+      "cues": 66,
+      "words": 603,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 603,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 8,
+      "cues": 71,
+      "words": 590,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 590,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 9,
+      "cues": 67,
+      "words": 576,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 56,
+      "speechWords": 576,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 10,
+      "cues": 54,
+      "words": 563,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 53,
+      "speechWords": 563,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 12,
+      "cues": 61,
+      "words": 540,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 55,
+      "speechWords": 540,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 13,
+      "cues": 59,
+      "words": 544,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 52,
+      "speechWords": 544,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 14,
+      "cues": 66,
+      "words": 612,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 59,
+      "speechWords": 612,
+      "coverage": 0.9967,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 15,
+      "cues": 62,
+      "words": 606,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 54,
+      "speechWords": 606,
+      "coverage": 0.9984,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 17,
+      "cues": 55,
+      "words": 556,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 45,
+      "speechWords": 556,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 18,
+      "cues": 47,
+      "words": 543,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 46,
+      "speechWords": 543,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 19,
+      "cues": 64,
+      "words": 620,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 620,
+      "coverage": 0.9984,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 20,
+      "cues": 56,
+      "words": 590,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 52,
+      "speechWords": 590,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 22,
+      "cues": 61,
+      "words": 627,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 48,
+      "speechWords": 627,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 23,
+      "cues": 56,
+      "words": 611,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 49,
+      "speechWords": 611,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 24,
+      "cues": 64,
+      "words": 593,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 52,
+      "speechWords": 593,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 25,
+      "cues": 61,
+      "words": 592,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 51,
+      "speechWords": 592,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 1,
+      "cues": 93,
+      "words": 595,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 595,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 2,
+      "cues": 86,
+      "words": 586,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 586,
+      "coverage": 0.9966,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 4,
+      "cues": 75,
+      "words": 587,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 587,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 5,
+      "cues": 85,
+      "words": 587,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 587,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 6,
+      "cues": 82,
+      "words": 604,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 604,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 7,
+      "cues": 81,
+      "words": 598,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 598,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    }
+  ],
+  "failures": [
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 68,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 69,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 70,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 71,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 72,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 1,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 6,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 11,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 16,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 21,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-heidi-fs0035",
+      "episodeId": 26,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-hello-cupcake-fs0172",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-hello-cupcake-fs0172",
+      "episodeId": 2,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-hello-cupcake-fs0172",
+      "episodeId": 3,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-hello-cupcake-fs0172",
+      "episodeId": 4,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-hello-cupcake-fs0172",
+      "episodeId": 5,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-hello-cupcake-fs0172",
+      "episodeId": 6,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-hello-cupcake-fs0172",
+      "episodeId": 7,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-hello-cupcake-fs0172",
+      "episodeId": 8,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-hello-cupcake-fs0172",
+      "episodeId": 9,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.9% matched, 0.4% assigned"
+    },
+    {
+      "seriesId": "little-fox-hello-cupcake-fs0172",
+      "episodeId": 10,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-hello-cupcake-fs0172",
+      "episodeId": 11,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-hello-cupcake-fs0172",
+      "episodeId": 12,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 3,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    }
+  ]
+}
