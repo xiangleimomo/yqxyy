@@ -516,7 +516,7 @@ async renderLesson(seriesId, episodeId){
     const hasSubtitle=true;
     const fallbacks=[...(hls720 && hls720!==url?[hls720]:[]),...(backupHls?[backupHls]:[])];
     const sourceSelector=(hls720||backupHls)?`<label class="hls-source-control" aria-label="视频画质"><select class="hls-source-select" aria-label="选择视频画质" data-hls-1080="${this.escapeHtml(url)}" data-hls-720="${this.escapeHtml(hls720)}" data-hls-korea="${this.escapeHtml(backupHls)}"><option value="1080">1080P</option>${hls720?'<option value="720">720P</option>':''}${backupHls?'<option value="korea">1080P</option>':''}</select></label>`:'';
-    return `<section class="direct-video-panel"><div class="video-wrap${hasSubtitle?' subtitle-video-wrap':''}">${sourceSelector}<video class="hls-video-player" playsinline webkit-playsinline x5-playsinline="true" x5-video-player-type="h5" controlslist="nofullscreen noremoteplayback" disablepictureinpicture preload="metadata" data-clip-start="${Number.isFinite(Number(d.ep.video?.clipStart))?Number(d.ep.video.clipStart):''}" data-clip-end="${Number.isFinite(Number(d.ep.video?.clipEnd))?Number(d.ep.video.clipEnd):''}" data-hls-src="${this.escapeHtml(url)}" data-hls-fallback-srcs="${this.escapeHtml(JSON.stringify(fallbacks))}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="sf-mobile-caption-area"><div class="video-caption" aria-live="polite" hidden></div><span class="sf-mobile-caption-message" role="status" hidden></span></div>${hasSubtitle?this.subtitleControls():''}</div><div class="sf-mobile-captions-outside" role="region" aria-label="手机英文逐词字幕"><div class="sf-mobile-caption-line" aria-live="off">字幕准备中…</div><div class="sf-mobile-caption-hint" role="status">字幕即将加载</div><button type="button" class="sf-mobile-caption-enable" hidden>开启英文字幕</button></div></section>${this.completeButton(d,completionModule)}`;
+    return `<section class="direct-video-panel"><div class="video-wrap${hasSubtitle?' subtitle-video-wrap':''}">${sourceSelector}<video class="hls-video-player" playsinline webkit-playsinline x5-playsinline="true" x5-video-player-type="h5" controlslist="nofullscreen noremoteplayback" disablepictureinpicture preload="metadata" data-clip-start="${Number.isFinite(Number(d.ep.video?.clipStart))?Number(d.ep.video.clipStart):''}" data-clip-end="${Number.isFinite(Number(d.ep.video?.clipEnd))?Number(d.ep.video.clipEnd):''}" data-hls-src="${this.escapeHtml(url)}" data-hls-fallback-srcs="${this.escapeHtml(JSON.stringify(fallbacks))}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="sf-mobile-caption-area"><div class="video-caption" aria-live="polite" hidden></div><span class="sf-mobile-caption-message" role="status" hidden></span></div>${hasSubtitle?this.subtitleControls():''}</div><div class="sf-mobile-captions-outside" role="region" aria-label="手机英文逐词字幕"><div class="sf-mobile-caption-line" aria-live="off">字幕准备中…</div><div class="sf-mobile-caption-hint" role="status">字幕即将加载</div><button type="button" class="sf-mobile-caption-enable" hidden>开启英文字幕</button></div><div class="sf-subtitle-offset" style="display:flex;align-items:center;justify-content:center;gap:12px;padding:12px;flex-wrap:wrap"><button type="button" class="sf-offset-minus" aria-label="字幕提前0.5秒">−</button><span class="sf-offset-label" aria-live="polite">0.0s</span><button type="button" class="sf-offset-plus" aria-label="字幕延后0.5秒">+</button><button type="button" class="sf-offset-reset">重置</button><span>字幕偏移设置</span></div></section>${this.completeButton(d,completionModule)}`;
   },
   subtitlePreferences(){
     const defaults={visible:true,wordHighlight:true,size:20,color:'#ffffff',captionX:50,captionY:84,opacity:72};
@@ -709,6 +709,24 @@ async renderLesson(seriesId, episodeId){
       return;
     }
     setMessage('等待对白开始…');
+    const offsetHost=panel?.querySelector('.sf-subtitle-offset');
+    const offsetKey='storyfox-subtitle-offset:'+String(d.seriesId||'');
+    const clampOffset=value=>Math.max(-30,Math.min(30,Math.round(value*2)/2));
+    let offsetSeconds=0;
+    try{offsetSeconds=clampOffset(Number(localStorage.getItem(offsetKey))||0);}catch{}
+    const offsetLabel=offsetHost?.querySelector('.sf-offset-label');
+    const showOffset=()=>{if(offsetLabel)offsetLabel.textContent=(offsetSeconds>0?'+':'')+offsetSeconds.toFixed(1)+'s';};
+    const changeOffset=value=>{
+      offsetSeconds=clampOffset(value);
+      try{localStorage.setItem(offsetKey,String(offsetSeconds));}catch{}
+      showOffset();
+      active=-1;
+      update();
+    };
+    offsetHost?.querySelector('.sf-offset-minus')?.addEventListener('click',()=>changeOffset(offsetSeconds-0.5));
+    offsetHost?.querySelector('.sf-offset-plus')?.addEventListener('click',()=>changeOffset(offsetSeconds+0.5));
+    offsetHost?.querySelector('.sf-offset-reset')?.addEventListener('click',()=>changeOffset(0));
+    showOffset();
     let nativeTrack=null;
     try{
       const track=document.createElement('track');
@@ -726,7 +744,7 @@ async renderLesson(seriesId, episodeId){
     // in the mobile tray, so never hide it because of the video's native state.
     const isMobileCaptionTray=()=>!!caption.closest('.subtitle-video-wrap.sf-caption-below');
     const syncNativeTrack=()=>{
-      if(nativeTrack) nativeTrack.mode=isNativeFullscreen() && !isMobileCaptionTray() && this.subtitlePreferences().visible?'showing':'hidden';
+      if(nativeTrack) nativeTrack.mode=isNativeFullscreen() && !isMobileCaptionTray() && this.subtitlePreferences().visible && offsetSeconds===0?'showing':'hidden';
     };
     const syncWords=window.SFWordSync;
     // The optional word-timing JSON must never block sentence subtitles.
@@ -743,7 +761,7 @@ async renderLesson(seriesId, episodeId){
         caption.hidden=true;
         return;
       }
-      const now=Math.round(player.currentTime*1000);
+      const now=Math.round((player.currentTime-offsetSeconds)*1000);
       const next=cues.findIndex(cue=>now>=cue.startMs && now<=cue.endMs);
       const wordEnabled=!!syncWords&&this.subtitlePreferences().wordHighlight!==false;
       if(next!==active||renderedMode!==wordEnabled){
