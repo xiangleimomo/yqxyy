@@ -1,0 +1,65 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42138547949",
+  "completedAt": "2026-11-06T00:43:22.638495+00:00",
+  "batchSize": 10,
+  "selected": 10,
+  "published": 0,
+  "rejected": 10,
+  "websiteCommitRequired": true,
+  "totalWords": 0,
+  "speechMatchedWords": 0,
+  "success": [],
+  "failures": [
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 6,
+      "reason": "ValueError: Official XML transcript is incomplete"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 7,
+      "reason": "ValueError: Official XML transcript is incomplete"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 8,
+      "reason": "ValueError: Official XML transcript is incomplete"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 9,
+      "reason": "ValueError: Official XML transcript is incomplete"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 10,
+      "reason": "ValueError: Official XML transcript is incomplete"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 11,
+      "reason": "ValueError: Official XML transcript is incomplete"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 12,
+      "reason": "ValueError: Official XML transcript is incomplete"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 13,
+      "reason": "ValueError: Official XML transcript is incomplete"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 14,
+      "reason": "ValueError: Official XML transcript is incomplete"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 15,
+      "reason": "ValueError: Official XML transcript is incomplete"
+    }
+  ]
+}
