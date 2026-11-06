@@ -45,11 +45,14 @@ def parse_text_only(xml_bytes):
                 value=clean(" ".join(child.itertext()))
                 if value:texts.append(value)
                 break
-    if len(texts)<3:
-        raise ValueError("Official XML has too few Text paragraphs")
+    # Letter-learning shorts can legitimately have one paragraph and only
+    # a handful of spoken words. A universal 25-word/3-paragraph gate
+    # incorrectly rejects the whole ABC Book series before audio verification.
+    if not texts:
+        raise ValueError("Official XML has no Text paragraphs")
     words=spoken_tokens(" ".join(texts))
-    if len(words)<25:
-        raise ValueError("Official XML transcript is incomplete")
+    if not words:
+        raise ValueError("Official XML has no spoken text")
     return {"paragraphs":len(texts),"words":words,
             "sha256":hashlib.sha256(" ".join(words).encode("utf-8")).hexdigest()}
 
