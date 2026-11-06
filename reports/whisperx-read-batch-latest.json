@@ -1,278 +1,265 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42185901043",
-  "completedAt": "2026-11-06T08:16:38.844704+00:00",
+  "runId": "42186525360",
+  "completedAt": "2026-11-06T08:28:17.491202+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 2,
-  "rejected": 48,
+  "published": 0,
+  "rejected": 50,
   "websiteCommitRequired": true,
-  "totalWords": 1114,
-  "speechMatchedWords": 1114,
-  "success": [
-    {
-      "seriesId": "little-fox-camp-evergreen-fs0178",
-      "episodeId": 23,
-      "cues": 81,
-      "words": 555,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 59,
-      "speechWords": 555,
-      "coverage": 0.9982,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-camp-evergreen-fs0178",
-      "episodeId": 24,
-      "cues": 93,
-      "words": 559,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 559,
-      "coverage": 0.9982,
-      "omittedWords": 1
-    }
-  ],
+  "totalWords": 0,
+  "speechMatchedWords": 0,
+  "success": [],
   "failures": [
     {
-      "seriesId": "little-fox-christmas-songs-srv01038",
-      "episodeId": 1,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-christmas-songs-srv01038",
-      "episodeId": 2,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-christmas-songs-srv01038",
-      "episodeId": 3,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-christmas-songs-srv01038",
-      "episodeId": 4,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-christmas-songs-srv01038",
-      "episodeId": 5,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-christmas-songs-srv01038",
-      "episodeId": 6,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-christmas-songs-srv01038",
-      "episodeId": 7,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-christmas-songs-srv01038",
-      "episodeId": 8,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-christmas-songs-srv01038",
-      "episodeId": 9,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-christmas-songs-srv01038",
-      "episodeId": 10,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-christmas-songs-srv01038",
-      "episodeId": 11,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-christmas-songs-srv01038",
-      "episodeId": 12,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-christmas-songs-srv01038",
-      "episodeId": 13,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-christmas-songs-srv01038",
-      "episodeId": 14,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-christmas-songs-srv01038",
-      "episodeId": 15,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-christmas-songs-srv01038",
-      "episodeId": 16,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-christmas-songs-srv01038",
+      "seriesId": "little-fox-conversation-songs-1-srv01034",
       "episodeId": 17,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-christmas-songs-srv01038",
+      "seriesId": "little-fox-conversation-songs-1-srv01034",
       "episodeId": 18,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-christmas-songs-srv01038",
+      "seriesId": "little-fox-conversation-songs-1-srv01034",
       "episodeId": 19,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-christmas-songs-srv01038",
+      "seriesId": "little-fox-conversation-songs-1-srv01034",
       "episodeId": 20,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-cinderella-fs0100",
+      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "episodeId": 21,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "episodeId": 22,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "episodeId": 23,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "episodeId": 24,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "episodeId": 25,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "episodeId": 26,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "episodeId": 27,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "episodeId": 28,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "episodeId": 29,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "episodeId": 30,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "episodeId": 31,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "episodeId": 32,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "episodeId": 33,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "episodeId": 34,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "episodeId": 35,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "episodeId": 36,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
       "episodeId": 1,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-cinderella-fs0100",
-      "episodeId": 2,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-cinderella-fs0100",
-      "episodeId": 3,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-cinderella-fs0100",
-      "episodeId": 4,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-cinderella-fs0100",
-      "episodeId": 5,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-cinderella-fs0100",
-      "episodeId": 6,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-cinderella-fs0100",
-      "episodeId": 7,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-cinderella-fs0100",
-      "episodeId": 8,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.8% matched, 0.3% assigned"
-    },
-    {
-      "seriesId": "little-fox-cinderella-fs0100",
-      "episodeId": 9,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-cinderella-fs0100",
-      "episodeId": 10,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-cinderella-fs0100",
-      "episodeId": 11,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-cinderella-fs0100",
-      "episodeId": 12,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
-      "episodeId": 1,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
       "episodeId": 2,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
       "episodeId": 3,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
       "episodeId": 4,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
       "episodeId": 5,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
       "episodeId": 6,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
       "episodeId": 7,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
       "episodeId": 8,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
       "episodeId": 9,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
       "episodeId": 10,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
       "episodeId": 11,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
       "episodeId": 12,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
       "episodeId": 13,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
       "episodeId": 14,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
       "episodeId": 15,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "episodeId": 16,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-conversation-songs-1-srv01034",
-      "episodeId": 16,
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "episodeId": 17,
       "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "episodeId": 18,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "episodeId": 19,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "episodeId": 20,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "episodeId": 21,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "episodeId": 22,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "episodeId": 23,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "episodeId": 24,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "episodeId": 25,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "episodeId": 26,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "episodeId": 27,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "episodeId": 28,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "episodeId": 29,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-conversation-songs-2-srv01035",
+      "episodeId": 30,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     }
   ]
 }
