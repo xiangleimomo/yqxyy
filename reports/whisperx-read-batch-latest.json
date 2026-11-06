@@ -1,265 +1,434 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42211841733",
-  "completedAt": "2026-11-06T11:51:47.552222+00:00",
+  "runId": "42213357897",
+  "completedAt": "2026-11-06T12:10:37.088798+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 0,
-  "rejected": 50,
+  "published": 28,
+  "rejected": 22,
   "websiteCommitRequired": true,
-  "totalWords": 0,
-  "speechMatchedWords": 0,
-  "success": [],
+  "totalWords": 10457,
+  "speechMatchedWords": 10457,
+  "success": [
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 2,
+      "cues": 46,
+      "words": 333,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 44,
+      "speechWords": 333,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 3,
+      "cues": 42,
+      "words": 312,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 40,
+      "speechWords": 312,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 4,
+      "cues": 72,
+      "words": 341,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 46,
+      "speechWords": 341,
+      "coverage": 0.9971,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 5,
+      "cues": 58,
+      "words": 348,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 43,
+      "speechWords": 348,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 7,
+      "cues": 56,
+      "words": 314,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 43,
+      "speechWords": 314,
+      "coverage": 0.9937,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 8,
+      "cues": 53,
+      "words": 265,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 44,
+      "speechWords": 265,
+      "coverage": 0.9962,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 9,
+      "cues": 59,
+      "words": 366,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 52,
+      "speechWords": 366,
+      "coverage": 0.9919,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 10,
+      "cues": 34,
+      "words": 194,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 29,
+      "speechWords": 194,
+      "coverage": 0.9898,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 12,
+      "cues": 62,
+      "words": 284,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 47,
+      "speechWords": 284,
+      "coverage": 0.9965,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 13,
+      "cues": 51,
+      "words": 277,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 45,
+      "speechWords": 277,
+      "coverage": 0.9964,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 14,
+      "cues": 62,
+      "words": 402,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 54,
+      "speechWords": 402,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 15,
+      "cues": 37,
+      "words": 339,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 35,
+      "speechWords": 339,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 17,
+      "cues": 34,
+      "words": 251,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 34,
+      "speechWords": 251,
+      "coverage": 0.9882,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 18,
+      "cues": 32,
+      "words": 270,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 29,
+      "speechWords": 270,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 19,
+      "cues": 47,
+      "words": 311,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 41,
+      "speechWords": 311,
+      "coverage": 0.9968,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 20,
+      "cues": 33,
+      "words": 349,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 34,
+      "speechWords": 349,
+      "coverage": 0.9971,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 22,
+      "cues": 73,
+      "words": 397,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 397,
+      "coverage": 0.9975,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 23,
+      "cues": 39,
+      "words": 279,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 38,
+      "speechWords": 279,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 24,
+      "cues": 48,
+      "words": 427,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 43,
+      "speechWords": 427,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 25,
+      "cues": 45,
+      "words": 293,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 40,
+      "speechWords": 293,
+      "coverage": 0.9966,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-family-friends-2-fs0137",
+      "episodeId": 1,
+      "cues": 70,
+      "words": 515,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 515,
+      "coverage": 0.9981,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-family-friends-2-fs0137",
+      "episodeId": 2,
+      "cues": 72,
+      "words": 517,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 517,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-family-friends-2-fs0137",
+      "episodeId": 3,
+      "cues": 44,
+      "words": 377,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 44,
+      "speechWords": 377,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-family-friends-2-fs0137",
+      "episodeId": 4,
+      "cues": 87,
+      "words": 593,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 593,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-family-friends-2-fs0137",
+      "episodeId": 6,
+      "cues": 77,
+      "words": 562,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 562,
+      "coverage": 0.9929,
+      "omittedWords": 4
+    },
+    {
+      "seriesId": "little-fox-family-friends-2-fs0137",
+      "episodeId": 7,
+      "cues": 75,
+      "words": 553,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 553,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-family-friends-2-fs0137",
+      "episodeId": 8,
+      "cues": 74,
+      "words": 514,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 514,
+      "coverage": 0.9981,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-family-friends-2-fs0137",
+      "episodeId": 9,
+      "cues": 68,
+      "words": 474,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 474,
+      "coverage": 0.9937,
+      "omittedWords": 3
+    }
+  ],
   "failures": [
     {
       "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 8,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.8% matched, 0.0% assigned"
+      "episodeId": 58,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
       "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 9,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.0% assigned"
+      "episodeId": 59,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.2% matched, 0.5% assigned"
     },
     {
       "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 10,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.0% matched, 0.0% assigned"
+      "episodeId": 60,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.2% matched, 4.3% assigned"
     },
     {
       "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 11,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 3.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 12,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.4% matched, 3.3% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 13,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 14,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 6.6% matched, 0.4% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 15,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 16,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 6.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 17,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 18,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 19,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.6% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 20,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 21,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 22,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 23,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 24,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.3% matched, 3.4% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 25,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.2% matched, 1.8% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 26,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.7% matched, 3.1% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 27,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 28,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 29,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.6% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 30,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.9% matched, 0.7% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 31,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 32,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 33,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.6% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 34,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 35,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 36,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 37,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 38,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 39,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 40,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 41,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 42,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 43,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 44,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 45,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 3.2% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 46,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 3.3% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 47,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 48,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.6% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 49,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 50,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 51,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 52,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 53,
+      "episodeId": 61,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.0% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 54,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.5% matched, 0.0% assigned"
+      "episodeId": 62,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.2% matched, 2.9% assigned"
     },
     {
       "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 55,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.5% assigned"
+      "episodeId": 63,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
       "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 56,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
+      "episodeId": 64,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.4% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 57,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.0% matched, 3.7% assigned"
+      "episodeId": 65,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 66,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.2% matched, 0.5% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 67,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.7% matched, 3.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 68,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 69,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 70,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 71,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 72,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 1,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 6,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 11,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 16,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 21,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-family-friends-1-fs0136",
+      "episodeId": 26,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-family-friends-2-fs0137",
+      "episodeId": 5,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     }
   ]
 }
