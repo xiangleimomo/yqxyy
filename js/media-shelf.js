@@ -77,10 +77,9 @@ window.MediaShelf = {
           cover:course.coverImage,href:`#/series/${course.seriesId}`,level:course.level,
           totalEpisodes:Number(course.totalEpisodes||0),disabled:course.status==='coming'
         }));
-        items.push({key:'film-course-movie-hp1-independent',scope:'movies',id:'movie-hp1-independent',title:'哈利·波特与魔法石 · 34集剧情版',search:'Harry Potter 魔法石 34集 分集学习',cover:'https://media.themoviedb.org/t/p/w500/wuMc08IPKEatf9rnMNXvIDxqP4W.jpg',href:'/movie-hp1-independent.html',level:5,totalEpisodes:34,disabled:false});
       }
     }
-    const states['all','episodes'].includes(mode)?new Map():await this.states(app);
+    const states=['all','episodes'].includes(mode)?new Map():await this.states(app);
     if(location.hash!==route||window.SFCloud?.user?.id!==uid)return;
     if(scope==='movies'&&mode==='recent'){
       const existingHistory=new Set([...states].filter(([,row])=>row.last_read_at).map(([key])=>key));
