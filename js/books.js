@@ -272,8 +272,23 @@ window.BookReader = {
       if (!blob) {
         const url = new URL(item.downloadUrl, location.origin);
         if (!item.downloadUrl || url.protocol !== 'https:' || url.username || url.password || url.origin !== location.origin) throw new Error('绘本加载地址不可用。');
-        const response = await fetch(url.href, { signal: controller.signal, credentials: 'omit' });
-        if (!response.ok) throw new Error(response.status === 404 && item.sourceContentId ? '本集暂未提供可用的官方绘本，您仍可使用视频和听读。' : `加载失败（${response.status}），请重试。`);
+        let response;
+        let lastNetworkError;
+        for (let attempt = 0; attempt < 3; attempt++) {
+          if (!current()) return;
+          try {
+            response = await fetch(url.href, { signal: controller.signal, credentials: 'omit', cache: 'no-store' });
+            if (![502, 503, 504, 429].includes(response.status) || attempt === 2) break;
+            await response.body?.cancel();
+          } catch (error) {
+            if (controller.signal.aborted) throw error;
+            lastNetworkError = error;
+            if (attempt === 2) throw new Error('下载连接失败：网络中断或绘本下载服务暂时不可达。请重试；如果持续失败，需要检查 PDF 文件源。');
+          }
+          await new Promise(resolve => setTimeout(resolve, 600 * (attempt + 1)));
+        }
+        if (!response && lastNetworkError) throw new Error('下载连接失败：网络中断或绘本下载服务暂时不可达。');
+        if (!response.ok) throw new Error(response.status === 404 && item.sourceContentId ? '本集暂未提供可用的官方绘本，您仍可使用视频和听读。' : `绘本下载服务暂时不可用（${response.status}），请稍后重试。`);
         if (response.headers.has('content-range')) throw new Error('收到不完整的 PDF，请重新加载。');
         const total = Number(response.headers.get('content-length')) || 0;
         const update = received => {
@@ -838,7 +853,7 @@ window.BookReader = {
       this.rendition.themes.fontSize(`${fontSize}%`);
       Object.assign(reader.dataset,{sourceType:item.kind==='magazine'?'magazine':'book',sourceId:item.id,sourceTitle:item.titleZh||item.title,sourceHref:location.hash});
       this.rendition.hooks.content.register(contents=>window.ReadDictionary?.bindDocument(contents.document,reader));
-      const dictionaryButton=document.createElement('button');dictionaryButton.type='button';dictionaryButton.textContent='Aa';dictionaryButton.title='开启划词查译和收藏';dictionaryButton.setAttribute('aria-label',dictionaryButton.title);dictionaryButton.onclick=()=>{window.ReadDictionary.enable();setStatus('选中英文单词或句子，即可查译、朗读和收藏。');};reader.querySelector('.flipbook-topbar').append(dictionaryButton);
+      const dictionaryButton=document.createElement('button');dictionaryButton.type='button';dictionaryButton.textContent='Aa';dictionaryButton.title='开启划词查译和收藏';dictionaryButton.setAttribute('aria-label',dictionaryButton.title);dictionaryButton.onclick=()=>{window.ReadDictionary.enable();setStatus('选中英文单词或句子，即可查译、朗读和收藏。');};dictionaryButton.className='reader-dictionary-trigger';reader.querySelector('.flipbook-controls').append(dictionaryButton);
       await this.rendition.display(localStorage.getItem(progressKey) || undefined);
       const resizeRendition = () => {
         const size = viewportSize();
