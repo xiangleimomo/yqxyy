@@ -248,7 +248,7 @@ async renderSeries(seriesId){
         <div class="sub">Level ${series.level ?? 0}</div>
       </div>
     </section>
-    ${seriesId==='movie-harry-potter-1'?'<p style="margin:12px 0"><a class="btn secondary" href="/movie-hp1-hls-test.html" target="_blank" rel="noopener">▶ 测试新 M3U8 直链（不影响现有分集）</a></p>':''}
+    
     <section class="learning-map">
       <aside class="episode-sidebar">
         <h3>课程列表</h3>
@@ -854,20 +854,28 @@ async renderLesson(seriesId, episodeId){
     if(player.classList.contains('hls-video-player')&&Number.isFinite(clipStart)&&Number.isFinite(clipEnd)&&clipEnd>clipStart){
       // A lesson is a bounded view of the original VOD, not a rewritten HLS playlist.
       const duration=clipEnd-clipStart;
-      let initialized=false;
+      let initialized=false,pendingPlay=false;
       const clamp=time=>Math.min(clipEnd,Math.max(clipStart,time));
       const format=time=>{const n=Math.max(0,Math.floor(time));return String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0');};
       const controls=document.createElement('div');
       controls.className='sf-clip-controls';
-      controls.style.cssText='display:flex;align-items:center;gap:10px;padding:10px 4px;flex-wrap:wrap';
+      controls.style.cssText='position:absolute;left:0;right:0;bottom:0;z-index:6;display:flex;align-items:center;gap:8px;padding:8px 10px;flex-wrap:wrap;background:linear-gradient(transparent,rgba(0,0,0,.84));color:#fff';
       const toggle=document.createElement('button');
       toggle.type='button';toggle.textContent='播放';toggle.setAttribute('aria-label','播放或暂停本集');
       const progress=document.createElement('input');
       progress.type='range';progress.min='0';progress.max=String(duration);progress.step='0.1';progress.value='0';
-      progress.setAttribute('aria-label','本集播放进度');progress.style.cssText='flex:1;min-width:120px';
+      progress.setAttribute('aria-label','本集播放进度');progress.style.cssText='flex:1 1 130px;min-width:65px;accent-color:#65baff';
       const clock=document.createElement('span');
       clock.textContent='00:00 / '+format(duration);clock.style.fontVariantNumeric='tabular-nums';
-      controls.append(toggle,progress,clock);
+      const mute=document.createElement('button');
+      mute.type='button';mute.textContent='静音';mute.setAttribute('aria-label','切换静音');
+      const fullscreen=document.createElement('button');
+      fullscreen.type='button';fullscreen.textContent='全屏';fullscreen.setAttribute('aria-label','全屏播放本集');
+      for(const button of [toggle,mute,fullscreen])button.style.cssText='border:1px solid #ffffff55;border-radius:7px;background:#142c4bdb;color:white;padding:6px 8px;cursor:pointer';
+      clock.style.cssText='font-variant-numeric:tabular-nums;font-size:12px;white-space:nowrap';
+      controls.append(toggle,progress,clock,mute,fullscreen);
+      mute.addEventListener('click',()=>{player.muted=!player.muted;mute.textContent=player.muted?'取消静音':'静音';});
+      fullscreen.addEventListener('click',()=>{const host=player.closest('.video-wrap')||player;if(document.fullscreenElement){document.exitFullscreen?.().catch?.(()=>{});}else{host.requestFullscreen?.().catch?.(()=>{});}});
       player.insertAdjacentElement('afterend',controls);
       player.controls=false;
       const sync=()=>{
@@ -891,6 +899,7 @@ async renderLesson(seriesId, episodeId){
         initialized=true;
         try{player.currentTime=clipStart;}catch{initialized=false;return;}
         sync();
+        if(pendingPlay){pendingPlay=false;const task=player.play();if(task?.catch)task.catch(()=>sync());}
       };
       player.addEventListener('loadedmetadata',initialize);
       player.addEventListener('durationchange',initialize);
@@ -900,14 +909,14 @@ async renderLesson(seriesId, episodeId){
       player.addEventListener('play',enforce);
       player.addEventListener('pause',sync);
       toggle.addEventListener('click',()=>{
-        if(!initialized)initialize();
+        if(!initialized){pendingPlay=true;initialize();return;}
         if(player.paused){
           if(player.currentTime>=clipEnd-0.05)player.currentTime=clipStart;
           const task=player.play();if(task&&task.catch)task.catch(()=>sync());
         }else player.pause();
       });
       progress.addEventListener('input',()=>{
-        if(!initialized)initialize();
+        if(!initialized){initialize();if(!initialized)return;}
         player.currentTime=clamp(clipStart+Number(progress.value));
         sync();
       });
@@ -1792,7 +1801,9 @@ addPoints(n=1){
 
   requiresQuizUnlock(seriesId){
     // Every learning entry loads series.json before checking access.
-    const level=Number(this.cache[`data/${seriesId}/series.json`]?.level);
+    const series=this.cache[`data/${seriesId}/series.json`];
+    if(series?.movieId && series?.quizStatus==='pending') return false;
+    const level=Number(series?.level);
     return !Number.isFinite(level) || level>=3;
   },
   isEpisodeUnlocked(seriesId, episodeId){

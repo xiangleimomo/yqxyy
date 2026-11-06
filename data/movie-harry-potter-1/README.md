@@ -1,45 +1,7 @@
-# Harry Potter 1 movie study pilot
+# Harry Potter 1 · 34-episode time-bounded playback
 
-Only this film has a study course. The original full-film primary and backup
-addresses in `data/movies/harry-potter/movies.json` remain unchanged. The full-film
-page links to this course; the course links back to the complete film.
+The published `episodes.json` contains 34 sequential clips. Each `video.hlsUrl` points at the same original VOD playlist; `clipStart` and `clipEnd` define the playable portion in the source timeline. No per-episode M3U8 is generated, downloaded or hosted in this directory. Seeking is allowed inside a chapter only; reaching its end pauses playback. The original movie source is not modified.
 
-The existing primary source is the 158:50 extended version. The matching English
-subtitle release is recorded in `alignment.json`. Five sampled audio anchors
-across the film support a constant +0.30-second adjustment, with no observed
-progressive drift. This is sampled alignment, not a frame-by-frame review.
+The 34 chapter boundaries are subtitle-dialogue-reviewed, but the source is not frame-by-frame scene-verified. The old 24-chapter derived HLS files and their separate test pages were retired. Their historical alignment/editorial manifest is not used to drive these 34 episodes. Legacy chapter vocabulary and quizzes are not applicable to the new 34-way split, so those modules remain disabled until rebuilt and checked; the existing learning history is not erased.
 
-The 24 English-titled chapters use whole original TS segments, split at subtitle
-gaps within 30 seconds of the reviewed plot boundaries. Chapters are contiguous
-from 00:00 to 150:41.7. Final credits remain available in the full-film player.
-Each chapter contains six subtitle-evidenced vocabulary entries, two original
-plot questions and three vocabulary questions. Original example sentences and
-definitions are used. Games reuse the chapter vocabulary and existing platform
-access rules. Listen and Read is disabled.
-
-Full movie media and the external full subtitle transcript are not stored here.
-The fixed-source Netlify subtitle function downloads the matching archive,
-verifies its checksum, adjusts the timeline, and serves episode-local WebVTT.
-It accepts only a chapter number, never an arbitrary external URL. An upstream
-failure produces a visible subtitle-unavailable message without blocking video.
-The source video also contains burned-in subtitles, which cannot be switched
-off using the overlay controls.
-
-## Rebuild and audit
-
-Use locally saved copies of the original media playlist and the exact extended
-English SRT identified in the manifest:
-
-```sh
-node scripts/build-movie-course.cjs /path/to/original.m3u8 /path/to/extended.srt
-node tests/movie-study.test.cjs /path/to/extended.srt
-node tests/movie-playback.test.cjs
-node scripts/test-hls-playback.cjs
-node --check js/app.js
-git diff --check
-```
-
-`editorial.json` is the reviewed input for chapter titles, intended scene cuts,
-vocabulary and comprehension questions. The builder rejects unsupported HLS
-encryption/discontinuities instead of silently dropping their tags. A changed
-source or subtitle release must be realigned and reviewed before rebuilding.
+The main application is `/#/series/movie-harry-potter-1`; `js/app.js` implements playback bounds. To check structure run `node tests/movie-study.test.cjs` and `node scripts/test-hls-playback.cjs`. Actual playback, mobile fullscreen and cross-origin HLS availability require an online browser check.
