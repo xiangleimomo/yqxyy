@@ -86,12 +86,14 @@ window.MediaShelf = {
       content=[...groups].sort(([a],[b])=>a.localeCompare(b,'zh-CN')).map(([name,list])=>`<details class="book-category-shelf"><summary><span>${e(name)}</span><small>${list.length} 部</small></summary>${this.cards(app,list,states,scope==='animation',scope==='animation')}</details>`).join('');
     }else if(mode==='recent')content=items.length?this.cards(app,items,states,true):'';
     else{
-      const levels=[...new Set(items.map(row=>row.level))].sort((a,b)=>scope==='animation'?a-b:String(a).localeCompare(String(b)));
-      const filters=`<div class="filters media-level-filters" id="${scope==='animation'?'levelFilters':'movieFilters'}"><span class="filter-label">${scope==='animation'?'动画分级':'英语难度'}</span>${['all',...levels].map(value=>`<button type="button" class="filter-btn ${String(level)===String(value)?'active':''}" data-media-level="${e(value)}">${value==='all'?'全部等级':scope==='animation'?'Level '+e(value):e(value)}</button>`).join('')}</div>`;
+      const movieLevelMap={'PRE-A1':0,'PRE A1':0,'A1':1,'A1-A2':2,'A1–A2':2,'A2':3,'A2-B1':4,'A2–B1':4,'B1':5,'B1-B2':6,'B1–B2':6,'B1→B2':6,'B2':7,'B2-C1':8,'B2–C1':8,'C1':9,'C1+':9};
+      const levelNumber=value=>{if(scope==='animation')return Number(value);const key=String(value??'').trim().toUpperCase().replace(/[—]/g,'-');if(Object.prototype.hasOwnProperty.call(movieLevelMap,key))return movieLevelMap[key];const n=Number(key);return Number.isInteger(n)&&n>=0&&n<=9?n:null;};
+      const levels=[...new Set(items.map(row=>levelNumber(row.level)).filter(value=>value!==null))].sort((a,b)=>a-b);
+      const filters=`<div class="filters media-level-filters" id="${scope==='animation'?'levelFilters':'movieFilters'}"><span class="filter-label">${scope==='animation'?'动画分级':'电影分级'}</span>${['all',...levels].map(value=>`<button type="button" class="filter-btn ${String(level)===String(value)?'active':''}" data-media-level="${e(value)}">${value==='all'?'全部等级':'Level '+e(value)}</button>`).join('')}</div>`;
       const needle=query.trim().toLowerCase();
       if(scope==='movies'&&needle)items=allItems.filter(row=>!row.key.startsWith('film-series-')&&`${row.title} ${row.search} ${row.id}`.toLowerCase().includes(needle));
-      items=items.filter(row=>(level==='all'||String(row.level)===String(level))&&(!needle||`${row.title} ${row.search||''} ${row.id}`.toLowerCase().includes(needle)));
-      content=filters+(scope==='animation'?levels.filter(value=>level==='all'||String(value)===String(level)).map(value=>{const group=items.filter(row=>row.level===value);return group.length?`<section class="media-level-group"><h2>Level ${e(value)}</h2>${this.cards(app,group)}</section>`:'';}).join(''):this.cards(app,items));
+      items=items.filter(row=>(level==='all'||String(levelNumber(row.level))===String(level))&&(!needle||`${row.title} ${row.search||''} ${row.id}`.toLowerCase().includes(needle)));
+      content=filters+levels.filter(value=>level==='all'||String(value)===String(level)).map(value=>{const group=items.filter(row=>levelNumber(row.level)===value);return group.length?`<section class="media-level-group"><h2>Level ${e(value)}</h2>${this.cards(app,group)}</section>`:'';}).join('');
     }
     app.el().innerHTML=`${this.nav(scope,mode)}<section class="media-catalog">${content||'<div class="empty">暂无内容。</div>'}${mode==='all'&&!items.length?'<div class="empty">没有找到对应内容。</div>':''}</section>`;
     this.bindCards(app);
