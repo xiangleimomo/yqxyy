@@ -1,0 +1,398 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42230427882",
+  "completedAt": "2026-11-06T14:25:40.138680+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 22,
+  "rejected": 28,
+  "websiteCommitRequired": true,
+  "totalWords": 22435,
+  "speechMatchedWords": 22435,
+  "success": [
+    {
+      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
+      "episodeId": 15,
+      "cues": 97,
+      "words": 1001,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 1001,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
+      "episodeId": 16,
+      "cues": 96,
+      "words": 993,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 993,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
+      "episodeId": 17,
+      "cues": 105,
+      "words": 988,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 80,
+      "speechWords": 988,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
+      "episodeId": 18,
+      "cues": 109,
+      "words": 995,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 995,
+      "coverage": 0.998,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
+      "episodeId": 19,
+      "cues": 98,
+      "words": 982,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 982,
+      "coverage": 0.998,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
+      "episodeId": 20,
+      "cues": 105,
+      "words": 983,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 983,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 15,
+      "cues": 123,
+      "words": 1189,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 1189,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 27,
+      "cues": 110,
+      "words": 1166,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 1166,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-greek-myths-fs0017",
+      "episodeId": 1,
+      "cues": 103,
+      "words": 1207,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 1207,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-greek-myths-fs0017",
+      "episodeId": 2,
+      "cues": 104,
+      "words": 1240,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 1240,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-greek-myths-fs0017",
+      "episodeId": 3,
+      "cues": 90,
+      "words": 1109,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 1109,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-greek-myths-fs0017",
+      "episodeId": 4,
+      "cues": 107,
+      "words": 1152,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 1152,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-greek-myths-fs0017",
+      "episodeId": 5,
+      "cues": 108,
+      "words": 1164,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 1164,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-greek-myths-fs0017",
+      "episodeId": 6,
+      "cues": 131,
+      "words": 1356,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 83,
+      "speechWords": 1356,
+      "coverage": 0.9993,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-greek-myths-fs0017",
+      "episodeId": 7,
+      "cues": 92,
+      "words": 1182,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 1182,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-greek-myths-fs0017",
+      "episodeId": 8,
+      "cues": 89,
+      "words": 1164,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 1164,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-greek-myths-fs0017",
+      "episodeId": 9,
+      "cues": 95,
+      "words": 1178,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 1178,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-greek-myths-fs0017",
+      "episodeId": 10,
+      "cues": 82,
+      "words": 1073,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 59,
+      "speechWords": 1073,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
+      "episodeId": 1,
+      "cues": 62,
+      "words": 575,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 59,
+      "speechWords": 575,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
+      "episodeId": 2,
+      "cues": 61,
+      "words": 593,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 59,
+      "speechWords": 593,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
+      "episodeId": 3,
+      "cues": 55,
+      "words": 573,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 54,
+      "speechWords": 573,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
+      "episodeId": 4,
+      "cues": 61,
+      "words": 572,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 59,
+      "speechWords": 572,
+      "coverage": 1.0,
+      "omittedWords": 0
+    }
+  ],
+  "failures": [
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 97.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 2,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.3% matched, 98.6% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 3,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.4% matched, 98.8% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 4,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.9% matched, 98.6% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 5,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 98.6% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 6,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 89.7% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 7,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 96.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 8,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 96.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 9,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.5% matched, 100.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 10,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.1% matched, 100.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 11,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 89.7% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 12,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 97.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 13,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.9% matched, 98.6% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 14,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 91.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 16,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 93.8% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 17,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.0% matched, 100.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 18,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 96.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 19,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.7% matched, 100.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 20,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 100.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 21,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.4% matched, 91.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 22,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 97.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 23,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.2% matched, 89.7% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 24,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.4% matched, 91.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 25,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.5% matched, 100.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 26,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 16.7% matched, 98.6% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 28,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.1% matched, 100.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 29,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 92.4% assigned"
+    },
+    {
+      "seriesId": "little-fox-great-expectations-fs0052",
+      "episodeId": 30,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 89.7% assigned"
+    }
+  ]
+}
