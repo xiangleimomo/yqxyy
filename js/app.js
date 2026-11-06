@@ -122,7 +122,7 @@ const App = {
     try{
       if(page === 'honors') return await window.SFMedals.render(this,a||'works',b||'');
       if(['homework','family','parent','child'].includes(page)) return await window.SFFamily.render(this);
-      if(page === 'movies') return ['episodes','favorites','recent'].includes(a) ? await window.MediaShelf.render(this,'movies',{mode:a}) : await window.MovieClassroom.renderList(this, decodeURIComponent(a || ''));
+      if(page === 'movies') return await window.MediaShelf.render(this,'movies',{mode:['animated','documentary','episodes','favorites','recent'].includes(a)?a:'animated',query:a==='search'?decodeURIComponent(b||''):''});
       if(page === 'movie-hub') return await window.MovieHub.render(this,a==='search'?'':a,a==='search'?decodeURIComponent(b||''):'');
       if(page === 'movie-series') return await window.MovieClassroom.renderSeries(this, a);
       if(page === 'movie') return await window.MovieClassroom.renderWatch(this, a);
