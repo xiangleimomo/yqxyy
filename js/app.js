@@ -1715,6 +1715,7 @@ addPoints(n=1){
     return this.isGuest() && Number(episodeId)>3;
   },
   canAccessEpisode(seriesId, episodeId){
+    if(seriesId==='movie-harry-potter-1')return !this.isGuestEpisodeLimit(seriesId,episodeId);
     if(this.isAdmin())return true;
     if(window.SFFamily?.canAccessLesson(seriesId,episodeId))return true;
     // The trial episodes are intentionally available without a quiz or account.
