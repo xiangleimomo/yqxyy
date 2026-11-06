@@ -1,0 +1,31 @@
+name: Stop obsolete WhisperX runs (one-time cleanup)
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/stop-obsolete-whisperx-runs.yml'
+permissions:
+  contents: read
+  actions: write
+jobs:
+  cancel-obsolete:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Cancel old 100-episode and blocked 10-episode runs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for run_id in 42129660480 42132786915; do
+            status=$(gh api "repos/${GH_REPO}/actions/runs/${run_id}" --jq '.status')
+            echo "Run ${run_id} current status: ${status}"
+            if [[ "${status}" == "queued" || "${status}" == "pending" || "${status}" == "waiting" || "${status}" == "in_progress" ]]; then
+              gh api --method POST "repos/${GH_REPO}/actions/runs/${run_id}/cancel"
+              echo "Cancel requested for ${run_id}"
+            else
+              echo "Already terminal: ${run_id}"
+            fi
+          done
