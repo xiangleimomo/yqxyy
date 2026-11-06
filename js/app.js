@@ -508,7 +508,7 @@ async renderLesson(seriesId, episodeId){
     const hasSubtitle=true;
     const fallbacks=[...(hls720 && hls720!==url?[hls720]:[]),...(backupHls?[backupHls]:[])];
     const sourceSelector=(hls720||backupHls)?`<label class="hls-source-control" aria-label="视频画质"><select class="hls-source-select" aria-label="选择视频画质" data-hls-1080="${this.escapeHtml(url)}" data-hls-720="${this.escapeHtml(hls720)}" data-hls-korea="${this.escapeHtml(backupHls)}"><option value="1080">1080P</option>${hls720?'<option value="720">720P</option>':''}${backupHls?'<option value="korea">1080P</option>':''}</select></label>`:'';
-    return `<section class="direct-video-panel"><div class="video-wrap${hasSubtitle?' subtitle-video-wrap':''}">${sourceSelector}<video class="hls-video-player" playsinline webkit-playsinline x5-playsinline="true" x5-video-player-type="h5" controlslist="nofullscreen noremoteplayback" disablepictureinpicture preload="metadata" data-hls-src="${this.escapeHtml(url)}" data-hls-fallback-srcs="${this.escapeHtml(JSON.stringify(fallbacks))}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="sf-mobile-caption-area"><div class="video-caption" aria-live="polite" hidden></div><span class="sf-mobile-caption-message" role="status" hidden></span></div>${hasSubtitle?this.subtitleControls():''}</div><div class="sf-mobile-captions-outside" role="region" aria-label="手机英文逐词字幕"><div class="sf-mobile-caption-line" aria-live="off">字幕准备中…</div><div class="sf-mobile-caption-hint" role="status">字幕即将加载</div><button type="button" class="sf-mobile-caption-enable" hidden>开启英文字幕</button></div></section>${this.completeButton(d,completionModule)}`;
+    return `<section class="direct-video-panel"><div class="video-wrap${hasSubtitle?' subtitle-video-wrap':''}">${sourceSelector}<video class="hls-video-player" playsinline webkit-playsinline x5-playsinline="true" x5-video-player-type="h5" controlslist="nofullscreen noremoteplayback" disablepictureinpicture preload="metadata" data-clip-start="${Number.isFinite(Number(d.ep.video?.clipStart))?Number(d.ep.video.clipStart):''}" data-clip-end="${Number.isFinite(Number(d.ep.video?.clipEnd))?Number(d.ep.video.clipEnd):''}" data-hls-src="${this.escapeHtml(url)}" data-hls-fallback-srcs="${this.escapeHtml(JSON.stringify(fallbacks))}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="sf-mobile-caption-area"><div class="video-caption" aria-live="polite" hidden></div><span class="sf-mobile-caption-message" role="status" hidden></span></div>${hasSubtitle?this.subtitleControls():''}</div><div class="sf-mobile-captions-outside" role="region" aria-label="手机英文逐词字幕"><div class="sf-mobile-caption-line" aria-live="off">字幕准备中…</div><div class="sf-mobile-caption-hint" role="status">字幕即将加载</div><button type="button" class="sf-mobile-caption-enable" hidden>开启英文字幕</button></div></section>${this.completeButton(d,completionModule)}`;
   },
   subtitlePreferences(){
     const defaults={visible:true,wordHighlight:true,size:20,color:'#ffffff',captionX:50,captionY:84,opacity:72};
@@ -846,6 +846,16 @@ async renderLesson(seriesId, episodeId){
     if(player.dataset.ready) return;
     player.dataset.ready='1';
     const source=player.dataset.hlsSrc;
+    const clipStart=player.dataset.clipStart!==''?Number(player.dataset.clipStart):NaN;
+    const clipEnd=player.dataset.clipEnd!==''?Number(player.dataset.clipEnd):NaN;
+    if(player.classList.contains('hls-video-player')&&Number.isFinite(clipStart)&&Number.isFinite(clipEnd)&&clipEnd>clipStart){
+      let started=false;
+      const startClip=()=>{if(!started&&player.readyState>=1){started=true;try{player.currentTime=clipStart;}catch{started=false;}}};
+      player.addEventListener('loadedmetadata',startClip);
+      player.addEventListener('durationchange',startClip);
+      player.addEventListener('timeupdate',()=>{if(player.currentTime>=clipEnd){player.pause();if(player.currentTime>clipEnd+0.3)player.currentTime=clipEnd;}});
+      player.addEventListener('seeking',()=>{if(started&&player.currentTime<clipStart-1)player.currentTime=clipStart;else if(started&&player.currentTime>clipEnd+1)player.currentTime=clipEnd;});
+    }
     let hlsFallbacks=[];
     try{hlsFallbacks=JSON.parse(player.dataset.hlsFallbackSrcs||'[]');}catch{hlsFallbacks=[];}
     if(!Array.isArray(hlsFallbacks)) hlsFallbacks=[];
@@ -1705,6 +1715,7 @@ addPoints(n=1){
     return this.isGuest() && Number(episodeId)>3;
   },
   canAccessEpisode(seriesId, episodeId){
+    if(seriesId==='movie-harry-potter-1')return !this.isGuestEpisodeLimit(seriesId,episodeId);
     if(this.isAdmin())return true;
     if(window.SFFamily?.canAccessLesson(seriesId,episodeId))return true;
     // The trial episodes are intentionally available without a quiz or account.

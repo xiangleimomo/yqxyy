@@ -1,578 +1,750 @@
 [
   {
     "episodeId": 1,
-    "title": "A Boy on the Doorstep",
-    "titleZh": "门前的男孩",
-    "summaryEn": "Three visitors bring a baby to a quiet street after a dramatic change in the magical world.",
+    "title": "大难不死的男孩",
+    "titleZh": "大难不死的男孩",
+    "summaryEn": "婴儿哈利被送到德思礼家",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/001.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=1",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 0,
-      "originalEnd": 250.500258,
-      "duration": 250.500258
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 0,
+      "clipEnd": 251.084,
+      "duration": 251.084
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   },
   {
     "episodeId": 2,
-    "title": "A Birthday at the Zoo",
-    "titleZh": "动物园里的生日",
-    "summaryEn": "Harry's ordinary life takes a surprising turn during Dudley's birthday outing.",
+    "title": "动物园里的魔法",
+    "titleZh": "动物园里的魔法",
+    "summaryEn": "哈利在德思礼家生活，动物园玻璃意外消失",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/002.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=2",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 250.500258,
-      "originalEnd": 520.394881,
-      "duration": 269.894623
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 251.084,
+      "clipEnd": 552.385,
+      "duration": 301.301
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   },
   {
     "episodeId": 3,
-    "title": "Letters That Cannot Be Stopped",
-    "titleZh": "挡不住的来信",
-    "summaryEn": "Mysterious letters follow Harry despite his uncle's attempts to stop them.",
+    "title": "霍格沃茨来信",
+    "titleZh": "霍格沃茨来信",
+    "summaryEn": "神秘信件接连出现，德思礼一家逃离",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/003.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=3",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 520.394881,
-      "originalEnd": 875.666459,
-      "duration": 355.271578
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 552.385,
+      "clipEnd": 802.51,
+      "duration": 250.125
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   },
   {
     "episodeId": 4,
-    "title": "Hagrid's Secret",
-    "titleZh": "海格的秘密",
-    "summaryEn": "An unexpected visitor explains Harry's identity and offers him a different future.",
+    "title": "海格揭开身世",
+    "titleZh": "海格揭开身世",
+    "summaryEn": "海格闯入小屋，告诉哈利他是巫师",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/004.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=4",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 875.666459,
-      "originalEnd": 1188.604097,
-      "duration": 312.937638
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 802.51,
+      "clipEnd": 1124.04,
+      "duration": 321.53
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   },
   {
     "episodeId": 5,
-    "title": "First Steps in Diagon Alley",
-    "titleZh": "初入对角巷",
-    "summaryEn": "Harry discovers a hidden shopping street and prepares for his first year at school.",
+    "title": "破釜酒吧与对角巷",
+    "titleZh": "破釜酒吧与对角巷",
+    "summaryEn": "哈利初见巫师世界，进入对角巷",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/005.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=5",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 1188.604097,
-      "originalEnd": 1599.93167,
-      "duration": 411.327573
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 1124.04,
+      "clipEnd": 1238.154,
+      "duration": 114.114
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   },
   {
     "episodeId": 6,
-    "title": "A Wand and a Dark Past",
-    "titleZh": "魔杖与黑暗往事",
-    "summaryEn": "A visit to a wand shop leads to questions about Harry's past.",
+    "title": "古灵阁的秘密",
+    "titleZh": "古灵阁的秘密",
+    "summaryEn": "哈利取出父母遗产，海格领取神秘包裹",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/006.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=6",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 1599.93167,
-      "originalEnd": 1979.977999,
-      "duration": 380.046329
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 1238.154,
+      "clipEnd": 1490.698,
+      "duration": 252.544
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   },
   {
     "episodeId": 7,
-    "title": "The Hogwarts Express",
-    "titleZh": "霍格沃茨特快列车",
-    "summaryEn": "Harry finds the hidden platform and meets other young travellers on the way to Hogwarts.",
+    "title": "魔杖选择巫师",
+    "titleZh": "魔杖选择巫师",
+    "summaryEn": "奥利凡德为哈利挑选魔杖",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/007.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=7",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 1979.977999,
-      "originalEnd": 2387.927213,
-      "duration": 407.949214
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 1490.698,
+      "clipEnd": 1718.8,
+      "duration": 228.102
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   },
   {
     "episodeId": 8,
-    "title": "The Sorting Hat",
-    "titleZh": "分院帽",
-    "summaryEn": "New students enter the castle, meet the teachers, and discover their houses.",
+    "title": "伏地魔的往事",
+    "titleZh": "伏地魔的往事",
+    "summaryEn": "海格解释伤疤、父母和伏地魔",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/008.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=8",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 2387.927213,
-      "originalEnd": 2998.704047,
-      "duration": 610.776834
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 1718.8,
+      "clipEnd": 1893.141,
+      "duration": 174.341
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   },
   {
     "episodeId": 9,
-    "title": "Staircases and First Lessons",
-    "titleZh": "楼梯与第一堂课",
-    "summaryEn": "Harry explores an unfamiliar school and faces his first demanding lessons.",
+    "title": "九又四分之三站台",
+    "titleZh": "九又四分之三站台",
+    "summaryEn": "哈利寻找并穿过魔法站台",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/009.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=9",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 2998.704047,
-      "originalEnd": 3509.047213,
-      "duration": 510.343166
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 1893.141,
+      "clipEnd": 2062.978,
+      "duration": 169.837
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   },
   {
     "episodeId": 10,
-    "title": "A Natural on a Broom",
-    "titleZh": "飞行天赋",
-    "summaryEn": "A flying lesson reveals a talent that brings Harry an unexpected opportunity.",
+    "title": "火车上的新朋友",
+    "titleZh": "火车上的新朋友",
+    "summaryEn": "哈利与罗恩、赫敏相识",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/010.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=10",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 3509.047213,
-      "originalEnd": 3792.288502,
-      "duration": 283.241289
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 2062.978,
+      "clipEnd": 2278.526,
+      "duration": 215.548
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   },
   {
     "episodeId": 11,
-    "title": "The Dog Behind the Door",
-    "titleZh": "门后的大狗",
-    "summaryEn": "An accidental journey through the castle leads the friends to a guarded door.",
+    "title": "初见霍格沃茨",
+    "titleZh": "初见霍格沃茨",
+    "summaryEn": "新生抵达城堡，认识学院制度",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/011.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=11",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 3792.288502,
-      "originalEnd": 4028.607927,
-      "duration": 236.319425
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 2278.526,
+      "clipEnd": 2428.426,
+      "duration": 149.9
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   },
   {
     "episodeId": 12,
-    "title": "Learning Quidditch",
-    "titleZh": "认识魁地奇",
-    "summaryEn": "Wood explains the players, equipment, and aims of a new sport.",
+    "title": "马尔福与分院仪式",
+    "titleZh": "马尔福与分院仪式",
+    "summaryEn": "哈利拒绝马尔福，分院帽决定学院",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/012.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=12",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 4028.607927,
-      "originalEnd": 4154.066594,
-      "duration": 125.458667
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 2428.426,
+      "clipEnd": 2885.299,
+      "duration": 456.873
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   },
   {
     "episodeId": 13,
-    "title": "A Troll at Halloween",
-    "titleZh": "万圣节的巨怪",
-    "summaryEn": "A difficult school day turns into a dangerous Halloween adventure.",
+    "title": "格兰芬多公共休息室",
+    "titleZh": "格兰芬多公共休息室",
+    "summaryEn": "新生进入宿舍，认识会变化的楼梯和画像",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/013.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=13",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 4154.066594,
-      "originalEnd": 4649.311335,
-      "duration": 495.244741
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 2885.299,
+      "clipEnd": 3050.631,
+      "duration": 165.332
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   },
   {
     "episodeId": 14,
-    "title": "Danger on the Pitch",
-    "titleZh": "球场上的危险",
-    "summaryEn": "Harry takes part in his first match while his friends watch anxiously.",
+    "title": "魔药课上的斯内普",
+    "titleZh": "魔药课上的斯内普",
+    "summaryEn": "哈利开始上课，发现古灵阁被闯入",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/014.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=14",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 4649.311335,
-      "originalEnd": 5236.731497,
-      "duration": 587.420162
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 3050.631,
+      "clipEnd": 3309.932,
+      "duration": 259.301
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   },
   {
     "episodeId": 15,
-    "title": "A Christmas Gift",
-    "titleZh": "圣诞礼物",
-    "summaryEn": "Christmas brings a mysterious gift and a chance to explore after dark.",
+    "title": "第一次飞行课",
+    "titleZh": "第一次飞行课",
+    "summaryEn": "纳威摔伤，哈利展现飞行天赋",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/015.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=15",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 5236.731497,
-      "originalEnd": 5630.87525,
-      "duration": 394.143753
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 3309.932,
+      "clipEnd": 3657.904,
+      "duration": 347.972
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   },
   {
     "episodeId": 16,
-    "title": "The Mirror of Erised",
-    "titleZh": "厄里斯魔镜",
-    "summaryEn": "A remarkable mirror draws Harry back again and again.",
+    "title": "三头犬的秘密",
+    "titleZh": "三头犬的秘密",
+    "summaryEn": "误入禁区，发现活板门与三头犬",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/016.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=16",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 5630.87525,
-      "originalEnd": 6094.004584,
-      "duration": 463.129334
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 3657.904,
+      "clipEnd": 3831.578,
+      "duration": 173.674
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   },
   {
     "episodeId": 17,
-    "title": "Discovering the Stone",
-    "titleZh": "寻找魔法石的秘密",
-    "summaryEn": "Research and a familiar name help the friends connect the clues.",
+    "title": "魁地奇训练与漂浮咒",
+    "titleZh": "魁地奇训练与漂浮咒",
+    "summaryEn": "哈利学习魁地奇，赫敏在魔咒课展示能力",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/017.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=17",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 6094.004584,
-      "originalEnd": 6311.01304,
-      "duration": 217.008456
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 3831.578,
+      "clipEnd": 4093.673,
+      "duration": 262.095
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   },
   {
     "episodeId": 18,
-    "title": "A Secret Dragon",
-    "titleZh": "秘密养龙",
-    "summaryEn": "Hagrid's unusual pet creates excitement, suspicion, and serious consequences.",
+    "title": "万圣节巨怪",
+    "titleZh": "万圣节巨怪",
+    "summaryEn": "三人合力救出赫敏，成为朋友",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/018.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=18",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 6311.01304,
-      "originalEnd": 6543.703826,
-      "duration": 232.690786
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 4093.673,
+      "clipEnd": 4466.712,
+      "duration": 373.039
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   },
   {
     "episodeId": 19,
-    "title": "Into the Forbidden Forest",
-    "titleZh": "走进禁林",
-    "summaryEn": "Detention takes Harry into a forest where something is threatening its creatures.",
+    "title": "第一场魁地奇比赛",
+    "titleZh": "第一场魁地奇比赛",
+    "summaryEn": "哈利的扫帚失控，最终抓住金色飞贼",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/019.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=19",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 6543.703826,
-      "originalEnd": 6930.757157,
-      "duration": 387.053331
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 4466.712,
+      "clipEnd": 4995.157,
+      "duration": 528.445
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   },
   {
     "episodeId": 20,
-    "title": "A Race to Save the Stone",
-    "titleZh": "抢救魔法石",
-    "summaryEn": "The friends connect a stranger's questions with the danger facing the Stone.",
+    "title": "尼可·勒梅的线索",
+    "titleZh": "尼可·勒梅的线索",
+    "summaryEn": "比赛后怀疑斯内普，海格说漏嘴",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/020.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=20",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 6930.757157,
-      "originalEnd": 7254.538944,
-      "duration": 323.781787
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 4995.157,
+      "clipEnd": 5126.705,
+      "duration": 131.548
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   },
   {
     "episodeId": 21,
-    "title": "Beneath the Trapdoor",
-    "titleZh": "活板门之下",
-    "summaryEn": "The friends enter the trapdoor and face a series of magical obstacles.",
+    "title": "圣诞节与夜间探索",
+    "titleZh": "圣诞节与夜间探索",
+    "summaryEn": "圣诞节收到隐形衣，夜间探索学校走廊",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/021.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=21",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 7254.538944,
-      "originalEnd": 7484.935776,
-      "duration": 230.396832
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 5126.705,
+      "clipEnd": 5586.998,
+      "duration": 460.293
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   },
   {
     "episodeId": 22,
-    "title": "Flying Keys and Wizard Chess",
-    "titleZh": "飞行钥匙与巫师棋",
-    "summaryEn": "Flying skill, strategy, and friendship are tested on the way to the final room.",
+    "title": "厄里斯魔镜",
+    "titleZh": "厄里斯魔镜",
+    "summaryEn": "哈利在魔镜里见到家人，邓布利多解释",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/022.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=22",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 7484.935776,
-      "originalEnd": 8000.492488,
-      "duration": 515.556712
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 5586.998,
+      "clipEnd": 5795.873,
+      "duration": 208.875
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   },
   {
     "episodeId": 23,
-    "title": "The Enemy Behind the Turban",
-    "titleZh": "头巾后的敌人",
-    "summaryEn": "Harry reaches the last chamber and discovers the truth about his enemy.",
+    "title": "魔法石的真相",
+    "titleZh": "魔法石的真相",
+    "summaryEn": "三人发现尼可·勒梅与魔法石的联系",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/023.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=23",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 8000.492488,
-      "originalEnd": 8429.045611,
-      "duration": 428.553123
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 5795.873,
+      "clipEnd": 5999.911,
+      "duration": 204.038
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   },
   {
     "episodeId": 24,
-    "title": "Love, Courage, and Home",
-    "titleZh": "爱、勇气与家",
-    "summaryEn": "Harry recovers, the school celebrates, and the first year comes to an end.",
+    "title": "海格的小龙诺伯",
+    "titleZh": "海格的小龙诺伯",
+    "summaryEn": "海格孵出小龙，学生违反校规",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-1/hls/024.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?episode=24",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/14/6990426ffc9ffa7ba6441306/b9792e/index.m3u8",
-      "originalStart": 8429.045611,
-      "originalEnd": 9041.699322,
-      "duration": 612.653711
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 5999.911,
+      "clipEnd": 6175.419,
+      "duration": 175.508
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": true,
-      "vocabulary": true,
-      "quiz": true
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
+    }
+  },
+  {
+    "episodeId": 25,
+    "title": "禁林里的独角兽",
+    "titleZh": "禁林里的独角兽",
+    "summaryEn": "学生受罚，哈利遇见吸食独角兽血的黑影",
+    "status": "published",
+    "sourceType": "hls",
+    "video": {
+      "source": "hls",
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 6175.419,
+      "clipEnd": 6595.798,
+      "duration": 420.379
+    },
+    "modules": {
+      "watch": true,
+      "read": false,
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
+    }
+  },
+  {
+    "episodeId": 26,
+    "title": "魔法石危机与行动",
+    "titleZh": "魔法石危机与行动",
+    "summaryEn": "海格泄露秘密，邓布利多离校，三人决定夜闯禁区",
+    "status": "published",
+    "sourceType": "hls",
+    "video": {
+      "source": "hls",
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 6595.798,
+      "clipEnd": 6816.435,
+      "duration": 220.637
+    },
+    "modules": {
+      "watch": true,
+      "read": false,
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
+    }
+  },
+  {
+    "episodeId": 27,
+    "title": "闯入活板门与魔鬼网",
+    "titleZh": "闯入活板门与魔鬼网",
+    "summaryEn": "三人制服三头犬、跳下活板门，赫敏解除魔鬼网",
+    "status": "published",
+    "sourceType": "hls",
+    "video": {
+      "source": "hls",
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 6816.435,
+      "clipEnd": 7078.446,
+      "duration": 262.011
+    },
+    "modules": {
+      "watch": true,
+      "read": false,
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
+    }
+  },
+  {
+    "episodeId": 28,
+    "title": "飞翔的钥匙",
+    "titleZh": "飞翔的钥匙",
+    "summaryEn": "哈利骑扫帚找到钥匙，进入巫师棋房间",
+    "status": "published",
+    "sourceType": "hls",
+    "video": {
+      "source": "hls",
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 7078.446,
+      "clipEnd": 7251.995,
+      "duration": 173.549
+    },
+    "modules": {
+      "watch": true,
+      "read": false,
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
+    }
+  },
+  {
+    "episodeId": 29,
+    "title": "巫师棋的牺牲",
+    "titleZh": "巫师棋的牺牲",
+    "summaryEn": "罗恩下棋并牺牲自己让哈利前进",
+    "status": "published",
+    "sourceType": "hls",
+    "video": {
+      "source": "hls",
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 7251.995,
+      "clipEnd": 7599.967,
+      "duration": 347.972
+    },
+    "modules": {
+      "watch": true,
+      "read": false,
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
+    }
+  },
+  {
+    "episodeId": 30,
+    "title": "奇洛的真实身份",
+    "titleZh": "奇洛的真实身份",
+    "summaryEn": "哈利发现奇洛才是幕后窃贼",
+    "status": "published",
+    "sourceType": "hls",
+    "video": {
+      "source": "hls",
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 7599.967,
+      "clipEnd": 7795.621,
+      "duration": 195.654
+    },
+    "modules": {
+      "watch": true,
+      "read": false,
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
+    }
+  },
+  {
+    "episodeId": 31,
+    "title": "魔镜中的魔法石",
+    "titleZh": "魔镜中的魔法石",
+    "summaryEn": "伏地魔现身，哈利守护魔法石",
+    "status": "published",
+    "sourceType": "hls",
+    "video": {
+      "source": "hls",
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 7795.621,
+      "clipEnd": 8069.186,
+      "duration": 273.565
+    },
+    "modules": {
+      "watch": true,
+      "read": false,
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
+    }
+  },
+  {
+    "episodeId": 32,
+    "title": "医务室里的答案",
+    "titleZh": "医务室里的答案",
+    "summaryEn": "邓布利多解释魔法石与母爱的保护",
+    "status": "published",
+    "sourceType": "hls",
+    "video": {
+      "source": "hls",
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 8069.186,
+      "clipEnd": 8285.778,
+      "duration": 216.592
+    },
+    "modules": {
+      "watch": true,
+      "read": false,
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
+    }
+  },
+  {
+    "episodeId": 33,
+    "title": "学院杯的逆转",
+    "titleZh": "学院杯的逆转",
+    "summaryEn": "格兰芬多凭借最后加分赢得学院杯",
+    "status": "published",
+    "sourceType": "hls",
+    "video": {
+      "source": "hls",
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 8285.778,
+      "clipEnd": 8509.668,
+      "duration": 223.89
+    },
+    "modules": {
+      "watch": true,
+      "read": false,
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
+    }
+  },
+  {
+    "episodeId": 34,
+    "title": "告别霍格沃茨",
+    "titleZh": "告别霍格沃茨",
+    "summaryEn": "哈利与朋友乘火车返家",
+    "status": "published",
+    "sourceType": "hls",
+    "video": {
+      "source": "hls",
+      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "clipStart": 8509.668,
+      "clipEnd": 8604,
+      "duration": 94.332
+    },
+    "modules": {
+      "watch": true,
+      "read": false,
+      "words": false,
+      "vocabulary": false,
+      "quiz": false
     }
   }
 ]
