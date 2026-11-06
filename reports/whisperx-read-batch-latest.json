@@ -1,65 +1,125 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42138547949",
-  "completedAt": "2026-11-06T00:43:22.638495+00:00",
+  "runId": "42140363375",
+  "completedAt": "2026-11-06T01:43:25.828398+00:00",
   "batchSize": 10,
   "selected": 10,
-  "published": 0,
-  "rejected": 10,
+  "published": 10,
+  "rejected": 0,
   "websiteCommitRequired": true,
-  "totalWords": 0,
-  "speechMatchedWords": 0,
-  "success": [],
-  "failures": [
+  "totalWords": 11837,
+  "speechMatchedWords": 11837,
+  "success": [
     {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
       "episodeId": 6,
-      "reason": "ValueError: Official XML transcript is incomplete"
+      "cues": 113,
+      "words": 1180,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 1180,
+      "coverage": 0.9992,
+      "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
       "episodeId": 7,
-      "reason": "ValueError: Official XML transcript is incomplete"
+      "cues": 112,
+      "words": 1192,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 80,
+      "speechWords": 1192,
+      "coverage": 0.9992,
+      "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
       "episodeId": 8,
-      "reason": "ValueError: Official XML transcript is incomplete"
+      "cues": 107,
+      "words": 1183,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 1183,
+      "coverage": 1.0,
+      "omittedWords": 0
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
       "episodeId": 9,
-      "reason": "ValueError: Official XML transcript is incomplete"
+      "cues": 117,
+      "words": 1181,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 1181,
+      "coverage": 0.9992,
+      "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
       "episodeId": 10,
-      "reason": "ValueError: Official XML transcript is incomplete"
+      "cues": 117,
+      "words": 1191,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 1191,
+      "coverage": 1.0,
+      "omittedWords": 0
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
       "episodeId": 11,
-      "reason": "ValueError: Official XML transcript is incomplete"
+      "cues": 91,
+      "words": 1173,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 1173,
+      "coverage": 1.0,
+      "omittedWords": 0
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
       "episodeId": 12,
-      "reason": "ValueError: Official XML transcript is incomplete"
+      "cues": 110,
+      "words": 1195,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 1195,
+      "coverage": 1.0,
+      "omittedWords": 0
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
       "episodeId": 13,
-      "reason": "ValueError: Official XML transcript is incomplete"
+      "cues": 112,
+      "words": 1161,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 80,
+      "speechWords": 1161,
+      "coverage": 0.9991,
+      "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
       "episodeId": 14,
-      "reason": "ValueError: Official XML transcript is incomplete"
+      "cues": 118,
+      "words": 1191,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 1191,
+      "coverage": 0.9992,
+      "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-abc-book-fs0070",
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
       "episodeId": 15,
-      "reason": "ValueError: Official XML transcript is incomplete"
+      "cues": 111,
+      "words": 1190,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 1190,
+      "coverage": 1.0,
+      "omittedWords": 0
     }
-  ]
+  ],
+  "failures": []
 }
