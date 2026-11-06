@@ -1,0 +1,265 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42293934059",
+  "completedAt": "2026-11-06T21:15:15.107109+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 0,
+  "rejected": 50,
+  "websiteCommitRequired": true,
+  "totalWords": 0,
+  "speechMatchedWords": 0,
+  "success": [],
+  "failures": [
+    {
+      "seriesId": "little-fox-my-first-readers-2-fs0129",
+      "episodeId": 60,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-2-fs0129",
+      "episodeId": 61,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-2-fs0129",
+      "episodeId": 62,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-2-fs0129",
+      "episodeId": 63,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-2-fs0129",
+      "episodeId": 64,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-2-fs0129",
+      "episodeId": 65,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-2-fs0129",
+      "episodeId": 66,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.2% matched, 9.8% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-2-fs0129",
+      "episodeId": 67,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 2,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 3,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 4,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 5,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 6,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 7,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 8,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 9,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 10,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 11,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 12,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 13,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 14,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 15,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 16,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 17,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 18,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 19,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 20,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 21,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 22,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (62677 ms, minimum 89430 ms); cdn.littlefox.com: insufficient audio (62677 ms, minimum 89430 ms); cdn.littlefox.co.kr: insufficient audio (62677 ms, minimum 89430 ms)"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 23,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 24,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 25,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (105771 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (105771 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (105771 ms, minimum 120000 ms)"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 26,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (99520 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (99520 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (99520 ms, minimum 120000 ms)"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 27,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 28,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (86101 ms, minimum 103620 ms); cdn.littlefox.com: insufficient audio (86101 ms, minimum 103620 ms); cdn.littlefox.co.kr: insufficient audio (86101 ms, minimum 103620 ms)"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 29,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 30,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (93931 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (93931 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (93931 ms, minimum 120000 ms)"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 31,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 32,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 33,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (113280 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (113280 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (113280 ms, minimum 120000 ms)"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 34,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 35,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 36,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (95808 ms, minimum 103290 ms); cdn.littlefox.com: insufficient audio (95808 ms, minimum 103290 ms); cdn.littlefox.co.kr: insufficient audio (95808 ms, minimum 103290 ms)"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 37,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 38,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (74709 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (74709 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (74709 ms, minimum 120000 ms)"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 39,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (74069 ms, minimum 75020 ms); cdn.littlefox.com: insufficient audio (74069 ms, minimum 75020 ms); cdn.littlefox.co.kr: insufficient audio (74069 ms, minimum 75020 ms)"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 40,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 41,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-3-fs0130",
+      "episodeId": 42,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.0% matched, 0.0% assigned"
+    }
+  ]
+}
