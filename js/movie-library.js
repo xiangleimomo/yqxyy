@@ -9,7 +9,12 @@ window.MovieLibrary={
     if(!includeDrafts)query=query.eq('published',true);
     const {data,error}=await query;if(error)throw error;return data||[];
   },
-  async published(){if(!this.cache)this.cache=this.rows(false).catch(error=>{this.cache=null;throw error;});return this.cache;},
+  async published(){
+    // Do not permanently cache an empty response when the cloud client has not initialized.
+    if(!window.SFCloud?.client){this.cache=null;return [];}
+    // Refresh published catalogue on every shelf navigation; admin updates must appear immediately.
+    try{return await this.rows(false);}catch(error){console.warn('Published movie library unavailable',error);throw error;}
+  },
   invalidate(){this.cache=null;},
   asGroups(rows){
     return Object.keys(this.categories).map(category=>({id:'library-'+category,title:this.categories[category],titleZh:this.categories[category],level:'',rating:0,genre:'动态影视',dynamicCategory:category,films:rows.filter(row=>row.category===category).map(row=>[row.id,row.title,row.title_zh,row.year])})).filter(group=>group.films.length);
