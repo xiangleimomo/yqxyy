@@ -1,320 +1,314 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42205528202",
-  "completedAt": "2026-11-06T11:02:52.235335+00:00",
+  "runId": "42207274220",
+  "completedAt": "2026-11-06T11:16:16.892850+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 9,
-  "rejected": 41,
+  "published": 8,
+  "rejected": 42,
   "websiteCommitRequired": true,
-  "totalWords": 3427,
-  "speechMatchedWords": 3427,
+  "totalWords": 4053,
+  "speechMatchedWords": 4053,
   "success": [
     {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 85,
-      "cues": 63,
-      "words": 400,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 60,
-      "speechWords": 400,
-      "coverage": 0.9926,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 86,
-      "cues": 61,
-      "words": 386,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 55,
-      "speechWords": 386,
-      "coverage": 0.9923,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 87,
-      "cues": 61,
-      "words": 329,
+      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "episodeId": 3,
+      "cues": 78,
+      "words": 452,
       "xmlTextVerified": true,
       "xmlParagraphs": 58,
-      "speechWords": 329,
-      "coverage": 0.988,
-      "omittedWords": 4
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 90,
-      "cues": 53,
-      "words": 350,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 51,
-      "speechWords": 350,
-      "coverage": 0.9972,
+      "speechWords": 452,
+      "coverage": 0.9978,
       "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 91,
-      "cues": 74,
-      "words": 458,
+      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "episodeId": 4,
+      "cues": 72,
+      "words": 450,
       "xmlTextVerified": true,
-      "xmlParagraphs": 68,
-      "speechWords": 458,
-      "coverage": 0.9957,
+      "xmlParagraphs": 53,
+      "speechWords": 450,
+      "coverage": 0.9956,
       "omittedWords": 2
     },
     {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 92,
-      "cues": 58,
-      "words": 356,
+      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "episodeId": 5,
+      "cues": 88,
+      "words": 507,
       "xmlTextVerified": true,
-      "xmlParagraphs": 56,
-      "speechWords": 356,
-      "coverage": 0.9861,
-      "omittedWords": 5
+      "xmlParagraphs": 65,
+      "speechWords": 507,
+      "coverage": 0.9961,
+      "omittedWords": 2
     },
     {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 94,
-      "cues": 56,
-      "words": 352,
+      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "episodeId": 6,
+      "cues": 96,
+      "words": 546,
       "xmlTextVerified": true,
-      "xmlParagraphs": 53,
-      "speechWords": 352,
-      "coverage": 0.9888,
-      "omittedWords": 4
+      "xmlParagraphs": 66,
+      "speechWords": 546,
+      "coverage": 1.0,
+      "omittedWords": 0
     },
     {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 95,
-      "cues": 72,
-      "words": 416,
+      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "episodeId": 8,
+      "cues": 108,
+      "words": 565,
       "xmlTextVerified": true,
-      "xmlParagraphs": 64,
-      "speechWords": 416,
-      "coverage": 0.9976,
+      "xmlParagraphs": 76,
+      "speechWords": 565,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "episodeId": 9,
+      "cues": 88,
+      "words": 512,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 512,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "episodeId": 10,
+      "cues": 79,
+      "words": 483,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 483,
+      "coverage": 0.9979,
       "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 99,
-      "cues": 52,
-      "words": 380,
+      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "episodeId": 11,
+      "cues": 83,
+      "words": 538,
       "xmlTextVerified": true,
-      "xmlParagraphs": 47,
-      "speechWords": 380,
-      "coverage": 0.9974,
+      "xmlParagraphs": 63,
+      "speechWords": 538,
+      "coverage": 0.9981,
       "omittedWords": 1
     }
   ],
   "failures": [
     {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 88,
-      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 89,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 81.9% matched, 100.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 93,
-      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 96,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 81.6% matched, 100.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 97,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 78.7% matched, 100.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 98,
-      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-danny-s-adventures-fs0034",
-      "episodeId": 100,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 80.2% matched, 100.0% assigned"
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 35,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 1,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.6% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 2,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 3,
-      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 4,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 5,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 6,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.1% matched, 0.4% assigned"
-    },
-    {
-      "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 7,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 8,
-      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 9,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 10,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 11,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 4.5% assigned"
-    },
-    {
-      "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 12,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 13,
-      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 14,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 15,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 16,
+      "episodeId": 36,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 17,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.2% matched, 0.0% assigned"
+      "episodeId": 37,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 18,
-      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 19,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.7% matched, 4.4% assigned"
-    },
-    {
-      "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 20,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 21,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 22,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 23,
-      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 24,
+      "episodeId": 38,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.6% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 25,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.5% matched, 0.0% assigned"
+      "episodeId": 39,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
       "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 26,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.7% matched, 0.0% assigned"
+      "episodeId": 40,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.1% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 27,
+      "episodeId": 41,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 42,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 43,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 44,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 45,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 46,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.3% matched, 3.2% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 47,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 48,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 49,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 50,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.5% matched, 2.5% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 51,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.2% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 28,
-      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+      "episodeId": 52,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.5% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 29,
+      "episodeId": 53,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 54,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 55,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.8% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 30,
+      "episodeId": 56,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 57,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 58,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 59,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 60,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 61,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 62,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 63,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 31,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.2% matched, 0.0% assigned"
+      "episodeId": 64,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
       "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 32,
+      "episodeId": 65,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 66,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 67,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 33,
-      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+      "episodeId": 68,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.2% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-dino-buddies-fs0102",
-      "episodeId": 34,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.0% matched, 0.0% assigned"
+      "episodeId": 69,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 70,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 71,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dino-buddies-fs0102",
+      "episodeId": 72,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 79.9% matched, 99.7% assigned"
+    },
+    {
+      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "episodeId": 2,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "episodeId": 7,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "episodeId": 12,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     }
   ]
 }
