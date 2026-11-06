@@ -39,8 +39,16 @@ jobs:
               assert e[i-1]['modules']['words'] and e[i-1]['modules']['quiz']
               hls=(p/'hls'/f'{i:03d}.m3u8').read_text()
               vtt=(p/'subtitles'/f'{i:03d}.vtt').read_text()
-              assert hls.startswith('#EXTM3U') and '#EXT-X-ENDLIST' in hls
-              assert '#EXTINF' in hls and 'http' in hls
+              assert hls.startswith('#EXTM3U')
+              if '#EXT-X-STREAM-INF' in hls:
+                  audio=(p/'hls'/f'{i:03d}.audio.m3u8').read_text()
+                  video=(p/'hls'/f'{i:03d}.video.m3u8').read_text()
+                  assert '#EXT-X-MEDIA:TYPE=AUDIO' in hls
+                  assert '#EXT-X-ENDLIST' in audio and '#EXTINF' in audio
+                  assert '#EXT-X-ENDLIST' in video and '#EXTINF' in video
+                  assert 'http' in audio and 'http' in video
+              else:
+                  assert '#EXT-X-ENDLIST' in hls and '#EXTINF' in hls and 'http' in hls
               assert vtt.startswith('WEBVTT')
               assert len(v[str(i)])>=3
               assert len(q[str(i)]['questions'])==5
