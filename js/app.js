@@ -124,6 +124,7 @@ const App = {
       if(['homework','family','parent','child'].includes(page)) return await window.SFFamily.render(this);
       if(page === 'movies') return await window.MediaShelf.render(this,'movies',{mode:['animated','documentary','episodes','favorites','recent'].includes(a)?a:'animated',query:a==='search'?decodeURIComponent(b||''):''});
       if(page === 'movie-hub') return await window.MovieHub.render(this,a==='search'?'':a,a==='search'?decodeURIComponent(b||''):'');
+      if(page === 'movie-admin') return await window.MovieLibrary.renderAdmin(this);
       if(page === 'movie-series') return await window.MovieClassroom.renderSeries(this, a);
       if(page === 'movie') return await window.MovieClassroom.renderWatch(this, a);
       if(page === 'reading'||page === 'magazines') {

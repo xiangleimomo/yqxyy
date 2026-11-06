@@ -51,21 +51,22 @@ window.MovieClassroom = {
     if (this.player) { this.player.pause(); this.player.removeAttribute('src'); this.player.load(); this.player = null; }
   },
   async getLibrary(app) {
-    const [catalog,settings,hub,providers]=await Promise.all([app.getJSON('data/movie-series.json'),app.getJSON('data/movie-playback.json'),app.getJSON('data/movie-hub-catalog.json'),app.getJSON('data/movie-hub-providers.json')]);
+    const [catalog,settings,hub,providers,dynamicRows]=await Promise.all([app.getJSON('data/movie-series.json'),app.getJSON('data/movie-playback.json'),app.getJSON('data/movie-hub-catalog.json'),app.getJSON('data/movie-hub-providers.json'),window.MovieLibrary?.published?.().catch(()=>[])||[]]);
     const series = await Promise.all(catalog.map(async item => ({
       ...item,
       ...(await app.getJSON(`data/movies/${item.id}/movies.json`))
     })));
-    const legacy=settings.mode==='legacy'&&settings.legacyPrimaryEnabled===true,ids=new Map(hub.films.map(film=>[film.id,film.tmdbId])),useVidMario=settings.mode==='vidmario',embedProviders=providers.filter(provider=>provider.mode==='embed');
-    const playable=legacy?series.flatMap(item=>item.sources||[]).filter(item=>this.playbackSource(item).url):series.flatMap(group=>group.films.map(([id,title,titleZh,year])=>{
-      const tmdb=ids.get(id),validTmdb=Number.isSafeInteger(tmdb)&&tmdb>0;
+    const dynamicGroups=window.MovieLibrary?.asGroups?.(dynamicRows)||[],allSeries=[...dynamicGroups,...series],dynamicInfo=window.MovieLibrary?.info?.(dynamicRows)||new Map();
+    const legacy=settings.mode==='legacy'&&settings.legacyPrimaryEnabled===true,ids=new Map([...hub.films,...dynamicRows.map(row=>({id:row.id,tmdbId:Number(row.tmdb_id)}))].map(film=>[film.id,film.tmdbId])),useVidMario=settings.mode==='vidmario',embedProviders=providers.filter(provider=>provider.mode==='embed');
+    const playable=legacy?allSeries.flatMap(item=>item.sources||[]).filter(item=>this.playbackSource(item).url):allSeries.flatMap(group=>group.films.map(([id,title,titleZh,year])=>{
+      const dynamic=dynamicInfo.get(id),tmdb=ids.get(id),validTmdb=Number.isSafeInteger(tmdb)&&tmdb>0;
       if(useVidMario){
         const embeddedSources=validTmdb?embedProviders.map(provider=>({url:provider.movieUrl.replace('{tmdbId}',String(tmdb)),embedded:true,label:provider.name})).filter(source=>{try{const url=new URL(source.url);return url.protocol==='https:'&&!url.username&&!url.password;}catch{return false;}}):[];
-        return {...(group.sources||[]).find(item=>item.id===id),id,title,titleZh,year,playerMode:'embed-fallback',embedUrl:embeddedSources[0]?.url||'',sourceLabel:embeddedSources[0]?.label||'嵌入播放源',backupSources:embeddedSources.slice(1)};
+        return {...(group.sources||[]).find(item=>item.id===id),id,title,titleZh,year,cover:dynamic?.poster_url||'',description:dynamic?.overview||'',playerMode:'embed-fallback',embedUrl:embeddedSources[0]?.url||'',sourceLabel:embeddedSources[0]?.label||'嵌入播放源',backupSources:embeddedSources.slice(1)};
       }
-      return {...(group.sources||[]).find(item=>item.id===id),id,title,titleZh,year,playerMode:'dulo',embedUrl:validTmdb?'https://dulo.mov/watch/movie/'+tmdb:'',sourceLabel:'Dulo 播放器'};
+      return {...(group.sources||[]).find(item=>item.id===id),id,title,titleZh,year,cover:dynamic?.poster_url||'',description:dynamic?.overview||'',playerMode:'dulo',embedUrl:validTmdb?'https://dulo.mov/watch/movie/'+tmdb:'',sourceLabel:'Dulo 播放器'};
     })).filter(item=>item.embedUrl);
-    return { series, playable, playableById: new Map(playable.map(item => [item.id, item])) };
+    return { series:allSeries, playable, playableById: new Map(playable.map(item => [item.id, item])) };
   },
   stars(rating) { return '★'.repeat(rating) + '☆'.repeat(5 - rating); },
   backupSources(movie) {
