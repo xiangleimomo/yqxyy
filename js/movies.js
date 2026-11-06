@@ -56,10 +56,10 @@ window.MovieClassroom = {
       ...item,
       ...(await app.getJSON(`data/movies/${item.id}/movies.json`))
     })));
-    const legacy=settings.mode==='legacy'&&settings.legacyPrimaryEnabled===true,ids=new Map(hub.films.map(film=>[film.id,film.tmdbId])),useEmbedFallback=settings.mode==='embed-fallback',embedProviders=providers.filter(provider=>provider.mode==='embed');
+    const legacy=settings.mode==='legacy'&&settings.legacyPrimaryEnabled===true,ids=new Map(hub.films.map(film=>[film.id,film.tmdbId])),useVidMario=settings.mode==='vidmario',embedProviders=providers.filter(provider=>provider.mode==='embed');
     const playable=legacy?series.flatMap(item=>item.sources||[]).filter(item=>this.playbackSource(item).url):series.flatMap(group=>group.films.map(([id,title,titleZh,year])=>{
       const tmdb=ids.get(id),validTmdb=Number.isSafeInteger(tmdb)&&tmdb>0;
-      if(useEmbedFallback){
+      if(useVidMario){
         const embeddedSources=validTmdb?embedProviders.map(provider=>({url:provider.movieUrl.replace('{tmdbId}',String(tmdb)),embedded:true,label:provider.name})).filter(source=>{try{const url=new URL(source.url);return url.protocol==='https:'&&!url.username&&!url.password;}catch{return false;}}):[];
         return {...(group.sources||[]).find(item=>item.id===id),id,title,titleZh,year,playerMode:'embed-fallback',embedUrl:embeddedSources[0]?.url||'',sourceLabel:embeddedSources[0]?.label||'嵌入播放源',backupSources:embeddedSources.slice(1)};
       }
