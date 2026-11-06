@@ -1,74 +1,283 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42180977010",
-  "completedAt": "2026-11-06T07:45:43.404970+00:00",
+  "runId": "42183008054",
+  "completedAt": "2026-11-06T08:11:20.367204+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 7,
-  "rejected": 43,
+  "published": 50,
+  "rejected": 0,
   "websiteCommitRequired": true,
-  "totalWords": 5576,
-  "speechMatchedWords": 5576,
+  "totalWords": 34433,
+  "speechMatchedWords": 34433,
   "success": [
     {
       "seriesId": "little-fox-black-beauty-fs0049",
-      "episodeId": 1,
-      "cues": 86,
-      "words": 798,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 798,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-black-beauty-fs0049",
-      "episodeId": 2,
-      "cues": 75,
-      "words": 802,
+      "episodeId": 8,
+      "cues": 89,
+      "words": 796,
       "xmlTextVerified": true,
       "xmlParagraphs": 70,
-      "speechWords": 802,
+      "speechWords": 796,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 9,
+      "cues": 85,
+      "words": 804,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 804,
+      "coverage": 0.9988,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 10,
+      "cues": 85,
+      "words": 792,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 792,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
       "seriesId": "little-fox-black-beauty-fs0049",
-      "episodeId": 3,
-      "cues": 87,
+      "episodeId": 11,
+      "cues": 78,
+      "words": 759,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 759,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 12,
+      "cues": 74,
+      "words": 799,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 799,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 13,
+      "cues": 68,
+      "words": 752,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 752,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 14,
+      "cues": 80,
+      "words": 782,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 782,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 15,
+      "cues": 86,
+      "words": 794,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 794,
+      "coverage": 0.9975,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 16,
+      "cues": 85,
+      "words": 793,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 793,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 17,
+      "cues": 77,
+      "words": 774,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 774,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 18,
+      "cues": 74,
       "words": 786,
       "xmlTextVerified": true,
-      "xmlParagraphs": 74,
+      "xmlParagraphs": 66,
       "speechWords": 786,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
       "seriesId": "little-fox-black-beauty-fs0049",
-      "episodeId": 4,
-      "cues": 73,
-      "words": 793,
+      "episodeId": 19,
+      "cues": 77,
+      "words": 795,
       "xmlTextVerified": true,
-      "xmlParagraphs": 66,
-      "speechWords": 793,
-      "coverage": 0.9987,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-black-beauty-fs0049",
-      "episodeId": 5,
-      "cues": 82,
-      "words": 806,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 70,
-      "speechWords": 806,
+      "xmlParagraphs": 64,
+      "speechWords": 795,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
       "seriesId": "little-fox-black-beauty-fs0049",
-      "episodeId": 6,
-      "cues": 90,
+      "episodeId": 20,
+      "cues": 79,
+      "words": 765,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 765,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 21,
+      "cues": 78,
+      "words": 792,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 792,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 22,
+      "cues": 69,
+      "words": 788,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 788,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 23,
+      "cues": 81,
+      "words": 796,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 796,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 24,
+      "cues": 79,
+      "words": 792,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 792,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 25,
+      "cues": 71,
+      "words": 790,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 790,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 26,
+      "cues": 85,
+      "words": 791,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 791,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 27,
+      "cues": 79,
+      "words": 779,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 779,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 28,
+      "cues": 72,
+      "words": 753,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 753,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 29,
+      "cues": 87,
+      "words": 798,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 798,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 30,
+      "cues": 77,
+      "words": 778,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 778,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 31,
+      "cues": 84,
+      "words": 796,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 796,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 32,
+      "cues": 83,
       "words": 793,
       "xmlTextVerified": true,
       "xmlParagraphs": 69,
@@ -78,231 +287,279 @@
     },
     {
       "seriesId": "little-fox-black-beauty-fs0049",
-      "episodeId": 7,
-      "cues": 79,
-      "words": 798,
+      "episodeId": 33,
+      "cues": 78,
+      "words": 774,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 774,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 34,
+      "cues": 83,
+      "words": 799,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 799,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 35,
+      "cues": 76,
+      "words": 789,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 789,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-camp-evergreen-fs0178",
+      "episodeId": 1,
+      "cues": 84,
+      "words": 567,
       "xmlTextVerified": true,
       "xmlParagraphs": 65,
-      "speechWords": 798,
+      "speechWords": 567,
+      "coverage": 0.9947,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-camp-evergreen-fs0178",
+      "episodeId": 2,
+      "cues": 88,
+      "words": 567,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 567,
+      "coverage": 0.9965,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-camp-evergreen-fs0178",
+      "episodeId": 3,
+      "cues": 89,
+      "words": 574,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 574,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-camp-evergreen-fs0178",
+      "episodeId": 4,
+      "cues": 84,
+      "words": 566,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 566,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-camp-evergreen-fs0178",
+      "episodeId": 5,
+      "cues": 88,
+      "words": 564,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 564,
+      "coverage": 0.9965,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-camp-evergreen-fs0178",
+      "episodeId": 6,
+      "cues": 86,
+      "words": 567,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 567,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-camp-evergreen-fs0178",
+      "episodeId": 7,
+      "cues": 98,
+      "words": 570,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 570,
+      "coverage": 0.9965,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-camp-evergreen-fs0178",
+      "episodeId": 8,
+      "cues": 93,
+      "words": 568,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 568,
+      "coverage": 0.9965,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-camp-evergreen-fs0178",
+      "episodeId": 9,
+      "cues": 92,
+      "words": 566,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 566,
+      "coverage": 0.9965,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-camp-evergreen-fs0178",
+      "episodeId": 10,
+      "cues": 88,
+      "words": 568,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 568,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-camp-evergreen-fs0178",
+      "episodeId": 11,
+      "cues": 70,
+      "words": 570,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 56,
+      "speechWords": 570,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-camp-evergreen-fs0178",
+      "episodeId": 12,
+      "cues": 96,
+      "words": 572,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 572,
+      "coverage": 0.9965,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-camp-evergreen-fs0178",
+      "episodeId": 13,
+      "cues": 83,
+      "words": 564,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 564,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-camp-evergreen-fs0178",
+      "episodeId": 14,
+      "cues": 94,
+      "words": 569,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 569,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-camp-evergreen-fs0178",
+      "episodeId": 15,
+      "cues": 89,
+      "words": 563,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 563,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-camp-evergreen-fs0178",
+      "episodeId": 16,
+      "cues": 94,
+      "words": 562,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 562,
+      "coverage": 0.9965,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-camp-evergreen-fs0178",
+      "episodeId": 17,
+      "cues": 80,
+      "words": 552,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 552,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-camp-evergreen-fs0178",
+      "episodeId": 18,
+      "cues": 92,
+      "words": 563,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 563,
+      "coverage": 0.9965,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-camp-evergreen-fs0178",
+      "episodeId": 19,
+      "cues": 91,
+      "words": 553,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 553,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-camp-evergreen-fs0178",
+      "episodeId": 20,
+      "cues": 101,
+      "words": 558,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 558,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-camp-evergreen-fs0178",
+      "episodeId": 21,
+      "cues": 86,
+      "words": 563,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 563,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-camp-evergreen-fs0178",
+      "episodeId": 22,
+      "cues": 90,
+      "words": 568,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 568,
       "coverage": 1.0,
       "omittedWords": 0
     }
   ],
-  "failures": [
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 30,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 31,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 32,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 33,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 34,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 35,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 36,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 37,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 38,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 39,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 40,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 41,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 42,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 43,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.6% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 44,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 45,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 46,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 47,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 48,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 49,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 50,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 51,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 52,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 53,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 54,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 55,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 56,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 57,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 58,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 59,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 60,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 61,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 62,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 63,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 64,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 65,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.6% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 66,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 67,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 68,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 69,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 70,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 71,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 72,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
-    }
-  ]
+  "failures": []
 }
