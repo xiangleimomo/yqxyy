@@ -5,272 +5,224 @@
   "sourceUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
   "sourceDurationApproxSeconds": 9138,
   "version": "preview-3",
-  "timingStatus": "estimated-preview-not-verified",
-  "notes": "本片源约02:32:18；24集时间为粗略剧情预估，用于先启用分段播放。片段边界尚未与实际画面逐一核对，可能出现剧情错位。",
+  "timingStatus": "requires-actual-subtitle-cues",
+  "notes": "必须取得本片源对应英文字幕，依据实际字幕对白时间码和剧情边界设定24集，禁止用比例缩放或估算冒充字幕校准。",
   "chapters": [
     {
       "episodeId": 1,
       "title": "The Boy Who Lived",
       "titleZh": "大难不死的男孩",
-      "status": "preview",
-      "start": 0,
-      "end": 245,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 245
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     },
     {
       "episodeId": 2,
       "title": "Life with the Dursleys",
       "titleZh": "德思礼家的生活",
-      "status": "preview",
-      "start": 245,
-      "end": 500,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 255
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     },
     {
       "episodeId": 3,
       "title": "The Zoo Incident",
       "titleZh": "动物园里的意外",
-      "status": "preview",
-      "start": 500,
-      "end": 840,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 340
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     },
     {
       "episodeId": 4,
       "title": "Letters from Hogwarts",
       "titleZh": "霍格沃茨来信",
-      "status": "preview",
-      "start": 840,
-      "end": 1140,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 300
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     },
     {
       "episodeId": 5,
       "title": "The Hut on the Rock",
       "titleZh": "海上小屋",
-      "status": "preview",
-      "start": 1140,
-      "end": 1530,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 390
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     },
     {
       "episodeId": 6,
       "title": "You're a Wizard, Harry",
       "titleZh": "你是巫师，哈利",
-      "status": "preview",
-      "start": 1530,
-      "end": 1900,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 370
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     },
     {
       "episodeId": 7,
       "title": "The Leaky Cauldron",
       "titleZh": "破釜酒吧",
-      "status": "preview",
-      "start": 1900,
-      "end": 2290,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 390
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     },
     {
       "episodeId": 8,
       "title": "Gringotts Bank",
       "titleZh": "古灵阁银行",
-      "status": "preview",
-      "start": 2290,
-      "end": 2870,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 580
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     },
     {
       "episodeId": 9,
       "title": "Ollivanders Wand Shop",
       "titleZh": "奥利凡德魔杖店",
-      "status": "preview",
-      "start": 2870,
-      "end": 3360,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 490
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     },
     {
       "episodeId": 10,
       "title": "Platform Nine and Three-Quarters",
       "titleZh": "九又四分之三站台",
-      "status": "preview",
-      "start": 3360,
-      "end": 3630,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 270
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     },
     {
       "episodeId": 11,
       "title": "Friends on the Train",
       "titleZh": "列车上的朋友",
-      "status": "preview",
-      "start": 3630,
-      "end": 3860,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 230
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     },
     {
       "episodeId": 12,
       "title": "Welcome to Hogwarts",
       "titleZh": "初到霍格沃茨",
-      "status": "preview",
-      "start": 3860,
-      "end": 3980,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 120
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     },
     {
       "episodeId": 13,
       "title": "The Sorting Ceremony",
       "titleZh": "分院仪式",
-      "status": "preview",
-      "start": 3980,
-      "end": 4450,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 470
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     },
     {
       "episodeId": 14,
       "title": "The First Flying Lesson",
       "titleZh": "第一堂飞行课",
-      "status": "preview",
-      "start": 4450,
-      "end": 5010,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 560
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     },
     {
       "episodeId": 15,
       "title": "A New Seeker",
       "titleZh": "新的找球手",
-      "status": "preview",
-      "start": 5010,
-      "end": 5390,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 380
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     },
     {
       "episodeId": 16,
       "title": "The Forbidden Corridor",
       "titleZh": "禁区走廊",
-      "status": "preview",
-      "start": 5390,
-      "end": 5830,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 440
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     },
     {
       "episodeId": 17,
       "title": "The Halloween Troll",
       "titleZh": "万圣节巨怪",
-      "status": "preview",
-      "start": 5830,
-      "end": 6040,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 210
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     },
     {
       "episodeId": 18,
       "title": "The First Quidditch Match",
       "titleZh": "第一场魁地奇比赛",
-      "status": "preview",
-      "start": 6040,
-      "end": 6260,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 220
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     },
     {
       "episodeId": 19,
       "title": "The Mirror of Erised",
       "titleZh": "厄里斯魔镜",
-      "status": "preview",
-      "start": 6260,
-      "end": 6630,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 370
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     },
     {
       "episodeId": 20,
       "title": "The Secret of Nicolas Flamel",
       "titleZh": "尼可·勒梅的秘密",
-      "status": "preview",
-      "start": 6630,
-      "end": 6940,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 310
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     },
     {
       "episodeId": 21,
       "title": "Norbert the Dragon",
       "titleZh": "小龙诺伯",
-      "status": "preview",
-      "start": 6940,
-      "end": 7160,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 220
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     },
     {
       "episodeId": 22,
       "title": "The Forbidden Forest",
       "titleZh": "禁林探险",
-      "status": "preview",
-      "start": 7160,
-      "end": 7650,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 490
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     },
     {
       "episodeId": 23,
       "title": "Through the Trapdoor",
       "titleZh": "活板门下的考验",
-      "status": "preview",
-      "start": 7650,
-      "end": 8060,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 410
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     },
     {
       "episodeId": 24,
       "title": "The Stone and the Final Feast",
       "titleZh": "魔法石与学年终宴",
-      "status": "preview",
-      "start": 8060,
-      "end": 8660,
-      "verified": true,
-      "timingQuality": "estimated",
-      "duration": 600
+      "status": "pending_subtitle_alignment",
+      "start": null,
+      "end": null,
+      "verified": false
     }
   ]
 }
