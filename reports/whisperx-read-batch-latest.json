@@ -1,446 +1,458 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42245863407",
-  "completedAt": "2026-11-06T16:04:48.944552+00:00",
+  "runId": "42249000260",
+  "completedAt": "2026-11-06T16:26:07.813830+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 30,
-  "rejected": 20,
+  "published": 32,
+  "rejected": 18,
   "websiteCommitRequired": true,
-  "totalWords": 32802,
-  "speechMatchedWords": 32802,
+  "totalWords": 35760,
+  "speechMatchedWords": 35759,
   "success": [
     {
-      "seriesId": "little-fox-jane-eyre-fs0061",
+      "seriesId": "little-fox-les-miserables-fs0076",
       "episodeId": 1,
-      "cues": 122,
-      "words": 1090,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 66,
-      "speechWords": 1090,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 2,
-      "cues": 119,
-      "words": 1097,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 67,
-      "speechWords": 1097,
-      "coverage": 0.9991,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 3,
       "cues": 118,
-      "words": 1099,
+      "words": 1167,
       "xmlTextVerified": true,
-      "xmlParagraphs": 63,
-      "speechWords": 1099,
+      "xmlParagraphs": 73,
+      "speechWords": 1167,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 4,
-      "cues": 109,
-      "words": 1079,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 66,
-      "speechWords": 1079,
-      "coverage": 0.9991,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 5,
-      "cues": 108,
-      "words": 1108,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 57,
-      "speechWords": 1108,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 6,
-      "cues": 116,
-      "words": 1098,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 68,
-      "speechWords": 1098,
-      "coverage": 0.9991,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 7,
-      "cues": 105,
-      "words": 1083,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 64,
-      "speechWords": 1083,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 8,
-      "cues": 129,
-      "words": 1103,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 69,
-      "speechWords": 1103,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 9,
-      "cues": 106,
-      "words": 1088,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 67,
-      "speechWords": 1088,
-      "coverage": 0.9991,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 10,
-      "cues": 115,
-      "words": 1097,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 67,
-      "speechWords": 1097,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 11,
-      "cues": 111,
-      "words": 1100,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 62,
-      "speechWords": 1100,
-      "coverage": 0.9991,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 12,
-      "cues": 126,
-      "words": 1091,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 65,
-      "speechWords": 1091,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 13,
-      "cues": 123,
-      "words": 1101,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 63,
-      "speechWords": 1101,
-      "coverage": 0.9991,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 14,
-      "cues": 114,
-      "words": 1085,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 61,
-      "speechWords": 1085,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 15,
-      "cues": 121,
-      "words": 1098,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 65,
-      "speechWords": 1098,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 16,
-      "cues": 130,
-      "words": 1095,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 69,
-      "speechWords": 1095,
-      "coverage": 0.9991,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 17,
-      "cues": 110,
-      "words": 1091,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 62,
-      "speechWords": 1091,
-      "coverage": 0.9991,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 18,
-      "cues": 103,
-      "words": 1073,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 53,
-      "speechWords": 1073,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 19,
-      "cues": 115,
-      "words": 1084,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 64,
-      "speechWords": 1084,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 20,
-      "cues": 106,
-      "words": 1103,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 61,
-      "speechWords": 1103,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 21,
-      "cues": 119,
-      "words": 1106,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 60,
-      "speechWords": 1106,
-      "coverage": 0.9991,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 22,
-      "cues": 116,
-      "words": 1080,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 59,
-      "speechWords": 1080,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 23,
-      "cues": 126,
-      "words": 1096,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 69,
-      "speechWords": 1096,
-      "coverage": 0.9991,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 24,
-      "cues": 102,
-      "words": 1093,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 58,
-      "speechWords": 1093,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 25,
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 2,
       "cues": 117,
-      "words": 1100,
+      "words": 1189,
       "xmlTextVerified": true,
-      "xmlParagraphs": 66,
-      "speechWords": 1100,
+      "xmlParagraphs": 77,
+      "speechWords": 1189,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 3,
+      "cues": 112,
+      "words": 1194,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 83,
+      "speechWords": 1194,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 26,
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 4,
+      "cues": 105,
+      "words": 1169,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 1169,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 5,
+      "cues": 117,
+      "words": 1172,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 1172,
+      "coverage": 0.9983,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 6,
+      "cues": 133,
+      "words": 1177,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 1177,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 7,
+      "cues": 126,
+      "words": 1200,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 82,
+      "speechWords": 1200,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 8,
+      "cues": 119,
+      "words": 1189,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 1189,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 9,
+      "cues": 135,
+      "words": 1191,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 83,
+      "speechWords": 1191,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 10,
+      "cues": 95,
+      "words": 1165,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 1165,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 11,
+      "cues": 118,
+      "words": 1193,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 1193,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 12,
+      "cues": 123,
+      "words": 1200,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 85,
+      "speechWords": 1200,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 13,
+      "cues": 111,
+      "words": 1184,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 1184,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 14,
+      "cues": 112,
+      "words": 1177,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 1177,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 15,
+      "cues": 114,
+      "words": 1202,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 1202,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 16,
+      "cues": 104,
+      "words": 1191,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 1191,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 17,
+      "cues": 117,
+      "words": 1183,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 83,
+      "speechWords": 1183,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 18,
+      "cues": 112,
+      "words": 1182,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 83,
+      "speechWords": 1182,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 19,
+      "cues": 116,
+      "words": 1154,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 1154,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 20,
+      "cues": 124,
+      "words": 1192,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 1192,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 21,
+      "cues": 122,
+      "words": 1186,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 85,
+      "speechWords": 1186,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 22,
+      "cues": 133,
+      "words": 1207,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 82,
+      "speechWords": 1207,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 23,
+      "cues": 118,
+      "words": 1198,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 1198,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 24,
       "cues": 127,
-      "words": 1096,
+      "words": 1168,
       "xmlTextVerified": true,
-      "xmlParagraphs": 65,
-      "speechWords": 1096,
-      "coverage": 0.9991,
+      "xmlParagraphs": 82,
+      "speechWords": 1168,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 25,
+      "cues": 134,
+      "words": 1193,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 89,
+      "speechWords": 1192,
+      "coverage": 0.9992,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 26,
+      "cues": 120,
+      "words": 1206,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 1206,
+      "coverage": 0.9992,
       "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-jane-eyre-fs0061",
+      "seriesId": "little-fox-les-miserables-fs0076",
       "episodeId": 27,
-      "cues": 100,
-      "words": 1102,
+      "cues": 135,
+      "words": 1182,
       "xmlTextVerified": true,
-      "xmlParagraphs": 61,
-      "speechWords": 1102,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 28,
-      "cues": 112,
-      "words": 1093,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 61,
-      "speechWords": 1093,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 29,
-      "cues": 115,
-      "words": 1092,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 62,
-      "speechWords": 1092,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-jane-eyre-fs0061",
-      "episodeId": 30,
-      "cues": 112,
-      "words": 1081,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 65,
-      "speechWords": 1081,
-      "coverage": 0.9991,
+      "xmlParagraphs": 81,
+      "speechWords": 1182,
+      "coverage": 0.9992,
       "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 28,
+      "cues": 114,
+      "words": 1198,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 80,
+      "speechWords": 1198,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 29,
+      "cues": 112,
+      "words": 1191,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 84,
+      "speechWords": 1191,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-les-miserables-fs0076",
+      "episodeId": 30,
+      "cues": 131,
+      "words": 1200,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 83,
+      "speechWords": 1200,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
+      "episodeId": 3,
+      "cues": 17,
+      "words": 80,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 18,
+      "speechWords": 80,
+      "coverage": 0.9877,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
+      "episodeId": 4,
+      "cues": 18,
+      "words": 80,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 18,
+      "speechWords": 80,
+      "coverage": 0.9756,
+      "omittedWords": 2
     }
   ],
   "failures": [
     {
-      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "seriesId": "little-fox-learning-songs-srv01031",
+      "episodeId": 20,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-learning-songs-srv01031",
+      "episodeId": 21,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-learning-songs-srv01031",
+      "episodeId": 22,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-learning-songs-srv01031",
+      "episodeId": 23,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-learning-songs-srv01031",
       "episodeId": 24,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 0.0% assigned"
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
       "seriesId": "little-fox-learning-songs-srv01031",
+      "episodeId": 25,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-learning-songs-srv01031",
+      "episodeId": 26,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-learning-songs-srv01031",
+      "episodeId": 27,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-learning-songs-srv01031",
+      "episodeId": 28,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-learning-songs-srv01031",
+      "episodeId": 29,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-learning-songs-srv01031",
+      "episodeId": 30,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-learning-songs-srv01031",
+      "episodeId": 31,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-learning-songs-srv01031",
+      "episodeId": 32,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-learning-songs-srv01031",
+      "episodeId": 33,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-learning-songs-srv01031",
+      "episodeId": 34,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-learning-songs-srv01031",
+      "episodeId": 35,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
       "episodeId": 1,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 80.7% matched, 98.9% assigned"
     },
     {
-      "seriesId": "little-fox-learning-songs-srv01031",
+      "seriesId": "little-fox-letter-teams-fs0118",
       "episodeId": 2,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-learning-songs-srv01031",
-      "episodeId": 3,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-learning-songs-srv01031",
-      "episodeId": 4,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-learning-songs-srv01031",
-      "episodeId": 5,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-learning-songs-srv01031",
-      "episodeId": 6,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-learning-songs-srv01031",
-      "episodeId": 7,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-learning-songs-srv01031",
-      "episodeId": 8,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-learning-songs-srv01031",
-      "episodeId": 9,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-learning-songs-srv01031",
-      "episodeId": 10,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-learning-songs-srv01031",
-      "episodeId": 11,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-learning-songs-srv01031",
-      "episodeId": 12,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-learning-songs-srv01031",
-      "episodeId": 13,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-learning-songs-srv01031",
-      "episodeId": 14,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-learning-songs-srv01031",
-      "episodeId": 15,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-learning-songs-srv01031",
-      "episodeId": 16,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-learning-songs-srv01031",
-      "episodeId": 17,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-learning-songs-srv01031",
-      "episodeId": 18,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-learning-songs-srv01031",
-      "episodeId": 19,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 75.0% matched, 98.8% assigned"
     }
   ]
 }
