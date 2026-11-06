@@ -1,0 +1,506 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42239667561",
+  "completedAt": "2026-11-06T15:30:37.595643+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 40,
+  "rejected": 10,
+  "websiteCommitRequired": true,
+  "totalWords": 23383,
+  "speechMatchedWords": 23383,
+  "success": [
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 8,
+      "cues": 79,
+      "words": 606,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 606,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 9,
+      "cues": 75,
+      "words": 578,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 578,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 11,
+      "cues": 87,
+      "words": 605,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 605,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 12,
+      "cues": 75,
+      "words": 599,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 599,
+      "coverage": 0.9967,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 13,
+      "cues": 85,
+      "words": 583,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 583,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 14,
+      "cues": 82,
+      "words": 597,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 597,
+      "coverage": 0.9967,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 16,
+      "cues": 87,
+      "words": 567,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 567,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 17,
+      "cues": 89,
+      "words": 587,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 587,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 18,
+      "cues": 102,
+      "words": 599,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 599,
+      "coverage": 0.9967,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 19,
+      "cues": 92,
+      "words": 580,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 580,
+      "coverage": 0.9966,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 21,
+      "cues": 71,
+      "words": 570,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 570,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 22,
+      "cues": 72,
+      "words": 577,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 577,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 23,
+      "cues": 74,
+      "words": 574,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 574,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 24,
+      "cues": 72,
+      "words": 584,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 584,
+      "coverage": 0.9966,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 26,
+      "cues": 69,
+      "words": 546,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 59,
+      "speechWords": 546,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 27,
+      "cues": 64,
+      "words": 570,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 570,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 28,
+      "cues": 62,
+      "words": 559,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 56,
+      "speechWords": 559,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 29,
+      "cues": 78,
+      "words": 578,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 578,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 31,
+      "cues": 78,
+      "words": 599,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 599,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 32,
+      "cues": 83,
+      "words": 588,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 588,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 33,
+      "cues": 77,
+      "words": 607,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 607,
+      "coverage": 0.9984,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 34,
+      "cues": 86,
+      "words": 576,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 576,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 36,
+      "cues": 76,
+      "words": 584,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 584,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 37,
+      "cues": 73,
+      "words": 598,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 598,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 38,
+      "cues": 71,
+      "words": 573,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 573,
+      "coverage": 0.9931,
+      "omittedWords": 4
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 39,
+      "cues": 76,
+      "words": 593,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 593,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 41,
+      "cues": 75,
+      "words": 586,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 586,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 42,
+      "cues": 82,
+      "words": 603,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 603,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 43,
+      "cues": 85,
+      "words": 600,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 600,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 44,
+      "cues": 79,
+      "words": 585,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 585,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 46,
+      "cues": 94,
+      "words": 590,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 590,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 47,
+      "cues": 68,
+      "words": 560,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 560,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 48,
+      "cues": 73,
+      "words": 595,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 595,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 49,
+      "cues": 91,
+      "words": 587,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 587,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 51,
+      "cues": 80,
+      "words": 554,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 554,
+      "coverage": 0.9946,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 52,
+      "cues": 78,
+      "words": 596,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 596,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 53,
+      "cues": 70,
+      "words": 577,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 577,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 54,
+      "cues": 89,
+      "words": 594,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 594,
+      "coverage": 0.9966,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 56,
+      "cues": 77,
+      "words": 580,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 580,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 57,
+      "cues": 82,
+      "words": 599,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 599,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    }
+  ],
+  "failures": [
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 10,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 15,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 20,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 25,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 30,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 35,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 40,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 45,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 50,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "episodeId": 55,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    }
+  ]
+}
