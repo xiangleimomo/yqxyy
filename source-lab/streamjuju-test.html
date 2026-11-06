@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>StreamJuju 嵌入测试 · Story Fox English</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#17324d;background:#f3f7fc;line-height:1.6}*{box-sizing:border-box}body{margin:0}header,main{max-width:1120px;margin:auto;padding:20px 24px}header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #dbe6f1}a{color:#1469b8;text-decoration:none}.brand{font-weight:800;font-size:20px}.hero{padding:28px 0 16px}.eyebrow{letter-spacing:.15em;font-size:12px;color:#4882aa}h1{font-size:32px;margin:5px 0}p{color:#52677d}.panel{background:white;border:1px solid #d5e3f0;border-radius:14px;padding:20px;margin:16px 0}.form{display:flex;gap:10px;flex-wrap:wrap}.form input{flex:1;min-width:220px;padding:12px;border:1px solid #bfd0e1;border-radius:9px;font:inherit}.form button,.secondary{padding:10px 16px;border:1px solid #176bb4;border-radius:8px;background:#176bb4;color:white;font:inherit;cursor:pointer}.secondary{background:white;color:#176bb4}.frame-wrap{background:#111;border-radius:12px;overflow:hidden;aspect-ratio:16/9;min-height:280px}.frame-wrap iframe{width:100%;height:100%;min-height:280px;border:0;background:#111}.status{font-size:14px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.note{font-size:13px;background:#f1f6fc;border-radius:8px;padding:12px}.brand span{margin-left:8px}@media(max-width:600px){header,main{padding:16px}.hero{padding-top:18px}h1{font-size:26px}.panel{padding:14px}}
+</style>
+</head>
+<body>
+<header><a class="brand" href="/">SF <span>Story Fox English</span></a><a href="/source-lab/">返回片源探索</a></header>
+<main>
+<section class="hero"><span class="eyebrow">PLAYER EMBED TEST</span><h1>StreamJuju 播放器嵌入测试</h1><p>独立测试区，不会修改光影课堂、现有片源配置或正式播放器。</p></section>
+<section class="panel">
+<h2>加载测试影片</h2>
+<p>输入 TMDB 电影编号，或粘贴 StreamJuju 的完整播放页面地址。示例编号：671（Harry Potter and the Philosopher's Stone）。</p>
+<form id="form" class="form"><input id="target" value="671" maxlength="300" aria-label="TMDB编号或StreamJuju播放地址"><button type="submit">在下方嵌入</button></form>
+<p id="status" class="status" role="status">尚未开始测试。</p>
+<div class="actions"><a id="open" class="secondary" href="https://streamjuju.cyou/watch/movie/671" target="_blank" rel="noopener noreferrer">在新标签页打开同一影片</a><button id="reload" class="secondary" type="button">重新加载嵌入</button></div>
+</section>
+<section class="panel">
+<h2>嵌入播放器</h2>
+<div class="frame-wrap"><iframe id="player" title="StreamJuju 嵌入播放器测试" src="about:blank" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen referrerpolicy="no-referrer"></iframe></div>
+<p class="note">判断方法：如果播放器画面正常显示并能播放，说明当前页面允许嵌入；如果出现拒绝连接、空白页或站点错误，可能是对方设置了禁止 iframe、区域限制或页面校验。浏览器的 iframe 加载事件本身不能证明视频已可播放，请实际点击播放、测试全屏和字幕。</p>
+</section>
+</main>
+<script>
+(()=>{
+const $=id=>document.getElementById(id),frame=$("player"),input=$("target");
+function resolve(){
+ const raw=input.value.trim();let url;
+ if(/^\d+$/.test(raw))url="https://streamjuju.cyou/watch/movie/"+encodeURIComponent(raw);
+ else {try{const parsed=new URL(raw);if(!["streamjuju.cyou","www.streamjuju.cyou"].includes(parsed.hostname))throw Error();url=parsed.href;}catch{throw Error("请输入 TMDB 数字编号，或 streamjuju.cyou 的完整播放地址。");}}
+ return url;
+}
+function load(){try{const url=resolve();frame.src=url;$("open").href=url;$("status").textContent="已请求加载："+url+"。请观察下方播放器是否出现内容，并实际测试播放。"}catch(e){$("status").textContent=e.message;}}
+$("form").addEventListener("submit",e=>{e.preventDefault();load();});
+$("reload").addEventListener("click",load);
+load();
+})();
+</script>
+</body>
+</html>
