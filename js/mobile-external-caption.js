@@ -69,7 +69,7 @@
         index=cues.findIndex(cue=>cue.startMs>now);
         if(index<0)index=cues.length-1;
       }
-      const showWords=!!sync&&wordEnabled&&Array.isArray(prepared)&&prepared[index];
+      const showWords=d.seriesId!=='movie-harry-potter-1'&&!!sync&&wordEnabled&&Array.isArray(prepared)&&prepared[index];
       if(index!==active||mode!==String(showWords)){
         active=index;
         mode=String(showWords);

@@ -763,7 +763,7 @@ async renderLesson(seriesId, episodeId){
       }
       const now=Math.round((player.currentTime-offsetSeconds)*1000);
       const next=cues.findIndex(cue=>now>=cue.startMs && now<=cue.endMs);
-      const wordEnabled=!!syncWords&&this.subtitlePreferences().wordHighlight!==false;
+      const wordEnabled=d.seriesId!=='movie-harry-potter-1'&&!!syncWords&&this.subtitlePreferences().wordHighlight!==false;
       if(next!==active||renderedMode!==wordEnabled){
         active=next;renderedMode=wordEnabled;wordView=null;
         if(next<0){
