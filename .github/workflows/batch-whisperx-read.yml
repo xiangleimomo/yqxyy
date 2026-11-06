@@ -19,6 +19,7 @@ on:
 permissions:
   contents: write
   actions: write
+  issues: write
 
 concurrency:
   group: yqxyy-whisperx-ten-episode-v2
@@ -216,3 +217,47 @@ jobs:
           fi
           echo "Dispatching next batch of $NEXT eligible episodes."
           gh workflow run batch-whisperx-read.yml --repo "$GITHUB_REPOSITORY" --ref main -f batch_size=10 -f retry_failed=false
+
+  report_failure:
+    name: Publish diagnostic report for ChatGPT repair
+    needs: [prepare, align, publish]
+    if: ${{ always() && (needs.prepare.result == 'failure' || needs.align.result == 'failure' || needs.publish.result == 'failure') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Collect run failure details and open GitHub issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/yqxyy-failure-report
+          gh run download "$GITHUB_RUN_ID" --repo "$GITHUB_REPOSITORY" --name whisperx-batch-publish-report --dir /tmp/yqxyy-failure-report || true
+          cat > /tmp/yqxyy-failure-report/issue.md <<EOF
+          ## WhisperX batch failure — automated ChatGPT triage
+          
+          **Run:** https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}
+          **Commit:** ${GITHUB_SHA}
+          **Batch policy:** 10 episodes; >=90% authentic speech alignment.
+          
+          The workflow stopped rather than repeatedly processing an unreliable batch.
+          Please inspect the failed job logs and the episode-level JSON below.
+          The connected ChatGPT GitHub supervisor should diagnose the root cause,
+          fix the smallest necessary code path, test it, and restart only after
+          verifying that prior successful subtitles are retained.
+          
+          EOF
+          python - <<'PY' >> /tmp/yqxyy-failure-report/issue.md
+          import json
+          from pathlib import Path
+          p=Path("/tmp/yqxyy-failure-report/whisperx-read-batch-latest.json")
+          if not p.is_file():
+              print("**Episode report:** Not generated; check preflight and job logs.")
+          else:
+              r=json.loads(p.read_text(encoding="utf-8"))
+              print(f"**Processed:** {r.get('selected','?')} | **Published:** {r.get('published','?')} | **Rejected:** {r.get('rejected','?')}")
+              print("\n### Rejected episodes")
+              for x in r.get("failures",[])[:10]:
+                  print(f"- {x.get('seriesId')} / {x.get('episodeId')}: {x.get('reason','unknown')}")
+          PY
+          gh issue create --repo "$GITHUB_REPOSITORY" --title "[subtitle-auto-diagnosis] Run $GITHUB_RUN_ID failed" --body-file /tmp/yqxyy-failure-report/issue.md
