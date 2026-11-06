@@ -59,7 +59,7 @@ window.MediaShelf = {
       items=series.map(row=>this.movieSeries(row));allItems=[...items,...series.flatMap(row=>row.films.map(film=>this.movieFilm(row,film,playableById)))];
       if(mode==='animated'){
         // Keep the original static film collections, then append administrator-published standalone films.
-        const originalCollections=items.filter(row=>row.key.startsWith('film-series-'));
+        const originalCollections=items.filter(row=>row.key.startsWith('film-series-')&&!series.find(group=>group.id===row.id)?.dynamicCategory);
         const publishedFilms=allItems.filter(row=>row.id.startsWith('tmdb-')&&series.find(group=>group.films.some(([id])=>id===row.id))?.dynamicCategory==='animated');
         items=[...originalCollections,...publishedFilms];
       }

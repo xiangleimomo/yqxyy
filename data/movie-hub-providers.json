@@ -4,7 +4,7 @@
     "name": "111Movies · Pythagoras",
     "mode": "embed",
     "movieUrl": "https://player.vidmario.net/embed/movie/{tmdbId}?server=Pythagoras",
-    "tvUrl": "https://player.vidmario.net/embed/tv/{tmdbId}?server=Pythagoras",
+    "tvUrl": "https://player.vidmario.net/embed/tv/{tmdbId}/{seasonNumber}/{episodeNumber}?server=Pythagoras",
     "note": "与已验证测试播放器使用同一嵌入地址"
   },
   {
@@ -12,7 +12,7 @@
     "name": "111Movies · Fermat",
     "mode": "embed",
     "movieUrl": "https://player.vidmario.net/embed/movie/{tmdbId}?server=Fermat",
-    "tvUrl": "https://player.vidmario.net/embed/tv/{tmdbId}?server=Fermat",
+    "tvUrl": "https://player.vidmario.net/embed/tv/{tmdbId}/{seasonNumber}/{episodeNumber}?server=Fermat",
     "note": "同一播放器的备用线路"
   }
 ]
