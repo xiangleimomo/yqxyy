@@ -1,506 +1,362 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42273237395",
-  "completedAt": "2026-11-06T19:22:03.714568+00:00",
+  "runId": "42279005789",
+  "completedAt": "2026-11-06T19:53:40.694920+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 40,
-  "rejected": 10,
+  "published": 16,
+  "rejected": 34,
   "websiteCommitRequired": true,
-  "totalWords": 30524,
-  "speechMatchedWords": 30524,
+  "totalWords": 12460,
+  "speechMatchedWords": 12460,
   "success": [
     {
       "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 40,
-      "cues": 108,
-      "words": 759,
+      "episodeId": 93,
+      "cues": 129,
+      "words": 783,
       "xmlTextVerified": true,
-      "xmlParagraphs": 84,
-      "speechWords": 759,
-      "coverage": 0.9974,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 41,
-      "cues": 110,
-      "words": 763,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 91,
-      "speechWords": 763,
+      "xmlParagraphs": 97,
+      "speechWords": 783,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
       "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 43,
-      "cues": 114,
-      "words": 791,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 92,
-      "speechWords": 791,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 44,
-      "cues": 115,
-      "words": 762,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 92,
-      "speechWords": 762,
-      "coverage": 0.9858,
-      "omittedWords": 11
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 45,
-      "cues": 115,
-      "words": 784,
+      "episodeId": 94,
+      "cues": 132,
+      "words": 790,
       "xmlTextVerified": true,
       "xmlParagraphs": 84,
-      "speechWords": 784,
-      "coverage": 0.9987,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 46,
-      "cues": 124,
-      "words": 777,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 92,
-      "speechWords": 777,
-      "coverage": 0.9987,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 48,
-      "cues": 116,
-      "words": 776,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 91,
-      "speechWords": 776,
-      "coverage": 0.9936,
-      "omittedWords": 5
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 49,
-      "cues": 107,
-      "words": 766,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 87,
-      "speechWords": 766,
-      "coverage": 0.9974,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 50,
-      "cues": 119,
-      "words": 777,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 100,
-      "speechWords": 777,
+      "speechWords": 790,
       "coverage": 0.9962,
       "omittedWords": 3
     },
     {
       "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 51,
-      "cues": 105,
-      "words": 774,
+      "episodeId": 98,
+      "cues": 114,
+      "words": 779,
       "xmlTextVerified": true,
-      "xmlParagraphs": 87,
-      "speechWords": 774,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 53,
-      "cues": 113,
-      "words": 737,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 81,
-      "speechWords": 737,
-      "coverage": 0.9986,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 54,
-      "cues": 93,
-      "words": 750,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 83,
-      "speechWords": 750,
+      "xmlParagraphs": 76,
+      "speechWords": 779,
       "coverage": 0.9987,
       "omittedWords": 1
     },
     {
       "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 55,
-      "cues": 109,
-      "words": 769,
+      "episodeId": 99,
+      "cues": 119,
+      "words": 781,
       "xmlTextVerified": true,
-      "xmlParagraphs": 88,
-      "speechWords": 769,
-      "coverage": 0.9961,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 56,
-      "cues": 102,
-      "words": 767,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 78,
-      "speechWords": 767,
-      "coverage": 0.9987,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 58,
-      "cues": 98,
-      "words": 764,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 80,
-      "speechWords": 764,
-      "coverage": 0.9935,
+      "xmlParagraphs": 85,
+      "speechWords": 781,
+      "coverage": 0.9936,
       "omittedWords": 5
     },
     {
       "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 59,
-      "cues": 105,
-      "words": 742,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 78,
-      "speechWords": 742,
-      "coverage": 0.9973,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 60,
-      "cues": 118,
-      "words": 780,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 87,
-      "speechWords": 780,
-      "coverage": 0.9974,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 61,
-      "cues": 116,
-      "words": 799,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 91,
-      "speechWords": 799,
-      "coverage": 0.9963,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 63,
-      "cues": 102,
-      "words": 759,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 78,
-      "speechWords": 759,
-      "coverage": 0.9974,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 64,
-      "cues": 105,
-      "words": 733,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 81,
-      "speechWords": 733,
-      "coverage": 0.9959,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 65,
-      "cues": 111,
-      "words": 772,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 88,
-      "speechWords": 772,
-      "coverage": 0.9987,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 66,
-      "cues": 118,
-      "words": 775,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 86,
-      "speechWords": 775,
-      "coverage": 0.9974,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 68,
-      "cues": 91,
-      "words": 750,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 80,
-      "speechWords": 750,
-      "coverage": 0.9947,
-      "omittedWords": 4
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 69,
-      "cues": 108,
-      "words": 750,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 84,
-      "speechWords": 750,
-      "coverage": 0.9973,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 70,
-      "cues": 99,
-      "words": 755,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 755,
-      "coverage": 0.996,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 71,
-      "cues": 110,
-      "words": 766,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 80,
-      "speechWords": 766,
-      "coverage": 0.9974,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 73,
-      "cues": 99,
-      "words": 730,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 78,
-      "speechWords": 730,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 74,
-      "cues": 108,
-      "words": 775,
+      "episodeId": 103,
+      "cues": 113,
+      "words": 774,
       "xmlTextVerified": true,
       "xmlParagraphs": 82,
-      "speechWords": 775,
+      "speechWords": 774,
       "coverage": 0.9961,
       "omittedWords": 3
     },
     {
       "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 75,
-      "cues": 118,
-      "words": 765,
+      "episodeId": 104,
+      "cues": 113,
+      "words": 764,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 83,
+      "speechWords": 764,
+      "coverage": 0.9948,
+      "omittedWords": 4
+    },
+    {
+      "seriesId": "little-fox-monster-academy-fs0086",
+      "episodeId": 108,
+      "cues": 108,
+      "words": 778,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 82,
+      "speechWords": 778,
+      "coverage": 0.9962,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-monster-academy-fs0086",
+      "episodeId": 109,
+      "cues": 116,
+      "words": 771,
       "xmlTextVerified": true,
       "xmlParagraphs": 85,
-      "speechWords": 765,
-      "coverage": 0.9974,
-      "omittedWords": 2
+      "speechWords": 771,
+      "coverage": 0.9987,
+      "omittedWords": 1
     },
     {
       "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 76,
-      "cues": 112,
+      "episodeId": 113,
+      "cues": 109,
       "words": 775,
       "xmlTextVerified": true,
-      "xmlParagraphs": 83,
+      "xmlParagraphs": 75,
       "speechWords": 775,
-      "coverage": 0.9987,
-      "omittedWords": 1
+      "coverage": 0.9949,
+      "omittedWords": 4
     },
     {
       "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 78,
-      "cues": 99,
-      "words": 767,
+      "episodeId": 114,
+      "cues": 105,
+      "words": 781,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 781,
+      "coverage": 0.9962,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-monster-academy-fs0086",
+      "episodeId": 118,
+      "cues": 120,
+      "words": 797,
       "xmlTextVerified": true,
       "xmlParagraphs": 75,
-      "speechWords": 767,
+      "speechWords": 797,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-monster-academy-fs0086",
+      "episodeId": 119,
+      "cues": 117,
+      "words": 789,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 789,
+      "coverage": 0.9962,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-monster-academy-fs0086",
+      "episodeId": 123,
+      "cues": 109,
+      "words": 776,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 776,
       "coverage": 0.9974,
       "omittedWords": 2
     },
     {
       "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 79,
-      "cues": 93,
-      "words": 752,
+      "episodeId": 124,
+      "cues": 99,
+      "words": 770,
       "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 752,
+      "xmlParagraphs": 67,
+      "speechWords": 770,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-monster-academy-fs0086",
+      "episodeId": 128,
+      "cues": 102,
+      "words": 764,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 764,
       "coverage": 0.9987,
       "omittedWords": 1
     },
     {
       "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 80,
-      "cues": 99,
+      "episodeId": 129,
+      "cues": 116,
       "words": 788,
       "xmlTextVerified": true,
-      "xmlParagraphs": 83,
+      "xmlParagraphs": 82,
       "speechWords": 788,
       "coverage": 1.0,
       "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 81,
-      "cues": 97,
-      "words": 753,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 753,
-      "coverage": 0.9987,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 83,
-      "cues": 115,
-      "words": 781,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 86,
-      "speechWords": 781,
-      "coverage": 0.9987,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 84,
-      "cues": 106,
-      "words": 727,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 85,
-      "speechWords": 727,
-      "coverage": 0.9973,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 85,
-      "cues": 113,
-      "words": 760,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 86,
-      "speechWords": 760,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 86,
-      "cues": 114,
-      "words": 748,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 92,
-      "speechWords": 748,
-      "coverage": 0.9973,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 88,
-      "cues": 110,
-      "words": 751,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 76,
-      "speechWords": 751,
-      "coverage": 0.9973,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 89,
-      "cues": 121,
-      "words": 755,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 86,
-      "speechWords": 755,
-      "coverage": 0.996,
-      "omittedWords": 3
     }
   ],
   "failures": [
     {
       "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 42,
+      "episodeId": 90,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-monster-academy-fs0086",
+      "episodeId": 91,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-monster-academy-fs0086",
+      "episodeId": 92,
       "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
       "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 47,
+      "episodeId": 95,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-monster-academy-fs0086",
+      "episodeId": 96,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-monster-academy-fs0086",
+      "episodeId": 97,
       "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
       "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 52,
+      "episodeId": 100,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-monster-academy-fs0086",
+      "episodeId": 101,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-monster-academy-fs0086",
+      "episodeId": 102,
       "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
       "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 57,
+      "episodeId": 105,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-monster-academy-fs0086",
+      "episodeId": 106,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-monster-academy-fs0086",
+      "episodeId": 107,
       "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
       "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 62,
+      "episodeId": 110,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-monster-academy-fs0086",
+      "episodeId": 111,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-monster-academy-fs0086",
+      "episodeId": 112,
       "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
       "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 67,
+      "episodeId": 115,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-monster-academy-fs0086",
+      "episodeId": 116,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-monster-academy-fs0086",
+      "episodeId": 117,
       "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
       "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 72,
+      "episodeId": 120,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-monster-academy-fs0086",
+      "episodeId": 121,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-monster-academy-fs0086",
+      "episodeId": 122,
       "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
       "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 77,
+      "episodeId": 125,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-monster-academy-fs0086",
+      "episodeId": 126,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-monster-academy-fs0086",
+      "episodeId": 127,
       "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
       "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 82,
+      "episodeId": 130,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
+      "episodeId": 1,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
+      "episodeId": 2,
       "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-monster-academy-fs0086",
-      "episodeId": 87,
+      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
+      "episodeId": 3,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
+      "episodeId": 4,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
+      "episodeId": 5,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
+      "episodeId": 6,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
+      "episodeId": 7,
       "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
+      "episodeId": 8,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
+      "episodeId": 9,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.5% matched, 0.0% assigned"
     }
   ]
 }
