@@ -1,0 +1,506 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42162685131",
+  "completedAt": "2026-11-06T05:00:30.963543+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 40,
+  "rejected": 10,
+  "websiteCommitRequired": true,
+  "totalWords": 34569,
+  "speechMatchedWords": 34569,
+  "success": [
+    {
+      "seriesId": "little-fox-animals-2-fs0143",
+      "episodeId": 11,
+      "cues": 46,
+      "words": 385,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 44,
+      "speechWords": 385,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-animals-2-fs0143",
+      "episodeId": 12,
+      "cues": 63,
+      "words": 419,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 52,
+      "speechWords": 419,
+      "coverage": 0.9882,
+      "omittedWords": 5
+    },
+    {
+      "seriesId": "little-fox-animals-2-fs0143",
+      "episodeId": 14,
+      "cues": 65,
+      "words": 372,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 50,
+      "speechWords": 372,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-animals-2-fs0143",
+      "episodeId": 15,
+      "cues": 64,
+      "words": 488,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 51,
+      "speechWords": 488,
+      "coverage": 0.9959,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-animals-2-fs0143",
+      "episodeId": 16,
+      "cues": 72,
+      "words": 513,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 513,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-animals-3-fs0144",
+      "episodeId": 1,
+      "cues": 77,
+      "words": 678,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 678,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-animals-3-fs0144",
+      "episodeId": 3,
+      "cues": 67,
+      "words": 781,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 781,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-animals-3-fs0144",
+      "episodeId": 4,
+      "cues": 62,
+      "words": 710,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 56,
+      "speechWords": 710,
+      "coverage": 0.9986,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-animals-3-fs0144",
+      "episodeId": 5,
+      "cues": 82,
+      "words": 1095,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 1095,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-animals-3-fs0144",
+      "episodeId": 6,
+      "cues": 92,
+      "words": 1158,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 1158,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-animals-3-fs0144",
+      "episodeId": 8,
+      "cues": 89,
+      "words": 1184,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 1184,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-animals-3-fs0144",
+      "episodeId": 9,
+      "cues": 69,
+      "words": 775,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 48,
+      "speechWords": 775,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-animals-3-fs0144",
+      "episodeId": 10,
+      "cues": 57,
+      "words": 559,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 46,
+      "speechWords": 559,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-animals-3-fs0144",
+      "episodeId": 11,
+      "cues": 56,
+      "words": 676,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 49,
+      "speechWords": 676,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-animals-3-fs0144",
+      "episodeId": 13,
+      "cues": 110,
+      "words": 960,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 82,
+      "speechWords": 960,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-animals-3-fs0144",
+      "episodeId": 14,
+      "cues": 101,
+      "words": 688,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 688,
+      "coverage": 0.9971,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-animals-3-fs0144",
+      "episodeId": 15,
+      "cues": 84,
+      "words": 658,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 658,
+      "coverage": 0.9985,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 1,
+      "cues": 113,
+      "words": 1013,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 1013,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 3,
+      "cues": 143,
+      "words": 1005,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 87,
+      "speechWords": 1005,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 4,
+      "cues": 131,
+      "words": 1061,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 1061,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 5,
+      "cues": 153,
+      "words": 1150,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 95,
+      "speechWords": 1150,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 6,
+      "cues": 150,
+      "words": 1133,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 95,
+      "speechWords": 1133,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 8,
+      "cues": 153,
+      "words": 1150,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 91,
+      "speechWords": 1150,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 9,
+      "cues": 94,
+      "words": 906,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 906,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 10,
+      "cues": 131,
+      "words": 1124,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 90,
+      "speechWords": 1124,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 11,
+      "cues": 105,
+      "words": 1000,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 1000,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 13,
+      "cues": 124,
+      "words": 1015,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 1015,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 14,
+      "cues": 107,
+      "words": 990,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 990,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 15,
+      "cues": 102,
+      "words": 1020,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 1020,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 16,
+      "cues": 145,
+      "words": 1173,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 96,
+      "speechWords": 1173,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 18,
+      "cues": 107,
+      "words": 916,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 916,
+      "coverage": 0.9978,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 19,
+      "cues": 99,
+      "words": 946,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 946,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 20,
+      "cues": 97,
+      "words": 872,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 872,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 21,
+      "cues": 93,
+      "words": 907,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 907,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 23,
+      "cues": 93,
+      "words": 735,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 735,
+      "coverage": 0.9986,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 24,
+      "cues": 90,
+      "words": 833,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 833,
+      "coverage": 0.9976,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 25,
+      "cues": 104,
+      "words": 888,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 888,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 26,
+      "cues": 111,
+      "words": 893,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 893,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 28,
+      "cues": 91,
+      "words": 819,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 819,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 29,
+      "cues": 90,
+      "words": 921,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 921,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    }
+  ],
+  "failures": [
+    {
+      "seriesId": "little-fox-animals-2-fs0143",
+      "episodeId": 13,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-animals-3-fs0144",
+      "episodeId": 2,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-animals-3-fs0144",
+      "episodeId": 7,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-animals-3-fs0144",
+      "episodeId": 12,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 2,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 7,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 12,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 17,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 22,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 27,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    }
+  ]
+}
