@@ -1,0 +1,512 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42165814652",
+  "completedAt": "2026-11-06T05:34:38.911583+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 41,
+  "rejected": 9,
+  "websiteCommitRequired": true,
+  "totalWords": 38864,
+  "speechMatchedWords": 38864,
+  "success": [
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 30,
+      "cues": 110,
+      "words": 895,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 895,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 31,
+      "cues": 83,
+      "words": 886,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 886,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 32,
+      "cues": 105,
+      "words": 982,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 982,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 33,
+      "cues": 107,
+      "words": 953,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 953,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 34,
+      "cues": 106,
+      "words": 981,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 981,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 35,
+      "cues": 113,
+      "words": 963,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 963,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 36,
+      "cues": 108,
+      "words": 971,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 971,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 37,
+      "cues": 108,
+      "words": 964,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 964,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 38,
+      "cues": 113,
+      "words": 989,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 989,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 39,
+      "cues": 104,
+      "words": 967,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 967,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 40,
+      "cues": 119,
+      "words": 1024,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 1024,
+      "coverage": 0.9981,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-anne-fs0033",
+      "episodeId": 41,
+      "cues": 90,
+      "words": 951,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 951,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 1,
+      "cues": 95,
+      "words": 1003,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 1003,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 2,
+      "cues": 95,
+      "words": 907,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 907,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 3,
+      "cues": 95,
+      "words": 840,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 840,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 4,
+      "cues": 91,
+      "words": 893,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 893,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 5,
+      "cues": 95,
+      "words": 916,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 916,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 6,
+      "cues": 96,
+      "words": 894,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 894,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 7,
+      "cues": 99,
+      "words": 955,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 955,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 8,
+      "cues": 84,
+      "words": 910,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 910,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 9,
+      "cues": 99,
+      "words": 920,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 920,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 10,
+      "cues": 97,
+      "words": 915,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 915,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 11,
+      "cues": 95,
+      "words": 943,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 943,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 12,
+      "cues": 87,
+      "words": 904,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 904,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 13,
+      "cues": 106,
+      "words": 961,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 961,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 14,
+      "cues": 84,
+      "words": 898,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 898,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 15,
+      "cues": 94,
+      "words": 957,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 957,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 16,
+      "cues": 113,
+      "words": 1033,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 1033,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 17,
+      "cues": 127,
+      "words": 1001,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 1001,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 18,
+      "cues": 90,
+      "words": 900,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 900,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 19,
+      "cues": 96,
+      "words": 915,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 915,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 20,
+      "cues": 104,
+      "words": 969,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 969,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 21,
+      "cues": 109,
+      "words": 1005,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 1005,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 22,
+      "cues": 102,
+      "words": 976,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 976,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 23,
+      "cues": 101,
+      "words": 1020,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 1020,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 24,
+      "cues": 95,
+      "words": 909,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 909,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 25,
+      "cues": 113,
+      "words": 980,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 980,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 26,
+      "cues": 97,
+      "words": 973,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 973,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 27,
+      "cues": 99,
+      "words": 901,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 901,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 28,
+      "cues": 110,
+      "words": 970,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 82,
+      "speechWords": 970,
+      "coverage": 0.9979,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-around-the-world-in-80-days-fs0037",
+      "episodeId": 29,
+      "cues": 110,
+      "words": 970,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 82,
+      "speechWords": 970,
+      "coverage": 0.9979,
+      "omittedWords": 2
+    }
+  ],
+  "failures": [
+    {
+      "seriesId": "little-fox-arsene-lupin-fs0020",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.9% matched, 100.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-arsene-lupin-fs0020",
+      "episodeId": 2,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.9% matched, 98.6% assigned"
+    },
+    {
+      "seriesId": "little-fox-arsene-lupin-fs0020",
+      "episodeId": 3,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 97.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-arsene-lupin-fs0020",
+      "episodeId": 4,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.2% matched, 100.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-arsene-lupin-fs0020",
+      "episodeId": 5,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.4% matched, 91.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-arsene-lupin-fs0020",
+      "episodeId": 6,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.2% matched, 89.7% assigned"
+    },
+    {
+      "seriesId": "little-fox-arsene-lupin-fs0020",
+      "episodeId": 7,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 91.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-arsene-lupin-fs0020",
+      "episodeId": 8,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 95.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-arsene-lupin-fs0020",
+      "episodeId": 9,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 93.4% assigned"
+    }
+  ]
+}
