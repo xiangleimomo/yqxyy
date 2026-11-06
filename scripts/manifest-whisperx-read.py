@@ -89,7 +89,7 @@ def select(limit=50,retry_failed=False,series_only=None):
 
 def main():
     p=argparse.ArgumentParser()
-    p.add_argument("--limit",type=int,default=50
+    p.add_argument("--limit",type=int,default=50)
     p.add_argument("--output",default="whisperx-batch-targets.json")
     p.add_argument("--retry-failed",action="store_true")
     p.add_argument("--series",default="")
