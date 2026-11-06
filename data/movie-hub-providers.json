@@ -1,18 +1,18 @@
 [
   {
-    "id": "111movies-pythagoras",
-    "name": "111Movies · Pythagoras",
-    "mode": "embed",
-    "movieUrl": "https://player.vidmario.net/embed/movie/{tmdbId}?server=Pythagoras",
-    "tvUrl": "https://player.vidmario.net/embed/tv/{tmdbId}/{seasonNumber}/{episodeNumber}?server=Pythagoras",
-    "note": "与已验证测试播放器使用同一嵌入地址"
-  },
-  {
     "id": "111movies-fermat",
     "name": "111Movies · Fermat",
     "mode": "embed",
     "movieUrl": "https://player.vidmario.net/embed/movie/{tmdbId}?server=Fermat",
     "tvUrl": "https://player.vidmario.net/embed/tv/{tmdbId}/{seasonNumber}/{episodeNumber}?server=Fermat",
-    "note": "同一播放器的备用线路"
+    "note": "默认主线路：实测电影播放有声音"
+  },
+  {
+    "id": "111movies-pythagoras",
+    "name": "111Movies · Pythagoras",
+    "mode": "embed",
+    "movieUrl": "https://player.vidmario.net/embed/movie/{tmdbId}?server=Pythagoras",
+    "tvUrl": "https://player.vidmario.net/embed/tv/{tmdbId}/{seasonNumber}/{episodeNumber}?server=Pythagoras",
+    "note": "备用线路：实测部分电影画面正常但无声音，手动切换使用"
   }
 ]
