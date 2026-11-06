@@ -3,7 +3,7 @@ window.MediaShelf = {
   e(app,value){return app.escapeHtml(String(value??''));},
   nav(scope,mode='all'){
     const base=scope==='movies'?'movies':'home',label=scope==='movies'?'全部影片':'全部动画';
-    return `<nav class="book-reading-tabs" aria-label="${scope==='movies'?'光影课堂':'动画故事'}书架">${[['all',label],['favorites','我的收藏'],['recent','观看记录']].map(([key,title])=>`<a href="#/${base}${key==='all'?'':'/'+key}"${mode===key?' aria-current="page"':''}>${title}</a>`).join('')}${scope==='animation'?`<a href="#/wordbank"${mode==='wordbank'?' aria-current="page"':''}>单词表</a><a href="#/writing"${mode==='writing'?' aria-current="page"':''}>英文写作</a>`:''}${scope==='movies'?'<a class="book-admin-entry" href="#/movie-hub">多平台播放</a>':''}</nav>`;
+    return `<nav class="book-reading-tabs" aria-label="${scope==='movies'?'光影课堂':'动画故事'}书架">${(scope==='movies'?[['all',label],['episodes','分集影片'],['favorites','我的收藏'],['recent','观看记录']]:[['all',label],['favorites','我的收藏'],['recent','观看记录']]).map(([key,title])=>`<a href="#/${base}${key==='all'?'':'/'+key}"${mode===key?' aria-current="page"':''}>${title}</a>`).join('')}${scope==='animation'?`<a href="#/wordbank"${mode==='wordbank'?' aria-current="page"':''}>单词表</a><a href="#/writing"${mode==='writing'?' aria-current="page"':''}>英文写作</a>`:''}${scope==='movies'?'<a class="book-admin-entry" href="#/movie-hub">多平台播放</a>':''}</nav>`;
   },
   animation(series){return {key:'anim-'+series.seriesId,scope:'animation',id:series.seriesId,title:series.titleZh||series.title,cover:series.cover,href:'#/series/'+series.seriesId,level:Number(series.level||0),disabled:['coming','locked'].includes(series.status),landscape:true,totalEpisodes:Number(series.episodeCount||series.readyEpisodes||0)};},
   movieSeries(series){return {key:'film-series-'+series.id,scope:'movies',id:series.id,title:series.titleZh||series.title,search:series.title+' '+series.titleZh,cover:series.cover||window.MovieClassroom.seriesCovers[series.id],href:'#/movie-series/'+series.id,level:series.level};},
@@ -44,7 +44,7 @@ window.MediaShelf = {
   },
   async render(app,scope,{mode='all',query='',level='all'}={}){
     const route=location.hash,uid=window.SFCloud?.user?.id;
-    if(mode!=='all'&&!uid){app.el().innerHTML=this.nav(scope,mode)+'<section class="empty"><p>登录后查看个人收藏和观看记录。</p><button class="btn" id="mediaLogin">登录 / 注册</button></section>';app.el().querySelector('#mediaLogin').onclick=()=>window.SFCloud?.open();return;}
+    if(['favorites','recent'].includes(mode)&&!uid){app.el().innerHTML=this.nav(scope,mode)+'<section class="empty"><p>登录后查看个人收藏和观看记录。</p><button class="btn" id="mediaLogin">登录 / 注册</button></section>';app.el().querySelector('#mediaLogin').onclick=()=>window.SFCloud?.open();return;}
     let items,allItems;
     if(scope==='animation'){
       const list=(await app.getJSON('data/series-list.json')).filter(row=>!String(row.seriesId).startsWith('movie-')&&(!app.isGuest()||!app.isGuestRestrictedLevel(row.level)));
@@ -53,7 +53,7 @@ window.MediaShelf = {
       const {series,playableById}=await window.MovieClassroom.getLibrary(app);
       items=series.map(row=>this.movieSeries(row));allItems=[...items,...series.flatMap(row=>row.films.map(film=>this.movieFilm(row,film,playableById)))];
     }
-    const states=mode==='all'?new Map():await this.states(app);
+    const states=['all','episodes'].includes(mode)?new Map():await this.states(app);
     if(location.hash!==route||window.SFCloud?.user?.id!==uid)return;
     if(scope==='movies'&&mode==='recent'){
       const existingHistory=new Set([...states].filter(([,row])=>row.last_read_at).map(([key])=>key));
@@ -63,10 +63,12 @@ window.MediaShelf = {
       }
     }
     const e=value=>this.e(app,value),prefix=scope==='movies'?'film-':'anim-';
+    if(mode==='episodes')items=allItems.filter(row=>!row.key.startsWith('film-series-'));
     if(mode==='favorites')items=allItems.filter(row=>states.get(row.key)?.favorite);
     if(mode==='recent')items=allItems.filter(row=>row.key.startsWith(prefix)&&!row.disabled&&states.get(row.key)?.last_read_at).sort((a,b)=>String(states.get(b.key).last_read_at).localeCompare(String(states.get(a.key).last_read_at))).slice(0,5);
     let content;
-    if(mode==='favorites'){
+    if(mode==='episodes')content=items.length?this.cards(app,items,states):'';
+    else if(mode==='favorites'){
       const groups=new Map();for(const item of items){const name=states.get(item.key)?.category||'未分类';if(!groups.has(name))groups.set(name,[]);groups.get(name).push(item);}
       content=[...groups].sort(([a],[b])=>a.localeCompare(b,'zh-CN')).map(([name,list])=>`<details class="book-category-shelf"><summary><span>${e(name)}</span><small>${list.length} 部</small></summary>${this.cards(app,list,states,scope==='animation',scope==='animation')}</details>`).join('');
     }else if(mode==='recent')content=items.length?this.cards(app,items,states,true):'';
