@@ -110,7 +110,15 @@ window.SFCloud = {
   },
   updateHeader(){
     const link=document.getElementById('accountLink');
-    if(link){link.textContent=this.user?`${this.isAdmin()?'🛠 管理员':'👤'} ${this.nickname()||'我的账户'}`:'👤 注册 / 登录';}
+    if(link){
+      const admin=this.isAdmin();
+      link.innerHTML=admin
+        ? '<svg class="utility-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 19 6v5c0 4.5-3 7.5-7 10-4-2.5-7-5.5-7-10V6z"/><path d="m9 12 2 2 4-4"/></svg>'
+        : '<svg class="utility-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.8 20a7.2 7.2 0 0 1 14.4 0"/></svg>';
+      const label=admin?'管理员账户':this.user?(this.nickname()||'我的账户'):'注册 / 登录';
+      link.setAttribute('aria-label',label);
+      link.setAttribute('title',label);
+    }
     const state=document.getElementById('syncState');
     if(state){state.textContent=this.isAdmin()?'管理员账号 · 课程和游戏已开放':this.user?'已登录 · 学习记录可云端同步':'游客模式 · 记录仅在本设备';}
   },
