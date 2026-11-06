@@ -1,0 +1,368 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42156036276",
+  "completedAt": "2026-11-06T03:34:21.959964+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 17,
+  "rejected": 33,
+  "websiteCommitRequired": true,
+  "totalWords": 12502,
+  "speechMatchedWords": 12502,
+  "success": [
+    {
+      "seriesId": "little-fox-ally-on-earth-fs0117",
+      "episodeId": 1,
+      "cues": 86,
+      "words": 708,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 708,
+      "coverage": 0.9607,
+      "omittedWords": 29
+    },
+    {
+      "seriesId": "little-fox-ally-on-earth-fs0117",
+      "episodeId": 2,
+      "cues": 92,
+      "words": 709,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 709,
+      "coverage": 0.9986,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-ally-on-earth-fs0117",
+      "episodeId": 3,
+      "cues": 97,
+      "words": 737,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 737,
+      "coverage": 0.9973,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-ally-on-earth-fs0117",
+      "episodeId": 4,
+      "cues": 85,
+      "words": 731,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 731,
+      "coverage": 0.9973,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-ally-on-earth-fs0117",
+      "episodeId": 5,
+      "cues": 106,
+      "words": 745,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 745,
+      "coverage": 0.9933,
+      "omittedWords": 5
+    },
+    {
+      "seriesId": "little-fox-ally-on-earth-fs0117",
+      "episodeId": 6,
+      "cues": 107,
+      "words": 752,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 752,
+      "coverage": 0.9973,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-ally-on-earth-fs0117",
+      "episodeId": 7,
+      "cues": 92,
+      "words": 740,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 740,
+      "coverage": 0.9973,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-ally-on-earth-fs0117",
+      "episodeId": 8,
+      "cues": 90,
+      "words": 718,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 718,
+      "coverage": 0.9945,
+      "omittedWords": 4
+    },
+    {
+      "seriesId": "little-fox-ally-on-earth-fs0117",
+      "episodeId": 9,
+      "cues": 102,
+      "words": 741,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 741,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-ally-on-earth-fs0117",
+      "episodeId": 10,
+      "cues": 95,
+      "words": 741,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 741,
+      "coverage": 0.9973,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-ally-on-earth-fs0117",
+      "episodeId": 11,
+      "cues": 88,
+      "words": 747,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 747,
+      "coverage": 0.996,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-ally-on-earth-fs0117",
+      "episodeId": 12,
+      "cues": 94,
+      "words": 748,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 748,
+      "coverage": 0.9973,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-ally-on-earth-fs0117",
+      "episodeId": 13,
+      "cues": 96,
+      "words": 725,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 725,
+      "coverage": 0.9986,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-ally-on-earth-fs0117",
+      "episodeId": 14,
+      "cues": 94,
+      "words": 753,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 753,
+      "coverage": 0.996,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-ally-on-earth-fs0117",
+      "episodeId": 15,
+      "cues": 99,
+      "words": 727,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 727,
+      "coverage": 0.9973,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-ally-on-earth-fs0117",
+      "episodeId": 16,
+      "cues": 110,
+      "words": 742,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 742,
+      "coverage": 0.9973,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-ally-on-earth-fs0117",
+      "episodeId": 17,
+      "cues": 97,
+      "words": 738,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 738,
+      "coverage": 0.9986,
+      "omittedWords": 1
+    }
+  ],
+  "failures": [
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 3,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 4,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 5,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 6,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 7,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 8,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 9,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 10,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 11,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 12,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 13,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 14,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 15,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 16,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 17,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 18,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 19,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 20,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 21,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 22,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 23,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 24,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 25,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 26,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 27,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 28,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 29,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 30,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 31,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 32,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 33,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 34,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 35,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    }
+  ]
+}
