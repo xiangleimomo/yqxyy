@@ -11,8 +11,7 @@ permissions:
 
 concurrency:
   group: yqxyy-whisperx-ten-episode-v2
-  # One in-flight batch. The next workflow_dispatch queues until this batch finishes.
-  # Do not interrupt a batch that has already consumed expensive WhisperX compute.
+  # Share A concurrency to prevent overlapping compute and publication.
   cancel-in-progress: false
 
 jobs:
@@ -34,8 +33,6 @@ jobs:
           python -m py_compile scripts/manifest-whisperx-recovery.py
       - name: Select batch without reading website subtitles
         id: select
-        env:
-          RETRY_FAILED: ${{ inputs.retry_failed || 'false' }}
         run: |
           python scripts/manifest-whisperx-recovery.py --limit 10 --output whisperx-batch-targets.json
           COUNT=$(python -c "import json;print(json.load(open('whisperx-batch-targets.json'))['selected'])")
@@ -316,7 +313,7 @@ jobs:
           python - <<'PY' >> /tmp/yqxyy-failure-report/issue.md
           import json
           from pathlib import Path
-          p=Path("/tmp/yqxyy-failure-report/whisperx-read-batch-latest.json")
+          p=Path("/tmp/yqxyy-failure-report/whisperx-recovery-batch-latest.json")
           if not p.is_file():
               print("**Episode report:** Not generated; check preflight and job logs.")
           else:
