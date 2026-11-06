@@ -3,7 +3,7 @@ window.MediaShelf = {
   e(app,value){return app.escapeHtml(String(value??''));},
   nav(scope,mode='all'){
     const base=scope==='movies'?'movies':'home';
-    const tabs=scope==='movies'?[['animated','动画大电影'],['documentary','纪录片'],['episodes','分集学习'],['favorites','我的收藏'],['recent','观看记录']]:[['all','全部动画'],['favorites','我的收藏'],['recent','观看记录']];
+    const tabs=scope==='movies'?[['animated','动画大电影'],['documentary','纪录片'],['episodes','分集学习'],['favorites','我的收藏'],['recent','观看记录']]:[['all','全部动画'],['direct','直接观看'],['favorites','我的收藏'],['recent','观看记录']];
     return `<nav class="book-reading-tabs" aria-label="${scope==='movies'?'光影课堂':'动画故事'}书架">${tabs.map(([key,title])=>`<a href="#/${base}/${key}"${mode===key?' aria-current="page"':''}>${title}</a>`).join('')}${scope==='animation'?`<a href="#/wordbank"${mode==='wordbank'?' aria-current="page"':''}>单词表</a><a href="#/writing"${mode==='writing'?' aria-current="page"':''}>英文写作</a>`:''}${scope==='movies'&&window.SFCloud?.isAdmin?.()?'<a class="book-admin-entry" href="#/movie-admin">影视资源管理</a>':''}</nav>`;
   },
   animation(series){const englishTitles={'journey-to-the-west':'Journey to the West','three-kingdoms':'Romance of the Three Kingdoms'};return {key:'anim-'+series.seriesId,scope:'animation',id:series.seriesId,title:englishTitles[series.seriesId]||series.titleZh||series.title,cover:series.cover,href:'#/series/'+series.seriesId,level:Number(series.level||0),disabled:['coming','locked'].includes(series.status),landscape:true,totalEpisodes:Number(series.episodeCount||series.readyEpisodes||0)};},
@@ -49,7 +49,11 @@ window.MediaShelf = {
     let items,allItems;
     if(scope==='animation'){
       const list=(await app.getJSON('data/series-list.json')).filter(row=>!String(row.seriesId).startsWith('movie-')&&(!app.isGuest()||!app.isGuestRestrictedLevel(row.level)));
-      items=list.map(row=>this.animation(row));allItems=items;
+      items=list.map(row=>this.animation(row));
+      const {series,playableById}=await window.MovieClassroom.getLibrary(app);
+      const directItems=series.filter(group=>group.dynamicCategory==='animation').flatMap(group=>group.films.map(film=>this.movieFilm(group,film,playableById)));
+      allItems=[...items,...directItems];
+      if(mode==='direct')items=directItems;
     }else{
       const {series,playableById}=await window.MovieClassroom.getLibrary(app);
       items=series.map(row=>this.movieSeries(row));allItems=[...items,...series.flatMap(row=>row.films.map(film=>this.movieFilm(row,film,playableById)))];
@@ -77,12 +81,12 @@ window.MediaShelf = {
         if(film&&row.modules?.watch&&!existingHistory.has(film.key)&&(!old?.last_read_at||String(row.updatedAt)>String(old.last_read_at)))states.set(film.key,{last_read_at:row.updatedAt,last_cfi:JSON.stringify({href:`#/lesson/${row.seriesId}/${row.episodeId}`,episodeId:row.episodeId,seriesId:row.seriesId})});
       }
     }
-    const e=value=>this.e(app,value),prefix=scope==='movies'?'film-':'anim-';
+    const e=value=>this.e(app,value);
     if(mode==='episodes')items=items;
     if(mode==='favorites')items=allItems.filter(row=>states.get(row.key)?.favorite);
-    if(mode==='recent')items=allItems.filter(row=>row.key.startsWith(prefix)&&!row.disabled&&states.get(row.key)?.last_read_at).sort((a,b)=>String(states.get(b.key).last_read_at).localeCompare(String(states.get(a.key).last_read_at))).slice(0,5);
+    if(mode==='recent')items=allItems.filter(row=>!row.disabled&&states.get(row.key)?.last_read_at).sort((a,b)=>String(states.get(b.key).last_read_at).localeCompare(String(states.get(a.key).last_read_at))).slice(0,5);
     let content;
-    if(mode==='episodes')content=items.length?this.cards(app,items,states):'';
+    if(mode==='episodes'||mode==='direct')content=items.length?this.cards(app,items,states):'';
     else if(mode==='favorites'){
       const groups=new Map();for(const item of items){const name=states.get(item.key)?.category||'未分类';if(!groups.has(name))groups.set(name,[]);groups.get(name).push(item);}
       content=[...groups].sort(([a],[b])=>a.localeCompare(b,'zh-CN')).map(([name,list])=>`<details class="book-category-shelf"><summary><span>${e(name)}</span><small>${list.length} 部</small></summary>${this.cards(app,list,states,scope==='animation',scope==='animation')}</details>`).join('');
