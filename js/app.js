@@ -245,6 +245,7 @@ async renderSeries(seriesId){
         <div class="sub">Level ${series.level ?? 0}</div>
       </div>
     </section>
+    ${seriesId==='movie-harry-potter-1'?'<p style="margin:12px 0"><a class="btn secondary" href="/movie-hp1-hls-test.html" target="_blank" rel="noopener">▶ 测试新 M3U8 直链（不影响现有分集）</a></p>':''}
     <section class="learning-map">
       <aside class="episode-sidebar">
         <h3>课程列表</h3>
