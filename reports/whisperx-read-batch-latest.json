@@ -1,506 +1,284 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42239667561",
-  "completedAt": "2026-11-06T15:30:37.595643+00:00",
+  "runId": "42243712432",
+  "completedAt": "2026-11-06T15:44:31.044514+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 40,
-  "rejected": 10,
+  "published": 3,
+  "rejected": 47,
   "websiteCommitRequired": true,
-  "totalWords": 23383,
-  "speechMatchedWords": 23383,
+  "totalWords": 1751,
+  "speechMatchedWords": 1751,
   "success": [
     {
       "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 8,
-      "cues": 79,
-      "words": 606,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 72,
-      "speechWords": 606,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 9,
-      "cues": 75,
-      "words": 578,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 68,
-      "speechWords": 578,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 11,
-      "cues": 87,
-      "words": 605,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 605,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 12,
-      "cues": 75,
-      "words": 599,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 68,
-      "speechWords": 599,
-      "coverage": 0.9967,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 13,
-      "cues": 85,
-      "words": 583,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 74,
-      "speechWords": 583,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 14,
-      "cues": 82,
-      "words": 597,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 597,
-      "coverage": 0.9967,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 16,
-      "cues": 87,
-      "words": 567,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 567,
-      "coverage": 0.9982,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 17,
-      "cues": 89,
-      "words": 587,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 69,
-      "speechWords": 587,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 18,
-      "cues": 102,
-      "words": 599,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 76,
-      "speechWords": 599,
-      "coverage": 0.9967,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 19,
-      "cues": 92,
-      "words": 580,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 580,
-      "coverage": 0.9966,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 21,
-      "cues": 71,
-      "words": 570,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 64,
-      "speechWords": 570,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 22,
-      "cues": 72,
-      "words": 577,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 62,
-      "speechWords": 577,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 23,
-      "cues": 74,
-      "words": 574,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 61,
-      "speechWords": 574,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 24,
-      "cues": 72,
-      "words": 584,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 64,
-      "speechWords": 584,
-      "coverage": 0.9966,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 26,
-      "cues": 69,
-      "words": 546,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 59,
-      "speechWords": 546,
-      "coverage": 0.9982,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 27,
-      "cues": 64,
-      "words": 570,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 57,
-      "speechWords": 570,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 28,
-      "cues": 62,
-      "words": 559,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 56,
-      "speechWords": 559,
-      "coverage": 0.9982,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 29,
-      "cues": 78,
-      "words": 578,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 68,
-      "speechWords": 578,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 31,
-      "cues": 78,
-      "words": 599,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 65,
-      "speechWords": 599,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 32,
-      "cues": 83,
+      "episodeId": 58,
+      "cues": 81,
       "words": 588,
       "xmlTextVerified": true,
-      "xmlParagraphs": 68,
+      "xmlParagraphs": 71,
       "speechWords": 588,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 33,
-      "cues": 77,
-      "words": 607,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 72,
-      "speechWords": 607,
-      "coverage": 0.9984,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 34,
-      "cues": 86,
-      "words": 576,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 77,
-      "speechWords": 576,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 36,
-      "cues": 76,
-      "words": 584,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 67,
-      "speechWords": 584,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 37,
-      "cues": 73,
-      "words": 598,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 66,
-      "speechWords": 598,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 38,
-      "cues": 71,
-      "words": 573,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 66,
-      "speechWords": 573,
-      "coverage": 0.9931,
-      "omittedWords": 4
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 39,
-      "cues": 76,
-      "words": 593,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 70,
-      "speechWords": 593,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 41,
-      "cues": 75,
-      "words": 586,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 63,
-      "speechWords": 586,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 42,
-      "cues": 82,
-      "words": 603,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 67,
-      "speechWords": 603,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 43,
-      "cues": 85,
-      "words": 600,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 72,
-      "speechWords": 600,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 44,
-      "cues": 79,
-      "words": 585,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 64,
-      "speechWords": 585,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 46,
-      "cues": 94,
-      "words": 590,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 79,
-      "speechWords": 590,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 47,
-      "cues": 68,
-      "words": 560,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 60,
-      "speechWords": 560,
-      "coverage": 0.9982,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 48,
-      "cues": 73,
-      "words": 595,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 65,
-      "speechWords": 595,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 49,
-      "cues": 91,
-      "words": 587,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 587,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 51,
-      "cues": 80,
-      "words": 554,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 63,
-      "speechWords": 554,
-      "coverage": 0.9946,
+      "coverage": 0.9949,
       "omittedWords": 3
     },
     {
       "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 52,
-      "cues": 78,
-      "words": 596,
+      "episodeId": 59,
+      "cues": 97,
+      "words": 592,
       "xmlTextVerified": true,
-      "xmlParagraphs": 65,
-      "speechWords": 596,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 53,
-      "cues": 70,
-      "words": 577,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 64,
-      "speechWords": 577,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 54,
-      "cues": 89,
-      "words": 594,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 594,
+      "xmlParagraphs": 84,
+      "speechWords": 592,
       "coverage": 0.9966,
       "omittedWords": 2
     },
     {
       "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 56,
-      "cues": 77,
-      "words": 580,
+      "episodeId": 60,
+      "cues": 83,
+      "words": 571,
       "xmlTextVerified": true,
-      "xmlParagraphs": 70,
-      "speechWords": 580,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 57,
-      "cues": 82,
-      "words": 599,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 69,
-      "speechWords": 599,
+      "xmlParagraphs": 71,
+      "speechWords": 571,
       "coverage": 0.9983,
       "omittedWords": 1
     }
   ],
   "failures": [
     {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
+      "episodeId": 2,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
+      "episodeId": 3,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
+      "episodeId": 4,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
+      "episodeId": 5,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.4% assigned"
+    },
+    {
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
+      "episodeId": 6,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
+      "episodeId": 7,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
+      "episodeId": 8,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
+      "episodeId": 9,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
       "episodeId": 10,
-      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
+      "episodeId": 11,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 0.1% assigned"
+    },
+    {
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
+      "episodeId": 12,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
+      "episodeId": 13,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
+      "episodeId": 14,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
       "episodeId": 15,
-      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
+      "episodeId": 16,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
+      "episodeId": 17,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
+      "episodeId": 18,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
+      "episodeId": 19,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
       "episodeId": 20,
-      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 25,
-      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
+      "episodeId": 21,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 30,
-      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
+      "episodeId": 22,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 35,
-      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
+      "episodeId": 23,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 40,
-      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+      "seriesId": "little-fox-jack-and-the-beanstalk-fs0107",
+      "episodeId": 24,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 45,
-      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.2% assigned"
     },
     {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 50,
-      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "episodeId": 2,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-iggy-the-incredible-inventor-fs0066",
-      "episodeId": 55,
-      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "episodeId": 3,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "episodeId": 4,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "episodeId": 5,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "episodeId": 6,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "episodeId": 7,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "episodeId": 8,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.6% matched, 0.1% assigned"
+    },
+    {
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "episodeId": 9,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "episodeId": 10,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "episodeId": 11,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "episodeId": 12,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "episodeId": 13,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "episodeId": 14,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "episodeId": 15,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "episodeId": 16,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "episodeId": 17,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "episodeId": 18,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "episodeId": 19,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.3% matched, 0.5% assigned"
+    },
+    {
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "episodeId": 20,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "episodeId": 21,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.8% matched, 0.1% assigned"
+    },
+    {
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "episodeId": 22,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-jane-and-pip-s-sweet-quest-fs0179",
+      "episodeId": 23,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.1% matched, 0.0% assigned"
     }
   ]
 }
