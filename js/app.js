@@ -876,73 +876,33 @@ async renderLesson(seriesId, episodeId){
     const clipEnd=player.dataset.clipEnd!==''?Number(player.dataset.clipEnd):NaN;
     if(player.classList.contains('hls-video-player')&&Number.isFinite(clipStart)&&Number.isFinite(clipEnd)&&clipEnd>clipStart){
       // A lesson is a bounded view of the original VOD, not a rewritten HLS playlist.
-      const duration=clipEnd-clipStart;
-      let initialized=false,pendingPlay=false;
+      // Keep the original HTML5 video controls; chapter limits are enforced
+      // without adding a second playback bar below the player.
+      let initialized=false;
       const clamp=time=>Math.min(clipEnd,Math.max(clipStart,time));
-      const format=time=>{const n=Math.max(0,Math.floor(time));return String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0');};
-      const controls=document.createElement('div');
-      controls.className='sf-clip-controls';
-      controls.style.cssText='display:flex;align-items:center;gap:8px;padding:12px 10px;flex-wrap:nowrap;background:#fff;color:#22543b;border-radius:0 0 16px 16px;box-sizing:border-box;width:100%';
-      const toggle=document.createElement('button');
-      toggle.type='button';toggle.textContent='播放';toggle.setAttribute('aria-label','播放或暂停本集');
-      const progress=document.createElement('input');
-      progress.type='range';progress.min='0';progress.max=String(duration);progress.step='0.1';progress.value='0';
-      progress.setAttribute('aria-label','本集播放进度');progress.style.cssText='flex:1 1 80px;min-width:40px;accent-color:#2d9967';
-      const clock=document.createElement('span');
-      clock.textContent='00:00 / '+format(duration);clock.style.fontVariantNumeric='tabular-nums';
-      const mute=document.createElement('button');
-      mute.type='button';mute.textContent='静音';mute.setAttribute('aria-label','切换静音');
-      const fullscreen=document.createElement('button');
-      fullscreen.type='button';fullscreen.textContent='全屏';fullscreen.setAttribute('aria-label','全屏播放本集');
-      for(const button of [toggle,mute,fullscreen])button.style.cssText='border:0;border-radius:12px;background:#edf8f0;color:#238050;padding:10px 8px;cursor:pointer;min-height:44px;font-weight:700';
-      clock.style.cssText='font-variant-numeric:tabular-nums;font-size:12px;white-space:nowrap;color:#4b5563';
-      controls.append(toggle,progress,clock,mute,fullscreen);
-      mute.addEventListener('click',()=>{player.muted=!player.muted;mute.textContent=player.muted?'取消静音':'静音';});
-      fullscreen.addEventListener('click',()=>{const host=player.closest('.video-wrap')||player;if(document.fullscreenElement){document.exitFullscreen?.().catch?.(()=>{});}else{host.requestFullscreen?.().catch?.(()=>{});}});
-      player.closest('.video-wrap')?.insertAdjacentElement('afterend',controls);
-      player.controls=false;
-      const sync=()=>{
-        const now=Number.isFinite(player.currentTime)?player.currentTime:clipStart;
-        const local=Math.max(0,Math.min(duration,now-clipStart));
-        if(document.activeElement!==progress) progress.value=String(local);
-        clock.textContent=format(local)+' / '+format(duration);
-        toggle.textContent=player.paused?'播放':'暂停';
+      player.controls=true;
+      const initialize=()=>{
+        if(initialized||player.readyState<1)return;
+        initialized=true;
+        try{player.currentTime=clipStart;}catch{initialized=false;}
       };
       const enforce=()=>{
         if(!initialized)return;
         const now=player.currentTime;
+        if(!Number.isFinite(now))return;
         if(now<clipStart||now>clipEnd){
           player.currentTime=clamp(now);
           if(now>=clipEnd)player.pause();
-        }else if(now>=clipEnd-0.05){player.pause();}
-        sync();
-      };
-      const initialize=()=>{
-        if(initialized||player.readyState<1)return;
-        initialized=true;
-        try{player.currentTime=clipStart;}catch{initialized=false;return;}
-        sync();
-        if(pendingPlay){pendingPlay=false;const task=player.play();if(task?.catch)task.catch(()=>sync());}
+        }else if(now>=clipEnd-0.05){
+          player.pause();
+        }
       };
       player.addEventListener('loadedmetadata',initialize);
       player.addEventListener('durationchange',initialize);
       player.addEventListener('timeupdate',enforce);
       player.addEventListener('seeking',enforce);
-      player.addEventListener('seeked',sync);
       player.addEventListener('play',enforce);
-      player.addEventListener('pause',sync);
-      toggle.addEventListener('click',()=>{
-        if(!initialized){pendingPlay=true;initialize();return;}
-        if(player.paused){
-          if(player.currentTime>=clipEnd-0.05)player.currentTime=clipStart;
-          const task=player.play();if(task&&task.catch)task.catch(()=>sync());
-        }else player.pause();
-      });
-      progress.addEventListener('input',()=>{
-        if(!initialized){initialize();if(!initialized)return;}
-        player.currentTime=clamp(clipStart+Number(progress.value));
-        sync();
-      });
+      if(player.readyState>=1)initialize();
     }
     let hlsFallbacks=[];
     try{hlsFallbacks=JSON.parse(player.dataset.hlsFallbackSrcs||'[]');}catch{hlsFallbacks=[];}
