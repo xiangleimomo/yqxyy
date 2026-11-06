@@ -1,0 +1,265 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42190397378",
+  "completedAt": "2026-11-06T08:58:06.309299+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 0,
+  "rejected": 50,
+  "websiteCommitRequired": true,
+  "totalWords": 0,
+  "speechMatchedWords": 0,
+  "success": [],
+  "failures": [
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 22,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 23,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 24,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 25,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 26,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.8% matched, 0.8% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 27,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 28,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 29,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 30,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.7% matched, 0.2% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 31,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 32,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 33,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 34,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.7% matched, 1.6% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 35,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 36,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 37,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.5% matched, 6.5% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 38,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 39,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 40,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 41,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 42,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 43,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 44,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 45,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.5% matched, 1.6% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 46,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.5% matched, 0.5% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 47,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 48,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.8% matched, 0.7% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 49,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 50,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 51,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 52,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 53,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 54,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.2% matched, 3.4% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 55,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 56,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.7% matched, 0.1% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 57,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 58,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 59,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 60,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 61,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.3% matched, 2.9% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 62,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.6% matched, 2.7% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 63,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 64,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 65,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 66,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.7% matched, 5.1% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 67,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 68,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 69,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 70,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-cora-s-compass-fs0124",
+      "episodeId": 71,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
+    }
+  ]
+}
