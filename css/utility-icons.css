@@ -1,0 +1,30 @@
+/* Five polished 3D utility-navigation icons */
+.utility-nav a{
+  flex:0 0 48px;
+  width:48px;
+  height:48px;
+  min-height:48px;
+  padding:0;
+}
+.utility-nav .utility-image{
+  display:block;
+  width:44px;
+  height:44px;
+  object-fit:contain;
+  pointer-events:none;
+}
+.utility-nav #navCheckin{background:#fff5f1;border-color:#f5e0d6}
+.utility-nav #navHomework{background:#f3f0ff;border-color:#e5defb}
+.utility-nav #navRewards{background:#fff8e9;border-color:#f6e6c4}
+.utility-nav #navHonors{background:#eaf9f7;border-color:#d6efeb}
+.utility-nav #accountLink{background:#f2f5fa;border-color:#e1e8f1}
+@media(max-width:800px){
+  .utility-nav{width:100%;display:flex;justify-content:flex-end;gap:8px;flex-wrap:nowrap}
+  .utility-nav a{flex-basis:42px;width:42px;height:42px;min-height:42px}
+  .utility-nav .utility-image{width:40px;height:40px}
+}
+@media(max-width:420px){
+  .utility-nav{gap:6px}
+  .utility-nav a{flex-basis:38px;width:38px;height:38px;min-height:38px;border-radius:12px}
+  .utility-nav .utility-image{width:36px;height:36px}
+}
