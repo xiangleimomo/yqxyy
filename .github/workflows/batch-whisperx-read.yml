@@ -1,12 +1,11 @@
-name: WhisperX + official XML Text 10-episode karaoke batch
+name: WhisperX + official XML Text 50-episode karaoke batch
 on:
   workflow_dispatch:
     inputs:
       batch_size:
-        description: "Number of episodes (max 10)"
-        type: choice
-        options: ['10']
-        default: '10'
+        description: "Fixed at 50 episodes; accepts legacy in-flight dispatches during transition"
+        type: string
+        default: '50'
       retry_failed:
         description: "Include previously rejected episodes"
         type: boolean
@@ -29,7 +28,7 @@ concurrency:
 
 jobs:
   prepare:
-    name: Select 10 episodes from original video and official XML
+    name: Select up to 50 episodes from original video and official XML
     runs-on: ubuntu-latest
     outputs:
       has_targets: ${{ steps.select.outputs.has_targets }}
@@ -48,7 +47,8 @@ jobs:
         env:
           RETRY_FAILED: ${{ inputs.retry_failed || 'false' }}
         run: |
-          ARGS=(--limit 10 --output whisperx-batch-targets.json)
+          BATCH_SIZE=50
+          ARGS=(--limit "$BATCH_SIZE" --output whisperx-batch-targets.json)
           if [[ "$RETRY_FAILED" == "true" ]]; then ARGS+=(--retry-failed); fi
           python scripts/manifest-whisperx-read.py "${ARGS[@]}"
           COUNT=$(python -c "import json;print(json.load(open('whisperx-batch-targets.json'))['selected'])")
@@ -57,7 +57,7 @@ jobs:
           else
             echo 'has_targets=false' >> "$GITHUB_OUTPUT"
           fi
-          echo "Selected $COUNT episodes"
+          echo "Selected $COUNT episodes; five shards will receive up to 10 episodes each."
       - uses: actions/upload-artifact@v4
         if: steps.select.outputs.has_targets == 'true'
         with:
@@ -200,7 +200,7 @@ jobs:
           if os.environ.get("CACHE_HIT") != "true" and os.environ.get("WHISPERX_INSTALL_OUTCOME") != "success":
               reason = "WhisperX dependency installation failed or timed out (10-minute limit)"
           elif os.environ.get("FFMPEG_INSTALL_OUTCOME") == "failure":
-              reason = "FFmpeg installation failed or timed out (5-minute limit)"
+              reason = "FFmpeg installation failed or timed out (10-minute limit)"
           else:
               reason = "WhisperX environment verification failed"
           manifest = json.loads(Path("whisperx-batch-targets.json").read_text(encoding="utf-8"))
@@ -226,7 +226,7 @@ jobs:
           retention-days: 7
 
   publish:
-    name: Verify and publish generated VTT plus word highlights
+    name: Commit validated VTT plus word highlights to GitHub
     needs: [prepare, align]
     if: always() && needs.prepare.result == 'success' && needs.prepare.outputs.has_targets == 'true'
     runs-on: ubuntu-latest
@@ -287,7 +287,7 @@ jobs:
             fi
           fi
           git push origin HEAD:main
-      - name: Preserve batch audit
+      - name: Save batch result summary
         uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -296,13 +296,13 @@ jobs:
           if-no-files-found: warn
           retention-days: 14
 
-      - name: Dispatch next 10 episodes immediately after successful publication
+      - name: Dispatch next 50 episodes immediately after successful GitHub update
         if: ${{ success() }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          # A rejected batch with zero published episodes is a real failure,
+          # A batch with zero published episodes is a real failure,
           # not a reason to dispatch the same bad batch forever.
           python - <<'PY'
           import json
@@ -320,14 +320,14 @@ jobs:
           # are excluded and this run's rejected episodes are held for review.
           git fetch origin main
           git reset --hard origin/main
-          python scripts/manifest-whisperx-read.py --limit 10 --output /tmp/whisperx-next-batch.json
+          python scripts/manifest-whisperx-read.py --limit 50 --output /tmp/whisperx-next-batch.json
           NEXT=$(python -c 'import json;print(json.load(open("/tmp/whisperx-next-batch.json"))["selected"])')
           if [[ "$NEXT" -eq 0 ]]; then
             echo "No eligible episodes remain; full-site processing chain complete."
             exit 0
           fi
           echo "Dispatching next batch of $NEXT eligible episodes."
-          gh workflow run batch-whisperx-read.yml --repo "$GITHUB_REPOSITORY" --ref main -f batch_size=10 -f retry_failed=false
+          gh workflow run batch-whisperx-read.yml --repo "$GITHUB_REPOSITORY" --ref main -f batch_size=50 -f retry_failed=false
 
   report_failure:
     name: Publish diagnostic report for ChatGPT repair
@@ -349,7 +349,7 @@ jobs:
           
           **Run:** https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}
           **Commit:** ${GITHUB_SHA}
-          **Batch policy:** 10 episodes; >=90% authentic speech alignment.
+          **Batch policy:** 50 episodes across five parallel shards (10 per shard); >=90% authentic speech alignment.
           
           The workflow stopped rather than repeatedly processing an unreliable batch.
           Please inspect the failed job logs and the episode-level JSON below.
