@@ -1,12 +1,5 @@
 [
   {
-    "id": "streamjuju",
-    "name": "StreamJuju（主片源）",
-    "mode": "external",
-    "movieUrl": "https://streamjuju.cyou/watch/movie/{tmdbId}",
-    "note": "主片源；新页面打开播放。"
-  },
-  {
     "id": "vidsrc",
     "name": "VidSrc",
     "mode": "embed",
@@ -26,5 +19,12 @@
     "mode": "external",
     "movieUrl": "https://111movies.net/movie/{tmdbId}",
     "note": "当前入口会跳转至 Vidlove；新页面尝试播放。"
+  },
+  {
+    "id": "streamjuju",
+    "name": "StreamJuju",
+    "mode": "external",
+    "movieUrl": "https://streamjuju.cyou/watch/movie/{tmdbId}",
+    "note": "在聚合站中选择更多播放平台。"
   }
 ]
