@@ -11,8 +11,6 @@ on:
         description: "Include previously rejected episodes"
         type: boolean
         default: false
-  schedule:
-    - cron: '0 0 * * *'
   push:
     branches: [main]
     paths:
@@ -20,11 +18,12 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: yqxyy-whisperx-ten-episode-v2
-  # Explicit replacement launches stop any still-running obsolete batch.
-  # Scheduled daily batches queue normally instead of interrupting work.
+  # One in-flight batch. The next workflow_dispatch queues until this batch finishes.
+  # Do not interrupt a batch that has already consumed expensive WhisperX compute.
   cancel-in-progress: false
 
 jobs:
@@ -133,6 +132,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Refresh checkout before writing validated subtitles
+        run: |
+          # The long-running alignment jobs may have started on an older main.
+          # Refresh BEFORE writing this run's report, preventing obsolete
+          # reports on the old commit from conflicting with current main.
+          git fetch origin main
+          git reset --hard origin/main
       - name: Recheck official XML Text, XML transcript integrity, audio identity and timestamp quality
         run: |
           python scripts/publish-whisperx-read-batch.py --manifest whisperx-batch-targets.json --source whisperx-batch-results --run-id "${{ github.run_id }}"
@@ -177,3 +183,36 @@ jobs:
           path: reports/whisperx-read-*.json
           if-no-files-found: warn
           retention-days: 14
+
+      - name: Dispatch next 10 episodes immediately after successful publication
+        if: ${{ success() }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          # A rejected batch with zero published episodes is a real failure,
+          # not a reason to dispatch the same bad batch forever.
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          result=json.loads(Path("reports/whisperx-read-batch-latest.json").read_text(encoding="utf-8"))
+          selected=int(result["selected"])
+          published=int(result["published"])
+          rejected=int(result["rejected"])
+          print(f"Current batch: selected={selected} published={published} rejected={rejected}")
+          if selected<1 or published<1:
+              raise SystemExit("No episodes published: chain stopped for review")
+          PY
+
+          # Only select against latest committed data. Already-published episodes
+          # are excluded and this run's rejected episodes are held for review.
+          git fetch origin main
+          git reset --hard origin/main
+          python scripts/manifest-whisperx-read.py --limit 10 --output /tmp/whisperx-next-batch.json
+          NEXT=$(python -c 'import json;print(json.load(open("/tmp/whisperx-next-batch.json"))["selected"])')
+          if [[ "$NEXT" -eq 0 ]]; then
+            echo "No eligible episodes remain; full-site processing chain complete."
+            exit 0
+          fi
+          echo "Dispatching next batch of $NEXT eligible episodes."
+          gh workflow run batch-whisperx-read.yml --repo "$GITHUB_REPOSITORY" --ref main -f batch_size=10 -f retry_failed=false
