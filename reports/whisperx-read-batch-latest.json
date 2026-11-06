@@ -1,264 +1,415 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42299883475",
-  "completedAt": "2026-11-06T21:51:47.729427+00:00",
+  "runId": "42300182450",
+  "completedAt": "2026-11-06T22:09:42.961812+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 0,
-  "rejected": 50,
+  "published": 25,
+  "rejected": 25,
   "websiteCommitRequired": true,
-  "totalWords": 0,
-  "speechMatchedWords": 0,
-  "success": [],
+  "totalWords": 28387,
+  "speechMatchedWords": 28387,
+  "success": [
+    {
+      "seriesId": "little-fox-o-henry-fs0018",
+      "episodeId": 1,
+      "cues": 137,
+      "words": 1336,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 1336,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-o-henry-fs0018",
+      "episodeId": 2,
+      "cues": 122,
+      "words": 1260,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 1260,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-o-henry-fs0018",
+      "episodeId": 3,
+      "cues": 121,
+      "words": 1249,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 1249,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-o-henry-fs0018",
+      "episodeId": 4,
+      "cues": 160,
+      "words": 1544,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 95,
+      "speechWords": 1544,
+      "coverage": 0.9994,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-o-henry-fs0018",
+      "episodeId": 5,
+      "cues": 113,
+      "words": 1409,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 80,
+      "speechWords": 1409,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-o-henry-fs0018",
+      "episodeId": 6,
+      "cues": 116,
+      "words": 1042,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 1042,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-o-henry-fs0018",
+      "episodeId": 7,
+      "cues": 98,
+      "words": 956,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 59,
+      "speechWords": 956,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-o-henry-fs0018",
+      "episodeId": 8,
+      "cues": 92,
+      "words": 1005,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 1005,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-o-henry-fs0018",
+      "episodeId": 9,
+      "cues": 104,
+      "words": 1060,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 1060,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-o-henry-fs0018",
+      "episodeId": 10,
+      "cues": 115,
+      "words": 1163,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 1163,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-o-henry-fs0018",
+      "episodeId": 11,
+      "cues": 106,
+      "words": 1122,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 1122,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-oliver-twist-fs0058",
+      "episodeId": 1,
+      "cues": 121,
+      "words": 1080,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 1080,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-oliver-twist-fs0058",
+      "episodeId": 2,
+      "cues": 130,
+      "words": 1076,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 1076,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-oliver-twist-fs0058",
+      "episodeId": 3,
+      "cues": 141,
+      "words": 1094,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 1094,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-oliver-twist-fs0058",
+      "episodeId": 4,
+      "cues": 106,
+      "words": 1088,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 1088,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-oliver-twist-fs0058",
+      "episodeId": 5,
+      "cues": 117,
+      "words": 1089,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 1089,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-oliver-twist-fs0058",
+      "episodeId": 6,
+      "cues": 111,
+      "words": 1093,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 1093,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-oliver-twist-fs0058",
+      "episodeId": 7,
+      "cues": 145,
+      "words": 1098,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 1098,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-oliver-twist-fs0058",
+      "episodeId": 8,
+      "cues": 128,
+      "words": 1080,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 1080,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-oliver-twist-fs0058",
+      "episodeId": 9,
+      "cues": 131,
+      "words": 1098,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 1098,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-oliver-twist-fs0058",
+      "episodeId": 10,
+      "cues": 125,
+      "words": 1099,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 1099,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-oliver-twist-fs0058",
+      "episodeId": 11,
+      "cues": 128,
+      "words": 1074,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 1074,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-oliver-twist-fs0058",
+      "episodeId": 12,
+      "cues": 116,
+      "words": 1085,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 1085,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-oliver-twist-fs0058",
+      "episodeId": 13,
+      "cues": 132,
+      "words": 1091,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 1091,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-oliver-twist-fs0058",
+      "episodeId": 14,
+      "cues": 149,
+      "words": 1096,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 1096,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    }
+  ],
   "failures": [
     {
-      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
-      "episodeId": 24,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
-      "episodeId": 25,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
-      "episodeId": 26,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
-      "episodeId": 27,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
-      "episodeId": 28,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
-      "episodeId": 29,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
-      "episodeId": 30,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
-      "episodeId": 31,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
-      "episodeId": 32,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
-      "episodeId": 33,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
-      "episodeId": 34,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
-      "episodeId": 1,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
-      "episodeId": 2,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
-      "episodeId": 3,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
-      "episodeId": 4,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
-      "episodeId": 5,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
-      "episodeId": 6,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
-      "episodeId": 7,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 8,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 9,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 10,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 11,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 12,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 13,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 14,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 15,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 16,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 17,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 18,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 19,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 20,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 21,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 22,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 23,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 24,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 25,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 26,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 27,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 28,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 29,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 30,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 31,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-3-srv01028",
+      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
       "episodeId": 32,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 1,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 2,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 3,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 4,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 5,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 6,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 7,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     }
   ]
