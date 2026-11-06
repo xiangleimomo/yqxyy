@@ -115,7 +115,10 @@
       player.setAttribute('controls', '');
       player.controls = true;
     }
-    if (isMobile) {
+    // Movie lessons have their own 8-button toolbar; do not inject the legacy
+    // mobile seek/play/mute/fullscreen bar a second time.
+    const movieToolbar = !!player.closest('.sf-movie-lesson-player')?.querySelector('.sf-lesson-toolbar');
+    if (isMobile && !movieToolbar) {
       stage.classList.add('sf-touch-stage', 'sf-caption-below');
       player.removeAttribute('controls');
       player.controls = false;
