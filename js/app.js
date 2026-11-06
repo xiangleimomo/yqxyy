@@ -241,9 +241,7 @@ async renderSeries(seriesId){
       <img class="cover" src="${series.coverImage || `assets/covers/${seriesId}.svg`}" alt="${series.seriesTitle}">
       <div class="series-hero-content">
         <h1>${series.seriesTitle}</h1>
-        <div class="sub">${series.seriesTitleZh || ''} · Level ${series.level ?? 0} · ${this.statusText(series.status)}</div>
-        <p class="sub">${series.description || ''}</p>
-        ${series.movieId?`<a class="btn secondary" href="#/movie/${this.escapeHtml(series.movieId)}">▶ 观看完整电影</a>`:''}
+        <div class="sub">Level ${series.level ?? 0}</div>
       </div>
     </section>
     <section class="learning-map">
