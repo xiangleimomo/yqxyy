@@ -602,7 +602,6 @@ window.BookReader = {
           this.pdfOrientationLocked = true;
         } catch (_) { /* The CSS landscape layout also works without native lock. */ }
       };
-      document.getElementById('bookFullscreen').onclick = toggleFullscreen;
       document.getElementById('bookFullscreenBottom').onclick = toggleFullscreen;
       let zoom = 1;
       const applyZoom = () => stage.style.setProperty('--book-zoom', String(zoom));
@@ -870,7 +869,6 @@ window.BookReader = {
       document.getElementById('bookStagePrev').onclick = () => turn('prev');
       document.getElementById('bookStageNext').onclick = () => turn('next');
       const toggleFullscreen = () => reader.requestFullscreen?.();
-      document.getElementById('bookFullscreen').onclick = toggleFullscreen;
       document.getElementById('bookFullscreenBottom').onclick = toggleFullscreen;
       let zoom = 1;
       const applyZoom = () => document.getElementById('ebookStage').style.setProperty('--book-zoom', String(zoom));
