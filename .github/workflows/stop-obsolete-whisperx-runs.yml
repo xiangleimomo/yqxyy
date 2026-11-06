@@ -25,6 +25,9 @@ jobs:
             if [[ "${status}" == "queued" || "${status}" == "pending" || "${status}" == "waiting" || "${status}" == "in_progress" ]]; then
               gh api --method POST "repos/${GH_REPO}/actions/runs/${run_id}/cancel"
               echo "Cancel requested for ${run_id}"
+              if [[ "${run_id}" == "42129660480" ]]; then
+                gh api --method POST "repos/${GH_REPO}/actions/runs/${run_id}/force-cancel" || echo "Force-cancel not needed or already terminal"
+              fi
             else
               echo "Already terminal: ${run_id}"
             fi
