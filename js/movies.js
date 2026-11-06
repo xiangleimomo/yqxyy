@@ -59,9 +59,9 @@ window.MovieClassroom = {
     const dynamicGroups=window.MovieLibrary?.asGroups?.(dynamicRows)||[],allSeries=[...dynamicGroups,...series],dynamicInfo=window.MovieLibrary?.info?.(dynamicRows)||new Map();
     const legacy=settings.mode==='legacy'&&settings.legacyPrimaryEnabled===true,ids=new Map([...hub.films,...dynamicRows.map(row=>({id:row.id,tmdbId:Number(row.tmdb_id)}))].map(film=>[film.id,film.tmdbId])),useVidMario=settings.mode==='vidmario',embedProviders=providers.filter(provider=>provider.mode==='embed');
     const playable=legacy?allSeries.flatMap(item=>item.sources||[]).filter(item=>this.playbackSource(item).url):allSeries.flatMap(group=>group.films.map(([id,title,titleZh,year])=>{
-      const dynamic=dynamicInfo.get(id),tmdb=ids.get(id),validTmdb=Number.isSafeInteger(tmdb)&&tmdb>0;
+      const dynamic=dynamicInfo.get(id),tmdb=ids.get(id),validTmdb=Number.isSafeInteger(tmdb)&&tmdb>0,mediaType=dynamic?.media_type==='tv'?'tv':'movie';
       if(useVidMario){
-        const embeddedSources=validTmdb?embedProviders.map(provider=>({url:provider.movieUrl.replace('{tmdbId}',String(tmdb)),embedded:true,label:provider.name})).filter(source=>{try{const url=new URL(source.url);return url.protocol==='https:'&&!url.username&&!url.password;}catch{return false;}}):[];
+        const embeddedSources=validTmdb?embedProviders.map(provider=>({url:(mediaType==='tv'?(provider.tvUrl||provider.movieUrl.replace('/movie/','/tv/')):provider.movieUrl).replace('{tmdbId}',String(tmdb)),embedded:true,label:provider.name})).filter(source=>{try{const url=new URL(source.url);return url.protocol==='https:'&&!url.username&&!url.password;}catch{return false;}}):[];
         return {...(group.sources||[]).find(item=>item.id===id),id,title,titleZh,year,cover:dynamic?.poster_url||'',description:dynamic?.overview||'',playerMode:'embed-fallback',embedUrl:embeddedSources[0]?.url||'',sourceLabel:embeddedSources[0]?.label||'嵌入播放源',backupSources:embeddedSources.slice(1)};
       }
       return {...(group.sources||[]).find(item=>item.id===id),id,title,titleZh,year,cover:dynamic?.poster_url||'',description:dynamic?.overview||'',playerMode:'dulo',embedUrl:validTmdb?'https://dulo.mov/watch/movie/'+tmdb:'',sourceLabel:'Dulo 播放器'};

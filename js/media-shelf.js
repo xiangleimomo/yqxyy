@@ -60,10 +60,10 @@ window.MediaShelf = {
       if(mode==='animated'){
         // Keep the original static film collections, then append administrator-published standalone films.
         const originalCollections=items.filter(row=>row.key.startsWith('film-series-'));
-        const publishedFilms=allItems.filter(row=>row.id.startsWith('tmdb-movie-')&&series.find(group=>group.films.some(([id])=>id===row.id))?.dynamicCategory==='animated');
+        const publishedFilms=allItems.filter(row=>row.id.startsWith('tmdb-')&&series.find(group=>group.films.some(([id])=>id===row.id))?.dynamicCategory==='animated');
         items=[...originalCollections,...publishedFilms];
       }
-      if(mode==='documentary')items=allItems.filter(row=>row.id.startsWith('tmdb-movie-')&&series.find(group=>group.films.some(([id])=>id===row.id))?.dynamicCategory==='documentary');
+      if(mode==='documentary')items=allItems.filter(row=>row.id.startsWith('tmdb-')&&series.find(group=>group.films.some(([id])=>id===row.id))?.dynamicCategory==='documentary');
       if(mode==='episodes'){
         const courseIds=[...new Set(series.flatMap(group=>group.films.map(([filmId])=>playableById.get(filmId)?.studyCourse?.seriesId).filter(Boolean)))];
         const courses=await Promise.all(courseIds.map(async seriesId=>{
