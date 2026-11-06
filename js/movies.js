@@ -56,7 +56,7 @@ window.MovieClassroom = {
       ...item,
       ...(await app.getJSON(`data/movies/${item.id}/movies.json`))
     })));
-    const legacy=settings.mode==='legacy'&&settings.legacyPrimaryEnabled===true,ids=new Map(hub.films.map(film=>[film.id,film.tmdbId])),useVidMario=settings.mode==='vidmario',useStreamJuju=settings.mode==='streamjuju';
+    const legacy=settings.mode==='legacy'&&settings.legacyPrimaryEnabled===true,ids=new Map(hub.films.map(film=>[film.id,film.tmdbId])),useVidMario=settings.mode==='vidmario';
     const playable=legacy?series.flatMap(item=>item.sources||[]).filter(item=>this.playbackSource(item).url):series.flatMap(group=>group.films.map(([id,title,titleZh,year])=>{
       const tmdb=ids.get(id),validTmdb=Number.isSafeInteger(tmdb)&&tmdb>0;
       if(useVidMario){
@@ -64,10 +64,6 @@ window.MovieClassroom = {
         // VidMario intentionally rejects iframe embedding. Keep both 111MoviesNet
         // routes selectable here, then open the selected official player page.
         return {...(group.sources||[]).find(item=>item.id===id),id,title,titleZh,year,playerMode:'vidmario-external',embedUrl:base?base+'?server=Pythagoras':'',sourceLabel:'111MoviesNet 主片源',backupSources:base?[{url:base+'?server=Fermat',embedded:true,label:'111MoviesNet 备用片源'}]:[]};
-      }
-      if(useStreamJuju){
-        const url=validTmdb?'https://streamjuju.cyou/watch/movie/'+tmdb:'';
-        return {...(group.sources||[]).find(item=>item.id===id),id,title,titleZh,year,playerMode:'streamjuju-external',embedUrl:url,sourceLabel:'StreamJuju 主片源'};
       }
       return {...(group.sources||[]).find(item=>item.id===id),id,title,titleZh,year,playerMode:'dulo',embedUrl:validTmdb?'https://dulo.mov/watch/movie/'+tmdb:'',sourceLabel:'Dulo 播放器'};
     })).filter(item=>item.embedUrl);
@@ -176,12 +172,11 @@ window.MovieClassroom = {
     if (hasBackup) document.getElementById('movieSource').onchange = event => { const choice = event.target.value; this.cleanup(); this.renderWatch(app, id, choice).catch(() => {}); };
     const report = (message, failed=false) => { if (generation !== this.generation) return; const status = document.getElementById('moviePlayerStatus'); if (status) { status.textContent = message; status.classList.toggle('failed', failed); } };
     if (embedded) {
-      if (['vidmario-external','streamjuju-external'].includes(movie.playerMode)) {
+      if (movie.playerMode === 'vidmario-external') {
         const stage = app.el().querySelector('.movie-watch-frame');
-        const sourceName = usingBackup ? (backups[index].label || `备用片源 ${index + 1}`) : (movie.sourceLabel || '外部播放源');
-        const providerName = movie.playerMode === 'streamjuju-external' ? 'StreamJuju' : '111MoviesNet';
+        const sourceName = usingBackup ? (backups[index].label || `备用片源 ${index + 1}`) : (movie.sourceLabel || '111MoviesNet 播放源');
         stage.classList.add('movie-external-stage');
-        stage.innerHTML = `<div class="movie-external-player"><span aria-hidden="true">▶</span><strong>使用 ${e(providerName)} 播放器观看</strong><p>将在新标签页打开所选片源。</p><a class="btn" href="${e(sourceUrl)}" target="_blank" rel="noopener noreferrer">打开 ${e(sourceName)}</a></div>`;
+        stage.innerHTML = `<div class="movie-external-player"><span aria-hidden="true">▶</span><strong>使用 111MoviesNet 播放器观看</strong><p>该播放器不支持嵌入本站；将在新标签页直接打开所选线路。</p><a class="btn" href="${e(sourceUrl)}" target="_blank" rel="noopener noreferrer">打开 ${e(sourceName)}</a></div>`;
         stage.querySelector('a').addEventListener('click', () => {
           if (generation === this.generation) window.MediaShelf.record('film-'+id,{href:'#/movie/'+id});
         });
