@@ -852,12 +852,65 @@ async renderLesson(seriesId, episodeId){
     const clipStart=player.dataset.clipStart!==''?Number(player.dataset.clipStart):NaN;
     const clipEnd=player.dataset.clipEnd!==''?Number(player.dataset.clipEnd):NaN;
     if(player.classList.contains('hls-video-player')&&Number.isFinite(clipStart)&&Number.isFinite(clipEnd)&&clipEnd>clipStart){
-      let started=false;
-      const startClip=()=>{if(!started&&player.readyState>=1){started=true;try{player.currentTime=clipStart;}catch{started=false;}}};
-      player.addEventListener('loadedmetadata',startClip);
-      player.addEventListener('durationchange',startClip);
-      player.addEventListener('timeupdate',()=>{if(player.currentTime>=clipEnd){player.pause();if(player.currentTime>clipEnd+0.3)player.currentTime=clipEnd;}});
-      player.addEventListener('seeking',()=>{if(started&&player.currentTime<clipStart-1)player.currentTime=clipStart;else if(started&&player.currentTime>clipEnd+1)player.currentTime=clipEnd;});
+      // A lesson is a bounded view of the original VOD, not a rewritten HLS playlist.
+      const duration=clipEnd-clipStart;
+      let initialized=false;
+      const clamp=time=>Math.min(clipEnd,Math.max(clipStart,time));
+      const format=time=>{const n=Math.max(0,Math.floor(time));return String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0');};
+      const controls=document.createElement('div');
+      controls.className='sf-clip-controls';
+      controls.style.cssText='display:flex;align-items:center;gap:10px;padding:10px 4px;flex-wrap:wrap';
+      const toggle=document.createElement('button');
+      toggle.type='button';toggle.textContent='播放';toggle.setAttribute('aria-label','播放或暂停本集');
+      const progress=document.createElement('input');
+      progress.type='range';progress.min='0';progress.max=String(duration);progress.step='0.1';progress.value='0';
+      progress.setAttribute('aria-label','本集播放进度');progress.style.cssText='flex:1;min-width:120px';
+      const clock=document.createElement('span');
+      clock.textContent='00:00 / '+format(duration);clock.style.fontVariantNumeric='tabular-nums';
+      controls.append(toggle,progress,clock);
+      player.insertAdjacentElement('afterend',controls);
+      player.controls=false;
+      const sync=()=>{
+        const now=Number.isFinite(player.currentTime)?player.currentTime:clipStart;
+        const local=Math.max(0,Math.min(duration,now-clipStart));
+        if(document.activeElement!==progress) progress.value=String(local);
+        clock.textContent=format(local)+' / '+format(duration);
+        toggle.textContent=player.paused?'播放':'暂停';
+      };
+      const enforce=()=>{
+        if(!initialized)return;
+        const now=player.currentTime;
+        if(now<clipStart||now>clipEnd){
+          player.currentTime=clamp(now);
+          if(now>=clipEnd)player.pause();
+        }else if(now>=clipEnd-0.05){player.pause();}
+        sync();
+      };
+      const initialize=()=>{
+        if(initialized||player.readyState<1)return;
+        initialized=true;
+        try{player.currentTime=clipStart;}catch{initialized=false;return;}
+        sync();
+      };
+      player.addEventListener('loadedmetadata',initialize);
+      player.addEventListener('durationchange',initialize);
+      player.addEventListener('timeupdate',enforce);
+      player.addEventListener('seeking',enforce);
+      player.addEventListener('seeked',sync);
+      player.addEventListener('play',enforce);
+      player.addEventListener('pause',sync);
+      toggle.addEventListener('click',()=>{
+        if(!initialized)initialize();
+        if(player.paused){
+          if(player.currentTime>=clipEnd-0.05)player.currentTime=clipStart;
+          const task=player.play();if(task&&task.catch)task.catch(()=>sync());
+        }else player.pause();
+      });
+      progress.addEventListener('input',()=>{
+        if(!initialized)initialize();
+        player.currentTime=clamp(clipStart+Number(progress.value));
+        sync();
+      });
     }
     let hlsFallbacks=[];
     try{hlsFallbacks=JSON.parse(player.dataset.hlsFallbackSrcs||'[]');}catch{hlsFallbacks=[];}
