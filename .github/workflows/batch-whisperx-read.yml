@@ -296,24 +296,19 @@ jobs:
           if-no-files-found: warn
           retention-days: 14
 
-      - name: Dispatch next 50 episodes immediately after successful GitHub update
+      - name: Dispatch next eligible episodes even when this batch published zero
         if: ${{ success() }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          # A batch with zero published episodes is a real failure,
-          # not a reason to dispatch the same bad batch forever.
+          # A zero-published batch must not stop processing unrelated eligible episodes.
+          # The failure ledger holds rejected episodes; the manifest excludes them.
           python - <<'PY'
           import json
           from pathlib import Path
-          result=json.loads(Path("reports/whisperx-read-batch-latest.json").read_text(encoding="utf-8"))
-          selected=int(result["selected"])
-          published=int(result["published"])
-          rejected=int(result["rejected"])
-          print(f"Current batch: selected={selected} published={published} rejected={rejected}")
-          if selected<1 or published<1:
-              raise SystemExit("No episodes published: chain stopped for review")
+          r=json.loads(Path("reports/whisperx-read-batch-latest.json").read_text(encoding="utf-8"))
+          print(f"Current batch: selected={r['selected']} published={r['published']} rejected={r['rejected']}")
           PY
 
           # Only select against latest committed data. Already-published episodes
