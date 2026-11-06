@@ -148,7 +148,26 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m "Publish WhisperX XML Text verified subtitle and karaoke batch ${{ github.run_id }}"
-          git pull --rebase origin main
+          # Keep the generated report from this run when the remote branch
+          # has changed while expensive WhisperX shards were processing.
+          # We own the current run's report, and do not overwrite subtitle
+          # files on main that another workflow has already published.
+          git fetch origin main
+          if ! git rebase origin/main; then
+            if git ls-files -u | grep -q .; then
+              conflicted=$(git diff --name-only --diff-filter=U)
+              if [[ "$conflicted" == "reports/whisperx-read-batch-latest.json" ]]; then
+                git checkout --theirs reports/whisperx-read-batch-latest.json
+                git add reports/whisperx-read-batch-latest.json
+                GIT_EDITOR=true git -c core.editor=true rebase --continue
+              else
+                echo "Unexpected conflict: $conflicted"
+                exit 1
+              fi
+            else
+              exit 1
+            fi
+          fi
           git push origin HEAD:main
       - name: Preserve batch audit
         uses: actions/upload-artifact@v4
