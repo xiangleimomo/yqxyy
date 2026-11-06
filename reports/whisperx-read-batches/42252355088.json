@@ -1,0 +1,374 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42252355088",
+  "completedAt": "2026-11-06T16:40:09.195117+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 18,
+  "rejected": 32,
+  "websiteCommitRequired": true,
+  "totalWords": 8399,
+  "speechMatchedWords": 8399,
+  "success": [
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
+      "episodeId": 5,
+      "cues": 18,
+      "words": 86,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 19,
+      "speechWords": 86,
+      "coverage": 0.9773,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
+      "episodeId": 8,
+      "cues": 19,
+      "words": 84,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 19,
+      "speechWords": 84,
+      "coverage": 0.9767,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
+      "episodeId": 9,
+      "cues": 18,
+      "words": 78,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 19,
+      "speechWords": 78,
+      "coverage": 0.963,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
+      "episodeId": 14,
+      "cues": 20,
+      "words": 91,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 21,
+      "speechWords": 91,
+      "coverage": 0.9681,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
+      "episodeId": 15,
+      "cues": 20,
+      "words": 88,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 22,
+      "speechWords": 88,
+      "coverage": 0.9778,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
+      "episodeId": 19,
+      "cues": 20,
+      "words": 90,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 22,
+      "speechWords": 90,
+      "coverage": 0.9783,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
+      "episodeId": 23,
+      "cues": 22,
+      "words": 98,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 21,
+      "speechWords": 98,
+      "coverage": 0.98,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
+      "episodeId": 25,
+      "cues": 19,
+      "words": 89,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 21,
+      "speechWords": 89,
+      "coverage": 0.9889,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
+      "episodeId": 2,
+      "cues": 111,
+      "words": 776,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 776,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
+      "episodeId": 3,
+      "cues": 112,
+      "words": 766,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 766,
+      "coverage": 0.9974,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
+      "episodeId": 4,
+      "cues": 100,
+      "words": 777,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 777,
+      "coverage": 0.9974,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
+      "episodeId": 5,
+      "cues": 101,
+      "words": 761,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 761,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
+      "episodeId": 7,
+      "cues": 98,
+      "words": 767,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 767,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
+      "episodeId": 8,
+      "cues": 103,
+      "words": 771,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 771,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
+      "episodeId": 9,
+      "cues": 94,
+      "words": 761,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 761,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
+      "episodeId": 10,
+      "cues": 87,
+      "words": 764,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 764,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
+      "episodeId": 12,
+      "cues": 94,
+      "words": 770,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 770,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
+      "episodeId": 13,
+      "cues": 98,
+      "words": 782,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 782,
+      "coverage": 1.0,
+      "omittedWords": 0
+    }
+  ],
+  "failures": [
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
+      "episodeId": 6,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
+      "episodeId": 7,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
+      "episodeId": 10,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 80.7% matched, 98.9% assigned"
+    },
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
+      "episodeId": 11,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
+      "episodeId": 12,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
+      "episodeId": 13,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 60.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
+      "episodeId": 16,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
+      "episodeId": 17,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
+      "episodeId": 18,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 76.7% matched, 98.9% assigned"
+    },
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
+      "episodeId": 20,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 80.4% matched, 99.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
+      "episodeId": 21,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 74.4% matched, 98.9% assigned"
+    },
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
+      "episodeId": 22,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-letter-teams-fs0118",
+      "episodeId": 24,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 81.4% matched, 99.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-little-fox-theme-songs-srv01030",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-little-fox-theme-songs-srv01030",
+      "episodeId": 2,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-little-fox-theme-songs-srv01030",
+      "episodeId": 3,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-little-fox-theme-songs-srv01030",
+      "episodeId": 4,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-little-fox-theme-songs-srv01030",
+      "episodeId": 5,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-little-fox-theme-songs-srv01030",
+      "episodeId": 6,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-little-fox-theme-songs-srv01030",
+      "episodeId": 7,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-little-fox-theme-songs-srv01030",
+      "episodeId": 8,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-little-fox-theme-songs-srv01030",
+      "episodeId": 9,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-little-fox-theme-songs-srv01030",
+      "episodeId": 10,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-little-fox-theme-songs-srv01030",
+      "episodeId": 11,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-little-fox-theme-songs-srv01030",
+      "episodeId": 12,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-little-fox-theme-songs-srv01030",
+      "episodeId": 13,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-little-fox-theme-songs-srv01030",
+      "episodeId": 14,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-little-fox-theme-songs-srv01030",
+      "episodeId": 15,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-little-fox-theme-songs-srv01030",
+      "episodeId": 16,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
+      "episodeId": 1,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
+      "episodeId": 6,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
+      "episodeId": 11,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    }
+  ]
+}

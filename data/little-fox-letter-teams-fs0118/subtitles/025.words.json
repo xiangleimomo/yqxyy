@@ -1,0 +1,631 @@
+{
+  "seriesId": "little-fox-letter-teams-fs0118",
+  "episodeId": 25,
+  "sourceContentId": "C0009068",
+  "mediaPath": "/contents_5/hls/1080/821c9cd960/1665726384c74214a3877c4d8297ac96217d5189b7/stream.m3u8",
+  "mediaFingerprint": "9ca27f04809f68dd98768ca37b0c0a08cabfd764f62930d25a0eb3a2c65abad0",
+  "subtitleSha256": "b97bb9cc00a26d563354e27195bf9c3d88e44571175ae0f8535c2640ab737687",
+  "method": "whisperx-asr-xml-text-only-forced-alignment",
+  "textAuthority": "littlefox-xml-paragraph-text",
+  "xmlTextSha256": "02a493e428967404def70afe33bb5591a4c34aa5d009bf428c9f75de3d3df4da",
+  "xmlParagraphCount": 21,
+  "recognizer": "small.en",
+  "cueCount": 19,
+  "totalWords": 90,
+  "captionedWords": 89,
+  "omittedUnalignedWords": 1,
+  "speechMatchedWords": 89,
+  "speechMatchedFraction": 0.9889,
+  "cues": [
+    {
+      "words": [
+        {
+          "text": "song",
+          "startMs": 2085,
+          "endMs": 2205,
+          "source": "speech"
+        },
+        {
+          "text": "The",
+          "startMs": 2225,
+          "endMs": 2285,
+          "source": "speech"
+        },
+        {
+          "text": "pals",
+          "startMs": 70700,
+          "endMs": 70900,
+          "source": "speech"
+        },
+        {
+          "text": "will",
+          "startMs": 70920,
+          "endMs": 71100,
+          "source": "speech"
+        },
+        {
+          "text": "have",
+          "startMs": 71120,
+          "endMs": 71280,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 71320,
+          "endMs": 71340,
+          "source": "speech"
+        },
+        {
+          "text": "party.",
+          "startMs": 71420,
+          "endMs": 71841,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Green",
+          "startMs": 73862,
+          "endMs": 74242,
+          "source": "speech"
+        },
+        {
+          "text": "writes",
+          "startMs": 74322,
+          "endMs": 74602,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 74742,
+          "endMs": 74782,
+          "source": "speech"
+        },
+        {
+          "text": "note.",
+          "startMs": 74862,
+          "endMs": 75162,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Red",
+          "startMs": 87409,
+          "endMs": 87649,
+          "source": "speech"
+        },
+        {
+          "text": "gives",
+          "startMs": 87770,
+          "endMs": 88010,
+          "source": "speech"
+        },
+        {
+          "text": "it",
+          "startMs": 88070,
+          "endMs": 88130,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 88170,
+          "endMs": 88350,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 88470,
+          "endMs": 88590,
+          "source": "speech"
+        },
+        {
+          "text": "knight.",
+          "startMs": 88650,
+          "endMs": 88970,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Green",
+          "startMs": 97195,
+          "endMs": 97575,
+          "source": "speech"
+        },
+        {
+          "text": "bakes",
+          "startMs": 97655,
+          "endMs": 97955,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 98035,
+          "endMs": 98075,
+          "source": "speech"
+        },
+        {
+          "text": "big",
+          "startMs": 98215,
+          "endMs": 98476,
+          "source": "speech"
+        },
+        {
+          "text": "cake.",
+          "startMs": 98616,
+          "endMs": 99016,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "He",
+          "startMs": 101996,
+          "endMs": 102116,
+          "source": "speech"
+        },
+        {
+          "text": "cuts",
+          "startMs": 102196,
+          "endMs": 102457,
+          "source": "speech"
+        },
+        {
+          "text": "it",
+          "startMs": 102517,
+          "endMs": 102577,
+          "source": "speech"
+        },
+        {
+          "text": "with",
+          "startMs": 102637,
+          "endMs": 102857,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 103017,
+          "endMs": 103057,
+          "source": "speech"
+        },
+        {
+          "text": "knife.",
+          "startMs": 103157,
+          "endMs": 105539,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Pink",
+          "startMs": 105739,
+          "endMs": 105980,
+          "source": "speech"
+        },
+        {
+          "text": "knits",
+          "startMs": 106120,
+          "endMs": 106400,
+          "source": "speech"
+        },
+        {
+          "text": "with",
+          "startMs": 106460,
+          "endMs": 106620,
+          "source": "speech"
+        },
+        {
+          "text": "yarn.",
+          "startMs": 106680,
+          "endMs": 107141,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Pink:",
+          "startMs": 108181,
+          "endMs": 109463,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 109563,
+          "endMs": 109603,
+          "source": "speech"
+        },
+        {
+          "text": "knit",
+          "startMs": 109623,
+          "endMs": 109743,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 109843,
+          "endMs": 109903,
+          "source": "speech"
+        },
+        {
+          "text": "pretty",
+          "startMs": 110043,
+          "endMs": 110423,
+          "source": "speech"
+        },
+        {
+          "text": "scarf.",
+          "startMs": 110503,
+          "endMs": 113486,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Yellow",
+          "startMs": 115187,
+          "endMs": 115528,
+          "source": "speech"
+        },
+        {
+          "text": "puts",
+          "startMs": 115628,
+          "endMs": 115868,
+          "source": "speech"
+        },
+        {
+          "text": "it",
+          "startMs": 115928,
+          "endMs": 115968,
+          "source": "speech"
+        },
+        {
+          "text": "in",
+          "startMs": 116068,
+          "endMs": 116148,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 116208,
+          "endMs": 116248,
+          "source": "speech"
+        },
+        {
+          "text": "box.",
+          "startMs": 116308,
+          "endMs": 116709,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Yellow:",
+          "startMs": 117870,
+          "endMs": 118550,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 119551,
+          "endMs": 119631,
+          "source": "speech"
+        },
+        {
+          "text": "will",
+          "startMs": 119691,
+          "endMs": 119951,
+          "source": "speech"
+        },
+        {
+          "text": "wrap",
+          "startMs": 120092,
+          "endMs": 120432,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 120572,
+          "endMs": 120692,
+          "source": "speech"
+        },
+        {
+          "text": "box.",
+          "startMs": 120812,
+          "endMs": 121313,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Blue",
+          "startMs": 125176,
+          "endMs": 125536,
+          "source": "speech"
+        },
+        {
+          "text": "makes",
+          "startMs": 125596,
+          "endMs": 125897,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 126117,
+          "endMs": 126157,
+          "source": "speech"
+        },
+        {
+          "text": "wreath.",
+          "startMs": 126217,
+          "endMs": 126497,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Red:",
+          "startMs": 130748,
+          "endMs": 130968,
+          "source": "speech"
+        },
+        {
+          "text": "That's",
+          "startMs": 130988,
+          "endMs": 131388,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 131488,
+          "endMs": 131548,
+          "source": "speech"
+        },
+        {
+          "text": "nice",
+          "startMs": 131668,
+          "endMs": 132029,
+          "source": "speech"
+        },
+        {
+          "text": "wreath.",
+          "startMs": 132189,
+          "endMs": 132649,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "The",
+          "startMs": 135370,
+          "endMs": 135490,
+          "source": "speech"
+        },
+        {
+          "text": "pals",
+          "startMs": 135530,
+          "endMs": 135950,
+          "source": "speech"
+        },
+        {
+          "text": "write",
+          "startMs": 136030,
+          "endMs": 136270,
+          "source": "speech"
+        },
+        {
+          "text": "on",
+          "startMs": 136391,
+          "endMs": 136511,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 136571,
+          "endMs": 136631,
+          "source": "speech"
+        },
+        {
+          "text": "card.",
+          "startMs": 136691,
+          "endMs": 137091,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Knock!",
+          "startMs": 147255,
+          "endMs": 147515,
+          "source": "speech"
+        },
+        {
+          "text": "Knock!",
+          "startMs": 147555,
+          "endMs": 147836,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Blue",
+          "startMs": 153478,
+          "endMs": 153738,
+          "source": "speech"
+        },
+        {
+          "text": "turns",
+          "startMs": 153798,
+          "endMs": 154118,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 154178,
+          "endMs": 154278,
+          "source": "speech"
+        },
+        {
+          "text": "knob.",
+          "startMs": 154318,
+          "endMs": 154739,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "It's",
+          "startMs": 156799,
+          "endMs": 156960,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 157040,
+          "endMs": 157140,
+          "source": "speech"
+        },
+        {
+          "text": "knight!",
+          "startMs": 166284,
+          "endMs": 166444,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Knight:",
+          "startMs": 166464,
+          "endMs": 166704,
+          "source": "speech"
+        },
+        {
+          "text": "Is",
+          "startMs": 166724,
+          "endMs": 166764,
+          "source": "speech"
+        },
+        {
+          "text": "this",
+          "startMs": 166824,
+          "endMs": 167025,
+          "source": "speech"
+        },
+        {
+          "text": "party",
+          "startMs": 167125,
+          "endMs": 167605,
+          "source": "speech"
+        },
+        {
+          "text": "for",
+          "startMs": 167685,
+          "endMs": 167925,
+          "source": "speech"
+        },
+        {
+          "text": "me?",
+          "startMs": 168025,
+          "endMs": 168265,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Pals:",
+          "startMs": 168285,
+          "endMs": 168385,
+          "source": "speech"
+        },
+        {
+          "text": "Yes!",
+          "startMs": 169546,
+          "endMs": 170027,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Knight:",
+          "startMs": 170047,
+          "endMs": 171688,
+          "source": "speech"
+        },
+        {
+          "text": "Thank",
+          "startMs": 172588,
+          "endMs": 172909,
+          "source": "speech"
+        },
+        {
+          "text": "you!",
+          "startMs": 172949,
+          "endMs": 173229,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "They",
+          "startMs": 175891,
+          "endMs": 176091,
+          "source": "speech"
+        },
+        {
+          "text": "all",
+          "startMs": 176271,
+          "endMs": 176471,
+          "source": "speech"
+        },
+        {
+          "text": "eat",
+          "startMs": 176651,
+          "endMs": 176831,
+          "source": "speech"
+        },
+        {
+          "text": "cake.",
+          "startMs": 176952,
+          "endMs": 177312,
+          "source": "speech"
+        }
+      ]
+    }
+  ]
+}
