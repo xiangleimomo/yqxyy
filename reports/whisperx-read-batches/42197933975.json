@@ -1,0 +1,446 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42197933975",
+  "completedAt": "2026-11-06T10:17:15.117005+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 30,
+  "rejected": 20,
+  "websiteCommitRequired": true,
+  "totalWords": 20227,
+  "speechMatchedWords": 20227,
+  "success": [
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 4,
+      "cues": 91,
+      "words": 790,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 82,
+      "speechWords": 790,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 5,
+      "cues": 92,
+      "words": 773,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 89,
+      "speechWords": 773,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 6,
+      "cues": 104,
+      "words": 796,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 89,
+      "speechWords": 796,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 9,
+      "cues": 95,
+      "words": 803,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 106,
+      "speechWords": 803,
+      "coverage": 0.9988,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 10,
+      "cues": 101,
+      "words": 795,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 97,
+      "speechWords": 795,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 11,
+      "cues": 100,
+      "words": 789,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 95,
+      "speechWords": 789,
+      "coverage": 0.9975,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 14,
+      "cues": 94,
+      "words": 799,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 89,
+      "speechWords": 799,
+      "coverage": 0.9988,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 15,
+      "cues": 86,
+      "words": 784,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 93,
+      "speechWords": 784,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 16,
+      "cues": 102,
+      "words": 789,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 98,
+      "speechWords": 789,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 19,
+      "cues": 91,
+      "words": 786,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 92,
+      "speechWords": 786,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 20,
+      "cues": 92,
+      "words": 800,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 88,
+      "speechWords": 800,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 21,
+      "cues": 90,
+      "words": 798,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 97,
+      "speechWords": 798,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 24,
+      "cues": 84,
+      "words": 790,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 84,
+      "speechWords": 790,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 25,
+      "cues": 100,
+      "words": 795,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 100,
+      "speechWords": 795,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 26,
+      "cues": 93,
+      "words": 776,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 93,
+      "speechWords": 776,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 29,
+      "cues": 87,
+      "words": 797,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 95,
+      "speechWords": 797,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 30,
+      "cues": 97,
+      "words": 790,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 97,
+      "speechWords": 790,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 31,
+      "cues": 91,
+      "words": 786,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 93,
+      "speechWords": 786,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-daisy-dolittle-fs0175",
+      "episodeId": 2,
+      "cues": 74,
+      "words": 489,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 489,
+      "coverage": 0.9939,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-daisy-dolittle-fs0175",
+      "episodeId": 3,
+      "cues": 87,
+      "words": 500,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 500,
+      "coverage": 0.994,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-daisy-dolittle-fs0175",
+      "episodeId": 4,
+      "cues": 95,
+      "words": 502,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 502,
+      "coverage": 0.996,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-daisy-dolittle-fs0175",
+      "episodeId": 7,
+      "cues": 87,
+      "words": 494,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 494,
+      "coverage": 0.994,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-daisy-dolittle-fs0175",
+      "episodeId": 8,
+      "cues": 85,
+      "words": 499,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 499,
+      "coverage": 0.996,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-daisy-dolittle-fs0175",
+      "episodeId": 9,
+      "cues": 77,
+      "words": 500,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 500,
+      "coverage": 0.994,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-daisy-dolittle-fs0175",
+      "episodeId": 12,
+      "cues": 70,
+      "words": 502,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 59,
+      "speechWords": 502,
+      "coverage": 0.998,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-daisy-dolittle-fs0175",
+      "episodeId": 13,
+      "cues": 93,
+      "words": 504,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 504,
+      "coverage": 0.998,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-daisy-dolittle-fs0175",
+      "episodeId": 14,
+      "cues": 84,
+      "words": 501,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 501,
+      "coverage": 0.996,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-daisy-dolittle-fs0175",
+      "episodeId": 17,
+      "cues": 86,
+      "words": 503,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 503,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-daisy-dolittle-fs0175",
+      "episodeId": 18,
+      "cues": 80,
+      "words": 498,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 59,
+      "speechWords": 498,
+      "coverage": 0.996,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-daisy-dolittle-fs0175",
+      "episodeId": 19,
+      "cues": 72,
+      "words": 499,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 499,
+      "coverage": 0.994,
+      "omittedWords": 3
+    }
+  ],
+  "failures": [
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 3,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 7,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 8,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 12,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 13,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 17,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 18,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 22,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 23,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 27,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 28,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-daddy-longlegs-fs0103",
+      "episodeId": 32,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-daisy-dolittle-fs0175",
+      "episodeId": 1,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-daisy-dolittle-fs0175",
+      "episodeId": 5,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-daisy-dolittle-fs0175",
+      "episodeId": 6,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-daisy-dolittle-fs0175",
+      "episodeId": 10,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-daisy-dolittle-fs0175",
+      "episodeId": 11,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-daisy-dolittle-fs0175",
+      "episodeId": 15,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-daisy-dolittle-fs0175",
+      "episodeId": 16,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-daisy-dolittle-fs0175",
+      "episodeId": 20,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    }
+  ]
+}
