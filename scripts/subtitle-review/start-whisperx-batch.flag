@@ -1,10 +1,10 @@
-# Bootstrap trigger for the 10-episode continuous WhisperX subtitle workflow.
+# Bootstrap trigger for the 50-episode continuous WhisperX subtitle workflow.
 # This file has no effect on subtitle logic: a push changing it starts one batch.
-# After a successful batch, the workflow itself dispatches its next batch.
-# No daily schedule; no obsolete 100-episode retry or historical recovery.
+# After a successful batch, the workflow itself dispatches the next 50-episode batch.
+# No daily schedule; five parallel shards, 10 episodes per shard.
 bootstrapped: 2026-11-06T00:51:00Z
 mode: continuous-until-no-eligible-episodes
-batch_size: 10
+batch_size: 50
 
 repair_bootstrap: corrected_short_abc_xml_and_media_floors
 recovered_failure_run: 42138547949
