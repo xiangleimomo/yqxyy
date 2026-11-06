@@ -1,114 +1,452 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42149083478",
-  "completedAt": "2026-11-06T02:23:30.897837+00:00",
-  "batchSize": 10,
-  "selected": 10,
-  "published": 8,
-  "rejected": 2,
+  "runId": "42150147123",
+  "completedAt": "2026-11-06T02:42:54.888007+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 31,
+  "rejected": 19,
   "websiteCommitRequired": true,
-  "totalWords": 5874,
-  "speechMatchedWords": 5874,
+  "totalWords": 21184,
+  "speechMatchedWords": 21184,
   "success": [
     {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 8,
-      "cues": 86,
-      "words": 743,
+      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
+      "episodeId": 2,
+      "cues": 54,
+      "words": 549,
       "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 743,
-      "coverage": 0.9973,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 10,
-      "cues": 82,
-      "words": 730,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 69,
-      "speechWords": 730,
-      "coverage": 0.9973,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 12,
-      "cues": 97,
-      "words": 728,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 728,
-      "coverage": 0.9986,
+      "xmlParagraphs": 54,
+      "speechWords": 549,
+      "coverage": 0.9982,
       "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 13,
-      "cues": 75,
-      "words": 726,
+      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
+      "episodeId": 3,
+      "cues": 54,
+      "words": 548,
       "xmlTextVerified": true,
-      "xmlParagraphs": 65,
-      "speechWords": 726,
-      "coverage": 0.9986,
+      "xmlParagraphs": 53,
+      "speechWords": 548,
+      "coverage": 0.9982,
       "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 14,
-      "cues": 84,
-      "words": 738,
+      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
+      "episodeId": 4,
+      "cues": 46,
+      "words": 536,
       "xmlTextVerified": true,
-      "xmlParagraphs": 69,
-      "speechWords": 738,
-      "coverage": 0.9986,
+      "xmlParagraphs": 46,
+      "speechWords": 536,
+      "coverage": 0.9981,
       "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 17,
-      "cues": 88,
-      "words": 738,
+      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
+      "episodeId": 6,
+      "cues": 45,
+      "words": 505,
       "xmlTextVerified": true,
-      "xmlParagraphs": 74,
-      "speechWords": 738,
-      "coverage": 0.9986,
+      "xmlParagraphs": 41,
+      "speechWords": 505,
+      "coverage": 0.998,
       "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 18,
-      "cues": 76,
-      "words": 730,
+      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
+      "episodeId": 7,
+      "cues": 56,
+      "words": 469,
       "xmlTextVerified": true,
-      "xmlParagraphs": 67,
-      "speechWords": 730,
-      "coverage": 0.9986,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 20,
-      "cues": 92,
-      "words": 741,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 741,
+      "xmlParagraphs": 54,
+      "speechWords": 469,
       "coverage": 1.0,
       "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
+      "episodeId": 8,
+      "cues": 58,
+      "words": 540,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 540,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
+      "episodeId": 10,
+      "cues": 52,
+      "words": 530,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 51,
+      "speechWords": 530,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
+      "episodeId": 12,
+      "cues": 49,
+      "words": 500,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 50,
+      "speechWords": 500,
+      "coverage": 0.998,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
+      "episodeId": 13,
+      "cues": 62,
+      "words": 536,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 536,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
+      "episodeId": 14,
+      "cues": 64,
+      "words": 503,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 503,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-a-dog-of-flanders-fs0038",
+      "episodeId": 16,
+      "cues": 61,
+      "words": 539,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 539,
+      "coverage": 0.9963,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-a-little-princess-fs0079",
+      "episodeId": 1,
+      "cues": 96,
+      "words": 780,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 780,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-a-little-princess-fs0079",
+      "episodeId": 2,
+      "cues": 91,
+      "words": 762,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 762,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-a-little-princess-fs0079",
+      "episodeId": 3,
+      "cues": 104,
+      "words": 780,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 780,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-a-little-princess-fs0079",
+      "episodeId": 4,
+      "cues": 92,
+      "words": 748,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 748,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-a-little-princess-fs0079",
+      "episodeId": 5,
+      "cues": 94,
+      "words": 756,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 756,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-a-little-princess-fs0079",
+      "episodeId": 6,
+      "cues": 89,
+      "words": 781,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 781,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-a-little-princess-fs0079",
+      "episodeId": 7,
+      "cues": 87,
+      "words": 763,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 763,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-a-little-princess-fs0079",
+      "episodeId": 8,
+      "cues": 101,
+      "words": 765,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 765,
+      "coverage": 0.9974,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-a-little-princess-fs0079",
+      "episodeId": 10,
+      "cues": 94,
+      "words": 791,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 791,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-a-little-princess-fs0079",
+      "episodeId": 11,
+      "cues": 102,
+      "words": 763,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 763,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-a-little-princess-fs0079",
+      "episodeId": 12,
+      "cues": 83,
+      "words": 782,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 782,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-a-little-princess-fs0079",
+      "episodeId": 14,
+      "cues": 87,
+      "words": 780,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 780,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-a-little-princess-fs0079",
+      "episodeId": 15,
+      "cues": 89,
+      "words": 777,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 777,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-a-little-princess-fs0079",
+      "episodeId": 16,
+      "cues": 104,
+      "words": 766,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 766,
+      "coverage": 0.9974,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-a-little-princess-fs0079",
+      "episodeId": 17,
+      "cues": 92,
+      "words": 763,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 763,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-a-little-princess-fs0079",
+      "episodeId": 18,
+      "cues": 112,
+      "words": 779,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 779,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-a-little-princess-fs0079",
+      "episodeId": 20,
+      "cues": 100,
+      "words": 756,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 756,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-a-little-princess-fs0079",
+      "episodeId": 21,
+      "cues": 90,
+      "words": 771,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 771,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-a-little-princess-fs0079",
+      "episodeId": 22,
+      "cues": 118,
+      "words": 782,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 80,
+      "speechWords": 782,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-a-little-princess-fs0079",
+      "episodeId": 24,
+      "cues": 100,
+      "words": 784,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 784,
+      "coverage": 0.9987,
+      "omittedWords": 1
     }
   ],
   "failures": [
     {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
-      "episodeId": 9,
-      "reason": "URLError: <urlopen error _ssl.c:1001: The handshake operation timed out>"
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-a-christmas-carol-fs0174",
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 2,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 3,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 4,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 5,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 6,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 7,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 8,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 9,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 10,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 11,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 12,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 13,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 14,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 15,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
       "episodeId": 16,
-      "reason": "RemoteDisconnected: Remote end closed connection without response"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 17,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 18,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-abc-book-fs0070",
+      "episodeId": 19,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
     }
   ]
 }
