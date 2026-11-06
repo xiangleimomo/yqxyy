@@ -307,7 +307,7 @@ def media_candidates(episode: dict):
         yield url
 
 
-def extract_hls_audio(episode: dict, wav: Path):
+def extract_hls_audio(episode: dict, wav: Path, word_count: int = 1000):
     from shutil import which
     exe = which("ffmpeg")
     if not exe:
@@ -324,8 +324,12 @@ def extract_hls_audio(episode: dict, wav: Path):
                 continue
             with wave.open(str(wav),"rb") as stream:
                 duration_ms = round(stream.getnframes()/stream.getframerate()*1000)
-            if duration_ms < 120000:
-                failures.append(f"{urlparse(url).hostname}: incomplete audio ({duration_ms} ms)")
+            # A 10-second alphabet lesson is not an incomplete two-minute story.
+            # The XML transcript size sets a conservative floor; the ASR coverage
+            # check subsequently verifies that the actual words were heard.
+            minimum_ms = max(6000, min(120000, word_count * 110))
+            if duration_ms < minimum_ms:
+                failures.append(f"{urlparse(url).hostname}: insufficient audio ({duration_ms} ms, minimum {minimum_ms} ms)")
                 continue
             return urlparse(url).path, duration_ms
         except Exception as error:
@@ -355,7 +359,7 @@ def run_one(args):
         import whisperx
         with tempfile.TemporaryDirectory(prefix="yqxyy-whisperx-") as tmp:
             wav = Path(tmp)/"audio.wav"
-            media_path, duration_ms = extract_hls_audio(episode, wav)
+            media_path, duration_ms = extract_hls_audio(episode, wav, len(canonical))
             report.update({"mediaPath":media_path,"durationMs":duration_ms})
             audio = whisperx.load_audio(str(wav))
             model = whisperx.load_model(
@@ -419,7 +423,7 @@ def run_one(args):
             # Publish verified timed words when acoustic coverage passes the threshold.
             # Missing words are explicitly omitted, never given fabricated timestamps.
             publishable = [word for word in mapped if word is not None]
-            if not first or not last or last["endMs"] < duration_ms*0.75:
+            if not first or not last or (len(canonical)>=25 and last["endMs"] < duration_ms*0.75):
                 raise ValueError("Missing late-episode speech; candidate withheld")
             report["omittedLongWordSpans"] = outliers[:15]
             report["suspiciousLongWordSpans"] = []
