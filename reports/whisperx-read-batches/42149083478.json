@@ -1,0 +1,114 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42149083478",
+  "completedAt": "2026-11-06T02:23:30.897837+00:00",
+  "batchSize": 10,
+  "selected": 10,
+  "published": 8,
+  "rejected": 2,
+  "websiteCommitRequired": true,
+  "totalWords": 5874,
+  "speechMatchedWords": 5874,
+  "success": [
+    {
+      "seriesId": "little-fox-a-christmas-carol-fs0174",
+      "episodeId": 8,
+      "cues": 86,
+      "words": 743,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 743,
+      "coverage": 0.9973,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-a-christmas-carol-fs0174",
+      "episodeId": 10,
+      "cues": 82,
+      "words": 730,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 730,
+      "coverage": 0.9973,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-a-christmas-carol-fs0174",
+      "episodeId": 12,
+      "cues": 97,
+      "words": 728,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 728,
+      "coverage": 0.9986,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-a-christmas-carol-fs0174",
+      "episodeId": 13,
+      "cues": 75,
+      "words": 726,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 726,
+      "coverage": 0.9986,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-a-christmas-carol-fs0174",
+      "episodeId": 14,
+      "cues": 84,
+      "words": 738,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 738,
+      "coverage": 0.9986,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-a-christmas-carol-fs0174",
+      "episodeId": 17,
+      "cues": 88,
+      "words": 738,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 738,
+      "coverage": 0.9986,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-a-christmas-carol-fs0174",
+      "episodeId": 18,
+      "cues": 76,
+      "words": 730,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 730,
+      "coverage": 0.9986,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-a-christmas-carol-fs0174",
+      "episodeId": 20,
+      "cues": 92,
+      "words": 741,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 741,
+      "coverage": 1.0,
+      "omittedWords": 0
+    }
+  ],
+  "failures": [
+    {
+      "seriesId": "little-fox-a-christmas-carol-fs0174",
+      "episodeId": 9,
+      "reason": "URLError: <urlopen error _ssl.c:1001: The handshake operation timed out>"
+    },
+    {
+      "seriesId": "little-fox-a-christmas-carol-fs0174",
+      "episodeId": 16,
+      "reason": "RemoteDisconnected: Remote end closed connection without response"
+    }
+  ]
+}
