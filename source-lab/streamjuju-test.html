@@ -1,45 +1,87 @@
 <!doctype html>
-<html lang="zh-CN">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="referrer" content="no-referrer">
-<title>StreamJuju 嵌入测试 · Story Fox English</title>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="strict-origin-when-cross-origin"><title>多线路播放器测试 · Story Fox English</title>
 <style>
-:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#17324d;background:#f3f7fc;line-height:1.6}*{box-sizing:border-box}body{margin:0}header,main{max-width:1120px;margin:auto;padding:20px 24px}header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #dbe6f1}a{color:#1469b8;text-decoration:none}.brand{font-weight:800;font-size:20px}.hero{padding:28px 0 16px}.eyebrow{letter-spacing:.15em;font-size:12px;color:#4882aa}h1{font-size:32px;margin:5px 0}p{color:#52677d}.panel{background:white;border:1px solid #d5e3f0;border-radius:14px;padding:20px;margin:16px 0}.form{display:flex;gap:10px;flex-wrap:wrap}.form input{flex:1;min-width:220px;padding:12px;border:1px solid #bfd0e1;border-radius:9px;font:inherit}.form button,.secondary{padding:10px 16px;border:1px solid #176bb4;border-radius:8px;background:#176bb4;color:white;font:inherit;cursor:pointer}.secondary{background:white;color:#176bb4}.frame-wrap{background:#111;border-radius:12px;overflow:hidden;aspect-ratio:16/9;min-height:280px}.frame-wrap iframe{width:100%;height:100%;min-height:280px;border:0;background:#111}.status{font-size:14px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.note{font-size:13px;background:#f1f6fc;border-radius:8px;padding:12px}.brand span{margin-left:8px}@media(max-width:600px){header,main{padding:16px}.hero{padding-top:18px}h1{font-size:26px}.panel{padding:14px}}
-</style>
-</head>
-<body>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#203247;background:#f3f7fc;line-height:1.55}*{box-sizing:border-box}body{margin:0}header,main{max-width:1180px;margin:auto;padding:18px 24px}header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #dbe6f1}a{color:#176bb4;text-decoration:none}.brand{font-size:20px;font-weight:800}.brand span{margin-left:8px}.hero{padding:24px 0 10px}.eyebrow{font-size:12px;letter-spacing:.16em;color:#4d84ad}h1{font-size:30px;margin:5px 0}p{color:#5b6e82}.panel{background:white;border:1px solid #d7e3ef;border-radius:14px;padding:18px;margin:14px 0}.form{display:flex;gap:10px;flex-wrap:wrap}.form input{flex:1;min-width:210px;padding:11px 13px;border:1px solid #bfd0e1;border-radius:9px;font:inherit}.btn{padding:10px 15px;border:1px solid #176bb4;border-radius:8px;background:#176bb4;color:white;font:inherit;cursor:pointer}.btn.alt{background:white;color:#176bb4}.btn:disabled{opacity:.45;cursor:not-allowed}.server-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:9px}.server{position:relative;text-align:left;padding:10px 12px;border:1px solid #d6e1ed;border-radius:9px;background:#f8fbff;color:#26394d;cursor:pointer;font:inherit}.server strong{display:block;font-size:14px}.server small{display:block;color:#73859a;font-size:11px;margin-top:2px}.server.primary{border:2px solid #287bd0;background:#edf6ff}.server.active{background:#176bb4;color:#fff;border-color:#176bb4}.server.active small{color:#e1efff}.server .tag{position:absolute;right:7px;top:6px;font-size:10px;color:#176bb4}.frame-wrap{background:#0c1016;border-radius:12px;overflow:hidden;aspect-ratio:16/9;min-height:260px}.frame-wrap iframe{width:100%;height:100%;min-height:260px;border:0;background:#0c1016}.status{font-size:14px;overflow-wrap:anywhere}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:10px}.note{font-size:13px;background:#f1f6fc;border-radius:8px;padding:12px;color:#52677d}.group-title{font-weight:700;margin:0 0 10px}.section-label{font-size:12px;color:#75879b;margin:16px 0 8px}.pill{display:inline-block;border-radius:20px;padding:3px 9px;background:#eaf3ff;color:#176bb4;font-size:12px;margin-left:6px}@media(max-width:600px){header,main{padding:14px}.hero{padding-top:18px}h1{font-size:25px}.panel{padding:13px}.server-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style></head><body>
 <header><a class="brand" href="/">SF <span>Story Fox English</span></a><a href="/source-lab/">返回片源探索</a></header>
 <main>
-<section class="hero"><span class="eyebrow">PLAYER EMBED TEST</span><h1>StreamJuju 播放器嵌入测试</h1><p>独立测试区，不会修改光影课堂、现有片源配置或正式播放器。</p></section>
+<section class="hero"><span class="eyebrow">MULTI-SERVER EMBED LAB</span><h1>多线路播放器测试区</h1><p>优先测试 111Movies 和 VidFast；其他线路也列出，逐个检查能否在 yqxyy 内嵌播放。此页面独立运行，不修改正式电影播放器和片源搜索配置。</p></section>
 <section class="panel">
-<h2>加载测试影片</h2>
-<p>输入 TMDB 电影编号，或粘贴 StreamJuju 的完整播放页面地址。示例编号：671（Harry Potter and the Philosopher's Stone）。</p>
-<form id="form" class="form"><input id="target" value="671" maxlength="300" aria-label="TMDB编号或StreamJuju播放地址"><button type="submit">在下方嵌入</button></form>
-<p id="status" class="status" role="status">尚未开始测试。</p>
-<div class="actions"><a id="open" class="secondary" href="https://streamjuju.cyou/watch/movie/671" target="_blank" rel="noopener noreferrer">在新标签页打开同一影片</a><button id="reload" class="secondary" type="button">重新加载嵌入</button></div>
+<h2 class="group-title">① 测试影片</h2><p>输入 TMDB 电影编号。默认 671：Harry Potter and the Philosopher's Stone。</p>
+<form id="form" class="form"><input id="tmdb" value="671" inputmode="numeric" aria-label="TMDB电影编号"><button class="btn" type="submit">应用影片编号</button></form>
+<p id="status" class="status" role="status">先选择下方线路开始测试。</p>
+<div class="actions"><a id="external" class="btn alt" href="https://streamjuju.cyou/watch/movie/671" target="_blank" rel="noopener noreferrer">打开 StreamJuju 原页面</a><button id="reload" class="btn alt" type="button">重载当前线路</button></div>
 </section>
-<section class="panel">
-<h2>嵌入播放器</h2>
-<div class="frame-wrap"><iframe id="player" title="StreamJuju 嵌入播放器测试" src="about:blank" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen referrerpolicy="no-referrer"></iframe></div>
-<p class="note">判断方法：如果播放器画面正常显示并能播放，说明当前页面允许嵌入；如果出现拒绝连接、空白页或站点错误，可能是对方设置了禁止 iframe、区域限制或页面校验。浏览器的 iframe 加载事件本身不能证明视频已可播放，请实际点击播放、测试全屏和字幕。</p>
+<section class="panel"><h2 class="group-title">② 选择播放线路 <span class="pill">优先测试</span></h2>
+<div class="section-label">优先线路 · 有公开嵌入格式</div><div class="server-grid" id="priority"></div>
+<div class="section-label">其他线路 · 点击后打开 StreamJuju 对应线路，或在已知公开格式下嵌入测试</div><div class="server-grid" id="others"></div>
+</section>
+<section class="panel"><h2 class="group-title">③ 播放器测试窗口</h2><div class="frame-wrap"><iframe id="player" title="第三方播放线路测试" src="about:blank" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+<div class="actions"><button id="open-current" class="btn alt" type="button" disabled>在新标签页打开当前线路</button><button id="clear" class="btn alt" type="button">清空播放器</button></div>
+<p class="note">测试时请分别检查：是否显示播放器、能否开始播放、是否有声音、全屏是否可用、字幕和清晰度是否可切换。iframe 的加载事件不能证明视频实际可播放。若某线路不允许外部嵌入，页面会拒绝连接；不要尝试绕过对方的访问控制。各服务是否允许第三方嵌入及其内容授权，需以服务方条款为准。</p>
 </section>
 </main>
 <script>
 (()=>{
-const $=id=>document.getElementById(id),frame=$("player"),input=$("target");
-function resolve(){
- const raw=input.value.trim();let url;
- if(/^\d+$/.test(raw))url="https://streamjuju.cyou/watch/movie/"+encodeURIComponent(raw);
- else {try{const parsed=new URL(raw);if(!["streamjuju.cyou","www.streamjuju.cyou"].includes(parsed.hostname))throw Error();url=parsed.href;}catch{throw Error("请输入 TMDB 数字编号，或 streamjuju.cyou 的完整播放地址。");}}
- return url;
+const $=id=>document.getElementById(id),frame=$("player");let current=null;
+const providers=[
+{id:"111moviesnet",name:"111Movies.net",kind:"embed",url:id=>"https://111movies.net/movie/"+id,priority:true,note:"公开文档提供 TMDB/IMDb 嵌入地址"},
+{id:"vidfast",name:"VidFast",kind:"embed",url:id=>"https://vidfast.to/embed/movie/"+id,priority:true,note:"公开文档提供 iframe 嵌入地址"},
+{id:"vidlink",name:"VidLink",kind:"embed",url:id=>"https://vidlink.pro/movie/"+id,note:"公开文档提供 TMDB 电影嵌入地址"},
+{id:"vidbolt",name:"VidBolt",kind:"embed",url:id=>"https://vidbolt.xyz/movie/"+id,note:"公开文档提供电影嵌入地址"},
+{id:"2embed",name:"2Embed",kind:"embed",url:id=>"https://www.2embed.cc/embed/"+id,note:"公开示例地址，当前可用性待测"},
+{id:"vidsrcmov",name:"vidsrc.mov",kind:"streamjuju",hash:"vidsrcmov"},
+{id:"vidsrcfyi",name:"VidSrc.fyi",kind:"streamjuju",hash:"vidsrcfyi"},
+{id:"vidup",name:"VidUp",kind:"streamjuju",hash:"vidup"},
+{id:"vidrock",name:"VidRock",kind:"streamjuju",hash:"vidrock"},
+{id:"vidnest",name:"Vidnest",kind:"streamjuju",hash:"vidnest"},
+{id:"multiembed",name:"MultiEmbed",kind:"streamjuju",hash:"multiembed"},
+{id:"mappletv",name:"MappleTV",kind:"streamjuju",hash:"mappletv"},
+{id:"moviesapi",name:"MoviesAPI",kind:"streamjuju",hash:"moviesapi"},
+{id:"vidzee",name:"VidZee",kind:"streamjuju",hash:"vidzee"},
+{id:"vidrift",name:"VidRift",kind:"streamjuju",hash:"vidrift"},
+{id:"vidsrcsh",name:"VidSrc.sh",kind:"streamjuju",hash:"vidsrcsh"},
+{id:"vidsrcsu",name:"VidSrc.su",kind:"streamjuju",hash:"vidsrcsu"},
+{id:"vidsrcbuzz",name:"VidSrc.buzz",kind:"streamjuju",hash:"vidsrcbuzz"},
+{id:"apiplayer",name:"APIPlayer",kind:"streamjuju",hash:"apiplayer"},
+{id:"nontongo",name:"NontonGo",kind:"streamjuju",hash:"nontongo"},
+{id:"vidapixyz",name:"VidAPI.xyz",kind:"streamjuju",hash:"vidapixyz"},
+{id:"vidapiru",name:"VidAPI.ru",kind:"streamjuju",hash:"vidapiru"},
+{id:"vidcoreorg",name:"VidCore.org",kind:"streamjuju",hash:"vidcoreorg"},
+{id:"vidcoreio",name:"VidCore.io",kind:"streamjuju",hash:"vidcoreio"},
+{id:"vixsrc",name:"VixSrc (Italian)",kind:"streamjuju",hash:"vixsrc"},
+{id:"embedbandit",name:"EmbedBandit",kind:"streamjuju",hash:"embedbandit"},
+{id:"vidlux",name:"VidLux",kind:"streamjuju",hash:"vidlux"},
+{id:"vidspark",name:"VidSpark",kind:"streamjuju",hash:"vidspark"},
+{id:"embedapi",name:"Embed-API",kind:"streamjuju",hash:"embedapi"},
+{id:"vidzen",name:"VidZen",kind:"streamjuju",hash:"vidzen"},
+{id:"cinextream",name:"Cinextream",kind:"streamjuju",hash:"cinextream"},
+{id:"yapgrid",name:"YapGrid",kind:"streamjuju",hash:"yapgrid"},
+{id:"net79",name:"Net79",kind:"streamjuju",hash:"net79"},
+{id:"embedmaster",name:"EmbedMaster",kind:"streamjuju",hash:"embedmaster"},
+{id:"screenscape",name:"Screenscape",kind:"streamjuju",hash:"screenscape"},
+{id:"rivestream",name:"RiveStream",kind:"streamjuju",hash:"rivestream"},
+{id:"autoembed",name:"AutoEmbed",kind:"streamjuju",hash:"autoembed"},
+{id:"megaembed",name:"MegaEmbed",kind:"streamjuju",hash:"megaembed"},
+{id:"frembed",name:"Frembed (French)",kind:"streamjuju",hash:"frembed"},
+{id:"vip",name:"VIP (No ADS)",kind:"streamjuju",hash:"vip"}
+];
+function tmdb(){const v=$("tmdb").value.trim();if(!/^\d+$/.test(v))throw Error("请输入纯数字 TMDB 电影编号。");return v;}
+function streamJujuUrl(p){return "https://streamjuju.cyou/watch/movie/"+encodeURIComponent(tmdb())+"#"+encodeURIComponent(p.hash||p.id);}
+function select(p,button){
+ try{
+ const id=tmdb();let url;
+ if(p.kind==="embed"){url=p.url(id);frame.src=url;current={p,url,embed:true};$("status").textContent=p.name+"：已在下方请求嵌入 "+url+"。请实际测试播放、全屏、字幕。";}
+ else{url=streamJujuUrl(p);current={p,url,embed:false};frame.src="about:blank";$("status").textContent=p.name+"：尚无核实过的独立公开 iframe 地址。已准备打开 StreamJuju 对应线路，请在新标签页测试；不会伪造嵌入地址。";window.open(url,"_blank","noopener");}
+ document.querySelectorAll(".server").forEach(x=>x.classList.remove("active"));button.classList.add("active");$("open-current").disabled=false;$("open-current").textContent=p.kind==="embed"?"在新标签页打开当前线路":"重新打开当前 StreamJuju 线路";
+ $("external").href="https://streamjuju.cyou/watch/movie/"+id;
+ }catch(e){$("status").textContent=e.message;}
 }
-function load(){try{const url=resolve();frame.src=url;$("open").href=url;$("status").textContent="已请求加载："+url+"。请观察下方播放器是否出现内容，并实际测试播放。"}catch(e){$("status").textContent=e.message;}}
-$("form").addEventListener("submit",e=>{e.preventDefault();load();});
-$("reload").addEventListener("click",load);
-load();
+function render(list,target){list.forEach(p=>{const b=document.createElement("button");b.type="button";b.className="server"+(p.priority?" primary":"");b.innerHTML="<strong>"+p.name+"</strong><small>"+(p.kind==="embed"?"直接嵌入测试":"通过 StreamJuju 选择此线路")+"</small>"+(p.priority?'<span class="tag">优先</span>':"");b.addEventListener("click",()=>select(p,b));$(target).appendChild(b);});}
+render(providers.filter(p=>p.priority),"priority");render(providers.filter(p=>!p.priority),"others");
+$("form").addEventListener("submit",e=>{e.preventDefault();try{const id=tmdb();$("external").href="https://streamjuju.cyou/watch/movie/"+id;$("status").textContent="已切换测试影片 TMDB "+id+"。请选择一条线路。";if(current&&current.p.kind==="embed"){frame.src=current.p.url(id);current.url=current.p.url(id);}}catch(e){$("status").textContent=e.message;}});
+$("reload").addEventListener("click",()=>{if(!current){$("status").textContent="请先选择一条线路。";return;}if(current.embed)frame.src=current.url;else window.open(current.url,"_blank","noopener");});
+$("open-current").addEventListener("click",()=>{if(current)window.open(current.url,"_blank","noopener");});
+$("clear").addEventListener("click",()=>{frame.src="about:blank";current=null;$("open-current").disabled=true;document.querySelectorAll(".server").forEach(x=>x.classList.remove("active"));$("status").textContent="播放器已清空。";});
 })();
-</script>
-</body>
-</html>
+</script></body></html>
