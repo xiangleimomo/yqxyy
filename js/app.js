@@ -889,6 +889,7 @@ async renderLesson(seriesId, episodeId){
       // Retain native playback controls, rather than adding a second toolbar.
       let hideControlsTimer=null;
       const showControls=()=>{
+        if(player.closest('.sf-movie-lesson-player')?.querySelector('.sf-lesson-toolbar'))return;
         player.controls=true;
         clearTimeout(hideControlsTimer);
         hideControlsTimer=setTimeout(()=>{if(!player.matches(':hover'))player.controls=false;},3500);
@@ -933,8 +934,8 @@ async renderLesson(seriesId, episodeId){
       const match=location.hash.match(/#\/lesson\/([^/]+)\/(\d+)/);
       const series=match?.[1]||'movie-harry-potter-1',ep=Number(match?.[2]||1);
       let shown=false;tray.hidden=true;if(offset)offset.hidden=true;
-      const nav=n=>{if(n<1||n>34)return;player.pause();location.hash='#/lesson/'+series+'/'+n;};
-      b('prev').disabled=ep<=1;b('next').disabled=ep>=34;
+      const nav=n=>{if(n<1||n>(series==='movie-harry-potter-2'?28:34))return;player.pause();location.hash='#/lesson/'+series+'/'+n;};
+      b('prev').disabled=ep<=1;b('next').disabled=ep>=(series==='movie-harry-potter-2'?28:34);
       b('prev').onclick=()=>nav(ep-1);b('next').onclick=()=>nav(ep+1);
       const refresh=()=>{b('play').querySelector('span').textContent=player.paused?'▶':'⏸';b('play').querySelector('small').textContent=player.paused?'播放':'暂停';};
       b('play').onclick=()=>player.paused?player.play().catch(()=>{}):player.pause();
