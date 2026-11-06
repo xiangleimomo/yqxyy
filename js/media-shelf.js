@@ -52,6 +52,19 @@ window.MediaShelf = {
     }else{
       const {series,playableById}=await window.MovieClassroom.getLibrary(app);
       items=series.map(row=>this.movieSeries(row));allItems=[...items,...series.flatMap(row=>row.films.map(film=>this.movieFilm(row,film,playableById)))];
+      if(mode==='episodes'){
+        const courseIds=[...new Set(series.flatMap(group=>group.films.map(([filmId])=>playableById.get(filmId)?.studyCourse?.seriesId).filter(Boolean)))];
+        const courses=await Promise.all(courseIds.map(async seriesId=>{
+          try{return await app.getJSON(`data/${seriesId}/series.json`);}catch{return null;}
+        }));
+        items=courses.filter(course=>course&&course.status!=='coming').map(course=>({
+          key:`film-course-${course.seriesId}`,scope:'movies',id:course.seriesId,
+          title:(course.seriesTitleZh||course.seriesTitle||course.seriesId).replace(/\\s*[·|]\\s*剧情分集学习$/,''),
+          search:`${course.seriesTitle||''} ${course.seriesTitleZh||''} ${course.seriesId}`,
+          cover:course.coverImage,href:`#/series/${course.seriesId}`,level:course.level,
+          totalEpisodes:Number(course.totalEpisodes||0),disabled:course.status==='coming'
+        }));
+      }
     }
     const states=['all','episodes'].includes(mode)?new Map():await this.states(app);
     if(location.hash!==route||window.SFCloud?.user?.id!==uid)return;
@@ -63,7 +76,7 @@ window.MediaShelf = {
       }
     }
     const e=value=>this.e(app,value),prefix=scope==='movies'?'film-':'anim-';
-    if(mode==='episodes')items=allItems.filter(row=>!row.key.startsWith('film-series-'));
+    if(mode==='episodes')items=items;
     if(mode==='favorites')items=allItems.filter(row=>states.get(row.key)?.favorite);
     if(mode==='recent')items=allItems.filter(row=>row.key.startsWith(prefix)&&!row.disabled&&states.get(row.key)?.last_read_at).sort((a,b)=>String(states.get(b.key).last_read_at).localeCompare(String(states.get(a.key).last_read_at))).slice(0,5);
     let content;
