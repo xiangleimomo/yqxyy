@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run one shard of a 100-episode video→WhisperX→XML Text→forced-align batch."""
+"""Run one of five shards in a 50-episode video→WhisperX→XML Text→forced-align batch."""
 import argparse
 import importlib.util
 import json
