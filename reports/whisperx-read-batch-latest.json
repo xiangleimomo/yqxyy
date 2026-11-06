@@ -1,440 +1,265 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42209007282",
-  "completedAt": "2026-11-06T11:39:10.929633+00:00",
+  "runId": "42211841733",
+  "completedAt": "2026-11-06T11:51:47.552222+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 29,
-  "rejected": 21,
+  "published": 0,
+  "rejected": 50,
   "websiteCommitRequired": true,
-  "totalWords": 17147,
-  "speechMatchedWords": 17147,
-  "success": [
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 13,
-      "cues": 94,
-      "words": 489,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 76,
-      "speechWords": 489,
-      "coverage": 0.9939,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 14,
-      "cues": 83,
-      "words": 488,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 65,
-      "speechWords": 488,
-      "coverage": 0.9959,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 15,
-      "cues": 105,
-      "words": 543,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 79,
-      "speechWords": 543,
-      "coverage": 0.9982,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 16,
-      "cues": 91,
-      "words": 535,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 69,
-      "speechWords": 535,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 18,
-      "cues": 76,
-      "words": 468,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 56,
-      "speechWords": 468,
-      "coverage": 0.9957,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 19,
-      "cues": 81,
-      "words": 454,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 454,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 20,
-      "cues": 89,
-      "words": 489,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 64,
-      "speechWords": 489,
-      "coverage": 0.9959,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 21,
-      "cues": 66,
-      "words": 417,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 58,
-      "speechWords": 417,
-      "coverage": 0.9976,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 23,
-      "cues": 79,
-      "words": 466,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 56,
-      "speechWords": 466,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 25,
-      "cues": 94,
-      "words": 566,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 566,
-      "coverage": 0.9982,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 26,
-      "cues": 90,
-      "words": 596,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 74,
-      "speechWords": 596,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 28,
-      "cues": 85,
-      "words": 607,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 607,
-      "coverage": 0.9984,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 29,
-      "cues": 82,
-      "words": 552,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 66,
-      "speechWords": 552,
-      "coverage": 0.9982,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 30,
-      "cues": 89,
-      "words": 589,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 74,
-      "speechWords": 589,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 31,
-      "cues": 100,
-      "words": 659,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 81,
-      "speechWords": 659,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 33,
-      "cues": 99,
-      "words": 666,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 82,
-      "speechWords": 666,
-      "coverage": 0.997,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 34,
-      "cues": 89,
-      "words": 642,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 77,
-      "speechWords": 642,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 35,
-      "cues": 89,
-      "words": 624,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 78,
-      "speechWords": 624,
-      "coverage": 0.9968,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 36,
-      "cues": 105,
-      "words": 636,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 84,
-      "speechWords": 636,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 38,
-      "cues": 101,
-      "words": 662,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 87,
-      "speechWords": 662,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 39,
-      "cues": 104,
-      "words": 693,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 85,
-      "speechWords": 693,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 40,
-      "cues": 93,
-      "words": 612,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 80,
-      "speechWords": 612,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 41,
-      "cues": 91,
-      "words": 610,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 79,
-      "speechWords": 610,
-      "coverage": 0.9984,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 43,
-      "cues": 107,
-      "words": 680,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 85,
-      "speechWords": 680,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 44,
-      "cues": 81,
-      "words": 638,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 80,
-      "speechWords": 638,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 45,
-      "cues": 90,
-      "words": 644,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 78,
-      "speechWords": 644,
-      "coverage": 0.9984,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 46,
-      "cues": 87,
-      "words": 676,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 81,
-      "speechWords": 676,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 48,
-      "cues": 84,
-      "words": 639,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 639,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
-      "episodeId": 49,
-      "cues": 100,
-      "words": 807,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 89,
-      "speechWords": 807,
-      "coverage": 0.9988,
-      "omittedWords": 1
-    }
-  ],
+  "totalWords": 0,
+  "speechMatchedWords": 0,
+  "success": [],
   "failures": [
     {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 8,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 9,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 10,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 11,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 3.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 12,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.4% matched, 3.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 13,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 14,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 6.6% matched, 0.4% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 15,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 16,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 6.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
       "episodeId": 17,
-      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.1% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 18,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 19,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 20,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 21,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
       "episodeId": 22,
-      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.8% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 23,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
       "episodeId": 24,
-      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.3% matched, 3.4% assigned"
     },
     {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 25,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.2% matched, 1.8% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 26,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.7% matched, 3.1% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
       "episodeId": 27,
-      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.5% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 28,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 29,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.6% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 30,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.9% matched, 0.7% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 31,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
       "episodeId": 32,
-      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 33,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.6% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 34,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 35,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 36,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
       "episodeId": 37,
-      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.3% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 38,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 39,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 40,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 41,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
       "episodeId": 42,
-      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-dr-dolittle-fs0028",
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 43,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 44,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 45,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 3.2% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 46,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 3.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
       "episodeId": 47,
-      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
-    },
-    {
-      "seriesId": "little-fox-dracula-fs0016",
-      "episodeId": 1,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 97.3% assigned"
-    },
-    {
-      "seriesId": "little-fox-dracula-fs0016",
-      "episodeId": 2,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 94.7% assigned"
-    },
-    {
-      "seriesId": "little-fox-dracula-fs0016",
-      "episodeId": 3,
-      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
-    },
-    {
-      "seriesId": "little-fox-dracula-fs0016",
-      "episodeId": 4,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 16.9% matched, 97.6% assigned"
-    },
-    {
-      "seriesId": "little-fox-dracula-fs0016",
-      "episodeId": 5,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.9% matched, 98.6% assigned"
-    },
-    {
-      "seriesId": "little-fox-dracula-fs0016",
-      "episodeId": 6,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 94.2% assigned"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.5% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 1,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.5% matched, 3.3% assigned"
+      "episodeId": 48,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.6% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 2,
-      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+      "episodeId": 49,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.2% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 3,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.4% matched, 0.0% assigned"
+      "episodeId": 50,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.5% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 4,
+      "episodeId": 51,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 52,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 53,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.0% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 5,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.9% matched, 0.0% assigned"
+      "episodeId": 54,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.5% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 6,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.6% assigned"
+      "episodeId": 55,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.5% assigned"
     },
     {
       "seriesId": "little-fox-fairy-tale-barn-fs0123",
-      "episodeId": 7,
-      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+      "episodeId": 56,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-fairy-tale-barn-fs0123",
+      "episodeId": 57,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.0% matched, 3.7% assigned"
     }
   ]
 }
