@@ -5289,6 +5289,176 @@
       "seriesId": "little-fox-great-expectations-fs0052",
       "episodeId": 30,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 89.7% assigned"
+    },
+    {
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
+      "episodeId": 5,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
+      "episodeId": 10,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
+      "episodeId": 15,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
+      "episodeId": 20,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 1,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 2,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 3,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 4,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 5,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 6,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 7,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 8,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 9,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 10,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 11,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 12,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 13,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 2,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (79680 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (79680 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (79680 ms, minimum 120000 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 3,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 4,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (72341 ms, minimum 112970 ms); cdn.littlefox.com: insufficient audio (72341 ms, minimum 112970 ms); cdn.littlefox.co.kr: insufficient audio (72341 ms, minimum 112970 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 5,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (68267 ms, minimum 100320 ms); cdn.littlefox.com: insufficient audio (68267 ms, minimum 100320 ms); cdn.littlefox.co.kr: insufficient audio (68267 ms, minimum 100320 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 6,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (92181 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (92181 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (92181 ms, minimum 120000 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 7,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (80021 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (80021 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (80021 ms, minimum 120000 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 8,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 9,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (67925 ms, minimum 98780 ms); cdn.littlefox.com: insufficient audio (67925 ms, minimum 98780 ms); cdn.littlefox.co.kr: insufficient audio (67925 ms, minimum 98780 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 10,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (71765 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (71765 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (71765 ms, minimum 120000 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 11,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (80107 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (80107 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (80107 ms, minimum 120000 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 12,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (82688 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (82688 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (82688 ms, minimum 120000 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 13,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 14,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (78592 ms, minimum 110220 ms); cdn.littlefox.com: insufficient audio (78592 ms, minimum 110220 ms); cdn.littlefox.co.kr: insufficient audio (78592 ms, minimum 110220 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 15,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (84352 ms, minimum 98010 ms); cdn.littlefox.com: insufficient audio (84352 ms, minimum 98010 ms); cdn.littlefox.co.kr: insufficient audio (84352 ms, minimum 98010 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 16,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (101931 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (101931 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (101931 ms, minimum 120000 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 17,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (108523 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (108523 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (108523 ms, minimum 120000 ms)"
     }
   ]
 }

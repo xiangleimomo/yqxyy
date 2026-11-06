@@ -1,398 +1,362 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42230427882",
-  "completedAt": "2026-11-06T14:25:40.138680+00:00",
+  "runId": "42233826730",
+  "completedAt": "2026-11-06T14:38:28.473234+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 22,
-  "rejected": 28,
+  "published": 16,
+  "rejected": 34,
   "websiteCommitRequired": true,
-  "totalWords": 22435,
-  "speechMatchedWords": 22435,
+  "totalWords": 9521,
+  "speechMatchedWords": 9521,
   "success": [
     {
-      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
-      "episodeId": 15,
-      "cues": 97,
-      "words": 1001,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 1001,
-      "coverage": 0.999,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
-      "episodeId": 16,
-      "cues": 96,
-      "words": 993,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 993,
-      "coverage": 0.999,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
-      "episodeId": 17,
-      "cues": 105,
-      "words": 988,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 80,
-      "speechWords": 988,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
-      "episodeId": 18,
-      "cues": 109,
-      "words": 995,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 81,
-      "speechWords": 995,
-      "coverage": 0.998,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
-      "episodeId": 19,
-      "cues": 98,
-      "words": 982,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 982,
-      "coverage": 0.998,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
-      "episodeId": 20,
-      "cues": 105,
-      "words": 983,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 69,
-      "speechWords": 983,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 15,
-      "cues": 123,
-      "words": 1189,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 78,
-      "speechWords": 1189,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 27,
-      "cues": 110,
-      "words": 1166,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 62,
-      "speechWords": 1166,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-greek-myths-fs0017",
-      "episodeId": 1,
-      "cues": 103,
-      "words": 1207,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 70,
-      "speechWords": 1207,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-greek-myths-fs0017",
-      "episodeId": 2,
-      "cues": 104,
-      "words": 1240,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 78,
-      "speechWords": 1240,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-greek-myths-fs0017",
-      "episodeId": 3,
-      "cues": 90,
-      "words": 1109,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 69,
-      "speechWords": 1109,
-      "coverage": 0.9991,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-greek-myths-fs0017",
-      "episodeId": 4,
-      "cues": 107,
-      "words": 1152,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 1152,
-      "coverage": 0.9991,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-greek-myths-fs0017",
-      "episodeId": 5,
-      "cues": 108,
-      "words": 1164,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 1164,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-greek-myths-fs0017",
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
       "episodeId": 6,
-      "cues": 131,
-      "words": 1356,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 83,
-      "speechWords": 1356,
-      "coverage": 0.9993,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-greek-myths-fs0017",
-      "episodeId": 7,
-      "cues": 92,
-      "words": 1182,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 66,
-      "speechWords": 1182,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-greek-myths-fs0017",
-      "episodeId": 8,
-      "cues": 89,
-      "words": 1164,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 64,
-      "speechWords": 1164,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-greek-myths-fs0017",
-      "episodeId": 9,
-      "cues": 95,
-      "words": 1178,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 70,
-      "speechWords": 1178,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-greek-myths-fs0017",
-      "episodeId": 10,
-      "cues": 82,
-      "words": 1073,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 59,
-      "speechWords": 1073,
-      "coverage": 0.9991,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-gulliver-s-travels-fs0041",
-      "episodeId": 1,
       "cues": 62,
-      "words": 575,
+      "words": 589,
       "xmlTextVerified": true,
-      "xmlParagraphs": 59,
-      "speechWords": 575,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-gulliver-s-travels-fs0041",
-      "episodeId": 2,
-      "cues": 61,
-      "words": 593,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 59,
-      "speechWords": 593,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-gulliver-s-travels-fs0041",
-      "episodeId": 3,
-      "cues": 55,
-      "words": 573,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 54,
-      "speechWords": 573,
+      "xmlParagraphs": 60,
+      "speechWords": 589,
       "coverage": 0.9983,
       "omittedWords": 1
     },
     {
       "seriesId": "little-fox-gulliver-s-travels-fs0041",
-      "episodeId": 4,
-      "cues": 61,
-      "words": 572,
+      "episodeId": 7,
+      "cues": 67,
+      "words": 588,
       "xmlTextVerified": true,
-      "xmlParagraphs": 59,
-      "speechWords": 572,
+      "xmlParagraphs": 63,
+      "speechWords": 588,
       "coverage": 1.0,
       "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
+      "episodeId": 8,
+      "cues": 57,
+      "words": 557,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 56,
+      "speechWords": 557,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
+      "episodeId": 9,
+      "cues": 62,
+      "words": 580,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 580,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
+      "episodeId": 11,
+      "cues": 59,
+      "words": 568,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 59,
+      "speechWords": 568,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
+      "episodeId": 12,
+      "cues": 62,
+      "words": 607,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 607,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
+      "episodeId": 13,
+      "cues": 59,
+      "words": 599,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 59,
+      "speechWords": 599,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
+      "episodeId": 14,
+      "cues": 53,
+      "words": 609,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 52,
+      "speechWords": 609,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
+      "episodeId": 16,
+      "cues": 63,
+      "words": 597,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 597,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
+      "episodeId": 17,
+      "cues": 56,
+      "words": 595,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 51,
+      "speechWords": 595,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
+      "episodeId": 18,
+      "cues": 59,
+      "words": 614,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 614,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
+      "episodeId": 19,
+      "cues": 59,
+      "words": 601,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 56,
+      "speechWords": 601,
+      "coverage": 0.9967,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
+      "episodeId": 21,
+      "cues": 61,
+      "words": 580,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 53,
+      "speechWords": 580,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
+      "episodeId": 22,
+      "cues": 63,
+      "words": 601,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 601,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
+      "episodeId": 23,
+      "cues": 69,
+      "words": 620,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 620,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
+      "episodeId": 24,
+      "cues": 69,
+      "words": 616,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 616,
+      "coverage": 0.9984,
+      "omittedWords": 1
     }
   ],
   "failures": [
     {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 1,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 97.3% assigned"
-    },
-    {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 2,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.3% matched, 98.6% assigned"
-    },
-    {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 3,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.4% matched, 98.8% assigned"
-    },
-    {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 4,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.9% matched, 98.6% assigned"
-    },
-    {
-      "seriesId": "little-fox-great-expectations-fs0052",
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
       "episodeId": 5,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 98.6% assigned"
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 6,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 89.7% assigned"
-    },
-    {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 7,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 96.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 8,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 96.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 9,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.5% matched, 100.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-great-expectations-fs0052",
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
       "episodeId": 10,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.1% matched, 100.0% assigned"
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 11,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 89.7% assigned"
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
+      "episodeId": 15,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 12,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 97.3% assigned"
-    },
-    {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 13,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.9% matched, 98.6% assigned"
-    },
-    {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 14,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 91.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 16,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 93.8% assigned"
-    },
-    {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 17,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.0% matched, 100.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 18,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 96.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 19,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.7% matched, 100.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-great-expectations-fs0052",
+      "seriesId": "little-fox-gulliver-s-travels-fs0041",
       "episodeId": 20,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 100.0% assigned"
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 21,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.4% matched, 91.0% assigned"
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 1,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 22,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 97.3% assigned"
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 2,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 23,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.2% matched, 89.7% assigned"
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 3,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 24,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.4% matched, 91.0% assigned"
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 4,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 25,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.5% matched, 100.0% assigned"
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 5,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 26,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 16.7% matched, 98.6% assigned"
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 6,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 28,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.1% matched, 100.0% assigned"
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 7,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 29,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 92.4% assigned"
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 8,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-great-expectations-fs0052",
-      "episodeId": 30,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 89.7% assigned"
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 9,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 10,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 11,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 12,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-halloween-more-holiday-songs-srv01039",
+      "episodeId": 13,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 2,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (79680 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (79680 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (79680 ms, minimum 120000 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 3,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 4,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (72341 ms, minimum 112970 ms); cdn.littlefox.com: insufficient audio (72341 ms, minimum 112970 ms); cdn.littlefox.co.kr: insufficient audio (72341 ms, minimum 112970 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 5,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (68267 ms, minimum 100320 ms); cdn.littlefox.com: insufficient audio (68267 ms, minimum 100320 ms); cdn.littlefox.co.kr: insufficient audio (68267 ms, minimum 100320 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 6,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (92181 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (92181 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (92181 ms, minimum 120000 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 7,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (80021 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (80021 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (80021 ms, minimum 120000 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 8,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 9,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (67925 ms, minimum 98780 ms); cdn.littlefox.com: insufficient audio (67925 ms, minimum 98780 ms); cdn.littlefox.co.kr: insufficient audio (67925 ms, minimum 98780 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 10,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (71765 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (71765 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (71765 ms, minimum 120000 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 11,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (80107 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (80107 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (80107 ms, minimum 120000 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 12,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (82688 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (82688 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (82688 ms, minimum 120000 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 13,
+      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 14,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (78592 ms, minimum 110220 ms); cdn.littlefox.com: insufficient audio (78592 ms, minimum 110220 ms); cdn.littlefox.co.kr: insufficient audio (78592 ms, minimum 110220 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 15,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (84352 ms, minimum 98010 ms); cdn.littlefox.com: insufficient audio (84352 ms, minimum 98010 ms); cdn.littlefox.co.kr: insufficient audio (84352 ms, minimum 98010 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 16,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (101931 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (101931 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (101931 ms, minimum 120000 ms)"
+    },
+    {
+      "seriesId": "little-fox-hana-s-album-fs0027",
+      "episodeId": 17,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (108523 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (108523 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (108523 ms, minimum 120000 ms)"
     }
   ]
 }
