@@ -1,0 +1,40 @@
+name: Build HP1 34 independent HLS episodes
+on:
+  push:
+    branches: [automation/hp1-hls-slice]
+    paths:
+      - 'scripts/build_hp1_hls_34.py'
+      - 'data/movie-hp1-independent/course.json'
+      - '.github/workflows/build-hp1-hls-34.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: automation/hp1-hls-slice
+      - name: Generate independent episode playlists
+        run: python3 scripts/build_hp1_hls_34.py
+      - name: Verify episode playlists
+        run: |
+          test "$(find data/movie-harry-potter-1/hls -maxdepth 1 -name '*.m3u8' | wc -l)" -eq 34
+          grep -q '#EXT-X-ENDLIST' data/movie-harry-potter-1/hls/034.m3u8
+          python3 - <<'PY'
+          import json
+          p='data/movie-harry-potter-1/episodes.json'
+          e=json.load(open(p))
+          assert len(e)==34 and all(x['video']['hlsUrl'].endswith(f"{x['episodeId']:03d}.m3u8") for x in e)
+          PY
+      - name: Commit generated playlists and episodes
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/movie-harry-potter-1/hls data/movie-harry-potter-1/episodes.json
+          if ! git diff --cached --quiet; then
+            git commit -m "build: generate 34 independent HP1 HLS episode playlists"
+            git push origin HEAD:automation/hp1-hls-slice
+          fi
