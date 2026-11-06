@@ -1,0 +1,494 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42153577516",
+  "completedAt": "2026-11-06T03:21:17.252454+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 38,
+  "rejected": 12,
+  "websiteCommitRequired": true,
+  "totalWords": 21360,
+  "speechMatchedWords": 21360,
+  "success": [
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 1,
+      "cues": 66,
+      "words": 570,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 570,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 3,
+      "cues": 66,
+      "words": 542,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 542,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 4,
+      "cues": 64,
+      "words": 527,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 527,
+      "coverage": 0.9981,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 5,
+      "cues": 68,
+      "words": 568,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 568,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 6,
+      "cues": 81,
+      "words": 548,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 548,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 8,
+      "cues": 75,
+      "words": 567,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 567,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 9,
+      "cues": 83,
+      "words": 547,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 547,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 10,
+      "cues": 54,
+      "words": 516,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 52,
+      "speechWords": 516,
+      "coverage": 0.9981,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 11,
+      "cues": 71,
+      "words": 541,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 541,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 13,
+      "cues": 73,
+      "words": 520,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 520,
+      "coverage": 0.9981,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 14,
+      "cues": 62,
+      "words": 540,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 540,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 15,
+      "cues": 76,
+      "words": 550,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 550,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 16,
+      "cues": 63,
+      "words": 530,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 530,
+      "coverage": 0.9981,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 18,
+      "cues": 79,
+      "words": 565,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 565,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 19,
+      "cues": 70,
+      "words": 546,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 546,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 20,
+      "cues": 68,
+      "words": 568,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 568,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 21,
+      "cues": 80,
+      "words": 567,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 567,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 23,
+      "cues": 79,
+      "words": 561,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 561,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 24,
+      "cues": 79,
+      "words": 560,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 560,
+      "coverage": 0.9947,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 1,
+      "cues": 73,
+      "words": 596,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 596,
+      "coverage": 0.9967,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 2,
+      "cues": 66,
+      "words": 585,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 585,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 4,
+      "cues": 69,
+      "words": 572,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 572,
+      "coverage": 0.9965,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 5,
+      "cues": 68,
+      "words": 573,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 573,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 6,
+      "cues": 70,
+      "words": 581,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 59,
+      "speechWords": 581,
+      "coverage": 0.9966,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 7,
+      "cues": 65,
+      "words": 565,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 565,
+      "coverage": 0.9965,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 9,
+      "cues": 70,
+      "words": 558,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 558,
+      "coverage": 0.9947,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 10,
+      "cues": 68,
+      "words": 594,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 59,
+      "speechWords": 594,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 11,
+      "cues": 61,
+      "words": 550,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 550,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 12,
+      "cues": 65,
+      "words": 588,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 588,
+      "coverage": 0.9932,
+      "omittedWords": 4
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 14,
+      "cues": 69,
+      "words": 566,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 566,
+      "coverage": 0.9947,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 15,
+      "cues": 84,
+      "words": 599,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 599,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 16,
+      "cues": 76,
+      "words": 542,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 542,
+      "coverage": 0.9945,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 17,
+      "cues": 71,
+      "words": 588,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 588,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 19,
+      "cues": 67,
+      "words": 569,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 569,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 20,
+      "cues": 70,
+      "words": 596,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 596,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 21,
+      "cues": 68,
+      "words": 562,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 59,
+      "speechWords": 562,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 22,
+      "cues": 78,
+      "words": 572,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 572,
+      "coverage": 0.9948,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 24,
+      "cues": 65,
+      "words": 571,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 571,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    }
+  ],
+  "failures": [
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 2,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 7,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 12,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 17,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-aladdin-and-his-wonderful-lamp-fs0045",
+      "episodeId": 22,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 3,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 8,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 13,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 18,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-alice-s-adventures-in-wonderland-fs0106",
+      "episodeId": 23,
+      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 1,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-all-time-favorites-srv01014",
+      "episodeId": 2,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    }
+  ]
+}
