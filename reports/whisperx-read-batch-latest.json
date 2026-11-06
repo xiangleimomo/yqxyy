@@ -1,416 +1,434 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42300182450",
-  "completedAt": "2026-11-06T22:09:42.961812+00:00",
+  "runId": "42302536845",
+  "completedAt": "2026-11-06T22:42:11.572568+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 25,
-  "rejected": 25,
+  "published": 28,
+  "rejected": 22,
   "websiteCommitRequired": true,
-  "totalWords": 28387,
-  "speechMatchedWords": 28387,
+  "totalWords": 28670,
+  "speechMatchedWords": 28670,
   "success": [
     {
-      "seriesId": "little-fox-o-henry-fs0018",
-      "episodeId": 1,
-      "cues": 137,
-      "words": 1336,
+      "seriesId": "little-fox-oliver-twist-fs0058",
+      "episodeId": 15,
+      "cues": 126,
+      "words": 1077,
       "xmlTextVerified": true,
-      "xmlParagraphs": 79,
-      "speechWords": 1336,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-o-henry-fs0018",
-      "episodeId": 2,
-      "cues": 122,
-      "words": 1260,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 1260,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-o-henry-fs0018",
-      "episodeId": 3,
-      "cues": 121,
-      "words": 1249,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 72,
-      "speechWords": 1249,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-o-henry-fs0018",
-      "episodeId": 4,
-      "cues": 160,
-      "words": 1544,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 95,
-      "speechWords": 1544,
-      "coverage": 0.9994,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-o-henry-fs0018",
-      "episodeId": 5,
-      "cues": 113,
-      "words": 1409,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 80,
-      "speechWords": 1409,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-o-henry-fs0018",
-      "episodeId": 6,
-      "cues": 116,
-      "words": 1042,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 70,
-      "speechWords": 1042,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-o-henry-fs0018",
-      "episodeId": 7,
-      "cues": 98,
-      "words": 956,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 59,
-      "speechWords": 956,
-      "coverage": 0.999,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-o-henry-fs0018",
-      "episodeId": 8,
-      "cues": 92,
-      "words": 1005,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 57,
-      "speechWords": 1005,
-      "coverage": 0.999,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-o-henry-fs0018",
-      "episodeId": 9,
-      "cues": 104,
-      "words": 1060,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 67,
-      "speechWords": 1060,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-o-henry-fs0018",
-      "episodeId": 10,
-      "cues": 115,
-      "words": 1163,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 63,
-      "speechWords": 1163,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-o-henry-fs0018",
-      "episodeId": 11,
-      "cues": 106,
-      "words": 1122,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 60,
-      "speechWords": 1122,
+      "xmlParagraphs": 71,
+      "speechWords": 1077,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
       "seriesId": "little-fox-oliver-twist-fs0058",
-      "episodeId": 1,
-      "cues": 121,
+      "episodeId": 16,
+      "cues": 115,
+      "words": 1086,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 1086,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-oliver-twist-fs0058",
+      "episodeId": 17,
+      "cues": 126,
       "words": 1080,
       "xmlTextVerified": true,
-      "xmlParagraphs": 61,
+      "xmlParagraphs": 65,
       "speechWords": 1080,
       "coverage": 0.9991,
       "omittedWords": 1
     },
     {
       "seriesId": "little-fox-oliver-twist-fs0058",
-      "episodeId": 2,
-      "cues": 130,
-      "words": 1076,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 64,
-      "speechWords": 1076,
-      "coverage": 0.9991,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-oliver-twist-fs0058",
-      "episodeId": 3,
-      "cues": 141,
-      "words": 1094,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 77,
-      "speechWords": 1094,
-      "coverage": 0.9991,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-oliver-twist-fs0058",
-      "episodeId": 4,
-      "cues": 106,
-      "words": 1088,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 70,
-      "speechWords": 1088,
-      "coverage": 0.9991,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-oliver-twist-fs0058",
-      "episodeId": 5,
-      "cues": 117,
+      "episodeId": 18,
+      "cues": 135,
       "words": 1089,
       "xmlTextVerified": true,
-      "xmlParagraphs": 72,
+      "xmlParagraphs": 63,
       "speechWords": 1089,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
       "seriesId": "little-fox-oliver-twist-fs0058",
-      "episodeId": 6,
-      "cues": 111,
-      "words": 1093,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 72,
-      "speechWords": 1093,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-oliver-twist-fs0058",
-      "episodeId": 7,
-      "cues": 145,
-      "words": 1098,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 70,
-      "speechWords": 1098,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-oliver-twist-fs0058",
-      "episodeId": 8,
-      "cues": 128,
-      "words": 1080,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 74,
-      "speechWords": 1080,
-      "coverage": 0.9991,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-oliver-twist-fs0058",
-      "episodeId": 9,
-      "cues": 131,
-      "words": 1098,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 65,
-      "speechWords": 1098,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-oliver-twist-fs0058",
-      "episodeId": 10,
-      "cues": 125,
-      "words": 1099,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 69,
-      "speechWords": 1099,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-oliver-twist-fs0058",
-      "episodeId": 11,
-      "cues": 128,
-      "words": 1074,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 66,
-      "speechWords": 1074,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-oliver-twist-fs0058",
-      "episodeId": 12,
-      "cues": 116,
+      "episodeId": 20,
+      "cues": 118,
       "words": 1085,
       "xmlTextVerified": true,
-      "xmlParagraphs": 64,
+      "xmlParagraphs": 65,
       "speechWords": 1085,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
       "seriesId": "little-fox-oliver-twist-fs0058",
-      "episodeId": 13,
-      "cues": 132,
-      "words": 1091,
+      "episodeId": 21,
+      "cues": 135,
+      "words": 1100,
       "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 1091,
+      "xmlParagraphs": 63,
+      "speechWords": 1100,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
       "seriesId": "little-fox-oliver-twist-fs0058",
-      "episodeId": 14,
-      "cues": 149,
-      "words": 1096,
+      "episodeId": 22,
+      "cues": 127,
+      "words": 1085,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 1085,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-oliver-twist-fs0058",
+      "episodeId": 23,
+      "cues": 127,
+      "words": 1085,
       "xmlTextVerified": true,
       "xmlParagraphs": 70,
-      "speechWords": 1096,
+      "speechWords": 1085,
       "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-oliver-twist-fs0058",
+      "episodeId": 25,
+      "cues": 137,
+      "words": 1097,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 1097,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-oliver-twist-fs0058",
+      "episodeId": 26,
+      "cues": 127,
+      "words": 1100,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 1100,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-oliver-twist-fs0058",
+      "episodeId": 27,
+      "cues": 116,
+      "words": 1086,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 56,
+      "speechWords": 1086,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-oliver-twist-fs0058",
+      "episodeId": 28,
+      "cues": 134,
+      "words": 1101,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 1101,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-oliver-twist-fs0058",
+      "episodeId": 30,
+      "cues": 119,
+      "words": 1104,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 1104,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 1,
+      "cues": 125,
+      "words": 974,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 974,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 2,
+      "cues": 128,
+      "words": 949,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 949,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 3,
+      "cues": 147,
+      "words": 956,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 956,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 5,
+      "cues": 135,
+      "words": 976,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 83,
+      "speechWords": 976,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 6,
+      "cues": 143,
+      "words": 982,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 82,
+      "speechWords": 982,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 7,
+      "cues": 127,
+      "words": 947,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 947,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 8,
+      "cues": 120,
+      "words": 984,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 984,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 10,
+      "cues": 116,
+      "words": 961,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 961,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 11,
+      "cues": 122,
+      "words": 972,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 972,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 12,
+      "cues": 113,
+      "words": 960,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 960,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 13,
+      "cues": 135,
+      "words": 954,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 954,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 15,
+      "cues": 122,
+      "words": 966,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 966,
+      "coverage": 0.9979,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 16,
+      "cues": 136,
+      "words": 987,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 987,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 17,
+      "cues": 125,
+      "words": 988,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 988,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 18,
+      "cues": 116,
+      "words": 939,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 939,
+      "coverage": 0.9989,
       "omittedWords": 1
     }
   ],
   "failures": [
     {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 8,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 9,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 10,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 11,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 12,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 13,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 14,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 15,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 16,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 17,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 18,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
+      "seriesId": "little-fox-oliver-twist-fs0058",
       "episodeId": 19,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 20,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 21,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 22,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 23,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
+      "seriesId": "little-fox-oliver-twist-fs0058",
       "episodeId": 24,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 25,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 26,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 27,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
-      "episodeId": 28,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
+      "seriesId": "little-fox-oliver-twist-fs0058",
       "episodeId": 29,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 4,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 9,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 14,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 19,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 20,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 21,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.7% matched, 0.6% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 22,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 3.9% matched, 23.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 23,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 24,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 25,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 26,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.7% matched, 8.5% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 27,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 28,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 29,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
       "episodeId": 30,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 3.8% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
+      "seriesId": "little-fox-olympic-champion-fs0077",
       "episodeId": 31,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.9% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-4-srv01029",
+      "seriesId": "little-fox-olympic-champion-fs0077",
       "episodeId": 32,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 3.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 33,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.1% matched, 23.9% assigned"
+    },
+    {
+      "seriesId": "little-fox-olympic-champion-fs0077",
+      "episodeId": 34,
+      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     }
   ]
 }
