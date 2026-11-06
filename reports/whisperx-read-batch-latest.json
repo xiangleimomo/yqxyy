@@ -1,265 +1,482 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42265827640",
-  "completedAt": "2026-11-06T18:02:35.602663+00:00",
+  "runId": "42267102261",
+  "completedAt": "2026-11-06T18:12:38.729924+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 0,
-  "rejected": 50,
+  "published": 36,
+  "rejected": 14,
   "websiteCommitRequired": true,
-  "totalWords": 0,
-  "speechMatchedWords": 0,
-  "success": [],
+  "totalWords": 5210,
+  "speechMatchedWords": 5210,
+  "success": [
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 41,
+      "cues": 27,
+      "words": 140,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 29,
+      "speechWords": 140,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 42,
+      "cues": 29,
+      "words": 146,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 31,
+      "speechWords": 146,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 43,
+      "cues": 27,
+      "words": 138,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 29,
+      "speechWords": 138,
+      "coverage": 0.9787,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 44,
+      "cues": 29,
+      "words": 149,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 29,
+      "speechWords": 149,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 45,
+      "cues": 28,
+      "words": 137,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 28,
+      "speechWords": 137,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 46,
+      "cues": 29,
+      "words": 139,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 30,
+      "speechWords": 139,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 47,
+      "cues": 29,
+      "words": 141,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 31,
+      "speechWords": 141,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 48,
+      "cues": 26,
+      "words": 123,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 29,
+      "speechWords": 123,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 49,
+      "cues": 27,
+      "words": 126,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 28,
+      "speechWords": 126,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 50,
+      "cues": 29,
+      "words": 140,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 30,
+      "speechWords": 140,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 51,
+      "cues": 29,
+      "words": 142,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 31,
+      "speechWords": 142,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 52,
+      "cues": 30,
+      "words": 141,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 30,
+      "speechWords": 141,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 53,
+      "cues": 30,
+      "words": 151,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 30,
+      "speechWords": 151,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 54,
+      "cues": 30,
+      "words": 146,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 31,
+      "speechWords": 146,
+      "coverage": 0.9932,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 55,
+      "cues": 25,
+      "words": 129,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 26,
+      "speechWords": 129,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 56,
+      "cues": 28,
+      "words": 147,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 28,
+      "speechWords": 147,
+      "coverage": 0.9866,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 57,
+      "cues": 30,
+      "words": 134,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 30,
+      "speechWords": 134,
+      "coverage": 0.9853,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 58,
+      "cues": 30,
+      "words": 153,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 31,
+      "speechWords": 153,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 59,
+      "cues": 28,
+      "words": 143,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 29,
+      "speechWords": 143,
+      "coverage": 0.9795,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 60,
+      "cues": 30,
+      "words": 144,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 30,
+      "speechWords": 144,
+      "coverage": 0.9931,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 61,
+      "cues": 29,
+      "words": 147,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 30,
+      "speechWords": 147,
+      "coverage": 0.9866,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 62,
+      "cues": 29,
+      "words": 146,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 30,
+      "speechWords": 146,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 63,
+      "cues": 28,
+      "words": 141,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 28,
+      "speechWords": 141,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 64,
+      "cues": 29,
+      "words": 137,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 30,
+      "speechWords": 137,
+      "coverage": 0.9928,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 65,
+      "cues": 26,
+      "words": 153,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 28,
+      "speechWords": 153,
+      "coverage": 0.9935,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 66,
+      "cues": 26,
+      "words": 153,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 27,
+      "speechWords": 153,
+      "coverage": 0.9935,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 67,
+      "cues": 28,
+      "words": 157,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 28,
+      "speechWords": 157,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 68,
+      "cues": 28,
+      "words": 154,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 28,
+      "speechWords": 154,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 69,
+      "cues": 29,
+      "words": 147,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 29,
+      "speechWords": 147,
+      "coverage": 0.9866,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 70,
+      "cues": 28,
+      "words": 155,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 29,
+      "speechWords": 155,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 71,
+      "cues": 29,
+      "words": 152,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 30,
+      "speechWords": 152,
+      "coverage": 0.9935,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 72,
+      "cues": 28,
+      "words": 157,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 29,
+      "speechWords": 157,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 73,
+      "cues": 29,
+      "words": 143,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 29,
+      "speechWords": 143,
+      "coverage": 0.9931,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 74,
+      "cues": 27,
+      "words": 150,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 28,
+      "speechWords": 150,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 75,
+      "cues": 27,
+      "words": 154,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 29,
+      "speechWords": 154,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 76,
+      "cues": 31,
+      "words": 155,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 32,
+      "speechWords": 155,
+      "coverage": 0.9936,
+      "omittedWords": 1
+    }
+  ],
   "failures": [
     {
-      "seriesId": "little-fox-magic-marker-fs0012",
-      "episodeId": 51,
-      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (103317 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (103317 ms, minimum 120000 ms)"
-    },
-    {
-      "seriesId": "little-fox-magic-marker-fs0012",
-      "episodeId": 52,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-magic-marker-fs0012",
-      "episodeId": 53,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-magic-marker-fs0012",
-      "episodeId": 54,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-magic-marker-fs0012",
-      "episodeId": 55,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-magic-marker-fs0012",
-      "episodeId": 56,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-magic-marker-fs0012",
-      "episodeId": 57,
-      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (108309 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (108309 ms, minimum 120000 ms)"
-    },
-    {
-      "seriesId": "little-fox-magic-marker-fs0012",
-      "episodeId": 58,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-magic-marker-fs0012",
-      "episodeId": 59,
-      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (112320 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (112320 ms, minimum 120000 ms)"
-    },
-    {
-      "seriesId": "little-fox-magic-marker-fs0012",
-      "episodeId": 60,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-magic-marker-fs0012",
-      "episodeId": 61,
-      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (107691 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (107691 ms, minimum 120000 ms)"
-    },
-    {
-      "seriesId": "little-fox-magic-marker-fs0012",
-      "episodeId": 62,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-magic-marker-fs0012",
-      "episodeId": 63,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.6% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-magic-marker-fs0012",
-      "episodeId": 64,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-magic-marker-fs0012",
-      "episodeId": 65,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-magic-marker-fs0012",
-      "episodeId": 66,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-magic-marker-fs0012",
-      "episodeId": 67,
-      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (107648 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (107648 ms, minimum 120000 ms)"
-    },
-    {
-      "seriesId": "little-fox-magic-marker-fs0012",
-      "episodeId": 68,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-magic-marker-fs0012",
-      "episodeId": 69,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-magic-marker-fs0012",
-      "episodeId": 70,
-      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (116693 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (116693 ms, minimum 120000 ms)"
-    },
-    {
-      "seriesId": "little-fox-magic-marker-fs0012",
-      "episodeId": 71,
-      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (106240 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (106240 ms, minimum 120000 ms)"
-    },
-    {
-      "seriesId": "little-fox-magic-marker-fs0012",
-      "episodeId": 72,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-magic-marker-fs0012",
-      "episodeId": 73,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.4% matched, 0.0% assigned"
-    },
-    {
       "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 1,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 2,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 3,
+      "episodeId": 28,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 4,
+      "episodeId": 29,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 30,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 31,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 32,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 33,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 34,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 35,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 36,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 37,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 38,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-meet-the-animals-fs0074",
+      "episodeId": 39,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.4% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 5,
+      "episodeId": 40,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 6,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 7,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 8,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 9,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 10,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 11,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 12,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 13,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 14,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 15,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 16,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 17,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 18,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 19,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 20,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 21,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.6% matched, 2.8% assigned"
-    },
-    {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 22,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 23,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 24,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 25,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 26,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.6% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-meet-the-animals-fs0074",
-      "episodeId": 27,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.5% matched, 0.0% assigned"
+      "seriesId": "little-fox-meet-the-dinosaurs-fs0177",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.7% matched, 0.0% assigned"
     }
   ]
 }

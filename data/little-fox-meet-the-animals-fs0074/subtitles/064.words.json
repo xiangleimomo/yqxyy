@@ -1,0 +1,959 @@
+{
+  "seriesId": "little-fox-meet-the-animals-fs0074",
+  "episodeId": 64,
+  "sourceContentId": "C0008117",
+  "mediaPath": "/contents_5/hls/1080/526084f277/1724653138c156cea027720c227089e679b3ae9d1b/stream.m3u8",
+  "mediaFingerprint": "f5765650bb8dda30df4929261807ef16061008340139b3ea9bef32b50c64f7f2",
+  "subtitleSha256": "6b184238d479a48391e2c5530abda6084146103b26932393ad737072c8d9bff5",
+  "method": "whisperx-asr-xml-text-only-forced-alignment",
+  "textAuthority": "littlefox-xml-paragraph-text",
+  "xmlTextSha256": "8929d7dc49a2a569eb5615cdc4e19ceae9c0e934ebea01012ddd337dcab331a7",
+  "xmlParagraphCount": 30,
+  "recognizer": "small.en",
+  "cueCount": 29,
+  "totalWords": 138,
+  "captionedWords": 137,
+  "omittedUnalignedWords": 1,
+  "speechMatchedWords": 137,
+  "speechMatchedFraction": 0.9928,
+  "cues": [
+    {
+      "words": [
+        {
+          "text": "Hello!",
+          "startMs": 1808,
+          "endMs": 3709,
+          "source": "speech"
+        },
+        {
+          "text": "[s@Hello!",
+          "startMs": 3729,
+          "endMs": 5831,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Who",
+          "startMs": 14375,
+          "endMs": 16617,
+          "source": "speech"
+        },
+        {
+          "text": "are",
+          "startMs": 16717,
+          "endMs": 16837,
+          "source": "speech"
+        },
+        {
+          "text": "you?",
+          "startMs": 16917,
+          "endMs": 18418,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I'm",
+          "startMs": 20719,
+          "endMs": 20879,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 20959,
+          "endMs": 21039,
+          "source": "speech"
+        },
+        {
+          "text": "gecko.",
+          "startMs": 21099,
+          "endMs": 21719,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Geckos",
+          "startMs": 23721,
+          "endMs": 24281,
+          "source": "speech"
+        },
+        {
+          "text": "are",
+          "startMs": 24361,
+          "endMs": 24461,
+          "source": "speech"
+        },
+        {
+          "text": "colorful",
+          "startMs": 24521,
+          "endMs": 25161,
+          "source": "speech"
+        },
+        {
+          "text": "lizards.",
+          "startMs": 25221,
+          "endMs": 25822,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Where",
+          "startMs": 28683,
+          "endMs": 28883,
+          "source": "speech"
+        },
+        {
+          "text": "do",
+          "startMs": 28923,
+          "endMs": 29023,
+          "source": "speech"
+        },
+        {
+          "text": "you",
+          "startMs": 29063,
+          "endMs": 29204,
+          "source": "speech"
+        },
+        {
+          "text": "live?",
+          "startMs": 29264,
+          "endMs": 29664,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Geckos",
+          "startMs": 31632,
+          "endMs": 32192,
+          "source": "speech"
+        },
+        {
+          "text": "live",
+          "startMs": 32312,
+          "endMs": 32593,
+          "source": "speech"
+        },
+        {
+          "text": "all",
+          "startMs": 32873,
+          "endMs": 33033,
+          "source": "speech"
+        },
+        {
+          "text": "over",
+          "startMs": 33273,
+          "endMs": 33513,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 33573,
+          "endMs": 33673,
+          "source": "speech"
+        },
+        {
+          "text": "world.",
+          "startMs": 33753,
+          "endMs": 34233,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "We",
+          "startMs": 35554,
+          "endMs": 35754,
+          "source": "speech"
+        },
+        {
+          "text": "like",
+          "startMs": 35814,
+          "endMs": 36054,
+          "source": "speech"
+        },
+        {
+          "text": "rain",
+          "startMs": 36154,
+          "endMs": 36454,
+          "source": "speech"
+        },
+        {
+          "text": "forests",
+          "startMs": 36514,
+          "endMs": 37114,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 37415,
+          "endMs": 37555,
+          "source": "speech"
+        },
+        {
+          "text": "deserts.",
+          "startMs": 37655,
+          "endMs": 38235,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "But",
+          "startMs": 40036,
+          "endMs": 40316,
+          "source": "speech"
+        },
+        {
+          "text": "some",
+          "startMs": 40496,
+          "endMs": 40896,
+          "source": "speech"
+        },
+        {
+          "text": "geckos",
+          "startMs": 40976,
+          "endMs": 41436,
+          "source": "speech"
+        },
+        {
+          "text": "live",
+          "startMs": 41536,
+          "endMs": 41696,
+          "source": "speech"
+        },
+        {
+          "text": "in",
+          "startMs": 41736,
+          "endMs": 41857,
+          "source": "speech"
+        },
+        {
+          "text": "cold",
+          "startMs": 41917,
+          "endMs": 42497,
+          "source": "speech"
+        },
+        {
+          "text": "places.",
+          "startMs": 42617,
+          "endMs": 43177,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "What",
+          "startMs": 45618,
+          "endMs": 45778,
+          "source": "speech"
+        },
+        {
+          "text": "do",
+          "startMs": 45818,
+          "endMs": 45918,
+          "source": "speech"
+        },
+        {
+          "text": "you",
+          "startMs": 45958,
+          "endMs": 46118,
+          "source": "speech"
+        },
+        {
+          "text": "eat?",
+          "startMs": 46358,
+          "endMs": 46659,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Geckos",
+          "startMs": 48319,
+          "endMs": 48840,
+          "source": "speech"
+        },
+        {
+          "text": "eat",
+          "startMs": 49020,
+          "endMs": 49220,
+          "source": "speech"
+        },
+        {
+          "text": "lots",
+          "startMs": 49380,
+          "endMs": 49700,
+          "source": "speech"
+        },
+        {
+          "text": "of",
+          "startMs": 49780,
+          "endMs": 49820,
+          "source": "speech"
+        },
+        {
+          "text": "insects.",
+          "startMs": 49920,
+          "endMs": 50540,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "We",
+          "startMs": 51901,
+          "endMs": 52081,
+          "source": "speech"
+        },
+        {
+          "text": "also",
+          "startMs": 52261,
+          "endMs": 52581,
+          "source": "speech"
+        },
+        {
+          "text": "like",
+          "startMs": 52641,
+          "endMs": 52841,
+          "source": "speech"
+        },
+        {
+          "text": "fruit",
+          "startMs": 52941,
+          "endMs": 53281,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 53542,
+          "endMs": 53642,
+          "source": "speech"
+        },
+        {
+          "text": "flower",
+          "startMs": 53762,
+          "endMs": 54222,
+          "source": "speech"
+        },
+        {
+          "text": "nectar.",
+          "startMs": 54282,
+          "endMs": 54822,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Your",
+          "startMs": 57223,
+          "endMs": 57463,
+          "source": "speech"
+        },
+        {
+          "text": "tail",
+          "startMs": 57523,
+          "endMs": 57923,
+          "source": "speech"
+        },
+        {
+          "text": "is",
+          "startMs": 58024,
+          "endMs": 58124,
+          "source": "speech"
+        },
+        {
+          "text": "cool!",
+          "startMs": 58264,
+          "endMs": 58664,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Our",
+          "startMs": 60532,
+          "endMs": 60772,
+          "source": "speech"
+        },
+        {
+          "text": "tails",
+          "startMs": 60832,
+          "endMs": 61212,
+          "source": "speech"
+        },
+        {
+          "text": "help",
+          "startMs": 61273,
+          "endMs": 61493,
+          "source": "speech"
+        },
+        {
+          "text": "us",
+          "startMs": 61553,
+          "endMs": 61673,
+          "source": "speech"
+        },
+        {
+          "text": "climb.",
+          "startMs": 61753,
+          "endMs": 62253,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "And",
+          "startMs": 64374,
+          "endMs": 64554,
+          "source": "speech"
+        },
+        {
+          "text": "they",
+          "startMs": 64614,
+          "endMs": 64814,
+          "source": "speech"
+        },
+        {
+          "text": "protect",
+          "startMs": 64854,
+          "endMs": 65314,
+          "source": "speech"
+        },
+        {
+          "text": "us",
+          "startMs": 65454,
+          "endMs": 65574,
+          "source": "speech"
+        },
+        {
+          "text": "from",
+          "startMs": 65694,
+          "endMs": 65874,
+          "source": "speech"
+        },
+        {
+          "text": "enemies.",
+          "startMs": 66074,
+          "endMs": 66615,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "How",
+          "startMs": 69316,
+          "endMs": 69496,
+          "source": "speech"
+        },
+        {
+          "text": "do",
+          "startMs": 69536,
+          "endMs": 69636,
+          "source": "speech"
+        },
+        {
+          "text": "your",
+          "startMs": 69676,
+          "endMs": 69836,
+          "source": "speech"
+        },
+        {
+          "text": "tails",
+          "startMs": 69896,
+          "endMs": 70296,
+          "source": "speech"
+        },
+        {
+          "text": "protect",
+          "startMs": 70376,
+          "endMs": 70896,
+          "source": "speech"
+        },
+        {
+          "text": "you?",
+          "startMs": 70956,
+          "endMs": 71237,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Sometimes",
+          "startMs": 72897,
+          "endMs": 73758,
+          "source": "speech"
+        },
+        {
+          "text": "enemies",
+          "startMs": 73938,
+          "endMs": 74338,
+          "source": "speech"
+        },
+        {
+          "text": "grab",
+          "startMs": 74418,
+          "endMs": 74758,
+          "source": "speech"
+        },
+        {
+          "text": "our",
+          "startMs": 74838,
+          "endMs": 74958,
+          "source": "speech"
+        },
+        {
+          "text": "tails.",
+          "startMs": 75018,
+          "endMs": 75458,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "We",
+          "startMs": 77459,
+          "endMs": 77679,
+          "source": "speech"
+        },
+        {
+          "text": "break",
+          "startMs": 77839,
+          "endMs": 78159,
+          "source": "speech"
+        },
+        {
+          "text": "off",
+          "startMs": 78259,
+          "endMs": 78399,
+          "source": "speech"
+        },
+        {
+          "text": "our",
+          "startMs": 78499,
+          "endMs": 78619,
+          "source": "speech"
+        },
+        {
+          "text": "tails",
+          "startMs": 78660,
+          "endMs": 79000,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 79100,
+          "endMs": 79240,
+          "source": "speech"
+        },
+        {
+          "text": "escape.",
+          "startMs": 79340,
+          "endMs": 79840,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "They",
+          "startMs": 81421,
+          "endMs": 81621,
+          "source": "speech"
+        },
+        {
+          "text": "grow",
+          "startMs": 81661,
+          "endMs": 81941,
+          "source": "speech"
+        },
+        {
+          "text": "back",
+          "startMs": 82001,
+          "endMs": 82241,
+          "source": "speech"
+        },
+        {
+          "text": "quickly.",
+          "startMs": 82321,
+          "endMs": 82861,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Do",
+          "startMs": 85962,
+          "endMs": 86183,
+          "source": "speech"
+        },
+        {
+          "text": "geckos",
+          "startMs": 86203,
+          "endMs": 86703,
+          "source": "speech"
+        },
+        {
+          "text": "make",
+          "startMs": 86783,
+          "endMs": 87003,
+          "source": "speech"
+        },
+        {
+          "text": "sounds?",
+          "startMs": 87103,
+          "endMs": 87663,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Yes.",
+          "startMs": 89124,
+          "endMs": 89524,
+          "source": "speech"
+        },
+        {
+          "text": "Many",
+          "startMs": 90136,
+          "endMs": 90436,
+          "source": "speech"
+        },
+        {
+          "text": "lizards",
+          "startMs": 90516,
+          "endMs": 90937,
+          "source": "speech"
+        },
+        {
+          "text": "hiss.",
+          "startMs": 91037,
+          "endMs": 91377,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "But",
+          "startMs": 92818,
+          "endMs": 93058,
+          "source": "speech"
+        },
+        {
+          "text": "geckos",
+          "startMs": 93178,
+          "endMs": 93718,
+          "source": "speech"
+        },
+        {
+          "text": "also",
+          "startMs": 93918,
+          "endMs": 94339,
+          "source": "speech"
+        },
+        {
+          "text": "click",
+          "startMs": 94479,
+          "endMs": 94759,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 95019,
+          "endMs": 95179,
+          "source": "speech"
+        },
+        {
+          "text": "chirp.",
+          "startMs": 95279,
+          "endMs": 95639,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "We",
+          "startMs": 97360,
+          "endMs": 97500,
+          "source": "speech"
+        },
+        {
+          "text": "can",
+          "startMs": 97540,
+          "endMs": 97701,
+          "source": "speech"
+        },
+        {
+          "text": "even",
+          "startMs": 97801,
+          "endMs": 98081,
+          "source": "speech"
+        },
+        {
+          "text": "bark!",
+          "startMs": 98181,
+          "endMs": 98641,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "You",
+          "startMs": 102183,
+          "endMs": 102423,
+          "source": "speech"
+        },
+        {
+          "text": "have",
+          "startMs": 102483,
+          "endMs": 102723,
+          "source": "speech"
+        },
+        {
+          "text": "cute",
+          "startMs": 102884,
+          "endMs": 103264,
+          "source": "speech"
+        },
+        {
+          "text": "little",
+          "startMs": 103344,
+          "endMs": 103644,
+          "source": "speech"
+        },
+        {
+          "text": "toes!",
+          "startMs": 103764,
+          "endMs": 104424,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "We",
+          "startMs": 105945,
+          "endMs": 106125,
+          "source": "speech"
+        },
+        {
+          "text": "have",
+          "startMs": 106165,
+          "endMs": 106366,
+          "source": "speech"
+        },
+        {
+          "text": "pads",
+          "startMs": 106466,
+          "endMs": 106826,
+          "source": "speech"
+        },
+        {
+          "text": "on",
+          "startMs": 106926,
+          "endMs": 107006,
+          "source": "speech"
+        },
+        {
+          "text": "our",
+          "startMs": 107066,
+          "endMs": 107186,
+          "source": "speech"
+        },
+        {
+          "text": "toes.",
+          "startMs": 107226,
+          "endMs": 107686,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "The",
+          "startMs": 109107,
+          "endMs": 109227,
+          "source": "speech"
+        },
+        {
+          "text": "pads",
+          "startMs": 109287,
+          "endMs": 109607,
+          "source": "speech"
+        },
+        {
+          "text": "are",
+          "startMs": 109647,
+          "endMs": 109807,
+          "source": "speech"
+        },
+        {
+          "text": "sticky.",
+          "startMs": 109868,
+          "endMs": 110368,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "That",
+          "startMs": 114090,
+          "endMs": 114310,
+          "source": "speech"
+        },
+        {
+          "text": "helps",
+          "startMs": 114370,
+          "endMs": 114630,
+          "source": "speech"
+        },
+        {
+          "text": "us",
+          "startMs": 114730,
+          "endMs": 114850,
+          "source": "speech"
+        },
+        {
+          "text": "climb—and",
+          "startMs": 114950,
+          "endMs": 116111,
+          "source": "speech"
+        },
+        {
+          "text": "stick",
+          "startMs": 116251,
+          "endMs": 116651,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 116691,
+          "endMs": 116792,
+          "source": "speech"
+        },
+        {
+          "text": "things.",
+          "startMs": 116852,
+          "endMs": 117292,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 121795,
+          "endMs": 121916,
+          "source": "speech"
+        },
+        {
+          "text": "see",
+          "startMs": 122016,
+          "endMs": 122256,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 122317,
+          "endMs": 122377,
+          "source": "speech"
+        },
+        {
+          "text": "tasty",
+          "startMs": 122497,
+          "endMs": 122978,
+          "source": "speech"
+        },
+        {
+          "text": "cricket.",
+          "startMs": 123078,
+          "endMs": 123619,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "See",
+          "startMs": 124822,
+          "endMs": 124982,
+          "source": "speech"
+        },
+        {
+          "text": "you",
+          "startMs": 125022,
+          "endMs": 125103,
+          "source": "speech"
+        },
+        {
+          "text": "later.",
+          "startMs": 125183,
+          "endMs": 125704,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Good-bye,",
+          "startMs": 127889,
+          "endMs": 128410,
+          "source": "speech"
+        }
+      ]
+    }
+  ]
+}
