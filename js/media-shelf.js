@@ -59,8 +59,8 @@ window.MediaShelf = {
       // Dynamic rows belong directly in the two top-level tabs, never as an extra “collection” card.
       items=series.filter(row=>!row.dynamicCategory).map(row=>this.movieSeries(row));allItems=[...items,...series.flatMap(row=>row.films.map(film=>this.movieFilm(row,film,playableById)))];
       if(mode==='animated'){
-        // Keep the original static film collections, then append administrator-published standalone films.
-        const originalCollections=items.filter(row=>row.key.startsWith('film-series-'));
+        // Every movie is a standalone card; personal favourites/categories replace series shelves.
+        const originalCollections=allItems.filter(row=>row.key.startsWith('film-')&&!row.key.startsWith('film-series-')&&!row.id.startsWith('tmdb-'));
         const publishedFilms=allItems.filter(row=>row.id.startsWith('tmdb-')&&series.find(group=>group.films.some(([id])=>id===row.id))?.dynamicCategory==='animated');
         items=[...originalCollections,...publishedFilms];
       }
