@@ -1,2065 +1,3039 @@
 {
   "1": [
     {
-      "word": "professor",
-      "partOfSpeech": "noun",
-      "meaningZh": "教授",
-      "definitionEn": "A teacher at a university or a specialist school.",
-      "example": "The professor explains a difficult idea.",
-      "exampleZh": "教授解释了一个难懂的概念。",
       "id": "hp1-1-1",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 81.965,
-        "localStart": 81.965
-      }
-    },
-    {
-      "word": "safe",
-      "partOfSpeech": "adjective",
-      "meaningZh": "安全的",
-      "definitionEn": "Protected from danger.",
-      "example": "The children are safe inside the house.",
-      "exampleZh": "孩子们待在屋里很安全。",
-      "id": "hp1-1-2",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 168.718,
-        "localStart": 168.718
-      }
-    },
-    {
-      "word": "family",
-      "partOfSpeech": "noun",
-      "meaningZh": "家人；家庭",
-      "definitionEn": "People related to one another.",
-      "example": "Her family supports her decision.",
-      "exampleZh": "她的家人支持她的决定。",
-      "id": "hp1-1-3",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 178.979,
-        "localStart": 178.979
-      }
-    },
-    {
-      "word": "famous",
-      "partOfSpeech": "adjective",
-      "meaningZh": "著名的",
-      "definitionEn": "Known by many people.",
-      "example": "The town is famous for its old castle.",
-      "exampleZh": "这座小镇因古堡而闻名。",
-      "id": "hp1-1-4",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 183.191,
-        "localStart": 183.191
-      }
-    },
-    {
       "word": "problems",
       "partOfSpeech": "plural noun",
       "meaningZh": "问题；困难",
       "definitionEn": "Things that need to be solved.",
       "example": "We solve problems together.",
       "exampleZh": "我们一起解决问题。",
-      "id": "hp1-1-5",
-      "source": "Matched English subtitle; original example and definition",
+      "subtitleExample": "- No problems, I trust, Hagrid? - No, sir.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 148.573,
-        "localStart": 148.573
+        "originalStart": 148.273,
+        "localStart": 148.273
       }
     },
     {
+      "id": "hp1-1-2",
       "word": "asleep",
       "partOfSpeech": "adjective",
       "meaningZh": "睡着的",
       "definitionEn": "In a state of sleep.",
       "example": "The baby is already asleep.",
       "exampleZh": "婴儿已经睡着了。",
-      "id": "hp1-1-6",
-      "source": "Matched English subtitle; original example and definition",
+      "subtitleExample": "Little tyke fell asleep as we were flying over Bristol.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 152.661,
-        "localStart": 152.661
+        "originalStart": 152.361,
+        "localStart": 152.361
+      }
+    },
+    {
+      "id": "hp1-1-3",
+      "word": "professor",
+      "partOfSpeech": "noun",
+      "meaningZh": "教授",
+      "definitionEn": "A teacher at a university or a specialist school.",
+      "example": "The professor explains a difficult idea.",
+      "exampleZh": "教授解释了一个难懂的概念。",
+      "subtitleExample": "I should've known that you would be here, professor McGonagall.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 81.665,
+        "localStart": 81.665
+      }
+    },
+    {
+      "id": "hp1-1-4",
+      "word": "trust",
+      "partOfSpeech": "verb",
+      "meaningZh": "信任",
+      "definitionEn": "To believe another person is reliable.",
+      "example": "Is it wise to trust Hagrid with something so important?",
+      "exampleZh": "",
+      "subtitleExample": "Is it wise to trust Hagrid with something so important?",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 115.741,
+        "localStart": 115.741
+      }
+    },
+    {
+      "id": "hp1-1-5",
+      "word": "afraid",
+      "partOfSpeech": "adjective",
+      "meaningZh": "害怕的",
+      "definitionEn": "Feeling fear.",
+      "example": "I'm afraid so, professor. The good and the bad.",
+      "exampleZh": "",
+      "subtitleExample": "I'm afraid so, professor. The good and the bad.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 106.815,
+        "localStart": 106.815
+      }
+    },
+    {
+      "id": "hp1-1-6",
+      "word": "important",
+      "partOfSpeech": "adjective",
+      "meaningZh": "重要的",
+      "definitionEn": "Having great value or significance.",
+      "example": "Is it wise to trust Hagrid with something so important?",
+      "exampleZh": "",
+      "subtitleExample": "Is it wise to trust Hagrid with something so important?",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 115.741,
+        "localStart": 115.741
       }
     }
   ],
   "2": [
     {
-      "word": "birthday",
-      "partOfSpeech": "noun",
-      "meaningZh": "生日",
-      "definitionEn": "The day when someone's birth is celebrated.",
-      "example": "We made a cake for her birthday.",
-      "exampleZh": "我们为她的生日做了一个蛋糕。",
       "id": "hp1-2-1",
-      "source": "Matched English subtitle; original example and definition",
+      "word": "asleep",
+      "partOfSpeech": "adjective",
+      "meaningZh": "睡着的",
+      "definitionEn": "In a state of sleep.",
+      "example": "The baby is already asleep.",
+      "exampleZh": "婴儿已经睡着了。",
+      "subtitleExample": "- Move! - He's asleep!",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 286.753,
-        "localStart": 36.252742
+        "originalStart": 371.496,
+        "localStart": 123.496
       }
     },
     {
-      "word": "presents",
-      "partOfSpeech": "plural noun",
-      "meaningZh": "礼物",
-      "definitionEn": "Things given to someone as gifts.",
-      "example": "The presents are under the table.",
-      "exampleZh": "礼物放在桌子下面。",
       "id": "hp1-2-2",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 331.005,
-        "localStart": 80.504742
-      }
-    },
-    {
       "word": "snake",
       "partOfSpeech": "noun",
       "meaningZh": "蛇",
       "definitionEn": "A long reptile with no legs.",
       "example": "A snake moved slowly through the grass.",
       "exampleZh": "一条蛇缓缓穿过草丛。",
+      "subtitleExample": "It's just, I've never talked to a snake before.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 396.813,
+        "localStart": 148.813
+      }
+    },
+    {
       "id": "hp1-2-3",
-      "source": "Matched English subtitle; original example and definition",
+      "word": "birthday",
+      "partOfSpeech": "noun",
+      "meaningZh": "生日",
+      "definitionEn": "The day when someone's birth is celebrated.",
+      "example": "We made a cake for her birthday.",
+      "exampleZh": "我们为她的生日做了一个蛋糕。",
+      "subtitleExample": "Petunia: Here comes the birthday boy. Vernon: Happy birthday, son.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 397.113,
-        "localStart": 146.612742
+        "originalStart": 286.453,
+        "localStart": 38.453
       }
     },
     {
-      "word": "glass",
-      "partOfSpeech": "noun",
-      "meaningZh": "玻璃",
-      "definitionEn": "A hard transparent material used in windows.",
-      "example": "Please do not tap the glass.",
-      "exampleZh": "请不要敲玻璃。",
       "id": "hp1-2-4",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 501.926,
-        "localStart": 251.425742
-      }
-    },
-    {
-      "word": "zoo",
-      "partOfSpeech": "noun",
-      "meaningZh": "动物园",
-      "definitionEn": "A place where people can see animals.",
-      "example": "We visited the zoo on Saturday.",
-      "exampleZh": "我们周六去了动物园。",
-      "id": "hp1-2-5",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 272.197,
-        "localStart": 21.696742
-      }
-    },
-    {
-      "word": "cousin",
-      "partOfSpeech": "noun",
-      "meaningZh": "堂兄弟姐妹；表兄弟姐妹",
-      "definitionEn": "A child of your aunt or uncle.",
-      "example": "My cousin is the same age as me.",
-      "exampleZh": "我的表弟和我同岁。",
-      "id": "hp1-2-6",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 272.197,
-        "localStart": 21.696742
-      }
-    }
-  ],
-  "3": [
-    {
-      "word": "letter",
-      "partOfSpeech": "noun",
-      "meaningZh": "信",
-      "definitionEn": "A written message sent to a person.",
-      "example": "A letter arrived from my friend.",
-      "exampleZh": "朋友寄来了一封信。",
-      "id": "hp1-3-1",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 603.653,
-        "localStart": 83.258119
-      }
-    },
-    {
-      "word": "post",
-      "partOfSpeech": "noun",
-      "meaningZh": "邮政；邮件",
-      "definitionEn": "The system that delivers letters and parcels.",
-      "example": "The invitation came by post.",
-      "exampleZh": "邀请函是邮寄来的。",
-      "id": "hp1-3-2",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 567.2,
-        "localStart": 46.805119
-      }
-    },
-    {
-      "word": "school",
-      "partOfSpeech": "noun",
-      "meaningZh": "学校",
-      "definitionEn": "A place where children learn.",
-      "example": "Our school has a large library.",
-      "exampleZh": "我们学校有一个大图书馆。",
-      "id": "hp1-3-3",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 552.643,
-        "localStart": 32.248119
-      }
-    },
-    {
-      "word": "uniform",
-      "partOfSpeech": "noun",
-      "meaningZh": "制服；校服",
-      "definitionEn": "Special clothing worn by members of a group.",
-      "example": "She wears a blue school uniform.",
-      "exampleZh": "她穿着蓝色校服。",
-      "id": "hp1-3-4",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 560.234,
-        "localStart": 39.839119
-      }
-    },
-    {
-      "word": "opinion",
-      "partOfSpeech": "noun",
-      "meaningZh": "意见；看法",
-      "definitionEn": "What someone thinks about something.",
-      "example": "I would like to hear your opinion.",
-      "exampleZh": "我想听听你的意见。",
-      "id": "hp1-3-5",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 727.652,
-        "localStart": 207.257119
-      }
-    },
-    {
-      "word": "proudest",
-      "partOfSpeech": "superlative adjective",
-      "meaningZh": "最自豪的",
-      "definitionEn": "Feeling more pride than at any other time.",
-      "example": "Graduation was her proudest moment.",
-      "exampleZh": "毕业是她最自豪的时刻。",
-      "id": "hp1-3-6",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 536.711,
-        "localStart": 16.316119
-      }
-    }
-  ],
-  "4": [
-    {
-      "word": "wizard",
-      "partOfSpeech": "noun",
-      "meaningZh": "男巫；巫师",
-      "definitionEn": "A person who uses magic in stories.",
-      "example": "The wizard carries a wooden staff.",
-      "exampleZh": "巫师拿着一根木杖。",
-      "id": "hp1-4-1",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 989.33,
-        "localStart": 113.663541
-      }
-    },
-    {
       "word": "magic",
       "partOfSpeech": "noun",
       "meaningZh": "魔法",
       "definitionEn": "Special powers that cause impossible things to happen.",
       "example": "The story is full of magic.",
       "exampleZh": "这个故事充满了魔法。",
-      "id": "hp1-4-2",
-      "source": "Matched English subtitle; original example and definition",
+      "subtitleExample": "The glass was there and then it was gone, like magic.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 1111.243,
-        "localStart": 235.576541
+        "originalStart": 501.626,
+        "localStart": 253.626
       }
     },
     {
-      "word": "keeper",
+      "id": "hp1-2-5",
+      "word": "cousin",
       "partOfSpeech": "noun",
-      "meaningZh": "看守人；守护者",
-      "definitionEn": "A person who looks after or guards something.",
-      "example": "The keeper checks the gate every evening.",
-      "exampleZh": "看守人每天傍晚检查大门。",
-      "id": "hp1-4-3",
-      "source": "Matched English subtitle; original example and definition",
+      "meaningZh": "堂兄弟姐妹；表兄弟姐妹",
+      "definitionEn": "A child of your aunt or uncle.",
+      "example": "My cousin is the same age as me.",
+      "exampleZh": "我的表弟和我同岁。",
+      "subtitleExample": "Dudley: Wake up, cousin! We're going to the zoo!",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 973.105,
-        "localStart": 97.438541
+        "originalStart": 271.897,
+        "localStart": 23.897
       }
     },
     {
-      "word": "parents",
-      "partOfSpeech": "plural noun",
-      "meaningZh": "父母",
-      "definitionEn": "A person's mother and father.",
-      "example": "Her parents encouraged her to read.",
-      "exampleZh": "她的父母鼓励她阅读。",
-      "id": "hp1-4-4",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 1090.764,
-        "localStart": 215.097541
-      }
-    },
-    {
-      "word": "strange",
+      "id": "hp1-2-6",
+      "word": "wonderful",
       "partOfSpeech": "adjective",
-      "meaningZh": "奇怪的；陌生的",
-      "definitionEn": "Unusual or difficult to explain.",
-      "example": "We heard a strange noise outside.",
-      "exampleZh": "我们听到外面传来奇怪的声音。",
-      "id": "hp1-4-5",
-      "source": "Matched English subtitle; original example and definition",
+      "meaningZh": "精彩的",
+      "definitionEn": "Extremely good or enjoyable.",
+      "example": "Petunia: Aren't they wonderful, darling?",
+      "exampleZh": "",
+      "subtitleExample": "Petunia: Aren't they wonderful, darling?",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 1079.67,
-        "localStart": 204.003541
-      }
-    },
-    {
-      "word": "insult",
-      "partOfSpeech": "verb",
-      "meaningZh": "侮辱；冒犯",
-      "definitionEn": "To speak or act disrespectfully towards someone.",
-      "example": "Do not insult people who disagree with you.",
-      "exampleZh": "不要侮辱与你意见不同的人。",
-      "id": "hp1-4-6",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 1130.638,
-        "localStart": 254.971541
+        "originalStart": 311.478,
+        "localStart": 63.478
       }
     }
   ],
-  "5": [
+  "3": [
     {
-      "word": "bank",
+      "id": "hp1-3-1",
+      "word": "opinion",
       "partOfSpeech": "noun",
-      "meaningZh": "银行",
-      "definitionEn": "A place that keeps money safely.",
-      "example": "He put his savings in the bank.",
-      "exampleZh": "他把积蓄存进了银行。",
-      "id": "hp1-5-1",
-      "source": "Matched English subtitle; original example and definition",
+      "meaningZh": "意见；看法",
+      "definitionEn": "What someone thinks about something.",
+      "example": "I would like to hear your opinion.",
+      "exampleZh": "我想听听你的意见。",
+      "subtitleExample": "In my opinion, best day of the week. Why is that, Dudley?",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 1427.226,
-        "localStart": 238.621903
+        "originalStart": 643.309,
+        "localStart": 91.309
       }
     },
     {
-      "word": "vault",
+      "id": "hp1-3-2",
+      "word": "letter",
       "partOfSpeech": "noun",
-      "meaningZh": "金库；保险库",
-      "definitionEn": "A strongly protected room for valuable things.",
-      "example": "The jewels are locked in a vault.",
-      "exampleZh": "珠宝锁在金库里。",
-      "id": "hp1-5-2",
-      "source": "Matched English subtitle; original example and definition",
+      "meaningZh": "信",
+      "definitionEn": "A written message sent to a person.",
+      "example": "A letter arrived from my friend.",
+      "exampleZh": "朋友寄来了一封信。",
+      "subtitleExample": "- Dad, look! Harry's got a letter! - It's mine!",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 1497.254,
-        "localStart": 308.649903
+        "originalStart": 552.385,
+        "localStart": 0.385
       }
     },
     {
-      "word": "money",
+      "id": "hp1-3-3",
+      "word": "post",
       "partOfSpeech": "noun",
-      "meaningZh": "钱",
-      "definitionEn": "What people use to buy things.",
-      "example": "She saved money for a new bicycle.",
-      "exampleZh": "她存钱买一辆新自行车。",
-      "id": "hp1-5-3",
-      "source": "Matched English subtitle; original example and definition",
+      "meaningZh": "邮政；邮件",
+      "definitionEn": "The system that delivers letters and parcels.",
+      "example": "The invitation came by post.",
+      "exampleZh": "邀请函是邮寄来的。",
+      "subtitleExample": "- Because there's no post on sundays? - Right you are, Harry!",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 1422.429,
-        "localStart": 233.824903
+        "originalStart": 648.189,
+        "localStart": 96.189
       }
     },
     {
-      "word": "key",
+      "id": "hp1-3-4",
+      "word": "mail",
       "partOfSpeech": "noun",
-      "meaningZh": "钥匙",
-      "definitionEn": "An object used to open a lock.",
-      "example": "I cannot find the key to this door.",
-      "exampleZh": "我找不到这扇门的钥匙。",
-      "id": "hp1-5-4",
-      "source": "Matched English subtitle; original example and definition",
+      "meaningZh": "邮件",
+      "definitionEn": "Letters and parcels sent through the post.",
+      "example": "Vernon: No more mail through this letterbox.",
+      "exampleZh": "",
+      "subtitleExample": "Vernon: No more mail through this letterbox.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 1472.521,
-        "localStart": 283.916903
-      }
-    },
-    {
-      "word": "supplies",
-      "partOfSpeech": "plural noun",
-      "meaningZh": "用品；补给",
-      "definitionEn": "Things needed for a particular purpose.",
-      "example": "We bought supplies for the camping trip.",
-      "exampleZh": "我们买了露营需要的用品。",
-      "id": "hp1-5-5",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 1275.491,
-        "localStart": 86.886903
-      }
-    },
-    {
-      "word": "goblins",
-      "partOfSpeech": "plural noun",
-      "meaningZh": "妖精；小妖怪",
-      "definitionEn": "Small magical creatures in stories.",
-      "example": "The goblins guard a hidden treasure.",
-      "exampleZh": "妖精们守着一处隐藏的宝藏。",
-      "id": "hp1-5-6",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 1453.168,
-        "localStart": 264.563903
+        "originalStart": 589.839,
+        "localStart": 37.839
       }
     }
   ],
-  "6": [
+  "4": [
     {
-      "word": "wand",
-      "partOfSpeech": "noun",
-      "meaningZh": "魔杖",
-      "definitionEn": "A thin stick used to perform magic in stories.",
-      "example": "She drew a circle with her wand.",
-      "exampleZh": "她用魔杖画了一个圈。",
-      "id": "hp1-6-1",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 1605.57,
-        "localStart": 5.63833
-      }
-    },
-    {
-      "word": "curious",
-      "partOfSpeech": "adjective",
-      "meaningZh": "好奇的；奇特的",
-      "definitionEn": "Wanting to know more, or unusual.",
-      "example": "The child was curious about the locked box.",
-      "exampleZh": "孩子对上锁的盒子很好奇。",
-      "id": "hp1-6-2",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 1759.766,
-        "localStart": 159.83433
-      }
-    },
-    {
-      "word": "scar",
-      "partOfSpeech": "noun",
-      "meaningZh": "伤疤",
-      "definitionEn": "A mark left on the skin after an injury.",
-      "example": "A small scar remained on his hand.",
-      "exampleZh": "他的手上留下了一道小伤疤。",
-      "id": "hp1-6-3",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 1789.713,
-        "localStart": 189.78133
-      }
-    },
-    {
-      "word": "evil",
-      "partOfSpeech": "adjective",
-      "meaningZh": "邪恶的",
-      "definitionEn": "Very cruel or morally wrong.",
-      "example": "The hero tries to stop an evil plan.",
-      "exampleZh": "主人公试图阻止一个邪恶计划。",
-      "id": "hp1-6-4",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 1941.03,
-        "localStart": 341.09833
-      }
-    },
-    {
+      "id": "hp1-4-1",
       "word": "killed",
       "partOfSpeech": "past-tense verb",
       "meaningZh": "杀死了",
       "definitionEn": "Caused a living thing to die.",
       "example": "The storm killed several old trees.",
       "exampleZh": "暴风雨使几棵老树枯死了。",
-      "id": "hp1-6-5",
-      "source": "Matched English subtitle; original example and definition",
+      "subtitleExample": "A car crash? A car crash killed Lily and James Potter?",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 1853.61,
-        "localStart": 253.67833
+        "originalStart": 1010.718,
+        "localStart": 210.718
       }
     },
     {
-      "word": "feather",
-      "partOfSpeech": "noun",
-      "meaningZh": "羽毛",
-      "definitionEn": "One of the light structures covering a bird.",
-      "example": "A white feather fell onto the path.",
-      "exampleZh": "一根白色羽毛落在了小路上。",
-      "id": "hp1-6-6",
-      "source": "Matched English subtitle; original example and definition",
+      "id": "hp1-4-2",
+      "word": "insult",
+      "partOfSpeech": "verb",
+      "meaningZh": "侮辱；冒犯",
+      "definitionEn": "To speak or act disrespectfully towards someone.",
+      "example": "Do not insult people who disagree with you.",
+      "exampleZh": "不要侮辱与你意见不同的人。",
+      "subtitleExample": "Never insult Albus Dumbledore...",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 1776.7,
-        "localStart": 176.76833
-      }
-    }
-  ],
-  "7": [
-    {
-      "word": "platform",
-      "partOfSpeech": "noun",
-      "meaningZh": "站台",
-      "definitionEn": "The area beside a railway track where passengers wait.",
-      "example": "We waited on the platform for the train.",
-      "exampleZh": "我们在站台上等火车。",
-      "id": "hp1-7-1",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 2012.143,
-        "localStart": 32.165001
+        "originalStart": 1046.295,
+        "localStart": 246.295
       }
     },
     {
-      "word": "train",
+      "id": "hp1-4-3",
+      "word": "wizard",
       "partOfSpeech": "noun",
-      "meaningZh": "火车",
-      "definitionEn": "A railway vehicle that carries people or goods.",
-      "example": "The train leaves at nine o'clock.",
-      "exampleZh": "火车九点出发。",
-      "id": "hp1-7-2",
-      "source": "Matched English subtitle; original example and definition",
+      "meaningZh": "男巫；巫师",
+      "definitionEn": "A person who uses magic in stories.",
+      "example": "The wizard carries a wooden staff.",
+      "exampleZh": "巫师拿着一根木杖。",
+      "subtitleExample": "You're a wizard, Harry.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 1998.88,
-        "localStart": 18.902001
+        "originalStart": 904.987,
+        "localStart": 104.987
       }
     },
     {
-      "word": "chocolate",
+      "id": "hp1-4-4",
+      "word": "magic",
       "partOfSpeech": "noun",
-      "meaningZh": "巧克力",
-      "definitionEn": "A sweet food made from cocoa.",
-      "example": "She shared a bar of chocolate with us.",
-      "exampleZh": "她和我们分享了一块巧克力。",
-      "id": "hp1-7-3",
-      "source": "Matched English subtitle; original example and definition",
+      "meaningZh": "魔法",
+      "definitionEn": "Special powers that cause impossible things to happen.",
+      "example": "The story is full of magic.",
+      "exampleZh": "这个故事充满了魔法。",
+      "subtitleExample": "Non-magic folk. This boy's had his name down since he were born.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 2242.248,
-        "localStart": 262.270001
+        "originalStart": 1026.901,
+        "localStart": 226.901
       }
     },
     {
-      "word": "rat",
-      "partOfSpeech": "noun",
-      "meaningZh": "老鼠",
-      "definitionEn": "A small rodent with a long tail.",
-      "example": "A rat hid behind the cupboard.",
-      "exampleZh": "一只老鼠躲到了橱柜后面。",
-      "id": "hp1-7-4",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 2325.957,
-        "localStart": 345.979001
-      }
-    },
-    {
-      "word": "spell",
-      "partOfSpeech": "noun",
-      "meaningZh": "咒语；魔法",
-      "definitionEn": "Words or actions used to perform magic.",
-      "example": "The spell made the door open.",
-      "exampleZh": "咒语让门打开了。",
-      "id": "hp1-7-5",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 2258.723,
-        "localStart": 278.745001
-      }
-    },
-    {
-      "word": "nervous",
+      "id": "hp1-4-5",
+      "word": "great",
       "partOfSpeech": "adjective",
-      "meaningZh": "紧张的",
-      "definitionEn": "Worried about what may happen.",
-      "example": "I felt nervous before the interview.",
-      "exampleZh": "面试前我感到紧张。",
-      "id": "hp1-7-6",
-      "source": "Matched English subtitle; original example and definition",
+      "meaningZh": "伟大的",
+      "definitionEn": "Very good or impressive.",
+      "example": "Dry up, dursley, you great prune.",
+      "exampleZh": "",
+      "subtitleExample": "Dry up, dursley, you great prune.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 2120.919,
-        "localStart": 140.941001
+        "originalStart": 819.235,
+        "localStart": 19.235
+      }
+    },
+    {
+      "id": "hp1-4-6",
+      "word": "school",
+      "partOfSpeech": "noun",
+      "meaningZh": "学校",
+      "definitionEn": "A place where children learn.",
+      "example": "Our school has a large library.",
+      "exampleZh": "我们学校有一个大图书馆。",
+      "subtitleExample": "At Hogwarts school of witchcraft and wizardry.\"",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 955.496,
+        "localStart": 155.496
       }
     }
   ],
-  "8": [
+  "5": [
     {
-      "word": "houses",
-      "partOfSpeech": "plural noun",
-      "meaningZh": "学院；分组",
-      "definitionEn": "Groups of students within a school.",
-      "example": "The school houses compete for a cup.",
-      "exampleZh": "学校各学院争夺一座奖杯。",
-      "id": "hp1-8-1",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 2504.468,
-        "localStart": 116.540787
-      }
-    },
-    {
-      "word": "courage",
-      "partOfSpeech": "noun",
-      "meaningZh": "勇气",
-      "definitionEn": "The ability to act despite fear.",
-      "example": "It takes courage to admit a mistake.",
-      "exampleZh": "承认错误需要勇气。",
-      "id": "hp1-8-2",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 2828.751,
-        "localStart": 440.823787
-      }
-    },
-    {
-      "word": "sorted",
-      "partOfSpeech": "past participle",
-      "meaningZh": "被分类；被分院",
-      "definitionEn": "Put into groups according to a system.",
-      "example": "The students were sorted into four teams.",
-      "exampleZh": "学生们被分成四个队。",
-      "id": "hp1-8-3",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 2504.468,
-        "localStart": 116.540787
-      }
-    },
-    {
-      "word": "feast",
-      "partOfSpeech": "noun",
-      "meaningZh": "盛宴",
-      "definitionEn": "A large special meal.",
-      "example": "Everyone gathered for the feast.",
-      "exampleZh": "大家聚在一起参加盛宴。",
-      "id": "hp1-8-4",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 2898.696,
-        "localStart": 510.768787
-      }
-    },
-    {
+      "id": "hp1-5-1",
       "word": "welcome",
       "partOfSpeech": "verb",
       "meaningZh": "欢迎",
       "definitionEn": "To greet someone in a friendly way.",
       "example": "We welcome new students every year.",
       "exampleZh": "我们每年欢迎新学生。",
-      "id": "hp1-8-5",
-      "source": "Matched English subtitle; original example and definition",
+      "subtitleExample": "Welcome back, Mr. Potter. Welcome back.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 2497.795,
-        "localStart": 109.867787
+        "originalStart": 1167.667,
+        "localStart": 43.667
       }
     },
     {
-      "word": "talent",
-      "partOfSpeech": "noun",
-      "meaningZh": "天赋；才能",
-      "definitionEn": "A natural ability to do something well.",
-      "example": "She has a talent for music.",
-      "exampleZh": "她有音乐天赋。",
-      "id": "hp1-8-6",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 2832.921,
-        "localStart": 444.993787
-      }
-    }
-  ],
-  "9": [
-    {
-      "word": "staircases",
+      "id": "hp1-5-2",
+      "word": "supplies",
       "partOfSpeech": "plural noun",
-      "meaningZh": "楼梯",
-      "definitionEn": "Sets of steps connecting floors.",
-      "example": "Two staircases lead to the hall.",
-      "exampleZh": "两道楼梯通往大厅。",
-      "id": "hp1-9-1",
-      "source": "Matched English subtitle; original example and definition",
+      "meaningZh": "用品；补给",
+      "definitionEn": "Things needed for a particular purpose.",
+      "example": "We bought supplies for the camping trip.",
+      "exampleZh": "我们买了露营需要的用品。",
+      "subtitleExample": "Just helping Harry buy his school supplies.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 3016.48,
-        "localStart": 17.775953
+        "originalStart": 1156.489,
+        "localStart": 32.489
       }
     },
     {
-      "word": "password",
+      "id": "hp1-5-3",
+      "word": "professor",
       "partOfSpeech": "noun",
-      "meaningZh": "口令；密码",
-      "definitionEn": "A secret word that allows access.",
-      "example": "You need a password to enter.",
-      "exampleZh": "你需要口令才能进入。",
-      "id": "hp1-9-2",
-      "source": "Matched English subtitle; original example and definition",
+      "meaningZh": "教授",
+      "definitionEn": "A teacher at a university or a specialist school.",
+      "example": "The professor explains a difficult idea.",
+      "exampleZh": "教授解释了一个难懂的概念。",
+      "subtitleExample": "Hello, professor. I didn't see you.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 3065.028,
-        "localStart": 66.323953
+        "originalStart": 1181.597,
+        "localStart": 57.597
       }
     },
     {
-      "word": "potion",
-      "partOfSpeech": "noun",
-      "meaningZh": "药剂；魔药",
-      "definitionEn": "A liquid with magical or medicinal effects.",
-      "example": "The potion changed colour in the bottle.",
-      "exampleZh": "瓶里的药剂变了颜色。",
-      "id": "hp1-9-3",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 3214.094,
-        "localStart": 215.389953
-      }
-    },
-    {
-      "word": "forgotten",
-      "partOfSpeech": "past participle",
-      "meaningZh": "忘记了的",
-      "definitionEn": "No longer remembered.",
-      "example": "I have forgotten where I put my notebook.",
-      "exampleZh": "我忘了把笔记本放在哪里。",
-      "id": "hp1-9-4",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 3473.311,
-        "localStart": 474.606953
-      }
-    },
-    {
-      "word": "powerful",
-      "partOfSpeech": "adjective",
-      "meaningZh": "强大的",
-      "definitionEn": "Having great strength or influence.",
-      "example": "A powerful wind shook the windows.",
-      "exampleZh": "一阵强风震动了窗户。",
-      "id": "hp1-9-5",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 3344.808,
-        "localStart": 346.103953
-      }
-    },
-    {
-      "word": "attention",
-      "partOfSpeech": "noun",
-      "meaningZh": "注意；专注",
-      "definitionEn": "The act of watching or listening carefully.",
-      "example": "Please pay attention to the instructions.",
-      "exampleZh": "请注意听说明。",
-      "id": "hp1-9-6",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 3259.639,
-        "localStart": 260.934953
-      }
-    }
-  ],
-  "10": [
-    {
-      "word": "broom",
-      "partOfSpeech": "noun",
-      "meaningZh": "扫帚",
-      "definitionEn": "A long-handled tool used for sweeping.",
-      "example": "A broom stood beside the kitchen door.",
-      "exampleZh": "厨房门边立着一把扫帚。",
-      "id": "hp1-10-1",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 3530.201,
-        "localStart": 21.153787
-      }
-    },
-    {
-      "word": "fly",
-      "partOfSpeech": "verb",
-      "meaningZh": "飞；飞行",
-      "definitionEn": "To move through the air.",
-      "example": "The birds fly south in winter.",
-      "exampleZh": "鸟儿在冬季向南飞。",
-      "id": "hp1-10-2",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 3696.367,
-        "localStart": 187.319787
-      }
-    },
-    {
-      "word": "wrist",
-      "partOfSpeech": "noun",
-      "meaningZh": "手腕",
-      "definitionEn": "The joint connecting the hand and arm.",
-      "example": "She wore a watch on her wrist.",
-      "exampleZh": "她的手腕上戴着一块表。",
-      "id": "hp1-10-3",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 3643.815,
-        "localStart": 134.767787
-      }
-    },
-    {
-      "word": "hospital",
-      "partOfSpeech": "noun",
-      "meaningZh": "医院",
-      "definitionEn": "A place where sick or injured people are treated.",
-      "example": "He went to hospital after the accident.",
-      "exampleZh": "事故后他去了医院。",
-      "id": "hp1-10-4",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 3650.78,
-        "localStart": 141.732787
-      }
-    },
-    {
-      "word": "seeker",
-      "partOfSpeech": "noun",
-      "meaningZh": "找球手；寻找者",
-      "definitionEn": "A player who tries to catch the Snitch in Quidditch.",
-      "example": "The seeker watched the sky carefully.",
-      "exampleZh": "找球手仔细观察天空。",
-      "id": "hp1-10-5",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 3786.457,
-        "localStart": 277.409787
-      }
-    },
-    {
-      "word": "whistle",
-      "partOfSpeech": "noun",
-      "meaningZh": "哨子；哨声",
-      "definitionEn": "A device or sound used to give a signal.",
-      "example": "The game begins when you hear the whistle.",
-      "exampleZh": "听到哨声时比赛开始。",
-      "id": "hp1-10-6",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 3568.323,
-        "localStart": 59.275787
-      }
-    }
-  ],
-  "11": [
-    {
-      "word": "seeker",
-      "partOfSpeech": "noun",
-      "meaningZh": "找球手；寻找者",
-      "definitionEn": "A player who tries to catch the Snitch in Quidditch.",
-      "example": "The seeker watched the sky carefully.",
-      "exampleZh": "找球手仔细观察天空。",
-      "id": "hp1-11-1",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 3794.299,
-        "localStart": 2.010498
-      }
-    },
-    {
-      "word": "forbidden",
-      "partOfSpeech": "adjective",
-      "meaningZh": "被禁止的",
-      "definitionEn": "Not allowed by a rule.",
-      "example": "Swimming here is forbidden.",
-      "exampleZh": "这里禁止游泳。",
-      "id": "hp1-11-2",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 3901.531,
-        "localStart": 109.242498
-      }
-    },
-    {
-      "word": "guarding",
-      "partOfSpeech": "present participle",
-      "meaningZh": "看守；守护",
-      "definitionEn": "Protecting a person, place, or object.",
-      "example": "A dog was guarding the gate.",
-      "exampleZh": "一只狗在守着大门。",
-      "id": "hp1-11-3",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 4005.593,
-        "localStart": 213.304498
-      }
-    },
-    {
-      "word": "locked",
-      "partOfSpeech": "adjective",
-      "meaningZh": "锁上的",
-      "definitionEn": "Closed with a lock.",
-      "example": "We found the classroom door locked.",
-      "exampleZh": "我们发现教室门锁着。",
-      "id": "hp1-11-4",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 3925.555,
-        "localStart": 133.266498
-      }
-    },
-    {
-      "word": "notice",
-      "partOfSpeech": "verb",
-      "meaningZh": "注意到",
-      "definitionEn": "To become aware of something.",
-      "example": "Did you notice the footprints in the snow?",
-      "exampleZh": "你注意到雪地里的脚印了吗？",
-      "id": "hp1-11-5",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 3998.628,
-        "localStart": 206.339498
-      }
-    },
-    {
-      "word": "priorities",
-      "partOfSpeech": "plural noun",
-      "meaningZh": "优先事项",
-      "definitionEn": "Things considered more important than others.",
-      "example": "Safety is one of our main priorities.",
-      "exampleZh": "安全是我们的首要事项之一。",
-      "id": "hp1-11-6",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 4023.694,
-        "localStart": 231.405498
-      }
-    }
-  ],
-  "12": [
-    {
-      "word": "players",
-      "partOfSpeech": "plural noun",
-      "meaningZh": "队员；运动员",
-      "definitionEn": "People taking part in a game.",
-      "example": "The players waited for the signal.",
-      "exampleZh": "队员们等待着信号。",
-      "id": "hp1-12-1",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 4032.62,
-        "localStart": 4.012073
-      }
-    },
-    {
-      "word": "team",
-      "partOfSpeech": "noun",
-      "meaningZh": "队；团队",
-      "definitionEn": "A group working or playing together.",
-      "example": "Our team practises every Friday.",
-      "exampleZh": "我们队每周五训练。",
-      "id": "hp1-12-2",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 4032.62,
-        "localStart": 4.012073
-      }
-    },
-    {
-      "word": "ball",
-      "partOfSpeech": "noun",
-      "meaningZh": "球",
-      "definitionEn": "A round object used in many games.",
-      "example": "He threw the ball to his friend.",
-      "exampleZh": "他把球扔给朋友。",
-      "id": "hp1-12-3",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 4133.22,
-        "localStart": 104.612073
-      }
-    },
-    {
-      "word": "snitch",
-      "partOfSpeech": "noun",
-      "meaningZh": "金色飞贼",
-      "definitionEn": "The small flying ball caught by a Seeker in Quidditch.",
-      "example": "The snitch moved too quickly to follow.",
-      "exampleZh": "金色飞贼移动得太快，很难追踪。",
-      "id": "hp1-12-4",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 4130.509,
-        "localStart": 101.901073
-      }
-    },
-    {
-      "word": "catch",
-      "partOfSpeech": "verb",
-      "meaningZh": "接住；抓住",
-      "definitionEn": "To take hold of something moving.",
-      "example": "Can you catch the ball with one hand?",
-      "exampleZh": "你能单手接住球吗？",
-      "id": "hp1-12-5",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 4142.813,
-        "localStart": 114.205073
-      }
-    },
-    {
-      "word": "keeper",
-      "partOfSpeech": "noun",
-      "meaningZh": "看守人；守护者",
-      "definitionEn": "A person who looks after or guards something.",
-      "example": "The keeper checks the gate every evening.",
-      "exampleZh": "看守人每天傍晚检查大门。",
-      "id": "hp1-12-6",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 4037.041,
-        "localStart": 8.433073
-      }
-    }
-  ],
-  "13": [
-    {
-      "word": "feather",
-      "partOfSpeech": "noun",
-      "meaningZh": "羽毛",
-      "definitionEn": "One of the light structures covering a bird.",
-      "example": "A white feather fell onto the path.",
-      "exampleZh": "一根白色羽毛落在了小路上。",
-      "id": "hp1-13-1",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 4246.834,
-        "localStart": 92.767406
-      }
-    },
-    {
-      "word": "wrist",
-      "partOfSpeech": "noun",
-      "meaningZh": "手腕",
-      "definitionEn": "The joint connecting the hand and arm.",
-      "example": "She wore a watch on her wrist.",
-      "exampleZh": "她的手腕上戴着一块表。",
-      "id": "hp1-13-2",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 4174.345,
-        "localStart": 20.278406
-      }
-    },
-    {
-      "word": "troll",
-      "partOfSpeech": "noun",
-      "meaningZh": "巨怪",
-      "definitionEn": "A large dangerous creature in stories.",
-      "example": "The troll blocked the narrow bridge.",
-      "exampleZh": "巨怪挡住了狭窄的桥。",
-      "id": "hp1-13-3",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 4313.275,
-        "localStart": 159.208406
-      }
-    },
-    {
-      "word": "bathroom",
-      "partOfSpeech": "noun",
-      "meaningZh": "浴室；卫生间",
-      "definitionEn": "A room with a bath, shower, or toilet.",
-      "example": "The bathroom is at the end of the hall.",
-      "exampleZh": "卫生间在走廊尽头。",
-      "id": "hp1-13-4",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 4301.43,
-        "localStart": 147.363406
-      }
-    },
-    {
-      "word": "friends",
-      "partOfSpeech": "plural noun",
-      "meaningZh": "朋友",
-      "definitionEn": "People you know well and like.",
-      "example": "Good friends help one another.",
-      "exampleZh": "好朋友互相帮助。",
-      "id": "hp1-13-5",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 4261.932,
-        "localStart": 107.865406
-      }
-    },
-    {
-      "word": "judgment",
-      "partOfSpeech": "noun",
-      "meaningZh": "判断；判断力",
-      "definitionEn": "The ability to make sensible decisions.",
-      "example": "Use your judgment when plans change.",
-      "exampleZh": "计划变化时要运用你的判断力。",
-      "id": "hp1-13-6",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 4589.802,
-        "localStart": 435.735406
-      }
-    }
-  ],
-  "14": [
-    {
-      "word": "broom",
-      "partOfSpeech": "noun",
-      "meaningZh": "扫帚",
-      "definitionEn": "A long-handled tool used for sweeping.",
-      "example": "A broom stood beside the kitchen door.",
-      "exampleZh": "厨房门边立着一把扫帚。",
-      "id": "hp1-14-1",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 5072.117,
-        "localStart": 422.805665
-      }
-    },
-    {
-      "word": "hungry",
-      "partOfSpeech": "adjective",
-      "meaningZh": "饥饿的",
-      "definitionEn": "Wanting or needing food.",
-      "example": "We were hungry after the long walk.",
-      "exampleZh": "走了很久之后我们都饿了。",
-      "id": "hp1-14-2",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 4657.453,
-        "localStart": 8.141665
-      }
-    },
-    {
-      "word": "jinxing",
-      "partOfSpeech": "present participle",
-      "meaningZh": "施恶咒",
-      "definitionEn": "Using magic to bring harm or bad luck.",
-      "example": "The villain was jinxing the player's equipment.",
-      "exampleZh": "反派在给队员的装备施恶咒。",
-      "id": "hp1-14-3",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 5072.117,
-        "localStart": 422.805665
-      }
-    },
-    {
-      "word": "diversion",
-      "partOfSpeech": "noun",
-      "meaningZh": "转移注意力的事物",
-      "definitionEn": "Something that draws attention away.",
-      "example": "The noise provided a useful diversion.",
-      "exampleZh": "那阵噪声有效地转移了注意力。",
-      "id": "hp1-14-4",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 4684.146,
-        "localStart": 34.834665
-      }
-    },
-    {
-      "word": "strength",
-      "partOfSpeech": "noun",
-      "meaningZh": "力量",
-      "definitionEn": "Physical power or the ability to resist difficulty.",
-      "example": "The climber needed strength to hold the rope.",
-      "exampleZh": "攀登者需要力气抓紧绳索。",
-      "id": "hp1-14-5",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 4654.074,
-        "localStart": 4.762665
-      }
-    },
-    {
-      "word": "scores",
-      "partOfSpeech": "verb",
-      "meaningZh": "得分",
-      "definitionEn": "Wins points in a game.",
-      "example": "The striker scores just before the final whistle.",
-      "exampleZh": "前锋在终场哨前得分。",
-      "id": "hp1-14-6",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 4904.533,
-        "localStart": 255.221665
-      }
-    }
-  ],
-  "15": [
-    {
-      "word": "Christmas",
-      "partOfSpeech": "noun",
-      "meaningZh": "圣诞节",
-      "definitionEn": "The holiday celebrated on December 25.",
-      "example": "We decorate the house at Christmas.",
-      "exampleZh": "我们在圣诞节装饰房子。",
-      "id": "hp1-15-1",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 5348.476,
-        "localStart": 111.744503
-      }
-    },
-    {
-      "word": "cloak",
-      "partOfSpeech": "noun",
-      "meaningZh": "斗篷",
-      "definitionEn": "A loose outer garment without sleeves.",
-      "example": "The traveller wore a dark cloak.",
-      "exampleZh": "旅行者穿着一件深色斗篷。",
-      "id": "hp1-15-2",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 5503.548,
-        "localStart": 266.816503
-      }
-    },
-    {
-      "word": "invisible",
-      "partOfSpeech": "adjective",
-      "meaningZh": "看不见的；隐形的",
-      "definitionEn": "Unable to be seen.",
-      "example": "The ink becomes invisible when it dries.",
-      "exampleZh": "墨水干了后就看不见了。",
-      "id": "hp1-15-3",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 5521.482,
-        "localStart": 284.750503
-      }
-    },
-    {
-      "word": "library",
-      "partOfSpeech": "noun",
-      "meaningZh": "图书馆",
-      "definitionEn": "A place where books are kept for reading or borrowing.",
-      "example": "I borrowed a history book from the library.",
-      "exampleZh": "我从图书馆借了一本历史书。",
-      "id": "hp1-15-4",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 5409.871,
-        "localStart": 173.139503
-      }
-    },
-    {
-      "word": "restricted",
-      "partOfSpeech": "adjective",
-      "meaningZh": "受限制的",
-      "definitionEn": "Limited to certain people or uses.",
-      "example": "Only staff can enter the restricted area.",
-      "exampleZh": "只有工作人员能进入限制区域。",
-      "id": "hp1-15-5",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 5417.629,
-        "localStart": 180.897503
-      }
-    },
-    {
-      "word": "dangerous",
-      "partOfSpeech": "adjective",
-      "meaningZh": "危险的",
-      "definitionEn": "Likely to cause harm.",
-      "example": "It is dangerous to walk on thin ice.",
-      "exampleZh": "在薄冰上行走很危险。",
-      "id": "hp1-15-6",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 5305.767,
-        "localStart": 69.035503
-      }
-    }
-  ],
-  "16": [
-    {
-      "word": "mirror",
-      "partOfSpeech": "noun",
-      "meaningZh": "镜子",
-      "definitionEn": "A surface that reflects an image.",
-      "example": "She looked in the mirror before leaving.",
-      "exampleZh": "她出门前照了照镜子。",
-      "id": "hp1-16-1",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 5894.605,
-        "localStart": 263.72975
-      }
-    },
-    {
-      "word": "dreams",
-      "partOfSpeech": "plural noun",
-      "meaningZh": "梦；梦想",
-      "definitionEn": "Images during sleep or things one hopes for.",
-      "example": "He writes his dreams in a notebook.",
-      "exampleZh": "他把自己的梦写在笔记本里。",
-      "id": "hp1-16-2",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 6067.862,
-        "localStart": 436.98675
-      }
-    },
-    {
-      "word": "happiest",
-      "partOfSpeech": "superlative adjective",
-      "meaningZh": "最快乐的",
-      "definitionEn": "Feeling more happiness than anyone or at any other time.",
-      "example": "That was the happiest day of the holiday.",
-      "exampleZh": "那是假期中最快乐的一天。",
-      "id": "hp1-16-3",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 6001.712,
-        "localStart": 370.83675
-      }
-    },
-    {
-      "word": "desires",
-      "partOfSpeech": "plural noun",
-      "meaningZh": "渴望；愿望",
-      "definitionEn": "Strong wishes for something.",
-      "example": "The story explores people's hidden desires.",
-      "exampleZh": "这个故事探讨了人们隐藏的愿望。",
-      "id": "hp1-16-4",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 6021.899,
-        "localStart": 391.02375
-      }
-    },
-    {
-      "word": "desperate",
-      "partOfSpeech": "adjective",
-      "meaningZh": "绝望的；极度渴望的",
-      "definitionEn": "Having an urgent need with little hope.",
-      "example": "They made a desperate attempt to reach safety.",
-      "exampleZh": "他们拼命试图到达安全之处。",
-      "id": "hp1-16-5",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 6021.899,
-        "localStart": 391.02375
-      }
-    },
-    {
-      "word": "future",
-      "partOfSpeech": "noun",
-      "meaningZh": "未来",
-      "definitionEn": "The time that has not happened yet.",
-      "example": "We are making plans for the future.",
-      "exampleZh": "我们正在为未来做计划。",
-      "id": "hp1-16-6",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 5894.605,
-        "localStart": 263.72975
-      }
-    }
-  ],
-  "17": [
-    {
-      "word": "exams",
-      "partOfSpeech": "plural noun",
-      "meaningZh": "考试",
-      "definitionEn": "Tests of knowledge or skill.",
-      "example": "Our final exams begin next week.",
-      "exampleZh": "我们的期末考试下周开始。",
-      "id": "hp1-17-1",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 6138.223,
-        "localStart": 44.218416
-      }
-    },
-    {
+      "id": "hp1-5-4",
       "word": "famous",
       "partOfSpeech": "adjective",
       "meaningZh": "著名的",
       "definitionEn": "Known by many people.",
       "example": "The town is famous for its old castle.",
       "exampleZh": "这座小镇因古堡而闻名。",
-      "id": "hp1-17-2",
-      "source": "Matched English subtitle; original example and definition",
+      "subtitleExample": "- See, Harry? You're famous. - But why am I famous?",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 6210.963,
-        "localStart": 116.958416
+        "originalStart": 1209.917,
+        "localStart": 85.917
       }
     },
     {
-      "word": "stone",
+      "id": "hp1-5-5",
+      "word": "school",
       "partOfSpeech": "noun",
-      "meaningZh": "石头；宝石",
-      "definitionEn": "A piece of hard mineral material.",
-      "example": "A smooth stone lay beside the stream.",
-      "exampleZh": "溪流边有一块光滑的石头。",
-      "id": "hp1-17-3",
-      "source": "Matched English subtitle; original example and definition",
+      "meaningZh": "学校",
+      "definitionEn": "A place where children learn.",
+      "example": "Our school has a large library.",
+      "exampleZh": "我们学校有一个大图书馆。",
+      "subtitleExample": "Just helping Harry buy his school supplies.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 6261.513,
-        "localStart": 167.508416
+        "originalStart": 1156.489,
+        "localStart": 32.489
       }
     },
     {
-      "word": "immortal",
-      "partOfSpeech": "adjective",
-      "meaningZh": "长生不死的",
-      "definitionEn": "Able to live forever.",
-      "example": "The legend tells of an immortal king.",
-      "exampleZh": "传说讲述了一位长生不死的国王。",
-      "id": "hp1-17-4",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 6278.363,
-        "localStart": 184.358416
-      }
-    },
-    {
-      "word": "elixir",
-      "partOfSpeech": "noun",
-      "meaningZh": "灵药；长生不老药",
-      "definitionEn": "A liquid believed to have special healing powers.",
-      "example": "The alchemist searched for an elixir of life.",
-      "exampleZh": "炼金术士寻找长生不老药。",
-      "id": "hp1-17-5",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 6278.363,
-        "localStart": 184.358416
-      }
-    },
-    {
-      "word": "transform",
+      "id": "hp1-5-6",
+      "word": "believe",
       "partOfSpeech": "verb",
-      "meaningZh": "使改变；使转化",
-      "definitionEn": "To change the form or nature of something.",
-      "example": "Practice can transform a beginner into an expert.",
-      "exampleZh": "练习可以使初学者成为专家。",
-      "id": "hp1-17-6",
-      "source": "Matched English subtitle; original example and definition",
+      "meaningZh": "相信",
+      "definitionEn": "To accept something as true.",
+      "example": "Doris crockford. I can't believe I'm meeting you at last.",
+      "exampleZh": "",
+      "subtitleExample": "Doris crockford. I can't believe I'm meeting you at last.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 6275.527,
-        "localStart": 181.522416
+        "originalStart": 1171.337,
+        "localStart": 47.337
       }
     }
   ],
-  "18": [
+  "6": [
     {
-      "word": "dragon",
-      "partOfSpeech": "noun",
-      "meaningZh": "龙",
-      "definitionEn": "A large mythical creature, often able to breathe fire.",
-      "example": "The dragon slept in a mountain cave.",
-      "exampleZh": "龙睡在山洞里。",
-      "id": "hp1-18-1",
-      "source": "Matched English subtitle; original example and definition",
+      "id": "hp1-6-1",
+      "word": "welcome",
+      "partOfSpeech": "verb",
+      "meaningZh": "欢迎",
+      "definitionEn": "To greet someone in a friendly way.",
+      "example": "We welcome new students every year.",
+      "exampleZh": "我们每年欢迎新学生。",
+      "subtitleExample": "Welcome, Harry, to diagon alley.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 6432.893,
-        "localStart": 121.87996
+        "originalStart": 1238.154,
+        "localStart": 1.029
       }
     },
     {
-      "word": "detention",
-      "partOfSpeech": "noun",
-      "meaningZh": "留校惩罚；禁闭",
-      "definitionEn": "A punishment that keeps a student at school for extra time.",
-      "example": "He received detention for breaking the rules.",
-      "exampleZh": "他因违反规定受到留校惩罚。",
-      "id": "hp1-18-2",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 6518.228,
-        "localStart": 207.21496
-      }
-    },
-    {
-      "word": "points",
+      "id": "hp1-6-2",
+      "word": "goblins",
       "partOfSpeech": "plural noun",
-      "meaningZh": "分数；积分",
-      "definitionEn": "Units used to record a score.",
-      "example": "Our team earned ten points.",
-      "exampleZh": "我们队得了十分。",
-      "id": "hp1-18-3",
-      "source": "Matched English subtitle; original example and definition",
+      "meaningZh": "妖精；小妖怪",
+      "definitionEn": "Small magical creatures in stories.",
+      "example": "The goblins guard a hidden treasure.",
+      "exampleZh": "妖精们守着一处隐藏的宝藏。",
+      "subtitleExample": "They're goblins. Clever as they come, but not the most friendly of beasts.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 6507.134,
-        "localStart": 196.12096
+        "originalStart": 1334.166,
+        "localStart": 97.041
       }
     },
     {
-      "word": "protecting",
-      "partOfSpeech": "present participle",
-      "meaningZh": "保护",
-      "definitionEn": "Keeping someone or something safe.",
-      "example": "The volunteers are protecting the forest.",
-      "exampleZh": "志愿者们正在保护森林。",
-      "id": "hp1-18-4",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 6343.47,
-        "localStart": 32.45696
-      }
-    },
-    {
-      "word": "punishment",
+      "id": "hp1-6-3",
+      "word": "money",
       "partOfSpeech": "noun",
-      "meaningZh": "惩罚",
-      "definitionEn": "A penalty for doing something wrong.",
-      "example": "The punishment should be fair.",
-      "exampleZh": "惩罚应当公平。",
-      "id": "hp1-18-5",
-      "source": "Matched English subtitle; original example and definition",
+      "meaningZh": "钱",
+      "definitionEn": "What people use to buy things.",
+      "example": "She saved money for a new bicycle.",
+      "exampleZh": "她存钱买一辆新自行车。",
+      "subtitleExample": "But how am I to pay for all this? I haven't any money.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 6507.134,
-        "localStart": 196.12096
+        "originalStart": 1303.427,
+        "localStart": 66.302
       }
     },
     {
-      "word": "stranger",
+      "id": "hp1-6-4",
+      "word": "vault",
       "partOfSpeech": "noun",
-      "meaningZh": "陌生人",
-      "definitionEn": "Someone you do not know.",
-      "example": "A stranger asked me for directions.",
-      "exampleZh": "一个陌生人向我问路。",
-      "id": "hp1-18-6",
-      "source": "Matched English subtitle; original example and definition",
+      "meaningZh": "金库；保险库",
+      "definitionEn": "A strongly protected room for valuable things.",
+      "example": "The jewels are locked in a vault.",
+      "exampleZh": "珠宝锁在金库里。",
+      "subtitleExample": "It's about you-know-what in vault you-know-which.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 6400.11,
-        "localStart": 89.09696
+        "originalStart": 1378.252,
+        "localStart": 141.127
+      }
+    },
+    {
+      "id": "hp1-6-5",
+      "word": "wizardry",
+      "partOfSpeech": "noun",
+      "meaningZh": "巫术",
+      "definitionEn": "The practice of magic.",
+      "example": "Over there, all your bits and Bobs for doing wizardry.",
+      "exampleZh": "",
+      "subtitleExample": "Over there, all your bits and Bobs for doing wizardry.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 1261.01,
+        "localStart": 23.885
+      }
+    },
+    {
+      "id": "hp1-6-6",
+      "word": "broom",
+      "partOfSpeech": "noun",
+      "meaningZh": "扫帚",
+      "definitionEn": "A long-handled tool used for sweeping.",
+      "example": "A broom stood beside the kitchen door.",
+      "exampleZh": "厨房门边立着一把扫帚。",
+      "subtitleExample": "Boy 1: It's a world-class racing broom.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 1289.83,
+        "localStart": 52.705
       }
     }
   ],
-  "19": [
+  "7": [
     {
-      "word": "forest",
-      "partOfSpeech": "noun",
-      "meaningZh": "森林",
-      "definitionEn": "A large area covered with trees.",
-      "example": "A path runs through the forest.",
-      "exampleZh": "一条小路穿过森林。",
-      "id": "hp1-19-1",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 6568.528,
-        "localStart": 24.824174
-      }
-    },
-    {
-      "word": "unicorn",
-      "partOfSpeech": "noun",
-      "meaningZh": "独角兽",
-      "definitionEn": "A mythical horse-like animal with one horn.",
-      "example": "The unicorn appeared beside the lake.",
-      "exampleZh": "独角兽出现在湖边。",
-      "id": "hp1-19-2",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 6685.896,
-        "localStart": 142.192174
-      }
-    },
-    {
-      "word": "blood",
-      "partOfSpeech": "noun",
-      "meaningZh": "血；血液",
-      "definitionEn": "The red liquid moving through the body.",
-      "example": "The nurse took a small sample of blood.",
-      "exampleZh": "护士取了少量血样。",
-      "id": "hp1-19-3",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 6685.896,
-        "localStart": 142.192174
-      }
-    },
-    {
-      "word": "cursed",
+      "id": "hp1-7-1",
+      "word": "curious",
       "partOfSpeech": "adjective",
-      "meaningZh": "被诅咒的",
-      "definitionEn": "Affected by a harmful magical power.",
-      "example": "The villagers avoided the cursed tower.",
-      "exampleZh": "村民们避开那座被诅咒的塔。",
-      "id": "hp1-19-4",
-      "source": "Matched English subtitle; original example and definition",
+      "meaningZh": "好奇的；奇特的",
+      "definitionEn": "Wanting to know more, or unusual.",
+      "example": "The child was curious about the locked box.",
+      "exampleZh": "孩子对上锁的盒子很好奇。",
+      "subtitleExample": "Curious.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 6882.634,
-        "localStart": 338.930174
+        "originalStart": 1640.764,
+        "localStart": 151.639
       }
     },
     {
-      "word": "creature",
-      "partOfSpeech": "noun",
-      "meaningZh": "生物；动物",
-      "definitionEn": "A living being, especially an animal.",
-      "example": "A tiny creature hid under the leaf.",
-      "exampleZh": "一个小生物藏在叶子下面。",
-      "id": "hp1-19-5",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 6860.987,
-        "localStart": 317.283174
-      }
-    },
-    {
-      "word": "life",
-      "partOfSpeech": "noun",
-      "meaningZh": "生命；生活",
-      "definitionEn": "The state of being alive.",
-      "example": "Water is necessary for life.",
-      "exampleZh": "水是生命所必需的。",
-      "id": "hp1-19-6",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 6877.587,
-        "localStart": 333.883174
-      }
-    }
-  ],
-  "20": [
-    {
-      "word": "dragon",
-      "partOfSpeech": "noun",
-      "meaningZh": "龙",
-      "definitionEn": "A large mythical creature, often able to breathe fire.",
-      "example": "The dragon slept in a mountain cave.",
-      "exampleZh": "龙睡在山洞里。",
-      "id": "hp1-20-1",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 7026.778,
-        "localStart": 96.020843
-      }
-    },
-    {
-      "word": "music",
-      "partOfSpeech": "noun",
-      "meaningZh": "音乐",
-      "definitionEn": "Sounds arranged to create a melody or rhythm.",
-      "example": "Soft music helped the baby sleep.",
-      "exampleZh": "轻柔的音乐帮助婴儿入睡。",
-      "id": "hp1-20-2",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 7077.662,
-        "localStart": 146.904843
-      }
-    },
-    {
-      "word": "stone",
-      "partOfSpeech": "noun",
-      "meaningZh": "石头；宝石",
-      "definitionEn": "A piece of hard mineral material.",
-      "example": "A smooth stone lay beside the stream.",
-      "exampleZh": "溪流边有一块光滑的石头。",
-      "id": "hp1-20-3",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 6944.821,
-        "localStart": 14.063843
-      }
-    },
-    {
-      "word": "urgent",
+      "id": "hp1-7-2",
+      "word": "great",
       "partOfSpeech": "adjective",
-      "meaningZh": "紧急的",
-      "definitionEn": "Needing immediate attention.",
-      "example": "We received an urgent message this morning.",
-      "exampleZh": "我们今早收到了一条紧急消息。",
-      "id": "hp1-20-4",
-      "source": "Matched English subtitle; original example and definition",
+      "meaningZh": "伟大的",
+      "definitionEn": "Very good or impressive.",
+      "example": "That we can expect great things from you.",
+      "exampleZh": "",
+      "subtitleExample": "That we can expect great things from you.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 7102.979,
-        "localStart": 172.221843
+        "originalStart": 1695.944,
+        "localStart": 206.819
       }
     },
     {
-      "word": "protected",
-      "partOfSpeech": "past participle",
-      "meaningZh": "受到保护的",
-      "definitionEn": "Kept safe from danger.",
-      "example": "The rare birds are protected by law.",
-      "exampleZh": "珍稀鸟类受到法律保护。",
-      "id": "hp1-20-5",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 7118.953,
-        "localStart": 188.195843
-      }
-    },
-    {
-      "word": "brilliant",
-      "partOfSpeech": "adjective",
-      "meaningZh": "聪明的；出色的",
-      "definitionEn": "Very clever or excellent.",
-      "example": "She found a brilliant solution to the problem.",
-      "exampleZh": "她找到了一个出色的解决办法。",
-      "id": "hp1-20-6",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 7240.658,
-        "localStart": 309.900843
-      }
-    }
-  ],
-  "21": [
-    {
-      "word": "snoring",
-      "partOfSpeech": "present participle",
-      "meaningZh": "打鼾",
-      "definitionEn": "Breathing noisily while asleep.",
-      "example": "I could hear someone snoring upstairs.",
-      "exampleZh": "我能听到楼上有人打鼾。",
-      "id": "hp1-21-1",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 7282.575,
-        "localStart": 28.036056
-      }
-    },
-    {
-      "word": "harp",
+      "id": "hp1-7-3",
+      "word": "feather",
       "partOfSpeech": "noun",
-      "meaningZh": "竖琴",
-      "definitionEn": "A large musical instrument with strings.",
-      "example": "The musician played a gentle tune on the harp.",
-      "exampleZh": "乐手用竖琴弹奏了一首轻柔的曲子。",
-      "id": "hp1-21-2",
-      "source": "Matched English subtitle; original example and definition",
+      "meaningZh": "羽毛",
+      "definitionEn": "One of the light structures covering a bird.",
+      "example": "A white feather fell onto the path.",
+      "exampleZh": "一根白色羽毛落在了小路上。",
+      "subtitleExample": "Whose tail feather resides in your wand, gave another feather.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 7287.246,
-        "localStart": 32.707056
+        "originalStart": 1657.698,
+        "localStart": 168.573
       }
     },
     {
-      "word": "jump",
+      "id": "hp1-7-4",
+      "word": "father",
+      "partOfSpeech": "noun",
+      "meaningZh": "父亲",
+      "definitionEn": "A male parent.",
+      "example": "That your mother and father were in here buying their first wands.",
+      "exampleZh": "",
+      "subtitleExample": "That your mother and father were in here buying their first wands.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 1542.624,
+        "localStart": 53.499
+      }
+    },
+    {
+      "id": "hp1-7-5",
+      "word": "mother",
+      "partOfSpeech": "noun",
+      "meaningZh": "母亲",
+      "definitionEn": "A female parent.",
+      "example": "That your mother and father were in here buying their first wands.",
+      "exampleZh": "",
+      "subtitleExample": "That your mother and father were in here buying their first wands.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 1542.624,
+        "localStart": 53.499
+      }
+    },
+    {
+      "id": "hp1-7-6",
+      "word": "remember",
       "partOfSpeech": "verb",
-      "meaningZh": "跳",
-      "definitionEn": "To push yourself off a surface into the air.",
-      "example": "The children jump over small puddles.",
-      "exampleZh": "孩子们跳过小水坑。",
-      "id": "hp1-21-3",
-      "source": "Matched English subtitle; original example and definition",
+      "meaningZh": "记得",
+      "definitionEn": "To keep something in memory.",
+      "example": "I remember every wand I've ever sold, Mr. Potter.",
+      "exampleZh": "",
+      "subtitleExample": "I remember every wand I've ever sold, Mr. Potter.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 7361.988,
-        "localStart": 107.449056
-      }
-    },
-    {
-      "word": "sunlight",
-      "partOfSpeech": "noun",
-      "meaningZh": "阳光",
-      "definitionEn": "Light from the sun.",
-      "example": "Sunlight filled the room in the morning.",
-      "exampleZh": "早晨阳光洒满房间。",
-      "id": "hp1-21-4",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 7444.779,
-        "localStart": 190.240056
-      }
-    },
-    {
-      "word": "relaxing",
-      "partOfSpeech": "present participle",
-      "meaningZh": "放松",
-      "definitionEn": "Becoming less tense or worried.",
-      "example": "She is relaxing after a busy day.",
-      "exampleZh": "忙碌了一天后她正在放松。",
-      "id": "hp1-21-5",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 7430.89,
-        "localStart": 176.351056
-      }
-    },
-    {
-      "word": "breath",
-      "partOfSpeech": "noun",
-      "meaningZh": "呼吸；一口气",
-      "definitionEn": "Air taken into or released from the lungs.",
-      "example": "Take a slow breath before you speak.",
-      "exampleZh": "说话前缓缓吸一口气。",
-      "id": "hp1-21-6",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 7294.378,
-        "localStart": 39.839056
+        "originalStart": 1651.233,
+        "localStart": 162.108
       }
     }
   ],
-  "22": [
+  "8": [
     {
-      "word": "keys",
+      "id": "hp1-8-1",
+      "word": "killed",
+      "partOfSpeech": "past-tense verb",
+      "meaningZh": "杀死了",
+      "definitionEn": "Caused a living thing to die.",
+      "example": "The storm killed several old trees.",
+      "exampleZh": "暴风雨使几棵老树枯死了。",
+      "subtitleExample": "He killed my parents, didn't he? The one who gave me this.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 1734.608,
+        "localStart": 17.483
+      }
+    },
+    {
+      "id": "hp1-8-2",
+      "word": "opinion",
+      "partOfSpeech": "noun",
+      "meaningZh": "意见；看法",
+      "definitionEn": "What someone thinks about something.",
+      "example": "I would like to hear your opinion.",
+      "exampleZh": "我想听听你的意见。",
+      "subtitleExample": "Codswallop, in my opinion.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 1836.335,
+        "localStart": 119.21
+      }
+    },
+    {
+      "id": "hp1-8-3",
+      "word": "parents",
       "partOfSpeech": "plural noun",
-      "meaningZh": "钥匙",
-      "definitionEn": "Objects used to open locks.",
-      "example": "He keeps his keys in a small bag.",
-      "exampleZh": "他把钥匙放在一个小袋子里。",
-      "id": "hp1-22-1",
-      "source": "Matched English subtitle; original example and definition",
+      "meaningZh": "父母",
+      "definitionEn": "A person's mother and father.",
+      "example": "Her parents encouraged her to read.",
+      "exampleZh": "她的父母鼓励她阅读。",
+      "subtitleExample": "He killed my parents, didn't he? The one who gave me this.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 7495.413,
-        "localStart": 10.477224
+        "originalStart": 1734.608,
+        "localStart": 17.483
       }
     },
     {
-      "word": "chess",
-      "partOfSpeech": "noun",
-      "meaningZh": "国际象棋",
-      "definitionEn": "A board game played with two sets of sixteen pieces.",
-      "example": "We play chess after dinner.",
-      "exampleZh": "我们晚饭后下国际象棋。",
-      "id": "hp1-22-2",
-      "source": "Matched English subtitle; original example and definition",
+      "id": "hp1-8-4",
+      "word": "important",
+      "partOfSpeech": "adjective",
+      "meaningZh": "重要的",
+      "definitionEn": "Having great value or significance.",
+      "example": "First, and understand this because it's very important:",
+      "exampleZh": "",
+      "subtitleExample": "First, and understand this because it's very important:",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 7737.029,
-        "localStart": 252.093224
+        "originalStart": 1747.913,
+        "localStart": 30.788
       }
     },
     {
-      "word": "sacrifice",
-      "partOfSpeech": "noun",
-      "meaningZh": "牺牲",
-      "definitionEn": "Giving up something valuable to help others.",
-      "example": "Her sacrifice gave the team another chance.",
-      "exampleZh": "她的牺牲给了团队另一次机会。",
-      "id": "hp1-22-3",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 7839.798,
-        "localStart": 354.862224
-      }
-    },
-    {
-      "word": "checkmate",
-      "partOfSpeech": "noun",
-      "meaningZh": "将死",
-      "definitionEn": "A chess position where the king cannot escape capture.",
-      "example": "The final move resulted in checkmate.",
-      "exampleZh": "最后一步棋造成了将死。",
-      "id": "hp1-22-4",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 7943.652,
-        "localStart": 458.716224
-      }
-    },
-    {
-      "word": "bravery",
-      "partOfSpeech": "noun",
-      "meaningZh": "勇敢",
-      "definitionEn": "Courage shown in danger or difficulty.",
-      "example": "The firefighter received an award for bravery.",
-      "exampleZh": "消防员因勇敢而获奖。",
-      "id": "hp1-22-5",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 7989.573,
-        "localStart": 504.637224
-      }
-    },
-    {
-      "word": "friendship",
-      "partOfSpeech": "noun",
-      "meaningZh": "友谊",
-      "definitionEn": "A close and caring relationship between friends.",
-      "example": "Their friendship grew during the journey.",
-      "exampleZh": "他们的友谊在旅途中加深了。",
-      "id": "hp1-22-6",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 7989.573,
-        "localStart": 504.637224
-      }
-    }
-  ],
-  "23": [
-    {
-      "word": "master",
-      "partOfSpeech": "noun",
-      "meaningZh": "主人；掌控者",
-      "definitionEn": "A person with control over a servant or situation.",
-      "example": "The servant waited for the master's instructions.",
-      "exampleZh": "仆人等候主人的指示。",
-      "id": "hp1-23-1",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 8180.597,
-        "localStart": 180.104512
-      }
-    },
-    {
-      "word": "stone",
-      "partOfSpeech": "noun",
-      "meaningZh": "石头；宝石",
-      "definitionEn": "A piece of hard mineral material.",
-      "example": "A smooth stone lay beside the stream.",
-      "exampleZh": "溪流边有一块光滑的石头。",
-      "id": "hp1-23-2",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 8113.864,
-        "localStart": 113.371512
-      }
-    },
-    {
-      "word": "desire",
-      "partOfSpeech": "verb",
-      "meaningZh": "渴望；想要",
-      "definitionEn": "To want something strongly.",
-      "example": "They desire a peaceful life.",
-      "exampleZh": "他们渴望平静的生活。",
-      "id": "hp1-23-3",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 8111.194,
-        "localStart": 110.701512
-      }
-    },
-    {
-      "word": "power",
-      "partOfSpeech": "noun",
-      "meaningZh": "力量；权力",
-      "definitionEn": "The ability to control or affect things.",
-      "example": "The leader used her power responsibly.",
-      "exampleZh": "领导者负责任地运用她的权力。",
-      "id": "hp1-23-4",
-      "source": "Matched English subtitle; original example and definition",
-      "evidence": {
-        "originalStart": 8302.761,
-        "localStart": 302.268512
-      }
-    },
-    {
+      "id": "hp1-8-5",
       "word": "kill",
       "partOfSpeech": "verb",
       "meaningZh": "杀死",
       "definitionEn": "To cause a living thing to die.",
       "example": "Pollution can kill fish in rivers.",
       "exampleZh": "污染会使河里的鱼死亡。",
-      "id": "hp1-23-5",
-      "source": "Matched English subtitle; original example and definition",
+      "subtitleExample": "But nobody lived once he decided to kill them.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 8050.509,
-        "localStart": 50.016512
+        "originalStart": 1797.629,
+        "localStart": 80.504
       }
     },
     {
-      "word": "survive",
-      "partOfSpeech": "verb",
-      "meaningZh": "生存；幸存",
-      "definitionEn": "To stay alive through danger.",
-      "example": "They needed shelter to survive the storm.",
-      "exampleZh": "他们需要避难处才能在风暴中幸存。",
-      "id": "hp1-23-6",
-      "source": "Matched English subtitle; original example and definition",
+      "id": "hp1-8-6",
+      "word": "curse",
+      "partOfSpeech": "noun",
+      "meaningZh": "诅咒",
+      "definitionEn": "Magic intended to cause harm.",
+      "example": "A Mark like that only comes from being touched by a curse, an evil curse.",
+      "exampleZh": "",
+      "subtitleExample": "A Mark like that only comes from being touched by a curse, an evil curse.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 8218.844,
-        "localStart": 218.351512
+        "originalStart": 1822.029,
+        "localStart": 104.904
       }
     }
   ],
-  "24": [
+  "9": [
     {
-      "word": "love",
-      "partOfSpeech": "noun",
-      "meaningZh": "爱",
-      "definitionEn": "A deep feeling of care for someone.",
-      "example": "Her love gave the child confidence.",
-      "exampleZh": "她的爱给了孩子信心。",
-      "id": "hp1-24-1",
-      "source": "Matched English subtitle; original example and definition",
+      "id": "hp1-9-1",
+      "word": "nervous",
+      "partOfSpeech": "adjective",
+      "meaningZh": "紧张的",
+      "definitionEn": "Worried about what may happen.",
+      "example": "I felt nervous before the interview.",
+      "exampleZh": "面试前我感到紧张。",
+      "subtitleExample": "- Best to run if you're nervous. - Good luck.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 8595.845,
-        "localStart": 166.799389
+        "originalStart": 2001.917,
+        "localStart": 108.792
       }
     },
     {
-      "word": "courage",
+      "id": "hp1-9-2",
+      "word": "platform",
       "partOfSpeech": "noun",
-      "meaningZh": "勇气",
-      "definitionEn": "The ability to act despite fear.",
-      "example": "It takes courage to admit a mistake.",
-      "exampleZh": "承认错误需要勇气。",
-      "id": "hp1-24-2",
-      "source": "Matched English subtitle; original example and definition",
+      "meaningZh": "站台",
+      "definitionEn": "The area beside a railway track where passengers wait.",
+      "example": "We waited on the platform for the train.",
+      "exampleZh": "我们在站台上等火车。",
+      "subtitleExample": "\"Platform 9 3/4\"?",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 8794.419,
-        "localStart": 365.373389
+        "originalStart": 1893.141,
+        "localStart": 0.016
       }
     },
     {
+      "id": "hp1-9-3",
+      "word": "mother",
+      "partOfSpeech": "noun",
+      "meaningZh": "母亲",
+      "definitionEn": "A female parent.",
+      "example": "- He's not Fred, I am. - You call yourself our mother?",
+      "exampleZh": "",
+      "subtitleExample": "- He's not Fred, I am. - You call yourself our mother?",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 1964.504,
+        "localStart": 71.379
+      }
+    }
+  ],
+  "10": [
+    {
+      "id": "hp1-10-1",
+      "word": "chocolate",
+      "partOfSpeech": "noun",
+      "meaningZh": "巧克力",
+      "definitionEn": "A sweet food made from cocoa.",
+      "example": "She shared a bar of chocolate with us.",
+      "exampleZh": "她和我们分享了一块巧克力。",
+      "subtitleExample": "There's chocolate and peppermint and also...",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 2123.246,
+        "localStart": 62.121
+      }
+    },
+    {
+      "id": "hp1-10-2",
+      "word": "spell",
+      "partOfSpeech": "noun",
+      "meaningZh": "咒语；魔法",
+      "definitionEn": "Words or actions used to perform magic.",
+      "example": "The spell made the door open.",
+      "exampleZh": "咒语让门打开了。",
+      "subtitleExample": "- Are they real frogs? - It's a spell. You want the cards.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 2139.721,
+        "localStart": 78.596
+      }
+    },
+    {
+      "id": "hp1-10-3",
+      "word": "famous",
+      "partOfSpeech": "adjective",
+      "meaningZh": "著名的",
+      "definitionEn": "Known by many people.",
+      "example": "The town is famous for its old castle.",
+      "exampleZh": "这座小镇因古堡而闻名。",
+      "subtitleExample": "Each pack's got a famous witch or wizard. I've got about 500 meself.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 2145.268,
+        "localStart": 84.143
+      }
+    },
+    {
+      "id": "hp1-10-4",
+      "word": "witch",
+      "partOfSpeech": "noun",
+      "meaningZh": "女巫",
+      "definitionEn": "A woman who can use magic.",
+      "example": "Each pack's got a famous witch or wizard. I've got about 500 meself.",
+      "exampleZh": "",
+      "subtitleExample": "Each pack's got a famous witch or wizard. I've got about 500 meself.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 2145.268,
+        "localStart": 84.143
+      }
+    },
+    {
+      "id": "hp1-10-5",
+      "word": "wizard",
+      "partOfSpeech": "noun",
+      "meaningZh": "男巫；巫师",
+      "definitionEn": "A person who uses magic in stories.",
+      "example": "The wizard carries a wooden staff.",
+      "exampleZh": "巫师拿着一根木杖。",
+      "subtitleExample": "Each pack's got a famous witch or wizard. I've got about 500 meself.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 2145.268,
+        "localStart": 84.143
+      }
+    },
+    {
+      "id": "hp1-10-6",
+      "word": "jump",
+      "partOfSpeech": "verb",
+      "meaningZh": "跳",
+      "definitionEn": "To push yourself off a surface into the air.",
+      "example": "The children jump over small puddles.",
+      "exampleZh": "孩子们跳过小水坑。",
+      "subtitleExample": "That's rotten luck. They've only got one good jump in them.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 2156.529,
+        "localStart": 95.404
+      }
+    }
+  ],
+  "11": [
+    {
+      "id": "hp1-11-1",
+      "word": "welcome",
+      "partOfSpeech": "verb",
+      "meaningZh": "欢迎",
+      "definitionEn": "To greet someone in a friendly way.",
+      "example": "We welcome new students every year.",
+      "exampleZh": "我们每年欢迎新学生。",
+      "subtitleExample": "Welcome to Hogwarts.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 2378.793,
+        "localStart": 101.668
+      }
+    },
+    {
+      "id": "hp1-11-2",
+      "word": "houses",
+      "partOfSpeech": "plural noun",
+      "meaningZh": "学院；分组",
+      "definitionEn": "Groups of students within a school.",
+      "example": "The school houses compete for a cup.",
+      "exampleZh": "学校各学院争夺一座奖杯。",
+      "subtitleExample": "But before you take your seats, you must be sorted into your houses.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 2385.466,
+        "localStart": 108.341
+      }
+    },
+    {
+      "id": "hp1-11-3",
+      "word": "sorted",
+      "partOfSpeech": "past participle",
+      "meaningZh": "被分类；被分院",
+      "definitionEn": "Put into groups according to a system.",
+      "example": "The students were sorted into four teams.",
+      "exampleZh": "学生们被分成四个队。",
+      "subtitleExample": "But before you take your seats, you must be sorted into your houses.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 2385.466,
+        "localStart": 108.341
+      }
+    },
+    {
+      "id": "hp1-11-4",
+      "word": "house",
+      "partOfSpeech": "noun",
+      "meaningZh": "学院；房屋",
+      "definitionEn": "A school group or a building where people live.",
+      "example": "While you're here, your house will be like your family.",
+      "exampleZh": "",
+      "subtitleExample": "While you're here, your house will be like your family.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 2398.938,
+        "localStart": 121.813
+      }
+    },
+    {
+      "id": "hp1-11-5",
       "word": "points",
       "partOfSpeech": "plural noun",
       "meaningZh": "分数；积分",
       "definitionEn": "Units used to record a score.",
       "example": "Our team earned ten points.",
       "exampleZh": "我们队得了十分。",
-      "id": "hp1-24-3",
-      "source": "Matched English subtitle; original example and definition",
+      "subtitleExample": "Your triumphs will earn you points.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 8683.308,
-        "localStart": 254.262389
+        "originalStart": 2404.611,
+        "localStart": 127.486
       }
     },
     {
-      "word": "home",
-      "partOfSpeech": "noun",
-      "meaningZh": "家",
-      "definitionEn": "The place where you live and feel you belong.",
-      "example": "After the journey, I was glad to be home.",
-      "exampleZh": "旅行结束后，回到家让我很高兴。",
-      "id": "hp1-24-4",
-      "source": "Matched English subtitle; original example and definition",
+      "id": "hp1-11-6",
+      "word": "follow",
+      "partOfSpeech": "verb",
+      "meaningZh": "跟随",
+      "definitionEn": "To go after someone.",
+      "example": "Right, then. This way to the boats. Come on now, follow me.",
+      "exampleZh": "",
+      "subtitleExample": "Right, then. This way to the boats. Come on now, follow me.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 8986.527,
-        "localStart": 557.481389
+        "originalStart": 2299.13,
+        "localStart": 22.005
       }
-    },
+    }
+  ],
+  "12": [
     {
+      "id": "hp1-12-1",
       "word": "friends",
       "partOfSpeech": "plural noun",
       "meaningZh": "朋友",
       "definitionEn": "People you know well and like.",
       "example": "Good friends help one another.",
       "exampleZh": "好朋友互相帮助。",
-      "id": "hp1-24-5",
-      "source": "Matched English subtitle; original example and definition",
+      "subtitleExample": "You don't want to go making friends with the wrong sort.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 8820.778,
-        "localStart": 391.732389
+        "originalStart": 2468.716,
+        "localStart": 40.466
       }
     },
     {
+      "id": "hp1-12-2",
+      "word": "houses",
+      "partOfSpeech": "plural noun",
+      "meaningZh": "学院；分组",
+      "definitionEn": "Groups of students within a school.",
+      "example": "The school houses compete for a cup.",
+      "exampleZh": "学校各学院争夺一座奖杯。",
+      "subtitleExample": "And you will be sorted into your houses.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 2580.995,
+        "localStart": 152.745
+      }
+    },
+    {
+      "id": "hp1-12-3",
+      "word": "sorted",
+      "partOfSpeech": "past participle",
+      "meaningZh": "被分类；被分院",
+      "definitionEn": "Put into groups according to a system.",
+      "example": "The students were sorted into four teams.",
+      "exampleZh": "学生们被分成四个队。",
+      "subtitleExample": "And you will be sorted into your houses.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 2580.995,
+        "localStart": 152.745
+      }
+    },
+    {
+      "id": "hp1-12-4",
+      "word": "talent",
+      "partOfSpeech": "noun",
+      "meaningZh": "天赋；才能",
+      "definitionEn": "A natural ability to do something well.",
+      "example": "She has a talent for music.",
+      "exampleZh": "她有音乐天赋。",
+      "subtitleExample": "There's talent, oh, yes.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 2713.92,
+        "localStart": 285.67
+      }
+    },
+    {
+      "id": "hp1-12-5",
+      "word": "attention",
+      "partOfSpeech": "noun",
+      "meaningZh": "注意；专注",
+      "definitionEn": "The act of watching or listening carefully.",
+      "example": "Please pay attention to the instructions.",
+      "exampleZh": "请注意听说明。",
+      "subtitleExample": "Your attention, please.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 2774.855,
+        "localStart": 346.605
+      }
+    },
+    {
+      "id": "hp1-12-6",
+      "word": "feast",
+      "partOfSpeech": "noun",
+      "meaningZh": "盛宴",
+      "definitionEn": "A large special meal.",
+      "example": "Everyone gathered for the feast.",
+      "exampleZh": "大家聚在一起参加盛宴。",
+      "subtitleExample": "Let the feast begin.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 2779.694,
+        "localStart": 351.444
+      }
+    }
+  ],
+  "13": [
+    {
+      "id": "hp1-13-1",
+      "word": "welcome",
+      "partOfSpeech": "verb",
+      "meaningZh": "欢迎",
+      "definitionEn": "To greet someone in a friendly way.",
+      "example": "We welcome new students every year.",
+      "exampleZh": "我们每年欢迎新学生。",
+      "subtitleExample": "Man in picture: Welcome to Hogwarts.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 2927.466,
+        "localStart": 43.216
+      }
+    },
+    {
+      "id": "hp1-13-2",
+      "word": "staircases",
+      "partOfSpeech": "plural noun",
+      "meaningZh": "楼梯",
+      "definitionEn": "Sets of steps connecting floors.",
+      "example": "Two staircases lead to the hall.",
+      "exampleZh": "两道楼梯通往大厅。",
+      "subtitleExample": "Keep an eye on the staircases. They like to change.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 2897.478,
+        "localStart": 13.228
+      }
+    },
+    {
+      "id": "hp1-13-3",
+      "word": "password",
+      "partOfSpeech": "noun",
+      "meaningZh": "口令；密码",
+      "definitionEn": "A secret word that allows access.",
+      "example": "You need a password to enter.",
+      "exampleZh": "你需要口令才能进入。",
+      "subtitleExample": "Password?",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 2946.026,
+        "localStart": 61.776
+      }
+    },
+    {
+      "id": "hp1-13-4",
+      "word": "follow",
+      "partOfSpeech": "verb",
+      "meaningZh": "跟随",
+      "definitionEn": "To go after someone.",
+      "example": "Percy: Gryffindors, follow me, please. Keep up. Thank you.",
+      "exampleZh": "",
+      "subtitleExample": "Percy: Gryffindors, follow me, please. Keep up. Thank you.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 2885.299,
+        "localStart": 1.049
+      }
+    },
+    {
+      "id": "hp1-13-5",
+      "word": "dormitory",
+      "partOfSpeech": "noun",
+      "meaningZh": "宿舍",
+      "definitionEn": "A room or building where students sleep.",
+      "example": "Boys' dormitory is upstairs to the left. Girls, the same on your right.",
+      "exampleZh": "",
+      "subtitleExample": "Boys' dormitory is upstairs to the left. Girls, the same on your right.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 2972.845,
+        "localStart": 88.595
+      }
+    },
+    {
+      "id": "hp1-13-6",
+      "word": "room",
+      "partOfSpeech": "noun",
+      "meaningZh": "房间",
+      "definitionEn": "A space inside a building.",
+      "example": "Welcome to the Gryffindor common room.",
+      "exampleZh": "",
+      "subtitleExample": "Welcome to the Gryffindor common room.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 2969.341,
+        "localStart": 85.091
+      }
+    }
+  ],
+  "14": [
+    {
+      "id": "hp1-14-1",
+      "word": "forgotten",
+      "partOfSpeech": "past participle",
+      "meaningZh": "忘记了的",
+      "definitionEn": "No longer remembered.",
+      "example": "I have forgotten where I put my notebook.",
+      "exampleZh": "我忘了把笔记本放在哪里。",
+      "subtitleExample": "I've read about those. The smoke turns red when you've forgotten something.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 3267.848,
+        "localStart": 219.598
+      }
+    },
+    {
+      "id": "hp1-14-2",
+      "word": "brilliant",
+      "partOfSpeech": "adjective",
+      "meaningZh": "聪明的；出色的",
+      "definitionEn": "Very clever or excellent.",
+      "example": "She found a brilliant solution to the problem.",
+      "exampleZh": "她找到了一个出色的解决办法。",
+      "subtitleExample": "- That was bloody brilliant! - Thank you for that assessment.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 3058.305,
+        "localStart": 10.055
+      }
+    },
+    {
+      "id": "hp1-14-3",
+      "word": "attention",
+      "partOfSpeech": "noun",
+      "meaningZh": "注意；专注",
+      "definitionEn": "The act of watching or listening carefully.",
+      "example": "Please pay attention to the instructions.",
+      "exampleZh": "请注意听说明。",
+      "subtitleExample": "To not pay attention.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 3140.638,
+        "localStart": 92.388
+      }
+    },
+    {
+      "id": "hp1-14-4",
+      "word": "goblins",
+      "partOfSpeech": "plural noun",
+      "meaningZh": "妖精；小妖怪",
+      "definitionEn": "Small magical creatures in stories.",
+      "example": "The goblins guard a hidden treasure.",
+      "exampleZh": "妖精们守着一处隐藏的宝藏。",
+      "subtitleExample": "Gringotts goblins acknowledge the breach but insist nothing was taken.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 3284.907,
+        "localStart": 236.657
+      }
+    },
+    {
+      "id": "hp1-14-5",
+      "word": "vault",
+      "partOfSpeech": "noun",
+      "meaningZh": "金库；保险库",
+      "definitionEn": "A strongly protected room for valuable things.",
+      "example": "The jewels are locked in a vault.",
+      "exampleZh": "珠宝锁在金库里。",
+      "subtitleExample": "The vault in question, number 713, had been emptied earlier that same day.\"",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 3290.829,
+        "localStart": 242.579
+      }
+    },
+    {
+      "id": "hp1-14-6",
+      "word": "trust",
+      "partOfSpeech": "verb",
+      "meaningZh": "信任",
+      "definitionEn": "To believe another person is reliable.",
+      "example": "Then perhaps a map? I trust you don't need one to find your seats.",
+      "exampleZh": "",
+      "subtitleExample": "Then perhaps a map? I trust you don't need one to find your seats.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 3071.402,
+        "localStart": 23.152
+      }
+    }
+  ],
+  "15": [
+    {
+      "id": "hp1-15-1",
+      "word": "whistle",
+      "partOfSpeech": "noun",
+      "meaningZh": "哨子；哨声",
+      "definitionEn": "A device or sound used to give a signal.",
+      "example": "The game begins when you hear the whistle.",
+      "exampleZh": "听到哨声时比赛开始。",
+      "subtitleExample": "When I blow my whistle, I want you to kick off from the ground, hard.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 3362.86,
+        "localStart": 54.61
+      }
+    },
+    {
+      "id": "hp1-15-2",
+      "word": "welcome",
+      "partOfSpeech": "verb",
+      "meaningZh": "欢迎",
+      "definitionEn": "To greet someone in a friendly way.",
+      "example": "We welcome new students every year.",
+      "exampleZh": "我们每年欢迎新学生。",
+      "subtitleExample": "Welcome to your first flying lesson.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 3317.981,
+        "localStart": 9.731
+      }
+    },
+    {
+      "id": "hp1-15-3",
+      "word": "wrist",
+      "partOfSpeech": "noun",
+      "meaningZh": "手腕",
+      "definitionEn": "The joint connecting the hand and arm.",
+      "example": "She wore a watch on her wrist.",
+      "exampleZh": "她的手腕上戴着一块表。",
+      "subtitleExample": "Oh, dear, it's a broken wrist. Poor boy. Come on now, up you get.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 3438.352,
+        "localStart": 130.102
+      }
+    },
+    {
+      "id": "hp1-15-4",
+      "word": "broom",
+      "partOfSpeech": "noun",
+      "meaningZh": "扫帚",
+      "definitionEn": "A long-handled tool used for sweeping.",
+      "example": "A broom stood beside the kitchen door.",
+      "exampleZh": "厨房门边立着一把扫帚。",
+      "subtitleExample": "Come on now, hurry up. Stick your hand over the broom and say, \"up.\"",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 3324.738,
+        "localStart": 16.488
+      }
+    },
+    {
+      "id": "hp1-15-5",
+      "word": "seeker",
+      "partOfSpeech": "noun",
+      "meaningZh": "找球手；寻找者",
+      "definitionEn": "A player who tries to catch the Snitch in Quidditch.",
+      "example": "The seeker watched the sky carefully.",
+      "exampleZh": "找球手仔细观察天空。",
+      "subtitleExample": "Potter, this is Oliver wood. Wood, I have found you a seeker.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 3580.994,
+        "localStart": 272.744
+      }
+    },
+    {
+      "id": "hp1-15-6",
+      "word": "quidditch",
+      "partOfSpeech": "noun",
+      "meaningZh": "魁地奇",
+      "definitionEn": "A magical sport played on flying broomsticks.",
+      "example": "Can't make any promises. Rough game, Quidditch.",
+      "exampleZh": "",
+      "subtitleExample": "Can't make any promises. Rough game, Quidditch.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 3613.693,
+        "localStart": 305.443
+      }
+    }
+  ],
+  "16": [
+    {
+      "id": "hp1-16-1",
+      "word": "locked",
+      "partOfSpeech": "adjective",
+      "meaningZh": "锁上的",
+      "definitionEn": "Closed with a lock.",
+      "example": "We found the classroom door locked.",
+      "exampleZh": "我们发现教室门锁着。",
+      "subtitleExample": "- It's locked! - We're done for!",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 3720.091,
+        "localStart": 62.716
+      }
+    },
+    {
+      "id": "hp1-16-2",
+      "word": "guarding",
+      "partOfSpeech": "present participle",
+      "meaningZh": "看守；守护",
+      "definitionEn": "Protecting a person, place, or object.",
+      "example": "A dog was guarding the gate.",
+      "exampleZh": "一只狗在守着大门。",
+      "subtitleExample": "- It's guarding something. - Guarding something?",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 3800.13,
+        "localStart": 142.755
+      }
+    },
+    {
+      "id": "hp1-16-3",
+      "word": "staircases",
+      "partOfSpeech": "plural noun",
+      "meaningZh": "楼梯",
+      "definitionEn": "Sets of steps connecting floors.",
+      "example": "Two staircases lead to the hall.",
+      "exampleZh": "两道楼梯通往大厅。",
+      "subtitleExample": "The staircases change, remember?",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 3668.29,
+        "localStart": 10.915
+      }
+    },
+    {
+      "id": "hp1-16-4",
+      "word": "notice",
+      "partOfSpeech": "verb",
+      "meaningZh": "注意到",
+      "definitionEn": "To become aware of something.",
+      "example": "Did you notice the footprints in the snow?",
+      "exampleZh": "你注意到雪地里的脚印了吗？",
+      "subtitleExample": "Or maybe you didn't notice. There were three!",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 3793.164,
+        "localStart": 135.789
+      }
+    },
+    {
+      "id": "hp1-16-5",
+      "word": "killed",
+      "partOfSpeech": "past-tense verb",
+      "meaningZh": "杀死了",
+      "definitionEn": "Caused a living thing to die.",
+      "example": "The storm killed several old trees.",
+      "exampleZh": "暴风雨使几棵老树枯死了。",
+      "subtitleExample": "Before you come up with another idea to get us killed.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 3808.054,
+        "localStart": 150.679
+      }
+    },
+    {
+      "id": "hp1-16-6",
+      "word": "priorities",
+      "partOfSpeech": "plural noun",
+      "meaningZh": "优先事项",
+      "definitionEn": "Things considered more important than others.",
+      "example": "Safety is one of our main priorities.",
+      "exampleZh": "安全是我们的首要事项之一。",
+      "subtitleExample": "She needs to sort out her priorities.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 3818.231,
+        "localStart": 160.856
+      }
+    }
+  ],
+  "17": [
+    {
+      "id": "hp1-17-1",
+      "word": "wrist",
+      "partOfSpeech": "noun",
+      "meaningZh": "手腕",
+      "definitionEn": "The joint connecting the hand and arm.",
+      "example": "She wore a watch on her wrist.",
+      "exampleZh": "她的手腕上戴着一块表。",
+      "subtitleExample": "Now, don't forget the nice wrist movement we've been practicing.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 3968.882,
+        "localStart": 139.507
+      }
+    },
+    {
+      "id": "hp1-17-2",
+      "word": "friends",
+      "partOfSpeech": "plural noun",
+      "meaningZh": "朋友",
+      "definitionEn": "People you know well and like.",
+      "example": "Good friends help one another.",
+      "exampleZh": "好朋友互相帮助。",
+      "subtitleExample": "She's a nightmare, honestly! No wonder she hasn't got any friends.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 4056.469,
+        "localStart": 227.094
+      }
+    },
+    {
+      "id": "hp1-17-3",
+      "word": "seeker",
+      "partOfSpeech": "noun",
+      "meaningZh": "找球手；寻找者",
+      "definitionEn": "A player who tries to catch the Snitch in Quidditch.",
+      "example": "The seeker watched the sky carefully.",
+      "exampleZh": "找球手仔细观察天空。",
+      "subtitleExample": "Three chasers, two beaters, one keeper and a seeker. That's you.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 3831.578,
+        "localStart": 2.203
+      }
+    },
+    {
+      "id": "hp1-17-4",
+      "word": "catch",
+      "partOfSpeech": "verb",
+      "meaningZh": "接住；抓住",
+      "definitionEn": "To take hold of something moving.",
+      "example": "Can you catch the ball with one hand?",
+      "exampleZh": "你能单手接住球吗？",
+      "subtitleExample": "You catch it. Before the other team's seeker.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 3937.35,
+        "localStart": 107.975
+      }
+    },
+    {
+      "id": "hp1-17-5",
+      "word": "keeper",
+      "partOfSpeech": "noun",
+      "meaningZh": "看守人；守护者",
+      "definitionEn": "A person who looks after or guards something.",
+      "example": "The keeper checks the gate every evening.",
+      "exampleZh": "看守人每天傍晚检查大门。",
+      "subtitleExample": "Three chasers, two beaters, one keeper and a seeker. That's you.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 3831.578,
+        "localStart": 2.203
+      }
+    },
+    {
+      "id": "hp1-17-6",
+      "word": "careful",
+      "partOfSpeech": "adjective",
+      "meaningZh": "小心的",
+      "definitionEn": "Taking care to avoid problems.",
+      "example": "Careful now, it's coming back.",
+      "exampleZh": "",
+      "subtitleExample": "Careful now, it's coming back.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 3876.456,
+        "localStart": 47.081
+      }
+    }
+  ],
+  "18": [
+    {
+      "id": "hp1-18-1",
+      "word": "bathroom",
+      "partOfSpeech": "noun",
+      "meaningZh": "浴室；卫生间",
+      "definitionEn": "A room with a bath, shower, or toilet.",
+      "example": "The bathroom is at the end of the hall.",
+      "exampleZh": "卫生间在走廊尽头。",
+      "subtitleExample": "Parvati said she wouldn't come out of the bathroom.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 4095.967,
+        "localStart": 2.592
+      }
+    },
+    {
+      "id": "hp1-18-2",
+      "word": "strength",
+      "partOfSpeech": "noun",
+      "meaningZh": "力量",
+      "definitionEn": "Physical power or the ability to resist difficulty.",
+      "example": "The climber needed strength to hold the rope.",
+      "exampleZh": "攀登者需要力气抓紧绳索。",
+      "subtitleExample": "Ron's right. You'll need your strength today.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 4432.303,
+        "localStart": 338.928
+      }
+    },
+    {
+      "id": "hp1-18-3",
+      "word": "hungry",
+      "partOfSpeech": "adjective",
+      "meaningZh": "饥饿的",
+      "definitionEn": "Wanting or needing food.",
+      "example": "We were hungry after the long walk.",
+      "exampleZh": "走了很久之后我们都饿了。",
+      "subtitleExample": "I'm not hungry.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 4435.681,
+        "localStart": 342.306
+      }
+    },
+    {
+      "id": "hp1-18-4",
+      "word": "diversion",
+      "partOfSpeech": "noun",
+      "meaningZh": "转移注意力的事物",
+      "definitionEn": "Something that draws attention away.",
+      "example": "The noise provided a useful diversion.",
+      "exampleZh": "那阵噪声有效地转移了注意力。",
+      "subtitleExample": "Last night, I'm guessing Snape let the troll in as a diversion...",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 4462.375,
+        "localStart": 369.0
+      }
+    },
+    {
+      "id": "hp1-18-5",
+      "word": "troll",
+      "partOfSpeech": "noun",
+      "meaningZh": "巨怪",
+      "definitionEn": "A large dangerous creature in stories.",
+      "example": "The troll blocked the narrow bridge.",
+      "exampleZh": "巨怪挡住了狭窄的桥。",
+      "subtitleExample": "Troll in the dungeon!",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 4107.812,
+        "localStart": 14.437
+      }
+    },
+    {
+      "id": "hp1-18-6",
+      "word": "points",
+      "partOfSpeech": "plural noun",
+      "meaningZh": "分数；积分",
+      "definitionEn": "Units used to record a score.",
+      "example": "Our team earned ten points.",
+      "exampleZh": "我们队得了十分。",
+      "subtitleExample": "Five points will be taken from Gryffindor...",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 4381.002,
+        "localStart": 287.627
+      }
+    }
+  ],
+  "19": [
+    {
+      "id": "hp1-19-1",
+      "word": "jinxing",
+      "partOfSpeech": "present participle",
+      "meaningZh": "施恶咒",
+      "definitionEn": "Using magic to bring harm or bad luck.",
+      "example": "The villain was jinxing the player's equipment.",
+      "exampleZh": "反派在给队员的装备施恶咒。",
+      "subtitleExample": "It's Snape. He's jinxing the broom!",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 4850.346,
+        "localStart": 384.971
+      }
+    },
+    {
+      "id": "hp1-19-2",
+      "word": "guarding",
+      "partOfSpeech": "present participle",
+      "meaningZh": "看守；守护",
+      "definitionEn": "Protecting a person, place, or object.",
+      "example": "A dog was guarding the gate.",
+      "exampleZh": "一只狗在守着大门。",
+      "subtitleExample": "That's what the dog's guarding. That's what Snape wants.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 4483.729,
+        "localStart": 18.354
+      }
+    },
+    {
+      "id": "hp1-19-3",
+      "word": "welcome",
+      "partOfSpeech": "verb",
+      "meaningZh": "欢迎",
+      "definitionEn": "To greet someone in a friendly way.",
+      "example": "We welcome new students every year.",
+      "exampleZh": "我们每年欢迎新学生。",
+      "subtitleExample": "Welcome to Hogwarts' first Quidditch game of the season.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 4587.208,
+        "localStart": 121.833
+      }
+    },
+    {
+      "id": "hp1-19-4",
+      "word": "players",
+      "partOfSpeech": "plural noun",
+      "meaningZh": "队员；运动员",
+      "definitionEn": "People taking part in a game.",
+      "example": "The players waited for the signal.",
+      "exampleZh": "队员们等待着信号。",
+      "subtitleExample": "Lee: The players take their positions...",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 4625.788,
+        "localStart": 160.413
+      }
+    },
+    {
+      "id": "hp1-19-5",
+      "word": "scores",
+      "partOfSpeech": "verb",
+      "meaningZh": "得分",
+      "definitionEn": "Wins points in a game.",
+      "example": "The striker scores just before the final whistle.",
+      "exampleZh": "前锋在终场哨前得分。",
+      "subtitleExample": "Angelina Johnson scores! Ten points for Gryffindor!",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 4682.761,
+        "localStart": 217.386
+      }
+    },
+    {
+      "id": "hp1-19-6",
+      "word": "broomstick",
+      "partOfSpeech": "noun",
+      "meaningZh": "飞天扫帚",
+      "definitionEn": "A broom that witches and wizards can ride.",
+      "example": "Harry: It's a broomstick.",
+      "exampleZh": "",
+      "subtitleExample": "Harry: It's a broomstick.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 4517.596,
+        "localStart": 52.221
+      }
+    }
+  ],
+  "20": [
+    {
+      "id": "hp1-20-1",
+      "word": "guarding",
+      "partOfSpeech": "present participle",
+      "meaningZh": "看守；守护",
+      "definitionEn": "Protecting a person, place, or object.",
+      "example": "A dog was guarding the gate.",
+      "exampleZh": "一只狗在守着大门。",
+      "subtitleExample": "But whatever fluffy's guarding, Snape's trying to steal it.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5060.889,
+        "localStart": 68.389
+      }
+    },
+    {
+      "id": "hp1-20-2",
+      "word": "fluffy",
+      "partOfSpeech": "adjective",
+      "meaningZh": "毛茸茸的",
+      "definitionEn": "Soft and covered in fur.",
+      "example": "- Who told you about fluffy? - —fluffy?",
+      "exampleZh": "",
+      "subtitleExample": "- Who told you about fluffy? - —fluffy?",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5043.705,
+        "localStart": 51.205
+      }
+    },
+    {
+      "id": "hp1-20-3",
+      "word": "teacher",
+      "partOfSpeech": "noun",
+      "meaningZh": "教师",
+      "definitionEn": "A person who teaches students.",
+      "example": "Codswallop. Professor Snape is a Hogwarts teacher.",
+      "exampleZh": "",
+      "subtitleExample": "Codswallop. Professor Snape is a Hogwarts teacher.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5065.102,
+        "localStart": 72.602
+      }
+    },
+    {
+      "id": "hp1-20-4",
+      "word": "broom",
+      "partOfSpeech": "noun",
+      "meaningZh": "扫帚",
+      "definitionEn": "A long-handled tool used for sweeping.",
+      "example": "A broom stood beside the kitchen door.",
+      "exampleZh": "厨房门边立着一把扫帚。",
+      "subtitleExample": "Nonsense! Why would Snape put a curse on Harry's broom?",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5035.197,
+        "localStart": 42.697
+      }
+    },
+    {
+      "id": "hp1-20-5",
+      "word": "curse",
+      "partOfSpeech": "noun",
+      "meaningZh": "诅咒",
+      "definitionEn": "Magic intended to cause harm.",
+      "example": "Nonsense! Why would Snape put a curse on Harry's broom?",
+      "exampleZh": "",
+      "subtitleExample": "Nonsense! Why would Snape put a curse on Harry's broom?",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5035.197,
+        "localStart": 42.697
+      }
+    },
+    {
+      "id": "hp1-20-6",
+      "word": "three-headed",
+      "partOfSpeech": "adjective",
+      "meaningZh": "三头的",
+      "definitionEn": "Having three heads.",
+      "example": "Who knows? Why was he trying to get past that three-headed dog?",
+      "exampleZh": "",
+      "subtitleExample": "Who knows? Why was he trying to get past that three-headed dog?",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5039.576,
+        "localStart": 47.076
+      }
+    }
+  ],
+  "21": [
+    {
+      "id": "hp1-21-1",
+      "word": "Christmas",
+      "partOfSpeech": "noun",
+      "meaningZh": "圣诞节",
+      "definitionEn": "The holiday celebrated on December 25.",
+      "example": "We decorate the house at Christmas.",
+      "exampleZh": "我们在圣诞节装饰房子。",
+      "subtitleExample": "Merry Christmas merry Christmas",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5126.705,
+        "localStart": 2.205
+      }
+    },
+    {
+      "id": "hp1-21-2",
+      "word": "restricted",
+      "partOfSpeech": "adjective",
+      "meaningZh": "受限制的",
+      "definitionEn": "Limited to certain people or uses.",
+      "example": "Only staff can enter the restricted area.",
+      "exampleZh": "只有工作人员能进入限制区域。",
+      "subtitleExample": "Not in the restricted section. Happy Christmas.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5195.857,
+        "localStart": 71.357
+      }
+    },
+    {
+      "id": "hp1-21-3",
+      "word": "cloak",
+      "partOfSpeech": "noun",
+      "meaningZh": "斗篷",
+      "definitionEn": "A loose outer garment without sleeves.",
+      "example": "The traveller wore a dark cloak.",
+      "exampleZh": "旅行者穿着一件深色斗篷。",
+      "subtitleExample": "- What is it? - Some kind of cloak.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5281.777,
+        "localStart": 157.277
+      }
+    },
+    {
+      "id": "hp1-21-4",
+      "word": "spell",
+      "partOfSpeech": "noun",
+      "meaningZh": "咒语；魔法",
+      "definitionEn": "Words or actions used to perform magic.",
+      "example": "The spell made the door open.",
+      "exampleZh": "咒语让门打开了。",
+      "subtitleExample": "cast 3 Christmas spell",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5135.797,
+        "localStart": 11.297
+      }
+    },
+    {
+      "id": "hp1-21-5",
+      "word": "knight",
+      "partOfSpeech": "noun",
+      "meaningZh": "骑士",
+      "definitionEn": "A mounted soldier or a chess piece.",
+      "example": "Knight to e5.",
+      "exampleZh": "",
+      "subtitleExample": "Knight to e5.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5152.314,
+        "localStart": 27.814
+      }
+    },
+    {
+      "id": "hp1-21-6",
+      "word": "queen",
+      "partOfSpeech": "noun",
+      "meaningZh": "王后",
+      "definitionEn": "A powerful chess piece or a female monarch.",
+      "example": "Queen to e5.",
+      "exampleZh": "",
+      "subtitleExample": "Queen to e5.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5163.325,
+        "localStart": 38.825
+      }
+    }
+  ],
+  "22": [
+    {
+      "id": "hp1-22-1",
+      "word": "future",
+      "partOfSpeech": "noun",
+      "meaningZh": "未来",
+      "definitionEn": "The time that has not happened yet.",
+      "example": "We are making plans for the future.",
+      "exampleZh": "我们正在为未来做计划。",
+      "subtitleExample": "Harry, do you think this mirror shows the future?",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5672.834,
+        "localStart": 88.334
+      }
+    },
+    {
+      "id": "hp1-22-2",
+      "word": "happiest",
+      "partOfSpeech": "superlative adjective",
+      "meaningZh": "最快乐的",
+      "definitionEn": "Feeling more happiness than anyone or at any other time.",
+      "example": "That was the happiest day of the holiday.",
+      "exampleZh": "那是假期中最快乐的一天。",
+      "subtitleExample": "The happiest man on earth...",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5725.97,
+        "localStart": 141.47
+      }
+    },
+    {
+      "id": "hp1-22-3",
+      "word": "desires",
+      "partOfSpeech": "plural noun",
+      "meaningZh": "渴望；愿望",
+      "definitionEn": "Strong wishes for something.",
+      "example": "The story explores people's hidden desires.",
+      "exampleZh": "这个故事探讨了人们隐藏的愿望。",
+      "subtitleExample": "Than the deepest and most desperate desires of our hearts.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5746.157,
+        "localStart": 161.657
+      }
+    },
+    {
+      "id": "hp1-22-4",
+      "word": "desperate",
+      "partOfSpeech": "adjective",
+      "meaningZh": "绝望的；极度渴望的",
+      "definitionEn": "Having an urgent need with little hope.",
+      "example": "They made a desperate attempt to reach safety.",
+      "exampleZh": "他们拼命试图到达安全之处。",
+      "subtitleExample": "Than the deepest and most desperate desires of our hearts.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5746.157,
+        "localStart": 161.657
+      }
+    },
+    {
+      "id": "hp1-22-5",
+      "word": "mirror",
+      "partOfSpeech": "noun",
+      "meaningZh": "镜子",
+      "definitionEn": "A surface that reflects an image.",
+      "example": "She looked in the mirror before leaving.",
+      "exampleZh": "她出门前照了照镜子。",
+      "subtitleExample": "Harry, do you think this mirror shows the future?",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5672.834,
+        "localStart": 88.334
+      }
+    },
+    {
+      "id": "hp1-22-6",
+      "word": "parents",
+      "partOfSpeech": "plural noun",
+      "meaningZh": "父母",
+      "definitionEn": "A person's mother and father.",
+      "example": "Her parents encouraged her to read.",
+      "exampleZh": "她的父母鼓励她阅读。",
+      "subtitleExample": "Come on! Come! Come look, it's my parents!",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5643.888,
+        "localStart": 59.388
+      }
+    }
+  ],
+  "23": [
+    {
+      "id": "hp1-23-1",
+      "word": "immortal",
+      "partOfSpeech": "adjective",
+      "meaningZh": "长生不死的",
+      "definitionEn": "Able to live forever.",
+      "example": "The legend tells of an immortal king.",
+      "exampleZh": "传说讲述了一位长生不死的国王。",
+      "subtitleExample": "And produces the elixir of life which will make the drinker immortal.\"",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5888.758,
+        "localStart": 95.133
+      }
+    },
+    {
+      "id": "hp1-23-2",
+      "word": "transform",
+      "partOfSpeech": "verb",
+      "meaningZh": "使改变；使转化",
+      "definitionEn": "To change the form or nature of something.",
+      "example": "Practice can transform a beginner into an expert.",
+      "exampleZh": "练习可以使初学者成为专家。",
+      "subtitleExample": "It'll transform any metal into pure gold...",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5885.922,
+        "localStart": 92.297
+      }
+    },
+    {
+      "id": "hp1-23-3",
+      "word": "elixir",
+      "partOfSpeech": "noun",
+      "meaningZh": "灵药；长生不老药",
+      "definitionEn": "A liquid believed to have special healing powers.",
+      "example": "The alchemist searched for an elixir of life.",
+      "exampleZh": "炼金术士寻找长生不老药。",
+      "subtitleExample": "And produces the elixir of life which will make the drinker immortal.\"",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5888.758,
+        "localStart": 95.133
+      }
+    },
+    {
+      "id": "hp1-23-4",
+      "word": "guarding",
+      "partOfSpeech": "present participle",
+      "meaningZh": "看守；守护",
+      "definitionEn": "Protecting a person, place, or object.",
+      "example": "A dog was guarding the gate.",
+      "exampleZh": "一只狗在守着大门。",
+      "subtitleExample": "That's what fluffy's guarding.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5910.113,
+        "localStart": 116.488
+      }
+    },
+    {
+      "id": "hp1-23-5",
+      "word": "protecting",
+      "partOfSpeech": "present participle",
+      "meaningZh": "保护",
+      "definitionEn": "Keeping someone or something safe.",
+      "example": "The volunteers are protecting the forest.",
+      "exampleZh": "志愿者们正在保护森林。",
+      "subtitleExample": "Snape is one of the teachers protecting the stone. He won't steal it.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5953.865,
+        "localStart": 160.24
+      }
+    },
+    {
+      "id": "hp1-23-6",
+      "word": "stone",
+      "partOfSpeech": "noun",
+      "meaningZh": "石头；宝石",
+      "definitionEn": "A piece of hard mineral material.",
+      "example": "A smooth stone lay beside the stream.",
+      "exampleZh": "溪流边有一块光滑的石头。",
+      "subtitleExample": "Nicholas flamel is the only known maker of the philosopher's stone.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 5871.908,
+        "localStart": 78.283
+      }
+    }
+  ],
+  "24": [
+    {
+      "id": "hp1-24-1",
+      "word": "stranger",
+      "partOfSpeech": "noun",
+      "meaningZh": "陌生人",
+      "definitionEn": "Someone you do not know.",
+      "example": "A stranger asked me for directions.",
+      "exampleZh": "一个陌生人向我问路。",
+      "subtitleExample": "I won it. Off a stranger I met down at the pub.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 6010.505,
+        "localStart": 12.88
+      }
+    },
+    {
+      "id": "hp1-24-2",
+      "word": "dragon",
+      "partOfSpeech": "noun",
+      "meaningZh": "龙",
+      "definitionEn": "A large mythical creature, often able to breathe fire.",
+      "example": "The dragon slept in a mountain cave.",
+      "exampleZh": "龙睡在山洞里。",
+      "subtitleExample": "A dragon?",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 6043.287,
+        "localStart": 45.662
+      }
+    },
+    {
+      "id": "hp1-24-3",
+      "word": "detention",
+      "partOfSpeech": "noun",
+      "meaningZh": "留校惩罚；禁闭",
+      "definitionEn": "A punishment that keeps a student at school for extra time.",
+      "example": "He received detention for breaking the rules.",
+      "exampleZh": "他因违反规定受到留校惩罚。",
+      "subtitleExample": "All four of you will receive detention.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 6128.623,
+        "localStart": 130.998
+      }
+    },
+    {
+      "id": "hp1-24-4",
+      "word": "student",
+      "partOfSpeech": "noun",
+      "meaningZh": "学生",
+      "definitionEn": "A person who is studying.",
+      "example": "Gives a student the right to walk about at night.",
+      "exampleZh": "",
+      "subtitleExample": "Gives a student the right to walk about at night.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 6113.858,
+        "localStart": 116.233
+      }
+    },
+    {
+      "id": "hp1-24-5",
+      "word": "points",
+      "partOfSpeech": "plural noun",
+      "meaningZh": "分数；积分",
+      "definitionEn": "Units used to record a score.",
+      "example": "Our team earned ten points.",
+      "exampleZh": "我们队得了十分。",
+      "subtitleExample": "Therefore, as punishment for your actions, 50 points will be taken.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 6117.528,
+        "localStart": 119.903
+      }
+    },
+    {
+      "id": "hp1-24-6",
+      "word": "punishment",
+      "partOfSpeech": "noun",
+      "meaningZh": "惩罚",
+      "definitionEn": "A penalty for doing something wrong.",
+      "example": "The punishment should be fair.",
+      "exampleZh": "惩罚应当公平。",
+      "subtitleExample": "Therefore, as punishment for your actions, 50 points will be taken.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 6117.528,
+        "localStart": 119.903
+      }
+    }
+  ],
+  "25": [
+    {
+      "id": "hp1-25-1",
+      "word": "killed",
+      "partOfSpeech": "past-tense verb",
+      "meaningZh": "杀死了",
+      "definitionEn": "Caused a living thing to die.",
+      "example": "The storm killed several old trees.",
+      "exampleZh": "暴风雨使几棵老树枯死了。",
+      "subtitleExample": "Do you mean to say that that thing that killed the unicorn...",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 6499.201,
+        "localStart": 325.576
+      }
+    },
+    {
+      "id": "hp1-25-2",
+      "word": "elixir",
+      "partOfSpeech": "noun",
+      "meaningZh": "灵药；长生不老药",
+      "definitionEn": "A liquid believed to have special healing powers.",
+      "example": "The alchemist searched for an elixir of life.",
+      "exampleZh": "炼金术士寻找长生不老药。",
+      "subtitleExample": "With the elixir of life, Voldemort will be strong again.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 6559.803,
+        "localStart": 386.178
+      }
+    },
+    {
+      "id": "hp1-25-3",
+      "word": "forest",
+      "partOfSpeech": "noun",
+      "meaningZh": "森林",
+      "definitionEn": "A large area covered with trees.",
+      "example": "A path runs through the forest.",
+      "exampleZh": "一条小路穿过森林。",
+      "subtitleExample": "He's got a little job to do inside the dark forest.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 6178.923,
+        "localStart": 5.298
+      }
+    },
+    {
+      "id": "hp1-25-4",
+      "word": "blood",
+      "partOfSpeech": "noun",
+      "meaningZh": "血；血液",
+      "definitionEn": "The red liquid moving through the body.",
+      "example": "The nurse took a small sample of blood.",
+      "exampleZh": "护士取了少量血样。",
+      "subtitleExample": "That's unicorn blood, that is. I found one dead a few weeks ago.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 6296.29,
+        "localStart": 122.665
+      }
+    },
+    {
+      "id": "hp1-25-5",
+      "word": "unicorn",
+      "partOfSpeech": "noun",
+      "meaningZh": "独角兽",
+      "definitionEn": "A mythical horse-like animal with one horn.",
+      "example": "The unicorn appeared beside the lake.",
+      "exampleZh": "独角兽出现在湖边。",
+      "subtitleExample": "That's unicorn blood, that is. I found one dead a few weeks ago.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 6296.29,
+        "localStart": 122.665
+      }
+    },
+    {
+      "id": "hp1-25-6",
+      "word": "life",
+      "partOfSpeech": "noun",
+      "meaningZh": "生命；生活",
+      "definitionEn": "The state of being alive.",
+      "example": "Water is necessary for life.",
+      "exampleZh": "水是生命所必需的。",
+      "subtitleExample": "That the moment the blood touches your lips, you will have a half-life.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 6487.982,
+        "localStart": 314.357
+      }
+    }
+  ],
+  "26": [
+    {
+      "id": "hp1-26-1",
+      "word": "stranger",
+      "partOfSpeech": "noun",
+      "meaningZh": "陌生人",
+      "definitionEn": "Someone you do not know.",
+      "example": "A stranger asked me for directions.",
+      "exampleZh": "一个陌生人向我问路。",
+      "subtitleExample": "You and this stranger must have talked.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 6661.822,
+        "localStart": 68.197
+      }
+    },
+    {
+      "id": "hp1-26-2",
+      "word": "exams",
+      "partOfSpeech": "plural noun",
+      "meaningZh": "考试",
+      "definitionEn": "Tests of knowledge or skill.",
+      "example": "Our final exams begin next week.",
+      "exampleZh": "我们的期末考试下周开始。",
+      "subtitleExample": "Hermione: I'd heard Hogwarts' final exams were frightful, but that was fun.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 6605.599,
+        "localStart": 11.974
+      }
+    },
+    {
+      "id": "hp1-26-3",
+      "word": "music",
+      "partOfSpeech": "noun",
+      "meaningZh": "音乐",
+      "definitionEn": "Sounds arranged to create a melody or rhythm.",
+      "example": "Soft music helped the baby sleep.",
+      "exampleZh": "轻柔的音乐帮助婴儿入睡。",
+      "subtitleExample": "Take fluffy, for example. Play him music and he falls straight to sleep.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 6688.056,
+        "localStart": 94.431
+      }
+    },
+    {
+      "id": "hp1-26-4",
+      "word": "urgent",
+      "partOfSpeech": "adjective",
+      "meaningZh": "紧急的",
+      "definitionEn": "Needing immediate attention.",
+      "example": "We received an urgent message this morning.",
+      "exampleZh": "我们今早收到了一条紧急消息。",
+      "subtitleExample": "He received an urgent owl from the ministry of magic and left.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 6713.373,
+        "localStart": 119.748
+      }
+    },
+    {
+      "id": "hp1-26-5",
+      "word": "protected",
+      "partOfSpeech": "past participle",
+      "meaningZh": "受到保护的",
+      "definitionEn": "Kept safe from danger.",
+      "example": "The rare birds are protected by law.",
+      "exampleZh": "珍稀鸟类受到法律保护。",
+      "subtitleExample": "I don't know how you know, but I assure you it is well protected.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 6729.348,
+        "localStart": 135.723
+      }
+    },
+    {
+      "id": "hp1-26-6",
+      "word": "fluffy",
+      "partOfSpeech": "adjective",
+      "meaningZh": "毛茸茸的",
+      "definitionEn": "Soft and covered in fur.",
+      "example": "I said, \"after fluffy, a dragon's gonna be no problem.\"",
+      "exampleZh": "",
+      "subtitleExample": "I said, \"after fluffy, a dragon's gonna be no problem.\"",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 6668.745,
+        "localStart": 75.12
+      }
+    }
+  ],
+  "27": [
+    {
+      "id": "hp1-27-1",
+      "word": "brilliant",
+      "partOfSpeech": "adjective",
+      "meaningZh": "聪明的；出色的",
+      "definitionEn": "Very clever or excellent.",
+      "example": "She found a brilliant solution to the problem.",
+      "exampleZh": "她找到了一个出色的解决办法。",
+      "subtitleExample": "Brilliant, but scary.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 6851.053,
+        "localStart": 37.428
+      }
+    },
+    {
+      "id": "hp1-27-2",
+      "word": "breath",
+      "partOfSpeech": "noun",
+      "meaningZh": "呼吸；一口气",
+      "definitionEn": "Air taken into or released from the lungs.",
+      "example": "Take a slow breath before you speak.",
+      "exampleZh": "说话前缓缓吸一口气。",
+      "subtitleExample": "Ron: It's got horrible breath.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 6904.773,
+        "localStart": 91.148
+      }
+    },
+    {
+      "id": "hp1-27-3",
+      "word": "relaxing",
+      "partOfSpeech": "present participle",
+      "meaningZh": "放松",
+      "definitionEn": "Becoming less tense or worried.",
+      "example": "She is relaxing after a busy day.",
+      "exampleZh": "忙碌了一天后她正在放松。",
+      "subtitleExample": "- He's not relaxing, is he? - Apparently not.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7041.284,
+        "localStart": 227.659
+      }
+    },
+    {
+      "id": "hp1-27-4",
+      "word": "sunlight",
+      "partOfSpeech": "noun",
+      "meaningZh": "阳光",
+      "definitionEn": "Light from the sun.",
+      "example": "Sunlight filled the room in the morning.",
+      "exampleZh": "早晨阳光洒满房间。",
+      "subtitleExample": "But will sulk in the sun! That's it! It hates sunlight.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7055.173,
+        "localStart": 241.548
+      }
+    },
+    {
+      "id": "hp1-27-5",
+      "word": "snare",
+      "partOfSpeech": "noun",
+      "meaningZh": "陷阱",
+      "definitionEn": "A device or situation used to trap.",
+      "example": "Hermione: Stop moving, both of you. This is devil's snare.",
+      "exampleZh": "",
+      "subtitleExample": "Hermione: Stop moving, both of you. This is devil's snare.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7005.749,
+        "localStart": 192.124
+      }
+    },
+    {
+      "id": "hp1-27-6",
+      "word": "harp",
+      "partOfSpeech": "noun",
+      "meaningZh": "竖琴",
+      "definitionEn": "A large musical instrument with strings.",
+      "example": "The musician played a gentle tune on the harp.",
+      "exampleZh": "乐手用竖琴弹奏了一首轻柔的曲子。",
+      "subtitleExample": "Harry: Snape's already been here. He's put a spell on the harp.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 6897.641,
+        "localStart": 84.016
+      }
+    }
+  ],
+  "28": [
+    {
+      "id": "hp1-28-1",
+      "word": "attention",
+      "partOfSpeech": "noun",
+      "meaningZh": "注意；专注",
+      "definitionEn": "The act of watching or listening carefully.",
+      "example": "Please pay attention to the instructions.",
+      "exampleZh": "请注意听说明。",
+      "subtitleExample": "Lucky Hermione pays attention in herbology.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7078.446,
+        "localStart": 1.696
+      }
+    },
+    {
+      "id": "hp1-28-2",
+      "word": "curious",
+      "partOfSpeech": "adjective",
+      "meaningZh": "好奇的；奇特的",
+      "definitionEn": "Wanting to know more, or unusual.",
+      "example": "The child was curious about the locked box.",
+      "exampleZh": "孩子对上锁的盒子很好奇。",
+      "subtitleExample": "Hermione: Curious. I've never seen birds like these.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7102.137,
+        "localStart": 25.387
+      }
+    },
+    {
+      "id": "hp1-28-3",
+      "word": "catch",
+      "partOfSpeech": "verb",
+      "meaningZh": "接住；抓住",
+      "definitionEn": "To take hold of something moving.",
+      "example": "Can you catch the ball with one hand?",
+      "exampleZh": "你能单手接住球吗？",
+      "subtitleExample": "Go on! If Snape could catch it on that old broomstick, you can.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7156.775,
+        "localStart": 80.025
+      }
+    },
+    {
+      "id": "hp1-28-4",
+      "word": "strange",
+      "partOfSpeech": "adjective",
+      "meaningZh": "奇怪的；陌生的",
+      "definitionEn": "Unusual or difficult to explain.",
+      "example": "We heard a strange noise outside.",
+      "exampleZh": "我们听到外面传来奇怪的声音。",
+      "subtitleExample": "Strange.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7127.037,
+        "localStart": 50.287
+      }
+    },
+    {
+      "id": "hp1-28-5",
+      "word": "broomstick",
+      "partOfSpeech": "noun",
+      "meaningZh": "飞天扫帚",
+      "definitionEn": "A broom that witches and wizards can ride.",
+      "example": "Go on! If Snape could catch it on that old broomstick, you can.",
+      "exampleZh": "",
+      "subtitleExample": "Go on! If Snape could catch it on that old broomstick, you can.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7156.775,
+        "localStart": 80.025
+      }
+    },
+    {
+      "id": "hp1-28-6",
+      "word": "seeker",
+      "partOfSpeech": "noun",
+      "meaningZh": "找球手；寻找者",
+      "definitionEn": "A player who tries to catch the Snitch in Quidditch.",
+      "example": "The seeker watched the sky carefully.",
+      "exampleZh": "找球手仔细观察天空。",
+      "subtitleExample": "You're the youngest seeker in a century.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7161.738,
+        "localStart": 84.988
+      }
+    }
+  ],
+  "29": [
+    {
+      "id": "hp1-29-1",
+      "word": "checkmate",
+      "partOfSpeech": "noun",
+      "meaningZh": "将死",
+      "definitionEn": "A chess position where the king cannot escape capture.",
+      "example": "The final move resulted in checkmate.",
+      "exampleZh": "最后一步棋造成了将死。",
+      "subtitleExample": "Checkmate.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7554.047,
+        "localStart": 305.297
+      }
+    },
+    {
+      "id": "hp1-29-2",
+      "word": "castle",
+      "partOfSpeech": "noun",
+      "meaningZh": "城堡",
+      "definitionEn": "A large fortified building.",
+      "example": "Hermione, you'll be the queen-side castle.",
+      "exampleZh": "",
+      "subtitleExample": "Hermione, you'll be the queen-side castle.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7305.215,
+        "localStart": 56.465
+      }
+    },
+    {
+      "id": "hp1-29-3",
+      "word": "queen",
+      "partOfSpeech": "noun",
+      "meaningZh": "王后",
+      "definitionEn": "A powerful chess piece or a female monarch.",
+      "example": "Hermione, you'll be the queen-side castle.",
+      "exampleZh": "",
+      "subtitleExample": "Hermione, you'll be the queen-side castle.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7305.215,
+        "localStart": 56.465
+      }
+    },
+    {
+      "id": "hp1-29-4",
+      "word": "knight",
+      "partOfSpeech": "noun",
+      "meaningZh": "骑士",
+      "definitionEn": "A mounted soldier or a chess piece.",
+      "example": "As for me, I'll be a knight.",
+      "exampleZh": "",
+      "subtitleExample": "As for me, I'll be a knight.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7309.719,
+        "localStart": 60.969
+      }
+    },
+    {
+      "id": "hp1-29-5",
+      "word": "chess",
+      "partOfSpeech": "noun",
+      "meaningZh": "国际象棋",
+      "definitionEn": "A board game played with two sets of sixteen pieces.",
+      "example": "We play chess after dinner.",
+      "exampleZh": "我们晚饭后下国际象棋。",
+      "subtitleExample": "Real wizard's chess, do you?",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7347.423,
+        "localStart": 98.673
+      }
+    },
+    {
+      "id": "hp1-29-6",
+      "word": "chessboard",
+      "partOfSpeech": "noun",
+      "meaningZh": "棋盘",
+      "definitionEn": "A board with alternating squares.",
+      "example": "It's a chessboard.",
+      "exampleZh": "",
+      "subtitleExample": "It's a chessboard.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7265.675,
+        "localStart": 16.925
+      }
+    }
+  ],
+  "30": [
+    {
+      "id": "hp1-30-1",
+      "word": "friendship",
+      "partOfSpeech": "noun",
+      "meaningZh": "友谊",
+      "definitionEn": "A close and caring relationship between friends.",
+      "example": "Their friendship grew during the journey.",
+      "exampleZh": "他们的友谊在旅途中加深了。",
+      "subtitleExample": "Friendship and bravery. And, Harry, just be careful.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7599.967,
+        "localStart": 3.217
+      }
+    },
+    {
+      "id": "hp1-30-2",
+      "word": "master",
+      "partOfSpeech": "noun",
+      "meaningZh": "主人；掌控者",
+      "definitionEn": "A person with control over a servant or situation.",
+      "example": "The servant waited for the master's instructions.",
+      "exampleZh": "仆人等候主人的指示。",
+      "subtitleExample": "- Man: Let me speak to him. - Master, you are not strong enough.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7790.992,
+        "localStart": 194.242
+      }
+    },
+    {
+      "id": "hp1-30-3",
+      "word": "kill",
+      "partOfSpeech": "verb",
+      "meaningZh": "杀死",
+      "definitionEn": "To cause a living thing to die.",
+      "example": "Pollution can kill fish in rivers.",
+      "exampleZh": "污染会使河里的鱼死亡。",
+      "subtitleExample": "But that day, during the Quidditch match, Snape tried to kill me.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7660.903,
+        "localStart": 64.153
+      }
+    },
+    {
+      "id": "hp1-30-4",
+      "word": "bravery",
+      "partOfSpeech": "noun",
+      "meaningZh": "勇敢",
+      "definitionEn": "Courage shown in danger or difficulty.",
+      "example": "The firefighter received an award for bravery.",
+      "exampleZh": "消防员因勇敢而获奖。",
+      "subtitleExample": "Friendship and bravery. And, Harry, just be careful.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7599.967,
+        "localStart": 3.217
+      }
+    },
+    {
+      "id": "hp1-30-5",
+      "word": "careful",
+      "partOfSpeech": "adjective",
+      "meaningZh": "小心的",
+      "definitionEn": "Taking care to avoid problems.",
+      "example": "Friendship and bravery. And, Harry, just be careful.",
+      "exampleZh": "",
+      "subtitleExample": "Friendship and bravery. And, Harry, just be careful.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7599.967,
+        "localStart": 3.217
+      }
+    },
+    {
+      "id": "hp1-30-6",
+      "word": "suspect",
+      "partOfSpeech": "verb",
+      "meaningZh": "怀疑",
+      "definitionEn": "To think someone may be responsible.",
+      "example": "Next to him, who would suspect...",
+      "exampleZh": "",
+      "subtitleExample": "Next to him, who would suspect...",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7653.396,
+        "localStart": 56.646
+      }
+    }
+  ],
+  "31": [
+    {
+      "id": "hp1-31-1",
+      "word": "strength",
+      "partOfSpeech": "noun",
+      "meaningZh": "力量",
+      "definitionEn": "Physical power or the ability to resist difficulty.",
+      "example": "The climber needed strength to hold the rope.",
+      "exampleZh": "攀登者需要力气抓紧绳索。",
+      "subtitleExample": "Man: I have strength enough for this.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7795.621,
+        "localStart": 2.871
+      }
+    },
+    {
+      "id": "hp1-31-2",
+      "word": "survive",
+      "partOfSpeech": "verb",
+      "meaningZh": "生存；幸存",
+      "definitionEn": "To stay alive through danger.",
+      "example": "They needed shelter to survive the storm.",
+      "exampleZh": "他们需要避难处才能在风暴中幸存。",
+      "subtitleExample": "See what I must do to survive?",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7829.238,
+        "localStart": 36.488
+      }
+    },
+    {
+      "id": "hp1-31-3",
+      "word": "stone",
+      "partOfSpeech": "noun",
+      "meaningZh": "石头；宝石",
+      "definitionEn": "A piece of hard mineral material.",
+      "example": "A smooth stone lay beside the stream.",
+      "exampleZh": "溪流边有一块光滑的石头。",
+      "subtitleExample": "Just give me the stone!",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7926.669,
+        "localStart": 133.919
+      }
+    },
+    {
+      "id": "hp1-31-4",
+      "word": "blood",
+      "partOfSpeech": "noun",
+      "meaningZh": "血；血液",
+      "definitionEn": "The red liquid moving through the body.",
+      "example": "The nurse took a small sample of blood.",
+      "exampleZh": "护士取了少量血样。",
+      "subtitleExample": "Unicorn blood can sustain me...",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7837.872,
+        "localStart": 45.122
+      }
+    },
+    {
+      "id": "hp1-31-5",
+      "word": "unicorn",
+      "partOfSpeech": "noun",
+      "meaningZh": "独角兽",
+      "definitionEn": "A mythical horse-like animal with one horn.",
+      "example": "The unicorn appeared beside the lake.",
+      "exampleZh": "独角兽出现在湖边。",
+      "subtitleExample": "Unicorn blood can sustain me...",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7837.872,
+        "localStart": 45.122
+      }
+    },
+    {
+      "id": "hp1-31-6",
+      "word": "bravery",
+      "partOfSpeech": "noun",
+      "meaningZh": "勇敢",
+      "definitionEn": "Courage shown in danger or difficulty.",
+      "example": "The firefighter received an award for bravery.",
+      "exampleZh": "消防员因勇敢而获奖。",
+      "subtitleExample": "Bravery. Your parents had it too.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 7875.201,
+        "localStart": 82.451
+      }
+    }
+  ],
+  "32": [
+    {
+      "id": "hp1-32-1",
+      "word": "chocolate",
+      "partOfSpeech": "noun",
+      "meaningZh": "巧克力",
+      "definitionEn": "A sweet food made from cocoa.",
+      "example": "She shared a bar of chocolate with us.",
+      "exampleZh": "她和我们分享了一块巧克力。",
+      "subtitleExample": "Of opening your chocolate frogs.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 8095.713,
+        "localStart": 27.838
+      }
+    },
+    {
+      "id": "hp1-32-2",
       "word": "destroyed",
       "partOfSpeech": "past participle",
       "meaningZh": "被毁掉的",
       "definitionEn": "Damaged so completely that it cannot be used.",
       "example": "The old bridge was destroyed by the flood.",
       "exampleZh": "旧桥被洪水冲毁了。",
-      "id": "hp1-24-6",
-      "source": "Matched English subtitle; original example and definition",
+      "subtitleExample": "The stone has been destroyed.",
+      "source": "Word verified in the user-provided English subtitle",
       "evidence": {
-        "originalStart": 8500.125,
-        "localStart": 71.079389
+        "originalStart": 8110.519,
+        "localStart": 42.644
+      }
+    },
+    {
+      "id": "hp1-32-3",
+      "word": "elixir",
+      "partOfSpeech": "noun",
+      "meaningZh": "灵药；长生不老药",
+      "definitionEn": "A liquid believed to have special healing powers.",
+      "example": "The alchemist searched for an elixir of life.",
+      "exampleZh": "炼金术士寻找长生不老药。",
+      "subtitleExample": "He has enough elixir to set his affairs in order.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 8128.12,
+        "localStart": 60.245
+      }
+    },
+    {
+      "id": "hp1-32-4",
+      "word": "brilliant",
+      "partOfSpeech": "adjective",
+      "meaningZh": "聪明的；出色的",
+      "definitionEn": "Very clever or excellent.",
+      "example": "She found a brilliant solution to the problem.",
+      "exampleZh": "她找到了一个出色的解决办法。",
+      "subtitleExample": "That is one of my more brilliant ideas.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 8156.732,
+        "localStart": 88.857
+      }
+    },
+    {
+      "id": "hp1-32-5",
+      "word": "stone",
+      "partOfSpeech": "noun",
+      "meaningZh": "石头；宝石",
+      "definitionEn": "A piece of hard mineral material.",
+      "example": "A smooth stone lay beside the stream.",
+      "exampleZh": "溪流边有一块光滑的石头。",
+      "subtitleExample": "- What happened to the stone? - Relax, dear boy.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 8107.433,
+        "localStart": 39.558
+      }
+    },
+    {
+      "id": "hp1-32-6",
+      "word": "professor",
+      "partOfSpeech": "noun",
+      "meaningZh": "教授",
+      "definitionEn": "A teacher at a university or a specialist school.",
+      "example": "The professor explains a difficult idea.",
+      "exampleZh": "教授解释了一个难懂的概念。",
+      "subtitleExample": "What happened in the dungeons between you and professor quirrell is a secret.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 8078.487,
+        "localStart": 10.612
+      }
+    }
+  ],
+  "33": [
+    {
+      "id": "hp1-33-1",
+      "word": "friends",
+      "partOfSpeech": "plural noun",
+      "meaningZh": "朋友",
+      "definitionEn": "People you know well and like.",
+      "example": "Good friends help one another.",
+      "exampleZh": "好朋友互相帮助。",
+      "subtitleExample": "But a great deal more to stand up to your friends.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 8431.173,
+        "localStart": 147.298
+      }
+    },
+    {
+      "id": "hp1-33-2",
+      "word": "house",
+      "partOfSpeech": "noun",
+      "meaningZh": "学院；房屋",
+      "definitionEn": "A school group or a building where people live.",
+      "example": "And now, as I understand it, the house cup needs awarding.",
+      "exampleZh": "",
+      "subtitleExample": "And now, as I understand it, the house cup needs awarding.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 8288.989,
+        "localStart": 5.114
+      }
+    },
+    {
+      "id": "hp1-33-3",
+      "word": "points",
+      "partOfSpeech": "plural noun",
+      "meaningZh": "分数；积分",
+      "definitionEn": "Units used to record a score.",
+      "example": "Our team earned ten points.",
+      "exampleZh": "我们队得了十分。",
+      "subtitleExample": "And the points stand thus:",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 8293.702,
+        "localStart": 9.827
+      }
+    },
+    {
+      "id": "hp1-33-4",
+      "word": "great",
+      "partOfSpeech": "adjective",
+      "meaningZh": "伟大的",
+      "definitionEn": "Very good or impressive.",
+      "example": "Finally, it takes a great deal of bravery to stand up to your enemies...",
+      "exampleZh": "",
+      "subtitleExample": "Finally, it takes a great deal of bravery to stand up to your enemies...",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 8425.0,
+        "localStart": 141.125
+      }
+    },
+    {
+      "id": "hp1-33-5",
+      "word": "chess",
+      "partOfSpeech": "noun",
+      "meaningZh": "国际象棋",
+      "definitionEn": "A board game played with two sets of sixteen pieces.",
+      "example": "We play chess after dinner.",
+      "exampleZh": "我们晚饭后下国际象棋。",
+      "subtitleExample": "Second, to Mr. Ronald Weasley, for the best-played game of chess...",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 8382.708,
+        "localStart": 98.833
+      }
+    },
+    {
+      "id": "hp1-33-6",
+      "word": "courage",
+      "partOfSpeech": "noun",
+      "meaningZh": "勇气",
+      "definitionEn": "The ability to act despite fear.",
+      "example": "It takes courage to admit a mistake.",
+      "exampleZh": "承认错误需要勇气。",
+      "subtitleExample": "For pure nerve and outstanding courage...",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 8404.813,
+        "localStart": 120.938
+      }
+    }
+  ],
+  "34": [
+    {
+      "id": "hp1-34-1",
+      "word": "cousin",
+      "partOfSpeech": "noun",
+      "meaningZh": "堂兄弟姐妹；表兄弟姐妹",
+      "definitionEn": "A child of your aunt or uncle.",
+      "example": "My cousin is the same age as me.",
+      "exampleZh": "我的表弟和我同岁。",
+      "subtitleExample": "If that dolt of a cousin of yours, Dudley, gives you any grief...",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 8570.812,
+        "localStart": 62.937
+      }
+    },
+    {
+      "id": "hp1-34-2",
+      "word": "home",
+      "partOfSpeech": "noun",
+      "meaningZh": "家",
+      "definitionEn": "The place where you live and feel you belong.",
+      "example": "After the journey, I was glad to be home.",
+      "exampleZh": "旅行结束后，回到家让我很高兴。",
+      "subtitleExample": "Feels strange to be going home, doesn't it?",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 8596.922,
+        "localStart": 89.047
+      }
+    },
+    {
+      "id": "hp1-34-3",
+      "word": "train",
+      "partOfSpeech": "noun",
+      "meaningZh": "火车",
+      "definitionEn": "A railway vehicle that carries people or goods.",
+      "example": "The train leaves at nine o'clock.",
+      "exampleZh": "火车九点出发。",
+      "subtitleExample": "Train's leaving. Go on. Come on, hurry up.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 8513.213,
+        "localStart": 5.338
+      }
+    },
+    {
+      "id": "hp1-34-4",
+      "word": "magic",
+      "partOfSpeech": "noun",
+      "meaningZh": "魔法",
+      "definitionEn": "Special powers that cause impossible things to happen.",
+      "example": "The story is full of magic.",
+      "exampleZh": "这个故事充满了魔法。",
+      "subtitleExample": "But we're not allowed to do magic away from Hogwarts. You know that.",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 8581.49,
+        "localStart": 73.615
+      }
+    },
+    {
+      "id": "hp1-34-5",
+      "word": "strange",
+      "partOfSpeech": "adjective",
+      "meaningZh": "奇怪的；陌生的",
+      "definitionEn": "Unusual or difficult to explain.",
+      "example": "We heard a strange noise outside.",
+      "exampleZh": "我们听到外面传来奇怪的声音。",
+      "subtitleExample": "Feels strange to be going home, doesn't it?",
+      "source": "Word verified in the user-provided English subtitle",
+      "evidence": {
+        "originalStart": 8596.922,
+        "localStart": 89.047
       }
     }
   ]

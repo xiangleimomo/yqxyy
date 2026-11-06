@@ -1,0 +1,66 @@
+name: Build HP1 34 independent HLS episodes
+on:
+  push:
+    branches: [automation/hp1-hls-slice]
+    paths:
+      - 'scripts/build_hp1_hls_34.py'
+      - 'scripts/build_hp1_course_assets_34.py'
+      - 'data/movie-hp1-independent/course.json'
+      - 'data/movie-harry-potter-1/reference.en.srt'
+      - '.github/workflows/build-hp1-hls-34.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: automation/hp1-hls-slice
+      - name: Generate 34 independent video playlists
+        run: python3 scripts/build_hp1_hls_34.py
+      - name: Generate 34 local VTT subtitles, vocabulary and quizzes
+        run: python3 scripts/build_hp1_course_assets_34.py
+      - name: Verify video, subtitle and lesson files
+        run: |
+          python3 - <<'PY'
+          import pathlib,json
+          p=pathlib.Path('data/movie-harry-potter-1')
+          e=json.loads((p/'episodes.json').read_text())
+          v=json.loads((p/'vocabulary.json').read_text())
+          q=json.loads((p/'quiz.json').read_text())
+          cuts=json.loads((p/'hls-cuts.json').read_text())
+          assert len(e)==len(v)==len(q)==len(cuts)==34
+          for i in range(1,35):
+              assert e[i-1]['episodeId']==i
+              assert e[i-1]['video']['hlsUrl'].endswith(f'/{i:03d}.m3u8')
+              assert e[i-1]['modules']['words'] and e[i-1]['modules']['quiz']
+              hls=(p/'hls'/f'{i:03d}.m3u8').read_text()
+              vtt=(p/'subtitles'/f'{i:03d}.vtt').read_text()
+              assert hls.startswith('#EXTM3U')
+              if '#EXT-X-STREAM-INF' in hls:
+                  audio=(p/'hls'/f'{i:03d}.audio.m3u8').read_text()
+                  video=(p/'hls'/f'{i:03d}.video.m3u8').read_text()
+                  assert '#EXT-X-MEDIA:TYPE=AUDIO' in hls
+                  assert '#EXT-X-ENDLIST' in audio and '#EXTINF' in audio
+                  assert '#EXT-X-ENDLIST' in video and '#EXTINF' in video
+                  assert 'http' in audio and 'http' in video
+              else:
+                  assert '#EXT-X-ENDLIST' in hls and '#EXTINF' in hls and 'http' in hls
+              assert vtt.startswith('WEBVTT')
+              assert len(v[str(i)])>=3
+              assert len(q[str(i)]['questions'])==5
+              assert all(x['answer'] in ['A','B','C'] for x in q[str(i)]['questions'])
+          print('PASS 34 videos + 34 VTT + vocabulary + 170 quiz questions')
+          PY
+      - name: Commit generated course files
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/movie-harry-potter-1/hls data/movie-harry-potter-1/hls-cuts.json data/movie-harry-potter-1/subtitles data/movie-harry-potter-1/vocabulary.json data/movie-harry-potter-1/quiz.json data/movie-harry-potter-1/episodes.json data/movie-harry-potter-1/course-build-report.json
+          if ! git diff --cached --quiet; then
+            git commit -m "build: generate 34 HLS, VTT, Words and Quizzes"
+            git push origin HEAD:automation/hp1-hls-slice
+          fi
