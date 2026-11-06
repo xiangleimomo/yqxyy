@@ -132,7 +132,7 @@ button{font-family:inherit}
 .video-source-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:14px}
 .video-source-head h2{margin:0 0 4px}
 .video-source-head p{margin:0}
-.hls-source-control{display:flex;align-items:center;gap:8px;flex:0 0 auto;color:#36536f;font-size:14px;font-weight:700;white-space:nowrap}.hls-source-select{min-width:196px;border:1px solid #bdd3e8;border-radius:9px;background:#fff;color:#17395d;font:inherit;padding:8px 10px}
+.hls-source-control{position:absolute;z-index:8;top:10px;right:10px;display:flex;align-items:center;margin:0}.hls-source-select{min-width:104px;max-width:132px;border:1px solid rgba(255,255,255,.7);border-radius:8px;background:rgba(255,255,255,.94);color:#17395d;font:700 13px Arial,'Microsoft YaHei',sans-serif;padding:7px 26px 7px 10px;box-shadow:0 2px 10px rgba(0,0,0,.2)}.subtitle-video-wrap .hls-source-control{top:10px;right:10px}.subtitle-video-wrap .subtitle-settings-dock{right:14px}
 .direct-video-card{border-color:#9bd8be;background:#f4fff8}
 
 /* HLS uses the same 16:9 stage as direct video. Without this rule the video
