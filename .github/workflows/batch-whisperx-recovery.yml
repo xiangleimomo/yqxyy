@@ -1,6 +1,10 @@
 name: WhisperX recovery B - failed episodes only
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/subtitle-review/start-whisperx-recovery.flag'
   schedule:
     - cron: '17 */6 * * *'
 
