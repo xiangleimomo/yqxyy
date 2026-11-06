@@ -35,7 +35,12 @@ const App = {
     window.SFMedals?.init(this);
     this.updateUtilityNav();
     await this.render();
-    if(window.SFCloud) window.SFCloud.init(this);
+    if(window.SFCloud){
+      // The first paint can happen before Supabase has created its client.
+      // Refresh dynamic movie shelves once cloud initialization finishes.
+      await window.SFCloud.init(this);
+      if(this.route()[0]==='movies' || this.route()[0]==='movie-hub') await this.render();
+    }
   },
   async globalSearch(){
     const q = document.getElementById('globalSearch').value.trim();
