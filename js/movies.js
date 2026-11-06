@@ -172,7 +172,7 @@ window.MovieClassroom = {
     const report = (message, failed=false) => { if (generation !== this.generation) return; const status = document.getElementById('moviePlayerStatus'); if (status) { status.textContent = message; status.classList.toggle('failed', failed); } };
     if (embedded) {
       const frame = document.createElement('iframe');
-      frame.title = \`${movie.titleZh} · 本站嵌入播放器\`;
+      frame.title = `${movie.titleZh} · 本站嵌入播放器`;
       frame.allow = 'autoplay; fullscreen; encrypted-media; picture-in-picture';
       frame.allowFullscreen = true;
       frame.referrerPolicy = 'no-referrer';
@@ -183,8 +183,8 @@ window.MovieClassroom = {
       const nextEmbeddedSource=()=>{
         if(generation!==this.generation)return;
         if(hasBackup&&index+1<backups.length){
-          const next=index+1,choice=next===0?'backup':\`backup-\${next}\`;
-          report(\`当前嵌入线路未能加载，正在自动尝试 \${backups[next].label||'下一条备用线路'}…\`);
+          const next=index+1,choice=next===0?'backup':`backup-${next}`;
+          report(`当前嵌入线路未能加载，正在自动尝试 ${backups[next].label||'下一条备用线路'}…`);
           this.cleanup();this.renderWatch(app,id,choice).catch(()=>{});
         }else{
           report('当前嵌入线路未能加载。可点击“切换备用线路”重试，或稍后再试。',true);
@@ -195,7 +195,7 @@ window.MovieClassroom = {
         if(generation!==this.generation)return;
         frameLoaded=true;
         if(this.nativeStartTimer){clearTimeout(this.nativeStartTimer);this.nativeStartTimer=null;}
-        report(\`\${usingBackup?(backups[index].label||'备用线路'):movie.sourceLabel}播放器页面已加载，请在画面内点击播放。\`);
+        report(`${usingBackup?(backups[index].label||'备用线路'):movie.sourceLabel}播放器页面已加载，请在画面内点击播放。`);
         if(generation===this.generation)window.MediaShelf.record('film-'+id,{href:'#/movie/'+id});
       });
       frame.addEventListener('error',nextEmbeddedSource);
