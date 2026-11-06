@@ -41,6 +41,16 @@ class OfficialXmlTextTests(unittest.TestCase):
         self.assertEqual(mod.spoken_tokens("[g@He ate a peach.@g] [i@Hello!@i]"),
                          ["He","ate","a","peach.","Hello!"])
 
+    def test_short_letter_learning_episode_is_valid(self):
+        # Short ABC lessons are not long-form narrative episodes.
+        result=mod.parse_text_only(fixture(["A is for apple."]))
+        self.assertEqual(result["paragraphs"],1)
+        self.assertEqual(result["words"],["A","is","for","apple."])
+
+    def test_no_speech_is_rejected(self):
+        with self.assertRaisesRegex(ValueError,"no spoken text"):
+            mod.parse_text_only(fixture(["*** !"]))
+
     def test_wrong_content_or_incomplete_transcript_is_rejected(self):
         with self.assertRaises(ValueError):
             mod.parse_text_only(b"<html><body>Not captions</body></html>")
