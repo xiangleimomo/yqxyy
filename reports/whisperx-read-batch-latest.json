@@ -1,385 +1,264 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42295194852",
-  "completedAt": "2026-11-06T21:37:43.146937+00:00",
+  "runId": "42298303181",
+  "completedAt": "2026-11-06T21:49:35.329546+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 20,
-  "rejected": 30,
+  "published": 0,
+  "rejected": 50,
   "websiteCommitRequired": true,
-  "totalWords": 19989,
-  "speechMatchedWords": 19989,
-  "success": [
-    {
-      "seriesId": "little-fox-my-life-fs0023",
-      "episodeId": 1,
-      "cues": 60,
-      "words": 788,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 51,
-      "speechWords": 788,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-my-life-fs0023",
-      "episodeId": 2,
-      "cues": 69,
-      "words": 847,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 55,
-      "speechWords": 847,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-my-life-fs0023",
-      "episodeId": 3,
-      "cues": 74,
-      "words": 1014,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 58,
-      "speechWords": 1014,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-my-life-fs0023",
-      "episodeId": 4,
-      "cues": 81,
-      "words": 1015,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 52,
-      "speechWords": 1015,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-my-life-fs0023",
-      "episodeId": 5,
-      "cues": 82,
-      "words": 993,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 61,
-      "speechWords": 993,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-my-life-fs0023",
-      "episodeId": 6,
-      "cues": 72,
-      "words": 971,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 54,
-      "speechWords": 971,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-my-life-fs0023",
-      "episodeId": 7,
-      "cues": 83,
-      "words": 1047,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 61,
-      "speechWords": 1047,
-      "coverage": 0.9981,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-my-life-fs0023",
-      "episodeId": 8,
-      "cues": 82,
-      "words": 1028,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 59,
-      "speechWords": 1028,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-my-life-fs0023",
-      "episodeId": 9,
-      "cues": 87,
-      "words": 1014,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 61,
-      "speechWords": 1014,
-      "coverage": 0.999,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-my-life-fs0023",
-      "episodeId": 10,
-      "cues": 84,
-      "words": 1039,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 60,
-      "speechWords": 1039,
-      "coverage": 0.999,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-my-life-fs0023",
-      "episodeId": 11,
-      "cues": 83,
-      "words": 1020,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 60,
-      "speechWords": 1020,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-my-life-fs0023",
-      "episodeId": 12,
-      "cues": 78,
-      "words": 1018,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 59,
-      "speechWords": 1018,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-my-life-fs0023",
-      "episodeId": 13,
-      "cues": 90,
-      "words": 1102,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 61,
-      "speechWords": 1102,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-my-life-fs0023",
-      "episodeId": 14,
-      "cues": 80,
-      "words": 993,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 58,
-      "speechWords": 993,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-my-life-fs0023",
-      "episodeId": 15,
-      "cues": 79,
-      "words": 1032,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 60,
-      "speechWords": 1032,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-my-life-fs0023",
-      "episodeId": 16,
-      "cues": 81,
-      "words": 1040,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 62,
-      "speechWords": 1040,
-      "coverage": 0.999,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-my-life-fs0023",
-      "episodeId": 17,
-      "cues": 80,
-      "words": 1001,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 61,
-      "speechWords": 1001,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-my-life-fs0023",
-      "episodeId": 18,
-      "cues": 80,
-      "words": 1036,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 63,
-      "speechWords": 1036,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-my-life-fs0023",
-      "episodeId": 19,
-      "cues": 79,
-      "words": 1010,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 58,
-      "speechWords": 1010,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-my-life-fs0023",
-      "episodeId": 20,
-      "cues": 82,
-      "words": 981,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 64,
-      "speechWords": 981,
-      "coverage": 1.0,
-      "omittedWords": 0
-    }
-  ],
+  "totalWords": 0,
+  "speechMatchedWords": 0,
+  "success": [],
   "failures": [
     {
-      "seriesId": "little-fox-my-first-readers-3-fs0130",
-      "episodeId": 43,
-      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (67989 ms, minimum 85470 ms); cdn.littlefox.com: insufficient audio (67989 ms, minimum 85470 ms); cdn.littlefox.co.kr: insufficient audio (67989 ms, minimum 85470 ms)"
-    },
-    {
-      "seriesId": "little-fox-my-first-readers-3-fs0130",
-      "episodeId": 44,
-      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (90880 ms, minimum 99550 ms); cdn.littlefox.com: insufficient audio (90880 ms, minimum 99550 ms); cdn.littlefox.co.kr: insufficient audio (90880 ms, minimum 99550 ms)"
-    },
-    {
-      "seriesId": "little-fox-my-first-readers-3-fs0130",
-      "episodeId": 45,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-my-first-readers-3-fs0130",
-      "episodeId": 46,
-      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (83072 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (83072 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (83072 ms, minimum 120000 ms)"
-    },
-    {
-      "seriesId": "little-fox-my-first-readers-3-fs0130",
-      "episodeId": 47,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-my-first-readers-3-fs0130",
-      "episodeId": 48,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-my-first-readers-3-fs0130",
-      "episodeId": 49,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-my-first-readers-3-fs0130",
-      "episodeId": 50,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-my-first-readers-3-fs0130",
-      "episodeId": 51,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-my-first-readers-3-fs0130",
-      "episodeId": 52,
-      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (116181 ms, minimum 119130 ms); cdn.littlefox.com: insufficient audio (116181 ms, minimum 119130 ms); cdn.littlefox.co.kr: insufficient audio (116181 ms, minimum 119130 ms)"
-    },
-    {
-      "seriesId": "little-fox-my-first-readers-3-fs0130",
-      "episodeId": 53,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-my-first-readers-3-fs0130",
-      "episodeId": 54,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-my-first-readers-3-fs0130",
-      "episodeId": 55,
-      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (115563 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (115563 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (115563 ms, minimum 120000 ms)"
-    },
-    {
-      "seriesId": "little-fox-my-first-readers-3-fs0130",
-      "episodeId": 56,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-my-first-readers-3-fs0130",
-      "episodeId": 57,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-nero-the-talking-dog-fs0183",
-      "episodeId": 1,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 1.9% assigned"
-    },
-    {
-      "seriesId": "little-fox-nero-the-talking-dog-fs0183",
-      "episodeId": 2,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-nero-the-talking-dog-fs0183",
-      "episodeId": 3,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-nero-the-talking-dog-fs0183",
-      "episodeId": 4,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-nero-the-talking-dog-fs0183",
-      "episodeId": 5,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-nero-the-talking-dog-fs0183",
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
       "episodeId": 6,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-nero-the-talking-dog-fs0183",
-      "episodeId": 7,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-nero-the-talking-dog-fs0183",
-      "episodeId": 8,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-nero-the-talking-dog-fs0183",
-      "episodeId": 9,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-nero-the-talking-dog-fs0183",
-      "episodeId": 10,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
-      "episodeId": 1,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
       "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 7,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 8,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 9,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 10,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 11,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 12,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 13,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 14,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 15,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 16,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 17,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 18,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 19,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 20,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 21,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 22,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 23,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 24,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 25,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 26,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 27,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 28,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 29,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 30,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 31,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 32,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 1,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
       "episodeId": 2,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
       "episodeId": 3,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
       "episodeId": 4,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     },
     {
-      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
       "episodeId": 5,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 6,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 7,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 8,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 9,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 10,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 11,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 12,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 13,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 14,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 15,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 16,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 17,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 18,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 19,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 20,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 21,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 22,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 23,
       "reason": "HTTPError: HTTP Error 404: Not Found"
     }
   ]

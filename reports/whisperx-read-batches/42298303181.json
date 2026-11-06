@@ -1,0 +1,265 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42298303181",
+  "completedAt": "2026-11-06T21:49:35.329546+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 0,
+  "rejected": 50,
+  "websiteCommitRequired": true,
+  "totalWords": 0,
+  "speechMatchedWords": 0,
+  "success": [],
+  "failures": [
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 6,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 7,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 8,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 9,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 10,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 11,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 12,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 13,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 14,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 15,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 16,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 17,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 18,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 19,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 20,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 21,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 22,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 23,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 24,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 25,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 26,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 27,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 28,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 29,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 30,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 31,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-1-srv01026",
+      "episodeId": 32,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 1,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 2,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 3,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 4,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 5,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 6,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 7,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 8,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 9,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 10,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 11,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 12,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 13,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 14,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 15,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 16,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 17,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 18,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 19,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 20,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 21,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 22,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-nursery-rhymes-2-srv01027",
+      "episodeId": 23,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    }
+  ]
+}
