@@ -95,6 +95,12 @@ class PilotReadTests(unittest.TestCase):
           "https://cdn.littlefox.com/media/a.m3u8",
           "https://cdn.littlefox.co.kr/media/b.m3u8"])
 
+    def test_short_episodes_use_transcript_relative_audio_floor(self):
+        source=(ROOT/"scripts/whisperx-read-align.py").read_text()
+        self.assertIn("word_count: int = 1000",source)
+        self.assertIn("max(6000, min(120000, word_count * 110))",source)
+        self.assertIn("extract_hls_audio(episode, wav, len(canonical))",source)
+
     def test_candidate_output_compatible_with_web_word_sync(self):
         import tempfile
         words=[{"text":"The","startMs":1000,"endMs":1400,"source":"speech"},
