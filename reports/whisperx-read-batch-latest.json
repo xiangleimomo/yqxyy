@@ -1,265 +1,308 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42179544722",
-  "completedAt": "2026-11-06T07:27:13.683927+00:00",
+  "runId": "42180977010",
+  "completedAt": "2026-11-06T07:45:43.404970+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 0,
-  "rejected": 50,
+  "published": 7,
+  "rejected": 43,
   "websiteCommitRequired": true,
-  "totalWords": 0,
-  "speechMatchedWords": 0,
-  "success": [],
+  "totalWords": 5576,
+  "speechMatchedWords": 5576,
+  "success": [
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 1,
+      "cues": 86,
+      "words": 798,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 798,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 2,
+      "cues": 75,
+      "words": 802,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 802,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 3,
+      "cues": 87,
+      "words": 786,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 786,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 4,
+      "cues": 73,
+      "words": 793,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 793,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 5,
+      "cues": 82,
+      "words": 806,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 806,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 6,
+      "cues": 90,
+      "words": 793,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 793,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-black-beauty-fs0049",
+      "episodeId": 7,
+      "cues": 79,
+      "words": 798,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 798,
+      "coverage": 1.0,
+      "omittedWords": 0
+    }
+  ],
   "failures": [
     {
-      "seriesId": "little-fox-bird-and-kip-fs0064",
-      "episodeId": 100,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.6% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-bird-and-kip-fs0064",
-      "episodeId": 101,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-bird-and-kip-fs0064",
-      "episodeId": 102,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-bird-and-kip-fs0064",
-      "episodeId": 103,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-bird-and-kip-fs0064",
-      "episodeId": 104,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-bird-and-kip-fs0064",
-      "episodeId": 105,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-bird-and-kip-fs0064",
-      "episodeId": 106,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 4.9% assigned"
-    },
-    {
-      "seriesId": "little-fox-bird-and-kip-fs0064",
-      "episodeId": 107,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-bird-and-kip-fs0064",
-      "episodeId": 108,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-bird-and-kip-fs0064",
-      "episodeId": 109,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-bird-and-kip-fs0064",
-      "episodeId": 110,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-bird-and-kip-fs0064",
-      "episodeId": 111,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-bird-and-kip-fs0064",
-      "episodeId": 112,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-bird-and-kip-fs0064",
-      "episodeId": 113,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-bird-and-kip-fs0064",
-      "episodeId": 114,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-bird-and-kip-fs0064",
-      "episodeId": 115,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-bird-and-kip-fs0064",
-      "episodeId": 116,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-bird-and-kip-fs0064",
-      "episodeId": 117,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.6% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-bird-and-kip-fs0064",
-      "episodeId": 118,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.6% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-bird-and-kip-fs0064",
-      "episodeId": 119,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-bird-and-kip-fs0064",
-      "episodeId": 120,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.3% matched, 0.0% assigned"
-    },
-    {
       "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 1,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 2,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 3,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.6% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 4,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 5,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.6% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 6,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 7,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 8,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 9,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 10,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.6% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 11,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 12,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 13,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 14,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 15,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 16,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 17,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 18,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 19,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 20,
+      "episodeId": 30,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 21,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.0% assigned"
+      "episodeId": 31,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.7% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 22,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.5% matched, 0.0% assigned"
+      "episodeId": 32,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.2% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 23,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.6% matched, 0.0% assigned"
+      "episodeId": 33,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 24,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.4% matched, 0.0% assigned"
+      "episodeId": 34,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 25,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
+      "episodeId": 35,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.9% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 26,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
+      "episodeId": 36,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 27,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 28,
+      "episodeId": 37,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-birthday-fairies-fs0114",
-      "episodeId": 29,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.0% assigned"
+      "episodeId": 38,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 39,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 40,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 41,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 42,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 43,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 44,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 45,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 46,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 47,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 48,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 49,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 50,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 51,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 52,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 53,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 54,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 55,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 56,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 57,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 58,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 59,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 60,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 61,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 62,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 63,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 64,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 65,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 66,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 67,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 68,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 69,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 70,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 71,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-birthday-fairies-fs0114",
+      "episodeId": 72,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
     }
   ]
 }
