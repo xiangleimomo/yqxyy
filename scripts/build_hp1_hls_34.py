@@ -37,18 +37,34 @@ def get_media(url, depth=0):
                 match = re.search(r'BANDWIDTH=(\d+)', line)
                 target = next((x for x in lines[i + 1:] if not x.startswith("#")), None)
                 if target:
-                    variants.append((int(match.group(1)) if match else 0, abs_uri(url, target)))
+                    variants.append((int(match.group(1)) if match else 0, abs_uri(url, target), line))
         if not variants:
             raise ValueError("No HLS variants")
-        external_audio = [x for x in lines if x.startswith("#EXT-X-MEDIA:") and "TYPE=AUDIO" in x and "URI=" in x]
-        print(f"Master variants={len(variants)}, external audio tracks={len(external_audio)}")
-        if external_audio:
-            raise ValueError("Source master has separate audio tracks; use audio-aware manifest slicing to avoid silent video")
-        return get_media(max(variants)[1], depth + 1)
+        renditions = []
+        for line in lines:
+            if line.startswith("#EXT-X-MEDIA:") and "TYPE=AUDIO" in line and "URI=" in line:
+                group = re.search(r'GROUP-ID="([^"]+)"', line)
+                target = re.search(r'URI="([^"]+)"', line)
+                language = re.search(r'LANGUAGE="([^"]+)"', line)
+                if target:
+                    renditions.append((group.group(1) if group else None, abs_uri(url, target.group(1)), language.group(1) if language else ""))
+        bandwidth, target, variant = max(variants, key=lambda x: x[0])
+        _, _, video_lines, _, _, _ = get_media(target, depth + 1)
+        print(f"Master variants={len(variants)}, external audio tracks={len(renditions)}, selected bandwidth={bandwidth}")
+        group_match = re.search(r'AUDIO="([^"]+)"', variant)
+        wanted_group = group_match.group(1) if group_match else None
+        compatible = [x for x in renditions if not wanted_group or x[0] == wanted_group]
+        if wanted_group and not compatible:
+            raise ValueError(f"Audio group {wanted_group} not available")
+        if compatible:
+            # Prefer an English track if available, otherwise the first track.
+            chosen = next((x for x in compatible if x[2].lower().startswith("en")), compatible[0])
+            _, _, audio_lines, _, _, _ = get_media(chosen[1], depth + 1)
+            return target, lines, video_lines, chosen[1], audio_lines, variant
+        return target, lines, video_lines, None, None, variant
     if not any(x.startswith("#EXTINF:") for x in lines):
         raise ValueError("No playable EXTINF segments")
-    return url, lines
-
+    return url, None, lines, None, None, None
 
 def segments(url, lines):
     if "#EXT-X-ENDLIST" not in lines:
@@ -128,8 +144,16 @@ def write_playlist(path, selected, seq, disc_seq, prior_discontinuities):
 
 
 def main():
-    url, lines = get_media(SOURCE)
+    url, _master, lines, audio_url, audio_lines, variant = get_media(SOURCE)
     seq, disc_seq, media, duration = segments(url, lines)
+    if audio_url:
+        audio_seq, audio_disc, audio_media, audio_duration = segments(audio_url, audio_lines)
+        print(f"Audio duration={audio_duration:.2f}s vs video duration={duration:.2f}s")
+        if abs(audio_duration - duration) > 90:
+            raise ValueError("Audio and video duration differ by over 90 seconds")
+    else:
+        audio_seq = audio_disc = 0
+        audio_media = None
     course = json.loads((ROOT / "data/movie-hp1-independent/course.json").read_text(encoding="utf-8"))
     chapters = course["chapters"]
     if len(chapters) != 34:
@@ -152,7 +176,27 @@ def main():
         selected = media[first:last + 1]
         local_name = f"{id_:03d}.m3u8"
         prior = sum(1 for s in media[:first] if s["discontinuity"])
-        write_playlist(out / local_name, selected, seq + first, disc_seq, prior)
+        if audio_media:
+            write_playlist(out / f"{id_:03d}.video.m3u8", selected, seq + first, disc_seq, prior)
+            afirst = next((i for i, s in enumerate(audio_media) if s["end"] > start), None)
+            alast = next((i for i in range(len(audio_media)-1, -1, -1) if audio_media[i]["start"] < end), None)
+            if afirst is None or alast is None or afirst > alast:
+                raise ValueError(f"Episode {id_}: audio segment selection failed")
+            selected_audio = audio_media[afirst:alast + 1]
+            aprior = sum(1 for s in audio_media[:afirst] if s["discontinuity"])
+            write_playlist(out / f"{id_:03d}.audio.m3u8", selected_audio, audio_seq + afirst, audio_disc, aprior)
+            stream = re.sub(r',?AUDIO=(?:"[^"]+"|[^,]+)', '', variant or "#EXT-X-STREAM-INF:BANDWIDTH=1500000")
+            if stream.endswith(","):
+                stream = stream[:-1]
+            stream += ',AUDIO="episode-audio"'
+            master = [
+                "#EXTM3U", "#EXT-X-VERSION:6",
+                '#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="episode-audio",NAME="English",LANGUAGE="en",DEFAULT=YES,AUTOSELECT=YES,URI="' + f"{id_:03d}.audio.m3u8" + '"',
+                stream, f"{id_:03d}.video.m3u8",
+            ]
+            (out / local_name).write_text("\n".join(master) + "\n", encoding="utf-8")
+        else:
+            write_playlist(out / local_name, selected, seq + first, disc_seq, prior)
         ep = by_id.get(id_, {"episodeId": id_})
         ep["title"] = ep["titleZh"] = chapter["titleZh"]
         ep["summaryEn"] = chapter.get("summaryZh", "")
@@ -171,7 +215,7 @@ def main():
         })
     (DATA / "episodes.json").write_text(json.dumps(updated, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     (DATA / "hls-cuts.json").write_text(json.dumps(cuts, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"Generated {len(updated)} independent HLS episode playlists")
+    print(f"Generated {len(updated)} independent HLS episode masters; separate audio={bool(audio_media)}")
 
 
 if __name__ == "__main__":
