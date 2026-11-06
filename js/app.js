@@ -1623,7 +1623,25 @@ updateUtilityNav(){
     const nav=document.getElementById('navRewards');
     if(!nav) return;
     const points=this.getPoints();
-    nav.innerHTML=`<svg class="utility-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16v11H4zM3 6.5h18V10H3zM12 6.5V21M12 6.5H8.2a2.2 2.2 0 1 1 2.2-2.2c0 1.2 1.6 2.2 1.6 2.2ZM12 6.5h3.8a2.2 2.2 0 1 0-2.2-2.2c0 1.2-1.6 2.2-1.6 2.2Z"/></svg><span class="nav-points-badge">${points}</span>`;
+    // Keep the supplied 3D reward image intact; only refresh the numeric badge.
+    let image=nav.querySelector('.utility-image');
+    if(!image){
+      nav.querySelectorAll('.utility-icon').forEach(icon=>icon.remove());
+      image=document.createElement('img');
+      image.className='utility-image';
+      image.src='assets/icons/rewards.webp';
+      image.alt='';
+      image.setAttribute('aria-hidden','true');
+      image.width=48; image.height=48; image.decoding='async';
+      nav.prepend(image);
+    }
+    let badge=nav.querySelector('.nav-points-badge');
+    if(!badge){
+      badge=document.createElement('span');
+      badge.className='nav-points-badge';
+      nav.append(badge);
+    }
+    badge.textContent=String(points);
     nav.setAttribute('aria-label', `积分奖励：${points} 积分`);
     nav.setAttribute('title', `积分奖励：${points} 积分`);
   },

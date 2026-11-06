@@ -112,9 +112,18 @@ window.SFCloud = {
     const link=document.getElementById('accountLink');
     if(link){
       const admin=this.isAdmin();
-      link.innerHTML=admin
-        ? '<svg class="utility-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 19 6v5c0 4.5-3 7.5-7 10-4-2.5-7-5.5-7-10V6z"/><path d="m9 12 2 2 4-4"/></svg>'
-        : '<svg class="utility-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.8 20a7.2 7.2 0 0 1 14.4 0"/></svg>';
+      // Account status may change, but it must not replace the supplied account image.
+      let image=link.querySelector('.utility-image');
+      if(!image){
+        link.querySelectorAll('.utility-icon').forEach(icon=>icon.remove());
+        image=document.createElement('img');
+        image.className='utility-image';
+        image.alt='';
+        image.setAttribute('aria-hidden','true');
+        image.width=48; image.height=48; image.decoding='async';
+        link.prepend(image);
+      }
+      image.src='assets/icons/account.webp';
       const label=admin?'管理员账户':this.user?(this.nickname()||'我的账户'):'注册 / 登录';
       link.setAttribute('aria-label',label);
       link.setAttribute('title',label);
