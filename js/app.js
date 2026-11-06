@@ -122,6 +122,9 @@ const App = {
     try{
       if(page === 'honors') return await window.SFMedals.render(this,a||'works',b||'');
       if(['homework','family','parent','child'].includes(page)) return await window.SFFamily.render(this);
+      if((page==='movies'||page==='home')&&!window.MediaShelf?.render){
+        await new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='js/media-shelf.js?v=20261107-hp1-34-retry-1';script.onload=()=>window.MediaShelf?.render?resolve():reject(new Error('光影课堂模块未正确初始化'));script.onerror=()=>reject(new Error('光影课堂模块下载失败'));document.head.appendChild(script);});
+      }
       if(page === 'movies') return await window.MediaShelf.render(this,'movies',{mode:['animated','documentary','episodes','favorites','recent'].includes(a)?a:'animated',query:a==='search'?decodeURIComponent(b||''):''});
       if(page === 'movie-hub') return await window.MovieHub.render(this,a==='search'?'':a,a==='search'?decodeURIComponent(b||''):'');
       if(page === 'movie-admin') return await window.MovieLibrary.renderAdmin(this);
