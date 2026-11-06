@@ -176,7 +176,7 @@ window.MovieClassroom = {
       frame.allow = 'autoplay; fullscreen; encrypted-media; picture-in-picture';
       frame.allowFullscreen = true;
       frame.referrerPolicy = 'no-referrer';
-      frame.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms allow-presentation');
+      // Do not sandbox this iframe: the verified 111Movies test player refuses sandboxed embedding.
       const stage=app.el().querySelector('.movie-watch-frame');
       stage.replaceChildren(frame);
       this.frame=frame;
