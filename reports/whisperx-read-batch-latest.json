@@ -1,7 +1,7 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42283627218",
-  "completedAt": "2026-11-06T20:40:43.887720+00:00",
+  "runId": "42290381474",
+  "completedAt": "2026-11-06T20:54:14.089762+00:00",
   "batchSize": 50,
   "selected": 50,
   "published": 0,
@@ -12,254 +12,254 @@
   "success": [],
   "failures": [
     {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
-      "episodeId": 10,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
+      "seriesId": "little-fox-my-first-readers-1-fs0128",
+      "episodeId": 24,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 20.5% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
-      "episodeId": 11,
-      "reason": "Missing alignment report"
+      "seriesId": "little-fox-my-first-readers-1-fs0128",
+      "episodeId": 25,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.8% matched, 2.3% assigned"
     },
     {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
-      "episodeId": 12,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
-      "episodeId": 13,
+      "seriesId": "little-fox-my-first-readers-1-fs0128",
+      "episodeId": 26,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 16.3% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
-      "episodeId": 14,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.4% matched, 0.0% assigned"
+      "seriesId": "little-fox-my-first-readers-1-fs0128",
+      "episodeId": 27,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
-      "episodeId": 15,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
-      "episodeId": 16,
-      "reason": "Missing alignment report"
-    },
-    {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
-      "episodeId": 17,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
-      "episodeId": 18,
+      "seriesId": "little-fox-my-first-readers-1-fs0128",
+      "episodeId": 28,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.2% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
-      "episodeId": 19,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
-      "episodeId": 20,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
-      "episodeId": 21,
-      "reason": "Missing alignment report"
-    },
-    {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
-      "episodeId": 22,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
-      "episodeId": 23,
+      "seriesId": "little-fox-my-first-readers-1-fs0128",
+      "episodeId": 29,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.9% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
-      "episodeId": 24,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.2% matched, 0.0% assigned"
+      "seriesId": "little-fox-my-first-readers-1-fs0128",
+      "episodeId": 30,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 16.9% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
-      "episodeId": 25,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.1% matched, 6.8% assigned"
-    },
-    {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
-      "episodeId": 26,
-      "reason": "Missing alignment report"
-    },
-    {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
-      "episodeId": 27,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
-      "episodeId": 28,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
-      "episodeId": 29,
+      "seriesId": "little-fox-my-first-readers-1-fs0128",
+      "episodeId": 31,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.4% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
-      "episodeId": 30,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
-      "episodeId": 31,
-      "reason": "Missing alignment report"
-    },
-    {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
+      "seriesId": "little-fox-my-first-readers-1-fs0128",
       "episodeId": 32,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
+      "seriesId": "little-fox-my-first-readers-1-fs0128",
       "episodeId": 33,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.6% matched, 0.0% assigned"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.4% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
+      "seriesId": "little-fox-my-first-readers-1-fs0128",
       "episodeId": 34,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.6% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
+      "seriesId": "little-fox-my-first-readers-1-fs0128",
       "episodeId": 35,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.0% matched, 18.1% assigned"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.7% matched, 9.3% assigned"
     },
     {
-      "seriesId": "little-fox-mrs-kelly-s-class-fs0011",
+      "seriesId": "little-fox-my-first-readers-1-fs0128",
       "episodeId": 36,
-      "reason": "Missing alignment report"
-    },
-    {
-      "seriesId": "little-fox-my-first-readers-1-fs0128",
-      "episodeId": 1,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-my-first-readers-1-fs0128",
-      "episodeId": 2,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 18.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-my-first-readers-1-fs0128",
-      "episodeId": 3,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.5% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-my-first-readers-1-fs0128",
-      "episodeId": 4,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.9% matched, 0.0% assigned"
+      "episodeId": 37,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
       "seriesId": "little-fox-my-first-readers-1-fs0128",
-      "episodeId": 5,
-      "reason": "Missing alignment report"
+      "episodeId": 38,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.9% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-my-first-readers-1-fs0128",
-      "episodeId": 6,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.2% matched, 0.0% assigned"
+      "episodeId": 39,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 17.3% matched, 21.0% assigned"
     },
     {
       "seriesId": "little-fox-my-first-readers-1-fs0128",
-      "episodeId": 7,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 3.0% matched, 0.0% assigned"
+      "episodeId": 40,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-my-first-readers-1-fs0128",
-      "episodeId": 8,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.5% matched, 0.0% assigned"
+      "episodeId": 41,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-my-first-readers-1-fs0128",
-      "episodeId": 9,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.4% matched, 0.0% assigned"
+      "episodeId": 42,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
       "seriesId": "little-fox-my-first-readers-1-fs0128",
-      "episodeId": 10,
-      "reason": "Missing alignment report"
-    },
-    {
-      "seriesId": "little-fox-my-first-readers-1-fs0128",
-      "episodeId": 11,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.2% matched, 1.8% assigned"
-    },
-    {
-      "seriesId": "little-fox-my-first-readers-1-fs0128",
-      "episodeId": 12,
+      "episodeId": 43,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.4% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-my-first-readers-1-fs0128",
-      "episodeId": 13,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.0% matched, 15.3% assigned"
+      "episodeId": 44,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.0% matched, 11.7% assigned"
     },
     {
       "seriesId": "little-fox-my-first-readers-1-fs0128",
-      "episodeId": 14,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.8% matched, 0.0% assigned"
+      "episodeId": 45,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-my-first-readers-1-fs0128",
-      "episodeId": 15,
-      "reason": "Missing alignment report"
+      "episodeId": 46,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 18.2% matched, 27.3% assigned"
     },
     {
       "seriesId": "little-fox-my-first-readers-1-fs0128",
-      "episodeId": 16,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 18.8% matched, 14.1% assigned"
+      "episodeId": 47,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
       "seriesId": "little-fox-my-first-readers-1-fs0128",
-      "episodeId": 17,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 19.1% matched, 7.0% assigned"
+      "episodeId": 48,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-my-first-readers-1-fs0128",
-      "episodeId": 18,
+      "episodeId": 49,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-1-fs0128",
+      "episodeId": 50,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-1-fs0128",
+      "episodeId": 51,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.3% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-my-first-readers-1-fs0128",
-      "episodeId": 19,
+      "episodeId": 52,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-1-fs0128",
+      "episodeId": 53,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-1-fs0128",
+      "episodeId": 54,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-1-fs0128",
+      "episodeId": 55,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-1-fs0128",
+      "episodeId": 56,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-1-fs0128",
+      "episodeId": 57,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-1-fs0128",
+      "episodeId": 58,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.1% matched, 1.1% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-1-fs0128",
+      "episodeId": 59,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 16.7% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-my-first-readers-1-fs0128",
-      "episodeId": 20,
-      "reason": "Missing alignment report"
+      "episodeId": 60,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.1% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-my-first-readers-1-fs0128",
-      "episodeId": 21,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.3% matched, 0.0% assigned"
+      "episodeId": 61,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.8% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-my-first-readers-1-fs0128",
-      "episodeId": 22,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 17.1% matched, 0.0% assigned"
+      "episodeId": 62,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
     },
     {
       "seriesId": "little-fox-my-first-readers-1-fs0128",
-      "episodeId": 23,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.9% matched, 0.0% assigned"
+      "episodeId": 63,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-1-fs0128",
+      "episodeId": 64,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 16.1% matched, 12.6% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-2-fs0129",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-2-fs0129",
+      "episodeId": 2,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-2-fs0129",
+      "episodeId": 3,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-2-fs0129",
+      "episodeId": 4,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-2-fs0129",
+      "episodeId": 5,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.0% matched, 1.7% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-2-fs0129",
+      "episodeId": 6,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-2-fs0129",
+      "episodeId": 7,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-2-fs0129",
+      "episodeId": 8,
+      "reason": "Shard 3 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-my-first-readers-2-fs0129",
+      "episodeId": 9,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 0.0% assigned"
     }
   ]
 }
