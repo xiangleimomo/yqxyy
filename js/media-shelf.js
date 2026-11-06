@@ -2,8 +2,9 @@ window.MediaShelf = {
   timers:new Map(), pending:new Map(),
   e(app,value){return app.escapeHtml(String(value??''));},
   nav(scope,mode='all'){
-    const base=scope==='movies'?'movies':'home',label=scope==='movies'?'全部影片':'全部动画';
-    return `<nav class="book-reading-tabs" aria-label="${scope==='movies'?'光影课堂':'动画故事'}书架">${(scope==='movies'?[['all',label],['episodes','分集学习'],['favorites','我的收藏'],['recent','观看记录']]:[['all',label],['favorites','我的收藏'],['recent','观看记录']]).map(([key,title])=>`<a href="#/${base}${key==='all'?'':'/'+key}"${mode===key?' aria-current="page"':''}>${title}</a>`).join('')}${scope==='animation'?`<a href="#/wordbank"${mode==='wordbank'?' aria-current="page"':''}>单词表</a><a href="#/writing"${mode==='writing'?' aria-current="page"':''}>英文写作</a>`:''}${scope==='movies'?'<a class="book-admin-entry" href="#/movie-hub">多平台播放</a>':''}</nav>`;
+    const base=scope==='movies'?'movies':'home';
+    const tabs=scope==='movies'?[['animated','动画大电影'],['documentary','纪录片'],['episodes','分集学习'],['favorites','我的收藏'],['recent','观看记录']]:[['all','全部动画'],['favorites','我的收藏'],['recent','观看记录']];
+    return `<nav class="book-reading-tabs" aria-label="${scope==='movies'?'光影课堂':'动画故事'}书架">${tabs.map(([key,title])=>`<a href="#/${base}/${key}"${mode===key?' aria-current="page"':''}>${title}</a>`).join('')}${scope==='animation'?`<a href="#/wordbank"${mode==='wordbank'?' aria-current="page"':''}>单词表</a><a href="#/writing"${mode==='writing'?' aria-current="page"':''}>英文写作</a>`:''}${scope==='movies'?'<a class="book-admin-entry" href="#/movie-hub">多平台播放</a>':''}</nav>`;
   },
   animation(series){const englishTitles={'journey-to-the-west':'Journey to the West','three-kingdoms':'Romance of the Three Kingdoms'};return {key:'anim-'+series.seriesId,scope:'animation',id:series.seriesId,title:englishTitles[series.seriesId]||series.titleZh||series.title,cover:series.cover,href:'#/series/'+series.seriesId,level:Number(series.level||0),disabled:['coming','locked'].includes(series.status),landscape:true,totalEpisodes:Number(series.episodeCount||series.readyEpisodes||0)};},
   movieSeries(series){return {key:'film-series-'+series.id,scope:'movies',id:series.id,title:series.titleZh||series.title,search:series.title+' '+series.titleZh,cover:series.cover||window.MovieClassroom.seriesCovers[series.id],href:'#/movie-series/'+series.id,level:series.level};},
@@ -49,6 +50,8 @@ window.MediaShelf = {
     if(scope==='animation'){
       const list=(await app.getJSON('data/series-list.json')).filter(row=>!String(row.seriesId).startsWith('movie-')&&(!app.isGuest()||!app.isGuestRestrictedLevel(row.level)));
       items=list.map(row=>this.animation(row));allItems=items;
+    }else if(mode==='documentary'){
+      items=[];allItems=[];
     }else{
       const {series,playableById}=await window.MovieClassroom.getLibrary(app);
       items=series.map(row=>this.movieSeries(row));allItems=[...items,...series.flatMap(row=>row.films.map(film=>this.movieFilm(row,film,playableById)))];
@@ -95,7 +98,7 @@ window.MediaShelf = {
       items=items.filter(row=>(level==='all'||String(levelNumber(row.level))===String(level))&&(!needle||`${row.title} ${row.search||''} ${row.id}`.toLowerCase().includes(needle)));
       content=filters+levels.filter(value=>level==='all'||String(value)===String(level)).map(value=>{const group=items.filter(row=>levelNumber(row.level)===value);return group.length?`<section class="media-level-group"><h2>Level ${e(value)}</h2>${this.cards(app,group)}</section>`:'';}).join('');
     }
-    app.el().innerHTML=`${this.nav(scope,mode)}<section class="media-catalog">${content||'<div class="empty">暂无内容。</div>'}${mode==='all'&&!items.length?'<div class="empty">没有找到对应内容。</div>':''}</section>`;
+    app.el().innerHTML=`${this.nav(scope,mode)}<section class="media-catalog">${mode==='documentary'?'<div class="empty documentary-placeholder"><h2>纪录片</h2><p>纪录片资源正在筹备中，敬请期待。</p></div>':content||'<div class="empty">暂无内容。</div>'}${mode==='all'&&!items.length?'<div class="empty">没有找到对应内容。</div>':''}</section>`;
     this.bindCards(app);
     const shelves=app.el().querySelectorAll('.book-category-shelf');shelves.forEach(shelf=>shelf.addEventListener('toggle',()=>{if(shelf.open)shelves.forEach(other=>{if(other!==shelf)other.open=false;});}));
     app.el().querySelectorAll('[data-media-level]').forEach(button=>button.onclick=()=>this.render(app,scope,{mode,query,level:button.dataset.mediaLevel}));
