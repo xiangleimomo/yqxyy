@@ -1,565 +1,434 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42254544348",
-  "completedAt": "2026-11-06T17:15:21.807446+00:00",
+  "runId": "42259960442",
+  "completedAt": "2026-11-06T17:42:02.991837+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 50,
-  "rejected": 0,
+  "published": 28,
+  "rejected": 22,
   "websiteCommitRequired": true,
-  "totalWords": 47937,
-  "speechMatchedWords": 47937,
+  "totalWords": 33159,
+  "speechMatchedWords": 33159,
   "success": [
     {
-      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
-      "episodeId": 14,
-      "cues": 90,
-      "words": 769,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 67,
-      "speechWords": 769,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
-      "episodeId": 15,
-      "cues": 92,
-      "words": 760,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 68,
-      "speechWords": 760,
-      "coverage": 0.9974,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
-      "episodeId": 16,
-      "cues": 88,
-      "words": 763,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 76,
-      "speechWords": 763,
-      "coverage": 0.9987,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
-      "episodeId": 17,
-      "cues": 94,
-      "words": 770,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 74,
-      "speechWords": 770,
-      "coverage": 0.9974,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
-      "episodeId": 18,
-      "cues": 96,
-      "words": 776,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 72,
-      "speechWords": 776,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
-      "episodeId": 19,
-      "cues": 94,
-      "words": 768,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 69,
-      "speechWords": 768,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
-      "episodeId": 20,
-      "cues": 101,
-      "words": 767,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 767,
-      "coverage": 0.9987,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
-      "episodeId": 21,
-      "cues": 84,
-      "words": 763,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 68,
-      "speechWords": 763,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
-      "episodeId": 22,
-      "cues": 90,
-      "words": 760,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 760,
-      "coverage": 0.9987,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
-      "episodeId": 23,
-      "cues": 102,
-      "words": 772,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 72,
-      "speechWords": 772,
-      "coverage": 0.9974,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-little-lord-fauntleroy-fs0122",
-      "episodeId": 24,
-      "cues": 110,
-      "words": 759,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 67,
-      "speechWords": 759,
-      "coverage": 0.9987,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 1,
-      "cues": 97,
-      "words": 903,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 80,
-      "speechWords": 903,
-      "coverage": 0.9956,
-      "omittedWords": 4
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 2,
-      "cues": 94,
-      "words": 917,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 76,
-      "speechWords": 917,
-      "coverage": 0.9957,
-      "omittedWords": 4
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 3,
-      "cues": 98,
-      "words": 914,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 914,
-      "coverage": 0.9989,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 4,
-      "cues": 97,
-      "words": 927,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 79,
-      "speechWords": 927,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 5,
-      "cues": 103,
-      "words": 905,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 77,
-      "speechWords": 905,
-      "coverage": 0.9978,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 6,
-      "cues": 110,
-      "words": 915,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 77,
-      "speechWords": 915,
-      "coverage": 0.9978,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 7,
-      "cues": 99,
-      "words": 913,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 80,
-      "speechWords": 913,
-      "coverage": 0.9978,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 8,
-      "cues": 94,
-      "words": 914,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 70,
-      "speechWords": 914,
-      "coverage": 0.9956,
-      "omittedWords": 4
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 9,
-      "cues": 90,
-      "words": 926,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 926,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 10,
-      "cues": 92,
-      "words": 926,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 74,
-      "speechWords": 926,
-      "coverage": 0.9989,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 11,
-      "cues": 97,
-      "words": 914,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 914,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 12,
-      "cues": 91,
-      "words": 912,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 80,
-      "speechWords": 912,
-      "coverage": 0.9989,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 13,
-      "cues": 98,
-      "words": 901,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 79,
-      "speechWords": 901,
-      "coverage": 0.9978,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 14,
-      "cues": 104,
-      "words": 916,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 79,
-      "speechWords": 916,
-      "coverage": 0.9957,
-      "omittedWords": 4
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 15,
-      "cues": 93,
-      "words": 911,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 79,
-      "speechWords": 911,
-      "coverage": 0.9978,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 16,
-      "cues": 104,
-      "words": 909,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 80,
-      "speechWords": 909,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 17,
-      "cues": 95,
-      "words": 918,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 918,
-      "coverage": 0.9989,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 18,
-      "cues": 97,
-      "words": 901,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 74,
-      "speechWords": 901,
-      "coverage": 0.9989,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 19,
-      "cues": 90,
-      "words": 908,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 908,
-      "coverage": 0.9989,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 20,
-      "cues": 104,
-      "words": 925,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 81,
-      "speechWords": 925,
-      "coverage": 0.9978,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 21,
-      "cues": 86,
-      "words": 912,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 67,
-      "speechWords": 912,
-      "coverage": 0.9989,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 22,
-      "cues": 96,
-      "words": 916,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 72,
-      "speechWords": 916,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 23,
-      "cues": 95,
-      "words": 919,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 919,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-little-men-fs0108",
-      "episodeId": 24,
-      "cues": 98,
-      "words": 900,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 69,
-      "speechWords": 900,
-      "coverage": 0.9967,
-      "omittedWords": 3
-    },
-    {
       "seriesId": "little-fox-little-women-fs0040",
-      "episodeId": 1,
-      "cues": 91,
-      "words": 1033,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 77,
-      "speechWords": 1033,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-little-women-fs0040",
-      "episodeId": 2,
+      "episodeId": 16,
       "cues": 112,
-      "words": 1202,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 91,
-      "speechWords": 1202,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-little-women-fs0040",
-      "episodeId": 3,
-      "cues": 138,
-      "words": 1245,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 97,
-      "speechWords": 1245,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-little-women-fs0040",
-      "episodeId": 4,
-      "cues": 124,
-      "words": 1195,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 88,
-      "speechWords": 1195,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-little-women-fs0040",
-      "episodeId": 5,
-      "cues": 106,
-      "words": 1191,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 74,
-      "speechWords": 1191,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-little-women-fs0040",
-      "episodeId": 6,
-      "cues": 124,
-      "words": 1242,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 86,
-      "speechWords": 1242,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-little-women-fs0040",
-      "episodeId": 7,
-      "cues": 106,
-      "words": 1159,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 76,
-      "speechWords": 1159,
-      "coverage": 0.9991,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-little-women-fs0040",
-      "episodeId": 8,
-      "cues": 111,
-      "words": 1195,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 77,
-      "speechWords": 1195,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-little-women-fs0040",
-      "episodeId": 9,
-      "cues": 118,
-      "words": 1197,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 83,
-      "speechWords": 1197,
-      "coverage": 0.9983,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-little-women-fs0040",
-      "episodeId": 10,
-      "cues": 117,
-      "words": 1162,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 79,
-      "speechWords": 1162,
-      "coverage": 0.9991,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-little-women-fs0040",
-      "episodeId": 11,
-      "cues": 105,
-      "words": 1181,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 79,
-      "speechWords": 1181,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-little-women-fs0040",
-      "episodeId": 12,
-      "cues": 122,
       "words": 1158,
       "xmlTextVerified": true,
-      "xmlParagraphs": 80,
+      "xmlParagraphs": 75,
       "speechWords": 1158,
       "coverage": 0.9991,
       "omittedWords": 1
     },
     {
       "seriesId": "little-fox-little-women-fs0040",
-      "episodeId": 13,
-      "cues": 123,
+      "episodeId": 17,
+      "cues": 107,
       "words": 1142,
       "xmlTextVerified": true,
-      "xmlParagraphs": 80,
+      "xmlParagraphs": 79,
       "speechWords": 1142,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
       "seriesId": "little-fox-little-women-fs0040",
-      "episodeId": 14,
-      "cues": 115,
-      "words": 1177,
+      "episodeId": 19,
+      "cues": 105,
+      "words": 1181,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 1181,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 20,
+      "cues": 122,
+      "words": 1185,
       "xmlTextVerified": true,
       "xmlParagraphs": 78,
-      "speechWords": 1177,
+      "speechWords": 1185,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
       "seriesId": "little-fox-little-women-fs0040",
-      "episodeId": 15,
-      "cues": 105,
-      "words": 1109,
+      "episodeId": 21,
+      "cues": 106,
+      "words": 1152,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 1152,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 22,
+      "cues": 98,
+      "words": 1191,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 1191,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 24,
+      "cues": 117,
+      "words": 1155,
       "xmlTextVerified": true,
       "xmlParagraphs": 73,
-      "speechWords": 1109,
+      "speechWords": 1155,
+      "coverage": 0.9897,
+      "omittedWords": 12
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 25,
+      "cues": 110,
+      "words": 1216,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 1216,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 26,
+      "cues": 106,
+      "words": 1207,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 1207,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 27,
+      "cues": 113,
+      "words": 1196,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 80,
+      "speechWords": 1196,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 29,
+      "cues": 114,
+      "words": 1187,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 84,
+      "speechWords": 1187,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 30,
+      "cues": 120,
+      "words": 1183,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 1183,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 31,
+      "cues": 98,
+      "words": 1230,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 1230,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 32,
+      "cues": 102,
+      "words": 1147,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 1147,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 34,
+      "cues": 106,
+      "words": 1195,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 1195,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 35,
+      "cues": 111,
+      "words": 1179,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 1179,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 36,
+      "cues": 103,
+      "words": 1191,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 1191,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 37,
+      "cues": 117,
+      "words": 1207,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 82,
+      "speechWords": 1207,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 39,
+      "cues": 114,
+      "words": 1187,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 1187,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 40,
+      "cues": 104,
+      "words": 1211,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 1211,
+      "coverage": 0.9984,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 41,
+      "cues": 104,
+      "words": 1183,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 1183,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 42,
+      "cues": 103,
+      "words": 1175,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 1175,
+      "coverage": 0.9891,
+      "omittedWords": 13
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 44,
+      "cues": 101,
+      "words": 1187,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 1187,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 45,
+      "cues": 110,
+      "words": 1208,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 1208,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 46,
+      "cues": 109,
+      "words": 1189,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 1189,
+      "coverage": 0.9992,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 47,
+      "cues": 102,
+      "words": 1172,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 1172,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 49,
+      "cues": 116,
+      "words": 1174,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 80,
+      "speechWords": 1174,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 50,
+      "cues": 100,
+      "words": 1171,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 1171,
       "coverage": 0.9991,
       "omittedWords": 1
     }
   ],
-  "failures": []
+  "failures": [
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 18,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 23,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 28,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 33,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 38,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 43,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-little-women-fs0040",
+      "episodeId": 48,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-lullabies-srv01037",
+      "episodeId": 1,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-lullabies-srv01037",
+      "episodeId": 2,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-lullabies-srv01037",
+      "episodeId": 3,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-lullabies-srv01037",
+      "episodeId": 4,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-lullabies-srv01037",
+      "episodeId": 5,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-lullabies-srv01037",
+      "episodeId": 6,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-lullabies-srv01037",
+      "episodeId": 7,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-lullabies-srv01037",
+      "episodeId": 8,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-lullabies-srv01037",
+      "episodeId": 9,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-lullabies-srv01037",
+      "episodeId": 10,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-lullabies-srv01037",
+      "episodeId": 11,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-lullabies-srv01037",
+      "episodeId": 12,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-lullabies-srv01037",
+      "episodeId": 13,
+      "reason": "Shard 2 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-lullabies-srv01037",
+      "episodeId": 14,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-lullabies-srv01037",
+      "episodeId": 15,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    }
+  ]
 }
