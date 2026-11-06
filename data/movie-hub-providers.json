@@ -14,17 +14,10 @@
     "documentation": "https://vidlink.pro/"
   },
   {
-    "id": "111movies",
-    "name": "111Movies",
-    "mode": "external",
-    "movieUrl": "https://111movies.net/movie/{tmdbId}",
-    "note": "当前入口会跳转至 Vidlove；新页面尝试播放。"
-  },
-  {
-    "id": "streamjuju",
-    "name": "StreamJuju",
-    "mode": "external",
-    "movieUrl": "https://streamjuju.cyou/watch/movie/{tmdbId}",
-    "note": "在聚合站中选择更多播放平台。"
+    "id": "dulo",
+    "name": "Dulo",
+    "mode": "embed",
+    "movieUrl": "https://dulo.mov/watch/movie/{tmdbId}",
+    "documentation": "现有 Dulo 嵌入播放器入口"
   }
 ]
