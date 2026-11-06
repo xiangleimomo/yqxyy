@@ -1,0 +1,65 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42145719797",
+  "completedAt": "2026-11-06T01:45:32.797959+00:00",
+  "batchSize": 10,
+  "selected": 10,
+  "published": 0,
+  "rejected": 10,
+  "websiteCommitRequired": true,
+  "totalWords": 0,
+  "speechMatchedWords": 0,
+  "success": [],
+  "failures": [
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 16,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 17,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 18,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 19,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 20,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 21,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 22,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 23,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 24,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-20-000-leagues-under-the-sea-fs0068",
+      "episodeId": 25,
+      "reason": "Missing alignment report"
+    }
+  ]
+}
