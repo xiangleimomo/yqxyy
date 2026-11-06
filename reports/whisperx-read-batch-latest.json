@@ -1,446 +1,560 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42223237847",
-  "completedAt": "2026-11-06T13:29:28.010854+00:00",
+  "runId": "42225908912",
+  "completedAt": "2026-11-06T14:02:34.466389+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 30,
-  "rejected": 20,
+  "published": 49,
+  "rejected": 1,
   "websiteCommitRequired": true,
-  "totalWords": 14850,
-  "speechMatchedWords": 14850,
+  "totalWords": 30816,
+  "speechMatchedWords": 30816,
   "success": [
     {
-      "seriesId": "little-fox-folktales-fairy-tales-2-fs0135",
-      "episodeId": 17,
-      "cues": 114,
-      "words": 863,
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 49,
+      "cues": 83,
+      "words": 539,
       "xmlTextVerified": true,
-      "xmlParagraphs": 77,
-      "speechWords": 863,
-      "coverage": 0.9988,
-      "omittedWords": 1
+      "xmlParagraphs": 66,
+      "speechWords": 539,
+      "coverage": 0.9945,
+      "omittedWords": 3
     },
     {
       "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 1,
-      "cues": 71,
-      "words": 437,
+      "episodeId": 50,
+      "cues": 86,
+      "words": 499,
       "xmlTextVerified": true,
-      "xmlParagraphs": 61,
-      "speechWords": 437,
-      "coverage": 0.9909,
+      "xmlParagraphs": 66,
+      "speechWords": 499,
+      "coverage": 0.992,
       "omittedWords": 4
     },
     {
       "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 2,
-      "cues": 81,
-      "words": 485,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 70,
-      "speechWords": 485,
-      "coverage": 0.9838,
-      "omittedWords": 8
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 4,
-      "cues": 82,
-      "words": 481,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 68,
-      "speechWords": 481,
-      "coverage": 0.9938,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 6,
-      "cues": 79,
-      "words": 463,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 66,
-      "speechWords": 463,
-      "coverage": 0.9851,
-      "omittedWords": 7
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 7,
-      "cues": 72,
-      "words": 438,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 62,
-      "speechWords": 438,
-      "coverage": 0.9932,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 9,
-      "cues": 84,
-      "words": 446,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 64,
-      "speechWords": 446,
-      "coverage": 0.9978,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 11,
-      "cues": 74,
-      "words": 492,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 60,
-      "speechWords": 492,
-      "coverage": 0.9899,
-      "omittedWords": 5
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 12,
-      "cues": 74,
-      "words": 499,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 63,
-      "speechWords": 499,
-      "coverage": 0.994,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 14,
-      "cues": 69,
-      "words": 481,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 56,
-      "speechWords": 481,
-      "coverage": 0.9938,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 16,
-      "cues": 66,
-      "words": 459,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 59,
-      "speechWords": 459,
-      "coverage": 0.9935,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 17,
-      "cues": 74,
-      "words": 513,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 64,
-      "speechWords": 513,
-      "coverage": 0.9942,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 19,
-      "cues": 64,
-      "words": 492,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 64,
-      "speechWords": 492,
-      "coverage": 0.988,
-      "omittedWords": 6
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 21,
-      "cues": 73,
-      "words": 507,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 61,
-      "speechWords": 507,
-      "coverage": 0.9941,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 22,
-      "cues": 71,
-      "words": 452,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 61,
-      "speechWords": 452,
-      "coverage": 0.9826,
-      "omittedWords": 8
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 24,
-      "cues": 95,
-      "words": 510,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 510,
-      "coverage": 0.9961,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 26,
-      "cues": 72,
-      "words": 477,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 63,
-      "speechWords": 477,
-      "coverage": 0.9938,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 27,
-      "cues": 76,
-      "words": 495,
+      "episodeId": 51,
+      "cues": 78,
+      "words": 504,
       "xmlTextVerified": true,
       "xmlParagraphs": 67,
-      "speechWords": 495,
-      "coverage": 0.996,
-      "omittedWords": 2
+      "speechWords": 504,
+      "coverage": 0.9921,
+      "omittedWords": 4
     },
     {
       "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 29,
-      "cues": 71,
-      "words": 499,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 69,
-      "speechWords": 499,
-      "coverage": 0.9881,
-      "omittedWords": 6
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 31,
-      "cues": 87,
-      "words": 506,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 506,
-      "coverage": 0.9941,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 32,
-      "cues": 78,
-      "words": 485,
+      "episodeId": 52,
+      "cues": 83,
+      "words": 481,
       "xmlTextVerified": true,
       "xmlParagraphs": 66,
-      "speechWords": 485,
+      "speechWords": 481,
       "coverage": 0.9918,
       "omittedWords": 4
     },
     {
       "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 34,
-      "cues": 66,
-      "words": 454,
+      "episodeId": 53,
+      "cues": 75,
+      "words": 518,
       "xmlTextVerified": true,
-      "xmlParagraphs": 53,
-      "speechWords": 454,
-      "coverage": 0.9913,
-      "omittedWords": 4
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 36,
-      "cues": 80,
-      "words": 480,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 68,
-      "speechWords": 480,
-      "coverage": 0.9897,
+      "xmlParagraphs": 61,
+      "speechWords": 518,
+      "coverage": 0.9904,
       "omittedWords": 5
     },
     {
       "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 37,
-      "cues": 87,
-      "words": 466,
+      "episodeId": 54,
+      "cues": 77,
+      "words": 507,
       "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 466,
-      "coverage": 0.9936,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 39,
-      "cues": 89,
-      "words": 471,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 471,
-      "coverage": 0.9916,
-      "omittedWords": 4
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 41,
-      "cues": 88,
-      "words": 495,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 72,
-      "speechWords": 495,
-      "coverage": 0.996,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 42,
-      "cues": 89,
-      "words": 529,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 69,
-      "speechWords": 529,
-      "coverage": 0.9962,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 44,
-      "cues": 85,
-      "words": 516,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 66,
-      "speechWords": 516,
+      "xmlParagraphs": 63,
+      "speechWords": 507,
       "coverage": 0.9961,
       "omittedWords": 2
     },
     {
       "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 46,
-      "cues": 79,
-      "words": 524,
+      "episodeId": 55,
+      "cues": 68,
+      "words": 483,
       "xmlTextVerified": true,
-      "xmlParagraphs": 65,
-      "speechWords": 524,
-      "coverage": 0.9943,
+      "xmlParagraphs": 62,
+      "speechWords": 483,
+      "coverage": 0.9898,
+      "omittedWords": 5
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 56,
+      "cues": 78,
+      "words": 517,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 517,
+      "coverage": 0.9923,
+      "omittedWords": 4
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 58,
+      "cues": 75,
+      "words": 492,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 492,
+      "coverage": 0.9939,
       "omittedWords": 3
     },
     {
       "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 47,
-      "cues": 77,
-      "words": 435,
+      "episodeId": 59,
+      "cues": 80,
+      "words": 494,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 494,
+      "coverage": 0.996,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 60,
+      "cues": 82,
+      "words": 505,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 505,
+      "coverage": 0.9787,
+      "omittedWords": 11
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 61,
+      "cues": 79,
+      "words": 490,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 490,
+      "coverage": 0.998,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 62,
+      "cues": 72,
+      "words": 483,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 59,
+      "speechWords": 483,
+      "coverage": 0.9979,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 63,
+      "cues": 71,
+      "words": 492,
       "xmlTextVerified": true,
       "xmlParagraphs": 61,
-      "speechWords": 435,
-      "coverage": 0.9909,
-      "omittedWords": 4
+      "speechWords": 492,
+      "coverage": 0.9939,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 64,
+      "cues": 71,
+      "words": 510,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 510,
+      "coverage": 0.998,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 65,
+      "cues": 76,
+      "words": 482,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 482,
+      "coverage": 0.9959,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 66,
+      "cues": 77,
+      "words": 465,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 465,
+      "coverage": 0.9936,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 67,
+      "cues": 84,
+      "words": 500,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 500,
+      "coverage": 0.996,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 68,
+      "cues": 82,
+      "words": 501,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 501,
+      "coverage": 0.998,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 69,
+      "cues": 87,
+      "words": 492,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 492,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 70,
+      "cues": 77,
+      "words": 494,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 494,
+      "coverage": 0.998,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 71,
+      "cues": 95,
+      "words": 496,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 496,
+      "coverage": 0.998,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 72,
+      "cues": 83,
+      "words": 475,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 475,
+      "coverage": 0.9937,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 73,
+      "cues": 104,
+      "words": 503,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 86,
+      "speechWords": 503,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 74,
+      "cues": 81,
+      "words": 500,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 500,
+      "coverage": 0.998,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 75,
+      "cues": 92,
+      "words": 502,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 502,
+      "coverage": 0.998,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 76,
+      "cues": 74,
+      "words": 491,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 491,
+      "coverage": 0.9959,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 77,
+      "cues": 79,
+      "words": 474,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 474,
+      "coverage": 0.9958,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 78,
+      "cues": 86,
+      "words": 488,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 488,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 79,
+      "cues": 90,
+      "words": 487,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 487,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 80,
+      "cues": 79,
+      "words": 475,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 475,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 81,
+      "cues": 82,
+      "words": 493,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 493,
+      "coverage": 0.998,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 82,
+      "cues": 87,
+      "words": 472,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 472,
+      "coverage": 0.9979,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 83,
+      "cues": 87,
+      "words": 496,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 496,
+      "coverage": 0.994,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 84,
+      "cues": 86,
+      "words": 505,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 505,
+      "coverage": 0.9961,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
+      "episodeId": 1,
+      "cues": 83,
+      "words": 912,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 912,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
+      "episodeId": 2,
+      "cues": 103,
+      "words": 962,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 962,
+      "coverage": 0.9979,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
+      "episodeId": 3,
+      "cues": 98,
+      "words": 968,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 968,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
+      "episodeId": 4,
+      "cues": 90,
+      "words": 963,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 963,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
+      "episodeId": 5,
+      "cues": 91,
+      "words": 974,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 974,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
+      "episodeId": 6,
+      "cues": 96,
+      "words": 954,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 954,
+      "coverage": 0.9979,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
+      "episodeId": 7,
+      "cues": 93,
+      "words": 939,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 939,
+      "coverage": 0.9968,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
+      "episodeId": 8,
+      "cues": 104,
+      "words": 930,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 930,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
+      "episodeId": 9,
+      "cues": 93,
+      "words": 974,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 974,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
+      "episodeId": 10,
+      "cues": 102,
+      "words": 989,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 989,
+      "coverage": 0.998,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
+      "episodeId": 11,
+      "cues": 101,
+      "words": 995,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 995,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
+      "episodeId": 12,
+      "cues": 92,
+      "words": 991,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 991,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
+      "episodeId": 13,
+      "cues": 110,
+      "words": 984,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 82,
+      "speechWords": 984,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-grandpa-s-world-history-fs0050",
+      "episodeId": 14,
+      "cues": 102,
+      "words": 976,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 976,
+      "coverage": 1.0,
+      "omittedWords": 0
     }
   ],
   "failures": [
     {
-      "seriesId": "little-fox-folktales-fairy-tales-2-fs0135",
-      "episodeId": 18,
-      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
       "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 3,
-      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 5,
-      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 8,
-      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 10,
-      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 13,
-      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 15,
-      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 18,
-      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 20,
-      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 23,
-      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 25,
-      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 28,
-      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 30,
-      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 33,
-      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 35,
-      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 38,
-      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 40,
-      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 43,
-      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 45,
-      "reason": "Shard 1 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-fun-at-kids-central-fs0053",
-      "episodeId": 48,
-      "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+      "episodeId": 57,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 80.5% matched, 0.0% assigned"
     }
   ]
 }

@@ -5144,6 +5144,11 @@
       "seriesId": "little-fox-fun-at-kids-central-fs0053",
       "episodeId": 48,
       "reason": "Shard 4 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+    },
+    {
+      "seriesId": "little-fox-fun-at-kids-central-fs0053",
+      "episodeId": 57,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 80.5% matched, 0.0% assigned"
     }
   ]
 }
