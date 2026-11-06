@@ -116,6 +116,7 @@ jobs:
         with:
           name: whisperx-batch-targets
       - uses: actions/setup-python@v5
+        id: python
         with:
           python-version: '3.11'
       - name: Restore reusable WhisperX environment
