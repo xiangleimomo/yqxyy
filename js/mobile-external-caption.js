@@ -83,7 +83,11 @@
       }
       line.classList.toggle('is-upcoming',gap);
       line.style.fontSize=(Number.isFinite(Number(prefs.size))?Math.max(14,Math.min(28,Number(prefs.size))):20)+'px';
-      line.style.color=prefs.color||'#ffffff';
+      line.style.color=d.seriesId==='movie-harry-potter-1'?'#253447':(prefs.color||'#ffffff');
+      if(d.seriesId==='movie-harry-potter-1'){
+        line.style.fontWeight='500';
+        line.style.textShadow='none';
+      }
       if(gap)setHint(now<cues[0].startMs?'开场中，下面显示即将开始的台词':'对白间隙 · 下一句预览');
       else setHint('');
       if(!gap&&wordView)sync.paint(wordView,now,true);

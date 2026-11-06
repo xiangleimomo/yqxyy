@@ -774,6 +774,11 @@ async renderLesson(seriesId, episodeId){
           caption.dataset.wordTiming=effectiveWords[next].verified?'speech':'estimated';
         }else{
           caption.textContent=cues[next].text;
+          if(d.seriesId==='movie-harry-potter-1'){
+            caption.style.color='#253447';
+            caption.style.fontWeight='500';
+            caption.style.textShadow='none';
+          }
         }
       }
       const visible=caption.dataset.subtitleVisible!=='false';
