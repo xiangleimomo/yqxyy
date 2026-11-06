@@ -111,3 +111,15 @@ body.flipbook-active .pdf-flipbook-reader .pdf-tools-panel[data-tool=audio]{bott
   body.flipbook-active .pdf-flipbook-reader .flipbook-controls button{width:26px;height:28px}
   body.flipbook-active .pdf-flipbook-reader .flipbook-controls input[type=range]{min-width:35px}
 }
+
+
+/* Dictionary shortcut lives beside exit, medal and page controls. */
+.pdf-flipbook-reader .reader-dictionary-trigger{
+  display:inline-grid;place-items:center;flex:0 0 32px;width:32px;height:32px;
+  padding:0;border:0;border-radius:8px;background:transparent;color:#fff;
+  font-size:15px;font-weight:700;line-height:1;cursor:pointer;
+}
+.pdf-flipbook-reader .reader-dictionary-trigger:hover{background:#ffffff26}
+@media(max-width:760px){
+  .pdf-flipbook-reader .reader-dictionary-trigger{flex-basis:28px;width:28px;height:30px;font-size:14px}
+}
