@@ -516,7 +516,7 @@ async renderLesson(seriesId, episodeId){
     const hasSubtitle=true;
     const fallbacks=[...(hls720 && hls720!==url?[hls720]:[]),...(backupHls?[backupHls]:[])];
     const sourceSelector=(hls720||backupHls)?`<label class="hls-source-control" aria-label="视频画质"><select class="hls-source-select" aria-label="选择视频画质" data-hls-1080="${this.escapeHtml(url)}" data-hls-720="${this.escapeHtml(hls720)}" data-hls-korea="${this.escapeHtml(backupHls)}"><option value="1080">1080P</option>${hls720?'<option value="720">720P</option>':''}${backupHls?'<option value="korea">1080P</option>':''}</select></label>`:'';
-    return `<section class="direct-video-panel"><div class="video-wrap${hasSubtitle?' subtitle-video-wrap':''}">${sourceSelector}<video class="hls-video-player" playsinline webkit-playsinline x5-playsinline="true" x5-video-player-type="h5" controlslist="nofullscreen noremoteplayback" disablepictureinpicture preload="metadata" data-clip-start="${Number.isFinite(Number(d.ep.video?.clipStart))?Number(d.ep.video.clipStart):''}" data-clip-end="${Number.isFinite(Number(d.ep.video?.clipEnd))?Number(d.ep.video.clipEnd):''}" data-hls-src="${this.escapeHtml(url)}" data-hls-fallback-srcs="${this.escapeHtml(JSON.stringify(fallbacks))}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="sf-mobile-caption-area"><div class="video-caption" aria-live="polite" hidden></div><span class="sf-mobile-caption-message" role="status" hidden></span></div>${hasSubtitle?this.subtitleControls():''}</div><div class="sf-mobile-captions-outside" role="region" aria-label="手机英文逐词字幕"><div class="sf-mobile-caption-line" aria-live="off">字幕准备中…</div><div class="sf-mobile-caption-hint" role="status">字幕即将加载</div><button type="button" class="sf-mobile-caption-enable" hidden>开启英文字幕</button></div><div class="sf-subtitle-offset" style="display:flex;align-items:center;justify-content:center;gap:12px;padding:12px;flex-wrap:wrap"><button type="button" class="sf-offset-minus" aria-label="字幕提前0.5秒">−</button><span class="sf-offset-label" aria-live="polite">0.0s</span><button type="button" class="sf-offset-plus" aria-label="字幕延后0.5秒">+</button><button type="button" class="sf-offset-reset">重置</button><span>字幕偏移设置</span></div></section>${this.completeButton(d,completionModule)}`;
+    return `<section class="direct-video-panel${d.seriesId?.startsWith('movie-')?' sf-movie-lesson-player':''}"><div class="video-wrap${hasSubtitle?' subtitle-video-wrap':''}">${sourceSelector}<video class="hls-video-player" playsinline webkit-playsinline x5-playsinline="true" x5-video-player-type="h5" controlslist="nofullscreen noremoteplayback" disablepictureinpicture preload="metadata" data-clip-start="${Number.isFinite(Number(d.ep.video?.clipStart))?Number(d.ep.video.clipStart):''}" data-clip-end="${Number.isFinite(Number(d.ep.video?.clipEnd))?Number(d.ep.video.clipEnd):''}" data-hls-src="${this.escapeHtml(url)}" data-hls-fallback-srcs="${this.escapeHtml(JSON.stringify(fallbacks))}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="sf-mobile-caption-area"><div class="video-caption" aria-live="polite" hidden></div><span class="sf-mobile-caption-message" role="status" hidden></span></div>${hasSubtitle?this.subtitleControls():''}</div><div class="sf-mobile-captions-outside" role="region" aria-label="手机英文逐词字幕"><div class="sf-mobile-caption-line" aria-live="off">字幕准备中…</div><div class="sf-mobile-caption-hint" role="status">字幕即将加载</div><button type="button" class="sf-mobile-caption-enable" hidden>开启英文字幕</button></div><div class="sf-subtitle-offset" style="display:flex;align-items:center;justify-content:center;gap:12px;padding:12px;flex-wrap:wrap"><button type="button" class="sf-offset-minus" aria-label="字幕提前0.5秒">−</button><span class="sf-offset-label" aria-live="polite">0.0s</span><button type="button" class="sf-offset-plus" aria-label="字幕延后0.5秒">+</button><button type="button" class="sf-offset-reset">重置</button><span>字幕偏移设置</span></div></section>${d.seriesId?.startsWith('movie-')?'':this.completeButton(d,completionModule)}`;
   },
   subtitlePreferences(){
     const defaults={visible:true,wordHighlight:true,size:20,color:'#ffffff',captionX:50,captionY:84,opacity:72};
@@ -882,24 +882,24 @@ async renderLesson(seriesId, episodeId){
       const format=time=>{const n=Math.max(0,Math.floor(time));return String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0');};
       const controls=document.createElement('div');
       controls.className='sf-clip-controls';
-      controls.style.cssText='position:absolute;left:0;right:0;bottom:0;z-index:6;display:flex;align-items:center;gap:8px;padding:8px 10px;flex-wrap:wrap;background:linear-gradient(transparent,rgba(0,0,0,.84));color:#fff';
+      controls.style.cssText='display:flex;align-items:center;gap:8px;padding:12px 10px;flex-wrap:nowrap;background:#fff;color:#22543b;border-radius:0 0 16px 16px;box-sizing:border-box;width:100%';
       const toggle=document.createElement('button');
       toggle.type='button';toggle.textContent='播放';toggle.setAttribute('aria-label','播放或暂停本集');
       const progress=document.createElement('input');
       progress.type='range';progress.min='0';progress.max=String(duration);progress.step='0.1';progress.value='0';
-      progress.setAttribute('aria-label','本集播放进度');progress.style.cssText='flex:1 1 130px;min-width:65px;accent-color:#65baff';
+      progress.setAttribute('aria-label','本集播放进度');progress.style.cssText='flex:1 1 80px;min-width:40px;accent-color:#2d9967';
       const clock=document.createElement('span');
       clock.textContent='00:00 / '+format(duration);clock.style.fontVariantNumeric='tabular-nums';
       const mute=document.createElement('button');
       mute.type='button';mute.textContent='静音';mute.setAttribute('aria-label','切换静音');
       const fullscreen=document.createElement('button');
       fullscreen.type='button';fullscreen.textContent='全屏';fullscreen.setAttribute('aria-label','全屏播放本集');
-      for(const button of [toggle,mute,fullscreen])button.style.cssText='border:1px solid #ffffff55;border-radius:7px;background:#142c4bdb;color:white;padding:6px 8px;cursor:pointer';
-      clock.style.cssText='font-variant-numeric:tabular-nums;font-size:12px;white-space:nowrap';
+      for(const button of [toggle,mute,fullscreen])button.style.cssText='border:0;border-radius:12px;background:#edf8f0;color:#238050;padding:10px 8px;cursor:pointer;min-height:44px;font-weight:700';
+      clock.style.cssText='font-variant-numeric:tabular-nums;font-size:12px;white-space:nowrap;color:#4b5563';
       controls.append(toggle,progress,clock,mute,fullscreen);
       mute.addEventListener('click',()=>{player.muted=!player.muted;mute.textContent=player.muted?'取消静音':'静音';});
       fullscreen.addEventListener('click',()=>{const host=player.closest('.video-wrap')||player;if(document.fullscreenElement){document.exitFullscreen?.().catch?.(()=>{});}else{host.requestFullscreen?.().catch?.(()=>{});}});
-      player.insertAdjacentElement('afterend',controls);
+      player.closest('.video-wrap')?.insertAdjacentElement('afterend',controls);
       player.controls=false;
       const sync=()=>{
         const now=Number.isFinite(player.currentTime)?player.currentTime:clipStart;
