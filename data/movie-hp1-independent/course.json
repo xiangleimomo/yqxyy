@@ -4,222 +4,222 @@
   "titleZh": "哈利·波特与魔法石 · 独立制作版",
   "sourceUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
   "sourceDurationApproxSeconds": 9138,
-  "version": "draft-1",
-  "timingStatus": "unverified",
-  "notes": "教学内容是初稿；未获取匹配字幕，不提供虚构的分集时间点。",
+  "version": "draft-2",
+  "timingStatus": "pending-source-specific-alignment",
+  "notes": "24个独立剧情分集的结构已建立；每集必须具备本片源实测start/end后才能启用独立片段播放。",
   "chapters": [
     {
       "episodeId": 1,
       "title": "The Boy Who Lived",
       "titleZh": "大难不死的男孩",
-      "summaryEn": "Harry lives with the Dursleys, unaware of his magical past.",
-      "words": [
-        "ordinary",
-        "strange",
-        "family"
-      ],
-      "sampleQuestion": {
-        "question": "Who does Harry live with?",
-        "answer": "The Dursleys"
-      },
+      "status": "pending_timing",
       "start": null,
       "end": null,
       "verified": false
     },
     {
       "episodeId": 2,
-      "title": "Letters from Hogwarts",
-      "titleZh": "霍格沃茨来信",
-      "summaryEn": "Mysterious letters begin to arrive for Harry.",
-      "words": [
-        "letter",
-        "address",
-        "mysterious"
-      ],
-      "sampleQuestion": {
-        "question": "What keeps arriving for Harry?",
-        "answer": "Letters"
-      },
+      "title": "Life with the Dursleys",
+      "titleZh": "德思礼家的生活",
+      "status": "pending_timing",
       "start": null,
       "end": null,
       "verified": false
     },
     {
       "episodeId": 3,
-      "title": "You're a Wizard, Harry",
-      "titleZh": "你是巫师，哈利",
-      "summaryEn": "Hagrid reveals Harry's identity and introduces the wizarding world.",
-      "words": [
-        "wizard",
-        "secret",
-        "birthday"
-      ],
-      "sampleQuestion": {
-        "question": "Who tells Harry he is a wizard?",
-        "answer": "Hagrid"
-      },
+      "title": "The Zoo Incident",
+      "titleZh": "动物园里的意外",
+      "status": "pending_timing",
       "start": null,
       "end": null,
       "verified": false
     },
     {
       "episodeId": 4,
-      "title": "Diagon Alley",
-      "titleZh": "对角巷",
-      "summaryEn": "Harry discovers magical shops and prepares for school.",
-      "words": [
-        "wand",
-        "shop",
-        "money"
-      ],
-      "sampleQuestion": {
-        "question": "What does Harry buy for his magic lessons?",
-        "answer": "A wand"
-      },
+      "title": "Letters from Hogwarts",
+      "titleZh": "霍格沃茨来信",
+      "status": "pending_timing",
       "start": null,
       "end": null,
       "verified": false
     },
     {
       "episodeId": 5,
-      "title": "The Hogwarts Express",
-      "titleZh": "霍格沃茨特快列车",
-      "summaryEn": "Harry travels to Hogwarts and meets new friends.",
-      "words": [
-        "train",
-        "platform",
-        "friend"
-      ],
-      "sampleQuestion": {
-        "question": "Where is Harry travelling?",
-        "answer": "Hogwarts"
-      },
+      "title": "The Hut on the Rock",
+      "titleZh": "海上小屋",
+      "status": "pending_timing",
       "start": null,
       "end": null,
       "verified": false
     },
     {
       "episodeId": 6,
-      "title": "The Sorting Hat",
-      "titleZh": "分院帽",
-      "summaryEn": "Students are sorted into Hogwarts houses.",
-      "words": [
-        "house",
-        "choose",
-        "brave"
-      ],
-      "sampleQuestion": {
-        "question": "What sorts students into houses?",
-        "answer": "The Sorting Hat"
-      },
+      "title": "You're a Wizard, Harry",
+      "titleZh": "你是巫师，哈利",
+      "status": "pending_timing",
       "start": null,
       "end": null,
       "verified": false
     },
     {
       "episodeId": 7,
-      "title": "First Lessons",
-      "titleZh": "第一堂魔法课",
-      "summaryEn": "Harry begins studying magic and learns about flying.",
-      "words": [
-        "lesson",
-        "broom",
-        "practice"
-      ],
-      "sampleQuestion": {
-        "question": "What can students ride to fly?",
-        "answer": "A broom"
-      },
+      "title": "The Leaky Cauldron",
+      "titleZh": "破釜酒吧",
+      "status": "pending_timing",
       "start": null,
       "end": null,
       "verified": false
     },
     {
       "episodeId": 8,
-      "title": "The Halloween Troll",
-      "titleZh": "万圣节巨怪",
-      "summaryEn": "Harry and Ron face danger and strengthen a friendship.",
-      "words": [
-        "troll",
-        "danger",
-        "rescue"
-      ],
-      "sampleQuestion": {
-        "question": "What creature causes trouble on Halloween?",
-        "answer": "A troll"
-      },
+      "title": "Gringotts Bank",
+      "titleZh": "古灵阁银行",
+      "status": "pending_timing",
       "start": null,
       "end": null,
       "verified": false
     },
     {
       "episodeId": 9,
-      "title": "The Mirror of Erised",
-      "titleZh": "厄里斯魔镜",
-      "summaryEn": "Harry encounters a mirror that shows his deepest desire.",
-      "words": [
-        "mirror",
-        "wish",
-        "reflection"
-      ],
-      "sampleQuestion": {
-        "question": "What object shows Harry his deepest desire?",
-        "answer": "A mirror"
-      },
+      "title": "Ollivanders Wand Shop",
+      "titleZh": "奥利凡德魔杖店",
+      "status": "pending_timing",
       "start": null,
       "end": null,
       "verified": false
     },
     {
       "episodeId": 10,
-      "title": "The Forbidden Forest",
-      "titleZh": "禁林",
-      "summaryEn": "Harry discovers new dangers and clues about the mystery.",
-      "words": [
-        "forest",
-        "unicorn",
-        "shadow"
-      ],
-      "sampleQuestion": {
-        "question": "Where does Harry go during detention?",
-        "answer": "The Forbidden Forest"
-      },
+      "title": "Platform Nine and Three-Quarters",
+      "titleZh": "九又四分之三站台",
+      "status": "pending_timing",
       "start": null,
       "end": null,
       "verified": false
     },
     {
       "episodeId": 11,
-      "title": "Through the Trapdoor",
-      "titleZh": "活板门之下",
-      "summaryEn": "The friends face a series of magical challenges.",
-      "words": [
-        "key",
-        "chess",
-        "challenge"
-      ],
-      "sampleQuestion": {
-        "question": "Which board game becomes a dangerous challenge?",
-        "answer": "Chess"
-      },
+      "title": "Friends on the Train",
+      "titleZh": "列车上的朋友",
+      "status": "pending_timing",
       "start": null,
       "end": null,
       "verified": false
     },
     {
       "episodeId": 12,
-      "title": "The Power of Love",
-      "titleZh": "爱的力量",
-      "summaryEn": "Harry confronts the truth behind the Philosopher's Stone.",
-      "words": [
-        "stone",
-        "protect",
-        "courage"
-      ],
-      "sampleQuestion": {
-        "question": "What magical object is Harry trying to protect?",
-        "answer": "The Philosopher's Stone"
-      },
+      "title": "Welcome to Hogwarts",
+      "titleZh": "初到霍格沃茨",
+      "status": "pending_timing",
+      "start": null,
+      "end": null,
+      "verified": false
+    },
+    {
+      "episodeId": 13,
+      "title": "The Sorting Ceremony",
+      "titleZh": "分院仪式",
+      "status": "pending_timing",
+      "start": null,
+      "end": null,
+      "verified": false
+    },
+    {
+      "episodeId": 14,
+      "title": "The First Flying Lesson",
+      "titleZh": "第一堂飞行课",
+      "status": "pending_timing",
+      "start": null,
+      "end": null,
+      "verified": false
+    },
+    {
+      "episodeId": 15,
+      "title": "A New Seeker",
+      "titleZh": "新的找球手",
+      "status": "pending_timing",
+      "start": null,
+      "end": null,
+      "verified": false
+    },
+    {
+      "episodeId": 16,
+      "title": "The Forbidden Corridor",
+      "titleZh": "禁区走廊",
+      "status": "pending_timing",
+      "start": null,
+      "end": null,
+      "verified": false
+    },
+    {
+      "episodeId": 17,
+      "title": "The Halloween Troll",
+      "titleZh": "万圣节巨怪",
+      "status": "pending_timing",
+      "start": null,
+      "end": null,
+      "verified": false
+    },
+    {
+      "episodeId": 18,
+      "title": "The First Quidditch Match",
+      "titleZh": "第一场魁地奇比赛",
+      "status": "pending_timing",
+      "start": null,
+      "end": null,
+      "verified": false
+    },
+    {
+      "episodeId": 19,
+      "title": "The Mirror of Erised",
+      "titleZh": "厄里斯魔镜",
+      "status": "pending_timing",
+      "start": null,
+      "end": null,
+      "verified": false
+    },
+    {
+      "episodeId": 20,
+      "title": "The Secret of Nicolas Flamel",
+      "titleZh": "尼可·勒梅的秘密",
+      "status": "pending_timing",
+      "start": null,
+      "end": null,
+      "verified": false
+    },
+    {
+      "episodeId": 21,
+      "title": "Norbert the Dragon",
+      "titleZh": "小龙诺伯",
+      "status": "pending_timing",
+      "start": null,
+      "end": null,
+      "verified": false
+    },
+    {
+      "episodeId": 22,
+      "title": "The Forbidden Forest",
+      "titleZh": "禁林探险",
+      "status": "pending_timing",
+      "start": null,
+      "end": null,
+      "verified": false
+    },
+    {
+      "episodeId": 23,
+      "title": "Through the Trapdoor",
+      "titleZh": "活板门下的考验",
+      "status": "pending_timing",
+      "start": null,
+      "end": null,
+      "verified": false
+    },
+    {
+      "episodeId": 24,
+      "title": "The Stone and the Final Feast",
+      "titleZh": "魔法石与学年终宴",
+      "status": "pending_timing",
       "start": null,
       "end": null,
       "verified": false
