@@ -2,6 +2,9 @@
 # This file has no effect on subtitle logic: a push changing it starts one batch.
 # After a successful batch, the workflow itself dispatches its next batch.
 # No daily schedule; no obsolete 100-episode retry or historical recovery.
-bootstrapped: 2026-11-06T00:35:00Z
+bootstrapped: 2026-11-06T00:51:00Z
 mode: continuous-until-no-eligible-episodes
 batch_size: 10
+
+repair_bootstrap: corrected_short_abc_xml_and_media_floors
+recovered_failure_run: 42138547949
