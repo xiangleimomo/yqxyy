@@ -3,34 +3,37 @@
   "films": {
     "kung-fu-panda-1": {
       "state": "completed",
-      "at": "2026-11-07T09:13:19.878Z",
+      "at": "2026-11-07T09:14:53.213Z",
       "seriesId": "movie-kung-fu-panda-1",
       "source": "https://api.obj2.top/hls/movie/9502/master.m3u8"
     },
     "kung-fu-panda-2": {
       "state": "completed",
-      "at": "2026-11-07T09:13:19.878Z",
+      "at": "2026-11-07T09:14:53.213Z",
       "seriesId": "movie-kung-fu-panda-2",
       "source": "https://api.obj2.top/hls/movie/49444/master.m3u8"
     },
     "kung-fu-panda-3": {
       "state": "completed",
-      "at": "2026-11-07T09:13:19.878Z",
+      "at": "2026-11-07T09:14:53.213Z",
       "seriesId": "movie-kung-fu-panda-3",
-      "chapters": 14,
-      "source": "https://api.obj2.top/hls/movie/140300/master.m3u8",
-      "englishCues": 1737,
-      "chineseCues": 1217
+      "source": "https://api.obj2.top/hls/movie/140300/master.m3u8"
+    },
+    "kung-fu-panda-4": {
+      "state": "source_error",
+      "error": "Movie audio does not match video",
+      "at": "2026-11-07T09:14:53.213Z",
+      "retryAfter": "2026-11-08T09:14:54.078Z"
     }
   },
-  "updatedAt": "2026-11-07T09:13:19.878Z",
+  "updatedAt": "2026-11-07T09:14:53.213Z",
   "totalCatalog": 82,
   "lastBatch": [
     {
-      "id": "kung-fu-panda-3",
-      "state": "completed",
-      "chapters": 14
+      "id": "kung-fu-panda-4",
+      "state": "source_error",
+      "error": "Movie audio does not match video"
     }
   ],
-  "pendingEstimate": 79
+  "pendingEstimate": 78
 }
