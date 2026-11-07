@@ -121,7 +121,7 @@ def write_media(path,media,first,last):
 def make_master(path,eid,variant_meta):
     audio=f"{eid:03d}.audio.m3u8"
     lines=["#EXTM3U","#EXT-X-VERSION:3",
-           f'#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="aud",NAME="English",LANGUAGE="eng",DEFAULT=YES,AUTOSELECT=YES,URI="{audio}"']
+           f'#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="aud",NAME="English",LANGUAGE="en",DEFAULT=YES,AUTOSELECT=YES,URI="{audio}"']
     for v in sorted(variant_meta,key=lambda x:int(x["attrs"].get("BANDWIDTH","0"))):
         res=v["attrs"].get("RESOLUTION","")
         label="720" if res=="1280x720" else "1080"
@@ -311,6 +311,18 @@ def main():
     (BASE/"quiz.json").write_text(json.dumps(quiz_by_episode,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     (BASE/"alignment.json").write_text(json.dumps(alignment,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     (BASE/"hls-cuts.json").write_text(json.dumps(cut_rows,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    build_report={
+        "seriesId":plan["seriesId"],"episodes":len(episode_rows),
+        "vocabularyItems":sum(map(len,vocab_by_episode.values())),
+        "quizQuestions":sum(len(x["questions"]) for x in quiz_by_episode.values()),
+        "sourceEnglishCues":len(cues),"sourceDuration":round(video_ref["media"]["duration"],3),
+        "storyEnd":alignment["storyEnd"],"creditsExcluded":True,
+        "subtitleModeAvailable":["English"],
+        "bilingualSubtitleStatus":"source master has no Chinese subtitle rendition; full translated dialogue track not generated",
+        "videoVariants":[{"resolution":v["resolution"],"segments":len(v["media"]["segments"])} for v in video_variants],
+        "audioSegments":len(audio["segments"])
+    }
+    (BASE/"course-build-report.json").write_text(json.dumps(build_report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps({
         "episodes":len(episode_rows),"vocabulary":sum(map(len,vocab_by_episode.values())),
         "quizQuestions":sum(len(x["questions"]) for x in quiz_by_episode.values()),
