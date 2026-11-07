@@ -10614,6 +10614,21 @@
       "seriesId": "little-fox-red-magic-fs0059",
       "episodeId": 13,
       "reason": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 48,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 53,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 58,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
     }
   ]
 }
