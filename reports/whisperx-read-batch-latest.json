@@ -1,265 +1,332 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42361953216",
-  "completedAt": "2026-11-07T10:11:55.858100+00:00",
+  "runId": "42362934138",
+  "completedAt": "2026-11-07T10:29:29.297722+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 0,
-  "rejected": 50,
+  "published": 11,
+  "rejected": 39,
   "websiteCommitRequired": true,
-  "totalWords": 0,
-  "speechMatchedWords": 0,
-  "success": [],
+  "totalWords": 11863,
+  "speechMatchedWords": 11863,
+  "success": [
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 1,
+      "cues": 134,
+      "words": 1089,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 1089,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 2,
+      "cues": 139,
+      "words": 1097,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 91,
+      "speechWords": 1097,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 4,
+      "cues": 145,
+      "words": 1086,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 86,
+      "speechWords": 1086,
+      "coverage": 0.9954,
+      "omittedWords": 5
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 5,
+      "cues": 126,
+      "words": 1087,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 1087,
+      "coverage": 0.9963,
+      "omittedWords": 4
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 6,
+      "cues": 133,
+      "words": 1050,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 1050,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 7,
+      "cues": 135,
+      "words": 1093,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 84,
+      "speechWords": 1093,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 9,
+      "cues": 129,
+      "words": 1035,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 83,
+      "speechWords": 1035,
+      "coverage": 0.9981,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 10,
+      "cues": 143,
+      "words": 1090,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 82,
+      "speechWords": 1090,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 11,
+      "cues": 134,
+      "words": 1073,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 1073,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 12,
+      "cues": 138,
+      "words": 1071,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 1071,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 14,
+      "cues": 137,
+      "words": 1092,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 1092,
+      "coverage": 0.9982,
+      "omittedWords": 2
+    }
+  ],
   "failures": [
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 10,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 11,
+      "episodeId": 60,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 12,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 0.0% assigned"
+      "episodeId": 61,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.6% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 13,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.1% matched, 0.0% assigned"
+      "episodeId": 62,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 14,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.4% matched, 0.0% assigned"
+      "episodeId": 63,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 15,
-      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (73536 ms, minimum 120000 ms); cdn.littlefox.com: ffmpeg failed; cdn.littlefox.co.kr: ffmpeg failed"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 16,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 17,
+      "episodeId": 64,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 18,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 19,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 20,
-      "reason": "URLError: <urlopen error [Errno 111] Connection refused>"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 21,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 22,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 23,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 24,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 25,
-      "reason": "URLError: <urlopen error [Errno 111] Connection refused>"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 26,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 27,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.6% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 28,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 29,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 30,
-      "reason": "URLError: <urlopen error [Errno 111] Connection refused>"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 31,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 32,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 1.7% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 33,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 34,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 35,
-      "reason": "URLError: <urlopen error [Errno 111] Connection refused>"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 36,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 37,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 38,
+      "episodeId": 65,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 39,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.0% assigned"
+      "episodeId": 66,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 40,
-      "reason": "URLError: <urlopen error [Errno 111] Connection refused>"
+      "episodeId": 67,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.5% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 41,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.6% matched, 0.0% assigned"
+      "episodeId": 68,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 42,
+      "episodeId": 69,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 70,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 43,
+      "episodeId": 71,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 44,
+      "episodeId": 72,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 73,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 74,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 45,
-      "reason": "URLError: <urlopen error [Errno 111] Connection refused>"
+      "episodeId": 75,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 46,
+      "episodeId": 76,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 77,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 47,
+      "episodeId": 78,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 79,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 80,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.6% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 48,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 0.0% assigned"
+      "episodeId": 81,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.0% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 49,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 0.0% assigned"
+      "episodeId": 82,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.3% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 50,
-      "reason": "URLError: <urlopen error [Errno 111] Connection refused>"
+      "episodeId": 83,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 51,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.4% matched, 0.0% assigned"
+      "episodeId": 84,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 52,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 53,
+      "episodeId": 85,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 54,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+      "episodeId": 86,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 55,
-      "reason": "URLError: <urlopen error [Errno 111] Connection refused>"
+      "episodeId": 87,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.5% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 56,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.6% matched, 0.0% assigned"
+      "episodeId": 88,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 57,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+      "episodeId": 89,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 58,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.4% matched, 0.0% assigned"
+      "episodeId": 90,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 59,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 0.0% assigned"
+      "episodeId": 91,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 92,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 93,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 94,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 95,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 3,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 8,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 13,
+      "reason": "HTTPError: HTTP Error 403: rate limit exceeded"
     }
   ]
 }
