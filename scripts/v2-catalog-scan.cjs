@@ -4,7 +4,6 @@
 // V2 catalog scanner: discovers work only. It never slices media or publishes courses.
 const fs = require('node:fs');
 const path = require('node:path');
-const crypto = require('node:crypto');
 
 const ROOT = path.resolve(__dirname, '..');
 const CATALOG_PATH = path.join(ROOT, 'data/movie-hub-catalog.json');
@@ -98,25 +97,33 @@ function main() {
     if (state.schemaVersion !== 1 || !state.jobs || typeof state.jobs !== 'object') throw new Error('Unsupported V2 state schema');
     const discovered = [...validFilms.map(makeFilmJob), ...tvRows.filter(row => Number(row.tmdb_id) > 0 && row.title).map(makeTvJob)];
     const added = [], refreshed = [];
+    let stateChanged = false;
     for (const candidate of discovered) {
       const previous = state.jobs[candidate.key];
       if (!previous) {
         state.jobs[candidate.key] = candidate;
         added.push(candidate.key);
+        stateChanged = true;
       } else {
         // Preserve production status and all completed work. Refresh metadata only.
         const protectedFields = ['status', 'stage', 'qualityStatus', 'attempts', 'history', 'source', 'production', 'publishedAt', 'lastError'];
         const next = { ...previous };
-        for (const [key, value] of Object.entries(candidate)) if (!protectedFields.includes(key) && key !== 'createdAt') next[key] = value;
-        next.updatedAt = now();
-        next.lastSeenAt = now();
-        state.jobs[candidate.key] = next;
-        refreshed.push(candidate.key);
+        let changed = false;
+        for (const [key, value] of Object.entries(candidate)) {
+          if (!protectedFields.includes(key) && key !== 'createdAt' && JSON.stringify(next[key]) !== JSON.stringify(value)) {
+            next[key] = value;
+            changed = true;
+          }
+        }
+        if (changed) {
+          next.updatedAt = now();
+          state.jobs[candidate.key] = next;
+          refreshed.push(candidate.key);
+          stateChanged = true;
+        }
       }
     }
-    state.lastScanAt = now();
-    state.updatedAt = now();
-    state.catalogSummary = {
+    const summary = {
       filmRecords: catalog.films.length,
       validFilms: validFilms.length,
       invalidFilms: invalidFilms.length,
@@ -124,18 +131,23 @@ function main() {
       discoveredItems: discovered.length,
       queuedItems: Object.values(state.jobs).filter(job => job.status === 'queued').length
     };
-    fs.writeFileSync(STATE_PATH, JSON.stringify(state, null, 2) + '\n');
-    const summary = { added: added.length, refreshed: refreshed.length, invalidFilms: invalidFilms.length, tvSeries: tvRows.length, totalJobs: Object.keys(state.jobs).length, queued: state.catalogSummary.queuedItems };
-    console.log('V2_SCAN_SUMMARY ' + JSON.stringify(summary));
+    if (JSON.stringify(state.catalogSummary) !== JSON.stringify(summary)) stateChanged = true;
+    state.catalogSummary = summary;
+    if (stateChanged) {
+      state.updatedAt = now();
+      fs.writeFileSync(STATE_PATH, JSON.stringify(state, null, 2) + '\n');
+    }
+    const outputSummary = { added: added.length, refreshed: refreshed.length, invalidFilms: invalidFilms.length, tvSeries: tvRows.length, totalJobs: Object.keys(state.jobs).length, queued: state.catalogSummary.queuedItems, stateChanged };
+    console.log('V2_SCAN_SUMMARY ' + JSON.stringify(outputSummary));
     if (invalidFilms.length) console.warn('Skipped film records without valid TMDB/title/year: ' + invalidFilms.length);
     if (process.env.GITHUB_STEP_SUMMARY) {
       fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,
         '## V2 catalog discovery\n\n' +
-        '- New jobs: ' + summary.added + '\n' +
-        '- Existing jobs refreshed: ' + summary.refreshed + '\n' +
-        '- Published TV series discovered: ' + summary.tvSeries + '\n' +
-        '- Invalid film records skipped: ' + summary.invalidFilms + '\n' +
-        '- Total tracked jobs: ' + summary.totalJobs + '\n\n' +
+        '- New jobs: ' + outputSummary.added + '\n' +
+        '- Existing jobs refreshed: ' + outputSummary.refreshed + '\n' +
+        '- Published TV series discovered: ' + outputSummary.tvSeries + '\n' +
+        '- Invalid film records skipped: ' + outputSummary.invalidFilms + '\n' +
+        '- Total tracked jobs: ' + outputSummary.totalJobs + '\n\n' +
         '**Discovery only:** no source extraction, story segmentation, course generation, or publishing occurs in this workflow.\n');
     }
   });
