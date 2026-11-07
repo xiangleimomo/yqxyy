@@ -1,0 +1,422 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42393208355",
+  "completedAt": "2026-11-07T17:12:29.650507+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 26,
+  "rejected": 24,
+  "websiteCommitRequired": true,
+  "totalWords": 20454,
+  "speechMatchedWords": 20454,
+  "success": [
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 1,
+      "cues": 82,
+      "words": 775,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 775,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 2,
+      "cues": 77,
+      "words": 793,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 793,
+      "coverage": 0.995,
+      "omittedWords": 4
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 3,
+      "cues": 73,
+      "words": 786,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 786,
+      "coverage": 0.9975,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 4,
+      "cues": 76,
+      "words": 767,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 767,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 5,
+      "cues": 81,
+      "words": 814,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 814,
+      "coverage": 0.9988,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 6,
+      "cues": 78,
+      "words": 765,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 765,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 7,
+      "cues": 86,
+      "words": 797,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 797,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 8,
+      "cues": 67,
+      "words": 779,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 779,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 9,
+      "cues": 83,
+      "words": 794,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 794,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 10,
+      "cues": 79,
+      "words": 794,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 794,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 11,
+      "cues": 79,
+      "words": 799,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 799,
+      "coverage": 0.9988,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 12,
+      "cues": 76,
+      "words": 793,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 793,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 13,
+      "cues": 78,
+      "words": 781,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 781,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 14,
+      "cues": 76,
+      "words": 793,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 793,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 15,
+      "cues": 88,
+      "words": 796,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 796,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 16,
+      "cues": 81,
+      "words": 795,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 795,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 17,
+      "cues": 90,
+      "words": 796,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 796,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 18,
+      "cues": 87,
+      "words": 757,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 757,
+      "coverage": 0.9818,
+      "omittedWords": 14
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 19,
+      "cues": 90,
+      "words": 798,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 798,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 20,
+      "cues": 80,
+      "words": 769,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 769,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 21,
+      "cues": 93,
+      "words": 792,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 792,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 22,
+      "cues": 85,
+      "words": 800,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 800,
+      "coverage": 0.9988,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 23,
+      "cues": 90,
+      "words": 773,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 773,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 24,
+      "cues": 82,
+      "words": 788,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 788,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 25,
+      "cues": 93,
+      "words": 775,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 775,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-swiss-family-robinson-fs0072",
+      "episodeId": 26,
+      "cues": 78,
+      "words": 785,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 785,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    }
+  ],
+  "failures": [
+    {
+      "seriesId": "little-fox-the-superhero-robot-fs0170",
+      "episodeId": 6,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-superhero-robot-fs0170",
+      "episodeId": 7,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-superhero-robot-fs0170",
+      "episodeId": 8,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-superhero-robot-fs0170",
+      "episodeId": 9,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-superhero-robot-fs0170",
+      "episodeId": 10,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-superhero-robot-fs0170",
+      "episodeId": 11,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-superhero-robot-fs0170",
+      "episodeId": 12,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-superhero-robot-fs0170",
+      "episodeId": 13,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-superhero-robot-fs0170",
+      "episodeId": 14,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-superhero-robot-fs0170",
+      "episodeId": 15,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-superhero-robot-fs0170",
+      "episodeId": 16,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-superhero-robot-fs0170",
+      "episodeId": 17,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-superhero-robot-fs0170",
+      "episodeId": 18,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-superhero-robot-fs0170",
+      "episodeId": 19,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-superhero-robot-fs0170",
+      "episodeId": 20,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.1% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-velveteen-rabbit-fs0126",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-velveteen-rabbit-fs0126",
+      "episodeId": 2,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-velveteen-rabbit-fs0126",
+      "episodeId": 3,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-velveteen-rabbit-fs0126",
+      "episodeId": 4,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-velveteen-rabbit-fs0126",
+      "episodeId": 5,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-velveteen-rabbit-fs0126",
+      "episodeId": 6,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-velveteen-rabbit-fs0126",
+      "episodeId": 7,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-velveteen-rabbit-fs0126",
+      "episodeId": 8,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-velveteen-rabbit-fs0126",
+      "episodeId": 9,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.9% matched, 0.0% assigned"
+    }
+  ]
+}
