@@ -162,6 +162,7 @@
         }catch{}
       }
       repaint();
+      player.dispatchEvent(new Event('sfcaptionchange'));
     });
     repaint();
     void load();
