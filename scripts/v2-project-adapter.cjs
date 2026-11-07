@@ -50,7 +50,8 @@ function toProjectEpisode(episode,{courseId,source,videoSelection,subtitleTracks
     timelineOrigin:videoSelection.timelineOrigin,
     clipStart:videoSelection.clipStart,
     clipEnd:videoSelection.clipEnd,
-    duration:episode.durationSeconds
+    duration:episode.durationSeconds,
+    hlsVersion:Number(source?.video?.version)||7
   };
   if(dynamic){video.sourceDescriptor=source.sourceDescriptor;video.hlsMode='dynamic-dulo';}
   return {
