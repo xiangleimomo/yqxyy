@@ -39,9 +39,10 @@ function toProjectEpisode(episode,{courseId,source,videoSelection,subtitleTracks
   const bilingualPath=bilingualAvailable?localPath(courseId,'subtitles',number+'.en-zh.vtt'):null;
   const hlsPath=localPath(courseId,'hls',number+'.m3u8');
   const dynamic=source?.requiresDynamicPlayback===true;
+  const dynamicHlsPath='/.netlify/functions/v2-episode-hls?course='+encodeURIComponent(courseId)+'&episode='+episode.episodeId+'&kind=master';
   const video={
     source:'hls',
-    hlsUrl:dynamic?source.dynamicHlsUrl||null:hlsPath,
+    hlsUrl:dynamic?dynamicHlsPath:hlsPath,
     subtitleUrl:englishPath,
     originalHlsUrl:dynamic?null:source?.sourceUrl||null,
     originalStart:episode.start,
@@ -51,7 +52,7 @@ function toProjectEpisode(episode,{courseId,source,videoSelection,subtitleTracks
     clipEnd:videoSelection.clipEnd,
     duration:episode.durationSeconds
   };
-  if(dynamic)video.sourceDescriptor=source.sourceDescriptor;
+  if(dynamic){video.sourceDescriptor=source.sourceDescriptor;video.hlsMode='dynamic-dulo';}
   return {
     episodeId:episode.episodeId,
     title:episode.titleZh,
