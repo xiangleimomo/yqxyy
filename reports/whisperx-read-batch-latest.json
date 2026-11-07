@@ -1,565 +1,290 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42358140511",
-  "completedAt": "2026-11-07T09:38:14.052438+00:00",
+  "runId": "42360581831",
+  "completedAt": "2026-11-07T09:47:26.852715+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 50,
-  "rejected": 0,
+  "published": 4,
+  "rejected": 46,
   "websiteCommitRequired": true,
-  "totalWords": 58782,
-  "speechMatchedWords": 58782,
+  "totalWords": 4556,
+  "speechMatchedWords": 4556,
   "success": [
     {
-      "seriesId": "little-fox-shakespeare-fs0019",
-      "episodeId": 9,
-      "cues": 123,
-      "words": 1169,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 72,
-      "speechWords": 1169,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-shakespeare-fs0019",
-      "episodeId": 10,
-      "cues": 152,
-      "words": 1197,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 83,
-      "speechWords": 1197,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-shakespeare-fs0019",
-      "episodeId": 11,
-      "cues": 152,
-      "words": 1184,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 82,
-      "speechWords": 1184,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-shakespeare-fs0019",
-      "episodeId": 12,
-      "cues": 152,
-      "words": 1218,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 1218,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-shakespeare-fs0019",
-      "episodeId": 13,
-      "cues": 146,
-      "words": 1199,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 90,
-      "speechWords": 1199,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-shakespeare-fs0019",
-      "episodeId": 14,
-      "cues": 137,
-      "words": 1160,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 88,
-      "speechWords": 1160,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-shakespeare-fs0019",
-      "episodeId": 15,
-      "cues": 141,
-      "words": 1199,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 91,
-      "speechWords": 1199,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-shakespeare-fs0019",
-      "episodeId": 16,
-      "cues": 146,
-      "words": 1180,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 86,
-      "speechWords": 1180,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
       "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 1,
-      "cues": 122,
-      "words": 1108,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 1108,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 2,
-      "cues": 119,
-      "words": 1121,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 1121,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 3,
-      "cues": 116,
-      "words": 1177,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 77,
-      "speechWords": 1177,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 4,
-      "cues": 119,
-      "words": 1193,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 81,
-      "speechWords": 1193,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 5,
-      "cues": 102,
-      "words": 968,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 68,
-      "speechWords": 968,
-      "coverage": 0.999,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 6,
-      "cues": 99,
-      "words": 1021,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 1021,
-      "coverage": 0.999,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 7,
-      "cues": 101,
-      "words": 1049,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 1049,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 8,
-      "cues": 124,
-      "words": 1106,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 76,
-      "speechWords": 1106,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 9,
-      "cues": 116,
-      "words": 1188,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 1188,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 10,
-      "cues": 112,
-      "words": 1215,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 1215,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 11,
-      "cues": 128,
-      "words": 1296,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 86,
-      "speechWords": 1296,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 12,
-      "cues": 119,
-      "words": 1224,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 74,
-      "speechWords": 1224,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 13,
-      "cues": 151,
-      "words": 1340,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 100,
-      "speechWords": 1340,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 14,
-      "cues": 129,
-      "words": 1252,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 88,
-      "speechWords": 1252,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 15,
-      "cues": 150,
-      "words": 1219,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 97,
-      "speechWords": 1219,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 16,
-      "cues": 164,
-      "words": 1270,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 94,
-      "speechWords": 1270,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 17,
-      "cues": 119,
-      "words": 1180,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 80,
-      "speechWords": 1180,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 18,
-      "cues": 112,
-      "words": 1191,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 1191,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 19,
-      "cues": 123,
-      "words": 1197,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 1197,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 20,
-      "cues": 120,
-      "words": 1196,
+      "episodeId": 44,
+      "cues": 105,
+      "words": 1124,
       "xmlTextVerified": true,
       "xmlParagraphs": 79,
-      "speechWords": 1196,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 21,
-      "cues": 108,
-      "words": 1200,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 66,
-      "speechWords": 1200,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 22,
-      "cues": 113,
-      "words": 1189,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 67,
-      "speechWords": 1189,
+      "speechWords": 1124,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
       "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 23,
-      "cues": 113,
-      "words": 1188,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 68,
-      "speechWords": 1188,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 24,
-      "cues": 120,
-      "words": 1196,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 1196,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 25,
-      "cues": 113,
-      "words": 1168,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 68,
-      "speechWords": 1168,
-      "coverage": 0.9991,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 26,
-      "cues": 136,
-      "words": 1207,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 74,
-      "speechWords": 1207,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 27,
-      "cues": 121,
-      "words": 1195,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 1195,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 28,
-      "cues": 115,
-      "words": 1197,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 64,
-      "speechWords": 1197,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 29,
-      "cues": 106,
-      "words": 1200,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 69,
-      "speechWords": 1200,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 30,
+      "episodeId": 46,
       "cues": 117,
-      "words": 1194,
+      "words": 1145,
       "xmlTextVerified": true,
-      "xmlParagraphs": 72,
-      "speechWords": 1194,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 31,
-      "cues": 117,
-      "words": 1203,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 74,
-      "speechWords": 1203,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 32,
-      "cues": 126,
-      "words": 1197,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 74,
-      "speechWords": 1197,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 33,
-      "cues": 116,
-      "words": 1172,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 70,
-      "speechWords": 1172,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 34,
-      "cues": 126,
-      "words": 1177,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 68,
-      "speechWords": 1177,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 35,
-      "cues": 118,
-      "words": 1198,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 1198,
-      "coverage": 0.9992,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 36,
-      "cues": 111,
-      "words": 1197,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 69,
-      "speechWords": 1197,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 37,
-      "cues": 110,
-      "words": 1117,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 91,
-      "speechWords": 1117,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 38,
-      "cues": 102,
-      "words": 1107,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 88,
-      "speechWords": 1107,
+      "xmlParagraphs": 93,
+      "speechWords": 1145,
       "coverage": 0.9991,
       "omittedWords": 1
     },
     {
       "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 39,
-      "cues": 106,
-      "words": 1103,
+      "episodeId": 47,
+      "cues": 125,
+      "words": 1142,
       "xmlTextVerified": true,
-      "xmlParagraphs": 91,
-      "speechWords": 1103,
-      "coverage": 0.9982,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 40,
-      "cues": 106,
-      "words": 1127,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 87,
-      "speechWords": 1127,
-      "coverage": 0.9991,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 41,
-      "cues": 99,
-      "words": 1096,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 78,
-      "speechWords": 1096,
+      "xmlParagraphs": 97,
+      "speechWords": 1142,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
       "seriesId": "little-fox-sherlock-holmes-fs0022",
-      "episodeId": 42,
-      "cues": 104,
-      "words": 1137,
+      "episodeId": 48,
+      "cues": 124,
+      "words": 1145,
       "xmlTextVerified": true,
-      "xmlParagraphs": 80,
-      "speechWords": 1137,
+      "xmlParagraphs": 96,
+      "speechWords": 1145,
       "coverage": 0.9991,
       "omittedWords": 1
     }
   ],
-  "failures": []
+  "failures": [
+    {
+      "seriesId": "little-fox-sherlock-holmes-fs0022",
+      "episodeId": 43,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 44.8% matched, 45.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-sherlock-holmes-fs0022",
+      "episodeId": 45,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 81.6% matched, 27.8% assigned"
+    },
+    {
+      "seriesId": "little-fox-sight-words-songs-srv01033",
+      "episodeId": 1,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sight-words-songs-srv01033",
+      "episodeId": 2,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sight-words-songs-srv01033",
+      "episodeId": 3,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sight-words-songs-srv01033",
+      "episodeId": 4,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sight-words-songs-srv01033",
+      "episodeId": 5,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sight-words-songs-srv01033",
+      "episodeId": 6,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sight-words-songs-srv01033",
+      "episodeId": 7,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sight-words-songs-srv01033",
+      "episodeId": 8,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sight-words-songs-srv01033",
+      "episodeId": 9,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sight-words-songs-srv01033",
+      "episodeId": 10,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sight-words-songs-srv01033",
+      "episodeId": 11,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sight-words-songs-srv01033",
+      "episodeId": 12,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sight-words-songs-srv01033",
+      "episodeId": 13,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sight-words-songs-srv01033",
+      "episodeId": 14,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sight-words-songs-srv01033",
+      "episodeId": 15,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sight-words-songs-srv01033",
+      "episodeId": 16,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sight-words-songs-srv01033",
+      "episodeId": 17,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sight-words-songs-srv01033",
+      "episodeId": 18,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sight-words-songs-srv01033",
+      "episodeId": 19,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sight-words-songs-srv01033",
+      "episodeId": 20,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sing-alongs-srv01036",
+      "episodeId": 1,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sing-alongs-srv01036",
+      "episodeId": 2,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sing-alongs-srv01036",
+      "episodeId": 3,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sing-alongs-srv01036",
+      "episodeId": 4,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-sing-alongs-srv01036",
+      "episodeId": 5,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-snow-white-and-the-seven-dwarfs-fs0101",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-snow-white-and-the-seven-dwarfs-fs0101",
+      "episodeId": 2,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-snow-white-and-the-seven-dwarfs-fs0101",
+      "episodeId": 3,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-snow-white-and-the-seven-dwarfs-fs0101",
+      "episodeId": 4,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-snow-white-and-the-seven-dwarfs-fs0101",
+      "episodeId": 5,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-snow-white-and-the-seven-dwarfs-fs0101",
+      "episodeId": 6,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-snow-white-and-the-seven-dwarfs-fs0101",
+      "episodeId": 7,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-snow-white-and-the-seven-dwarfs-fs0101",
+      "episodeId": 8,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-snow-white-and-the-seven-dwarfs-fs0101",
+      "episodeId": 9,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-snow-white-and-the-seven-dwarfs-fs0101",
+      "episodeId": 10,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-snow-white-and-the-seven-dwarfs-fs0101",
+      "episodeId": 11,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-snow-white-and-the-seven-dwarfs-fs0101",
+      "episodeId": 12,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-south-street-school-fs0054",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-south-street-school-fs0054",
+      "episodeId": 2,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-south-street-school-fs0054",
+      "episodeId": 3,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-south-street-school-fs0054",
+      "episodeId": 4,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-south-street-school-fs0054",
+      "episodeId": 5,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-south-street-school-fs0054",
+      "episodeId": 6,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-south-street-school-fs0054",
+      "episodeId": 7,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.7% matched, 0.0% assigned"
+    }
+  ]
 }
