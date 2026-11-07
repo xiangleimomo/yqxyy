@@ -250,8 +250,8 @@ function buildMediaPlaylist(media, selection) {
   out.push('#EXT-X-ENDLIST', '');
   return out.join('\n');
 }
-function buildEpisodeMaster({ videoPlaylist, audioPlaylist, audioTrack, videoVariant }) {
-  const out = ['#EXTM3U', '#EXT-X-VERSION:3'];
+function buildEpisodeMaster({ videoPlaylist, audioPlaylist, audioTrack, videoVariant, version = 7 }) {
+  const out = ['#EXTM3U', '#EXT-X-VERSION:' + Math.max(3, Number(version) || 7)];
   if (audioPlaylist && audioTrack) {
     const language = audioTrack.LANGUAGE || 'und';
     const name = audioTrack.NAME || language;
