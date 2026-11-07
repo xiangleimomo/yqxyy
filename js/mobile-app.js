@@ -52,14 +52,23 @@ window.MobileApp = {
     const recent=last?'<a class="sf-app-continue" href="#/lesson/'+e(last.seriesId)+'/'+Number(progress.episodeId)+'"><img src="'+e(last.cover)+'" alt=""><div><span class="sf-app-eyebrow">继续上次的学习</span><h3>'+e(last.titleZh||last.title)+'</h3><p>上次学到第 '+Number(progress.episodeId)+' 集</p></div><span class="sf-app-play" aria-hidden="true">▶</span></a>':'<div class="sf-app-welcome"><div><span class="sf-app-eyebrow">WELCOME TO YQXYY</span><h1>今天，发现一个新世界</h1><p>看故事 · 读绘本 · 探索知识</p></div><img src="assets/nav-icons/animation-story.png" alt=""></div>';
     const shelves=[],media=window.MediaShelf;
     if(media){
-      shelves.push(this.section('故事星球','#/home/all',media.cards(app,list.slice(0,4).map(row=>media.animation(row)))));
+      shelves.push(this.section('动画故事','#/home/all',media.cards(app,list.slice(0,4).map(row=>media.animation(row)))));
       try{
         const library=await window.MovieClassroom.getLibrary(app);
         if(location.hash!==route||!this.active)return;
         const groups=library.series||[];
-        const filmItems=groups.filter(group=>group.dynamicCategory!=='animation').flatMap(group=>group.films.map(film=>media.movieFilm(group,film,library.playableById))).filter(item=>!item.disabled);
-        shelves.push(this.section('光影课堂','#/movies',media.cards(app,filmItems.slice(0,4))));
-      }catch(error){console.warn('首页光影精选暂不可用',error);shelves.push(this.section('光影课堂','#/movies','<p class="sf-app-empty">精彩影片即将呈现</p>'));}
+        const featured=(category)=>groups.filter(group=>group.dynamicCategory===category)
+          .flatMap(group=>group.films.map(film=>media.movieFilm(group,film,library.playableById)))
+          .filter(item=>!item.disabled).slice(0,4);
+        const animatedMovies=featured('animated');
+        const documentaries=featured('documentary');
+        shelves.push(this.section('动画大电影','#/movies/animated',animatedMovies.length?media.cards(app,animatedMovies):'<p class="sf-app-empty">精选动画电影即将呈现</p>'));
+        shelves.push(this.section('纪录片','#/movies/documentary',documentaries.length?media.cards(app,documentaries):'<p class="sf-app-empty">精选纪录片即将呈现</p>'));
+      }catch(error){
+        console.warn('首页影视精选暂不可用',error);
+        shelves.push(this.section('动画大电影','#/movies/animated','<p class="sf-app-empty">精选动画电影即将呈现</p>'));
+        shelves.push(this.section('纪录片','#/movies/documentary','<p class="sf-app-empty">精选纪录片即将呈现</p>'));
+      }
     }
     try{
       const books=await window.BookReader.library(app);
