@@ -1,0 +1,290 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42319997256",
+  "completedAt": "2026-11-07T00:55:32.955070+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 4,
+  "rejected": 46,
+  "websiteCommitRequired": true,
+  "totalWords": 452,
+  "speechMatchedWords": 452,
+  "success": [
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 10,
+      "cues": 20,
+      "words": 100,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 18,
+      "speechWords": 100,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 13,
+      "cues": 24,
+      "words": 121,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 25,
+      "speechWords": 121,
+      "coverage": 0.9918,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 16,
+      "cues": 24,
+      "words": 108,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 16,
+      "speechWords": 108,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 19,
+      "cues": 26,
+      "words": 123,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 23,
+      "speechWords": 123,
+      "coverage": 1.0,
+      "omittedWords": 0
+    }
+  ],
+  "failures": [
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 9,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 11,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 12,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 14,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 15,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 17,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 18,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 20,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 21,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 22,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 23,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 24,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 25,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 1,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 2,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 3,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 4,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 5,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 6,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 7,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 8,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 9,
+      "reason": "TimeoutError: The read operation timed out"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 10,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 11,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 12,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 13,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 14,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 15,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 16,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 17,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 18,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 19,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 20,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 21,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 22,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 23,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 24,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 25,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-songs-srv01032",
+      "episodeId": 1,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-phonics-songs-srv01032",
+      "episodeId": 2,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-phonics-songs-srv01032",
+      "episodeId": 3,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-phonics-songs-srv01032",
+      "episodeId": 4,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-phonics-songs-srv01032",
+      "episodeId": 5,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-phonics-songs-srv01032",
+      "episodeId": 6,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-phonics-songs-srv01032",
+      "episodeId": 7,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-phonics-songs-srv01032",
+      "episodeId": 8,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    }
+  ]
+}

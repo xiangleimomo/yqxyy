@@ -1,446 +1,290 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42317913617",
-  "completedAt": "2026-11-07T00:43:50.439461+00:00",
+  "runId": "42319997256",
+  "completedAt": "2026-11-07T00:55:32.955070+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 30,
-  "rejected": 20,
+  "published": 4,
+  "rejected": 46,
   "websiteCommitRequired": true,
-  "totalWords": 17727,
-  "speechMatchedWords": 17727,
+  "totalWords": 452,
+  "speechMatchedWords": 452,
   "success": [
     {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 1,
-      "cues": 60,
-      "words": 602,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 50,
-      "speechWords": 602,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 2,
-      "cues": 70,
-      "words": 656,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 57,
-      "speechWords": 656,
-      "coverage": 0.9985,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 4,
-      "cues": 70,
-      "words": 597,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 49,
-      "speechWords": 597,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 5,
-      "cues": 87,
-      "words": 806,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 806,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 6,
-      "cues": 79,
-      "words": 676,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 64,
-      "speechWords": 676,
-      "coverage": 0.9985,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 7,
-      "cues": 68,
-      "words": 605,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 60,
-      "speechWords": 605,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 9,
-      "cues": 74,
-      "words": 700,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 64,
-      "speechWords": 700,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
+      "seriesId": "little-fox-phonics-i-fs0111",
       "episodeId": 10,
-      "cues": 72,
-      "words": 653,
+      "cues": 20,
+      "words": 100,
       "xmlTextVerified": true,
-      "xmlParagraphs": 55,
-      "speechWords": 653,
-      "coverage": 0.9985,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 11,
-      "cues": 88,
-      "words": 640,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 65,
-      "speechWords": 640,
-      "coverage": 0.9984,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 12,
-      "cues": 57,
-      "words": 601,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 57,
-      "speechWords": 601,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 14,
-      "cues": 55,
-      "words": 634,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 52,
-      "speechWords": 634,
-      "coverage": 0.9984,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 15,
-      "cues": 66,
-      "words": 666,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 61,
-      "speechWords": 666,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 16,
-      "cues": 107,
-      "words": 638,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 638,
-      "coverage": 0.9984,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 17,
-      "cues": 73,
-      "words": 669,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 57,
-      "speechWords": 669,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 19,
-      "cues": 69,
-      "words": 647,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 59,
-      "speechWords": 647,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 20,
-      "cues": 65,
-      "words": 625,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 52,
-      "speechWords": 625,
-      "coverage": 0.9984,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 21,
-      "cues": 73,
-      "words": 647,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 57,
-      "speechWords": 647,
-      "coverage": 0.9985,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 22,
-      "cues": 58,
-      "words": 611,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 48,
-      "speechWords": 611,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 24,
-      "cues": 68,
-      "words": 608,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 47,
-      "speechWords": 608,
-      "coverage": 0.9984,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 25,
-      "cues": 71,
-      "words": 636,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 57,
-      "speechWords": 636,
-      "coverage": 0.9969,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 26,
-      "cues": 62,
-      "words": 614,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 51,
-      "speechWords": 614,
-      "coverage": 0.9984,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 27,
-      "cues": 84,
-      "words": 613,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 56,
-      "speechWords": 613,
-      "coverage": 0.9984,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 29,
-      "cues": 72,
-      "words": 690,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 62,
-      "speechWords": 690,
-      "coverage": 0.9986,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 30,
-      "cues": 62,
-      "words": 589,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 46,
-      "speechWords": 589,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 31,
-      "cues": 76,
-      "words": 618,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 58,
-      "speechWords": 618,
-      "coverage": 0.9984,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 32,
-      "cues": 80,
-      "words": 631,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 58,
-      "speechWords": 631,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 34,
-      "cues": 77,
-      "words": 693,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 62,
-      "speechWords": 693,
+      "xmlParagraphs": 18,
+      "speechWords": 100,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
       "seriesId": "little-fox-phonics-i-fs0111",
-      "episodeId": 1,
+      "episodeId": 13,
       "cues": 24,
-      "words": 115,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 25,
-      "speechWords": 115,
-      "coverage": 0.9914,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-phonics-i-fs0111",
-      "episodeId": 2,
-      "cues": 21,
       "words": 121,
       "xmlTextVerified": true,
-      "xmlParagraphs": 22,
+      "xmlParagraphs": 25,
       "speechWords": 121,
-      "coverage": 0.9837,
-      "omittedWords": 2
+      "coverage": 0.9918,
+      "omittedWords": 1
     },
     {
       "seriesId": "little-fox-phonics-i-fs0111",
-      "episodeId": 7,
-      "cues": 31,
-      "words": 126,
+      "episodeId": 16,
+      "cues": 24,
+      "words": 108,
       "xmlTextVerified": true,
-      "xmlParagraphs": 25,
-      "speechWords": 126,
-      "coverage": 0.9767,
-      "omittedWords": 3
+      "xmlParagraphs": 16,
+      "speechWords": 108,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 19,
+      "cues": 26,
+      "words": 123,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 23,
+      "speechWords": 123,
+      "coverage": 1.0,
+      "omittedWords": 0
     }
   ],
   "failures": [
     {
-      "seriesId": "little-fox-people-in-the-news-fs0075",
-      "episodeId": 23,
-      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-people-in-the-news-fs0075",
-      "episodeId": 24,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 89.7% assigned"
-    },
-    {
-      "seriesId": "little-fox-people-in-the-news-fs0075",
-      "episodeId": 25,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 98.3% assigned"
-    },
-    {
-      "seriesId": "little-fox-people-in-the-news-fs0075",
-      "episodeId": 26,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 98.4% assigned"
-    },
-    {
-      "seriesId": "little-fox-people-in-the-news-fs0075",
-      "episodeId": 27,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 93.8% assigned"
-    },
-    {
-      "seriesId": "little-fox-people-in-the-news-fs0075",
-      "episodeId": 28,
-      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-people-in-the-news-fs0075",
-      "episodeId": 29,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.4% matched, 91.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-people-in-the-news-fs0075",
-      "episodeId": 30,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 89.7% assigned"
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 3,
-      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 8,
-      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 13,
-      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 18,
-      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 23,
-      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 28,
-      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-peter-pan-fs0025",
-      "episodeId": 33,
-      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
       "seriesId": "little-fox-phonics-i-fs0111",
-      "episodeId": 3,
+      "episodeId": 9,
       "reason": "ValueError: Missing late-episode speech; candidate withheld"
     },
     {
       "seriesId": "little-fox-phonics-i-fs0111",
-      "episodeId": 4,
-      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
+      "episodeId": 11,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
     },
     {
       "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 12,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 14,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 15,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 17,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 18,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 20,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 21,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 22,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 23,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 24,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-i-fs0111",
+      "episodeId": 25,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 1,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 2,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 3,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 4,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
       "episodeId": 5,
       "reason": "ValueError: Missing late-episode speech; candidate withheld"
     },
     {
-      "seriesId": "little-fox-phonics-i-fs0111",
+      "seriesId": "little-fox-phonics-ii-fs0112",
       "episodeId": 6,
       "reason": "ValueError: Missing late-episode speech; candidate withheld"
     },
     {
-      "seriesId": "little-fox-phonics-i-fs0111",
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 7,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
       "episodeId": 8,
       "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 9,
+      "reason": "TimeoutError: The read operation timed out"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 10,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 11,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 12,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 13,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 14,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 15,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 16,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 17,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 18,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 19,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 20,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 21,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 22,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 23,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 24,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-ii-fs0112",
+      "episodeId": 25,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-phonics-songs-srv01032",
+      "episodeId": 1,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-phonics-songs-srv01032",
+      "episodeId": 2,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-phonics-songs-srv01032",
+      "episodeId": 3,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-phonics-songs-srv01032",
+      "episodeId": 4,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-phonics-songs-srv01032",
+      "episodeId": 5,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-phonics-songs-srv01032",
+      "episodeId": 6,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-phonics-songs-srv01032",
+      "episodeId": 7,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "seriesId": "little-fox-phonics-songs-srv01032",
+      "episodeId": 8,
+      "reason": "HTTPError: HTTP Error 404: Not Found"
     }
   ]
 }
