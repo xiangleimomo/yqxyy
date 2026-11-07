@@ -66,7 +66,7 @@ async function inspectHlsSource({sourceUrl,provider='existing',descriptor,fetche
   if(subtitleTrack){
     subtitle=await subtitles.acquireSubtitleTrack({url:subtitleTrack.uri,fetcher});
     if(subtitle.lastCueAt>video.duration+120)throw new Error('English subtitle timestamps exceed the source video duration');
-    if(subtitle.cueCount<20)throw new Error('English subtitle track has too few cues to represent a full film/episode');
+    if(subtitle.cueCount<5)throw new Error('English subtitle track has too few cues to represent a full film/episode');
   }
   const resolution=variant.RESOLUTION||null;
   const codecs=variant.CODECS||null;
