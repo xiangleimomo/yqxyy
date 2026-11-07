@@ -17,7 +17,9 @@ test('movie episode toolbar delegates fullscreen to the shared mobile-safe helpe
 test('movie toolbar remains available and correctly labeled in fullscreen', () => {
   assert.match(fullscreen, /trigger\.matches\?\.\('\[data-act="fullscreen"\]'\)/);
   assert.match(fullscreen, /caption\.textContent = full \? '退出' : '全屏'/);
+  assert.match(css, /\.direct-video-panel\.sf-movie-lesson-player:fullscreen/);
   assert.match(css, /\.direct-video-panel\.sf-movie-lesson-player\.subtitle-page-fullscreen/);
   assert.match(css, /\.direct-video-panel\.sf-movie-lesson-player\.subtitle-page-fullscreen>\.sf-lesson-toolbar/);
+  assert.match(css, /\.sf-movie-lesson-player \.video-fullscreen-trigger\{display:none!important\}/);
   assert.match(css, /\.direct-video-panel\.sf-movie-lesson-player\.subtitle-page-fullscreen>\.sf-mobile-captions-outside\.is-mobile-external/);
 });

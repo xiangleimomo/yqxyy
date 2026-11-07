@@ -1495,6 +1495,9 @@ html.sf-caption-screen-locked,body.sf-caption-screen-locked{overflow:hidden!impo
 @media (max-width:900px), (pointer:coarse){
   .sf-movie-lesson-player .mobile-cc-trigger{display:flex}
 }
+.sf-movie-lesson-player .video-fullscreen-trigger{display:none!important}
+.direct-video-panel.sf-movie-lesson-player:fullscreen,
+.direct-video-panel.sf-movie-lesson-player:-webkit-full-screen,
 .direct-video-panel.sf-movie-lesson-player.subtitle-page-fullscreen{
   position:fixed!important;inset:0!important;z-index:2147483000!important;
   display:flex!important;flex-direction:column!important;
@@ -1504,15 +1507,21 @@ html.sf-caption-screen-locked,body.sf-caption-screen-locked{overflow:hidden!impo
   transform:none!important;border:0!important;border-radius:0!important;
   background:#000!important;
 }
+.direct-video-panel.sf-movie-lesson-player:fullscreen>.video-wrap,
+.direct-video-panel.sf-movie-lesson-player:-webkit-full-screen>.video-wrap,
 .direct-video-panel.sf-movie-lesson-player.subtitle-page-fullscreen>.video-wrap{
   position:relative!important;flex:1 1 auto!important;min-height:0!important;
   width:100%!important;height:auto!important;padding-top:0!important;
   border-radius:0!important;overflow:hidden!important;
 }
+.direct-video-panel.sf-movie-lesson-player:fullscreen .hls-video-player,
+.direct-video-panel.sf-movie-lesson-player:-webkit-full-screen .hls-video-player,
 .direct-video-panel.sf-movie-lesson-player.subtitle-page-fullscreen .hls-video-player{
   position:absolute!important;inset:0!important;width:100%!important;
   height:100%!important;object-fit:contain!important;
 }
+.direct-video-panel.sf-movie-lesson-player:fullscreen>.sf-lesson-toolbar,
+.direct-video-panel.sf-movie-lesson-player:-webkit-full-screen>.sf-lesson-toolbar,
 .direct-video-panel.sf-movie-lesson-player.subtitle-page-fullscreen>.sf-lesson-toolbar{
   display:flex!important;position:relative!important;flex:0 0 auto!important;
   z-index:20!important;align-items:center;justify-content:space-around;
@@ -1520,19 +1529,31 @@ html.sf-caption-screen-locked,body.sf-caption-screen-locked{overflow:hidden!impo
   padding-bottom:calc(6px + env(safe-area-inset-bottom,0px));
   background:#10233d;color:#fff;
 }
+.direct-video-panel.sf-movie-lesson-player:fullscreen>.sf-lesson-toolbar button,
+.direct-video-panel.sf-movie-lesson-player:-webkit-full-screen>.sf-lesson-toolbar button,
 .direct-video-panel.sf-movie-lesson-player.subtitle-page-fullscreen>.sf-lesson-toolbar button{
   display:flex;flex:1 1 0;min-width:0;min-height:42px;
   flex-direction:column;align-items:center;justify-content:center;
   gap:2px;padding:3px 1px;border:0;border-radius:7px;
   background:transparent;color:#fff;touch-action:manipulation;
 }
+.direct-video-panel.sf-movie-lesson-player:fullscreen>.sf-lesson-toolbar button span,
+.direct-video-panel.sf-movie-lesson-player:-webkit-full-screen>.sf-lesson-toolbar button span,
 .direct-video-panel.sf-movie-lesson-player.subtitle-page-fullscreen>.sf-lesson-toolbar button span{font-size:17px;line-height:1.2}
+.direct-video-panel.sf-movie-lesson-player:fullscreen>.sf-lesson-toolbar button small,
+.direct-video-panel.sf-movie-lesson-player:-webkit-full-screen>.sf-lesson-toolbar button small,
 .direct-video-panel.sf-movie-lesson-player.subtitle-page-fullscreen>.sf-lesson-toolbar button small{font-size:10px;line-height:1.2}
+.direct-video-panel.sf-movie-lesson-player:fullscreen>.sf-mobile-captions-outside.is-mobile-external,
+.direct-video-panel.sf-movie-lesson-player:-webkit-full-screen>.sf-mobile-captions-outside.is-mobile-external,
 .direct-video-panel.sf-movie-lesson-player.subtitle-page-fullscreen>.sf-mobile-captions-outside.is-mobile-external{
   display:block!important;position:relative!important;flex:0 0 auto!important;
   max-height:22vh;overflow:auto;margin:0!important;border-radius:0!important;
 }
+.direct-video-panel.sf-movie-lesson-player:fullscreen>.sf-mobile-captions-outside[hidden],
+.direct-video-panel.sf-movie-lesson-player:-webkit-full-screen>.sf-mobile-captions-outside[hidden],
 .direct-video-panel.sf-movie-lesson-player.subtitle-page-fullscreen>.sf-mobile-captions-outside[hidden],
+.direct-video-panel.sf-movie-lesson-player:fullscreen>.sf-subtitle-offset,
+.direct-video-panel.sf-movie-lesson-player:-webkit-full-screen>.sf-subtitle-offset,
 .direct-video-panel.sf-movie-lesson-player.subtitle-page-fullscreen>.sf-subtitle-offset{
   display:none!important;
 }
