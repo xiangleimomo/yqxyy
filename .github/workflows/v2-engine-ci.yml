@@ -12,6 +12,7 @@ on:
     branches: [feature/v2-quality-first-engine]
     paths:
       - 'scripts/v2-*.cjs'
+      - 'tests/v2-*.cjs'
       - 'docs/v2-engine/**'
       - 'data/v2-engine-state.json'
       - '.github/workflows/v2-*.yml'
