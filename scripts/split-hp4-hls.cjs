@@ -117,7 +117,7 @@ async function getEnglishCues(masterText) {
       else if(row.duration>0 && vttRows.length>1 && !/X-TIMESTAMP-MAP/i.test(vtt)) offset+=row.duration;
     }
   }
-  const soundOnly=text=>{const parts=text.split(/\\r?\\n/).map(x=>x.trim()).filter(Boolean);return parts.length>0&&parts.every(x=>/^\\[[^\\]]+\\]$/.test(x));};
+  const soundOnly=text=>{const parts=text.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);return parts.length>0&&parts.every(x=>/^\[[^\]]+\]$/.test(x));};
   const seen=new Set();
   cues=cues.filter(c=>!soundOnly(c.text)).sort((a,b)=>a.start-b.start).filter(c=>{
     const key=[round(c.start),round(c.end),c.text].join('|');
