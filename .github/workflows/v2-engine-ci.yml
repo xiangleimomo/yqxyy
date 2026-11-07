@@ -27,6 +27,10 @@ jobs:
       - name: Syntax-check V2 scripts
         run: |
           node --check scripts/v2-catalog-scan.cjs
+          node --check scripts/v2-hls.cjs
+          node --check tests/v2-hls.test.cjs
+      - name: Run HLS parser fixtures
+        run: node tests/v2-hls.test.cjs
       - name: Validate JSON inputs and state
         run: |
           node -e "const fs=require('node:fs'); for (const p of ['data/movie-hub-catalog.json','data/v2-engine-state.json']) JSON.parse(fs.readFileSync(p,'utf8'));"
