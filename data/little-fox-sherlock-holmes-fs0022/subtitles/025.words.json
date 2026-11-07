@@ -1,0 +1,7481 @@
+{
+  "seriesId": "little-fox-sherlock-holmes-fs0022",
+  "episodeId": 25,
+  "sourceContentId": "C0005710",
+  "mediaPath": "/contents_5/hls/1080/6c68bc36e4/157258321985690f81aadc1749175c187784afc9ee/stream.m3u8",
+  "mediaFingerprint": "4003022f44ecf6b54fdd5129636bbb5bf040189f0e09ff44430f3602f5cf6964",
+  "subtitleSha256": "6ec0c661a196df4baee38b9c47bb958295931bfd78b3f8d38c2d9d3c001fbe48",
+  "method": "whisperx-asr-xml-text-only-forced-alignment",
+  "textAuthority": "littlefox-xml-paragraph-text",
+  "xmlTextSha256": "0090e70865a4273fd5a06e28307131706abd3602d2d57d9b323bf9d493c560c0",
+  "xmlParagraphCount": 68,
+  "recognizer": "small.en",
+  "cueCount": 113,
+  "totalWords": 1169,
+  "captionedWords": 1168,
+  "omittedUnalignedWords": 1,
+  "speechMatchedWords": 1168,
+  "speechMatchedFraction": 0.9991,
+  "cues": [
+    {
+      "words": [
+        {
+          "text": "Sherlock",
+          "startMs": 4212,
+          "endMs": 4592,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 16177,
+          "endMs": 16257,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 16277,
+          "endMs": 16297,
+          "source": "speech"
+        },
+        {
+          "text": "were",
+          "startMs": 16337,
+          "endMs": 16457,
+          "source": "speech"
+        },
+        {
+          "text": "sitting",
+          "startMs": 16517,
+          "endMs": 16737,
+          "source": "speech"
+        },
+        {
+          "text": "near",
+          "startMs": 16757,
+          "endMs": 16857,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 16877,
+          "endMs": 16958,
+          "source": "speech"
+        },
+        {
+          "text": "fireplace",
+          "startMs": 16998,
+          "endMs": 17478,
+          "source": "speech"
+        },
+        {
+          "text": "in",
+          "startMs": 17538,
+          "endMs": 17618,
+          "source": "speech"
+        },
+        {
+          "text": "our",
+          "startMs": 17658,
+          "endMs": 17758,
+          "source": "speech"
+        },
+        {
+          "text": "Baker",
+          "startMs": 17798,
+          "endMs": 18058,
+          "source": "speech"
+        },
+        {
+          "text": "Street",
+          "startMs": 18098,
+          "endMs": 18298,
+          "source": "speech"
+        },
+        {
+          "text": "lodgings.",
+          "startMs": 18358,
+          "endMs": 18758,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Would",
+          "startMs": 18778,
+          "endMs": 19779,
+          "source": "speech"
+        },
+        {
+          "text": "you",
+          "startMs": 19799,
+          "endMs": 19879,
+          "source": "speech"
+        },
+        {
+          "text": "like",
+          "startMs": 19899,
+          "endMs": 20039,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 20079,
+          "endMs": 20099,
+          "source": "speech"
+        },
+        {
+          "text": "pinch",
+          "startMs": 20139,
+          "endMs": 20299,
+          "source": "speech"
+        },
+        {
+          "text": "of",
+          "startMs": 20339,
+          "endMs": 20379,
+          "source": "speech"
+        },
+        {
+          "text": "snuff,",
+          "startMs": 20439,
+          "endMs": 20659,
+          "source": "speech"
+        },
+        {
+          "text": "Watson?\"",
+          "startMs": 20699,
+          "endMs": 21059,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "asked",
+          "startMs": 21399,
+          "endMs": 21580,
+          "source": "speech"
+        },
+        {
+          "text": "Holmes.",
+          "startMs": 21640,
+          "endMs": 21940,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "The",
+          "startMs": 22860,
+          "endMs": 22980,
+          "source": "speech"
+        },
+        {
+          "text": "detective",
+          "startMs": 23020,
+          "endMs": 23400,
+          "source": "speech"
+        },
+        {
+          "text": "held",
+          "startMs": 23440,
+          "endMs": 23580,
+          "source": "speech"
+        },
+        {
+          "text": "out",
+          "startMs": 23640,
+          "endMs": 23720,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 23740,
+          "endMs": 23780,
+          "source": "speech"
+        },
+        {
+          "text": "gold",
+          "startMs": 23820,
+          "endMs": 24061,
+          "source": "speech"
+        },
+        {
+          "text": "snuffbox",
+          "startMs": 24101,
+          "endMs": 24621,
+          "source": "speech"
+        },
+        {
+          "text": "with",
+          "startMs": 24661,
+          "endMs": 24781,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 24841,
+          "endMs": 24881,
+          "source": "speech"
+        },
+        {
+          "text": "large",
+          "startMs": 24921,
+          "endMs": 25201,
+          "source": "speech"
+        },
+        {
+          "text": "amethyst",
+          "startMs": 25341,
+          "endMs": 25761,
+          "source": "speech"
+        },
+        {
+          "text": "in",
+          "startMs": 25801,
+          "endMs": 25861,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 25881,
+          "endMs": 25961,
+          "source": "speech"
+        },
+        {
+          "text": "center",
+          "startMs": 26021,
+          "endMs": 26262,
+          "source": "speech"
+        },
+        {
+          "text": "of",
+          "startMs": 26282,
+          "endMs": 26342,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 26362,
+          "endMs": 26422,
+          "source": "speech"
+        },
+        {
+          "text": "lid.",
+          "startMs": 26462,
+          "endMs": 26682,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "The",
+          "startMs": 27522,
+          "endMs": 27622,
+          "source": "speech"
+        },
+        {
+          "text": "ornate",
+          "startMs": 27702,
+          "endMs": 28002,
+          "source": "speech"
+        },
+        {
+          "text": "box",
+          "startMs": 28042,
+          "endMs": 28282,
+          "source": "speech"
+        },
+        {
+          "text": "was",
+          "startMs": 28322,
+          "endMs": 28442,
+          "source": "speech"
+        },
+        {
+          "text": "such",
+          "startMs": 28482,
+          "endMs": 28663,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 28683,
+          "endMs": 28723,
+          "source": "speech"
+        },
+        {
+          "text": "contrast",
+          "startMs": 28783,
+          "endMs": 29263,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 29303,
+          "endMs": 29383,
+          "source": "speech"
+        },
+        {
+          "text": "Holmes'",
+          "startMs": 29423,
+          "endMs": 29763,
+          "source": "speech"
+        },
+        {
+          "text": "simple",
+          "startMs": 29823,
+          "endMs": 30063,
+          "source": "speech"
+        },
+        {
+          "text": "way",
+          "startMs": 30103,
+          "endMs": 30223,
+          "source": "speech"
+        },
+        {
+          "text": "of",
+          "startMs": 30243,
+          "endMs": 30303,
+          "source": "speech"
+        },
+        {
+          "text": "life",
+          "startMs": 30363,
+          "endMs": 30583,
+          "source": "speech"
+        },
+        {
+          "text": "that",
+          "startMs": 30623,
+          "endMs": 30723,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 30763,
+          "endMs": 30823,
+          "source": "speech"
+        },
+        {
+          "text": "had",
+          "startMs": 30883,
+          "endMs": 31024,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 31044,
+          "endMs": 31124,
+          "source": "speech"
+        },
+        {
+          "text": "comment",
+          "startMs": 31184,
+          "endMs": 31544,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "on",
+          "startMs": 31624,
+          "endMs": 31684,
+          "source": "speech"
+        },
+        {
+          "text": "it.",
+          "startMs": 31744,
+          "endMs": 31804,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Where",
+          "startMs": 32704,
+          "endMs": 32844,
+          "source": "speech"
+        },
+        {
+          "text": "did",
+          "startMs": 32884,
+          "endMs": 32964,
+          "source": "speech"
+        },
+        {
+          "text": "you",
+          "startMs": 32984,
+          "endMs": 33064,
+          "source": "speech"
+        },
+        {
+          "text": "get",
+          "startMs": 33104,
+          "endMs": 33204,
+          "source": "speech"
+        },
+        {
+          "text": "this",
+          "startMs": 33244,
+          "endMs": 33344,
+          "source": "speech"
+        },
+        {
+          "text": "snuffbox?\"",
+          "startMs": 33364,
+          "endMs": 33985,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 34405,
+          "endMs": 34465,
+          "source": "speech"
+        },
+        {
+          "text": "asked.",
+          "startMs": 34585,
+          "endMs": 34825,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"It's",
+          "startMs": 35705,
+          "endMs": 35825,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 35865,
+          "endMs": 35885,
+          "source": "speech"
+        },
+        {
+          "text": "little",
+          "startMs": 35925,
+          "endMs": 36105,
+          "source": "speech"
+        },
+        {
+          "text": "present",
+          "startMs": 36165,
+          "endMs": 36446,
+          "source": "speech"
+        },
+        {
+          "text": "from",
+          "startMs": 36466,
+          "endMs": 36566,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 36586,
+          "endMs": 36666,
+          "source": "speech"
+        },
+        {
+          "text": "king",
+          "startMs": 36686,
+          "endMs": 36826,
+          "source": "speech"
+        },
+        {
+          "text": "of",
+          "startMs": 36846,
+          "endMs": 36886,
+          "source": "speech"
+        },
+        {
+          "text": "Bohemia",
+          "startMs": 36926,
+          "endMs": 37406,
+          "source": "speech"
+        },
+        {
+          "text": "in",
+          "startMs": 37506,
+          "endMs": 37566,
+          "source": "speech"
+        },
+        {
+          "text": "return",
+          "startMs": 37606,
+          "endMs": 37926,
+          "source": "speech"
+        },
+        {
+          "text": "for",
+          "startMs": 37946,
+          "endMs": 38066,
+          "source": "speech"
+        },
+        {
+          "text": "my",
+          "startMs": 38086,
+          "endMs": 38186,
+          "source": "speech"
+        },
+        {
+          "text": "assistance",
+          "startMs": 38226,
+          "endMs": 38686,
+          "source": "speech"
+        },
+        {
+          "text": "with",
+          "startMs": 38727,
+          "endMs": 38847,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 38867,
+          "endMs": 38947,
+          "source": "speech"
+        },
+        {
+          "text": "Irene",
+          "startMs": 39127,
+          "endMs": 39367,
+          "source": "speech"
+        },
+        {
+          "text": "Adler",
+          "startMs": 39467,
+          "endMs": 39707,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "case.\"",
+          "startMs": 39727,
+          "endMs": 40007,
+          "source": "speech"
+        },
+        {
+          "text": "\"And",
+          "startMs": 40027,
+          "endMs": 41027,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 41067,
+          "endMs": 41147,
+          "source": "speech"
+        },
+        {
+          "text": "ring?\"",
+          "startMs": 41188,
+          "endMs": 41408,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 41808,
+          "endMs": 41868,
+          "source": "speech"
+        },
+        {
+          "text": "asked,",
+          "startMs": 41988,
+          "endMs": 42228,
+          "source": "speech"
+        },
+        {
+          "text": "glancing",
+          "startMs": 42328,
+          "endMs": 42688,
+          "source": "speech"
+        },
+        {
+          "text": "at",
+          "startMs": 42728,
+          "endMs": 42768,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 42788,
+          "endMs": 42888,
+          "source": "speech"
+        },
+        {
+          "text": "remarkable",
+          "startMs": 42908,
+          "endMs": 43368,
+          "source": "speech"
+        },
+        {
+          "text": "diamond",
+          "startMs": 43408,
+          "endMs": 43729,
+          "source": "speech"
+        },
+        {
+          "text": "that",
+          "startMs": 43749,
+          "endMs": 43869,
+          "source": "speech"
+        },
+        {
+          "text": "sparkled",
+          "startMs": 43949,
+          "endMs": 44309,
+          "source": "speech"
+        },
+        {
+          "text": "upon",
+          "startMs": 44349,
+          "endMs": 44569,
+          "source": "speech"
+        },
+        {
+          "text": "his",
+          "startMs": 44589,
+          "endMs": 44689,
+          "source": "speech"
+        },
+        {
+          "text": "finger.",
+          "startMs": 44769,
+          "endMs": 45029,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"It",
+          "startMs": 45049,
+          "endMs": 46009,
+          "source": "speech"
+        },
+        {
+          "text": "was",
+          "startMs": 46049,
+          "endMs": 46150,
+          "source": "speech"
+        },
+        {
+          "text": "from",
+          "startMs": 46190,
+          "endMs": 46310,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 46350,
+          "endMs": 46410,
+          "source": "speech"
+        },
+        {
+          "text": "reigning",
+          "startMs": 46450,
+          "endMs": 46730,
+          "source": "speech"
+        },
+        {
+          "text": "family",
+          "startMs": 46790,
+          "endMs": 47050,
+          "source": "speech"
+        },
+        {
+          "text": "of",
+          "startMs": 47070,
+          "endMs": 47130,
+          "source": "speech"
+        },
+        {
+          "text": "Holland",
+          "startMs": 47190,
+          "endMs": 47490,
+          "source": "speech"
+        },
+        {
+          "text": "for",
+          "startMs": 47550,
+          "endMs": 47670,
+          "source": "speech"
+        },
+        {
+          "text": "helping",
+          "startMs": 47710,
+          "endMs": 47970,
+          "source": "speech"
+        },
+        {
+          "text": "with",
+          "startMs": 47990,
+          "endMs": 48110,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 48150,
+          "endMs": 48170,
+          "source": "speech"
+        },
+        {
+          "text": "matter",
+          "startMs": 48230,
+          "endMs": 48470,
+          "source": "speech"
+        },
+        {
+          "text": "of",
+          "startMs": 48530,
+          "endMs": 48590,
+          "source": "speech"
+        },
+        {
+          "text": "extreme",
+          "startMs": 48651,
+          "endMs": 49051,
+          "source": "speech"
+        },
+        {
+          "text": "delicacy,\"",
+          "startMs": 49091,
+          "endMs": 49631,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 49971,
+          "endMs": 50111,
+          "source": "speech"
+        },
+        {
+          "text": "Holmes.",
+          "startMs": 50151,
+          "endMs": 50471,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"I",
+          "startMs": 50491,
+          "endMs": 52192,
+          "source": "speech"
+        },
+        {
+          "text": "can't",
+          "startMs": 52232,
+          "endMs": 52432,
+          "source": "speech"
+        },
+        {
+          "text": "confide",
+          "startMs": 52452,
+          "endMs": 52772,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 52792,
+          "endMs": 52872,
+          "source": "speech"
+        },
+        {
+          "text": "details",
+          "startMs": 52892,
+          "endMs": 53192,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 53212,
+          "endMs": 53292,
+          "source": "speech"
+        },
+        {
+          "text": "anyone,",
+          "startMs": 53392,
+          "endMs": 53693,
+          "source": "speech"
+        },
+        {
+          "text": "not",
+          "startMs": 53733,
+          "endMs": 53853,
+          "source": "speech"
+        },
+        {
+          "text": "even",
+          "startMs": 53893,
+          "endMs": 54053,
+          "source": "speech"
+        },
+        {
+          "text": "you,",
+          "startMs": 54093,
+          "endMs": 54273,
+          "source": "speech"
+        },
+        {
+          "text": "my",
+          "startMs": 54313,
+          "endMs": 54413,
+          "source": "speech"
+        },
+        {
+          "text": "dear",
+          "startMs": 54453,
+          "endMs": 54593,
+          "source": "speech"
+        },
+        {
+          "text": "Watson.\"",
+          "startMs": 54633,
+          "endMs": 54953,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Are",
+          "startMs": 55833,
+          "endMs": 55913,
+          "source": "speech"
+        },
+        {
+          "text": "you",
+          "startMs": 55953,
+          "endMs": 56034,
+          "source": "speech"
+        },
+        {
+          "text": "working",
+          "startMs": 56054,
+          "endMs": 56294,
+          "source": "speech"
+        },
+        {
+          "text": "on",
+          "startMs": 56334,
+          "endMs": 56394,
+          "source": "speech"
+        },
+        {
+          "text": "anything",
+          "startMs": 56434,
+          "endMs": 56694,
+          "source": "speech"
+        },
+        {
+          "text": "special",
+          "startMs": 56734,
+          "endMs": 57014,
+          "source": "speech"
+        },
+        {
+          "text": "right",
+          "startMs": 57054,
+          "endMs": 57194,
+          "source": "speech"
+        },
+        {
+          "text": "now?\"",
+          "startMs": 57234,
+          "endMs": 57434,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 57834,
+          "endMs": 57894,
+          "source": "speech"
+        },
+        {
+          "text": "asked",
+          "startMs": 57954,
+          "endMs": 58134,
+          "source": "speech"
+        },
+        {
+          "text": "him.",
+          "startMs": 58174,
+          "endMs": 58294,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"I",
+          "startMs": 58314,
+          "endMs": 59295,
+          "source": "speech"
+        },
+        {
+          "text": "have",
+          "startMs": 59335,
+          "endMs": 59435,
+          "source": "speech"
+        },
+        {
+          "text": "ten",
+          "startMs": 59495,
+          "endMs": 59615,
+          "source": "speech"
+        },
+        {
+          "text": "or",
+          "startMs": 59655,
+          "endMs": 59735,
+          "source": "speech"
+        },
+        {
+          "text": "twelve",
+          "startMs": 59755,
+          "endMs": 59975,
+          "source": "speech"
+        },
+        {
+          "text": "cases",
+          "startMs": 59995,
+          "endMs": 60295,
+          "source": "speech"
+        },
+        {
+          "text": "that",
+          "startMs": 60335,
+          "endMs": 60435,
+          "source": "speech"
+        },
+        {
+          "text": "are",
+          "startMs": 60475,
+          "endMs": 60555,
+          "source": "speech"
+        },
+        {
+          "text": "important,\"",
+          "startMs": 60595,
+          "endMs": 61056,
+          "source": "speech"
+        },
+        {
+          "text": "he",
+          "startMs": 61376,
+          "endMs": 61456,
+          "source": "speech"
+        },
+        {
+          "text": "replied.",
+          "startMs": 61496,
+          "endMs": 61896,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"But",
+          "startMs": 62732,
+          "endMs": 62832,
+          "source": "speech"
+        },
+        {
+          "text": "none",
+          "startMs": 62892,
+          "endMs": 63012,
+          "source": "speech"
+        },
+        {
+          "text": "of",
+          "startMs": 63052,
+          "endMs": 63092,
+          "source": "speech"
+        },
+        {
+          "text": "them",
+          "startMs": 63132,
+          "endMs": 63232,
+          "source": "speech"
+        },
+        {
+          "text": "are",
+          "startMs": 63292,
+          "endMs": 63393,
+          "source": "speech"
+        },
+        {
+          "text": "interesting.\"",
+          "startMs": 63453,
+          "endMs": 63953,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Holmes",
+          "startMs": 64854,
+          "endMs": 65214,
+          "source": "speech"
+        },
+        {
+          "text": "rose",
+          "startMs": 65294,
+          "endMs": 65474,
+          "source": "speech"
+        },
+        {
+          "text": "from",
+          "startMs": 65514,
+          "endMs": 65614,
+          "source": "speech"
+        },
+        {
+          "text": "his",
+          "startMs": 65654,
+          "endMs": 65754,
+          "source": "speech"
+        },
+        {
+          "text": "chair",
+          "startMs": 65794,
+          "endMs": 66034,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 66054,
+          "endMs": 66114,
+          "source": "speech"
+        },
+        {
+          "text": "went",
+          "startMs": 66154,
+          "endMs": 66295,
+          "source": "speech"
+        },
+        {
+          "text": "over",
+          "startMs": 66335,
+          "endMs": 66455,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 66475,
+          "endMs": 66535,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 66555,
+          "endMs": 66635,
+          "source": "speech"
+        },
+        {
+          "text": "window.",
+          "startMs": 66655,
+          "endMs": 66975,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"However",
+          "startMs": 66995,
+          "endMs": 68216,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 68316,
+          "endMs": 68356,
+          "source": "speech"
+        },
+        {
+          "text": "may",
+          "startMs": 68396,
+          "endMs": 68536,
+          "source": "speech"
+        },
+        {
+          "text": "soon",
+          "startMs": 68616,
+          "endMs": 68876,
+          "source": "speech"
+        },
+        {
+          "text": "have",
+          "startMs": 68956,
+          "endMs": 69096,
+          "source": "speech"
+        },
+        {
+          "text": "an",
+          "startMs": 69136,
+          "endMs": 69177,
+          "source": "speech"
+        },
+        {
+          "text": "interesting",
+          "startMs": 69257,
+          "endMs": 69677,
+          "source": "speech"
+        },
+        {
+          "text": "one.",
+          "startMs": 69797,
+          "endMs": 69937,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Look",
+          "startMs": 70838,
+          "endMs": 71018,
+          "source": "speech"
+        },
+        {
+          "text": "down",
+          "startMs": 71058,
+          "endMs": 71218,
+          "source": "speech"
+        },
+        {
+          "text": "there",
+          "startMs": 71238,
+          "endMs": 71398,
+          "source": "speech"
+        },
+        {
+          "text": "on",
+          "startMs": 71458,
+          "endMs": 71498,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 71538,
+          "endMs": 71618,
+          "source": "speech"
+        },
+        {
+          "text": "sidewalk.\"",
+          "startMs": 71658,
+          "endMs": 72139,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 73039,
+          "endMs": 73079,
+          "source": "speech"
+        },
+        {
+          "text": "went",
+          "startMs": 73119,
+          "endMs": 73299,
+          "source": "speech"
+        },
+        {
+          "text": "over",
+          "startMs": 73379,
+          "endMs": 73519,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 73539,
+          "endMs": 73620,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 73640,
+          "endMs": 73720,
+          "source": "speech"
+        },
+        {
+          "text": "window.",
+          "startMs": 73760,
+          "endMs": 74100,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "A",
+          "startMs": 75041,
+          "endMs": 75081,
+          "source": "speech"
+        },
+        {
+          "text": "tall",
+          "startMs": 75141,
+          "endMs": 75401,
+          "source": "speech"
+        },
+        {
+          "text": "young",
+          "startMs": 75441,
+          "endMs": 75621,
+          "source": "speech"
+        },
+        {
+          "text": "woman",
+          "startMs": 75641,
+          "endMs": 75861,
+          "source": "speech"
+        },
+        {
+          "text": "stood",
+          "startMs": 75901,
+          "endMs": 76081,
+          "source": "speech"
+        },
+        {
+          "text": "across",
+          "startMs": 76101,
+          "endMs": 76381,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 76401,
+          "endMs": 76502,
+          "source": "speech"
+        },
+        {
+          "text": "street.",
+          "startMs": 76542,
+          "endMs": 76842,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "She",
+          "startMs": 77782,
+          "endMs": 77882,
+          "source": "speech"
+        },
+        {
+          "text": "was",
+          "startMs": 77902,
+          "endMs": 78003,
+          "source": "speech"
+        },
+        {
+          "text": "wearing",
+          "startMs": 78023,
+          "endMs": 78223,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 78263,
+          "endMs": 78283,
+          "source": "speech"
+        },
+        {
+          "text": "black",
+          "startMs": 78343,
+          "endMs": 78563,
+          "source": "speech"
+        },
+        {
+          "text": "jacket",
+          "startMs": 78623,
+          "endMs": 78943,
+          "source": "speech"
+        },
+        {
+          "text": "trimmed",
+          "startMs": 78983,
+          "endMs": 79203,
+          "source": "speech"
+        },
+        {
+          "text": "with",
+          "startMs": 79223,
+          "endMs": 79343,
+          "source": "speech"
+        },
+        {
+          "text": "matching",
+          "startMs": 79403,
+          "endMs": 79704,
+          "source": "speech"
+        },
+        {
+          "text": "beads",
+          "startMs": 79744,
+          "endMs": 80004,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 80044,
+          "endMs": 80124,
+          "source": "speech"
+        },
+        {
+          "text": "fringe.",
+          "startMs": 80184,
+          "endMs": 80564,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Her",
+          "startMs": 81525,
+          "endMs": 81645,
+          "source": "speech"
+        },
+        {
+          "text": "gray,",
+          "startMs": 81705,
+          "endMs": 81945,
+          "source": "speech"
+        },
+        {
+          "text": "broad-brimmed",
+          "startMs": 82005,
+          "endMs": 82526,
+          "source": "speech"
+        },
+        {
+          "text": "straw",
+          "startMs": 82586,
+          "endMs": 82846,
+          "source": "speech"
+        },
+        {
+          "text": "hat",
+          "startMs": 82886,
+          "endMs": 83126,
+          "source": "speech"
+        },
+        {
+          "text": "was",
+          "startMs": 83206,
+          "endMs": 83326,
+          "source": "speech"
+        },
+        {
+          "text": "accented",
+          "startMs": 83466,
+          "endMs": 83847,
+          "source": "speech"
+        },
+        {
+          "text": "with",
+          "startMs": 83887,
+          "endMs": 84007,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 84047,
+          "endMs": 84067,
+          "source": "speech"
+        },
+        {
+          "text": "red",
+          "startMs": 84107,
+          "endMs": 84267,
+          "source": "speech"
+        },
+        {
+          "text": "feather,",
+          "startMs": 84327,
+          "endMs": 84607,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 84887,
+          "endMs": 85007,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 85047,
+          "endMs": 85067,
+          "source": "speech"
+        },
+        {
+          "text": "heavy",
+          "startMs": 85127,
+          "endMs": 85328,
+          "source": "speech"
+        },
+        {
+          "text": "fur",
+          "startMs": 85388,
+          "endMs": 85568,
+          "source": "speech"
+        },
+        {
+          "text": "boa",
+          "startMs": 85628,
+          "endMs": 85908,
+          "source": "speech"
+        },
+        {
+          "text": "was",
+          "startMs": 85948,
+          "endMs": 86068,
+          "source": "speech"
+        },
+        {
+          "text": "wrapped",
+          "startMs": 86148,
+          "endMs": 86388,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "around",
+          "startMs": 86428,
+          "endMs": 86628,
+          "source": "speech"
+        },
+        {
+          "text": "her",
+          "startMs": 86668,
+          "endMs": 86769,
+          "source": "speech"
+        },
+        {
+          "text": "neck.",
+          "startMs": 86809,
+          "endMs": 87029,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"She",
+          "startMs": 87949,
+          "endMs": 88069,
+          "source": "speech"
+        },
+        {
+          "text": "seems",
+          "startMs": 88129,
+          "endMs": 88330,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 88370,
+          "endMs": 88430,
+          "source": "speech"
+        },
+        {
+          "text": "have",
+          "startMs": 88470,
+          "endMs": 88570,
+          "source": "speech"
+        },
+        {
+          "text": "some",
+          "startMs": 88610,
+          "endMs": 88750,
+          "source": "speech"
+        },
+        {
+          "text": "money,",
+          "startMs": 88790,
+          "endMs": 89030,
+          "source": "speech"
+        },
+        {
+          "text": "although",
+          "startMs": 89170,
+          "endMs": 89390,
+          "source": "speech"
+        },
+        {
+          "text": "not",
+          "startMs": 89450,
+          "endMs": 89590,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 89630,
+          "endMs": 89711,
+          "source": "speech"
+        },
+        {
+          "text": "best",
+          "startMs": 89751,
+          "endMs": 89911,
+          "source": "speech"
+        },
+        {
+          "text": "taste",
+          "startMs": 89951,
+          "endMs": 90171,
+          "source": "speech"
+        },
+        {
+          "text": "in",
+          "startMs": 90211,
+          "endMs": 90271,
+          "source": "speech"
+        },
+        {
+          "text": "clothing,\"",
+          "startMs": 90291,
+          "endMs": 90691,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 91051,
+          "endMs": 91111,
+          "source": "speech"
+        },
+        {
+          "text": "commented.",
+          "startMs": 91151,
+          "endMs": 91612,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "The",
+          "startMs": 93132,
+          "endMs": 93212,
+          "source": "speech"
+        },
+        {
+          "text": "woman",
+          "startMs": 93252,
+          "endMs": 93472,
+          "source": "speech"
+        },
+        {
+          "text": "nervously",
+          "startMs": 93532,
+          "endMs": 93892,
+          "source": "speech"
+        },
+        {
+          "text": "peeped",
+          "startMs": 93932,
+          "endMs": 94152,
+          "source": "speech"
+        },
+        {
+          "text": "at",
+          "startMs": 94172,
+          "endMs": 94232,
+          "source": "speech"
+        },
+        {
+          "text": "our",
+          "startMs": 94292,
+          "endMs": 94352,
+          "source": "speech"
+        },
+        {
+          "text": "windows",
+          "startMs": 94392,
+          "endMs": 94773,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 94873,
+          "endMs": 94953,
+          "source": "speech"
+        },
+        {
+          "text": "played",
+          "startMs": 95013,
+          "endMs": 95213,
+          "source": "speech"
+        },
+        {
+          "text": "with",
+          "startMs": 95233,
+          "endMs": 95353,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 95373,
+          "endMs": 95433,
+          "source": "speech"
+        },
+        {
+          "text": "buttons",
+          "startMs": 95473,
+          "endMs": 95733,
+          "source": "speech"
+        },
+        {
+          "text": "on",
+          "startMs": 95773,
+          "endMs": 95833,
+          "source": "speech"
+        },
+        {
+          "text": "her",
+          "startMs": 95873,
+          "endMs": 95953,
+          "source": "speech"
+        },
+        {
+          "text": "gloves.",
+          "startMs": 95973,
+          "endMs": 96333,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Suddenly",
+          "startMs": 97393,
+          "endMs": 97753,
+          "source": "speech"
+        },
+        {
+          "text": "she",
+          "startMs": 97833,
+          "endMs": 97953,
+          "source": "speech"
+        },
+        {
+          "text": "plunged",
+          "startMs": 98033,
+          "endMs": 98334,
+          "source": "speech"
+        },
+        {
+          "text": "across",
+          "startMs": 98394,
+          "endMs": 98654,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 98674,
+          "endMs": 98754,
+          "source": "speech"
+        },
+        {
+          "text": "street",
+          "startMs": 98794,
+          "endMs": 99034,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 99094,
+          "endMs": 99194,
+          "source": "speech"
+        },
+        {
+          "text": "rang",
+          "startMs": 99254,
+          "endMs": 99414,
+          "source": "speech"
+        },
+        {
+          "text": "our",
+          "startMs": 99454,
+          "endMs": 99534,
+          "source": "speech"
+        },
+        {
+          "text": "doorbell.",
+          "startMs": 99554,
+          "endMs": 99974,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "In",
+          "startMs": 100834,
+          "endMs": 100894,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 100934,
+          "endMs": 100954,
+          "source": "speech"
+        },
+        {
+          "text": "few",
+          "startMs": 101014,
+          "endMs": 101174,
+          "source": "speech"
+        },
+        {
+          "text": "moments",
+          "startMs": 101234,
+          "endMs": 101494,
+          "source": "speech"
+        },
+        {
+          "text": "our",
+          "startMs": 101574,
+          "endMs": 101674,
+          "source": "speech"
+        },
+        {
+          "text": "landlady,",
+          "startMs": 101715,
+          "endMs": 102135,
+          "source": "speech"
+        },
+        {
+          "text": "Mrs.",
+          "startMs": 102175,
+          "endMs": 102435,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Hudson,",
+          "startMs": 102475,
+          "endMs": 102815,
+          "source": "speech"
+        },
+        {
+          "text": "announced",
+          "startMs": 102855,
+          "endMs": 103175,
+          "source": "speech"
+        },
+        {
+          "text": "our",
+          "startMs": 103215,
+          "endMs": 103315,
+          "source": "speech"
+        },
+        {
+          "text": "visitor:",
+          "startMs": 103335,
+          "endMs": 103655,
+          "source": "speech"
+        },
+        {
+          "text": "Miss",
+          "startMs": 103955,
+          "endMs": 104135,
+          "source": "speech"
+        },
+        {
+          "text": "Mary",
+          "startMs": 104215,
+          "endMs": 104495,
+          "source": "speech"
+        },
+        {
+          "text": "Sutherland.",
+          "startMs": 104555,
+          "endMs": 104995,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Holmes",
+          "startMs": 105896,
+          "endMs": 106176,
+          "source": "speech"
+        },
+        {
+          "text": "welcomed",
+          "startMs": 106216,
+          "endMs": 106476,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 106496,
+          "endMs": 106556,
+          "source": "speech"
+        },
+        {
+          "text": "woman",
+          "startMs": 106576,
+          "endMs": 106776,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 106816,
+          "endMs": 106896,
+          "source": "speech"
+        },
+        {
+          "text": "asked",
+          "startMs": 106976,
+          "endMs": 107136,
+          "source": "speech"
+        },
+        {
+          "text": "her",
+          "startMs": 107156,
+          "endMs": 107236,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 107256,
+          "endMs": 107316,
+          "source": "speech"
+        },
+        {
+          "text": "sit",
+          "startMs": 107356,
+          "endMs": 107496,
+          "source": "speech"
+        },
+        {
+          "text": "down.",
+          "startMs": 107536,
+          "endMs": 107796,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Then",
+          "startMs": 108636,
+          "endMs": 108777,
+          "source": "speech"
+        },
+        {
+          "text": "he",
+          "startMs": 108837,
+          "endMs": 108917,
+          "source": "speech"
+        },
+        {
+          "text": "studied",
+          "startMs": 108977,
+          "endMs": 109237,
+          "source": "speech"
+        },
+        {
+          "text": "her",
+          "startMs": 109277,
+          "endMs": 109377,
+          "source": "speech"
+        },
+        {
+          "text": "for",
+          "startMs": 109397,
+          "endMs": 109497,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 109537,
+          "endMs": 109557,
+          "source": "speech"
+        },
+        {
+          "text": "minute.",
+          "startMs": 109597,
+          "endMs": 109837,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"With",
+          "startMs": 109857,
+          "endMs": 110817,
+          "source": "speech"
+        },
+        {
+          "text": "your",
+          "startMs": 110837,
+          "endMs": 110957,
+          "source": "speech"
+        },
+        {
+          "text": "poor",
+          "startMs": 110997,
+          "endMs": 111197,
+          "source": "speech"
+        },
+        {
+          "text": "eyesight,",
+          "startMs": 111317,
+          "endMs": 111677,
+          "source": "speech"
+        },
+        {
+          "text": "do",
+          "startMs": 111697,
+          "endMs": 111777,
+          "source": "speech"
+        },
+        {
+          "text": "you",
+          "startMs": 111817,
+          "endMs": 111917,
+          "source": "speech"
+        },
+        {
+          "text": "find",
+          "startMs": 111957,
+          "endMs": 112097,
+          "source": "speech"
+        },
+        {
+          "text": "that",
+          "startMs": 112118,
+          "endMs": 112218,
+          "source": "speech"
+        },
+        {
+          "text": "it's",
+          "startMs": 112238,
+          "endMs": 112358,
+          "source": "speech"
+        },
+        {
+          "text": "difficult",
+          "startMs": 112398,
+          "endMs": 112718,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 112758,
+          "endMs": 112818,
+          "source": "speech"
+        },
+        {
+          "text": "use",
+          "startMs": 112898,
+          "endMs": 112998,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 113038,
+          "endMs": 113058,
+          "source": "speech"
+        },
+        {
+          "text": "typewriter",
+          "startMs": 113118,
+          "endMs": 113538,
+          "source": "speech"
+        },
+        {
+          "text": "for",
+          "startMs": 113578,
+          "endMs": 113698,
+          "source": "speech"
+        },
+        {
+          "text": "so",
+          "startMs": 113758,
+          "endMs": 113878,
+          "source": "speech"
+        },
+        {
+          "text": "many",
+          "startMs": 113898,
+          "endMs": 114018,
+          "source": "speech"
+        },
+        {
+          "text": "hours",
+          "startMs": 114058,
+          "endMs": 114258,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "a",
+          "startMs": 114318,
+          "endMs": 114338,
+          "source": "speech"
+        },
+        {
+          "text": "day?\"",
+          "startMs": 114378,
+          "endMs": 114598,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "he",
+          "startMs": 114938,
+          "endMs": 115018,
+          "source": "speech"
+        },
+        {
+          "text": "asked.",
+          "startMs": 115158,
+          "endMs": 115378,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"I",
+          "startMs": 115398,
+          "endMs": 116399,
+          "source": "speech"
+        },
+        {
+          "text": "did",
+          "startMs": 116419,
+          "endMs": 116559,
+          "source": "speech"
+        },
+        {
+          "text": "at",
+          "startMs": 116599,
+          "endMs": 116659,
+          "source": "speech"
+        },
+        {
+          "text": "first,",
+          "startMs": 116699,
+          "endMs": 116999,
+          "source": "speech"
+        },
+        {
+          "text": "but",
+          "startMs": 117299,
+          "endMs": 117419,
+          "source": "speech"
+        },
+        {
+          "text": "now",
+          "startMs": 117459,
+          "endMs": 117599,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 117679,
+          "endMs": 117739,
+          "source": "speech"
+        },
+        {
+          "text": "know",
+          "startMs": 117799,
+          "endMs": 117939,
+          "source": "speech"
+        },
+        {
+          "text": "where",
+          "startMs": 117979,
+          "endMs": 118099,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 118119,
+          "endMs": 118179,
+          "source": "speech"
+        },
+        {
+          "text": "letters",
+          "startMs": 118219,
+          "endMs": 118439,
+          "source": "speech"
+        },
+        {
+          "text": "are",
+          "startMs": 118519,
+          "endMs": 118599,
+          "source": "speech"
+        },
+        {
+          "text": "without",
+          "startMs": 118639,
+          "endMs": 118879,
+          "source": "speech"
+        },
+        {
+          "text": "looking,\"",
+          "startMs": 118919,
+          "endMs": 119220,
+          "source": "speech"
+        },
+        {
+          "text": "Miss",
+          "startMs": 119520,
+          "endMs": 119660,
+          "source": "speech"
+        },
+        {
+          "text": "Sutherland",
+          "startMs": 119680,
+          "endMs": 120040,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 120080,
+          "endMs": 120200,
+          "source": "speech"
+        },
+        {
+          "text": "quickly.",
+          "startMs": 120240,
+          "endMs": 120520,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Then,",
+          "startMs": 121376,
+          "endMs": 121596,
+          "source": "speech"
+        },
+        {
+          "text": "suddenly",
+          "startMs": 121716,
+          "endMs": 121997,
+          "source": "speech"
+        },
+        {
+          "text": "realizing",
+          "startMs": 122057,
+          "endMs": 122477,
+          "source": "speech"
+        },
+        {
+          "text": "what",
+          "startMs": 122517,
+          "endMs": 122617,
+          "source": "speech"
+        },
+        {
+          "text": "Holmes",
+          "startMs": 122657,
+          "endMs": 122877,
+          "source": "speech"
+        },
+        {
+          "text": "had",
+          "startMs": 122897,
+          "endMs": 123017,
+          "source": "speech"
+        },
+        {
+          "text": "said,",
+          "startMs": 123057,
+          "endMs": 123318,
+          "source": "speech"
+        },
+        {
+          "text": "she",
+          "startMs": 123658,
+          "endMs": 123778,
+          "source": "speech"
+        },
+        {
+          "text": "looked",
+          "startMs": 123818,
+          "endMs": 123998,
+          "source": "speech"
+        },
+        {
+          "text": "at",
+          "startMs": 124038,
+          "endMs": 124078,
+          "source": "speech"
+        },
+        {
+          "text": "him",
+          "startMs": 124118,
+          "endMs": 124218,
+          "source": "speech"
+        },
+        {
+          "text": "with",
+          "startMs": 124238,
+          "endMs": 124358,
+          "source": "speech"
+        },
+        {
+          "text": "both",
+          "startMs": 124398,
+          "endMs": 124578,
+          "source": "speech"
+        },
+        {
+          "text": "fear",
+          "startMs": 124699,
+          "endMs": 124939,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 125039,
+          "endMs": 125139,
+          "source": "speech"
+        },
+        {
+          "text": "astonishment",
+          "startMs": 125179,
+          "endMs": 125779,
+          "source": "speech"
+        },
+        {
+          "text": "in",
+          "startMs": 125819,
+          "endMs": 125919,
+          "source": "speech"
+        },
+        {
+          "text": "her",
+          "startMs": 125979,
+          "endMs": 126080,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "eyes.",
+          "startMs": 126240,
+          "endMs": 126400,
+          "source": "speech"
+        },
+        {
+          "text": "\"How",
+          "startMs": 126420,
+          "endMs": 128181,
+          "source": "speech"
+        },
+        {
+          "text": "did",
+          "startMs": 128201,
+          "endMs": 128321,
+          "source": "speech"
+        },
+        {
+          "text": "you",
+          "startMs": 128341,
+          "endMs": 128401,
+          "source": "speech"
+        },
+        {
+          "text": "know",
+          "startMs": 128441,
+          "endMs": 128561,
+          "source": "speech"
+        },
+        {
+          "text": "all",
+          "startMs": 128601,
+          "endMs": 128681,
+          "source": "speech"
+        },
+        {
+          "text": "that",
+          "startMs": 128721,
+          "endMs": 128822,
+          "source": "speech"
+        },
+        {
+          "text": "about",
+          "startMs": 128842,
+          "endMs": 129062,
+          "source": "speech"
+        },
+        {
+          "text": "me?\"",
+          "startMs": 129122,
+          "endMs": 129282,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "she",
+          "startMs": 129622,
+          "endMs": 129742,
+          "source": "speech"
+        },
+        {
+          "text": "asked.",
+          "startMs": 129882,
+          "endMs": 130103,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"I",
+          "startMs": 130123,
+          "endMs": 131123,
+          "source": "speech"
+        },
+        {
+          "text": "have",
+          "startMs": 131143,
+          "endMs": 131243,
+          "source": "speech"
+        },
+        {
+          "text": "trained",
+          "startMs": 131283,
+          "endMs": 131504,
+          "source": "speech"
+        },
+        {
+          "text": "myself",
+          "startMs": 131524,
+          "endMs": 131824,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 131844,
+          "endMs": 131924,
+          "source": "speech"
+        },
+        {
+          "text": "see",
+          "startMs": 131964,
+          "endMs": 132084,
+          "source": "speech"
+        },
+        {
+          "text": "what",
+          "startMs": 132104,
+          "endMs": 132224,
+          "source": "speech"
+        },
+        {
+          "text": "others",
+          "startMs": 132284,
+          "endMs": 132484,
+          "source": "speech"
+        },
+        {
+          "text": "overlook,\"",
+          "startMs": 132564,
+          "endMs": 132965,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 133305,
+          "endMs": 133465,
+          "source": "speech"
+        },
+        {
+          "text": "Holmes.",
+          "startMs": 133525,
+          "endMs": 133825,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"There",
+          "startMs": 133845,
+          "endMs": 134886,
+          "source": "speech"
+        },
+        {
+          "text": "is",
+          "startMs": 134926,
+          "endMs": 135006,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 135026,
+          "endMs": 135066,
+          "source": "speech"
+        },
+        {
+          "text": "small",
+          "startMs": 135126,
+          "endMs": 135366,
+          "source": "speech"
+        },
+        {
+          "text": "dent",
+          "startMs": 135426,
+          "endMs": 135647,
+          "source": "speech"
+        },
+        {
+          "text": "on",
+          "startMs": 135707,
+          "endMs": 135767,
+          "source": "speech"
+        },
+        {
+          "text": "either",
+          "startMs": 135867,
+          "endMs": 136047,
+          "source": "speech"
+        },
+        {
+          "text": "side",
+          "startMs": 136087,
+          "endMs": 136247,
+          "source": "speech"
+        },
+        {
+          "text": "of",
+          "startMs": 136267,
+          "endMs": 136307,
+          "source": "speech"
+        },
+        {
+          "text": "your",
+          "startMs": 136347,
+          "endMs": 136487,
+          "source": "speech"
+        },
+        {
+          "text": "nose",
+          "startMs": 136527,
+          "endMs": 136807,
+          "source": "speech"
+        },
+        {
+          "text": "that",
+          "startMs": 136847,
+          "endMs": 136968,
+          "source": "speech"
+        },
+        {
+          "text": "could",
+          "startMs": 136988,
+          "endMs": 137128,
+          "source": "speech"
+        },
+        {
+          "text": "only",
+          "startMs": 137188,
+          "endMs": 137368,
+          "source": "speech"
+        },
+        {
+          "text": "be",
+          "startMs": 137408,
+          "endMs": 137488,
+          "source": "speech"
+        },
+        {
+          "text": "made",
+          "startMs": 137508,
+          "endMs": 137668,
+          "source": "speech"
+        },
+        {
+          "text": "by",
+          "startMs": 137708,
+          "endMs": 137828,
+          "source": "speech"
+        },
+        {
+          "text": "eyeglasses.",
+          "startMs": 137908,
+          "endMs": 138469,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Your",
+          "startMs": 139349,
+          "endMs": 139489,
+          "source": "speech"
+        },
+        {
+          "text": "dress",
+          "startMs": 139549,
+          "endMs": 139770,
+          "source": "speech"
+        },
+        {
+          "text": "sleeves",
+          "startMs": 139790,
+          "endMs": 140010,
+          "source": "speech"
+        },
+        {
+          "text": "have",
+          "startMs": 140030,
+          "endMs": 140170,
+          "source": "speech"
+        },
+        {
+          "text": "purple",
+          "startMs": 140210,
+          "endMs": 140450,
+          "source": "speech"
+        },
+        {
+          "text": "velvet",
+          "startMs": 140490,
+          "endMs": 140710,
+          "source": "speech"
+        },
+        {
+          "text": "cuffs.",
+          "startMs": 140750,
+          "endMs": 141050,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 141991,
+          "endMs": 142031,
+          "source": "speech"
+        },
+        {
+          "text": "can",
+          "startMs": 142071,
+          "endMs": 142191,
+          "source": "speech"
+        },
+        {
+          "text": "see",
+          "startMs": 142231,
+          "endMs": 142371,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 142411,
+          "endMs": 142432,
+          "source": "speech"
+        },
+        {
+          "text": "line",
+          "startMs": 142492,
+          "endMs": 142732,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 142772,
+          "endMs": 142812,
+          "source": "speech"
+        },
+        {
+          "text": "little",
+          "startMs": 142852,
+          "endMs": 143052,
+          "source": "speech"
+        },
+        {
+          "text": "above",
+          "startMs": 143092,
+          "endMs": 143252,
+          "source": "speech"
+        },
+        {
+          "text": "your",
+          "startMs": 143272,
+          "endMs": 143412,
+          "source": "speech"
+        },
+        {
+          "text": "wrist,",
+          "startMs": 143472,
+          "endMs": 143752,
+          "source": "speech"
+        },
+        {
+          "text": "where",
+          "startMs": 143792,
+          "endMs": 143933,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 143973,
+          "endMs": 144013,
+          "source": "speech"
+        },
+        {
+          "text": "typist",
+          "startMs": 144053,
+          "endMs": 144373,
+          "source": "speech"
+        },
+        {
+          "text": "would",
+          "startMs": 144413,
+          "endMs": 144533,
+          "source": "speech"
+        },
+        {
+          "text": "press",
+          "startMs": 144593,
+          "endMs": 144773,
+          "source": "speech"
+        },
+        {
+          "text": "her",
+          "startMs": 144793,
+          "endMs": 144893,
+          "source": "speech"
+        },
+        {
+          "text": "arm",
+          "startMs": 145013,
+          "endMs": 145133,
+          "source": "speech"
+        },
+        {
+          "text": "against",
+          "startMs": 145194,
+          "endMs": 145414,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "the",
+          "startMs": 145454,
+          "endMs": 145534,
+          "source": "speech"
+        },
+        {
+          "text": "table.\"",
+          "startMs": 145574,
+          "endMs": 145894,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"I",
+          "startMs": 145914,
+          "endMs": 146895,
+          "source": "speech"
+        },
+        {
+          "text": "am",
+          "startMs": 146915,
+          "endMs": 146975,
+          "source": "speech"
+        },
+        {
+          "text": "impressed,\"",
+          "startMs": 147015,
+          "endMs": 147535,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 147916,
+          "endMs": 147976,
+          "source": "speech"
+        },
+        {
+          "text": "said.",
+          "startMs": 148056,
+          "endMs": 148256,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"I",
+          "startMs": 149224,
+          "endMs": 149304,
+          "source": "speech"
+        },
+        {
+          "text": "also",
+          "startMs": 149384,
+          "endMs": 149624,
+          "source": "speech"
+        },
+        {
+          "text": "noticed",
+          "startMs": 149704,
+          "endMs": 149944,
+          "source": "speech"
+        },
+        {
+          "text": "that",
+          "startMs": 149964,
+          "endMs": 150064,
+          "source": "speech"
+        },
+        {
+          "text": "Miss",
+          "startMs": 150104,
+          "endMs": 150224,
+          "source": "speech"
+        },
+        {
+          "text": "Sutherland",
+          "startMs": 150244,
+          "endMs": 150564,
+          "source": "speech"
+        },
+        {
+          "text": "must",
+          "startMs": 150584,
+          "endMs": 150745,
+          "source": "speech"
+        },
+        {
+          "text": "have",
+          "startMs": 150765,
+          "endMs": 150885,
+          "source": "speech"
+        },
+        {
+          "text": "left",
+          "startMs": 150905,
+          "endMs": 151085,
+          "source": "speech"
+        },
+        {
+          "text": "home",
+          "startMs": 151125,
+          "endMs": 151305,
+          "source": "speech"
+        },
+        {
+          "text": "in",
+          "startMs": 151345,
+          "endMs": 151405,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 151425,
+          "endMs": 151485,
+          "source": "speech"
+        },
+        {
+          "text": "hurry",
+          "startMs": 151525,
+          "endMs": 151725,
+          "source": "speech"
+        },
+        {
+          "text": "this",
+          "startMs": 151765,
+          "endMs": 151885,
+          "source": "speech"
+        },
+        {
+          "text": "morning",
+          "startMs": 151925,
+          "endMs": 152145,
+          "source": "speech"
+        },
+        {
+          "text": "because",
+          "startMs": 152185,
+          "endMs": 152405,
+          "source": "speech"
+        },
+        {
+          "text": "she",
+          "startMs": 152425,
+          "endMs": 152525,
+          "source": "speech"
+        },
+        {
+          "text": "is",
+          "startMs": 152565,
+          "endMs": 152645,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "wearing",
+          "startMs": 152665,
+          "endMs": 152925,
+          "source": "speech"
+        },
+        {
+          "text": "two",
+          "startMs": 153005,
+          "endMs": 153185,
+          "source": "speech"
+        },
+        {
+          "text": "boots",
+          "startMs": 153245,
+          "endMs": 153465,
+          "source": "speech"
+        },
+        {
+          "text": "that",
+          "startMs": 153505,
+          "endMs": 153625,
+          "source": "speech"
+        },
+        {
+          "text": "do",
+          "startMs": 153645,
+          "endMs": 153745,
+          "source": "speech"
+        },
+        {
+          "text": "not",
+          "startMs": 153785,
+          "endMs": 153925,
+          "source": "speech"
+        },
+        {
+          "text": "match,\"",
+          "startMs": 153985,
+          "endMs": 154266,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 154686,
+          "endMs": 154826,
+          "source": "speech"
+        },
+        {
+          "text": "Holmes.",
+          "startMs": 154886,
+          "endMs": 155186,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Plus,",
+          "startMs": 155206,
+          "endMs": 156446,
+          "source": "speech"
+        },
+        {
+          "text": "one",
+          "startMs": 156586,
+          "endMs": 156706,
+          "source": "speech"
+        },
+        {
+          "text": "boot",
+          "startMs": 156746,
+          "endMs": 156926,
+          "source": "speech"
+        },
+        {
+          "text": "is",
+          "startMs": 156986,
+          "endMs": 157066,
+          "source": "speech"
+        },
+        {
+          "text": "fastened",
+          "startMs": 157106,
+          "endMs": 157426,
+          "source": "speech"
+        },
+        {
+          "text": "only",
+          "startMs": 157527,
+          "endMs": 157687,
+          "source": "speech"
+        },
+        {
+          "text": "at",
+          "startMs": 157707,
+          "endMs": 157767,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 157807,
+          "endMs": 157887,
+          "source": "speech"
+        },
+        {
+          "text": "first",
+          "startMs": 157927,
+          "endMs": 158187,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 158247,
+          "endMs": 158347,
+          "source": "speech"
+        },
+        {
+          "text": "second",
+          "startMs": 158427,
+          "endMs": 158707,
+          "source": "speech"
+        },
+        {
+          "text": "buttons,",
+          "startMs": 158727,
+          "endMs": 159047,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 159427,
+          "endMs": 159507,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 159527,
+          "endMs": 159627,
+          "source": "speech"
+        },
+        {
+          "text": "other",
+          "startMs": 159707,
+          "endMs": 159867,
+          "source": "speech"
+        },
+        {
+          "text": "at",
+          "startMs": 159967,
+          "endMs": 160027,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 160047,
+          "endMs": 160147,
+          "source": "speech"
+        },
+        {
+          "text": "first,",
+          "startMs": 160187,
+          "endMs": 160487,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "third,",
+          "startMs": 160607,
+          "endMs": 160847,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 160928,
+          "endMs": 161028,
+          "source": "speech"
+        },
+        {
+          "text": "fifth",
+          "startMs": 161128,
+          "endMs": 161328,
+          "source": "speech"
+        },
+        {
+          "text": "buttons.",
+          "startMs": 161368,
+          "endMs": 161728,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "But",
+          "startMs": 162668,
+          "endMs": 162768,
+          "source": "speech"
+        },
+        {
+          "text": "never",
+          "startMs": 162848,
+          "endMs": 163008,
+          "source": "speech"
+        },
+        {
+          "text": "mind",
+          "startMs": 163048,
+          "endMs": 163208,
+          "source": "speech"
+        },
+        {
+          "text": "all",
+          "startMs": 163248,
+          "endMs": 163348,
+          "source": "speech"
+        },
+        {
+          "text": "this;",
+          "startMs": 163388,
+          "endMs": 163568,
+          "source": "speech"
+        },
+        {
+          "text": "it's",
+          "startMs": 163968,
+          "endMs": 164088,
+          "source": "speech"
+        },
+        {
+          "text": "my",
+          "startMs": 164148,
+          "endMs": 164309,
+          "source": "speech"
+        },
+        {
+          "text": "business",
+          "startMs": 164349,
+          "endMs": 164609,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 164629,
+          "endMs": 164689,
+          "source": "speech"
+        },
+        {
+          "text": "notice",
+          "startMs": 164769,
+          "endMs": 165009,
+          "source": "speech"
+        },
+        {
+          "text": "these",
+          "startMs": 165029,
+          "endMs": 165189,
+          "source": "speech"
+        },
+        {
+          "text": "things.",
+          "startMs": 165229,
+          "endMs": 165509,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Why",
+          "startMs": 166529,
+          "endMs": 166689,
+          "source": "speech"
+        },
+        {
+          "text": "have",
+          "startMs": 166729,
+          "endMs": 166829,
+          "source": "speech"
+        },
+        {
+          "text": "you",
+          "startMs": 166849,
+          "endMs": 166929,
+          "source": "speech"
+        },
+        {
+          "text": "come",
+          "startMs": 166969,
+          "endMs": 167129,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 167149,
+          "endMs": 167209,
+          "source": "speech"
+        },
+        {
+          "text": "consult",
+          "startMs": 167249,
+          "endMs": 167589,
+          "source": "speech"
+        },
+        {
+          "text": "me,",
+          "startMs": 167609,
+          "endMs": 167710,
+          "source": "speech"
+        },
+        {
+          "text": "Miss",
+          "startMs": 167730,
+          "endMs": 167830,
+          "source": "speech"
+        },
+        {
+          "text": "Sutherland?\"",
+          "startMs": 167850,
+          "endMs": 168270,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Looking",
+          "startMs": 169850,
+          "endMs": 170110,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 170150,
+          "endMs": 170190,
+          "source": "speech"
+        },
+        {
+          "text": "bit",
+          "startMs": 170230,
+          "endMs": 170350,
+          "source": "speech"
+        },
+        {
+          "text": "dazed",
+          "startMs": 170390,
+          "endMs": 170650,
+          "source": "speech"
+        },
+        {
+          "text": "by",
+          "startMs": 170690,
+          "endMs": 170830,
+          "source": "speech"
+        },
+        {
+          "text": "Holmes'",
+          "startMs": 170870,
+          "endMs": 171251,
+          "source": "speech"
+        },
+        {
+          "text": "powers",
+          "startMs": 171291,
+          "endMs": 171691,
+          "source": "speech"
+        },
+        {
+          "text": "of",
+          "startMs": 171751,
+          "endMs": 171811,
+          "source": "speech"
+        },
+        {
+          "text": "observation,",
+          "startMs": 171891,
+          "endMs": 172471,
+          "source": "speech"
+        },
+        {
+          "text": "Miss",
+          "startMs": 172831,
+          "endMs": 172991,
+          "source": "speech"
+        },
+        {
+          "text": "Sutherland",
+          "startMs": 173011,
+          "endMs": 173411,
+          "source": "speech"
+        },
+        {
+          "text": "blurted",
+          "startMs": 173451,
+          "endMs": 173751,
+          "source": "speech"
+        },
+        {
+          "text": "out",
+          "startMs": 173811,
+          "endMs": 173931,
+          "source": "speech"
+        },
+        {
+          "text": "her",
+          "startMs": 173991,
+          "endMs": 174091,
+          "source": "speech"
+        },
+        {
+          "text": "reasons",
+          "startMs": 174151,
+          "endMs": 174532,
+          "source": "speech"
+        },
+        {
+          "text": "for",
+          "startMs": 174572,
+          "endMs": 174712,
+          "source": "speech"
+        },
+        {
+          "text": "appearing",
+          "startMs": 174752,
+          "endMs": 175172,
+          "source": "speech"
+        },
+        {
+          "text": "at",
+          "startMs": 175212,
+          "endMs": 175252,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "our",
+          "startMs": 175312,
+          "endMs": 175372,
+          "source": "speech"
+        },
+        {
+          "text": "lodgings.",
+          "startMs": 175392,
+          "endMs": 175812,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"A",
+          "startMs": 176832,
+          "endMs": 176892,
+          "source": "speech"
+        },
+        {
+          "text": "friend",
+          "startMs": 176912,
+          "endMs": 177092,
+          "source": "speech"
+        },
+        {
+          "text": "recommended",
+          "startMs": 177112,
+          "endMs": 177532,
+          "source": "speech"
+        },
+        {
+          "text": "you",
+          "startMs": 177552,
+          "endMs": 177632,
+          "source": "speech"
+        },
+        {
+          "text": "because",
+          "startMs": 177672,
+          "endMs": 177872,
+          "source": "speech"
+        },
+        {
+          "text": "you",
+          "startMs": 177913,
+          "endMs": 178013,
+          "source": "speech"
+        },
+        {
+          "text": "found",
+          "startMs": 178053,
+          "endMs": 178193,
+          "source": "speech"
+        },
+        {
+          "text": "her",
+          "startMs": 178213,
+          "endMs": 178313,
+          "source": "speech"
+        },
+        {
+          "text": "husband",
+          "startMs": 178353,
+          "endMs": 178633,
+          "source": "speech"
+        },
+        {
+          "text": "after",
+          "startMs": 178713,
+          "endMs": 178893,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 178933,
+          "endMs": 179013,
+          "source": "speech"
+        },
+        {
+          "text": "police",
+          "startMs": 179033,
+          "endMs": 179273,
+          "source": "speech"
+        },
+        {
+          "text": "had",
+          "startMs": 179293,
+          "endMs": 179393,
+          "source": "speech"
+        },
+        {
+          "text": "assumed",
+          "startMs": 179433,
+          "endMs": 179733,
+          "source": "speech"
+        },
+        {
+          "text": "he",
+          "startMs": 179773,
+          "endMs": 179853,
+          "source": "speech"
+        },
+        {
+          "text": "was",
+          "startMs": 179873,
+          "endMs": 179993,
+          "source": "speech"
+        },
+        {
+          "text": "dead,\"",
+          "startMs": 180033,
+          "endMs": 180293,
+          "source": "speech"
+        },
+        {
+          "text": "she",
+          "startMs": 180614,
+          "endMs": 180714,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "replied.",
+          "startMs": 180754,
+          "endMs": 181174,
+          "source": "speech"
+        },
+        {
+          "text": "\"Oh,",
+          "startMs": 181194,
+          "endMs": 182214,
+          "source": "speech"
+        },
+        {
+          "text": "Mr.",
+          "startMs": 182254,
+          "endMs": 182494,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Holmes,",
+          "startMs": 182554,
+          "endMs": 182915,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 183255,
+          "endMs": 183315,
+          "source": "speech"
+        },
+        {
+          "text": "wish",
+          "startMs": 183355,
+          "endMs": 183495,
+          "source": "speech"
+        },
+        {
+          "text": "you",
+          "startMs": 183515,
+          "endMs": 183595,
+          "source": "speech"
+        },
+        {
+          "text": "could",
+          "startMs": 183615,
+          "endMs": 183715,
+          "source": "speech"
+        },
+        {
+          "text": "do",
+          "startMs": 183735,
+          "endMs": 183795,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 183815,
+          "endMs": 183895,
+          "source": "speech"
+        },
+        {
+          "text": "same",
+          "startMs": 183915,
+          "endMs": 184095,
+          "source": "speech"
+        },
+        {
+          "text": "for",
+          "startMs": 184135,
+          "endMs": 184235,
+          "source": "speech"
+        },
+        {
+          "text": "me!",
+          "startMs": 184295,
+          "endMs": 184495,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 185456,
+          "endMs": 185536,
+          "source": "speech"
+        },
+        {
+          "text": "have",
+          "startMs": 185576,
+          "endMs": 185696,
+          "source": "speech"
+        },
+        {
+          "text": "an",
+          "startMs": 185716,
+          "endMs": 185776,
+          "source": "speech"
+        },
+        {
+          "text": "income",
+          "startMs": 185856,
+          "endMs": 186156,
+          "source": "speech"
+        },
+        {
+          "text": "of",
+          "startMs": 186216,
+          "endMs": 186276,
+          "source": "speech"
+        },
+        {
+          "text": "one",
+          "startMs": 186456,
+          "endMs": 186556,
+          "source": "speech"
+        },
+        {
+          "text": "hundred",
+          "startMs": 186596,
+          "endMs": 186816,
+          "source": "speech"
+        },
+        {
+          "text": "pounds",
+          "startMs": 186856,
+          "endMs": 187116,
+          "source": "speech"
+        },
+        {
+          "text": "per",
+          "startMs": 187156,
+          "endMs": 187276,
+          "source": "speech"
+        },
+        {
+          "text": "year",
+          "startMs": 187296,
+          "endMs": 187436,
+          "source": "speech"
+        },
+        {
+          "text": "in",
+          "startMs": 187476,
+          "endMs": 187536,
+          "source": "speech"
+        },
+        {
+          "text": "addition",
+          "startMs": 187556,
+          "endMs": 187857,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 187877,
+          "endMs": 187937,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 187977,
+          "endMs": 188057,
+          "source": "speech"
+        },
+        {
+          "text": "money",
+          "startMs": 188097,
+          "endMs": 188277,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 188357,
+          "endMs": 188417,
+          "source": "speech"
+        },
+        {
+          "text": "make",
+          "startMs": 188477,
+          "endMs": 188637,
+          "source": "speech"
+        },
+        {
+          "text": "with",
+          "startMs": 188657,
+          "endMs": 188757,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "my",
+          "startMs": 188797,
+          "endMs": 188917,
+          "source": "speech"
+        },
+        {
+          "text": "typewriter.",
+          "startMs": 188957,
+          "endMs": 189477,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 190358,
+          "endMs": 190418,
+          "source": "speech"
+        },
+        {
+          "text": "would",
+          "startMs": 190438,
+          "endMs": 190578,
+          "source": "speech"
+        },
+        {
+          "text": "give",
+          "startMs": 190598,
+          "endMs": 190698,
+          "source": "speech"
+        },
+        {
+          "text": "it",
+          "startMs": 190738,
+          "endMs": 190798,
+          "source": "speech"
+        },
+        {
+          "text": "all",
+          "startMs": 190878,
+          "endMs": 190998,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 191038,
+          "endMs": 191138,
+          "source": "speech"
+        },
+        {
+          "text": "know",
+          "startMs": 191178,
+          "endMs": 191318,
+          "source": "speech"
+        },
+        {
+          "text": "what",
+          "startMs": 191338,
+          "endMs": 191438,
+          "source": "speech"
+        },
+        {
+          "text": "has",
+          "startMs": 191458,
+          "endMs": 191558,
+          "source": "speech"
+        },
+        {
+          "text": "become",
+          "startMs": 191578,
+          "endMs": 191898,
+          "source": "speech"
+        },
+        {
+          "text": "of",
+          "startMs": 191938,
+          "endMs": 191998,
+          "source": "speech"
+        },
+        {
+          "text": "Mr.",
+          "startMs": 192038,
+          "endMs": 192278,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Hosmer",
+          "startMs": 192338,
+          "endMs": 192739,
+          "source": "speech"
+        },
+        {
+          "text": "Angel.\"",
+          "startMs": 192839,
+          "endMs": 193099,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Why",
+          "startMs": 193119,
+          "endMs": 194139,
+          "source": "speech"
+        },
+        {
+          "text": "were",
+          "startMs": 194179,
+          "endMs": 194279,
+          "source": "speech"
+        },
+        {
+          "text": "you",
+          "startMs": 194299,
+          "endMs": 194379,
+          "source": "speech"
+        },
+        {
+          "text": "in",
+          "startMs": 194419,
+          "endMs": 194479,
+          "source": "speech"
+        },
+        {
+          "text": "such",
+          "startMs": 194519,
+          "endMs": 194659,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 194679,
+          "endMs": 194719,
+          "source": "speech"
+        },
+        {
+          "text": "hurry",
+          "startMs": 194759,
+          "endMs": 194979,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 194999,
+          "endMs": 195079,
+          "source": "speech"
+        },
+        {
+          "text": "come",
+          "startMs": 195119,
+          "endMs": 195240,
+          "source": "speech"
+        },
+        {
+          "text": "here",
+          "startMs": 195280,
+          "endMs": 195380,
+          "source": "speech"
+        },
+        {
+          "text": "this",
+          "startMs": 195420,
+          "endMs": 195540,
+          "source": "speech"
+        },
+        {
+          "text": "morning?\"",
+          "startMs": 195580,
+          "endMs": 195880,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "asked",
+          "startMs": 196220,
+          "endMs": 196380,
+          "source": "speech"
+        },
+        {
+          "text": "Holmes.",
+          "startMs": 196440,
+          "endMs": 196760,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Mr.",
+          "startMs": 196780,
+          "endMs": 197861,
+          "source": "speech"
+        },
+        {
+          "text": "Windibank—that",
+          "startMs": 197881,
+          "endMs": 198721,
+          "source": "speech"
+        },
+        {
+          "text": "is,",
+          "startMs": 198781,
+          "endMs": 198861,
+          "source": "speech"
+        },
+        {
+          "text": "my",
+          "startMs": 198901,
+          "endMs": 199021,
+          "source": "speech"
+        },
+        {
+          "text": "father—would",
+          "startMs": 199081,
+          "endMs": 199541,
+          "source": "speech"
+        },
+        {
+          "text": "not",
+          "startMs": 199581,
+          "endMs": 199681,
+          "source": "speech"
+        },
+        {
+          "text": "go",
+          "startMs": 199721,
+          "endMs": 199801,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 199821,
+          "endMs": 199881,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 199901,
+          "endMs": 199981,
+          "source": "speech"
+        },
+        {
+          "text": "police,",
+          "startMs": 200001,
+          "endMs": 200302,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 200382,
+          "endMs": 200462,
+          "source": "speech"
+        },
+        {
+          "text": "he",
+          "startMs": 200482,
+          "endMs": 200542,
+          "source": "speech"
+        },
+        {
+          "text": "would",
+          "startMs": 200562,
+          "endMs": 200702,
+          "source": "speech"
+        },
+        {
+          "text": "not",
+          "startMs": 200722,
+          "endMs": 200842,
+          "source": "speech"
+        },
+        {
+          "text": "consult",
+          "startMs": 200882,
+          "endMs": 201262,
+          "source": "speech"
+        },
+        {
+          "text": "you,\"",
+          "startMs": 201302,
+          "endMs": 201522,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 201882,
+          "endMs": 202002,
+          "source": "speech"
+        },
+        {
+          "text": "Miss",
+          "startMs": 202042,
+          "endMs": 202162,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Sutherland.",
+          "startMs": 202182,
+          "endMs": 202602,
+          "source": "speech"
+        },
+        {
+          "text": "\"He",
+          "startMs": 202623,
+          "endMs": 203643,
+          "source": "speech"
+        },
+        {
+          "text": "wouldn't",
+          "startMs": 203663,
+          "endMs": 203843,
+          "source": "speech"
+        },
+        {
+          "text": "do",
+          "startMs": 203883,
+          "endMs": 203963,
+          "source": "speech"
+        },
+        {
+          "text": "anything",
+          "startMs": 204083,
+          "endMs": 204363,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 204383,
+          "endMs": 204463,
+          "source": "speech"
+        },
+        {
+          "text": "kept",
+          "startMs": 204503,
+          "endMs": 204683,
+          "source": "speech"
+        },
+        {
+          "text": "saying",
+          "startMs": 204783,
+          "endMs": 205023,
+          "source": "speech"
+        },
+        {
+          "text": "no",
+          "startMs": 205124,
+          "endMs": 205244,
+          "source": "speech"
+        },
+        {
+          "text": "harm",
+          "startMs": 205304,
+          "endMs": 205484,
+          "source": "speech"
+        },
+        {
+          "text": "had",
+          "startMs": 205504,
+          "endMs": 205584,
+          "source": "speech"
+        },
+        {
+          "text": "been",
+          "startMs": 205604,
+          "endMs": 205744,
+          "source": "speech"
+        },
+        {
+          "text": "done.",
+          "startMs": 205784,
+          "endMs": 205984,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "That",
+          "startMs": 206880,
+          "endMs": 207020,
+          "source": "speech"
+        },
+        {
+          "text": "made",
+          "startMs": 207040,
+          "endMs": 207180,
+          "source": "speech"
+        },
+        {
+          "text": "me",
+          "startMs": 207220,
+          "endMs": 207300,
+          "source": "speech"
+        },
+        {
+          "text": "so",
+          "startMs": 207380,
+          "endMs": 207540,
+          "source": "speech"
+        },
+        {
+          "text": "angry",
+          "startMs": 207640,
+          "endMs": 207820,
+          "source": "speech"
+        },
+        {
+          "text": "that",
+          "startMs": 207860,
+          "endMs": 207941,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 207981,
+          "endMs": 208021,
+          "source": "speech"
+        },
+        {
+          "text": "just",
+          "startMs": 208061,
+          "endMs": 208201,
+          "source": "speech"
+        },
+        {
+          "text": "threw",
+          "startMs": 208221,
+          "endMs": 208421,
+          "source": "speech"
+        },
+        {
+          "text": "on",
+          "startMs": 208461,
+          "endMs": 208521,
+          "source": "speech"
+        },
+        {
+          "text": "my",
+          "startMs": 208561,
+          "endMs": 208641,
+          "source": "speech"
+        },
+        {
+          "text": "things",
+          "startMs": 208661,
+          "endMs": 208861,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 208901,
+          "endMs": 208981,
+          "source": "speech"
+        },
+        {
+          "text": "came",
+          "startMs": 209001,
+          "endMs": 209161,
+          "source": "speech"
+        },
+        {
+          "text": "straight",
+          "startMs": 209221,
+          "endMs": 209441,
+          "source": "speech"
+        },
+        {
+          "text": "here.\"",
+          "startMs": 209481,
+          "endMs": 209701,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"You",
+          "startMs": 209721,
+          "endMs": 211442,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 211462,
+          "endMs": 211542,
+          "source": "speech"
+        },
+        {
+          "text": "your",
+          "startMs": 211562,
+          "endMs": 211662,
+          "source": "speech"
+        },
+        {
+          "text": "father",
+          "startMs": 211682,
+          "endMs": 211922,
+          "source": "speech"
+        },
+        {
+          "text": "have",
+          "startMs": 211982,
+          "endMs": 212102,
+          "source": "speech"
+        },
+        {
+          "text": "different",
+          "startMs": 212122,
+          "endMs": 212342,
+          "source": "speech"
+        },
+        {
+          "text": "last",
+          "startMs": 212362,
+          "endMs": 212563,
+          "source": "speech"
+        },
+        {
+          "text": "names,\"",
+          "startMs": 212623,
+          "endMs": 212923,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 213323,
+          "endMs": 213483,
+          "source": "speech"
+        },
+        {
+          "text": "Holmes.",
+          "startMs": 213543,
+          "endMs": 213843,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Mr.",
+          "startMs": 213863,
+          "endMs": 215044,
+          "source": "speech"
+        },
+        {
+          "text": "Windibank",
+          "startMs": 215064,
+          "endMs": 215484,
+          "source": "speech"
+        },
+        {
+          "text": "must",
+          "startMs": 215564,
+          "endMs": 215724,
+          "source": "speech"
+        },
+        {
+          "text": "be",
+          "startMs": 215764,
+          "endMs": 215844,
+          "source": "speech"
+        },
+        {
+          "text": "your",
+          "startMs": 215884,
+          "endMs": 215984,
+          "source": "speech"
+        },
+        {
+          "text": "stepfather.\"",
+          "startMs": 216024,
+          "endMs": 216544,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Yes,",
+          "startMs": 216564,
+          "endMs": 217665,
+          "source": "speech"
+        },
+        {
+          "text": "he",
+          "startMs": 217745,
+          "endMs": 217825,
+          "source": "speech"
+        },
+        {
+          "text": "is",
+          "startMs": 217905,
+          "endMs": 217985,
+          "source": "speech"
+        },
+        {
+          "text": "my",
+          "startMs": 218025,
+          "endMs": 218105,
+          "source": "speech"
+        },
+        {
+          "text": "stepfather.",
+          "startMs": 218145,
+          "endMs": 218645,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 219565,
+          "endMs": 219646,
+          "source": "speech"
+        },
+        {
+          "text": "call",
+          "startMs": 219686,
+          "endMs": 219866,
+          "source": "speech"
+        },
+        {
+          "text": "him",
+          "startMs": 219886,
+          "endMs": 219986,
+          "source": "speech"
+        },
+        {
+          "text": "my",
+          "startMs": 220006,
+          "endMs": 220106,
+          "source": "speech"
+        },
+        {
+          "text": "father",
+          "startMs": 220166,
+          "endMs": 220426,
+          "source": "speech"
+        },
+        {
+          "text": "although",
+          "startMs": 220506,
+          "endMs": 220726,
+          "source": "speech"
+        },
+        {
+          "text": "that",
+          "startMs": 220746,
+          "endMs": 220886,
+          "source": "speech"
+        },
+        {
+          "text": "sounds",
+          "startMs": 220926,
+          "endMs": 221126,
+          "source": "speech"
+        },
+        {
+          "text": "strange",
+          "startMs": 221166,
+          "endMs": 221486,
+          "source": "speech"
+        },
+        {
+          "text": "because",
+          "startMs": 221526,
+          "endMs": 221746,
+          "source": "speech"
+        },
+        {
+          "text": "he",
+          "startMs": 221766,
+          "endMs": 221806,
+          "source": "speech"
+        },
+        {
+          "text": "is",
+          "startMs": 221846,
+          "endMs": 221907,
+          "source": "speech"
+        },
+        {
+          "text": "only",
+          "startMs": 221927,
+          "endMs": 222107,
+          "source": "speech"
+        },
+        {
+          "text": "five",
+          "startMs": 222167,
+          "endMs": 222367,
+          "source": "speech"
+        },
+        {
+          "text": "years",
+          "startMs": 222387,
+          "endMs": 222527,
+          "source": "speech"
+        },
+        {
+          "text": "older",
+          "startMs": 222587,
+          "endMs": 222727,
+          "source": "speech"
+        },
+        {
+          "text": "than",
+          "startMs": 222767,
+          "endMs": 222867,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 222967,
+          "endMs": 223027,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "am.\"",
+          "startMs": 223127,
+          "endMs": 223227,
+          "source": "speech"
+        },
+        {
+          "text": "\"And",
+          "startMs": 223247,
+          "endMs": 224227,
+          "source": "speech"
+        },
+        {
+          "text": "your",
+          "startMs": 224248,
+          "endMs": 224368,
+          "source": "speech"
+        },
+        {
+          "text": "mother",
+          "startMs": 224388,
+          "endMs": 224568,
+          "source": "speech"
+        },
+        {
+          "text": "is",
+          "startMs": 224608,
+          "endMs": 224688,
+          "source": "speech"
+        },
+        {
+          "text": "alive?\"",
+          "startMs": 224708,
+          "endMs": 225068,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Oh",
+          "startMs": 225088,
+          "endMs": 226088,
+          "source": "speech"
+        },
+        {
+          "text": "yes,",
+          "startMs": 226128,
+          "endMs": 226388,
+          "source": "speech"
+        },
+        {
+          "text": "Mother",
+          "startMs": 226548,
+          "endMs": 226729,
+          "source": "speech"
+        },
+        {
+          "text": "is",
+          "startMs": 226769,
+          "endMs": 226829,
+          "source": "speech"
+        },
+        {
+          "text": "alive",
+          "startMs": 226869,
+          "endMs": 227109,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 227149,
+          "endMs": 227229,
+          "source": "speech"
+        },
+        {
+          "text": "well.",
+          "startMs": 227249,
+          "endMs": 227529,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 228409,
+          "endMs": 228469,
+          "source": "speech"
+        },
+        {
+          "text": "wasn't",
+          "startMs": 228509,
+          "endMs": 228749,
+          "source": "speech"
+        },
+        {
+          "text": "pleased",
+          "startMs": 228789,
+          "endMs": 229030,
+          "source": "speech"
+        },
+        {
+          "text": "when",
+          "startMs": 229050,
+          "endMs": 229170,
+          "source": "speech"
+        },
+        {
+          "text": "she",
+          "startMs": 229190,
+          "endMs": 229310,
+          "source": "speech"
+        },
+        {
+          "text": "married",
+          "startMs": 229350,
+          "endMs": 229570,
+          "source": "speech"
+        },
+        {
+          "text": "again",
+          "startMs": 229610,
+          "endMs": 229790,
+          "source": "speech"
+        },
+        {
+          "text": "so",
+          "startMs": 229850,
+          "endMs": 229970,
+          "source": "speech"
+        },
+        {
+          "text": "soon",
+          "startMs": 230030,
+          "endMs": 230210,
+          "source": "speech"
+        },
+        {
+          "text": "after",
+          "startMs": 230270,
+          "endMs": 230450,
+          "source": "speech"
+        },
+        {
+          "text": "Father's",
+          "startMs": 230490,
+          "endMs": 230790,
+          "source": "speech"
+        },
+        {
+          "text": "death,",
+          "startMs": 230830,
+          "endMs": 231070,
+          "source": "speech"
+        },
+        {
+          "text": "especially",
+          "startMs": 231491,
+          "endMs": 231951,
+          "source": "speech"
+        },
+        {
+          "text": "when",
+          "startMs": 232271,
+          "endMs": 232391,
+          "source": "speech"
+        },
+        {
+          "text": "she",
+          "startMs": 232411,
+          "endMs": 232511,
+          "source": "speech"
+        },
+        {
+          "text": "married",
+          "startMs": 232551,
+          "endMs": 232751,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 232771,
+          "endMs": 232811,
+          "source": "speech"
+        },
+        {
+          "text": "man",
+          "startMs": 232831,
+          "endMs": 232991,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "fifteen",
+          "startMs": 233071,
+          "endMs": 233411,
+          "source": "speech"
+        },
+        {
+          "text": "years",
+          "startMs": 233451,
+          "endMs": 233652,
+          "source": "speech"
+        },
+        {
+          "text": "younger",
+          "startMs": 233692,
+          "endMs": 233892,
+          "source": "speech"
+        },
+        {
+          "text": "than",
+          "startMs": 233912,
+          "endMs": 234012,
+          "source": "speech"
+        },
+        {
+          "text": "herself.\"",
+          "startMs": 234032,
+          "endMs": 234432,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Miss",
+          "startMs": 235380,
+          "endMs": 235520,
+          "source": "speech"
+        },
+        {
+          "text": "Sutherland",
+          "startMs": 235540,
+          "endMs": 235921,
+          "source": "speech"
+        },
+        {
+          "text": "explained",
+          "startMs": 235981,
+          "endMs": 236461,
+          "source": "speech"
+        },
+        {
+          "text": "that",
+          "startMs": 236501,
+          "endMs": 236601,
+          "source": "speech"
+        },
+        {
+          "text": "her",
+          "startMs": 236641,
+          "endMs": 236741,
+          "source": "speech"
+        },
+        {
+          "text": "father",
+          "startMs": 236781,
+          "endMs": 237002,
+          "source": "speech"
+        },
+        {
+          "text": "had",
+          "startMs": 237042,
+          "endMs": 237142,
+          "source": "speech"
+        },
+        {
+          "text": "been",
+          "startMs": 237162,
+          "endMs": 237282,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 237322,
+          "endMs": 237342,
+          "source": "speech"
+        },
+        {
+          "text": "plumber",
+          "startMs": 237402,
+          "endMs": 237702,
+          "source": "speech"
+        },
+        {
+          "text": "with",
+          "startMs": 237722,
+          "endMs": 237842,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 237882,
+          "endMs": 237922,
+          "source": "speech"
+        },
+        {
+          "text": "profitable",
+          "startMs": 237962,
+          "endMs": 238443,
+          "source": "speech"
+        },
+        {
+          "text": "business.",
+          "startMs": 238503,
+          "endMs": 238883,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "With",
+          "startMs": 239864,
+          "endMs": 239964,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 240004,
+          "endMs": 240084,
+          "source": "speech"
+        },
+        {
+          "text": "help",
+          "startMs": 240104,
+          "endMs": 240284,
+          "source": "speech"
+        },
+        {
+          "text": "of",
+          "startMs": 240324,
+          "endMs": 240364,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 240404,
+          "endMs": 240484,
+          "source": "speech"
+        },
+        {
+          "text": "foreman,",
+          "startMs": 240544,
+          "endMs": 240905,
+          "source": "speech"
+        },
+        {
+          "text": "her",
+          "startMs": 240945,
+          "endMs": 241045,
+          "source": "speech"
+        },
+        {
+          "text": "mother",
+          "startMs": 241105,
+          "endMs": 241305,
+          "source": "speech"
+        },
+        {
+          "text": "continued",
+          "startMs": 241345,
+          "endMs": 241725,
+          "source": "speech"
+        },
+        {
+          "text": "running",
+          "startMs": 241765,
+          "endMs": 241966,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 241986,
+          "endMs": 242066,
+          "source": "speech"
+        },
+        {
+          "text": "business.",
+          "startMs": 242086,
+          "endMs": 242426,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"But",
+          "startMs": 242446,
+          "endMs": 243527,
+          "source": "speech"
+        },
+        {
+          "text": "when",
+          "startMs": 243567,
+          "endMs": 243687,
+          "source": "speech"
+        },
+        {
+          "text": "she",
+          "startMs": 243727,
+          "endMs": 243847,
+          "source": "speech"
+        },
+        {
+          "text": "married",
+          "startMs": 243887,
+          "endMs": 244107,
+          "source": "speech"
+        },
+        {
+          "text": "Mr.",
+          "startMs": 244147,
+          "endMs": 244348,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Windibank,",
+          "startMs": 244368,
+          "endMs": 244828,
+          "source": "speech"
+        },
+        {
+          "text": "he",
+          "startMs": 244908,
+          "endMs": 245008,
+          "source": "speech"
+        },
+        {
+          "text": "made",
+          "startMs": 245048,
+          "endMs": 245188,
+          "source": "speech"
+        },
+        {
+          "text": "her",
+          "startMs": 245208,
+          "endMs": 245308,
+          "source": "speech"
+        },
+        {
+          "text": "sell",
+          "startMs": 245328,
+          "endMs": 245529,
+          "source": "speech"
+        },
+        {
+          "text": "it,\"",
+          "startMs": 245569,
+          "endMs": 245669,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 245989,
+          "endMs": 246129,
+          "source": "speech"
+        },
+        {
+          "text": "Miss",
+          "startMs": 246149,
+          "endMs": 246269,
+          "source": "speech"
+        },
+        {
+          "text": "Sutherland.",
+          "startMs": 246289,
+          "endMs": 246710,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"He",
+          "startMs": 246730,
+          "endMs": 247710,
+          "source": "speech"
+        },
+        {
+          "text": "is",
+          "startMs": 247750,
+          "endMs": 247831,
+          "source": "speech"
+        },
+        {
+          "text": "in",
+          "startMs": 247851,
+          "endMs": 247911,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 247931,
+          "endMs": 247991,
+          "source": "speech"
+        },
+        {
+          "text": "wine",
+          "startMs": 248031,
+          "endMs": 248251,
+          "source": "speech"
+        },
+        {
+          "text": "business,",
+          "startMs": 248271,
+          "endMs": 248571,
+          "source": "speech"
+        },
+        {
+          "text": "working",
+          "startMs": 248731,
+          "endMs": 248971,
+          "source": "speech"
+        },
+        {
+          "text": "for",
+          "startMs": 249011,
+          "endMs": 249092,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 249112,
+          "endMs": 249212,
+          "source": "speech"
+        },
+        {
+          "text": "importers",
+          "startMs": 249272,
+          "endMs": 249692,
+          "source": "speech"
+        },
+        {
+          "text": "Westhouse",
+          "startMs": 249752,
+          "endMs": 250232,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 250273,
+          "endMs": 250373,
+          "source": "speech"
+        },
+        {
+          "text": "Marbank",
+          "startMs": 250393,
+          "endMs": 250793,
+          "source": "speech"
+        },
+        {
+          "text": "of",
+          "startMs": 250893,
+          "endMs": 250953,
+          "source": "speech"
+        },
+        {
+          "text": "Fenchurch",
+          "startMs": 251013,
+          "endMs": 251454,
+          "source": "speech"
+        },
+        {
+          "text": "Street.",
+          "startMs": 251514,
+          "endMs": 251834,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "He",
+          "startMs": 253475,
+          "endMs": 253575,
+          "source": "speech"
+        },
+        {
+          "text": "felt",
+          "startMs": 253635,
+          "endMs": 253795,
+          "source": "speech"
+        },
+        {
+          "text": "that",
+          "startMs": 253815,
+          "endMs": 253916,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 253936,
+          "endMs": 254016,
+          "source": "speech"
+        },
+        {
+          "text": "plumbing",
+          "startMs": 254036,
+          "endMs": 254296,
+          "source": "speech"
+        },
+        {
+          "text": "business",
+          "startMs": 254316,
+          "endMs": 254596,
+          "source": "speech"
+        },
+        {
+          "text": "was",
+          "startMs": 254636,
+          "endMs": 254756,
+          "source": "speech"
+        },
+        {
+          "text": "beneath",
+          "startMs": 254796,
+          "endMs": 255057,
+          "source": "speech"
+        },
+        {
+          "text": "him",
+          "startMs": 255097,
+          "endMs": 255197,
+          "source": "speech"
+        },
+        {
+          "text": "socially.\"",
+          "startMs": 255257,
+          "endMs": 255697,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Did",
+          "startMs": 255717,
+          "endMs": 256618,
+          "source": "speech"
+        },
+        {
+          "text": "your",
+          "startMs": 256638,
+          "endMs": 256758,
+          "source": "speech"
+        },
+        {
+          "text": "mother",
+          "startMs": 256798,
+          "endMs": 256998,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 257038,
+          "endMs": 257138,
+          "source": "speech"
+        },
+        {
+          "text": "stepfather",
+          "startMs": 257158,
+          "endMs": 257579,
+          "source": "speech"
+        },
+        {
+          "text": "get",
+          "startMs": 257599,
+          "endMs": 257719,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 257739,
+          "endMs": 257759,
+          "source": "speech"
+        },
+        {
+          "text": "good",
+          "startMs": 257799,
+          "endMs": 257919,
+          "source": "speech"
+        },
+        {
+          "text": "price",
+          "startMs": 257959,
+          "endMs": 258179,
+          "source": "speech"
+        },
+        {
+          "text": "for",
+          "startMs": 258199,
+          "endMs": 258279,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 258299,
+          "endMs": 258379,
+          "source": "speech"
+        },
+        {
+          "text": "business?\"",
+          "startMs": 258399,
+          "endMs": 258760,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 259180,
+          "endMs": 259220,
+          "source": "speech"
+        },
+        {
+          "text": "asked.",
+          "startMs": 259340,
+          "endMs": 259540,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"They",
+          "startMs": 259560,
+          "endMs": 260521,
+          "source": "speech"
+        },
+        {
+          "text": "didn't",
+          "startMs": 260541,
+          "endMs": 260721,
+          "source": "speech"
+        },
+        {
+          "text": "get",
+          "startMs": 260741,
+          "endMs": 260861,
+          "source": "speech"
+        },
+        {
+          "text": "nearly",
+          "startMs": 260901,
+          "endMs": 261142,
+          "source": "speech"
+        },
+        {
+          "text": "as",
+          "startMs": 261162,
+          "endMs": 261242,
+          "source": "speech"
+        },
+        {
+          "text": "much",
+          "startMs": 261282,
+          "endMs": 261422,
+          "source": "speech"
+        },
+        {
+          "text": "as",
+          "startMs": 261462,
+          "endMs": 261522,
+          "source": "speech"
+        },
+        {
+          "text": "my",
+          "startMs": 261562,
+          "endMs": 261662,
+          "source": "speech"
+        },
+        {
+          "text": "father",
+          "startMs": 261722,
+          "endMs": 261962,
+          "source": "speech"
+        },
+        {
+          "text": "would",
+          "startMs": 261982,
+          "endMs": 262102,
+          "source": "speech"
+        },
+        {
+          "text": "have",
+          "startMs": 262122,
+          "endMs": 262222,
+          "source": "speech"
+        },
+        {
+          "text": "if",
+          "startMs": 262262,
+          "endMs": 262323,
+          "source": "speech"
+        },
+        {
+          "text": "he",
+          "startMs": 262343,
+          "endMs": 262423,
+          "source": "speech"
+        },
+        {
+          "text": "were",
+          "startMs": 262443,
+          "endMs": 262563,
+          "source": "speech"
+        },
+        {
+          "text": "alive,\"",
+          "startMs": 262603,
+          "endMs": 262963,
+          "source": "speech"
+        },
+        {
+          "text": "she",
+          "startMs": 263303,
+          "endMs": 263383,
+          "source": "speech"
+        },
+        {
+          "text": "replied.",
+          "startMs": 263443,
+          "endMs": 263804,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 264712,
+          "endMs": 264772,
+          "source": "speech"
+        },
+        {
+          "text": "expected",
+          "startMs": 264812,
+          "endMs": 265192,
+          "source": "speech"
+        },
+        {
+          "text": "Holmes",
+          "startMs": 265232,
+          "endMs": 265473,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 265513,
+          "endMs": 265573,
+          "source": "speech"
+        },
+        {
+          "text": "be",
+          "startMs": 265593,
+          "endMs": 265673,
+          "source": "speech"
+        },
+        {
+          "text": "impatient",
+          "startMs": 265693,
+          "endMs": 266153,
+          "source": "speech"
+        },
+        {
+          "text": "with",
+          "startMs": 266173,
+          "endMs": 266293,
+          "source": "speech"
+        },
+        {
+          "text": "these",
+          "startMs": 266313,
+          "endMs": 266453,
+          "source": "speech"
+        },
+        {
+          "text": "minor",
+          "startMs": 266513,
+          "endMs": 266773,
+          "source": "speech"
+        },
+        {
+          "text": "details,",
+          "startMs": 266813,
+          "endMs": 267233,
+          "source": "speech"
+        },
+        {
+          "text": "but",
+          "startMs": 267354,
+          "endMs": 267454,
+          "source": "speech"
+        },
+        {
+          "text": "he",
+          "startMs": 267474,
+          "endMs": 267554,
+          "source": "speech"
+        },
+        {
+          "text": "listened",
+          "startMs": 267594,
+          "endMs": 267874,
+          "source": "speech"
+        },
+        {
+          "text": "with",
+          "startMs": 267914,
+          "endMs": 268034,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 268054,
+          "endMs": 268114,
+          "source": "speech"
+        },
+        {
+          "text": "greatest",
+          "startMs": 268174,
+          "endMs": 268494,
+          "source": "speech"
+        },
+        {
+          "text": "concentration.",
+          "startMs": 268554,
+          "endMs": 269235,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Your",
+          "startMs": 269255,
+          "endMs": 270335,
+          "source": "speech"
+        },
+        {
+          "text": "own",
+          "startMs": 270435,
+          "endMs": 270555,
+          "source": "speech"
+        },
+        {
+          "text": "little",
+          "startMs": 270595,
+          "endMs": 270795,
+          "source": "speech"
+        },
+        {
+          "text": "income",
+          "startMs": 270855,
+          "endMs": 271116,
+          "source": "speech"
+        },
+        {
+          "text": "of",
+          "startMs": 271136,
+          "endMs": 271196,
+          "source": "speech"
+        },
+        {
+          "text": "one",
+          "startMs": 271296,
+          "endMs": 271376,
+          "source": "speech"
+        },
+        {
+          "text": "hundred",
+          "startMs": 271396,
+          "endMs": 271576,
+          "source": "speech"
+        },
+        {
+          "text": "pounds",
+          "startMs": 271616,
+          "endMs": 271816,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 271836,
+          "endMs": 271876,
+          "source": "speech"
+        },
+        {
+          "text": "year,\"",
+          "startMs": 271916,
+          "endMs": 272156,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 272476,
+          "endMs": 272616,
+          "source": "speech"
+        },
+        {
+          "text": "Holmes,",
+          "startMs": 272656,
+          "endMs": 272977,
+          "source": "speech"
+        },
+        {
+          "text": "\"did",
+          "startMs": 273337,
+          "endMs": 273457,
+          "source": "speech"
+        },
+        {
+          "text": "that",
+          "startMs": 273477,
+          "endMs": 273597,
+          "source": "speech"
+        },
+        {
+          "text": "come",
+          "startMs": 273677,
+          "endMs": 273817,
+          "source": "speech"
+        },
+        {
+          "text": "out",
+          "startMs": 273857,
+          "endMs": 273957,
+          "source": "speech"
+        },
+        {
+          "text": "of",
+          "startMs": 273977,
+          "endMs": 274037,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 274137,
+          "endMs": 274237,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "plumbing",
+          "startMs": 274277,
+          "endMs": 274597,
+          "source": "speech"
+        },
+        {
+          "text": "business?\"",
+          "startMs": 274617,
+          "endMs": 274958,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Oh",
+          "startMs": 274978,
+          "endMs": 276058,
+          "source": "speech"
+        },
+        {
+          "text": "no,",
+          "startMs": 276138,
+          "endMs": 276278,
+          "source": "speech"
+        },
+        {
+          "text": "sir.",
+          "startMs": 276358,
+          "endMs": 276558,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "It",
+          "startMs": 277359,
+          "endMs": 277419,
+          "source": "speech"
+        },
+        {
+          "text": "was",
+          "startMs": 277439,
+          "endMs": 277539,
+          "source": "speech"
+        },
+        {
+          "text": "left",
+          "startMs": 277599,
+          "endMs": 277739,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 277759,
+          "endMs": 277799,
+          "source": "speech"
+        },
+        {
+          "text": "me",
+          "startMs": 277839,
+          "endMs": 277919,
+          "source": "speech"
+        },
+        {
+          "text": "by",
+          "startMs": 277959,
+          "endMs": 278059,
+          "source": "speech"
+        },
+        {
+          "text": "my",
+          "startMs": 278079,
+          "endMs": 278179,
+          "source": "speech"
+        },
+        {
+          "text": "uncle",
+          "startMs": 278259,
+          "endMs": 278459,
+          "source": "speech"
+        },
+        {
+          "text": "who",
+          "startMs": 278499,
+          "endMs": 278600,
+          "source": "speech"
+        },
+        {
+          "text": "died",
+          "startMs": 278640,
+          "endMs": 278820,
+          "source": "speech"
+        },
+        {
+          "text": "in",
+          "startMs": 278860,
+          "endMs": 278900,
+          "source": "speech"
+        },
+        {
+          "text": "New",
+          "startMs": 278940,
+          "endMs": 279040,
+          "source": "speech"
+        },
+        {
+          "text": "Zealand.\"",
+          "startMs": 279080,
+          "endMs": 279400,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"I",
+          "startMs": 279420,
+          "endMs": 280381,
+          "source": "speech"
+        },
+        {
+          "text": "believe",
+          "startMs": 280421,
+          "endMs": 280681,
+          "source": "speech"
+        },
+        {
+          "text": "that",
+          "startMs": 280701,
+          "endMs": 280801,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 280841,
+          "endMs": 280881,
+          "source": "speech"
+        },
+        {
+          "text": "single",
+          "startMs": 280921,
+          "endMs": 281181,
+          "source": "speech"
+        },
+        {
+          "text": "woman",
+          "startMs": 281201,
+          "endMs": 281421,
+          "source": "speech"
+        },
+        {
+          "text": "can",
+          "startMs": 281441,
+          "endMs": 281561,
+          "source": "speech"
+        },
+        {
+          "text": "live",
+          "startMs": 281581,
+          "endMs": 281701,
+          "source": "speech"
+        },
+        {
+          "text": "quite",
+          "startMs": 281761,
+          "endMs": 281941,
+          "source": "speech"
+        },
+        {
+          "text": "nicely",
+          "startMs": 282001,
+          "endMs": 282302,
+          "source": "speech"
+        },
+        {
+          "text": "on",
+          "startMs": 282382,
+          "endMs": 282462,
+          "source": "speech"
+        },
+        {
+          "text": "sixty",
+          "startMs": 282542,
+          "endMs": 282842,
+          "source": "speech"
+        },
+        {
+          "text": "pounds",
+          "startMs": 282882,
+          "endMs": 283102,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 283142,
+          "endMs": 283182,
+          "source": "speech"
+        },
+        {
+          "text": "year,\"",
+          "startMs": 283222,
+          "endMs": 283502,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 283842,
+          "endMs": 283982,
+          "source": "speech"
+        },
+        {
+          "text": "Holmes.",
+          "startMs": 284022,
+          "endMs": 284363,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Yet,",
+          "startMs": 284383,
+          "endMs": 286224,
+          "source": "speech"
+        },
+        {
+          "text": "between",
+          "startMs": 286284,
+          "endMs": 286564,
+          "source": "speech"
+        },
+        {
+          "text": "your",
+          "startMs": 286604,
+          "endMs": 286724,
+          "source": "speech"
+        },
+        {
+          "text": "inheritance",
+          "startMs": 286784,
+          "endMs": 287384,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 287484,
+          "endMs": 287564,
+          "source": "speech"
+        },
+        {
+          "text": "your",
+          "startMs": 287584,
+          "endMs": 287724,
+          "source": "speech"
+        },
+        {
+          "text": "typing",
+          "startMs": 287764,
+          "endMs": 288125,
+          "source": "speech"
+        },
+        {
+          "text": "income,",
+          "startMs": 288165,
+          "endMs": 288485,
+          "source": "speech"
+        },
+        {
+          "text": "you",
+          "startMs": 288605,
+          "endMs": 288745,
+          "source": "speech"
+        },
+        {
+          "text": "have",
+          "startMs": 288765,
+          "endMs": 288905,
+          "source": "speech"
+        },
+        {
+          "text": "more",
+          "startMs": 288945,
+          "endMs": 289065,
+          "source": "speech"
+        },
+        {
+          "text": "than",
+          "startMs": 289085,
+          "endMs": 289205,
+          "source": "speech"
+        },
+        {
+          "text": "that.\"",
+          "startMs": 289245,
+          "endMs": 289485,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Miss",
+          "startMs": 290426,
+          "endMs": 290566,
+          "source": "speech"
+        },
+        {
+          "text": "Sutherland",
+          "startMs": 290586,
+          "endMs": 290966,
+          "source": "speech"
+        },
+        {
+          "text": "explained",
+          "startMs": 291006,
+          "endMs": 291366,
+          "source": "speech"
+        },
+        {
+          "text": "that",
+          "startMs": 291386,
+          "endMs": 291486,
+          "source": "speech"
+        },
+        {
+          "text": "she",
+          "startMs": 291526,
+          "endMs": 291627,
+          "source": "speech"
+        },
+        {
+          "text": "could",
+          "startMs": 291647,
+          "endMs": 291787,
+          "source": "speech"
+        },
+        {
+          "text": "easily",
+          "startMs": 291887,
+          "endMs": 292187,
+          "source": "speech"
+        },
+        {
+          "text": "live",
+          "startMs": 292247,
+          "endMs": 292487,
+          "source": "speech"
+        },
+        {
+          "text": "on",
+          "startMs": 292647,
+          "endMs": 292727,
+          "source": "speech"
+        },
+        {
+          "text": "less",
+          "startMs": 292807,
+          "endMs": 293027,
+          "source": "speech"
+        },
+        {
+          "text": "than",
+          "startMs": 293067,
+          "endMs": 293207,
+          "source": "speech"
+        },
+        {
+          "text": "sixty",
+          "startMs": 293267,
+          "endMs": 293528,
+          "source": "speech"
+        },
+        {
+          "text": "pounds",
+          "startMs": 293568,
+          "endMs": 293768,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 293828,
+          "endMs": 293868,
+          "source": "speech"
+        },
+        {
+          "text": "year.",
+          "startMs": 293888,
+          "endMs": 294068,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "But",
+          "startMs": 294956,
+          "endMs": 295076,
+          "source": "speech"
+        },
+        {
+          "text": "she",
+          "startMs": 295096,
+          "endMs": 295216,
+          "source": "speech"
+        },
+        {
+          "text": "handed",
+          "startMs": 295276,
+          "endMs": 295536,
+          "source": "speech"
+        },
+        {
+          "text": "over",
+          "startMs": 295616,
+          "endMs": 295757,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 295797,
+          "endMs": 295897,
+          "source": "speech"
+        },
+        {
+          "text": "her",
+          "startMs": 295937,
+          "endMs": 296037,
+          "source": "speech"
+        },
+        {
+          "text": "stepfather",
+          "startMs": 296077,
+          "endMs": 296537,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 296577,
+          "endMs": 296677,
+          "source": "speech"
+        },
+        {
+          "text": "full",
+          "startMs": 296697,
+          "endMs": 296897,
+          "source": "speech"
+        },
+        {
+          "text": "one",
+          "startMs": 296977,
+          "endMs": 297097,
+          "source": "speech"
+        },
+        {
+          "text": "hundred",
+          "startMs": 297137,
+          "endMs": 297377,
+          "source": "speech"
+        },
+        {
+          "text": "pounds,",
+          "startMs": 297417,
+          "endMs": 297738,
+          "source": "speech"
+        },
+        {
+          "text": "plus",
+          "startMs": 297818,
+          "endMs": 298018,
+          "source": "speech"
+        },
+        {
+          "text": "her",
+          "startMs": 298038,
+          "endMs": 298158,
+          "source": "speech"
+        },
+        {
+          "text": "typing",
+          "startMs": 298178,
+          "endMs": 298498,
+          "source": "speech"
+        },
+        {
+          "text": "income.",
+          "startMs": 298538,
+          "endMs": 298838,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"You",
+          "startMs": 298858,
+          "endMs": 299859,
+          "source": "speech"
+        },
+        {
+          "text": "must",
+          "startMs": 299899,
+          "endMs": 300079,
+          "source": "speech"
+        },
+        {
+          "text": "understand,",
+          "startMs": 300099,
+          "endMs": 300539,
+          "source": "speech"
+        },
+        {
+          "text": "Mr.",
+          "startMs": 300559,
+          "endMs": 300799,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Holmes,",
+          "startMs": 300839,
+          "endMs": 301140,
+          "source": "speech"
+        },
+        {
+          "text": "that",
+          "startMs": 301380,
+          "endMs": 301500,
+          "source": "speech"
+        },
+        {
+          "text": "as",
+          "startMs": 301540,
+          "endMs": 301600,
+          "source": "speech"
+        },
+        {
+          "text": "long",
+          "startMs": 301660,
+          "endMs": 301840,
+          "source": "speech"
+        },
+        {
+          "text": "as",
+          "startMs": 301880,
+          "endMs": 301940,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 301980,
+          "endMs": 302040,
+          "source": "speech"
+        },
+        {
+          "text": "live",
+          "startMs": 302080,
+          "endMs": 302220,
+          "source": "speech"
+        },
+        {
+          "text": "at",
+          "startMs": 302240,
+          "endMs": 302320,
+          "source": "speech"
+        },
+        {
+          "text": "home,",
+          "startMs": 302360,
+          "endMs": 302620,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 302961,
+          "endMs": 303021,
+          "source": "speech"
+        },
+        {
+          "text": "don't",
+          "startMs": 303061,
+          "endMs": 303201,
+          "source": "speech"
+        },
+        {
+          "text": "want",
+          "startMs": 303241,
+          "endMs": 303361,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 303401,
+          "endMs": 303441,
+          "source": "speech"
+        },
+        {
+          "text": "be",
+          "startMs": 303481,
+          "endMs": 303541,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 303581,
+          "endMs": 303621,
+          "source": "speech"
+        },
+        {
+          "text": "burden",
+          "startMs": 303661,
+          "endMs": 303961,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 303981,
+          "endMs": 304041,
+          "source": "speech"
+        },
+        {
+          "text": "my",
+          "startMs": 304101,
+          "endMs": 304201,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "parents,\"",
+          "startMs": 304241,
+          "endMs": 304642,
+          "source": "speech"
+        },
+        {
+          "text": "she",
+          "startMs": 305022,
+          "endMs": 305122,
+          "source": "speech"
+        },
+        {
+          "text": "said.",
+          "startMs": 305202,
+          "endMs": 305422,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Of",
+          "startMs": 305442,
+          "endMs": 306402,
+          "source": "speech"
+        },
+        {
+          "text": "course,",
+          "startMs": 306443,
+          "endMs": 306623,
+          "source": "speech"
+        },
+        {
+          "text": "they",
+          "startMs": 306643,
+          "endMs": 306763,
+          "source": "speech"
+        },
+        {
+          "text": "only",
+          "startMs": 306803,
+          "endMs": 306983,
+          "source": "speech"
+        },
+        {
+          "text": "have",
+          "startMs": 307023,
+          "endMs": 307203,
+          "source": "speech"
+        },
+        {
+          "text": "that",
+          "startMs": 307243,
+          "endMs": 307363,
+          "source": "speech"
+        },
+        {
+          "text": "money",
+          "startMs": 307403,
+          "endMs": 307583,
+          "source": "speech"
+        },
+        {
+          "text": "while",
+          "startMs": 307603,
+          "endMs": 307743,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 307763,
+          "endMs": 307843,
+          "source": "speech"
+        },
+        {
+          "text": "continue",
+          "startMs": 307883,
+          "endMs": 308224,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 308264,
+          "endMs": 308324,
+          "source": "speech"
+        },
+        {
+          "text": "live",
+          "startMs": 308384,
+          "endMs": 308504,
+          "source": "speech"
+        },
+        {
+          "text": "with",
+          "startMs": 308544,
+          "endMs": 308644,
+          "source": "speech"
+        },
+        {
+          "text": "them.\"",
+          "startMs": 308684,
+          "endMs": 308864,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"You",
+          "startMs": 309724,
+          "endMs": 309824,
+          "source": "speech"
+        },
+        {
+          "text": "have",
+          "startMs": 309844,
+          "endMs": 309944,
+          "source": "speech"
+        },
+        {
+          "text": "made",
+          "startMs": 309964,
+          "endMs": 310105,
+          "source": "speech"
+        },
+        {
+          "text": "your",
+          "startMs": 310125,
+          "endMs": 310225,
+          "source": "speech"
+        },
+        {
+          "text": "position",
+          "startMs": 310265,
+          "endMs": 310605,
+          "source": "speech"
+        },
+        {
+          "text": "clear,\"",
+          "startMs": 310665,
+          "endMs": 310965,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 311345,
+          "endMs": 311505,
+          "source": "speech"
+        },
+        {
+          "text": "Holmes.",
+          "startMs": 311545,
+          "endMs": 311846,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Now",
+          "startMs": 311866,
+          "endMs": 312846,
+          "source": "speech"
+        },
+        {
+          "text": "tell",
+          "startMs": 312906,
+          "endMs": 313046,
+          "source": "speech"
+        },
+        {
+          "text": "us",
+          "startMs": 313086,
+          "endMs": 313166,
+          "source": "speech"
+        },
+        {
+          "text": "all",
+          "startMs": 313246,
+          "endMs": 313366,
+          "source": "speech"
+        },
+        {
+          "text": "about",
+          "startMs": 313406,
+          "endMs": 313546,
+          "source": "speech"
+        },
+        {
+          "text": "your",
+          "startMs": 313566,
+          "endMs": 313687,
+          "source": "speech"
+        },
+        {
+          "text": "connection",
+          "startMs": 313727,
+          "endMs": 314107,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 314127,
+          "endMs": 314207,
+          "source": "speech"
+        },
+        {
+          "text": "Mr.",
+          "startMs": 314247,
+          "endMs": 314447,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Hosmer",
+          "startMs": 314487,
+          "endMs": 314827,
+          "source": "speech"
+        },
+        {
+          "text": "Angel.\"",
+          "startMs": 314927,
+          "endMs": 315207,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "A",
+          "startMs": 316088,
+          "endMs": 316128,
+          "source": "speech"
+        },
+        {
+          "text": "flush",
+          "startMs": 316208,
+          "endMs": 316508,
+          "source": "speech"
+        },
+        {
+          "text": "stole",
+          "startMs": 316588,
+          "endMs": 316828,
+          "source": "speech"
+        },
+        {
+          "text": "over",
+          "startMs": 316868,
+          "endMs": 316988,
+          "source": "speech"
+        },
+        {
+          "text": "Miss",
+          "startMs": 317028,
+          "endMs": 317169,
+          "source": "speech"
+        },
+        {
+          "text": "Sutherland's",
+          "startMs": 317189,
+          "endMs": 317609,
+          "source": "speech"
+        },
+        {
+          "text": "face,",
+          "startMs": 317669,
+          "endMs": 317969,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 318189,
+          "endMs": 318269,
+          "source": "speech"
+        },
+        {
+          "text": "she",
+          "startMs": 318309,
+          "endMs": 318429,
+          "source": "speech"
+        },
+        {
+          "text": "picked",
+          "startMs": 318469,
+          "endMs": 318669,
+          "source": "speech"
+        },
+        {
+          "text": "nervously",
+          "startMs": 318709,
+          "endMs": 319090,
+          "source": "speech"
+        },
+        {
+          "text": "at",
+          "startMs": 319150,
+          "endMs": 319210,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 319230,
+          "endMs": 319330,
+          "source": "speech"
+        },
+        {
+          "text": "fringe",
+          "startMs": 319370,
+          "endMs": 319610,
+          "source": "speech"
+        },
+        {
+          "text": "on",
+          "startMs": 319650,
+          "endMs": 319710,
+          "source": "speech"
+        },
+        {
+          "text": "her",
+          "startMs": 319750,
+          "endMs": 319830,
+          "source": "speech"
+        },
+        {
+          "text": "jacket.",
+          "startMs": 319870,
+          "endMs": 320210,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"I",
+          "startMs": 321071,
+          "endMs": 321171,
+          "source": "speech"
+        },
+        {
+          "text": "met",
+          "startMs": 321211,
+          "endMs": 321331,
+          "source": "speech"
+        },
+        {
+          "text": "him",
+          "startMs": 321371,
+          "endMs": 321451,
+          "source": "speech"
+        },
+        {
+          "text": "at",
+          "startMs": 321491,
+          "endMs": 321551,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 321571,
+          "endMs": 321651,
+          "source": "speech"
+        },
+        {
+          "text": "Plumbers'",
+          "startMs": 321671,
+          "endMs": 322011,
+          "source": "speech"
+        },
+        {
+          "text": "Ball,\"",
+          "startMs": 322051,
+          "endMs": 322351,
+          "source": "speech"
+        },
+        {
+          "text": "she",
+          "startMs": 322712,
+          "endMs": 322832,
+          "source": "speech"
+        },
+        {
+          "text": "said.",
+          "startMs": 322892,
+          "endMs": 323092,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"Mr.",
+          "startMs": 323968,
+          "endMs": 324208,
+          "source": "speech"
+        },
+        {
+          "text": "Windibank",
+          "startMs": 324228,
+          "endMs": 324649,
+          "source": "speech"
+        },
+        {
+          "text": "did",
+          "startMs": 324669,
+          "endMs": 324789,
+          "source": "speech"
+        },
+        {
+          "text": "not",
+          "startMs": 324809,
+          "endMs": 324929,
+          "source": "speech"
+        },
+        {
+          "text": "want",
+          "startMs": 324969,
+          "endMs": 325129,
+          "source": "speech"
+        },
+        {
+          "text": "Mother",
+          "startMs": 325149,
+          "endMs": 325369,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 325389,
+          "endMs": 325469,
+          "source": "speech"
+        },
+        {
+          "text": "me",
+          "startMs": 325509,
+          "endMs": 325589,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 325629,
+          "endMs": 325709,
+          "source": "speech"
+        },
+        {
+          "text": "go.",
+          "startMs": 325749,
+          "endMs": 325990,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "He",
+          "startMs": 326810,
+          "endMs": 326890,
+          "source": "speech"
+        },
+        {
+          "text": "never",
+          "startMs": 326950,
+          "endMs": 327110,
+          "source": "speech"
+        },
+        {
+          "text": "likes",
+          "startMs": 327150,
+          "endMs": 327330,
+          "source": "speech"
+        },
+        {
+          "text": "me",
+          "startMs": 327350,
+          "endMs": 327430,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 327451,
+          "endMs": 327491,
+          "source": "speech"
+        },
+        {
+          "text": "go",
+          "startMs": 327531,
+          "endMs": 327631,
+          "source": "speech"
+        },
+        {
+          "text": "anywhere.",
+          "startMs": 327731,
+          "endMs": 328091,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"In",
+          "startMs": 328111,
+          "endMs": 329832,
+          "source": "speech"
+        },
+        {
+          "text": "fact,",
+          "startMs": 329892,
+          "endMs": 330132,
+          "source": "speech"
+        },
+        {
+          "text": "he",
+          "startMs": 330232,
+          "endMs": 330312,
+          "source": "speech"
+        },
+        {
+          "text": "gets",
+          "startMs": 330353,
+          "endMs": 330513,
+          "source": "speech"
+        },
+        {
+          "text": "quite",
+          "startMs": 330573,
+          "endMs": 330753,
+          "source": "speech"
+        },
+        {
+          "text": "angry",
+          "startMs": 330893,
+          "endMs": 331113,
+          "source": "speech"
+        },
+        {
+          "text": "if",
+          "startMs": 331153,
+          "endMs": 331213,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 331253,
+          "endMs": 331313,
+          "source": "speech"
+        },
+        {
+          "text": "even",
+          "startMs": 331393,
+          "endMs": 331553,
+          "source": "speech"
+        },
+        {
+          "text": "suggest",
+          "startMs": 331593,
+          "endMs": 331954,
+          "source": "speech"
+        },
+        {
+          "text": "anything",
+          "startMs": 332134,
+          "endMs": 332414,
+          "source": "speech"
+        },
+        {
+          "text": "as",
+          "startMs": 332454,
+          "endMs": 332514,
+          "source": "speech"
+        },
+        {
+          "text": "innocent",
+          "startMs": 332634,
+          "endMs": 332954,
+          "source": "speech"
+        },
+        {
+          "text": "as",
+          "startMs": 332994,
+          "endMs": 333074,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 333134,
+          "endMs": 333174,
+          "source": "speech"
+        },
+        {
+          "text": "Sunday",
+          "startMs": 333254,
+          "endMs": 333515,
+          "source": "speech"
+        },
+        {
+          "text": "school",
+          "startMs": 333555,
+          "endMs": 333775,
+          "source": "speech"
+        },
+        {
+          "text": "picnic.",
+          "startMs": 333815,
+          "endMs": 334195,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "But",
+          "startMs": 335096,
+          "endMs": 335196,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 335236,
+          "endMs": 335276,
+          "source": "speech"
+        },
+        {
+          "text": "was",
+          "startMs": 335336,
+          "endMs": 335476,
+          "source": "speech"
+        },
+        {
+          "text": "determined",
+          "startMs": 335516,
+          "endMs": 335976,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 335996,
+          "endMs": 336036,
+          "source": "speech"
+        },
+        {
+          "text": "go.",
+          "startMs": 336076,
+          "endMs": 336277,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "What",
+          "startMs": 337137,
+          "endMs": 337257,
+          "source": "speech"
+        },
+        {
+          "text": "right",
+          "startMs": 337317,
+          "endMs": 337477,
+          "source": "speech"
+        },
+        {
+          "text": "did",
+          "startMs": 337497,
+          "endMs": 337617,
+          "source": "speech"
+        },
+        {
+          "text": "he",
+          "startMs": 337637,
+          "endMs": 337718,
+          "source": "speech"
+        },
+        {
+          "text": "have",
+          "startMs": 337778,
+          "endMs": 337898,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 337938,
+          "endMs": 337998,
+          "source": "speech"
+        },
+        {
+          "text": "keep",
+          "startMs": 338058,
+          "endMs": 338258,
+          "source": "speech"
+        },
+        {
+          "text": "me",
+          "startMs": 338298,
+          "endMs": 338378,
+          "source": "speech"
+        },
+        {
+          "text": "from",
+          "startMs": 338418,
+          "endMs": 338578,
+          "source": "speech"
+        },
+        {
+          "text": "enjoying",
+          "startMs": 338718,
+          "endMs": 339058,
+          "source": "speech"
+        },
+        {
+          "text": "myself?\"",
+          "startMs": 339099,
+          "endMs": 339459,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"I",
+          "startMs": 339479,
+          "endMs": 340499,
+          "source": "speech"
+        },
+        {
+          "text": "can't",
+          "startMs": 340539,
+          "endMs": 340720,
+          "source": "speech"
+        },
+        {
+          "text": "understand",
+          "startMs": 340740,
+          "endMs": 341080,
+          "source": "speech"
+        },
+        {
+          "text": "his",
+          "startMs": 341120,
+          "endMs": 341220,
+          "source": "speech"
+        },
+        {
+          "text": "objections",
+          "startMs": 341240,
+          "endMs": 341620,
+          "source": "speech"
+        },
+        {
+          "text": "at",
+          "startMs": 341660,
+          "endMs": 341700,
+          "source": "speech"
+        },
+        {
+          "text": "all,\"",
+          "startMs": 341800,
+          "endMs": 341980,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 342341,
+          "endMs": 342401,
+          "source": "speech"
+        },
+        {
+          "text": "said.",
+          "startMs": 342461,
+          "endMs": 342701,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"He",
+          "startMs": 342721,
+          "endMs": 343662,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 343702,
+          "endMs": 343822,
+          "source": "speech"
+        },
+        {
+          "text": "that",
+          "startMs": 343842,
+          "endMs": 343942,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 343962,
+          "endMs": 344062,
+          "source": "speech"
+        },
+        {
+          "text": "people",
+          "startMs": 344082,
+          "endMs": 344322,
+          "source": "speech"
+        },
+        {
+          "text": "at",
+          "startMs": 344362,
+          "endMs": 344422,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 344442,
+          "endMs": 344522,
+          "source": "speech"
+        },
+        {
+          "text": "ball",
+          "startMs": 344562,
+          "endMs": 344742,
+          "source": "speech"
+        },
+        {
+          "text": "would",
+          "startMs": 344782,
+          "endMs": 344902,
+          "source": "speech"
+        },
+        {
+          "text": "be",
+          "startMs": 344922,
+          "endMs": 345003,
+          "source": "speech"
+        },
+        {
+          "text": "beneath",
+          "startMs": 345063,
+          "endMs": 345323,
+          "source": "speech"
+        },
+        {
+          "text": "us",
+          "startMs": 345363,
+          "endMs": 345443,
+          "source": "speech"
+        },
+        {
+          "text": "socially,\"",
+          "startMs": 345483,
+          "endMs": 345943,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 346263,
+          "endMs": 346404,
+          "source": "speech"
+        },
+        {
+          "text": "Miss",
+          "startMs": 346424,
+          "endMs": 346564,
+          "source": "speech"
+        },
+        {
+          "text": "Sutherland.",
+          "startMs": 346584,
+          "endMs": 346964,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"And",
+          "startMs": 346984,
+          "endMs": 347965,
+          "source": "speech"
+        },
+        {
+          "text": "he",
+          "startMs": 347985,
+          "endMs": 348065,
+          "source": "speech"
+        },
+        {
+          "text": "tried",
+          "startMs": 348105,
+          "endMs": 348285,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 348305,
+          "endMs": 348365,
+          "source": "speech"
+        },
+        {
+          "text": "argue",
+          "startMs": 348465,
+          "endMs": 348705,
+          "source": "speech"
+        },
+        {
+          "text": "that",
+          "startMs": 348725,
+          "endMs": 348825,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 348865,
+          "endMs": 348905,
+          "source": "speech"
+        },
+        {
+          "text": "had",
+          "startMs": 348945,
+          "endMs": 349045,
+          "source": "speech"
+        },
+        {
+          "text": "nothing",
+          "startMs": 349125,
+          "endMs": 349366,
+          "source": "speech"
+        },
+        {
+          "text": "suitable",
+          "startMs": 349406,
+          "endMs": 349706,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 349746,
+          "endMs": 349806,
+          "source": "speech"
+        },
+        {
+          "text": "wear.",
+          "startMs": 349846,
+          "endMs": 350086,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "But",
+          "startMs": 350847,
+          "endMs": 350967,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 350987,
+          "endMs": 351027,
+          "source": "speech"
+        },
+        {
+          "text": "had",
+          "startMs": 351067,
+          "endMs": 351187,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 351227,
+          "endMs": 351247,
+          "source": "speech"
+        },
+        {
+          "text": "new",
+          "startMs": 351287,
+          "endMs": 351387,
+          "source": "speech"
+        },
+        {
+          "text": "dress",
+          "startMs": 351427,
+          "endMs": 351627,
+          "source": "speech"
+        },
+        {
+          "text": "that",
+          "startMs": 351647,
+          "endMs": 351767,
+          "source": "speech"
+        },
+        {
+          "text": "I'd",
+          "startMs": 351787,
+          "endMs": 351887,
+          "source": "speech"
+        },
+        {
+          "text": "never",
+          "startMs": 351967,
+          "endMs": 352127,
+          "source": "speech"
+        },
+        {
+          "text": "even",
+          "startMs": 352207,
+          "endMs": 352368,
+          "source": "speech"
+        },
+        {
+          "text": "worn.\"",
+          "startMs": 352408,
+          "endMs": 352708,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Mr.",
+          "startMs": 353524,
+          "endMs": 353744,
+          "source": "speech"
+        },
+        {
+          "text": "Windibank",
+          "startMs": 353785,
+          "endMs": 354185,
+          "source": "speech"
+        },
+        {
+          "text": "finally",
+          "startMs": 354225,
+          "endMs": 354485,
+          "source": "speech"
+        },
+        {
+          "text": "stopped",
+          "startMs": 354525,
+          "endMs": 354746,
+          "source": "speech"
+        },
+        {
+          "text": "arguing",
+          "startMs": 354866,
+          "endMs": 355146,
+          "source": "speech"
+        },
+        {
+          "text": "with",
+          "startMs": 355186,
+          "endMs": 355286,
+          "source": "speech"
+        },
+        {
+          "text": "her",
+          "startMs": 355326,
+          "endMs": 355426,
+          "source": "speech"
+        },
+        {
+          "text": "only",
+          "startMs": 355527,
+          "endMs": 355687,
+          "source": "speech"
+        },
+        {
+          "text": "because",
+          "startMs": 355747,
+          "endMs": 355987,
+          "source": "speech"
+        },
+        {
+          "text": "his",
+          "startMs": 356027,
+          "endMs": 356127,
+          "source": "speech"
+        },
+        {
+          "text": "employer",
+          "startMs": 356167,
+          "endMs": 356588,
+          "source": "speech"
+        },
+        {
+          "text": "sent",
+          "startMs": 356628,
+          "endMs": 356808,
+          "source": "speech"
+        },
+        {
+          "text": "him",
+          "startMs": 356828,
+          "endMs": 356928,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 356948,
+          "endMs": 357028,
+          "source": "speech"
+        },
+        {
+          "text": "France",
+          "startMs": 357068,
+          "endMs": 357329,
+          "source": "speech"
+        },
+        {
+          "text": "on",
+          "startMs": 357389,
+          "endMs": 357449,
+          "source": "speech"
+        },
+        {
+          "text": "business.",
+          "startMs": 357489,
+          "endMs": 357869,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"So",
+          "startMs": 357889,
+          "endMs": 359011,
+          "source": "speech"
+        },
+        {
+          "text": "Mother",
+          "startMs": 359071,
+          "endMs": 359271,
+          "source": "speech"
+        },
+        {
+          "text": "and",
+          "startMs": 359291,
+          "endMs": 359371,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 359411,
+          "endMs": 359451,
+          "source": "speech"
+        },
+        {
+          "text": "went",
+          "startMs": 359491,
+          "endMs": 359631,
+          "source": "speech"
+        },
+        {
+          "text": "to",
+          "startMs": 359651,
+          "endMs": 359711,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 359731,
+          "endMs": 359812,
+          "source": "speech"
+        },
+        {
+          "text": "ball",
+          "startMs": 359852,
+          "endMs": 360092,
+          "source": "speech"
+        },
+        {
+          "text": "in",
+          "startMs": 360152,
+          "endMs": 360212,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 360232,
+          "endMs": 360292,
+          "source": "speech"
+        },
+        {
+          "text": "company",
+          "startMs": 360352,
+          "endMs": 360653,
+          "source": "speech"
+        },
+        {
+          "text": "of",
+          "startMs": 360673,
+          "endMs": 360733,
+          "source": "speech"
+        },
+        {
+          "text": "our",
+          "startMs": 360773,
+          "endMs": 360873,
+          "source": "speech"
+        },
+        {
+          "text": "former",
+          "startMs": 360913,
+          "endMs": 361193,
+          "source": "speech"
+        },
+        {
+          "text": "foreman,\"",
+          "startMs": 361233,
+          "endMs": 361594,
+          "source": "speech"
+        },
+        {
+          "text": "said",
+          "startMs": 361914,
+          "endMs": 362054,
+          "source": "speech"
+        },
+        {
+          "text": "Miss",
+          "startMs": 362074,
+          "endMs": 362214,
+          "source": "speech"
+        },
+        {
+          "text": "Sutherland.",
+          "startMs": 362234,
+          "endMs": 362655,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "\"And",
+          "startMs": 362675,
+          "endMs": 363616,
+          "source": "speech"
+        },
+        {
+          "text": "it",
+          "startMs": 363656,
+          "endMs": 363696,
+          "source": "speech"
+        },
+        {
+          "text": "was",
+          "startMs": 363736,
+          "endMs": 363836,
+          "source": "speech"
+        },
+        {
+          "text": "there",
+          "startMs": 363896,
+          "endMs": 364097,
+          "source": "speech"
+        },
+        {
+          "text": "that",
+          "startMs": 364157,
+          "endMs": 364277,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 364297,
+          "endMs": 364337,
+          "source": "speech"
+        },
+        {
+          "text": "met",
+          "startMs": 364397,
+          "endMs": 364517,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 364557,
+          "endMs": 364657,
+          "source": "speech"
+        },
+        {
+          "text": "gentleman",
+          "startMs": 364677,
+          "endMs": 365018,
+          "source": "speech"
+        },
+        {
+          "text": "called",
+          "startMs": 365058,
+          "endMs": 365378,
+          "source": "speech"
+        },
+        {
+          "text": "Mr.",
+          "startMs": 365538,
+          "endMs": 365819,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Hosmer",
+          "startMs": 365859,
+          "endMs": 366259,
+          "source": "speech"
+        },
+        {
+          "text": "Angel.\"",
+          "startMs": 366379,
+          "endMs": 366640,
+          "source": "speech"
+        }
+      ]
+    }
+  ]
+}
