@@ -1,8 +1,9 @@
 #EXTM3U
 #EXT-X-VERSION:3
-#EXT-X-TARGETDURATION:5
 #EXT-X-PLAYLIST-TYPE:VOD
+#EXT-X-TARGETDURATION:5
 #EXT-X-MEDIA-SEQUENCE:1232
+#EXT-X-START:TIME-OFFSET=2.84,PRECISE=YES
 #EXT-X-KEY:METHOD=AES-128,URI="https://api.obj2.top/hls/movie/674/4I-7RKdFuBXkUAJq/key",IV=0x43A6D967D5C17290D98322F5C8F6660B
 #EXTINF:4.010667,
 https://s1.obj2.top/hls/movie/674/jxlMKKMpqizKlijh/audio/eng/1232.js
@@ -236,4 +237,6 @@ https://s2.obj2.top/hls/movie/674/jxlMKKMpqizKlijh/audio/eng/1345.js
 https://s2.obj2.top/hls/movie/674/jxlMKKMpqizKlijh/audio/eng/1346.js
 #EXTINF:3.989333,
 https://s2.obj2.top/hls/movie/674/jxlMKKMpqizKlijh/audio/eng/1347.js
+#EXTINF:4.010667,
+https://s1.obj2.top/hls/movie/674/jxlMKKMpqizKlijh/audio/eng/1348.js
 #EXT-X-ENDLIST
