@@ -101,3 +101,114 @@ function fiveQuestions(cues,all,id,start){
  return {id:'q'+(i+1),type:'single-choice',category:'comprehension',question,options:options.map((x,index)=>({key:'ABCD'[index],text:x.text})),answer:'ABCD'[options.findIndex(x=>x.correct)],explanation:'正确答案可从本集原生英文字幕中核对，其余对白来自影片其他片段。',source:'Native CC evidence: automated dialogue comprehension'};});
  return {episodeId:id,title:'Episode '+id+' · Quiz',questions};
 }
+
+function readStatus(){try{const s=read(STATUS);if(s?.films)return s;}catch{}return {version:3,films:{}};}
+function completed(movie,source,dir){
+ if(!movie.studyCourse?.seriesId||!exists(path.join(dir,'episodes.json')))return false;
+ try{const e=read(path.join(dir,'episodes.json')),v=read(path.join(dir,'vocabulary.json')),q=read(path.join(dir,'quiz.json'));
+ return e.length>0&&e.every(x=>x.video?.originalHlsUrl===source&&/native/i.test(x.subtitleTracks?.status||'')&&x.modules?.words&&x.modules?.quiz&&v[x.episodeId]?.length===5&&q[x.episodeId]?.questions?.length===5);
+ }catch{return false;}
+}
+async function build(item){
+ const {row,movie,group,source}=item,master=await load(source);
+ assert(master.includes('#EXT-X-STREAM-INF:'),'Master has no video');
+ const english=track(master,'en');if(!english?.URI)throw Error('NO_ENGLISH_TRACK');
+ const chinese=track(master,'zh');
+ const lines=master.split(/\r?\n/).map(s=>s.trim()),variants=[];
+ for(let i=0;i<lines.length;i++)if(lines[i].startsWith('#EXT-X-STREAM-INF:')){let j=i+1;while(j<lines.length&&!lines[j])j++;if(lines[j]&&!lines[j].startsWith('#'))variants.push({...attributes(lines[i]),url:new URL(lines[j],source).href});}
+ assert(variants.length,'No video variants');
+ const choice=variants.find(x=>x.RESOLUTION==='1280x720')||variants.find(x=>x.RESOLUTION==='1920x1080')||variants[0];
+ const audioTracks=lines.filter(x=>x.startsWith('#EXT-X-MEDIA:TYPE=AUDIO')).map(attributes);
+ const audio=audioTracks.find(x=>x['GROUP-ID']===choice.AUDIO&&x.DEFAULT==='YES')||audioTracks.find(x=>x['GROUP-ID']===choice.AUDIO)||audioTracks[0];
+ const audioUrl=audio?.URI?new URL(audio.URI,source).href:null;
+ const [vText,aText,EN,ZH]=await Promise.all([load(choice.url),audioUrl?load(audioUrl):Promise.resolve(null),sourceSub(english,source),
+  chinese?sourceSub(chinese,source).catch(e=>{console.warn('V3_OPTIONAL_ZH_FAILED '+row.id+' '+e.message);return null;}):Promise.resolve(null)]);
+ const video=parseMedia(vText,choice.url),sound=aText?parseMedia(aText,audioUrl):null,en=EN.cues,zh=ZH?.cues||[];
+ assert(video.total>1800&&video.total<16000,'Unexpected movie length');
+ if(sound)assert(Math.abs(video.total-sound.total)<12,'Movie audio does not match video');
+ assert(en[0].start<video.total*.15&&en.at(-1).end>video.total*.65&&en.at(-1).end<video.total+120,'Native English timeline differs from video');
+ const relevant=en.filter(x=>!/captioned by|captioning made possible|copyright|www\./i.test(x.text));
+ const last=Math.min(video.total,Math.max(relevant.at(-1).end+9,video.total*.75));
+ const seriesId=movie.studyCourse?.seriesId||'movie-'+row.id,dir=path.join(DATA,seriesId);
+ const previous=exists(path.join(dir,'episodes.json'))?read(path.join(dir,'episodes.json')):[];
+ const layout=boundaries(en,last,previous,source),oldV=exists(path.join(dir,'vocabulary.json'))?read(path.join(dir,'vocabulary.json')):{};
+ const oldQ=exists(path.join(dir,'quiz.json'))?read(path.join(dir,'quiz.json')):{};
+ const output=new Map(),stage=(rel,text)=>output.set(path.join(dir,rel),text),stageJson=(rel,obj)=>stage(rel,JSON.stringify(obj,null,2)+'\n');
+ const episodes=[],vocabulary={},quiz={};
+ for(let i=0;i<layout.points.length-1;i++){
+ const episodeId=i+1,id=String(episodeId).padStart(3,'0'),start=layout.points[i],end=layout.points[i+1],old=layout.preserve?previous[i]:null;
+ const vr=video.rows.filter(r=>r.end>start+1e-6&&r.start<end-1e-6),origin=vr[0]?.start;
+ assert(vr.length,'No video segments in episode '+id);
+ const ar=sound?.rows.filter(r=>r.end>origin+1e-6&&r.start<vr.at(-1).end-1e-6)||[];
+ if(sound)assert(ar.length,'No audio segments in episode '+id);
+ const captions=clip(en,start,end);
+ assert(captions.length>=12,'Insufficient English captions in '+id);
+ const previousWords=layout.preserve&&oldV[episodeId]?.length===5?oldV[episodeId]:null;
+ const previousQuiz=layout.preserve&&oldQ[episodeId]?.questions?.length===5&&oldQ[episodeId].questions.every(q=>q.options?.length===4)?oldQ[episodeId]:null;
+ vocabulary[episodeId]=previousWords||words(captions,episodeId,origin,seriesId,zh);
+ quiz[episodeId]=previousQuiz||fiveQuestions(captions,en,episodeId,start);
+ const titleZh=old?.titleZh||('第'+String(episodeId).padStart(2,'0')+'集 · 剧情场景');
+ const titleEn=old?.titleEn||spoken(captions.find(x=>spoken(x))||captions[0])?.slice(0,55)||'Story Scene '+episodeId;
+ const enPath='/data/'+seriesId+'/subtitles/'+id+'.en.vtt',zhPath='/data/'+seriesId+'/subtitles/'+id+'.en-zh.vtt';
+ stage('subtitles/'+id+'.en.vtt',writeVtt(captions,origin,[]));
+ if(zh.length)stage('subtitles/'+id+'.en-zh.vtt',writeVtt(captions,origin,zh));
+ stage('hls/'+id+'.video.m3u8',playlist(vr,start-origin));
+ if(sound)stage('hls/'+id+'.audio.m3u8',playlist(ar,start-ar[0].start));
+ const masterOut=['#EXTM3U','#EXT-X-VERSION:3'];
+ if(sound)masterOut.push('#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="aud",NAME="English",LANGUAGE="eng",DEFAULT=YES,AUTOSELECT=YES,URI="'+id+'.audio.m3u8"');
+ masterOut.push('#EXT-X-STREAM-INF:BANDWIDTH='+Number(choice.BANDWIDTH||1800000)+(choice.RESOLUTION?',RESOLUTION='+choice.RESOLUTION:'')+(choice.CODECS?',CODECS="'+choice.CODECS+'"':'')+(sound?',AUDIO="aud"':''),id+'.video.m3u8','');
+ stage('hls/'+id+'.m3u8',masterOut.join('\n'));
+ episodes.push({episodeId,title:titleZh,titleZh,titleEn,
+ summaryEn:old?.summaryEn||'Source-dialogue scene from '+row.title+'.',summaryZh:old?.summaryZh||'按电影原声对白中的自然停顿划分，保留字幕与本段剧情。',
+ status:'published',sourceType:'hls',
+ video:{source:'hls',hlsUrl:'/data/'+seriesId+'/hls/'+id+'.m3u8',subtitleUrl:enPath,originalHlsUrl:source,originalStart:round(start),originalEnd:round(end),timelineOrigin:round(origin),clipStart:round(start-origin),clipEnd:round(end-origin),duration:round(end-start)},
+ subtitleTracks:{english:enPath,englishChinese:zh.length?zhPath:null,status:'native-v3'+(zh.length?'-bilingual':'-english')},
+ modules:{watch:true,read:false,words:true,vocabulary:true,quiz:true}});
+ }
+ const oldSeries=exists(path.join(dir,'series.json'))?read(path.join(dir,'series.json')):{};
+ stageJson('series.json',{...oldSeries,seriesId,seriesTitle:row.title,seriesTitleZh:(row.titleZh||row.title)+' · 剧情分集学习',level:oldSeries.level||3,language:'en',status:'completed',totalEpisodes:episodes.length,movieId:row.id,quizStatus:'ready',generation:'v3-native-source',coverImage:oldSeries.coverImage||movie.cover||null,description:'视频、英文CC和可选中文均取自同一M3U8；保留音效说明。'});
+ stageJson('episodes.json',episodes);stageJson('vocabulary.json',vocabulary);stageJson('quiz.json',quiz);
+ stageJson('v3-source.json',{movieId:row.id,tmdbId:row.tmdbId,source,englishUrl:EN.url,englishTrack:english.NAME,chineseUrl:ZH?.url||null,chineseTrack:ZH?chinese.NAME:null,videoUrl:choice.url,audioUrl,videoDuration:video.total,englishCues:en.length,chineseCues:zh.length,chapterCount:episodes.length,retainedOldChapters:layout.preserve,createdAt:NOW});
+ assert(episodes.every(e=>vocabulary[e.episodeId].length===5&&quiz[e.episodeId].questions.length===5),'Invalid Words/Quiz batch');
+ // Nothing is written until the complete film has passed source, timeline and chapter checks.
+ for(const [file,content] of output)save(file,content);
+ const moviePath=path.join(DATA,'movies',group,'movies.json'),movieData=read(moviePath),entry=movieData.sources.find(x=>x.id===row.id);
+ assert(entry,'Movie vanished from published catalog');
+ entry.studyCourse={seriesId,episodeCount:episodes.length};entry.tmdbId=row.tmdbId;saveJSON(moviePath,movieData);
+ const config=path.join(ROOT,'netlify.toml'),rule='/data/'+seriesId+'/hls/*',current=fs.readFileSync(config,'utf8');
+ if(!current.includes('for = "'+rule+'"'))save(config,current+'\n[[headers]]\n  for = "'+rule+'"\n  [headers.values]\n    Content-Type = "application/vnd.apple.mpegurl"\n');
+ console.log('V3_FILM_DONE '+JSON.stringify({movie:row.id,seriesId,chapters:episodes.length,englishCues:en.length,chineseCues:zh.length,retainedChapterCuts:layout.preserve}));
+ return {seriesId,chapters:episodes.length,source,englishCues:en.length,chineseCues:zh.length};
+}
+async function main(){
+ assert(Array.isArray(CATALOG.films)&&CATALOG.films.length,'Missing movie-hub catalog');
+ const movies=new Map();
+ for(const group of fs.readdirSync(path.join(DATA,'movies'))){
+ const p=path.join(DATA,'movies',group,'movies.json');if(!exists(p))continue;
+ for(const movie of read(p).sources||[])movies.set(movie.id,{movie,group});}
+ const state=readStatus();state.version=3;state.updatedAt=NOW;state.totalCatalog=CATALOG.films.length;
+ const pending=[];
+ for(const row of CATALOG.films){
+ const found=movies.get(row.id);if(!found?.movie?.hlsUrl)continue;
+ const id=Number(row.tmdbId);if(!Number.isSafeInteger(id)||id<=0){state.films[row.id]={state:'invalid_tmdb_id',at:NOW};continue;}
+ const source=BASE+id+'/master.m3u8',seriesId=found.movie.studyCourse?.seriesId||'movie-'+row.id;
+ if(completed(found.movie,source,path.join(DATA,seriesId))){state.films[row.id]={state:'completed',at:NOW,seriesId,source};continue;}
+ const retry=Date.parse(state.films[row.id]?.retryAfter||'');
+ if(!ONLY&&retry>Date.now())continue;
+ pending.push({...found,row,source,hasCourse:Boolean(found.movie.studyCourse)});}
+ pending.sort((a,b)=>Number(b.hasCourse)-Number(a.hasCourse));
+ const list=ONLY?pending.filter(x=>x.row.id===ONLY):pending.slice(0,LIMIT);
+ if(ONLY&&!list.length)throw Error('Selected movie not pending or not published: '+ONLY);
+ const results=[];
+ for(const item of list){try{
+ const result=await build(item);state.films[item.row.id]={state:'completed',at:NOW,...result};results.push({id:item.row.id,state:'completed',chapters:result.chapters});}
+ catch(e){const msg=String(e.message||e).slice(0,230),kind=/HTTP 404/.test(msg)?'source_not_found':/NO_ENGLISH_TRACK/.test(msg)?'no_english':'source_error';
+ state.films[item.row.id]={state:kind,error:msg,at:NOW,retryAfter:new Date(Date.now()+(kind==='source_error'?24:168)*3600000).toISOString()};
+ console.warn('V3_FILM_SKIP '+JSON.stringify({id:item.row.id,state:kind,error:msg}));results.push({id:item.row.id,state:kind,error:msg});}}
+ state.lastBatch=results;state.pendingEstimate=Math.max(0,pending.length-list.length);saveJSON(STATUS,state);
+ const counts={};for(const item of Object.values(state.films))counts[item.state]=(counts[item.state]||0)+1;
+ const summary={time:NOW,total:CATALOG.films.length,processed:results.length,pending:state.pendingEstimate,counts,results};
+ console.log('V3_BATCH_SUMMARY '+JSON.stringify(summary));
+ if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'## yqxyy V3 movies\n\nCatalog: '+CATALOG.films.length+'\n\nProcessed: '+results.length+'\n\nPending: '+state.pendingEstimate+'\n\n'+results.map(x=>'- '+x.id+': '+x.state+(x.chapters?' / '+x.chapters+' episodes':'')+'\n').join(''));
+}
+main().catch(e=>{console.error(e);process.exitCode=1;});
