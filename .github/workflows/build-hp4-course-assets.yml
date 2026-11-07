@@ -1,0 +1,36 @@
+name: Build and publish Harry Potter 4 course assets
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/hp4-build-request.json
+permissions:
+  contents: write
+concurrency:
+  group: hp4-course-assets
+  cancel-in-progress: false
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Build episode HLS playlists and subtitle assets
+        run: node scripts/split-hp4-hls.cjs
+      - name: Publish generated course assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/movie-harry-potter-4 data/movies/harry-potter/movies.json
+          if git diff --cached --quiet; then
+            echo "No generated changes to publish."
+            exit 0
+          fi
+          git commit -m "Publish Harry Potter 4 segmented learning course"
+          git push origin main
