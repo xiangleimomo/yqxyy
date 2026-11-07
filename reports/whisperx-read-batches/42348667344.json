@@ -1,0 +1,428 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42348667344",
+  "completedAt": "2026-11-07T07:07:54.941408+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 27,
+  "rejected": 23,
+  "websiteCommitRequired": true,
+  "totalWords": 10556,
+  "speechMatchedWords": 10556,
+  "success": [
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 133,
+      "cues": 74,
+      "words": 396,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 396,
+      "coverage": 0.9925,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 134,
+      "cues": 71,
+      "words": 395,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 55,
+      "speechWords": 395,
+      "coverage": 0.9975,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 135,
+      "cues": 72,
+      "words": 378,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 378,
+      "coverage": 0.9921,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 136,
+      "cues": 75,
+      "words": 396,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 396,
+      "coverage": 0.9925,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 137,
+      "cues": 76,
+      "words": 401,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 401,
+      "coverage": 0.9975,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 138,
+      "cues": 73,
+      "words": 384,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 56,
+      "speechWords": 384,
+      "coverage": 0.9948,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 139,
+      "cues": 77,
+      "words": 393,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 393,
+      "coverage": 0.9949,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 140,
+      "cues": 85,
+      "words": 395,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 395,
+      "coverage": 0.9875,
+      "omittedWords": 5
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 141,
+      "cues": 73,
+      "words": 397,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 397,
+      "coverage": 0.9975,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 142,
+      "cues": 85,
+      "words": 393,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 393,
+      "coverage": 0.9975,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 143,
+      "cues": 72,
+      "words": 372,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 372,
+      "coverage": 0.9894,
+      "omittedWords": 4
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 144,
+      "cues": 79,
+      "words": 396,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 396,
+      "coverage": 0.9975,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 145,
+      "cues": 67,
+      "words": 391,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 51,
+      "speechWords": 391,
+      "coverage": 0.9974,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 146,
+      "cues": 76,
+      "words": 389,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 389,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 147,
+      "cues": 75,
+      "words": 397,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 397,
+      "coverage": 0.9975,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 148,
+      "cues": 75,
+      "words": 393,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 393,
+      "coverage": 0.9975,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 149,
+      "cues": 80,
+      "words": 406,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 406,
+      "coverage": 0.9951,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 150,
+      "cues": 76,
+      "words": 388,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 388,
+      "coverage": 0.9949,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 151,
+      "cues": 73,
+      "words": 395,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 395,
+      "coverage": 0.9975,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 152,
+      "cues": 73,
+      "words": 378,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 378,
+      "coverage": 0.9974,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 153,
+      "cues": 78,
+      "words": 392,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 392,
+      "coverage": 0.9949,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 154,
+      "cues": 75,
+      "words": 398,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 398,
+      "coverage": 0.995,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 155,
+      "cues": 85,
+      "words": 398,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 398,
+      "coverage": 0.9975,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 156,
+      "cues": 75,
+      "words": 362,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 362,
+      "coverage": 0.9005,
+      "omittedWords": 40
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 157,
+      "cues": 65,
+      "words": 392,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 52,
+      "speechWords": 392,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 158,
+      "cues": 77,
+      "words": 384,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 55,
+      "speechWords": 384,
+      "coverage": 0.9771,
+      "omittedWords": 9
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 159,
+      "cues": 75,
+      "words": 397,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 397,
+      "coverage": 0.9975,
+      "omittedWords": 1
+    }
+  ],
+  "failures": [
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 160,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 161,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.5% matched, 2.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 162,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.2% matched, 28.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 163,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.6% matched, 18.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 164,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 165,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 6.8% matched, 4.2% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 166,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 167,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 6.7% matched, 22.1% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 168,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.5% matched, 11.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 169,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 170,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 171,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 172,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 173,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 3.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 174,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.5% matched, 35.5% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 175,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 176,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.4% matched, 10.1% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 177,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.3% matched, 1.5% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 178,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 179,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 180,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 181,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 6.2% matched, 37.2% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 182,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.8% matched, 0.0% assigned"
+    }
+  ]
+}
