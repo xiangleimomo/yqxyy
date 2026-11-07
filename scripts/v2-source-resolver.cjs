@@ -28,7 +28,7 @@ async function duloUrl({tmdbId,mediaType,season,episode,fetcher=fetch}){
   url.searchParams.set('tmdb',String(tmdbId));
   url.searchParams.set('type',mediaType==='tv'?'tv':'movie');
   if(mediaType==='tv'){
-    if(!Number.isInteger(season)||season<1||!Number.isInteger(episode)||episode<1)throw new Error('TV source lookup requires an exact season and episode');
+    if(!Number.isInteger(season)||season<0||!Number.isInteger(episode)||episode<1)throw new Error('TV source lookup requires an exact season and episode');
     url.searchParams.set('season',String(season));
     url.searchParams.set('episode',String(episode));
   }
