@@ -1,0 +1,86 @@
+name: Build Harry Potter 4 story-led course
+on:
+  push:
+    branches: [course/hp4-goblet-fire-20261107]
+    paths:
+      - 'scripts/inspect_hp4_hls_source.py'
+      - 'scripts/validate_hp4_editorial.py'
+      - 'scripts/build_hp4_course.py'
+      - 'scripts/register-movie-course.cjs'
+      - 'tests/hp4-course-build.test.cjs'
+      - 'data/movie-harry-potter-4/editorial.json'
+      - 'data/movies/harry-potter/movies.json'
+      - 'netlify/functions/lib/movie-study.cjs'
+      - 'netlify/functions/movie-study-subtitles.js'
+      - '.github/workflows/build-hp4-course.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: course/hp4-goblet-fire-20261107
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch source HLS and embedded English CC track
+        run: python3 scripts/inspect_hp4_hls_source.py
+      - name: Validate all 21 story chapters and vocabulary evidence
+        run: python3 scripts/validate_hp4_editorial.py
+      - name: Build episode HLS, course data, vocabulary and quiz
+        run: python3 scripts/build_hp4_course.py
+      - name: Register the reviewed course in the existing movie-study catalogue
+        run: node scripts/register-movie-course.cjs movie-harry-potter-4
+      - name: Test episode assets and embedded WebVTT subtitle endpoint
+        run: node tests/hp4-course-build.test.cjs
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+      - name: Decode the generated first episode (including .js segments and AES-128)
+        run: |
+          ffmpeg -hide_banner -loglevel error -allowed_extensions ALL \
+            -protocol_whitelist file,http,https,tcp,tls,crypto \
+            -i data/movie-harry-potter-4/hls/001.m3u8 \
+            -t 8 -map 0:v:0 -map 0:a:0 -f null -
+      - name: Add course build summary
+        run: |
+          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          r=json.load(open('data/movie-harry-potter-4/course-build-report.json'))
+          a=json.load(open('data/movie-harry-potter-4/alignment.json'))
+          print('# Harry Potter and the Goblet of Fire — course build')
+          print(f"- Episodes: {r['episodes']}")
+          print(f"- Vocabulary items: {r['vocabularyItems']}")
+          print(f"- Quiz questions: {r['quizQuestions']}")
+          print(f"- English CC cues: {r['sourceEnglishCues']}")
+          print(f"- Source duration: {r['sourceDuration']}s; lesson story end: {r['storyEnd']}s")
+          print(f"- Video variants: {', '.join(v['resolution'] for v in r['videoVariants'])}")
+          print(f"- Subtitle alignment: same-master embedded English CC, zero offset")
+          print(f"- Chinese subtitle track: {r['bilingualSubtitleStatus']}")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hp4-course-build
+          path: |
+            data/movie-harry-potter-4/
+            hp4-source-inspection/source-report.json
+            hp4-editorial-validation.json
+          retention-days: 14
+      - name: Commit generated course assets to the isolated course branch
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/movie-harry-potter-4
+          git add data/movies/harry-potter/movies.json netlify.toml netlify/functions/lib/movie-study-catalog.cjs
+          if ! git diff --cached --quiet; then
+            git commit -m "course: build Harry Potter 4 21-episode learning course"
+            git push origin HEAD:course/hp4-goblet-fire-20261107
+          fi
