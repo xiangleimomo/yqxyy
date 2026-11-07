@@ -7,6 +7,7 @@ on:
       - .github/workflows/movie-v3-staging.yml
 permissions:
   contents: write
+  models: read
 jobs:
   preview:
     runs-on: ubuntu-latest
@@ -19,10 +20,20 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Check GitHub Models editorial availability
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node - <<'NODE'
+          (async()=>{
+            const r=await fetch('https://models.github.ai/inference/chat/completions',{method:'POST',headers:{'Authorization':'Bearer '+process.env.GITHUB_TOKEN,'Content-Type':'application/json','Accept':'application/vnd.github+json'},body:JSON.stringify({model:'openai/gpt-4o-mini',messages:[{role:'user',content:'Reply only YES.'}],max_tokens:20})});
+            const text=await r.text();console.log('V3_MODEL_SMOKE',r.status,text.slice(0,400));
+          })().catch(e=>{console.warn('MODEL_UNAVAILABLE',e.message);});
+          NODE
       - name: Generate first native-source lesson series
         env:
           V3_BATCH_SIZE: '1'
-          V3_MOVIE_ID: kung-fu-panda-3
+          V3_MOVIE_ID: kung-fu-panda-4
         run: node scripts/movie-v3-auto-course.cjs
       - name: Commit source-verified course on staging
         run: |
