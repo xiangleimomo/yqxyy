@@ -20,7 +20,7 @@ for block in re.split(r"\n\s*\n",raw.strip()):
     if text:cues.append({"start":start,"end":end,"text":text})
 plan=json.loads(PLAN.read_text(encoding="utf-8"))
 chapters=plan["chapters"]
-assert len(chapters)==20
+assert len(chapters)==21
 report=[]
 for i,ch in enumerate(chapters):
     subset=[c for c in cues if c["start"]>=ch["targetStart"] and c["start"]<ch["targetEnd"]]
