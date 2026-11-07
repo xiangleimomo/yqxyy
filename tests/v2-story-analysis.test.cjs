@@ -11,8 +11,8 @@ const plan={
  logline:'A family begins an unexpected journey.',
  storyArc:'Arrival, obstacle, and a new plan.',
  episodes:[
-  {titleEn:'A Sudden Departure',titleZh:'车站里的突发状况',summaryZh:'一家人抵达车站，却发现列车即将开走。',startCueId:1,endCueId:2,boundaryReason:'The immediate station problem is established and the group must change its plan.',storyPurpose:'Introduce the characters and the first obstacle.'},
-  {titleEn:'An Offer of Help',titleZh:'新的帮助与决定',summaryZh:'一位新人物主动提出帮助，一家人决定跟随对方。',startCueId:3,endCueId:4,boundaryReason:'A new character changes the available choices and initiates the next story unit.',storyPurpose:'Move the story from the initial obstacle into a new plan.'}
+  {titleEn:'A Sudden Departure',titleZh:'车站里的突发状况',summaryEn:'The family arrives at the station, but the train is about to leave.',summaryZh:'一家人抵达车站，却发现列车即将开走。',startCueId:1,endCueId:2,boundaryReason:'The immediate station problem is established and the group must change its plan.',storyPurpose:'Introduce the characters and the first obstacle.'},
+  {titleEn:'An Offer of Help',titleZh:'新的帮助与决定',summaryEn:'A new character offers help, and the family decides to follow.',summaryZh:'一位新人物主动提出帮助，一家人决定跟随对方。',startCueId:3,endCueId:4,boundaryReason:'A new character changes the available choices and initiates the next story unit.',storyPurpose:'Move the story from the initial obstacle into a new plan.'}
  ]
 };
 const result=validatePlan(plan,cues,20);
