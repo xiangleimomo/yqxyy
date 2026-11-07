@@ -77,7 +77,7 @@ function parseMediaPlaylist(text, baseUrl) {
   const raw = String(text).replace(/^\uFEFF/, '');
   if (!raw.trimStart().startsWith('#EXTM3U')) throw new Error('Invalid HLS media playlist');
   if (/#EXT-X-(?:PART|PRELOAD-HINT|RENDITION-REPORT|SKIP|DEFINE|SESSION-KEY)(?::|$)/m.test(raw)) {
-    throw new Error('Low-latency HLS requires a dedicated parser');
+    throw new Error('Unsupported HLS playlist feature requires a dedicated parser');
   }
   const lines = raw.split(/\r?\n/).map(x => x.trim());
   const globalTags = [];
