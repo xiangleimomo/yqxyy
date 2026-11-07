@@ -1,0 +1,26 @@
+name: Build Kung Fu Panda 2 lesson assets on staging branch
+on:
+  push:
+    branches: [automation/kfp49444-build]
+    paths: [scripts/build-kfp49444-course.cjs]
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: automation/kfp49444-build
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node scripts/build-kfp49444-course.cjs
+      - name: Commit generated lesson assets on staging branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/movie-kung-fu-panda-2
+          git commit -m "Generate 13 Kung Fu Panda 2 lesson playlists subtitles words and quizzes"
+          git push origin HEAD:automation/kfp49444-build
