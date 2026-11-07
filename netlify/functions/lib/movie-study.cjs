@@ -1,11 +1,22 @@
 'use strict';
 const zlib=require('node:zlib');
-function time(s){const p=s.replace(',','.').split(':').map(Number);return p[0]*3600+p[1]*60+p[2];}
+function time(s){const p=s.replace(',','.').split(':').map(Number);return p.length===2?p[0]*60+p[1]:p[0]*3600+p[1]*60+p[2];}
 function parseSrt(text){
   return String(text).replace(/^\uFEFF/,'').replace(/\r/g,'').split(/\n\s*\n/).flatMap(block=>{
     const lines=block.trim().split('\n'),i=lines.findIndex(l=>/^\d{2}:\d{2}:\d{2}[,.]\d{3}\s*-->/.test(l));
     if(i<0)return [];
     const match=lines[i].match(/(\d{2}:\d{2}:\d{2}[,.]\d{3})\s*-->\s*(\d{2}:\d{2}:\d{2}[,.]\d{3})/);
+    if(!match)return [];
+    const start=time(match[1]),end=time(match[2]);
+    const caption=lines.slice(i+1).join('\n').replace(/<[^>]*>/g,'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    return end>start&&caption?[{start,end,text:caption}]:[];
+  });
+}
+function parseVtt(text){
+  return String(text).replace(/^\uFEFF/,'').replace(/\r/g,'').split(/\n\s*\n/).flatMap(block=>{
+    const lines=block.trim().split('\n'),i=lines.findIndex(l=>/^\d{2}:\d{2}(?::\d{2})?[,.]\d{3}\s*-->/.test(l));
+    if(i<0)return [];
+    const match=lines[i].match(/(\d{2}:\d{2}(?::\d{2})?[,.]\d{3})\s*-->\s*(\d{2}:\d{2}(?::\d{2})?[,.]\d{3})/);
     if(!match)return [];
     const start=time(match[1]),end=time(match[2]);
     const caption=lines.slice(i+1).join('\n').replace(/<[^>]*>/g,'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
@@ -39,4 +50,4 @@ function episodeVtt(cues,chapter,offset=.3,scale=1){
   const selected=cues.filter(c=>!/subtitles downloaded from|best watched using open subtitles|www\.opensubtitles\.org/i.test(c.text)).map(c=>({...c,start:c.start*scale+offset-chapter.start,end:c.end*scale+offset-chapter.start})).filter(c=>c.end>0&&c.start<chapter.end-chapter.start);
   return 'WEBVTT\n\n'+selected.map((c,i)=>`${i+1}\n${stamp(c.start)} --> ${stamp(Math.min(c.end,chapter.end-chapter.start))}\n${c.text}\n`).join('\n');
 }
-module.exports={parseSrt,extractSrt,episodeVtt,stamp};
+module.exports={parseSrt,parseVtt,extractSrt,episodeVtt,stamp};
