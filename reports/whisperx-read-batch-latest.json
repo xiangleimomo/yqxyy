@@ -1,74 +1,118 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42386232165",
-  "completedAt": "2026-11-07T15:50:42.406880+00:00",
+  "runId": "42388347018",
+  "completedAt": "2026-11-07T16:23:38.048940+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 15,
-  "rejected": 35,
+  "published": 50,
+  "rejected": 0,
   "websiteCommitRequired": true,
-  "totalWords": 12177,
-  "speechMatchedWords": 12177,
+  "totalWords": 32080,
+  "speechMatchedWords": 32080,
   "success": [
     {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
-      "episodeId": 24,
-      "cues": 126,
-      "words": 1088,
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
+      "episodeId": 14,
+      "cues": 85,
+      "words": 782,
       "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 1088,
-      "coverage": 0.9982,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
-      "episodeId": 25,
-      "cues": 100,
-      "words": 1090,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 63,
-      "speechWords": 1090,
-      "coverage": 0.9991,
-      "omittedWords": 1
+      "xmlParagraphs": 78,
+      "speechWords": 782,
+      "coverage": 1.0,
+      "omittedWords": 0
     },
     {
       "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
-      "episodeId": 1,
-      "cues": 93,
-      "words": 771,
+      "episodeId": 15,
+      "cues": 89,
+      "words": 769,
       "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 771,
-      "coverage": 0.9987,
-      "omittedWords": 1
+      "xmlParagraphs": 79,
+      "speechWords": 769,
+      "coverage": 0.9961,
+      "omittedWords": 3
     },
     {
       "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
-      "episodeId": 2,
-      "cues": 102,
-      "words": 764,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 86,
-      "speechWords": 764,
-      "coverage": 0.9974,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
-      "episodeId": 3,
-      "cues": 86,
+      "episodeId": 16,
+      "cues": 84,
       "words": 772,
       "xmlTextVerified": true,
-      "xmlParagraphs": 73,
+      "xmlParagraphs": 75,
       "speechWords": 772,
       "coverage": 0.9987,
       "omittedWords": 1
     },
     {
       "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
-      "episodeId": 4,
-      "cues": 96,
+      "episodeId": 17,
+      "cues": 78,
+      "words": 771,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 771,
+      "coverage": 0.9961,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
+      "episodeId": 18,
+      "cues": 87,
+      "words": 777,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 777,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
+      "episodeId": 19,
+      "cues": 90,
+      "words": 777,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 777,
+      "coverage": 0.9974,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
+      "episodeId": 20,
+      "cues": 91,
+      "words": 774,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 774,
+      "coverage": 0.9961,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
+      "episodeId": 21,
+      "cues": 89,
+      "words": 770,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 770,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
+      "episodeId": 22,
+      "cues": 91,
+      "words": 770,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 770,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
+      "episodeId": 23,
+      "cues": 102,
       "words": 777,
       "xmlTextVerified": true,
       "xmlParagraphs": 81,
@@ -78,279 +122,444 @@
     },
     {
       "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
-      "episodeId": 5,
-      "cues": 88,
-      "words": 752,
+      "episodeId": 24,
+      "cues": 96,
+      "words": 782,
       "xmlTextVerified": true,
-      "xmlParagraphs": 77,
-      "speechWords": 752,
-      "coverage": 0.9973,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
-      "episodeId": 6,
-      "cues": 89,
-      "words": 772,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 772,
+      "xmlParagraphs": 79,
+      "speechWords": 782,
       "coverage": 0.9987,
       "omittedWords": 1
     },
     {
       "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
-      "episodeId": 7,
-      "cues": 79,
-      "words": 768,
+      "episodeId": 25,
+      "cues": 85,
+      "words": 765,
       "xmlTextVerified": true,
       "xmlParagraphs": 75,
-      "speechWords": 768,
+      "speechWords": 765,
       "coverage": 0.9987,
       "omittedWords": 1
     },
     {
       "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
-      "episodeId": 8,
-      "cues": 97,
-      "words": 776,
+      "episodeId": 26,
+      "cues": 94,
+      "words": 778,
       "xmlTextVerified": true,
-      "xmlParagraphs": 76,
-      "speechWords": 776,
+      "xmlParagraphs": 71,
+      "speechWords": 778,
       "coverage": 0.9987,
       "omittedWords": 1
     },
     {
       "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
-      "episodeId": 9,
+      "episodeId": 27,
       "cues": 88,
+      "words": 775,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 775,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
+      "episodeId": 28,
+      "cues": 76,
+      "words": 764,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 764,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
+      "episodeId": 29,
+      "cues": 94,
       "words": 776,
       "xmlTextVerified": true,
-      "xmlParagraphs": 76,
+      "xmlParagraphs": 83,
       "speechWords": 776,
-      "coverage": 0.9974,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
+      "episodeId": 30,
+      "cues": 90,
+      "words": 778,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 778,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 1,
+      "cues": 14,
+      "words": 167,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 14,
+      "speechWords": 167,
+      "coverage": 0.994,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 2,
+      "cues": 68,
+      "words": 522,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 522,
+      "coverage": 0.9981,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 3,
+      "cues": 76,
+      "words": 541,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 541,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 4,
+      "cues": 65,
+      "words": 494,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 56,
+      "speechWords": 494,
+      "coverage": 0.998,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 5,
+      "cues": 64,
+      "words": 563,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 563,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 6,
+      "cues": 74,
+      "words": 547,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 547,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 7,
+      "cues": 59,
+      "words": 543,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 56,
+      "speechWords": 543,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 8,
+      "cues": 54,
+      "words": 477,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 55,
+      "speechWords": 477,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 9,
+      "cues": 69,
+      "words": 567,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 567,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 10,
+      "cues": 58,
+      "words": 469,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 51,
+      "speechWords": 469,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 11,
+      "cues": 67,
+      "words": 509,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 509,
+      "coverage": 0.998,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 12,
+      "cues": 66,
+      "words": 525,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 53,
+      "speechWords": 525,
+      "coverage": 0.9962,
       "omittedWords": 2
     },
     {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
-      "episodeId": 10,
-      "cues": 97,
-      "words": 770,
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 13,
+      "cues": 44,
+      "words": 449,
       "xmlTextVerified": true,
-      "xmlParagraphs": 78,
-      "speechWords": 770,
+      "xmlParagraphs": 46,
+      "speechWords": 449,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 14,
+      "cues": 64,
+      "words": 526,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 59,
+      "speechWords": 526,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 15,
+      "cues": 71,
+      "words": 538,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 538,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 16,
+      "cues": 77,
+      "words": 543,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 543,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 17,
+      "cues": 67,
+      "words": 574,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 574,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 18,
+      "cues": 72,
+      "words": 609,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 609,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 19,
+      "cues": 83,
+      "words": 589,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 589,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 20,
+      "cues": 60,
+      "words": 524,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 55,
+      "speechWords": 524,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 21,
+      "cues": 76,
+      "words": 591,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 591,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 22,
+      "cues": 71,
+      "words": 545,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 545,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 23,
+      "cues": 69,
+      "words": 517,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 517,
+      "coverage": 0.9981,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 24,
+      "cues": 70,
+      "words": 481,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 481,
+      "coverage": 0.9979,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 25,
+      "cues": 74,
+      "words": 502,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 502,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-railway-children-fs0030",
+      "episodeId": 26,
+      "cues": 64,
+      "words": 530,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 530,
+      "coverage": 0.9851,
+      "omittedWords": 8
+    },
+    {
+      "seriesId": "little-fox-the-secret-garden-fs0051",
+      "episodeId": 1,
+      "cues": 81,
+      "words": 779,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 779,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-secret-garden-fs0051",
+      "episodeId": 2,
+      "cues": 88,
+      "words": 743,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 743,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-secret-garden-fs0051",
+      "episodeId": 3,
+      "cues": 86,
+      "words": 803,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 803,
+      "coverage": 0.9975,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-the-secret-garden-fs0051",
+      "episodeId": 4,
+      "cues": 93,
+      "words": 785,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 785,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-secret-garden-fs0051",
+      "episodeId": 5,
+      "cues": 86,
+      "words": 789,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 789,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-secret-garden-fs0051",
+      "episodeId": 6,
+      "cues": 95,
+      "words": 788,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 788,
       "coverage": 0.9987,
       "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
-      "episodeId": 11,
+      "seriesId": "little-fox-the-secret-garden-fs0051",
+      "episodeId": 7,
       "cues": 87,
-      "words": 771,
+      "words": 794,
       "xmlTextVerified": true,
-      "xmlParagraphs": 79,
-      "speechWords": 771,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
-      "episodeId": 12,
-      "cues": 91,
-      "words": 761,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 74,
-      "speechWords": 761,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
-      "episodeId": 13,
-      "cues": 88,
-      "words": 769,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 79,
-      "speechWords": 769,
+      "xmlParagraphs": 71,
+      "speechWords": 794,
       "coverage": 1.0,
       "omittedWords": 0
     }
   ],
-  "failures": [
-    {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
-      "episodeId": 10,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
-      "episodeId": 11,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 3.5% matched, 12.1% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
-      "episodeId": 12,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.8% matched, 3.7% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
-      "episodeId": 13,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.8% matched, 5.4% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
-      "episodeId": 14,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.6% matched, 6.6% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
-      "episodeId": 15,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.5% matched, 7.2% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
-      "episodeId": 16,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.6% matched, 9.5% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
-      "episodeId": 17,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.6% matched, 11.5% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
-      "episodeId": 18,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
-      "episodeId": 19,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
-      "episodeId": 20,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
-      "episodeId": 21,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.7% matched, 13.3% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
-      "episodeId": 22,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.7% matched, 17.2% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
-      "episodeId": 23,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.7% matched, 15.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
-      "episodeId": 26,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.7% matched, 22.4% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
-      "episodeId": 1,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 98.6% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
-      "episodeId": 2,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.9% matched, 100.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
-      "episodeId": 3,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.7% matched, 97.3% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
-      "episodeId": 4,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 100.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
-      "episodeId": 5,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.3% matched, 92.2% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
-      "episodeId": 6,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 100.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
-      "episodeId": 7,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.3% matched, 98.6% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
-      "episodeId": 8,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 100.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
-      "episodeId": 9,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 100.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
-      "episodeId": 10,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 92.2% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
-      "episodeId": 11,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 91.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
-      "episodeId": 12,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 96.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
-      "episodeId": 13,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.1% matched, 91.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
-      "episodeId": 14,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.4% matched, 98.8% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
-      "episodeId": 15,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.6% matched, 92.4% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
-      "episodeId": 16,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.4% matched, 92.2% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
-      "episodeId": 17,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 100.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
-      "episodeId": 18,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.9% matched, 93.8% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
-      "episodeId": 19,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 97.3% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
-      "episodeId": 20,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.9% matched, 98.6% assigned"
-    }
-  ]
+  "failures": []
 }
