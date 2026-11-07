@@ -23,6 +23,11 @@ async function fetchBody(url,fetcher=fetch,accept='*/*'){
   return text;
 }
 function hashUrl(url){return crypto.createHash('sha256').update(String(url)).digest('hex');}
+function isEnglishTrack(track){
+  const language=String(track?.LANGUAGE||'').toLowerCase();
+  const name=String(track?.NAME||'').toLowerCase();
+  return /^(en|eng)(-|$)/.test(language)||name.startsWith('english');
+}
 async function duloUrl({tmdbId,mediaType,season,episode,fetcher=fetch}){
   const url=new URL('/cdn',core.duloCdnOrigin);
   url.searchParams.set('tmdb',String(tmdbId));
@@ -61,7 +66,8 @@ async function inspectHlsSource({sourceUrl,provider='existing',descriptor,fetche
     audio=hls.parseMediaPlaylist(audioText,audioTrack.uri,{uriTransform:transform||undefined});
     if(Math.abs(audio.duration-video.duration)>2.5)throw new Error('Audio/video playlist durations differ by more than 2.5 seconds');
   }
-  const subtitleTrack=variant.SUBTITLES?hls.chooseTrack(master,'SUBTITLES','en',variant.SUBTITLES):hls.chooseTrack(master,'SUBTITLES','en');
+  const subtitleCandidate=variant.SUBTITLES?hls.chooseTrack(master,'SUBTITLES','en',variant.SUBTITLES):hls.chooseTrack(master,'SUBTITLES','en');
+  const subtitleTrack=isEnglishTrack(subtitleCandidate)?subtitleCandidate:null;
   let subtitle=null;
   if(subtitleTrack){
     subtitle=await subtitles.acquireSubtitleTrack({url:subtitleTrack.uri,fetcher});
@@ -82,7 +88,7 @@ async function inspectHlsSource({sourceUrl,provider='existing',descriptor,fetche
       sourceUrlStored:provider!=='dulo',
       resolution,
       codecs,
-      audioLanguage:audioTrack?.LANGUAGE||'embedded-or-unspecified',
+      audioLanguage:audioTrack?.LANGUAGE||'embedded-unverified',
       subtitleTrack:subtitleTrack?.NAME||null,
       subtitleLanguage:subtitleTrack?.LANGUAGE||null,
       subtitleCueCount:subtitle?.cueCount||0,
@@ -119,4 +125,4 @@ async function resolveEpisodeSource({tmdbId,mediaType='movie',season=null,episod
   }catch(error){failures.push('dulo: '+String(error.message).slice(0,180));}
   throw new Error('No verified HLS source found. '+failures.join(' | '));
 }
-module.exports={assertPublicHttps,fetchBody,duloUrl,inspectHlsSource,resolveEpisodeSource,hashUrl};
+module.exports={assertPublicHttps,fetchBody,duloUrl,inspectHlsSource,resolveEpisodeSource,hashUrl,isEnglishTrack};
