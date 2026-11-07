@@ -1,6 +1,6 @@
 'use strict';
 const assert=require('node:assert/strict');
-const {validatePlan,validateCueInput}=require('../scripts/v2-story-analysis.cjs');
+const {validatePlan,validateCueInput,validateStandaloneEpisode}=require('../scripts/v2-story-analysis.cjs');
 const cues=[
  {start:0,end:2,text:'A family arrives at the station.'},
  {start:2.2,end:4,text:'They discover the train is leaving.'},
@@ -24,4 +24,18 @@ assert.equal(result.episodes[1].end,20);
 assert.equal(result.episodes[0].startCue,cues[0].text);
 assert.throws(()=>validatePlan({...plan,episodes:[plan.episodes[0],{...plan.episodes[1],startCueId:4}]},cues,20),/cover cues exactly once/);
 assert.throws(()=>validateCueInput([{start:1,end:0,text:'bad'},cues[1]],20),/timeline is invalid/);
+
+const standalone=validateStandaloneEpisode({
+ titleEn:'A New Beginning',titleZh:'新的开始',
+ summaryEn:'The team faces a difficult challenge and agrees to work together.',
+ summaryZh:'团队遇到困难，最终决定合作解决问题。',
+ logline:'A team learns to work together.',
+ storyArc:'A problem brings the team together.'
+},cues,20);
+assert.equal(standalone.episodeId,1);
+assert.equal(standalone.startCueId,1);
+assert.equal(standalone.endCueId,cues.length);
+assert.equal(standalone.durationSeconds,20);
+assert.match(standalone.storyPurpose,/one complete original TV episode/);
+
 console.log('V2 story boundary validator tests passed');
