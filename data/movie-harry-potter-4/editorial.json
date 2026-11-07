@@ -1319,11 +1319,11 @@
       ]
     },
     {
-      "title": "The Graveyard: Voldemort Returns",
-      "titleZh": "墓地：伏地魔归来",
+      "title": "The Graveyard Ritual",
+      "titleZh": "墓地仪式",
       "targetStart": 7201.86,
-      "targetEnd": 7812.06,
-      "summaryEn": "The Cup transports Harry and Cedric to a graveyard, where Voldemort returns and forces Harry into a duel.",
+      "targetEnd": 7484.6,
+      "summaryEn": "The Cup takes Harry and Cedric to a graveyard, where Cedric is killed and a dark ritual restores Voldemort.",
       "words": [
         {
           "word": "unwillingly",
@@ -1350,28 +1350,28 @@
           "exampleZh": "那扇门被强行打开了。"
         },
         {
+          "word": "confess",
+          "partOfSpeech": "verb",
+          "meaningZh": "承认；坦白",
+          "definitionEn": "To admit that something is true, especially something wrong.",
+          "example": "He decided to confess the truth to his friend.",
+          "exampleZh": "他决定向朋友坦白真相。"
+        },
+        {
+          "word": "disappointed",
+          "partOfSpeech": "adjective",
+          "meaningZh": "失望的",
+          "definitionEn": "Unhappy because something was not as good as expected.",
+          "example": "She was disappointed by the result.",
+          "exampleZh": "她对结果感到失望。"
+        },
+        {
           "word": "renounced",
           "partOfSpeech": "verb, past tense",
           "meaningZh": "放弃；宣布不再支持",
           "definitionEn": "Publicly gave up a belief, claim or way of life.",
           "example": "He renounced the promise he had made.",
           "exampleZh": "他宣布放弃自己曾作出的承诺。"
-        },
-        {
-          "word": "loyalty",
-          "partOfSpeech": "noun",
-          "meaningZh": "忠诚",
-          "definitionEn": "The quality of remaining faithful to a person or group.",
-          "example": "Her loyalty to her friends never changed.",
-          "exampleZh": "她对朋友的忠诚从未改变。"
-        },
-        {
-          "word": "obliged",
-          "partOfSpeech": "verb, past tense",
-          "meaningZh": "迫使；使不得不",
-          "definitionEn": "Made someone do something because of a rule or situation.",
-          "example": "The rules obliged everyone to wait.",
-          "exampleZh": "规则要求所有人都必须等待。"
         }
       ],
       "comprehension": [
@@ -1392,6 +1392,83 @@
             "He asks Cedric to join the tournament."
           ],
           "explanation": "仪式完成后，伏地魔恢复了身体，并与哈利对峙。"
+        }
+      ]
+    },
+    {
+      "title": "Harry Faces Voldemort",
+      "titleZh": "哈利直面伏地魔",
+      "targetStart": 7484.6,
+      "targetEnd": 7812.06,
+      "summaryEn": "Voldemort explains Lily's protection, duels Harry and discovers that their wands are mysteriously connected.",
+      "words": [
+        {
+          "word": "loyalty",
+          "partOfSpeech": "noun",
+          "meaningZh": "忠诚",
+          "definitionEn": "The quality of remaining faithful to a person or group.",
+          "example": "Her loyalty to her friends never changed.",
+          "exampleZh": "她对朋友的忠诚从未改变。"
+        },
+        {
+          "word": "useful",
+          "partOfSpeech": "adjective",
+          "meaningZh": "有用的",
+          "definitionEn": "Helping someone to do or achieve something.",
+          "example": "The map proved useful during the journey.",
+          "exampleZh": "这张地图在旅途中证明很有用。"
+        },
+        {
+          "word": "obliged",
+          "partOfSpeech": "verb, past tense",
+          "meaningZh": "迫使；使不得不",
+          "definitionEn": "Made someone do something because of a rule or situation.",
+          "example": "The rules obliged everyone to wait.",
+          "exampleZh": "规则要求所有人都必须等待。"
+        },
+        {
+          "word": "protection",
+          "partOfSpeech": "noun",
+          "meaningZh": "保护；防护",
+          "definitionEn": "The act of keeping someone or something safe.",
+          "example": "A strong shield offers protection from danger.",
+          "exampleZh": "坚固的盾牌可以提供防护。"
+        },
+        {
+          "word": "astonishing",
+          "partOfSpeech": "adjective",
+          "meaningZh": "令人惊讶的",
+          "definitionEn": "Very surprising or impressive.",
+          "example": "The magician performed an astonishing trick.",
+          "exampleZh": "魔术师表演了一个令人惊讶的戏法。"
+        },
+        {
+          "word": "niceties",
+          "partOfSpeech": "plural noun",
+          "meaningZh": "礼节；客套",
+          "definitionEn": "Small details of polite or formal behaviour.",
+          "example": "They observed the niceties of a formal introduction.",
+          "exampleZh": "他们遵守了正式介绍时的礼节。"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What protects Harry when Voldemort first attacks him as a baby?",
+          "choices": [
+            "His mother's sacrifice and love.",
+            "A spell cast by the Goblet.",
+            "A shield made by Cedric."
+          ],
+          "explanation": "哈利母亲牺牲自己留下的爱形成了保护力量。"
+        },
+        {
+          "question": "How does Harry return from the graveyard?",
+          "choices": [
+            "He reaches the Portkey after the wand connection breaks.",
+            "He flies away on a broomstick.",
+            "He uses the Knight Bus."
+          ],
+          "explanation": "哈利在魔杖连接断开后抓住门钥匙返回。"
         }
       ]
     },
