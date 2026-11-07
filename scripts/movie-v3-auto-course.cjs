@@ -97,15 +97,30 @@ const dict=Object.fromEntries(
 const extraWords=`abandon|抛弃;ability|能力;absolutely|绝对;accept|接受;accident|事故;accompany|陪伴;achieve|实现;action|行动;active|积极;admit|承认;advice|建议;affect|影响;afford|负担得起;allow|允许;amuse|逗乐;ancient|古代;announce|宣布;annoy|惹恼;approach|接近;argue|争论;arrange|安排;ashamed|羞愧;attempt|尝试;attend|参加;attract|吸引;available|可用;avoid|避免;awake|醒着;aware|意识到;balance|平衡;behave|表现;belief|信念;belong|属于;benefit|益处;blame|责怪;block|阻挡;borrow|借;branch|树枝;breathe|呼吸;bright|明亮;burn|燃烧;calm|平静;cancel|取消;capable|有能力;capture|捕获;career|职业;celebrate|庆祝;certain|确定;charge|收费;chase|追赶;cheer|欢呼;claim|声称;climb|攀爬;collect|收集;comfort|安慰;command|命令;communicate|交流;compare|比较;complain|抱怨;concern|担心;confident|自信;confuse|使困惑;connect|连接;consider|考虑;contain|包含;convince|说服;count|数数;cover|覆盖;crew|船员;cross|穿过;crowd|人群;cruel|残忍;damage|损害;declare|宣布;defend|防御;delay|延迟;deliver|递送;demand|要求;deny|否认;depend|依赖;deserve|值得;design|设计;desire|渴望;disappear|消失;disappoint|使失望;discuss|讨论;distance|距离;divide|分开;doubt|怀疑;effort|努力;emergency|紧急情况;emotion|情绪;employ|雇佣;encourage|鼓励;enormous|巨大的;entire|整个;environment|环境;establish|建立;event|事件;examine|检查;exist|存在;expert|专家;express|表达;extraordinary|非凡;feature|特点;fierce|凶猛;figure|人物;focus|集中;foreign|外国;forgive|原谅;freedom|自由;frighten|吓唬;function|功能;gather|聚集;general|一般;gentle|温柔;giant|巨人;gradually|逐渐;habit|习惯;handle|处理;harm|伤害;harmful|有害;honor|荣誉;human|人类;humor|幽默;identify|识别;immediate|立即;improve|改善;include|包括;increase|增加;indeed|确实;independent|独立;individual|个人;industry|行业;influence|影响;information|信息;injure|受伤;innocent|无辜;insist|坚持;instead|代替;intelligence|智力;intention|意图;interrupt|打断;introduce|介绍;investigate|调查;involve|涉及;judge|判断;knowledge|知识;leader|领导;legal|合法;limit|限制;local|当地;lonely|孤独;loyal|忠诚;major|主要;manage|管理;marriage|婚姻;measure|测量;mention|提到;method|方法;movement|运动;nervous|紧张;obey|服从;obvious|明显;occasion|场合;offer|提供;opinion|观点;opportunity|机会;organize|组织;otherwise|否则;owner|主人;particular|特别;perform|表演;permission|许可;physical|身体;pleasure|快乐;position|位置;practice|练习;prevent|阻止;process|过程;produce|生产;progress|进步;prove|证明;provide|提供;quality|质量;quietly|安静地;receive|收到;recent|最近;recommend|推荐;record|记录;reduce|减少;regular|定期;relationship|关系;release|释放;remove|移除;repair|修理;repeat|重复;replace|替换;report|报告;represent|代表;require|需要;respect|尊重;responsible|负责;reveal|揭示;ridiculous|荒谬;role|角色;rule|规则;scene|场景;search|搜索;serve|服务;service|服务;several|几个;similar|相似;solution|解决方案;spirit|精神;struggle|挣扎;suddenly|突然;suggest|建议;suspect|怀疑;symbol|象征;system|系统;talent|天赋;therefore|因此;threat|威胁;throughout|贯穿;tradition|传统;trouble|麻烦;typical|典型;unfair|不公平;unfortunately|不幸;unique|独特;unless|除非;unusual|不寻常;useful|有用;valuable|有价值;various|各种;victory|胜利;violence|暴力;violent|暴力;weapon|武器;whether|是否;within|在……之内;worth|值得;worthy|值得;accurate|准确;advantage|优势;atmosphere|气氛;attention|注意;attitude|态度;attractive|有吸引力;careless|粗心;challenge|挑战;characteristic|特点;comfortable|舒服;complicated|复杂;consequence|后果;conversation|谈话;creative|有创造力;creature|生物;curiosity|好奇心;dangerous|危险;decision|决定;disappointed|失望;discovery|发现;disguise|伪装;embarrassed|尴尬;encouragement|鼓励;entertain|娱乐;entertainment|娱乐;equipment|设备;especially|尤其;eventually|最终;excellent|优秀;excitement|兴奋;familiar|熟悉;fantastic|极好的;fearful|害怕;foolish|愚蠢;fortunate|幸运;fortunately|幸运地;frightened|受惊的;generous|慷慨;gentleman|绅士;grateful|感激;imagination|想象力;impressive|令人印象深刻;incredible|难以置信;intelligent|聪明;jealous|嫉妒;jealousy|嫉妒;magical|有魔力;meaningful|有意义;meaningless|无意义;misunderstand|误解;necessary|必要;nevertheless|然而;ordinary|普通;peaceful|和平;personality|个性;powerful|强大;precious|珍贵;previous|之前;proud|自豪;realistic|现实;reliable|可靠;responsibility|责任;scientific|科学;scientist|科学家;seriously|认真地;successful|成功;surprising|令人惊讶;terrified|恐惧;terrifying|可怕;uncomfortable|不舒服;unbelievable|难以置信;unfriendly|不友好;unimportant|不重要;unnecessary|不必要;unpleasant|不愉快;wonderful|精彩;worried|担心`;
 for(const entry of extraWords.split(';')){const [word,meaning]=entry.split('|');if(word&&meaning)dict[word]=meaning;}
 function spoken(c){const s=c.text.replace(/<[^>]+>/g,'').replace(/\[[^\]]+\]/g,'').replace(/\s+/g,' ').replace(/^[\s\-]+/,'').trim();
- return s.length>=6&&s.length<=150&&s.split(/\s+/).length>=2&&!/copyright|captioning|subtitl/i.test(s)?s:null;}
+ return s.length>=4&&s.length<=150&&s.split(/\s+/).length>=1&&!/copyright|captioning|subtitl|^(?:laughs?|sighs?|gasps?|grunts?|music|applause|footsteps?)$/i.test(s)?s:null;}
+function wordLemma(raw){
+ const w=raw.toLowerCase();if(dict[w])return w;
+ const candidates=[];
+ if(/ies$/.test(w))candidates.push(w.slice(0,-3)+'y');
+ if(/ing$/.test(w)){const b=w.slice(0,-3);candidates.push(b,b+'e',b.replace(/([bcdfghjklmnpqrstvwxyz])\\1$/,'$1'));}
+ if(/ed$/.test(w)){const b=w.slice(0,-2);candidates.push(b,b+'e',w.slice(0,-1),b.replace(/([bcdfghjklmnpqrstvwxyz])\\1$/,'$1'));}
+ if(/es$/.test(w))candidates.push(w.slice(0,-2),w.slice(0,-1));
+ if(/s$/.test(w))candidates.push(w.slice(0,-1));
+ if(/ly$/.test(w))candidates.push(w.slice(0,-2));
+ if(/er$/.test(w))candidates.push(w.slice(0,-2),w.slice(0,-1));
+ if(/est$/.test(w))candidates.push(w.slice(0,-3),w.slice(0,-2));
+ return candidates.find(x=>dict[x])||null;
+}
 function words(cues,id,origin,courseId,zh){
- const selected=new Map();for(const cue of cues){for(const token of cue.text.match(/[a-zA-Z]{3,}/g)||[]){const w=token.toLowerCase();if(!dict[w])continue;
- const x=selected.get(w)||{count:0,cue};x.count++;selected.set(w,x);}}
+ const selected=new Map();
+ for(const cue of cues){for(const token of cue.text.match(/[a-zA-Z]{3,}/g)||[]){const word=wordLemma(token);if(!word)continue;
+  const x=selected.get(word)||{count:0,cue,spoken:token};x.count++;selected.set(word,x);}}
  const best=[...selected].sort((a,b)=>Number(b[0].length>=6)-Number(a[0].length>=6)||b[1].count-a[1].count).slice(0,5);
  assert(best.length===5,'Less than five translatable words in episode');
  return best.map(([word,hit],j)=>({id:courseId+'-'+id+'-'+(j+1),word,partOfSpeech:'word',meaningZh:dict[word],
- definitionEn:'A word spoken in this scene.',example:spoken(hit.cue)||hit.cue.text.replace(/\n/g,' ').slice(0,150),
- exampleZh:matchChinese(hit.cue,zh)?.text||'',source:'Original movie English CC',evidence:{originalStart:round(hit.cue.start),localStart:round(hit.cue.start-origin)}}));
+  definitionEn:'A word used in the original dialogue; its meaning is supported by the Chinese gloss and example.',
+  example:spoken(hit.cue)||hit.cue.text.replace(/\\n/g,' ').slice(0,150),
+  exampleZh:matchChinese(hit.cue,zh)?.text||'',source:'Original movie English CC',evidence:{originalStart:round(hit.cue.start),localStart:round(hit.cue.start-origin)}}));
 }
 function fiveQuestions(cues,all,id,start){
  const lines=cues.map(spoken).filter(Boolean);
@@ -120,6 +135,22 @@ function fiveQuestions(cues,all,id,start){
  return {episodeId:id,title:'Episode '+id+' · Quiz',questions};
 }
 
+function compactBoundaries(points,cues,minimum){
+ const p=[...points];let guard=0;
+ const metrics=(a,b)=>{const c=clip(cues,a,b);return {captions:c.length,spoken:c.map(spoken).filter(Boolean).length};};
+ while(p.length>9&&guard++<100){
+  const count=p.length-1;let bad=-1;
+  for(let i=0;i<count;i++){const m=metrics(p[i],p[i+1]);if(m.captions<minimum||m.spoken<5){bad=i;break;}}
+  if(bad<0)break;
+  if(bad===0)p.splice(1,1);
+  else if(bad===count-1)p.splice(bad,1);
+  else{
+   const left=p[bad]-p[bad-1],right=p[bad+2]-p[bad+1];
+   if(left<=right)p.splice(bad,1);else p.splice(bad+1,1);
+  }
+ }
+ return p;
+}
 function readStatus(){try{const s=read(STATUS);if(s?.films)return s;}catch{}return {version:3,films:{}};}
 function completed(movie,source,dir){
  if(!movie.studyCourse?.seriesId||!exists(path.join(dir,'episodes.json')))return false;
@@ -153,7 +184,7 @@ async function build(item){
  const last=Math.min(video.total,Math.max(relevant.at(-1).end+9,video.total*.75));
  const seriesId=movie.studyCourse?.seriesId||'movie-'+row.id,dir=path.join(DATA,seriesId);
  const previous=exists(path.join(dir,'episodes.json'))?read(path.join(dir,'episodes.json')):[];
- const layout=boundaries(en,last,previous,source),oldV=exists(path.join(dir,'vocabulary.json'))?read(path.join(dir,'vocabulary.json')):{};
+ const rawLayout=boundaries(en,last,previous,source),layout={...rawLayout,points:(rawLayout.preserve||rawLayout.migrated)?rawLayout.points:compactBoundaries(rawLayout.points,en,5)},oldV=exists(path.join(dir,'vocabulary.json'))?read(path.join(dir,'vocabulary.json')):{};
  const oldQ=exists(path.join(dir,'quiz.json'))?read(path.join(dir,'quiz.json')):{};
  const output=new Map(),stage=(rel,text)=>output.set(path.join(dir,rel),text),stageJson=(rel,obj)=>stage(rel,JSON.stringify(obj,null,2)+'\n');
  const episodes=[],vocabulary={},quiz={};
