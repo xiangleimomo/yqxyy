@@ -1,290 +1,565 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42321152038",
-  "completedAt": "2026-11-07T01:07:13.246981+00:00",
+  "runId": "42322278429",
+  "completedAt": "2026-11-07T01:33:46.360984+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 4,
-  "rejected": 46,
+  "published": 50,
+  "rejected": 0,
   "websiteCommitRequired": true,
-  "totalWords": 1985,
-  "speechMatchedWords": 1985,
+  "totalWords": 22620,
+  "speechMatchedWords": 22620,
   "success": [
     {
       "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 2,
-      "cues": 80,
-      "words": 482,
+      "episodeId": 6,
+      "cues": 66,
+      "words": 446,
       "xmlTextVerified": true,
-      "xmlParagraphs": 72,
-      "speechWords": 482,
-      "coverage": 0.9959,
-      "omittedWords": 2
+      "xmlParagraphs": 61,
+      "speechWords": 446,
+      "coverage": 0.9978,
+      "omittedWords": 1
     },
     {
       "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 3,
-      "cues": 70,
-      "words": 508,
+      "episodeId": 7,
+      "cues": 63,
+      "words": 477,
       "xmlTextVerified": true,
-      "xmlParagraphs": 66,
-      "speechWords": 508,
+      "xmlParagraphs": 56,
+      "speechWords": 477,
+      "coverage": 0.9979,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 8,
+      "cues": 72,
+      "words": 530,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 530,
+      "coverage": 0.9981,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 9,
+      "cues": 69,
+      "words": 431,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 431,
+      "coverage": 0.9977,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 10,
+      "cues": 77,
+      "words": 440,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 440,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
       "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 4,
+      "episodeId": 11,
+      "cues": 71,
+      "words": 473,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 473,
+      "coverage": 0.9937,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 12,
+      "cues": 71,
+      "words": 446,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 446,
+      "coverage": 0.9978,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 13,
       "cues": 70,
-      "words": 505,
+      "words": 453,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 453,
+      "coverage": 0.9978,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 14,
+      "cues": 84,
+      "words": 444,
       "xmlTextVerified": true,
       "xmlParagraphs": 68,
-      "speechWords": 505,
+      "speechWords": 444,
+      "coverage": 0.9978,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 15,
+      "cues": 74,
+      "words": 439,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 439,
+      "coverage": 0.9977,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 16,
+      "cues": 70,
+      "words": 432,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 432,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 17,
+      "cues": 72,
+      "words": 474,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 474,
+      "coverage": 0.9958,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 18,
+      "cues": 70,
+      "words": 448,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 59,
+      "speechWords": 448,
+      "coverage": 0.9978,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 19,
+      "cues": 69,
+      "words": 466,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 466,
+      "coverage": 0.9957,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 20,
+      "cues": 78,
+      "words": 484,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 484,
+      "coverage": 0.9959,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 21,
+      "cues": 64,
+      "words": 387,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 55,
+      "speechWords": 387,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 22,
+      "cues": 65,
+      "words": 400,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 400,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 23,
+      "cues": 67,
+      "words": 403,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 403,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 24,
+      "cues": 68,
+      "words": 398,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 398,
+      "coverage": 0.995,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 25,
+      "cues": 71,
+      "words": 416,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 416,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 26,
+      "cues": 71,
+      "words": 432,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 432,
+      "coverage": 0.9977,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 27,
+      "cues": 84,
+      "words": 476,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 476,
+      "coverage": 0.9979,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 28,
+      "cues": 77,
+      "words": 472,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 472,
+      "coverage": 0.9958,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 29,
+      "cues": 83,
+      "words": 464,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 464,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 30,
+      "cues": 75,
+      "words": 474,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 474,
+      "coverage": 0.9979,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 31,
+      "cues": 77,
+      "words": 441,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 441,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 32,
+      "cues": 92,
+      "words": 508,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 82,
+      "speechWords": 508,
       "coverage": 0.998,
       "omittedWords": 1
     },
     {
       "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 5,
-      "cues": 68,
-      "words": 490,
+      "episodeId": 33,
+      "cues": 73,
+      "words": 470,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 470,
+      "coverage": 0.9979,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 34,
+      "cues": 81,
+      "words": 533,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 533,
+      "coverage": 0.9981,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 35,
+      "cues": 81,
+      "words": 433,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 433,
+      "coverage": 0.9954,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 36,
+      "cues": 64,
+      "words": 485,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 485,
+      "coverage": 0.9979,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 37,
+      "cues": 71,
+      "words": 431,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 431,
+      "coverage": 0.9977,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 38,
+      "cues": 65,
+      "words": 472,
       "xmlTextVerified": true,
       "xmlParagraphs": 62,
-      "speechWords": 490,
-      "coverage": 0.998,
+      "speechWords": 472,
+      "coverage": 0.9979,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 39,
+      "cues": 67,
+      "words": 425,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 425,
+      "coverage": 0.9953,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 40,
+      "cues": 74,
+      "words": 455,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 455,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 41,
+      "cues": 62,
+      "words": 465,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 59,
+      "speechWords": 465,
+      "coverage": 0.9979,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 42,
+      "cues": 70,
+      "words": 434,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 56,
+      "speechWords": 434,
+      "coverage": 0.9977,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 43,
+      "cues": 83,
+      "words": 519,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 519,
+      "coverage": 0.9981,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 44,
+      "cues": 65,
+      "words": 429,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 56,
+      "speechWords": 429,
+      "coverage": 0.9977,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 45,
+      "cues": 65,
+      "words": 416,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 416,
+      "coverage": 0.9976,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 46,
+      "cues": 68,
+      "words": 468,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 468,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 47,
+      "cues": 79,
+      "words": 495,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 495,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 48,
+      "cues": 72,
+      "words": 457,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 457,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 49,
+      "cues": 77,
+      "words": 448,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 448,
+      "coverage": 0.9956,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 50,
+      "cues": 81,
+      "words": 519,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 519,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 51,
+      "cues": 66,
+      "words": 434,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 434,
+      "coverage": 0.9931,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 52,
+      "cues": 71,
+      "words": 427,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 427,
+      "coverage": 0.993,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 53,
+      "cues": 81,
+      "words": 416,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 416,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 54,
+      "cues": 61,
+      "words": 409,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 54,
+      "speechWords": 409,
+      "coverage": 0.9976,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-photo-travels-fs0042",
+      "episodeId": 55,
+      "cues": 66,
+      "words": 426,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 56,
+      "speechWords": 426,
+      "coverage": 0.9977,
       "omittedWords": 1
     }
   ],
-  "failures": [
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 9,
-      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 10,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 11,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 12,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 13,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 14,
-      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 15,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 16,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 17,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 18,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 19,
-      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 20,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 21,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 22,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 23,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 24,
-      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 25,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 26,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 27,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 28,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 29,
-      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 30,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 31,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 32,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 33,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 34,
-      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 35,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 36,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 37,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 38,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 39,
-      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 40,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 41,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 42,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 43,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 44,
-      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 45,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 46,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 47,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 48,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 49,
-      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 50,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 51,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 52,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-phonics-songs-srv01032",
-      "episodeId": 53,
-      "reason": "HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 1,
-      "reason": "Shard 0 skipped: FFmpeg installation failed or timed out (10-minute limit)"
-    }
-  ]
+  "failures": []
 }
