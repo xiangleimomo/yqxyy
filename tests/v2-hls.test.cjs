@@ -1,6 +1,6 @@
 'use strict';
 const assert = require('node:assert/strict');
-const hls = require('./v2-hls.cjs');
+const hls = require('../scripts/v2-hls.cjs');
 
 const master = [
   '#EXTM3U',
