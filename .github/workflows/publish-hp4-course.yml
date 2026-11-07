@@ -1,0 +1,80 @@
+name: Publish Harry Potter 4 course assets
+on:
+  push:
+    branches: [publish/hp4-course]
+    paths:
+      - '.upload/hp4.ready'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  unpack-and-validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: publish/hp4-course
+      - name: Reassemble course package
+        run: |
+          set -euo pipefail
+          test -f .upload/hp4.ready
+          cat .upload/hp4.zip.b64.part* | base64 --decode > /tmp/hp4-course.zip
+          unzip -tq /tmp/hp4-course.zip
+          mkdir -p data/movie-harry-potter-4
+          unzip -oq /tmp/hp4-course.zip -d /tmp/hp4-course
+          cp -a /tmp/hp4-course/movie-harry-potter-4/. data/movie-harry-potter-4/
+      - name: Register the study course on the existing Goblet of Fire movie card
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          path=Path('data/movies/harry-potter/movies.json')
+          data=json.loads(path.read_text(encoding='utf-8'))
+          target=next(x for x in data['sources'] if x['id']=='harry-potter-goblet-of-fire')
+          target['studyCourse']={'seriesId':'movie-harry-potter-4','episodeCount':20}
+          path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\\n',encoding='utf-8')
+          PY
+      - name: Validate the complete 20-episode course
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('data/movie-harry-potter-4')
+          series=json.loads((p/'series.json').read_text(encoding='utf-8'))
+          episodes=json.loads((p/'episodes.json').read_text(encoding='utf-8'))
+          words=json.loads((p/'vocabulary.json').read_text(encoding='utf-8'))
+          quizzes=json.loads((p/'quiz.json').read_text(encoding='utf-8'))
+          assert series['seriesId']=='movie-harry-potter-4' and series['totalEpisodes']==20
+          assert len(episodes)==20 and len(words)==20 and len(quizzes)==20
+          for i,ep in enumerate(episodes,1):
+              key=str(i)
+              assert ep['episodeId']==i and ep['status']=='published'
+              assert ep['video']['hlsUrl']==f'/data/movie-harry-potter-4/hls/{i:03d}.m3u8'
+              assert ep['video']['subtitleUrl']==f'/data/movie-harry-potter-4/subtitles/{i:03d}.en.vtt'
+              assert ep['modules']['watch'] and ep['modules']['words'] and ep['modules']['quiz']
+              assert len(words[key])==5
+              qs=quizzes[key]['questions']
+              assert len(qs)==5
+              assert all(q['category']=='comprehension' and len(q['options'])==3 for q in qs)
+              for suffix in ['', '.video', '.audio', '.en']:
+                  playlist=(p/'hls'/f'{i:03d}{suffix}.m3u8').read_text(encoding='utf-8')
+                  assert playlist.startswith('#EXTM3U')
+                  if suffix=='':
+                      assert '#EXT-X-STREAM-INF' in playlist and 'AUDIO=' in playlist
+                  else:
+                      assert '#EXTINF' in playlist and '#EXT-X-ENDLIST' in playlist
+              assert (p/'subtitles'/f'{i:03d}.en.vtt').read_text(encoding='utf-8').startswith('WEBVTT')
+          movies=json.loads(Path('data/movies/harry-potter/movies.json').read_text(encoding='utf-8'))
+          hp4=next(x for x in movies['sources'] if x['id']=='harry-potter-goblet-of-fire')
+          assert hp4['studyCourse']['seriesId']=='movie-harry-potter-4'
+          print('PASS: 20 published lessons, 100 Words entries, 100 Little Fox-style plot questions, 20 HLS/audio/video/English subtitle sets')
+          PY
+      - name: Remove upload chunks and commit published course data
+        run: |
+          rm -rf .upload
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/movie-harry-potter-4 data/movies/harry-potter/movies.json
+          git commit -m "Publish Harry Potter 4 as a 20-episode study course"
+          git push origin HEAD:publish/hp4-course
