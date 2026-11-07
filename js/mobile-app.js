@@ -57,7 +57,7 @@ window.MobileApp = {
         const library=await window.MovieClassroom.getLibrary(app);
         if(location.hash!==route||!this.active)return;
         const groups=library.series||[];
-        const filmItems=groups.filter(group=>['animated','documentary'].includes(group.dynamicCategory)).flatMap(group=>group.films.map(film=>media.movieFilm(group,film,library.playableById))).filter(item=>!item.disabled);
+        const filmItems=groups.filter(group=>group.dynamicCategory!=='animation').flatMap(group=>group.films.map(film=>media.movieFilm(group,film,library.playableById))).filter(item=>!item.disabled);
         shelves.push(this.section('光影课堂','#/movies',media.cards(app,filmItems.slice(0,4))));
       }catch(error){console.warn('首页光影精选暂不可用',error);shelves.push(this.section('光影课堂','#/movies','<p class="sf-app-empty">精彩影片即将呈现</p>'));}
     }
