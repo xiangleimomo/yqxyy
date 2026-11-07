@@ -1,0 +1,28 @@
+name: Restore Harry Potter 1 subtitles from movie HLS
+on:
+  push:
+    branches: [automation/hp1-native-hls-subtitles]
+    paths: [scripts/rebuild-hp1-native-hls.cjs, .github/workflows/hp1-native-source-refresh.yml]
+permissions:
+  contents: write
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: automation/hp1-native-hls-subtitles
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Read source HLS and generate 34 lessons using native subtitles
+        run: node scripts/rebuild-hp1-native-hls.cjs
+      - name: Save corrected lessons on staging
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/movie-harry-potter-1/episodes.json data/movie-harry-potter-1/hls data/movie-harry-potter-1/subtitles
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Use original movie HLS captions for all 34 Harry Potter 1 lessons"
+          git push origin HEAD:automation/hp1-native-hls-subtitles
