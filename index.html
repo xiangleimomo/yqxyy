@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="css/reader-enhancements.css?v=20261106-centered-floating-toolbar-1" />
   <link rel="stylesheet" href="css/medals.css?v=20261104-medal-progress-1" />
   <link rel="stylesheet" href="css/read-dictionary.css?v=20261001-1" />
+  <link rel="stylesheet" href="css/membership.css?v=20261107-1" />
   <link rel="stylesheet" href="css/account-center.css?v=20261104-compact-center-1" />
 <style id="sf-movie-lesson-refinement">
 .sf-movie-lesson-player{background:#f5f7fb;border-radius:18px;overflow:hidden}
@@ -36,7 +37,7 @@
 .sf-movie-lesson-player .sf-mobile-captions-outside .sf-mobile-caption-line{color:#343a40!important;font-weight:500!important;text-shadow:none!important}
 .sf-movie-lesson-player .video-caption{color:#343a40!important;text-shadow:none!important}
 </style>
-<style id="sf-movie-toolbar-v2">.sf-movie-lesson-player .sf-lesson-toolbar{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:4px;background:#fff;padding:10px 5px;border-radius:0 0 18px 18px}.sf-movie-lesson-player .sf-lesson-toolbar button{border:0;background:#f6f8fa;border-radius:12px;min-width:0;padding:9px 0;color:#28774c;font-weight:650;display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer}.sf-movie-lesson-player .sf-lesson-toolbar span{font-size:22px}.sf-movie-lesson-player .sf-lesson-toolbar small{font-size:11px}.sf-movie-lesson-player .sf-lesson-toolbar button:disabled{opacity:.35}.sf-movie-lesson-player .sf-lesson-toolbar button[aria-pressed=true]{background:#e0f4e8}.sf-movie-lesson-player .sf-mobile-captions-outside[hidden],.sf-movie-lesson-player .sf-subtitle-offset[hidden]{display:none!important}@media(max-width:430px){.sf-movie-lesson-player .sf-lesson-toolbar{gap:2px;padding:7px 2px}.sf-movie-lesson-player .sf-lesson-toolbar span{font-size:19px}.sf-movie-lesson-player .sf-lesson-toolbar small{font-size:10px}}</style><link rel="stylesheet" href="css/mobile-app.css?v=20261107-audiovisual-1" />
+<style id="sf-movie-toolbar-v2">.sf-movie-lesson-player .sf-lesson-toolbar{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:4px;background:#fff;padding:10px 5px;border-radius:0 0 18px 18px}.sf-movie-lesson-player .sf-lesson-toolbar button{border:0;background:#f6f8fa;border-radius:12px;min-width:0;padding:9px 0;color:#28774c;font-weight:650;display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer}.sf-movie-lesson-player .sf-lesson-toolbar span{font-size:22px}.sf-movie-lesson-player .sf-lesson-toolbar small{font-size:11px}.sf-movie-lesson-player .sf-lesson-toolbar button:disabled{opacity:.35}.sf-movie-lesson-player .sf-lesson-toolbar button[aria-pressed=true]{background:#e0f4e8}.sf-movie-lesson-player .sf-mobile-captions-outside[hidden],.sf-movie-lesson-player .sf-subtitle-offset[hidden]{display:none!important}@media(max-width:430px){.sf-movie-lesson-player .sf-lesson-toolbar{gap:2px;padding:7px 2px}.sf-movie-lesson-player .sf-lesson-toolbar span{font-size:19px}.sf-movie-lesson-player .sf-lesson-toolbar small{font-size:10px}}</style><link rel="stylesheet" href="css/mobile-app.css?v=20261107-learning-actions-4" />
 </head>
 <body>
   <header class="topbar">
@@ -69,7 +70,7 @@
     </div>
     <div class="main-nav">
       <div class="main-nav-inner">
-        <div class="main-tabs"><a class="main-tab active" href="#/home"><img class="main-tab-icon" src="assets/nav-icons/animation-story.png" alt="" aria-hidden="true" width="30" height="30" decoding="async" /><span>动画故事</span></a><a class="main-tab" href="#/movies"><img class="main-tab-icon" src="assets/nav-icons/movie-class.png" alt="" aria-hidden="true" width="30" height="30" decoding="async" /><span>光影课堂</span></a><a class="main-tab" href="#/reading"><img class="main-tab-icon" src="assets/nav-icons/picture-books.png" alt="" aria-hidden="true" width="30" height="30" decoding="async" /><span>绘本阅读</span></a><a class="main-tab" href="#/magazines"><img class="main-tab-icon" src="assets/nav-icons/periodicals.png" alt="" aria-hidden="true" width="30" height="30" decoding="async" /><span>期刊杂志</span></a><a class="main-tab" href="/source-lab/"><img class="main-tab-icon" src="assets/nav-icons/source-search.png" alt="" aria-hidden="true" width="30" height="30" decoding="async" /><span>片源探索</span></a></div>
+        <div class="main-tabs"><a class="main-tab active" href="#/home"><img class="main-tab-icon" src="assets/nav-icons/animation-story.png" alt="" aria-hidden="true" width="30" height="30" decoding="async" /><span>动画故事</span></a><a class="main-tab" href="#/movies"><img class="main-tab-icon" src="assets/nav-icons/movie-class.png" alt="" aria-hidden="true" width="30" height="30" decoding="async" /><span>光影课堂</span></a><a class="main-tab" href="#/reading"><img class="main-tab-icon" src="assets/nav-icons/picture-books.png" alt="" aria-hidden="true" width="30" height="30" decoding="async" /><span>绘本阅读</span></a><a class="main-tab" href="#/magazines"><img class="main-tab-icon" src="assets/nav-icons/periodicals.png" alt="" aria-hidden="true" width="30" height="30" decoding="async" /><span>期刊杂志</span></a><a class="main-tab" href="/source-lab/" hidden style="display:none"><img class="main-tab-icon" src="assets/nav-icons/source-search.png" alt="" aria-hidden="true" width="30" height="30" decoding="async" /><span>片源探索</span></a></div>
         <div class="search-box">
           <input id="globalSearch" type="search" placeholder="搜索故事、单词或集数" autocomplete="off" aria-autocomplete="list" aria-controls="globalSearchSuggestions" aria-expanded="false" />
           <button id="searchBtn" type="button" aria-label="搜索">🔍</button>
@@ -99,27 +100,29 @@
         <div id="authPasswordRow"><label for="accountPassword">密码</label><input id="accountPassword" type="password" minlength="8" autocomplete="current-password" placeholder="至少 8 位"></div>
         <button class="account-primary" id="accountSubmit" type="submit">登录</button>
       </form>
-      <div id="accountActions" hidden><p id="accountEmailLabel"></p><form id="accountNicknameForm"><label for="accountProfileNickname">账号昵称</label><input id="accountProfileNickname" required minlength="2" maxlength="40" autocomplete="nickname" placeholder="设置公开昵称"><button type="submit">保存昵称</button></form><p class="account-library-links"><a href="#/reading/mine/uploads" id="accountMyBooks">管理我的绘本</a><a href="#/magazines/mine/uploads" id="accountMyMagazines">管理我的期刊</a></p><div id="familyAccountSettings"></div><div class="account-data-actions"><button type="button" id="accountSync">立即同步</button><button type="button" id="accountImport">导入本设备游客记录</button><button type="button" id="accountLogout">退出账户</button></div></div>
+      <div id="accountActions" hidden><p id="accountEmailLabel"></p><form id="accountNicknameForm"><label for="accountProfileNickname">账号昵称</label><input id="accountProfileNickname" required minlength="2" maxlength="40" autocomplete="nickname" placeholder="设置公开昵称"><button type="submit">保存昵称</button></form><p class="account-library-links"><a href="#/reading/mine/uploads" id="accountMyBooks">管理我的绘本</a><a href="#/magazines/mine/uploads" id="accountMyMagazines">管理我的期刊</a></p><div id="membershipAccountSettings"></div><div id="familyAccountSettings"></div><div class="account-data-actions"><button type="button" id="accountSync">立即同步</button><button type="button" id="accountImport">导入本设备游客记录</button><button type="button" id="accountLogout">退出账户</button></div></div>
       <small class="account-footnote">登录后同步学习进度、测验、收藏和积分；未登录仍可作为游客学习。</small>
     </section>
   </div>
   <script src="js/supabase-config.js"></script>
-  <script src="js/cloud-account.js?v=20261106-utility-icons-fix-1"></script>
+  <script src="js/source-access.js?v=20261107-allowlist-2"></script>
+  <script src="js/membership.js?v=20261107-1"></script>
+  <script src="js/cloud-account.js?v=20261107-membership-3"></script>
   <script src="js/read-dictionary.js?v=20261104-study-collections-1"></script>
   <script src="js/client-protection.js?v=20261101-1"></script>
   <script src="js/dytt-ad-skip.js?v=20261017-1"></script>
   <script src="source-lab/core.js?v=20261030-dulo-session"></script>
   <script src="js/movie-subtitles.js?v=20261107-mobile-cc-1"></script>
   <script src="js/movies.js?v=20261106-dynamic-library-5"></script>
-  <script src="js/books.js?v=20261106-reader-network-fix-1"></script>
+  <script src="js/books.js?v=20261107-local-preview-2"></script>
   <script src="js/book-admin.js?v=20261104-storage-private-1"></script>
   <script src="js/book-community.js?v=20261104-storage-private-1"></script>
-  <script src="js/media-shelf.js?v=20261107-documentary-visibility-1"></script>
+  <script src="js/media-shelf.js?v=20261107-reviewed-courses-2"></script>
   <script src="js/medal-images.js?v=20261103-work-badges-2"></script>
   <script src="js/medals.js?v=20261104-storage-private-1"></script>
   <script src="js/episode-games.js?v=20261009-6"></script>
   <script src="js/pronunciation.js?v=20261009-1"></script>
-  <script src="js/family.js?v=20261104-pone-homework-rewards-1"></script>
+  <script src="js/family.js?v=20261107-role-access-2"></script>
   <script src="js/word-sync.js?v=20261105-karaoke-practice-1"></script>
   <script src="js/karaoke-practice.js?v=20261105-karaoke-practice-1"></script>
   <script src="js/mobile-caption-fullscreen.js?v=20261107-tablet-scope-3"></script>
@@ -128,8 +131,8 @@
   <script src="js/movie-library.js?v=20261107-library-refresh-1"></script>
   <script src="js/learning-windows.js?v=20261107-mobile-scope-3"></script>
   <script src="js/desktop-player.js?v=20261107-mobile-scope-5"></script>
-  <script src="js/mobile-app.js?v=20261107-home-fix-5"></script>
-  <script src="js/app.js?v=20261107-home-fix-2"></script>
+  <script src="js/mobile-app.js?v=20261107-home-stories-8"></script>
+  <script src="js/app.js?v=20261107-reviewed-courses-4"></script>
   <script src="js/mobile-games.js?v=20261009-1"></script>
 <div id="readingPopup" class="reading-popup"></div>
 </body>

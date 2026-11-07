@@ -60,3 +60,38 @@ html.sf-mobile-app.series-fixed-page,body.sf-mobile-app.series-fixed-page{height
 }
 
 .sf-mobile-app .sf-app-home-shelves .book-cover.media-animation-cover{aspect-ratio:4/3}
+
+/* Phone course navigation: bounded vertical list and wrapping lesson details. */
+@media (max-width:800px){
+  .sf-mobile-app .app-shell.series-page-shell .learning-map{grid-template-columns:minmax(0,1fr);min-width:0}
+  .sf-mobile-app .app-shell.series-page-shell .episode-sidebar,
+  .sf-mobile-app .app-shell.series-page-shell .episode-workspace{min-width:0;width:100%;box-sizing:border-box;padding:14px}
+  .sf-mobile-app .episode-filter-bar{display:grid;grid-template-columns:minmax(0,1fr) 105px;padding:6px}
+  .sf-mobile-app .episode-filter-bar input,.sf-mobile-app .episode-filter-bar select{width:100%;min-width:0;height:44px;padding:0 7px;box-sizing:border-box}
+  .sf-mobile-app .app-shell.series-page-shell .episode-side-list{display:flex;flex-direction:column;max-height:220px;overflow-y:auto;overflow-x:hidden;gap:6px;padding:0 3px 0 0;overscroll-behavior:contain}
+  .sf-mobile-app .episode-side-item{flex-direction:row;align-items:center;min-height:64px;padding:9px;gap:10px;text-align:left;flex-shrink:0}
+  .sf-mobile-app .episode-thumbnail{width:64px;height:48px;object-fit:cover}
+  .sf-mobile-app .episode-side-item span{overflow:visible;text-overflow:clip;font-size:13px}
+  .sf-mobile-app .episode-side-details{min-width:0;gap:4px}
+  .sf-mobile-app .episode-side-title{align-items:flex-start;line-height:1.45;overflow-wrap:anywhere}
+  .sf-mobile-app .episode-side-item small{font-size:12px;margin-left:0}
+  .sf-mobile-app .episode-side-item.active{box-shadow:inset 3px 0 #2789e8}
+  .sf-mobile-app .episode-preview{min-width:0;align-items:flex-start;gap:10px}
+  .sf-mobile-app .episode-preview>div{min-width:0;flex:1}
+  .sf-mobile-app .episode-preview-cover{width:72px;height:54px;flex:0 0 auto;object-fit:cover}
+  .sf-mobile-app .episode-preview h2{font-size:18px;overflow-wrap:anywhere;margin:0 0 6px}
+  .sf-mobile-app .app-shell.series-page-shell .module-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .sf-mobile-app .app-shell.series-page-shell .module-card{min-width:0;height:auto;min-height:100px;padding:12px 8px;box-sizing:border-box;overflow-wrap:anywhere}
+}
+
+/* One subtitle settings entry in the shared touch player. */
+.sf-mobile-app .mobile-cc-trigger,.sf-mobile-app .movie-cc-button,.sf-mobile-app .movie-cc-menu{display:none!important}
+.sf-mobile-app .sf-movie-lesson-player .subtitle-settings-trigger,
+.sf-mobile-app .sf-movie-lesson-player .video-fullscreen-trigger{display:none!important}
+.sf-mobile-app .sf-movie-lesson-player>.sf-lesson-toolbar button small{font-size:10px;white-space:nowrap}
+
+/* On phones, go straight from episode selection to learning actions. */
+@media (max-width:800px){
+  .sf-mobile-app .app-shell.series-page-shell .episode-workspace>.episode-preview{display:none}
+  .sf-mobile-app .app-shell.series-page-shell .episode-workspace>.module-grid{margin-top:0}
+}

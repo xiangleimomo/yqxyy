@@ -12,7 +12,8 @@
       <a class="brand" href="/">SF <span>Story Fox English</span></a
       ><a href="/#/movies">返回光影课堂</a>
     </header>
-    <main>
+    <p id="sourceAccessStatus" role="status">正在验证账号身份…</p>
+    <main id="sourceAccessContent" hidden>
       <section class="hero">
         <div>
           <span class="eyebrow">SOURCE EXPLORER</span>
@@ -180,6 +181,8 @@
     <script src="core.js?v=20261030-dulo-session"></script>
     <script src="vendor/libretv-m3u8.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.20/dist/hls.min.js"></script>
-    <script src="app.js?v=20261030-dulo-session-hls"></script>
+    <script src="../js/supabase-config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/source-access.js?v=20261107-allowlist-2"></script>
   </body>
 </html>

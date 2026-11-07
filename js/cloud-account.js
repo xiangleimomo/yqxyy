@@ -201,6 +201,7 @@ window.SFCloud = {
     return this.loginTask;
   },
   async enterAccount(user){
+    window.SFMembership?.reset();
     window.SFMedals?.identitySwitch();
     // Close previous account/guest floating windows before switching identity.
     this.app?.windowLayer?.replaceChildren();
@@ -244,6 +245,7 @@ window.SFCloud = {
     if(this.timer)clearTimeout(this.timer);
     this.app?.windowLayer?.replaceChildren();
     this.user=null;this.active=false;this.pending=false;
+    document.dispatchEvent(new CustomEvent('sf-access-change'));
     this.updateHeader();this.app?.updateUtilityNav();this.app?.render();
     this.setMessage('已退出账号，当前处于游客模式。');
   },
@@ -292,14 +294,14 @@ window.SFCloud = {
     const modal=document.getElementById('accountDialog');if(!modal)return;
     modal.hidden=false;this.mode(this.user?'account':'login');
   },
-  close(){const modal=document.getElementById('accountDialog');if(modal)modal.hidden=true;if(window.SFFamily)window.SFFamily.settingsVersion++;},
+  close(){window.SFMembership?.reset();const modal=document.getElementById('accountDialog');if(modal)modal.hidden=true;if(window.SFFamily)window.SFFamily.settingsVersion++;},
   mode(mode){
     this.authMode=mode;document.querySelector('.account-modes').hidden=mode==='account';
     document.getElementById('authNicknameRow').hidden=mode!=='signup';
     document.getElementById('accountNickname').required=mode==='signup';
     if(mode==='account')document.getElementById('accountProfileNickname').value=this.nickname();
-    if(mode==='account')window.SFFamily?.renderSettings();
-    else {if(window.SFFamily)window.SFFamily.settingsVersion++;document.getElementById('familyAccountSettings')?.replaceChildren();}
+    if(mode==='account'){window.SFFamily?.renderSettings();window.SFMembership?.render();}
+    else {window.SFMembership?.reset();if(window.SFFamily)window.SFFamily.settingsVersion++;document.getElementById('familyAccountSettings')?.replaceChildren();}
     document.getElementById('accountForm').hidden=mode==='account';
     document.getElementById('accountActions').hidden=mode!=='account';
     document.getElementById('authPasswordRow').hidden=mode==='reset';

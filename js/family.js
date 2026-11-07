@@ -36,6 +36,7 @@ window.SFFamily = {
   const {data,error}=await cloud.client.rpc('sf_family',{p_action:action,p_payload:payload});
   if(window.SFCloud?.user?.id!==uid)throw Error('账号已切换，请重新操作');
   if(error)throw Error(error.code==='PGRST202'?'家庭功能正在部署，请稍后刷新。':error.message);
+  if(action==='profile')document.dispatchEvent(new CustomEvent('sf-access-change'));
   return data;
  },
  async assignmentRewards(){

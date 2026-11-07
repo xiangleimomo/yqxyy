@@ -1,0 +1,12 @@
+.membership-panel{border:1px solid #e4eaf2;border-radius:11px;padding:14px;margin:0 0 12px;font-size:13px}
+.membership-panel h3{font-size:14px;margin:0 0 10px}.membership-panel h4{overflow-wrap:anywhere;margin:12px 0}
+.membership-panel p{font-size:12px;line-height:1.65;margin:7px 0}.membership-foundation-note{color:#6b8299}
+.membership-panel summary{cursor:pointer;font-weight:700;padding:9px 0}.membership-panel label{display:block;margin:10px 0}
+.membership-panel input,.membership-panel select{display:block;width:100%;box-sizing:border-box;min-width:0;padding:9px;border:1px solid #d6e0ed;border-radius:7px;background:white;font:inherit;margin-top:5px}
+.membership-panel small{display:block;font-size:11px;line-height:1.6;color:#6b8299;margin-top:5px}
+.membership-panel [hidden]{display:none!important}.membership-panel .error{color:#b33131}
+#membershipResults{display:grid;gap:7px;margin:10px 0}.membership-panel .membership-account{text-align:left;width:100%;padding:10px!important;display:flex;flex-direction:column;align-items:flex-start;gap:5px}
+.membership-account strong{overflow-wrap:anywhere;font-size:12px}.membership-account span{font-size:11px;font-weight:400;color:#637d94}
+.membership-pagination{display:flex;justify-content:space-between;align-items:center;gap:8px}.membership-pagination span{font-size:12px}
+#membershipEditor:empty{display:none}#membershipEditor{border-top:1px solid #e4eaf2;margin-top:12px;padding-top:4px}
+.membership-panel button:disabled{opacity:.5;cursor:default}

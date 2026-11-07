@@ -192,6 +192,11 @@ const App = {
     ]);
     return {series, episodes};
   },
+  movieCourseUnavailable(series){
+    if(!series.movieId || !['draft','retired','coming'].includes(series.status))return false;
+    this.el().innerHTML='<section class="empty"><h2>本课程暂未开放</h2><p>本片的剧情分集尚未整理完成，请选择已开放的分集课程。</p><a class="btn" href="#/movies/episodes">返回分集学习</a></section>';
+    return true;
+  },
   disposeHlsPlayers(root=document){
     root.querySelectorAll?.('video,audio').forEach(player=>{
       player._disposeShelf?.();player._disposeShelf=null;
@@ -233,6 +238,7 @@ async renderSeries(seriesId){
   if(!seriesId) return this.renderHome();
   const [bundle] = await Promise.all([this.loadSeries(seriesId)]);
   const {series, episodes} = bundle;
+    if(this.movieCourseUnavailable(series))return;
   if(this.isGuestRestrictedLevel(series.level)){
     this.el().innerHTML=this.guestLevelGate();
     this.bindGuestEpisodeGate();
@@ -365,6 +371,7 @@ episodeCard(seriesId,e,review={}){
 },
 async renderLesson(seriesId, episodeId){
     const {series, episodes} = await this.loadSeries(seriesId);
+    if(this.movieCourseUnavailable(series))return;
     const ep = episodes.find(e=>Number(e.episodeId)===Number(episodeId));
     if(!ep) throw new Error('找不到这一集');
     if(ep.status !== 'published'){
@@ -408,6 +415,7 @@ async renderLesson(seriesId, episodeId){
   async openLearningModal(tab, seriesId, episodeId){
     const [bundle] = await Promise.all([this.loadSeries(seriesId)]);
     const {series, episodes} = bundle;
+    if(this.movieCourseUnavailable(series))return;
     const ep = episodes.find(e=>Number(e.episodeId)===Number(episodeId));
     if(!ep || ep.status!=='published'){
       alert('这一集暂未开放。');
@@ -511,6 +519,7 @@ async renderLesson(seriesId, episodeId){
     return `<section class="direct-video-panel"><div class="video-source-head"><div><h2>直链播放</h2><p class="muted">备用播放方式。已启用无来源请求以兼容源站的防盗链规则。</p></div>${d.ep.video?.embedUrl?`<button class="btn secondary small open-bilibili-video" type="button">切换到 B站播放</button>`:''}</div><div class="video-wrap"><video class="direct-video-player" controls playsinline preload="metadata" src="${this.escapeHtml(url)}"></video></div><p class="muted direct-video-help">若播放器仍无法读取，可<a href="${this.escapeHtml(url)}" target="_blank" rel="noreferrer noopener">在新页面播放直链</a>，或切换到 B站播放。</p></section>${this.completeButton(d,'directVideo')}`;
   },
   hlsVideoPanel(d, completionModule='hlsVideo'){
+    const unifiedPlayer = d.seriesId?.startsWith('movie-') || Boolean(window.MobileApp?.active);
     const url=d.ep.video?.hlsUrl;
     if(!url) return `<div class="empty">本集 HLS 视频源暂未添加。</div>`;
     // Keep the saved word-highlight choice when opening another episode.
@@ -524,7 +533,7 @@ async renderLesson(seriesId, episodeId){
     const hasSubtitle=true;
     const fallbacks=[...(hls720 && hls720!==url?[hls720]:[]),...(backupHls?[backupHls]:[])];
     const sourceSelector=(hls720||backupHls)?`<label class="hls-source-control" aria-label="视频画质"><select class="hls-source-select" aria-label="选择视频画质" data-hls-1080="${this.escapeHtml(url)}" data-hls-720="${this.escapeHtml(hls720)}" data-hls-korea="${this.escapeHtml(backupHls)}"><option value="1080">1080P</option>${hls720?'<option value="720">720P</option>':''}${backupHls?'<option value="korea">1080P</option>':''}</select></label>`:'';
-    return `<section class="direct-video-panel${d.seriesId?.startsWith('movie-')?' sf-movie-lesson-player':''}"><div class="video-wrap${hasSubtitle?' subtitle-video-wrap':''}">${sourceSelector}<video class="hls-video-player" data-episode-count="${Number(d.series?.totalEpisodes)||0}" playsinline webkit-playsinline x5-playsinline="true" x5-video-player-type="h5" controlslist="nofullscreen noremoteplayback" disablepictureinpicture preload="metadata" data-clip-start="${Number.isFinite(Number(d.ep.video?.clipStart))?Number(d.ep.video.clipStart):''}" data-clip-end="${Number.isFinite(Number(d.ep.video?.clipEnd))?Number(d.ep.video.clipEnd):''}" data-hls-src="${this.escapeHtml(url)}" data-hls-fallback-srcs="${this.escapeHtml(JSON.stringify(fallbacks))}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="sf-mobile-caption-area"><div class="video-caption" aria-live="polite" hidden></div><span class="sf-mobile-caption-message" role="status" hidden></span></div>${hasSubtitle?this.subtitleControls(d):''}</div>${d.seriesId?.startsWith('movie-')?'<div class="sf-lesson-toolbar" role="toolbar" aria-label="分集播放操作"><button type="button" data-act="prev"><span>⏮</span><small>上一集</small></button><button type="button" data-act="play"><span>▶</span><small>播放</small></button><button type="button" data-act="next"><span>⏭</span><small>下一集</small></button><button type="button" data-act="speed"><span>⚡</span><small>1x</small></button><button type="button" data-act="quiz"><span>📝</span><small>答题</small></button><button type="button" data-act="captions"><span>☷</span><small>字幕</small></button><button type="button" data-act="mute"><span>🔊</span><small>声音</small></button><button type="button" data-act="fullscreen"><span>⛶</span><small>全屏</small></button></div>':''}<div class="sf-mobile-captions-outside" role="region" aria-label="手机英文逐词字幕"><div class="sf-mobile-caption-line" aria-live="off">字幕准备中…</div><div class="sf-mobile-caption-hint" role="status">字幕即将加载</div><button type="button" class="sf-mobile-caption-enable" hidden>开启英文字幕</button></div><div class="sf-subtitle-offset" style="display:flex;align-items:center;justify-content:center;gap:12px;padding:12px;flex-wrap:wrap"><button type="button" class="sf-offset-minus" aria-label="字幕提前0.5秒">−</button><span class="sf-offset-label" aria-live="polite">0.0s</span><button type="button" class="sf-offset-plus" aria-label="字幕延后0.5秒">+</button><button type="button" class="sf-offset-reset">重置</button><span>字幕偏移设置</span></div></section>${d.seriesId?.startsWith('movie-')?'':this.completeButton(d,completionModule)}`;
+    return `<section class="direct-video-panel${unifiedPlayer?' sf-movie-lesson-player':''}"><div class="video-wrap${hasSubtitle?' subtitle-video-wrap':''}">${sourceSelector}<video class="hls-video-player" data-series="${this.escapeHtml(d.seriesId)}" data-episode="${Number(d.ep.episodeId)}" data-episode-count="${Number(d.series?.totalEpisodes)||0}" playsinline webkit-playsinline x5-playsinline="true" x5-video-player-type="h5" controlslist="nofullscreen noremoteplayback" disablepictureinpicture preload="metadata" data-clip-start="${Number.isFinite(Number(d.ep.video?.clipStart))?Number(d.ep.video.clipStart):''}" data-clip-end="${Number.isFinite(Number(d.ep.video?.clipEnd))?Number(d.ep.video.clipEnd):''}" data-hls-src="${this.escapeHtml(url)}" data-hls-fallback-srcs="${this.escapeHtml(JSON.stringify(fallbacks))}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="sf-mobile-caption-area"><div class="video-caption" aria-live="polite" hidden></div><span class="sf-mobile-caption-message" role="status" hidden></span></div>${hasSubtitle?this.subtitleControls(d):''}</div>${unifiedPlayer?'<div class="sf-lesson-toolbar" role="toolbar" aria-label="分集播放操作"><button type="button" data-act="prev"><span>⏮</span><small>上一集</small></button><button type="button" data-act="play"><span>▶</span><small>播放</small></button><button type="button" data-act="next"><span>⏭</span><small>下一集</small></button><button type="button" data-act="speed"><span>⚡</span><small>1x</small></button><button type="button" data-act="quiz"><span>📝</span><small>测验</small></button><button type="button" data-act="captions"><span>⚙</span><small>字幕设置</small></button><button type="button" data-act="mute"><span>🔊</span><small>声音</small></button><button type="button" data-act="fullscreen"><span>⛶</span><small>全屏</small></button></div>':''}<div class="sf-mobile-captions-outside" role="region" aria-label="手机英文逐词字幕"><div class="sf-mobile-caption-line" aria-live="off">字幕准备中…</div><div class="sf-mobile-caption-hint" role="status">字幕即将加载</div><button type="button" class="sf-mobile-caption-enable" hidden>开启英文字幕</button></div><div class="sf-subtitle-offset" style="display:flex;align-items:center;justify-content:center;gap:12px;padding:12px;flex-wrap:wrap"><button type="button" class="sf-offset-minus" aria-label="字幕提前0.5秒">−</button><span class="sf-offset-label" aria-live="polite">0.0s</span><button type="button" class="sf-offset-plus" aria-label="字幕延后0.5秒">+</button><button type="button" class="sf-offset-reset">重置</button><span>字幕偏移设置</span></div></section>${unifiedPlayer?'':this.completeButton(d,completionModule)}`;
   },
   subtitlePreferences(){
     const defaults={visible:true,wordHighlight:true,size:20,color:'#ffffff',captionX:50,captionY:84,opacity:72};
@@ -541,7 +550,6 @@ async renderLesson(seriesId, episodeId){
     const prefs=this.subtitlePreferences();
     const option=(value,label,current)=>`<option value="${value}"${value===current?' selected':''}>${label}</option>`;
     return `<div class="sf-desktop-player-title">${this.escapeHtml(d?.series?.seriesTitle || d?.series?.title || d?.ep?.title || '')}</div><div class="subtitle-settings-dock">
-      <button type="button" class="mobile-cc-trigger" aria-label="${prefs.visible?'关闭字幕 CC':'开启字幕 CC'}" aria-pressed="${prefs.visible}">CC<span>字幕</span></button>
       <button type="button" class="subtitle-settings-trigger" aria-label="打开字幕设置" aria-expanded="false">⚙<span>字幕</span></button>
       <button type="button" class="video-fullscreen-trigger" aria-label="全屏观看（保留字幕设置）" title="全屏观看（保留字幕设置）">⛶<span>全屏</span></button>
       <div class="subtitle-controls subtitle-controls-overlay" aria-label="字幕设置">
@@ -1045,17 +1053,19 @@ async renderLesson(seriesId, episodeId){
       const root=player.closest('.sf-movie-lesson-player');
       const tray=root.querySelector('.sf-mobile-captions-outside'),offset=root.querySelector('.sf-subtitle-offset');
       const match=location.hash.match(/#\/lesson\/([^/]+)\/(\d+)/);
-      const series=match?.[1]||'movie-harry-potter-1',ep=Number(match?.[2]||1);
+      const series=player.dataset.series||match?.[1],ep=Number(player.dataset.episode||match?.[2]||1);
       let shown=false;tray.hidden=true;if(offset)offset.hidden=true;
-      const episodeCount=Number(player.dataset.episodeCount)||1;
-      const nav=n=>{if(n<1||n>episodeCount)return;player.pause();location.hash='#/lesson/'+series+'/'+n;};
-      b('prev').disabled=ep<=1;b('next').disabled=ep>=episodeCount;
+      const episodes=this.cache['data/'+series+'/episodes.json']||[];
+      const available=n=>episodes.some(item=>Number(item.episodeId)===n && item.status==='published') && this.canAccessEpisode(series,n) && !this.isGuestEpisodeLimit(series,n);
+      const openModule=(tab,n)=>{player.pause();player.closest('.floating-window')?.querySelector('.floating-close')?.click();this.openLearningModal(tab,series,n);};
+      const nav=n=>{if(available(n))openModule('watch',n);};
+      b('prev').disabled=!available(ep-1);b('next').disabled=!available(ep+1);
       b('prev').onclick=()=>nav(ep-1);b('next').onclick=()=>nav(ep+1);
       const refresh=()=>{b('play').querySelector('span').textContent=player.paused?'▶':'⏸';b('play').querySelector('small').textContent=player.paused?'播放':'暂停';};
       b('play').onclick=()=>player.paused?player.play().catch(()=>{}):player.pause();
       player.addEventListener('play',refresh);player.addEventListener('pause',refresh);
       const speeds=[1,1.25,1.5,2,0.75];b('speed').onclick=()=>{const n=speeds.findIndex(v=>Math.abs(v-player.playbackRate)<.01);player.playbackRate=speeds[(n+1)%speeds.length];b('speed').querySelector('small').textContent=player.playbackRate+'x';};
-      b('captions').onclick=()=>{shown=!shown;tray.hidden=!shown;if(offset)offset.hidden=!shown;b('captions').setAttribute('aria-pressed',String(shown));};
+      b('captions').onclick=()=>root.querySelector('.subtitle-settings-trigger')?.click();
       b('mute').onclick=()=>{player.muted=!player.muted;b('mute').querySelector('small').textContent=player.muted?'静音':'声音';b('mute').querySelector('span').textContent=player.muted?'🔇':'🔊';};
       // Fullscreen the complete movie lesson panel, not just the video.
       // This keeps the custom toolbar and the separate mobile subtitle tray
@@ -1069,7 +1079,8 @@ async renderLesson(seriesId, episodeId){
       }else{
         fullscreenButton.onclick=()=>root.requestFullscreen?.().catch(()=>{});
       }
-      b('quiz').onclick=()=>{player.pause();App.activeLessonTab='quiz';App.renderLesson(series,ep);};
+      b('quiz').disabled=!episodes.find(item=>Number(item.episodeId)===ep)?.modules?.quiz;
+      b('quiz').onclick=()=>openModule('quiz',ep);
     }
     let hlsFallbacks=[];
     try{hlsFallbacks=JSON.parse(player.dataset.hlsFallbackSrcs||'[]');}catch{hlsFallbacks=[];}

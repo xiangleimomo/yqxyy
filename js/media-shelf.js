@@ -70,7 +70,7 @@ window.MediaShelf = {
         const courses=await Promise.all(courseIds.map(async seriesId=>{
           try{return await app.getJSON(`data/${seriesId}/series.json`);}catch{return null;}
         }));
-        items=courses.filter(course=>course&&course.status!=='coming').map(course=>({
+        items=courses.filter(course=>course&&!['coming','draft','retired'].includes(course.status)).map(course=>({
           key:`film-course-${course.seriesId}`,scope:'movies',id:course.seriesId,
           title:(course.seriesTitleZh||course.seriesTitle||course.seriesId).replace(/\s*[·|]\s*剧情分集学习\s*$/u,''),
           search:`${course.seriesTitle||''} ${course.seriesTitleZh||''} ${course.seriesId}`,

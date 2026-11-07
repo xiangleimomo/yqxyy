@@ -271,7 +271,8 @@ window.BookReader = {
       if (!current()) return;
       if (!blob) {
         const url = new URL(item.downloadUrl, location.origin);
-        if (!item.downloadUrl || url.protocol !== 'https:' || url.username || url.password || url.origin !== location.origin) throw new Error('绘本加载地址不可用。');
+        const localPreview = location.protocol === 'http:' && ['127.0.0.1', 'localhost', '[::1]'].includes(location.hostname);
+        if (!item.downloadUrl || (url.protocol !== 'https:' && !(localPreview && url.protocol === 'http:')) || url.username || url.password || url.origin !== location.origin) throw new Error('绘本加载地址不可用。');
         let response;
         let lastNetworkError;
         for (let attempt = 0; attempt < 3; attempt++) {

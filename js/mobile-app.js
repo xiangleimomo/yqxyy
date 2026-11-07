@@ -58,16 +58,32 @@ window.MobileApp = {
     const recent=last?'<a class="sf-app-continue" href="#/lesson/'+e(last.seriesId)+'/'+Number(progress.episodeId)+'"><img src="'+e(last.cover)+'" alt=""><div><span class="sf-app-eyebrow">继续上次的学习</span><h3>'+e(last.titleZh||last.title)+'</h3><p>上次学到第 '+Number(progress.episodeId)+' 集</p></div><span class="sf-app-play" aria-hidden="true">▶</span></a>':'<div class="sf-app-welcome"><div><span class="sf-app-eyebrow">WELCOME TO YQXYY</span><h1>今天，发现一个新世界</h1><p>看故事 · 读绘本 · 探索知识</p></div><img src="assets/nav-icons/animation-story.png" alt=""></div>';
     const shelves=[],media=window.MediaShelf;
     if(media){
-      shelves.push(this.section('动画故事','#/home/all',media.cards(app,list.slice(0,4).map(row=>media.animation(row)))));
+      const animationById=new Map(seriesRows.map(row=>[row.seriesId,row]));
+      const featuredStories=[
+        ['three-kingdoms','三国演义'],['journey-to-the-west','西游记'],
+        ['little-fox-rocket-girl-fs0065','火箭女孩'],
+        ['little-fox-rocket-girl-s-journey-to-the-west-fs0110','火箭女孩西游记']
+      ].flatMap(([id,title])=>{
+        const row=animationById.get(id);
+        return row&&!['coming','draft','locked'].includes(row.status)?[{...media.animation(row),title}]:[];
+      });
+      shelves.push(this.section('动画故事','#/home/all',media.cards(app,featuredStories)));
       const groups=movieLibrary?.series||[];
-      // Curated animated features live in the original movie-series catalogue and are
-      // identified by their genre; newer additions live in movie_library.category=animated.
-      const animatedMovies=groups.filter(group=>group.dynamicCategory==='animated'||String(group.genre||'').includes('动画'))
-        .flatMap(group=>group.films.map(film=>media.movieFilm(group,film,movieLibrary?.playableById||new Map())))
-        .slice(0,4);
-      const documentaries=groups.filter(group=>group.dynamicCategory==='documentary')
-        .flatMap(group=>group.films.map(film=>media.movieFilm(group,film,movieLibrary?.playableById||new Map())))
-        .slice(0,4);
+      // Homepage editorial picks are independent of catalogue insertion order.
+      const filmsById=new Map(groups.flatMap(group=>group.films.map(film=>[film[0],{group,film}])));
+      const featured=picks=>picks.flatMap(([id,title])=>{
+        const entry=filmsById.get(id);
+        if(!entry||!movieLibrary?.playableById?.has(id))return [];
+        const card=media.movieFilm(entry.group,entry.film,movieLibrary.playableById);
+        return [{...card,title:title||card.title}];
+      });
+      const animatedMovies=featured([
+        ['dragon-1'],['kung-fu-panda-1'],['zootopia-1'],['despicable-me-1']
+      ]);
+      const documentaries=featured([
+        ['tmdb-tv-13579','蓝色星球'],['tmdb-tv-74313','蓝色星球2'],
+        ['tmdb-tv-208929','蓝色星球3'],['tmdb-tv-1044','地球']
+      ]);
       shelves.push(this.section('动画大电影','#/movies/animated',animatedMovies.length?media.cards(app,animatedMovies):'<p class="sf-app-empty">精选动画电影即将呈现</p>'));
       shelves.push(this.section('纪录片','#/movies/documentary',documentaries.length?media.cards(app,documentaries):'<p class="sf-app-empty">精选纪录片即将呈现</p>'));
     }
@@ -92,7 +108,7 @@ window.MobileApp = {
   mine(app) {
     const e=value=>app.escapeHtml(String(value||'')),user=window.SFCloud?.user;
     const progress=Object.values(app.storage('progress')||{}),series=new Set(progress.map(row=>row.seriesId));
-    app.el().innerHTML=`<div class="sf-app-me"><div class="sf-app-profile"><img src="assets/icons/account.webp" alt=""><div><h1>${e(window.SFCloud?.nickname?.()||(user?'我的学习空间':'你好，小小探索家'))}</h1><p>${user?'每一份努力，都值得被看见':'登录后同步学习进度与收藏'}</p></div><button type="button" data-mobile-account>${user?'账户设置':'登录 / 注册'}</button></div><div class="sf-app-stats"><a href="#/home/recent"><b>${series.size}</b><span>学习系列</span></a><a href="#/home/recent"><b>${progress.length}</b><span>学习记录</span></a><a href="#/rewards"><b>${app.getPoints()}</b><span>我的积分</span></a></div>${this.section('我的学习','',`<div class="sf-app-service-list">${[['#/homework','📝','学习作业'],['#/wordbank','📘','我的单词表'],['#/writing','✍️','英文写作'],['#/home/favorites','⭐','收藏的动画'],['#/home/recent','◷','观看记录'],['#/reading/mine/recent','📖','阅读记录']].map(([url,icon,title])=>`<a href="${url}"><span>${icon} ${title}</span>›</a>`).join('')}</div>`)}${this.section('成长与奖励','',`<div class="sf-app-mini-tools">${[['#/checkin','checkin','每日签到'],['#/honors','honors','我的荣誉'],['#/rewards','rewards','积分奖励']].map(([url,image,title])=>`<a href="${url}"><img src="assets/icons/${image}.webp" alt=""><span>${title}</span></a>`).join('')}</div>`)}<a class="sf-app-extra" href="/source-lab/">片源探索 ›</a></div>`;
+    app.el().innerHTML=`<div class="sf-app-me"><div class="sf-app-profile"><img src="assets/icons/account.webp" alt=""><div><h1>${e(window.SFCloud?.nickname?.()||(user?'我的学习空间':'你好，小小探索家'))}</h1><p>${user?'每一份努力，都值得被看见':'登录后同步学习进度与收藏'}</p></div><button type="button" data-mobile-account>${user?'账户设置':'登录 / 注册'}</button></div><div class="sf-app-stats"><a href="#/home/recent"><b>${series.size}</b><span>学习系列</span></a><a href="#/home/recent"><b>${progress.length}</b><span>学习记录</span></a><a href="#/rewards"><b>${app.getPoints()}</b><span>我的积分</span></a></div>${this.section('我的学习','',`<div class="sf-app-service-list">${[['#/homework','📝','学习作业'],['#/wordbank','📘','我的单词表'],['#/writing','✍️','英文写作'],['#/home/favorites','⭐','收藏的动画'],['#/home/recent','◷','观看记录'],['#/reading/mine/recent','📖','阅读记录']].map(([url,icon,title])=>`<a href="${url}"><span>${icon} ${title}</span>›</a>`).join('')}</div>`)}${this.section('成长与奖励','',`<div class="sf-app-mini-tools">${[['#/checkin','checkin','每日签到'],['#/honors','honors','我的荣誉'],['#/rewards','rewards','积分奖励']].map(([url,image,title])=>`<a href="${url}"><img src="assets/icons/${image}.webp" alt=""><span>${title}</span></a>`).join('')}</div>`)}<a class="sf-app-extra" href="/source-lab/" ${window.SourceAccess?.allowed?'':'hidden style="display:none"'}>片源探索 ›</a></div>`;
   }
 };
 MobileApp.init();

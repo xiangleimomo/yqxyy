@@ -1,9 +1,11 @@
 /* Publish only a built, reviewed course. Original playback URLs are preserved. */
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const {namedCourse}=require('./lib/movie-course-quality.cjs');
 const root=path.resolve(__dirname,'..'),id=process.argv[2];
 assert(/^movie-[a-z0-9-]+$/.test(id||''),'Specify a movie course seriesId');
 const dir=path.join(root,'data',id),plan=JSON.parse(fs.readFileSync(path.join(dir,'editorial.json'))),manifest=JSON.parse(fs.readFileSync(path.join(dir,'alignment.json'))),eps=JSON.parse(fs.readFileSync(path.join(dir,'episodes.json')));
+assert(namedCourse(eps),'Every published movie chapter must have a meaningful title');
 assert.equal(plan.seriesId,id);assert(manifest.verification.anchors.length>=3&&eps.length>=4);
 const file=path.join(root,`data/movies/${plan.collectionId||'harry-potter'}/movies.json`),catalogue=JSON.parse(fs.readFileSync(file)),movie=catalogue.sources.find(m=>m.id===plan.movieId);
 assert(movie);const fullTimeline=eps.every(ep=>Number.isFinite(ep.video?.clipStart)&&Number.isFinite(ep.video?.clipEnd)&&ep.video.clipEnd>ep.video.clipStart);

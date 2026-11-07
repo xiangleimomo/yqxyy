@@ -1,6 +1,7 @@
 'use strict';
 // yqxyy V3: catalog TMDB ID -> same-source HLS video/audio/English CC/optional Chinese.
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const {namedCourse}=require('./lib/movie-course-quality.cjs');
 const ROOT=path.resolve(__dirname,'..'),DATA=path.join(ROOT,'data'),BASE='https://api.obj2.top/hls/movie/';
 const CATALOG=JSON.parse(fs.readFileSync(path.join(DATA,'movie-hub-catalog.json'),'utf8'));
 const STATUS=path.join(DATA,'movie-v3-status.json'),NOW=new Date().toISOString();
@@ -220,7 +221,7 @@ async function build(item){
  modules:{watch:true,read:false,words:true,vocabulary:true,quiz:true}});
  }
  const oldSeries=exists(path.join(dir,'series.json'))?read(path.join(dir,'series.json')):{};
- stageJson('series.json',{...oldSeries,seriesId,seriesTitle:row.title,seriesTitleZh:(row.titleZh||row.title)+' · 剧情分集学习',level:oldSeries.level||3,language:'en',status:'completed',totalEpisodes:episodes.length,movieId:row.id,quizStatus:'ready',generation:'v3-native-source',coverImage:oldSeries.coverImage||movie.cover||null,description:'视频、英文CC和可选中文均取自同一M3U8；保留音效说明。'});
+ stageJson('series.json',{...oldSeries,seriesId,seriesTitle:row.title,seriesTitleZh:(row.titleZh||row.title)+' · 剧情分集学习',level:oldSeries.level||3,language:'en',status:namedCourse(episodes)?'completed':'draft',totalEpisodes:episodes.length,movieId:row.id,quizStatus:'ready',generation:'v3-native-source',coverImage:oldSeries.coverImage||movie.cover||null,description:'视频、英文CC和可选中文均取自同一M3U8；保留音效说明。'});
  stageJson('episodes.json',episodes);stageJson('vocabulary.json',vocabulary);stageJson('quiz.json',quiz);
  stageJson('v3-source.json',{movieId:row.id,tmdbId:row.tmdbId,source,englishUrl:EN.url,englishTrack:english.NAME,chineseUrl:ZH?.url||null,chineseTrack:ZH?chinese.NAME:null,videoUrl:choice.url,audioUrl,videoDuration:video.total,englishCues:en.length,chineseCues:zh.length,chapterCount:episodes.length,retainedOldChapters:layout.preserve,createdAt:NOW});
  assert(episodes.every(e=>vocabulary[e.episodeId].length===5&&quiz[e.episodeId].questions.length===5),'Invalid Words/Quiz batch');
@@ -228,7 +229,8 @@ async function build(item){
  for(const [file,content] of output)save(file,content);
  const moviePath=path.join(DATA,'movies',group,'movies.json'),movieData=read(moviePath),entry=movieData.sources.find(x=>x.id===row.id);
  assert(entry,'Movie vanished from published catalog');
- entry.studyCourse={seriesId,episodeCount:episodes.length};entry.tmdbId=row.tmdbId;saveJSON(moviePath,movieData);
+ if(namedCourse(episodes))entry.studyCourse={seriesId,episodeCount:episodes.length};else delete entry.studyCourse;
+ entry.tmdbId=row.tmdbId;saveJSON(moviePath,movieData);
  const config=path.join(ROOT,'netlify.toml'),rule='/data/'+seriesId+'/hls/*',current=fs.readFileSync(config,'utf8');
  if(!current.includes('for = "'+rule+'"'))save(config,current+'\n[[headers]]\n  for = "'+rule+'"\n  [headers.values]\n    Content-Type = "application/vnd.apple.mpegurl"\n');
  console.log('V3_FILM_DONE '+JSON.stringify({movie:row.id,seriesId,chapters:episodes.length,englishCues:en.length,chineseCues:zh.length,retainedChapterCuts:layout.preserve}));

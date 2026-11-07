@@ -168,3 +168,9 @@ Read 顶部可关闭内置词典，偏好保存到本机；不会取消原生文
 可用 `node scripts/apply-reviewed-movie-sources.cjs docs/movie-source-review-2026-10-16.json --write` 重复执行本轮地址更新，不带 `--write` 仅检查。运行 `node tests/reviewed-movie-sources.test.cjs`、`node tests/movie-sources.test.cjs`、`node tests/movie-playback.test.cjs` 以及现有课程/广告回归。29个实际来源逐一通过桌面Chrome启动播放；未完整观看全片，不承诺任意时间点绝无广告。
 
 已合并用户同期更新的地址：冰川时代1—3保留等价的直接地址；玩具总动员5新片源补充通过英语对白及Chrome检查。小黄人大眼萌第一部误填的前传地址已纠正。
+
+## 本地 VS Code 预览（含在线绘本）
+
+在仓库目录的终端运行 `python scripts/preview.py`，然后用 Chrome 打开 `http://127.0.0.1:8000/#/home`。如果 8000 端口已被普通静态服务占用，先停止旧服务。
+
+此服务读取本地网站文件，并将 `/book-download/` 请求转发到现有线上绘本下载服务。普通 `python -m http.server` 或 Live Server 不执行 Netlify 的下载代理，因此无法完整测试线上绘本。绘本下载仍需要联网；本地修改不会上传到 GitHub 或 Netlify。
