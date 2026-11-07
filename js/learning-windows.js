@@ -30,6 +30,34 @@ window.LearningWindows = {
       win.style.setProperty('--workspace-top', `${Math.max(0, Math.min(innerHeight - 48, event.clientY - drag.y))}px`);
     };
     const finish = () => { drag = null; };
+    // Explicit resize handles bypass legacy !important window dimensions and
+    // retain pointer capture when the pointer crosses a book/game iframe.
+    for (const direction of ['n','e','s','w','ne','nw','se','sw']) {
+      const handle = document.createElement('div');
+      handle.className = `sf-window-resize sf-window-resize-${direction}`;
+      handle.setAttribute('aria-hidden', 'true');
+      win.appendChild(handle);
+      let start = null;
+      handle.addEventListener('pointerdown', event => {
+        if(event.button!==0 || win.classList.contains('sf-workspace-maximized'))return;
+        event.preventDefault(); event.stopPropagation();
+        start = {x:event.clientX,y:event.clientY,rect:win.getBoundingClientRect()};
+        handle.setPointerCapture(event.pointerId); win.classList.add('sf-workspace-resizing');
+      });
+      handle.addEventListener('pointermove', event => {
+        if(!start)return;
+        const {rect}=start, dx=event.clientX-start.x, dy=event.clientY-start.y;
+        let left=rect.left,top=rect.top,width=rect.width,height=rect.height;
+        if(direction.includes('e'))width=Math.max(420,Math.min(innerWidth-left-8,rect.width+dx));
+        if(direction.includes('s'))height=Math.max(300,Math.min(innerHeight-top-8,rect.height+dy));
+        if(direction.includes('w')){left=Math.max(0,Math.min(rect.right-420,rect.left+dx));width=rect.right-left;}
+        if(direction.includes('n')){top=Math.max(0,Math.min(rect.bottom-300,rect.top+dy));height=rect.bottom-top;}
+        win.style.setProperty('--workspace-left',left+'px');win.style.setProperty('--workspace-top',top+'px');
+        win.style.setProperty('--workspace-width',width+'px');win.style.setProperty('--workspace-height',height+'px');
+      });
+      const stop = () => {start=null;win.classList.remove('sf-workspace-resizing');};
+      handle.addEventListener('pointerup',stop);handle.addEventListener('pointercancel',stop);handle.addEventListener('lostpointercapture',stop);
+    }
     header.addEventListener('mousedown', event => {
       if (event.button !== 0 || event.target.closest('button') || win.classList.contains('sf-workspace-maximized')) return;
       const rect = win.getBoundingClientRect(); drag = { x: event.clientX - rect.left, y: event.clientY - rect.top };

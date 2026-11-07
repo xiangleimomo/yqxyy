@@ -1,7 +1,7 @@
 .sf-window-maximize{display:none}
 @media (min-width:901px) and (pointer:fine){
-  #windowLayer .floating-window.sf-desktop-workspace{position:absolute!important;inset:auto!important;left:var(--workspace-left,80px)!important;top:var(--workspace-top,64px)!important;width:min(900px,85vw)!important;height:min(640px,82dvh)!important;min-width:420px!important;min-height:300px!important;max-width:calc(100vw - 24px)!important;max-height:calc(100dvh - 24px)!important;margin:0!important;border:1px solid #cbd8ea!important;border-radius:14px!important;resize:both!important;overflow:hidden!important;box-shadow:0 12px 40px #0003!important}
-  #windowLayer .sf-desktop-workspace .floating-header{height:48px!important;min-height:48px!important;padding:0 14px!important;flex:none;cursor:move!important;gap:10px}
+  #windowLayer .floating-window.sf-desktop-workspace{position:absolute!important;inset:auto!important;left:var(--workspace-left,80px)!important;top:var(--workspace-top,64px)!important;width:var(--workspace-width,min(900px,85vw))!important;height:var(--workspace-height,min(640px,82dvh))!important;min-width:420px!important;min-height:300px!important;max-width:calc(100vw - 24px)!important;max-height:calc(100dvh - 24px)!important;margin:0!important;border:1px solid #cbd8ea!important;border-radius:14px!important;resize:none!important;overflow:clip!important;box-shadow:0 12px 40px #0003!important}
+  #windowLayer .sf-desktop-workspace .floating-header{height:48px!important;min-height:48px!important;padding:0 14px!important;flex:none;position:relative;z-index:2;cursor:move!important;gap:10px}
   #windowLayer .sf-desktop-workspace .read-header-hint{flex:1;min-width:0}
   #windowLayer .sf-desktop-workspace .floating-content{flex:1 1 auto!important;width:100%;height:auto!important;min-height:0!important;box-sizing:border-box;padding:16px!important;overflow:auto!important}
   #windowLayer .sf-desktop-workspace .sf-window-maximize{display:grid;place-items:center;width:32px;height:32px;padding:0;border:0;border-radius:6px;background:transparent;color:#285783;font-size:23px;cursor:pointer}
@@ -9,5 +9,17 @@
   #windowLayer .sf-window-maximize:focus-visible{outline:2px solid #2c85d4}
   #windowLayer .floating-window.sf-desktop-workspace.sf-workspace-maximized{position:fixed!important;left:0!important;top:0!important;width:100vw!important;height:100dvh!important;max-width:none!important;max-height:none!important;border:0!important;border-radius:0!important;resize:none!important}
   #windowLayer .floating-storyBook.sf-desktop-workspace>.floating-content{padding:0!important;overflow:hidden!important}
+  #windowLayer .sf-desktop-workspace .words-view{height:auto;min-height:100%;flex:none}
+  .sf-window-resize{position:absolute;z-index:6;touch-action:none}
+  .sf-window-resize-n,.sf-window-resize-s{left:12px;right:12px;height:8px;cursor:ns-resize}
+  .sf-window-resize-n{top:0}.sf-window-resize-s{bottom:0}
+  .sf-window-resize-e,.sf-window-resize-w{top:12px;bottom:12px;width:8px;cursor:ew-resize}
+  .sf-window-resize-e{right:0}.sf-window-resize-w{left:0}
+  .sf-window-resize-ne,.sf-window-resize-nw,.sf-window-resize-se,.sf-window-resize-sw{width:14px;height:14px}
+  .sf-window-resize-ne{top:0;right:0;cursor:nesw-resize}.sf-window-resize-nw{top:0;left:0;cursor:nwse-resize}
+  .sf-window-resize-se{bottom:0;right:0;cursor:nwse-resize}.sf-window-resize-sw{bottom:0;left:0;cursor:nesw-resize}
+  .sf-window-resize-se::after{content:"";position:absolute;right:3px;bottom:3px;width:7px;height:7px;border-right:2px solid #8da6bd;border-bottom:2px solid #8da6bd}
+  .sf-workspace-maximized .sf-window-resize{display:none}
+  .sf-workspace-resizing{user-select:none}
   .sf-book-workspace-frame{display:block;width:100%;height:100%;border:0;background:#fff}
 }

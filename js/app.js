@@ -1724,6 +1724,12 @@ initWordCardNav(words,d){
   show(0);
 },
 
+focusPracticeInput(input){
+  if(!input)return;
+  if(input.closest('.sf-desktop-workspace'))input.focus({preventScroll:true});
+  else input.focus();
+},
+
 initWordPractice(words, seriesId, episodeId){
   const shuffled=words.slice().sort(()=>Math.random()-0.5);
   this.wordPractice={words:shuffled,index:0,checked:false,seriesId,episodeId};
@@ -1758,9 +1764,9 @@ initWordPractice(words, seriesId, episodeId){
   };
   const area=document.getElementById('letterInputArea');
   if(area){
-    area.onclick=()=>input.focus();
+    area.onclick=()=>this.focusPracticeInput(input);
   }
-  setTimeout(()=>input.focus(),100);
+  setTimeout(()=>this.focusPracticeInput(input),100);
 },
 
 renderWordPractice(){
@@ -1786,7 +1792,7 @@ renderWordPractice(){
     area.innerHTML=String(item.word||'').split('').map(()=>'<span class="letter-box"></span>').join('');
   }
   const input=document.getElementById('practiceInput');
-  if(input){ input.value=''; input.disabled=false; setTimeout(()=>input.focus(),50); }
+  if(input){ input.value=''; input.disabled=false; setTimeout(()=>this.focusPracticeInput(input),50); }
   document.getElementById('checkPractice').disabled=false;
   document.getElementById('nextPractice').disabled=false;
   document.getElementById('nextPractice').textContent='跳过 / 下一个';
@@ -1802,12 +1808,12 @@ checkWordPractice(){
   const fb=document.getElementById('practiceFeedback');
   if(!value){
     fb.innerHTML=`<div class="practice-result fail">请先听发音并输入英文单词。</div>`;
-    input.focus();
+    this.focusPracticeInput(input);
     return;
   }
   if(value!==answer){
     fb.innerHTML=`<div class="practice-result fail">拼写不正确，请再听一次并重新拼写。</div>`;
-    input.focus();
+    this.focusPracticeInput(input);
     input.select();
     return;
   }
@@ -1829,7 +1835,7 @@ nextWordPractice(){
     state.index += 1;
     document.getElementById('nextPractice').textContent='下一个';
     this.renderWordPractice();
-    document.getElementById('practiceInput').focus();
+    this.focusPracticeInput(document.getElementById('practiceInput'));
   }else{
     document.getElementById('practiceFeedback').innerHTML=`<div class="practice-result success">本轮单词练习完成，共 ${state.words.length} 个单词。你可以重新刷新页面再练一次，或者点击下方卡片翻面复习。</div>`;
     document.getElementById('nextPractice').disabled=true;
