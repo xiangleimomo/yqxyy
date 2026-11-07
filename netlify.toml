@@ -56,3 +56,8 @@
   for = "/data/movie-kung-fu-panda-1/hls/*"
   [headers.values]
     Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-kung-fu-panda-2/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
