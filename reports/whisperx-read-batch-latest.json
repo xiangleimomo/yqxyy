@@ -1,374 +1,565 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42366192772",
-  "completedAt": "2026-11-07T11:26:17.614164+00:00",
+  "runId": "42368183929",
+  "completedAt": "2026-11-07T12:01:48.159128+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 18,
-  "rejected": 32,
+  "published": 50,
+  "rejected": 0,
   "websiteCommitRequired": true,
-  "totalWords": 19599,
-  "speechMatchedWords": 19599,
+  "totalWords": 46411,
+  "speechMatchedWords": 46411,
   "success": [
     {
       "seriesId": "little-fox-superstars-in-history-fs0109",
-      "episodeId": 1,
-      "cues": 101,
-      "words": 1149,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 90,
-      "speechWords": 1149,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-superstars-in-history-fs0109",
-      "episodeId": 2,
+      "episodeId": 19,
       "cues": 103,
-      "words": 1069,
+      "words": 1092,
       "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 1069,
-      "coverage": 0.9981,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-superstars-in-history-fs0109",
-      "episodeId": 3,
-      "cues": 100,
-      "words": 1081,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 70,
-      "speechWords": 1081,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-superstars-in-history-fs0109",
-      "episodeId": 4,
-      "cues": 100,
-      "words": 1060,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 72,
-      "speechWords": 1060,
+      "xmlParagraphs": 76,
+      "speechWords": 1092,
       "coverage": 0.9991,
       "omittedWords": 1
     },
     {
       "seriesId": "little-fox-superstars-in-history-fs0109",
-      "episodeId": 5,
-      "cues": 99,
-      "words": 1040,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 1040,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-superstars-in-history-fs0109",
-      "episodeId": 6,
+      "episodeId": 20,
       "cues": 97,
-      "words": 1057,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 1057,
-      "coverage": 0.9991,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-superstars-in-history-fs0109",
-      "episodeId": 7,
-      "cues": 100,
-      "words": 1102,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 78,
-      "speechWords": 1102,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-superstars-in-history-fs0109",
-      "episodeId": 8,
-      "cues": 100,
-      "words": 1079,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 83,
-      "speechWords": 1079,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-superstars-in-history-fs0109",
-      "episodeId": 9,
-      "cues": 96,
-      "words": 1066,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 79,
-      "speechWords": 1066,
-      "coverage": 0.9991,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-superstars-in-history-fs0109",
-      "episodeId": 10,
-      "cues": 107,
       "words": 1097,
       "xmlTextVerified": true,
-      "xmlParagraphs": 82,
+      "xmlParagraphs": 74,
       "speechWords": 1097,
       "coverage": 0.9991,
       "omittedWords": 1
     },
     {
       "seriesId": "little-fox-superstars-in-history-fs0109",
-      "episodeId": 11,
+      "episodeId": 21,
       "cues": 103,
-      "words": 1088,
+      "words": 1120,
       "xmlTextVerified": true,
-      "xmlParagraphs": 78,
-      "speechWords": 1088,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-superstars-in-history-fs0109",
-      "episodeId": 12,
-      "cues": 98,
-      "words": 1117,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 72,
-      "speechWords": 1117,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-superstars-in-history-fs0109",
-      "episodeId": 13,
-      "cues": 91,
-      "words": 1078,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 1078,
+      "xmlParagraphs": 74,
+      "speechWords": 1120,
       "coverage": 0.9991,
       "omittedWords": 1
     },
     {
       "seriesId": "little-fox-superstars-in-history-fs0109",
-      "episodeId": 14,
-      "cues": 92,
-      "words": 1108,
+      "episodeId": 22,
+      "cues": 97,
+      "words": 1096,
       "xmlTextVerified": true,
-      "xmlParagraphs": 76,
-      "speechWords": 1108,
+      "xmlParagraphs": 70,
+      "speechWords": 1096,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-superstars-in-history-fs0109",
+      "episodeId": 23,
+      "cues": 103,
+      "words": 1141,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 1141,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
       "seriesId": "little-fox-superstars-in-history-fs0109",
-      "episodeId": 15,
-      "cues": 104,
-      "words": 1132,
+      "episodeId": 24,
+      "cues": 99,
+      "words": 1048,
       "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 1132,
+      "xmlParagraphs": 73,
+      "speechWords": 1048,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-superstars-in-history-fs0109",
+      "episodeId": 25,
+      "cues": 105,
+      "words": 1117,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 87,
+      "speechWords": 1117,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-superstars-in-history-fs0109",
+      "episodeId": 26,
+      "cues": 107,
+      "words": 1142,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 1142,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-superstars-in-history-fs0109",
+      "episodeId": 27,
+      "cues": 110,
+      "words": 1134,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 87,
+      "speechWords": 1134,
       "coverage": 0.9982,
       "omittedWords": 2
     },
     {
       "seriesId": "little-fox-superstars-in-history-fs0109",
-      "episodeId": 16,
-      "cues": 104,
-      "words": 1070,
+      "episodeId": 28,
+      "cues": 107,
+      "words": 1126,
       "xmlTextVerified": true,
-      "xmlParagraphs": 72,
-      "speechWords": 1070,
-      "coverage": 0.9981,
-      "omittedWords": 2
+      "xmlParagraphs": 84,
+      "speechWords": 1126,
+      "coverage": 1.0,
+      "omittedWords": 0
     },
     {
       "seriesId": "little-fox-superstars-in-history-fs0109",
-      "episodeId": 17,
-      "cues": 94,
-      "words": 1094,
+      "episodeId": 29,
+      "cues": 102,
+      "words": 1111,
       "xmlTextVerified": true,
-      "xmlParagraphs": 68,
-      "speechWords": 1094,
+      "xmlParagraphs": 81,
+      "speechWords": 1111,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-superstars-in-history-fs0109",
+      "episodeId": 30,
+      "cues": 108,
+      "words": 1125,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 1125,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-superstars-in-history-fs0109",
+      "episodeId": 31,
+      "cues": 102,
+      "words": 1136,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 1136,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-superstars-in-history-fs0109",
+      "episodeId": 32,
+      "cues": 106,
+      "words": 1140,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 83,
+      "speechWords": 1140,
       "coverage": 0.9991,
       "omittedWords": 1
     },
     {
       "seriesId": "little-fox-superstars-in-history-fs0109",
-      "episodeId": 18,
-      "cues": 100,
-      "words": 1112,
+      "episodeId": 33,
+      "cues": 115,
+      "words": 1129,
       "xmlTextVerified": true,
-      "xmlParagraphs": 79,
-      "speechWords": 1112,
+      "xmlParagraphs": 88,
+      "speechWords": 1129,
       "coverage": 1.0,
       "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-superstars-in-history-fs0109",
+      "episodeId": 34,
+      "cues": 102,
+      "words": 1156,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 1156,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-superstars-in-history-fs0109",
+      "episodeId": 35,
+      "cues": 103,
+      "words": 1140,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 87,
+      "speechWords": 1140,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-superstars-in-history-fs0109",
+      "episodeId": 36,
+      "cues": 105,
+      "words": 1147,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 88,
+      "speechWords": 1147,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 1,
+      "cues": 84,
+      "words": 900,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 59,
+      "speechWords": 900,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 2,
+      "cues": 88,
+      "words": 909,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 909,
+      "coverage": 0.9978,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 3,
+      "cues": 77,
+      "words": 839,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 839,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 4,
+      "cues": 79,
+      "words": 951,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 951,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 5,
+      "cues": 74,
+      "words": 911,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 911,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 6,
+      "cues": 80,
+      "words": 874,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 59,
+      "speechWords": 874,
+      "coverage": 0.97,
+      "omittedWords": 27
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 7,
+      "cues": 75,
+      "words": 906,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 906,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 8,
+      "cues": 79,
+      "words": 849,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 849,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 9,
+      "cues": 80,
+      "words": 899,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 899,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 10,
+      "cues": 80,
+      "words": 929,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 929,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 11,
+      "cues": 91,
+      "words": 916,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 916,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 12,
+      "cues": 79,
+      "words": 922,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 922,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 13,
+      "cues": 85,
+      "words": 912,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 912,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 14,
+      "cues": 75,
+      "words": 914,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 55,
+      "speechWords": 914,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 15,
+      "cues": 85,
+      "words": 878,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 55,
+      "speechWords": 878,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 16,
+      "cues": 88,
+      "words": 892,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 892,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 17,
+      "cues": 78,
+      "words": 913,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 913,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 18,
+      "cues": 80,
+      "words": 922,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 922,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 19,
+      "cues": 89,
+      "words": 921,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 921,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 20,
+      "cues": 85,
+      "words": 908,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 908,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 21,
+      "cues": 85,
+      "words": 884,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 59,
+      "speechWords": 884,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 22,
+      "cues": 84,
+      "words": 907,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 62,
+      "speechWords": 907,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 23,
+      "cues": 68,
+      "words": 791,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 791,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 24,
+      "cues": 83,
+      "words": 876,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 876,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-huckleberry-finn-fs0026",
+      "episodeId": 25,
+      "cues": 97,
+      "words": 935,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 935,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-pinocchio-fs0029",
+      "episodeId": 1,
+      "cues": 82,
+      "words": 585,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 585,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-pinocchio-fs0029",
+      "episodeId": 2,
+      "cues": 70,
+      "words": 561,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 59,
+      "speechWords": 561,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-pinocchio-fs0029",
+      "episodeId": 3,
+      "cues": 68,
+      "words": 498,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 498,
+      "coverage": 0.996,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-pinocchio-fs0029",
+      "episodeId": 4,
+      "cues": 65,
+      "words": 457,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 58,
+      "speechWords": 457,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-pinocchio-fs0029",
+      "episodeId": 5,
+      "cues": 86,
+      "words": 578,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 578,
+      "coverage": 0.9966,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-pinocchio-fs0029",
+      "episodeId": 6,
+      "cues": 62,
+      "words": 493,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 49,
+      "speechWords": 493,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-adventures-of-pinocchio-fs0029",
+      "episodeId": 7,
+      "cues": 64,
+      "words": 584,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 53,
+      "speechWords": 584,
+      "coverage": 0.9983,
+      "omittedWords": 1
     }
   ],
-  "failures": [
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 17,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.2% matched, 94.1% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 18,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.5% matched, 100.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 19,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 18.8% matched, 100.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 20,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 16.2% matched, 94.1% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 21,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 18.0% matched, 100.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 22,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.7% matched, 98.6% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 23,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 19.7% matched, 100.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 24,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 16.9% matched, 100.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 25,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 98.6% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 26,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.0% matched, 100.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 27,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 93.8% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 28,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.6% matched, 95.3% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 29,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 100.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 30,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.5% matched, 98.6% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 31,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.0% matched, 92.2% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 32,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 98.6% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 33,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 92.4% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 34,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.2% matched, 89.7% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 35,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 89.7% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 36,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 89.7% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 37,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 100.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 38,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 89.7% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 39,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.1% matched, 97.3% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 40,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.5% matched, 98.6% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 41,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.1% matched, 97.3% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 42,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.0% matched, 100.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 43,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.9% matched, 100.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 44,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 89.7% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 45,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.7% matched, 97.3% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 46,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 97.3% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 47,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 92.4% assigned"
-    },
-    {
-      "seriesId": "little-fox-spotlight-fs0098",
-      "episodeId": 48,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.9% matched, 98.6% assigned"
-    }
-  ]
+  "failures": []
 }
