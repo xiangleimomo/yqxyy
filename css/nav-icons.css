@@ -1,0 +1,52 @@
+/* Generated 3D category icons for the primary navigation. */
+.main-tabs {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  min-width: 0;
+  gap: 0;
+}
+.main-tab {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+.main-tab-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 780px) {
+  .main-tabs {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    width: 100%;
+  }
+  .main-tab {
+    justify-content: center;
+    gap: 2px;
+    height: 36px;
+    min-width: 0;
+    padding: 0 1px;
+    font-size: 12px;
+  }
+  .main-tab-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .main-tab {
+    font-size: 11px;
+  }
+  .main-tab-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
