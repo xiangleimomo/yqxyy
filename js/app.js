@@ -530,7 +530,7 @@ async renderLesson(seriesId, episodeId){
   subtitleControls(d=null){
     const prefs=this.subtitlePreferences();
     const option=(value,label,current)=>`<option value="${value}"${value===current?' selected':''}>${label}</option>`;
-    return `<div class="subtitle-settings-dock">
+    return `${d?.seriesId?.startsWith('movie-')?`<div class="sf-desktop-player-title">${this.escapeHtml(d.series?.seriesTitle || d.series?.title || d.ep?.title || '')}</div>`:''}<div class="subtitle-settings-dock">
       <button type="button" class="mobile-cc-trigger" aria-label="${prefs.visible?'关闭字幕 CC':'开启字幕 CC'}" aria-pressed="${prefs.visible}">CC<span>字幕</span></button>
       <button type="button" class="subtitle-settings-trigger" aria-label="打开字幕设置" aria-expanded="false">⚙<span>字幕</span></button>
       <button type="button" class="video-fullscreen-trigger" aria-label="全屏观看（保留字幕设置）" title="全屏观看（保留字幕设置）">⛶<span>全屏</span></button>
@@ -669,6 +669,7 @@ async renderLesson(seriesId, episodeId){
         bar.addEventListener('focusout',hideControlsLater);
         bar.addEventListener('pointerup',()=>{seek.blur();hideControlsLater();});
         ['timeupdate','loadedmetadata','durationchange','seeked'].forEach(name=>player.addEventListener(name,refresh));
+        window.SFDesktopPlayer?.attach({stage,player,showControls,hideControlsLater});
         refresh();showControls();
       }
       stage.addEventListener('focusin',showControls);

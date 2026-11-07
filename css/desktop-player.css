@@ -1,0 +1,33 @@
+.sf-desktop-player-controls,.sf-desktop-player-title{display:none}
+@media (min-width:901px) and (pointer:fine){
+  .sf-movie-lesson-player{background:#000;color:#fff}
+  .sf-movie-lesson-player>.video-wrap{background:#000;border-radius:0}
+  .sf-movie-lesson-player>.sf-lesson-toolbar{display:none!important}
+  .direct-video-panel.sf-movie-lesson-player:is(:fullscreen,:-webkit-full-screen,.subtitle-page-fullscreen)>.sf-lesson-toolbar{display:none!important}
+  .sf-movie-lesson-player>.movie-subtitle-status,.sf-movie-lesson-player>.sf-subtitle-offset{display:none!important}
+  .sf-movie-lesson-player .sf-desktop-player-title{display:block;position:absolute;z-index:16;inset:0 0 auto;padding:28px 80px 50px;text-align:center;font:600 15px/1.4 system-ui,sans-serif;color:#fff;background:linear-gradient(#0009,transparent);pointer-events:none;opacity:0;visibility:hidden;transition:opacity .2s}
+  .sf-movie-lesson-player .sf-desktop-player-controls{position:absolute;z-index:24;inset:auto 0 0;display:flex;align-items:center;gap:12px;height:60px;padding:0 26px;box-sizing:border-box;background:linear-gradient(transparent,#000d);color:#fff;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s}
+  .sf-movie-lesson-player .sf-desktop-player-controls button{display:grid;place-items:center;flex:0 0 auto;width:30px;height:38px;padding:4px;border:0;border-radius:4px;background:transparent;color:#fff;font:600 12px system-ui;cursor:pointer}
+  .sf-movie-lesson-player .sf-desktop-player-controls button:hover{background:#ffffff1a}
+  .sf-movie-lesson-player .sf-desktop-player-controls button:disabled{opacity:.25;cursor:default}
+  .sf-movie-lesson-player .sf-desktop-player-controls button:focus-visible{outline:2px solid #81bf44;outline-offset:2px}
+  .sf-desktop-player-controls svg{display:block;width:23px;height:23px}
+  .sf-desktop-control-spacer{flex:1}
+  .sf-desktop-clock{font:600 12px system-ui,sans-serif;white-space:nowrap;font-variant-numeric:tabular-nums;margin-left:2px}
+  .sf-desktop-volume{display:flex;align-items:center;gap:5px}
+  .sf-desktop-volume input{width:0;opacity:0;accent-color:#70af2d;transition:width .15s,opacity .15s}
+  .sf-desktop-volume:hover input,.sf-desktop-volume:focus-within input{width:70px;opacity:1}
+  .sf-movie-lesson-player .sf-movie-timeline{left:28px!important;right:28px!important;bottom:54px!important;padding:8px 0!important;background:transparent!important;height:18px;box-sizing:border-box}
+  .sf-movie-lesson-player .sf-movie-timeline output{display:none}
+  .sf-movie-lesson-player .sf-movie-timeline input{appearance:none;-webkit-appearance:none;display:block;height:4px;margin:0;border:0;border-radius:3px;background:linear-gradient(to right,#70af2d 0%,#70af2d var(--seek-progress,0%),#ffffff3d var(--seek-progress,0%),#ffffff3d 100%);cursor:pointer}
+  .sf-movie-timeline input::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:10px;height:10px;border:0;border-radius:50%;background:#83bd44;opacity:0}
+  .sf-movie-timeline input:hover::-webkit-slider-thumb,.sf-movie-timeline input:focus-visible::-webkit-slider-thumb{opacity:1}
+  .sf-movie-timeline input::-moz-range-thumb{width:10px;height:10px;border:0;background:#83bd44}
+  .sf-movie-lesson-player .subtitle-settings-dock{bottom:78px;top:auto;transform:none;right:24px;z-index:30}
+  .sf-movie-lesson-player .subtitle-settings-dock>.subtitle-settings-trigger{display:none!important}
+  .sf-movie-lesson-player .subtitle-controls-overlay{bottom:0;top:auto;right:0;transform:none;left:auto}
+  .sf-movie-lesson-player .video-caption{border-radius:4px;text-shadow:0 2px 4px #000,0 0 3px #000;font-weight:600}
+  .sf-movie-lesson-player .subtitle-settings-visible .sf-desktop-player-title,
+  .sf-movie-lesson-player .subtitle-settings-visible .sf-desktop-player-controls,
+  .sf-movie-lesson-player .sf-desktop-player-controls:focus-within{opacity:1;visibility:visible;pointer-events:auto}
+}
