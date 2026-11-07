@@ -1439,23 +1439,34 @@ html.sf-caption-screen-locked,body.sf-caption-screen-locked{overflow:hidden!impo
 }
 
 
-/* Learning module popups open as full-screen workspaces on every device. */
+/* Keep Listen/Read and Words as full-screen workspaces.
+   Desktop Watch returns to the original compact floating window (900x700 max).
+   Mobile Watch remains full-screen and responsive. */
 #windowLayer{position:fixed;inset:0;width:100vw;height:100vh;height:100dvh;z-index:10000;pointer-events:none}
-#windowLayer .floating-window{
+#windowLayer .floating-window:not(.floating-watch){
   position:fixed!important;inset:0!important;left:0!important;top:0!important;
   width:100vw!important;height:100vh!important;height:100dvh!important;
   min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;
   margin:0!important;border:0!important;border-radius:0!important;
   resize:none!important;overflow:hidden!important;box-shadow:none!important;
 }
-#windowLayer .floating-header{height:48px;min-height:48px;padding:0 16px;cursor:default;flex:none}
-#windowLayer .floating-content{width:100%;height:calc(100% - 48px);min-height:0;flex:1;overflow:auto;padding:clamp(10px,2vw,20px);overscroll-behavior:contain}
-#windowLayer .floating-watch .floating-content,
-#windowLayer .floating-listenRead .floating-content,
-#windowLayer .floating-words .floating-content{height:calc(100% - 48px);min-height:0}
+#windowLayer .floating-window:not(.floating-watch) .floating-header{height:48px;min-height:48px;padding:0 16px;cursor:default;flex:none}
+#windowLayer .floating-window:not(.floating-watch) .floating-content{width:100%;height:calc(100% - 48px);min-height:0;flex:1;overflow:auto;padding:clamp(10px,2vw,20px);overscroll-behavior:contain}
+#windowLayer .floating-window:not(.floating-watch).floating-listenRead .floating-content,
+#windowLayer .floating-window:not(.floating-watch).floating-words .floating-content{height:calc(100% - 48px);min-height:0}
 @supports(padding:max(0px)){
-  #windowLayer .floating-header{padding-top:env(safe-area-inset-top);height:calc(48px + env(safe-area-inset-top));}
-  #windowLayer .floating-content{height:calc(100% - 48px - env(safe-area-inset-top) - env(safe-area-inset-bottom));padding-bottom:max(12px,env(safe-area-inset-bottom))}
+  #windowLayer .floating-window:not(.floating-watch) .floating-header{padding-top:env(safe-area-inset-top);height:calc(48px + env(safe-area-inset-top));}
+  #windowLayer .floating-window:not(.floating-watch) .floating-content{height:calc(100% - 48px - env(safe-area-inset-top) - env(safe-area-inset-bottom));padding-bottom:max(12px,env(safe-area-inset-bottom))}
+}
+@media(max-width:800px){
+  #windowLayer .floating-watch .floating-header{height:48px;min-height:48px;padding:0 16px;cursor:default;flex:none}
+  #windowLayer .floating-watch .floating-content{width:100%;height:calc(100% - 48px);min-height:0;flex:1;overflow:auto;padding:clamp(10px,2vw,20px);overscroll-behavior:contain}
+}
+@supports(padding:max(0px)){
+  @media(max-width:800px){
+    #windowLayer .floating-watch .floating-header{padding-top:env(safe-area-inset-top);height:calc(48px + env(safe-area-inset-top));}
+    #windowLayer .floating-watch .floating-content{height:calc(100% - 48px - env(safe-area-inset-top) - env(safe-area-inset-bottom));padding-bottom:max(12px,env(safe-area-inset-bottom))}
+  }
 }
 
 /* Compact icon-only utility navigation */
