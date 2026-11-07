@@ -4,10 +4,10 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const root=path.resolve(__dirname,'..'),id=process.argv[2];
 assert(/^movie-[a-z0-9-]+$/.test(id||''),'Specify a movie course seriesId');
 const dir=path.join(root,'data',id),plan=JSON.parse(fs.readFileSync(path.join(dir,'editorial.json'))),manifest=JSON.parse(fs.readFileSync(path.join(dir,'alignment.json'))),eps=JSON.parse(fs.readFileSync(path.join(dir,'episodes.json')));
-assert.equal(plan.seriesId,id);assert(manifest.verification.anchors.length>=3&&eps.length>=4);
+assert.equal(plan.seriesId,id);const anchored=Array.isArray(manifest.verification?.anchors)&&manifest.verification.anchors.length>=3;assert((anchored||manifest.verification?.sourceTrackAligned===true)&&eps.length>=4,'Require three checked anchors or a native subtitle rendition from the same HLS master');
 const file=path.join(root,`data/movies/${plan.collectionId||'harry-potter'}/movies.json`),catalogue=JSON.parse(fs.readFileSync(file)),movie=catalogue.sources.find(m=>m.id===plan.movieId);
 assert(movie);const fullTimeline=eps.every(ep=>Number.isFinite(ep.video?.clipStart)&&Number.isFinite(ep.video?.clipEnd)&&ep.video.clipEnd>ep.video.clipStart);
-if(!fullTimeline)assert.equal(movie.hlsUrl,manifest.originalHlsUrl);
+const knownSource=movie.hlsUrl===manifest.originalHlsUrl||(movie.backupSources||[]).some(source=>(typeof source==='string'?source:source?.url)===manifest.originalHlsUrl);if(!fullTimeline)assert(knownSource,'Course HLS source must be listed as the primary or a backup source');
 const before=JSON.stringify(catalogue.sources.map(m=>[m.id,m.hlsUrl,m.backupHlsUrl,m.embedUrl]));
 movie.studyCourse={seriesId:id,episodeCount:eps.length};
 assert.equal(before,JSON.stringify(catalogue.sources.map(m=>[m.id,m.hlsUrl,m.backupHlsUrl,m.embedUrl])));
