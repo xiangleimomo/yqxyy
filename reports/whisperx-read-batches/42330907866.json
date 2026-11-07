@@ -1,0 +1,524 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42330907866",
+  "completedAt": "2026-11-07T03:21:02.171127+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 43,
+  "rejected": 7,
+  "websiteCommitRequired": true,
+  "totalWords": 40426,
+  "speechMatchedWords": 40426,
+  "success": [
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 1,
+      "cues": 119,
+      "words": 945,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 945,
+      "coverage": 0.9979,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 2,
+      "cues": 131,
+      "words": 937,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 937,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 3,
+      "cues": 104,
+      "words": 951,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 951,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 4,
+      "cues": 114,
+      "words": 945,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 945,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 5,
+      "cues": 129,
+      "words": 939,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 939,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 6,
+      "cues": 110,
+      "words": 932,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 932,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 7,
+      "cues": 127,
+      "words": 936,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 936,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 8,
+      "cues": 127,
+      "words": 945,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 82,
+      "speechWords": 945,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 9,
+      "cues": 144,
+      "words": 933,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 85,
+      "speechWords": 933,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 10,
+      "cues": 112,
+      "words": 946,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 946,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 11,
+      "cues": 116,
+      "words": 941,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 941,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 12,
+      "cues": 130,
+      "words": 940,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 940,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 14,
+      "cues": 121,
+      "words": 934,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 934,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 15,
+      "cues": 109,
+      "words": 940,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 940,
+      "coverage": 0.9979,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 16,
+      "cues": 108,
+      "words": 942,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 942,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 17,
+      "cues": 136,
+      "words": 935,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 85,
+      "speechWords": 935,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 18,
+      "cues": 104,
+      "words": 939,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 939,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 19,
+      "cues": 114,
+      "words": 933,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 933,
+      "coverage": 0.9904,
+      "omittedWords": 9
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 20,
+      "cues": 115,
+      "words": 944,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 944,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 21,
+      "cues": 132,
+      "words": 941,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 85,
+      "speechWords": 941,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 22,
+      "cues": 140,
+      "words": 945,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 945,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 23,
+      "cues": 115,
+      "words": 944,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 944,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 24,
+      "cues": 118,
+      "words": 941,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 941,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 25,
+      "cues": 113,
+      "words": 926,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 926,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 26,
+      "cues": 115,
+      "words": 936,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 82,
+      "speechWords": 936,
+      "coverage": 0.9979,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 27,
+      "cues": 128,
+      "words": 925,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 85,
+      "speechWords": 925,
+      "coverage": 0.9872,
+      "omittedWords": 12
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 28,
+      "cues": 134,
+      "words": 945,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 82,
+      "speechWords": 945,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 29,
+      "cues": 125,
+      "words": 934,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 934,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 30,
+      "cues": 120,
+      "words": 930,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 930,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 31,
+      "cues": 134,
+      "words": 938,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 85,
+      "speechWords": 938,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 32,
+      "cues": 118,
+      "words": 943,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 943,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 33,
+      "cues": 119,
+      "words": 943,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 943,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 34,
+      "cues": 135,
+      "words": 950,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 950,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 35,
+      "cues": 90,
+      "words": 946,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 946,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 36,
+      "cues": 115,
+      "words": 941,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 941,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 37,
+      "cues": 112,
+      "words": 942,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 942,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 38,
+      "cues": 112,
+      "words": 938,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 938,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 39,
+      "cues": 102,
+      "words": 944,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 944,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 40,
+      "cues": 122,
+      "words": 942,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 82,
+      "speechWords": 942,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 41,
+      "cues": 95,
+      "words": 940,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 940,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 42,
+      "cues": 110,
+      "words": 944,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 944,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 43,
+      "cues": 110,
+      "words": 946,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 80,
+      "speechWords": 946,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 44,
+      "cues": 110,
+      "words": 945,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 945,
+      "coverage": 1.0,
+      "omittedWords": 0
+    }
+  ],
+  "failures": [
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 15,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 16,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 17,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 18,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 19,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 20,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-red-magic-fs0059",
+      "episodeId": 13,
+      "reason": "URLError: <urlopen error [Errno 111] Connection refused>"
+    }
+  ]
+}
