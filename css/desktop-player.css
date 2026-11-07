@@ -1,5 +1,9 @@
 .sf-desktop-player-controls,.sf-desktop-player-title,.sf-desktop-seek{display:none}
 @media (min-width:901px) and (pointer:fine){
+  /* Size Watch windows to their 16:9 player instead of the shared 700px frame. */
+  .floating-window:is(.floating-watch,.floating-hlsVideo):has(.sf-desktop-player-controls){width:min(900px,80vw,calc((100dvh - 180px) * 16 / 9 + 24px));height:auto;min-height:0;max-height:calc(100dvh - 96px);resize:horizontal;overflow:auto}
+  .floating-window:is(.floating-watch,.floating-hlsVideo):has(.sf-desktop-player-controls)>.floating-content{flex:0 0 auto;min-height:0;height:auto;padding:12px;overflow:visible}
+  .floating-window:is(.floating-watch,.floating-hlsVideo):has(.sf-desktop-player-controls) .video-wrap:not(:fullscreen):not(:-webkit-full-screen):not(.subtitle-page-fullscreen){flex:none;width:100%;height:auto;min-height:0;padding:0;aspect-ratio:16/9}
   :is(.sf-movie-lesson-player,.sf-desktop-story-player){background:#000!important;color:#fff}
   :is(.sf-movie-lesson-player,.sf-desktop-story-player)>.video-wrap,:is(.sf-movie-lesson-player,.sf-desktop-story-player) .hls-video-player{background:#000!important;border-radius:0}
   :is(.sf-movie-lesson-player,.sf-desktop-story-player)>.sf-lesson-toolbar{display:none!important}
