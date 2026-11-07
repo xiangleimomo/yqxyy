@@ -1,565 +1,265 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42370671273",
-  "completedAt": "2026-11-07T12:37:19.733661+00:00",
+  "runId": "42373313612",
+  "completedAt": "2026-11-07T12:46:50.872251+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 50,
-  "rejected": 0,
+  "published": 0,
+  "rejected": 50,
   "websiteCommitRequired": true,
-  "totalWords": 35527,
-  "speechMatchedWords": 35527,
-  "success": [
+  "totalWords": 0,
+  "speechMatchedWords": 0,
+  "success": [],
+  "failures": [
     {
-      "seriesId": "little-fox-the-adventures-of-pinocchio-fs0029",
-      "episodeId": 8,
-      "cues": 92,
-      "words": 633,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 78,
-      "speechWords": 633,
-      "coverage": 0.9969,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-the-adventures-of-pinocchio-fs0029",
-      "episodeId": 9,
-      "cues": 82,
-      "words": 628,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 628,
-      "coverage": 0.9984,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-the-adventures-of-pinocchio-fs0029",
-      "episodeId": 10,
-      "cues": 71,
-      "words": 554,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 61,
-      "speechWords": 554,
-      "coverage": 0.9982,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-the-adventures-of-pinocchio-fs0029",
-      "episodeId": 11,
-      "cues": 77,
-      "words": 565,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 68,
-      "speechWords": 565,
-      "coverage": 0.9982,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-the-adventures-of-pinocchio-fs0029",
-      "episodeId": 12,
-      "cues": 79,
-      "words": 543,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 62,
-      "speechWords": 543,
-      "coverage": 0.9982,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-the-adventures-of-pinocchio-fs0029",
-      "episodeId": 13,
-      "cues": 58,
-      "words": 500,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 52,
-      "speechWords": 500,
-      "coverage": 0.998,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-the-adventures-of-pinocchio-fs0029",
-      "episodeId": 14,
-      "cues": 67,
-      "words": 514,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 62,
-      "speechWords": 514,
-      "coverage": 0.9981,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-the-adventures-of-pinocchio-fs0029",
-      "episodeId": 15,
-      "cues": 71,
-      "words": 541,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 64,
-      "speechWords": 541,
-      "coverage": 0.9982,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-the-adventures-of-pinocchio-fs0029",
-      "episodeId": 16,
-      "cues": 93,
-      "words": 609,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 80,
-      "speechWords": 609,
-      "coverage": 0.9967,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 1,
-      "cues": 98,
-      "words": 757,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 82,
-      "speechWords": 757,
-      "coverage": 1.0,
-      "omittedWords": 0
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.5% matched, 4.7% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 2,
-      "cues": 102,
-      "words": 755,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 81,
-      "speechWords": 755,
-      "coverage": 1.0,
-      "omittedWords": 0
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.1% matched, 5.5% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 3,
-      "cues": 89,
-      "words": 727,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 76,
-      "speechWords": 727,
-      "coverage": 0.9986,
-      "omittedWords": 1
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.5% matched, 6.9% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 4,
-      "cues": 93,
-      "words": 755,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 84,
-      "speechWords": 755,
-      "coverage": 0.9987,
-      "omittedWords": 1
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.5% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 5,
-      "cues": 99,
-      "words": 754,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 85,
-      "speechWords": 754,
-      "coverage": 0.9974,
-      "omittedWords": 2
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 6,
-      "cues": 98,
-      "words": 752,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 86,
-      "speechWords": 752,
-      "coverage": 0.996,
-      "omittedWords": 3
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.9% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 7,
-      "cues": 94,
-      "words": 758,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 83,
-      "speechWords": 758,
-      "coverage": 0.9987,
-      "omittedWords": 1
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 2.7% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 8,
-      "cues": 99,
-      "words": 757,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 83,
-      "speechWords": 757,
-      "coverage": 1.0,
-      "omittedWords": 0
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 6.7% matched, 4.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 9,
-      "cues": 112,
-      "words": 747,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 88,
-      "speechWords": 747,
-      "coverage": 0.9987,
-      "omittedWords": 1
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.9% matched, 0.7% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 10,
-      "cues": 114,
-      "words": 757,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 93,
-      "speechWords": 757,
-      "coverage": 1.0,
-      "omittedWords": 0
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.3% matched, 0.9% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 11,
-      "cues": 102,
-      "words": 756,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 88,
-      "speechWords": 756,
-      "coverage": 1.0,
-      "omittedWords": 0
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 1.4% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 12,
-      "cues": 105,
-      "words": 749,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 85,
-      "speechWords": 749,
-      "coverage": 0.9973,
-      "omittedWords": 2
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.0% matched, 0.5% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 13,
-      "cues": 94,
-      "words": 743,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 85,
-      "speechWords": 743,
-      "coverage": 0.9987,
-      "omittedWords": 1
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.8% matched, 1.2% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 14,
-      "cues": 98,
-      "words": 754,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 83,
-      "speechWords": 754,
-      "coverage": 1.0,
-      "omittedWords": 0
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 6.7% matched, 0.9% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 15,
-      "cues": 89,
-      "words": 745,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 745,
-      "coverage": 1.0,
-      "omittedWords": 0
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 16,
-      "cues": 91,
-      "words": 742,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 78,
-      "speechWords": 742,
-      "coverage": 1.0,
-      "omittedWords": 0
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 6.0% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 17,
-      "cues": 88,
-      "words": 749,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 74,
-      "speechWords": 749,
-      "coverage": 0.9987,
-      "omittedWords": 1
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.4% matched, 3.9% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 18,
-      "cues": 91,
-      "words": 761,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 81,
-      "speechWords": 761,
-      "coverage": 0.9974,
-      "omittedWords": 2
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 6.6% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 19,
-      "cues": 93,
-      "words": 750,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 750,
-      "coverage": 1.0,
-      "omittedWords": 0
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.5% matched, 5.2% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 20,
-      "cues": 96,
-      "words": 758,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 79,
-      "speechWords": 758,
-      "coverage": 1.0,
-      "omittedWords": 0
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.6% matched, 1.2% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 21,
-      "cues": 89,
-      "words": 749,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 76,
-      "speechWords": 749,
-      "coverage": 1.0,
-      "omittedWords": 0
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 1.7% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 22,
-      "cues": 100,
-      "words": 753,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 84,
-      "speechWords": 753,
-      "coverage": 1.0,
-      "omittedWords": 0
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 1.5% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 23,
-      "cues": 94,
-      "words": 758,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 82,
-      "speechWords": 758,
-      "coverage": 0.9987,
-      "omittedWords": 1
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.5% matched, 5.3% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-robin-hood-fs0099",
+      "seriesId": "little-fox-the-big-green-forest-fs0073",
       "episodeId": 24,
-      "cues": 99,
-      "words": 760,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 85,
-      "speechWords": 760,
-      "coverage": 0.9974,
-      "omittedWords": 2
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.5% matched, 0.8% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-tom-sawyer-fs0032",
+      "seriesId": "little-fox-the-blobs-fs0127",
       "episodeId": 1,
-      "cues": 33,
-      "words": 333,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 25,
-      "speechWords": 333,
-      "coverage": 0.997,
-      "omittedWords": 1
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.9% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-tom-sawyer-fs0032",
+      "seriesId": "little-fox-the-blobs-fs0127",
       "episodeId": 2,
-      "cues": 79,
-      "words": 739,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 65,
-      "speechWords": 739,
-      "coverage": 0.9986,
-      "omittedWords": 1
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.7% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-tom-sawyer-fs0032",
+      "seriesId": "little-fox-the-blobs-fs0127",
       "episodeId": 3,
-      "cues": 84,
-      "words": 717,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 61,
-      "speechWords": 717,
-      "coverage": 0.9986,
-      "omittedWords": 1
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 16.6% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-tom-sawyer-fs0032",
+      "seriesId": "little-fox-the-blobs-fs0127",
       "episodeId": 4,
-      "cues": 54,
-      "words": 676,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 46,
-      "speechWords": 676,
-      "coverage": 1.0,
-      "omittedWords": 0
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.4% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-tom-sawyer-fs0032",
+      "seriesId": "little-fox-the-blobs-fs0127",
       "episodeId": 5,
-      "cues": 90,
-      "words": 790,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 70,
-      "speechWords": 790,
-      "coverage": 0.9987,
-      "omittedWords": 1
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.4% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-tom-sawyer-fs0032",
+      "seriesId": "little-fox-the-blobs-fs0127",
       "episodeId": 6,
-      "cues": 77,
-      "words": 758,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 65,
-      "speechWords": 758,
-      "coverage": 0.9987,
-      "omittedWords": 1
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.9% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-tom-sawyer-fs0032",
+      "seriesId": "little-fox-the-blobs-fs0127",
       "episodeId": 7,
-      "cues": 75,
-      "words": 750,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 66,
-      "speechWords": 750,
-      "coverage": 0.9987,
-      "omittedWords": 1
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.5% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-tom-sawyer-fs0032",
+      "seriesId": "little-fox-the-blobs-fs0127",
       "episodeId": 8,
-      "cues": 84,
-      "words": 784,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 74,
-      "speechWords": 784,
-      "coverage": 1.0,
-      "omittedWords": 0
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.8% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-tom-sawyer-fs0032",
+      "seriesId": "little-fox-the-blobs-fs0127",
       "episodeId": 9,
-      "cues": 80,
-      "words": 713,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 61,
-      "speechWords": 713,
-      "coverage": 0.9986,
-      "omittedWords": 1
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.7% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-tom-sawyer-fs0032",
+      "seriesId": "little-fox-the-blobs-fs0127",
       "episodeId": 10,
-      "cues": 86,
-      "words": 775,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 775,
-      "coverage": 0.9987,
-      "omittedWords": 1
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.9% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-tom-sawyer-fs0032",
+      "seriesId": "little-fox-the-blobs-fs0127",
       "episodeId": 11,
-      "cues": 82,
-      "words": 778,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 67,
-      "speechWords": 778,
-      "coverage": 0.9987,
-      "omittedWords": 1
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 16.3% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-tom-sawyer-fs0032",
+      "seriesId": "little-fox-the-blobs-fs0127",
       "episodeId": 12,
-      "cues": 75,
-      "words": 747,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 63,
-      "speechWords": 747,
-      "coverage": 0.9987,
-      "omittedWords": 1
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.6% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-tom-sawyer-fs0032",
+      "seriesId": "little-fox-the-blobs-fs0127",
       "episodeId": 13,
-      "cues": 76,
-      "words": 715,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 65,
-      "speechWords": 715,
-      "coverage": 0.9986,
-      "omittedWords": 1
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 16.4% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-tom-sawyer-fs0032",
+      "seriesId": "little-fox-the-blobs-fs0127",
       "episodeId": 14,
-      "cues": 89,
-      "words": 828,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 70,
-      "speechWords": 828,
-      "coverage": 1.0,
-      "omittedWords": 0
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 17.0% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-tom-sawyer-fs0032",
+      "seriesId": "little-fox-the-blobs-fs0127",
       "episodeId": 15,
-      "cues": 80,
-      "words": 726,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 65,
-      "speechWords": 726,
-      "coverage": 0.9986,
-      "omittedWords": 1
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.7% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-tom-sawyer-fs0032",
+      "seriesId": "little-fox-the-blobs-fs0127",
       "episodeId": 16,
-      "cues": 75,
-      "words": 777,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 62,
-      "speechWords": 777,
-      "coverage": 1.0,
-      "omittedWords": 0
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.5% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-adventures-of-tom-sawyer-fs0032",
+      "seriesId": "little-fox-the-blobs-fs0127",
       "episodeId": 17,
-      "cues": 78,
-      "words": 788,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 67,
-      "speechWords": 788,
-      "coverage": 0.9975,
-      "omittedWords": 2
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-blobs-fs0127",
+      "episodeId": 18,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-blobs-fs0127",
+      "episodeId": 19,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 16.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-blobs-fs0127",
+      "episodeId": 20,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-blobs-fs0127",
+      "episodeId": 21,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-blobs-fs0127",
+      "episodeId": 22,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-blobs-fs0127",
+      "episodeId": 23,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-blobs-fs0127",
+      "episodeId": 24,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-blobs-fs0127",
+      "episodeId": 25,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-blobs-fs0127",
+      "episodeId": 26,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 0.0% assigned"
     }
-  ],
-  "failures": []
+  ]
 }
