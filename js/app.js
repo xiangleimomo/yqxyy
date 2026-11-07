@@ -516,7 +516,7 @@ async renderLesson(seriesId, episodeId){
     const hasSubtitle=true;
     const fallbacks=[...(hls720 && hls720!==url?[hls720]:[]),...(backupHls?[backupHls]:[])];
     const sourceSelector=(hls720||backupHls)?`<label class="hls-source-control" aria-label="视频画质"><select class="hls-source-select" aria-label="选择视频画质" data-hls-1080="${this.escapeHtml(url)}" data-hls-720="${this.escapeHtml(hls720)}" data-hls-korea="${this.escapeHtml(backupHls)}"><option value="1080">1080P</option>${hls720?'<option value="720">720P</option>':''}${backupHls?'<option value="korea">1080P</option>':''}</select></label>`:'';
-    return `<section class="direct-video-panel${d.seriesId?.startsWith('movie-')?' sf-movie-lesson-player':''}"><div class="video-wrap${hasSubtitle?' subtitle-video-wrap':''}">${sourceSelector}<video class="hls-video-player" data-episode-count="${Number(d.series?.totalEpisodes)||0}" playsinline webkit-playsinline x5-playsinline="true" x5-video-player-type="h5" controlslist="nofullscreen noremoteplayback" disablepictureinpicture preload="metadata" data-clip-start="${Number.isFinite(Number(d.ep.video?.clipStart))?Number(d.ep.video.clipStart):''}" data-clip-end="${Number.isFinite(Number(d.ep.video?.clipEnd))?Number(d.ep.video.clipEnd):''}" data-hls-src="${this.escapeHtml(url)}" data-hls-fallback-srcs="${this.escapeHtml(JSON.stringify(fallbacks))}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="sf-mobile-caption-area"><div class="video-caption" aria-live="polite" hidden></div><span class="sf-mobile-caption-message" role="status" hidden></span></div>${hasSubtitle?this.subtitleControls():''}</div>${d.seriesId?.startsWith('movie-')?'<div class="sf-lesson-toolbar" role="toolbar" aria-label="分集播放操作"><button type="button" data-act="prev"><span>⏮</span><small>上一集</small></button><button type="button" data-act="play"><span>▶</span><small>播放</small></button><button type="button" data-act="next"><span>⏭</span><small>下一集</small></button><button type="button" data-act="speed"><span>⚡</span><small>1x</small></button><button type="button" data-act="quiz"><span>📝</span><small>答题</small></button><button type="button" data-act="captions"><span>☷</span><small>字幕</small></button><button type="button" data-act="mute"><span>🔊</span><small>声音</small></button><button type="button" data-act="fullscreen"><span>⛶</span><small>全屏</small></button></div>':''}<div class="sf-mobile-captions-outside" role="region" aria-label="手机英文逐词字幕"><div class="sf-mobile-caption-line" aria-live="off">字幕准备中…</div><div class="sf-mobile-caption-hint" role="status">字幕即将加载</div><button type="button" class="sf-mobile-caption-enable" hidden>开启英文字幕</button></div><div class="sf-subtitle-offset" style="display:flex;align-items:center;justify-content:center;gap:12px;padding:12px;flex-wrap:wrap"><button type="button" class="sf-offset-minus" aria-label="字幕提前0.5秒">−</button><span class="sf-offset-label" aria-live="polite">0.0s</span><button type="button" class="sf-offset-plus" aria-label="字幕延后0.5秒">+</button><button type="button" class="sf-offset-reset">重置</button><span>字幕偏移设置</span></div></section>${d.seriesId?.startsWith('movie-')?'':this.completeButton(d,completionModule)}`;
+    return `<section class="direct-video-panel${d.seriesId?.startsWith('movie-')?' sf-movie-lesson-player':''}"><div class="video-wrap${hasSubtitle?' subtitle-video-wrap':''}">${sourceSelector}<video class="hls-video-player" data-episode-count="${Number(d.series?.totalEpisodes)||0}" playsinline webkit-playsinline x5-playsinline="true" x5-video-player-type="h5" controlslist="nofullscreen noremoteplayback" disablepictureinpicture preload="metadata" data-clip-start="${Number.isFinite(Number(d.ep.video?.clipStart))?Number(d.ep.video.clipStart):''}" data-clip-end="${Number.isFinite(Number(d.ep.video?.clipEnd))?Number(d.ep.video.clipEnd):''}" data-hls-src="${this.escapeHtml(url)}" data-hls-fallback-srcs="${this.escapeHtml(JSON.stringify(fallbacks))}" data-fallback-src="${this.escapeHtml(fallback)}"></video><div class="sf-mobile-caption-area"><div class="video-caption" aria-live="polite" hidden></div><span class="sf-mobile-caption-message" role="status" hidden></span></div>${hasSubtitle?this.subtitleControls(d):''}</div>${d.seriesId?.startsWith('movie-')?'<div class="sf-lesson-toolbar" role="toolbar" aria-label="分集播放操作"><button type="button" data-act="prev"><span>⏮</span><small>上一集</small></button><button type="button" data-act="play"><span>▶</span><small>播放</small></button><button type="button" data-act="next"><span>⏭</span><small>下一集</small></button><button type="button" data-act="speed"><span>⚡</span><small>1x</small></button><button type="button" data-act="quiz"><span>📝</span><small>答题</small></button><button type="button" data-act="captions"><span>☷</span><small>字幕</small></button><button type="button" data-act="mute"><span>🔊</span><small>声音</small></button><button type="button" data-act="fullscreen"><span>⛶</span><small>全屏</small></button></div>':''}<div class="sf-mobile-captions-outside" role="region" aria-label="手机英文逐词字幕"><div class="sf-mobile-caption-line" aria-live="off">字幕准备中…</div><div class="sf-mobile-caption-hint" role="status">字幕即将加载</div><button type="button" class="sf-mobile-caption-enable" hidden>开启英文字幕</button></div><div class="sf-subtitle-offset" style="display:flex;align-items:center;justify-content:center;gap:12px;padding:12px;flex-wrap:wrap"><button type="button" class="sf-offset-minus" aria-label="字幕提前0.5秒">−</button><span class="sf-offset-label" aria-live="polite">0.0s</span><button type="button" class="sf-offset-plus" aria-label="字幕延后0.5秒">+</button><button type="button" class="sf-offset-reset">重置</button><span>字幕偏移设置</span></div></section>${d.seriesId?.startsWith('movie-')?'':this.completeButton(d,completionModule)}`;
   },
   subtitlePreferences(){
     const defaults={visible:true,wordHighlight:true,size:20,color:'#ffffff',captionX:50,captionY:84,opacity:72};
@@ -526,7 +526,7 @@ async renderLesson(seriesId, episodeId){
       return {...defaults,...saved,...(!Number.isFinite(saved.captionY) && legacyY!==undefined?{captionY:legacyY}:{} )};
     }catch{return defaults;}
   },
-  subtitleControls(){
+  subtitleControls(d=null){
     const prefs=this.subtitlePreferences();
     const option=(value,label,current)=>`<option value="${value}"${value===current?' selected':''}>${label}</option>`;
     return `<div class="subtitle-settings-dock">
@@ -536,6 +536,7 @@ async renderLesson(seriesId, episodeId){
       <div class="subtitle-controls subtitle-controls-overlay" aria-label="字幕设置">
         <div class="subtitle-controls-header"><div class="subtitle-controls-title">字幕设置</div><button type="button" class="subtitle-reset-position">恢复默认设置 ↻</button></div>
         <div class="subtitle-setting-row"><span>显示字幕</span><button type="button" class="btn secondary small subtitle-toggle" aria-pressed="${prefs.visible}">${prefs.visible?'已开启':'已关闭'}</button></div>
+        ${d?.ep?.subtitleTracks?.englishChinese?"<label class=\"subtitle-setting-row\"><span>字幕语言</span><select class=\"subtitle-language-select\" aria-label=\"字幕语言\"><option value=\"en\">English</option><option value=\"bilingual\">English + 中文</option></select></label>":""}
         <div class="subtitle-setting-row"><span>逐词高亮</span><button type="button" class="btn secondary small subtitle-word-toggle" aria-pressed="${prefs.wordHighlight}">${prefs.wordHighlight?'已开启':'已关闭'}</button></div>
         <div class="subtitle-setting-row"><span>字幕位置</span><span class="subtitle-drag-tip">直接拖动字幕</span></div>
         <label class="subtitle-setting-row"><span>字幕颜色</span><input class="subtitle-color" type="color" value="${prefs.color}"></label>
@@ -660,7 +661,7 @@ async renderLesson(seriesId, episodeId){
     if(parts.length!==3 || parts.some(part=>!Number.isFinite(part))) return null;
     return Math.round(((parts[0]*3600)+(parts[1]*60)+parts[2])*1000);
   },
-  parseVtt(text){
+  parseVtt(text,preserveLines=false){
     const cues=[];
     String(text||'').replace(/^\uFEFF?WEBVTT[^\n]*\n/i,'').replace(/\r/g,'').split(/\n{2,}/).forEach(block=>{
       const lines=block.split('\n').filter(Boolean);
@@ -668,7 +669,7 @@ async renderLesson(seriesId, episodeId){
       if(timeIndex<0) return;
       const [start,end]=lines[timeIndex].split('-->').map(value=>value.trim().split(/\s+/)[0]);
       const startMs=this.parseVttTime(start), endMs=this.parseVttTime(end);
-      const cueText=lines.slice(timeIndex+1).join(' ').trim();
+      const cueText=lines.slice(timeIndex+1).join(preserveLines?'\n':' ').trim();
       if(startMs===null || endMs===null || endMs<=startMs || !cueText) return;
       cues.push({startMs,endMs,text:cueText});
     });
@@ -727,6 +728,10 @@ async renderLesson(seriesId, episodeId){
       setMessage('本集字幕未提供或官方 XML 不允许跨域读取，视频仍可播放。');
       return;
     }
+    const englishCues=cues;
+    const bilingualFile=d.ep?.subtitleTracks?.englishChinese||'';
+    const languagePicker=panel?.querySelector('.subtitle-language-select');
+    let bilingualCues=null;
     setMessage('等待对白开始…');
     const offsetHost=panel?.querySelector('.sf-subtitle-offset');
     const offsetKey='storyfox-subtitle-offset:'+String(d.seriesId||'');
@@ -782,7 +787,7 @@ async renderLesson(seriesId, episodeId){
       }
       const now=Math.round((player.currentTime-offsetSeconds)*1000);
       const next=cues.findIndex(cue=>now>=cue.startMs && now<=cue.endMs);
-      const wordEnabled=d.seriesId!=='movie-harry-potter-1'&&!!syncWords&&this.subtitlePreferences().wordHighlight!==false;
+      const wordEnabled=d.seriesId!=='movie-harry-potter-1'&&d.seriesId!=='movie-kung-fu-panda-1'&&!!syncWords&&this.subtitlePreferences().wordHighlight!==false;
       if(next!==active||renderedMode!==wordEnabled){
         active=next;renderedMode=wordEnabled;wordView=null;
         if(next<0){
@@ -811,6 +816,27 @@ async renderLesson(seriesId, episodeId){
       }
       if(next>=0&&wordView)syncWords.paint(wordView,now,true);
     };
+    if(languagePicker&&bilingualFile){
+      languagePicker.addEventListener('change',async()=>{
+        if(languagePicker.value==='bilingual'){
+          if(!bilingualCues){
+            try{
+              const response=await fetch(new URL(bilingualFile,location.href));
+              if(response.ok)bilingualCues=this.parseVtt(await response.text(),true);
+            }catch{}
+          }
+          cues=bilingualCues?.length?bilingualCues:englishCues;
+        }else cues=englishCues;
+        const trackElement=player.querySelector('track[src]');
+        if(trackElement){
+          trackElement.src=languagePicker.value==='bilingual'?bilingualFile:vttUrl;
+          trackElement.label=languagePicker.value==='bilingual'?'English + 中文':'English';
+        }
+        caption.style.whiteSpace='pre-line';
+        active=-1;renderedMode=null;effectiveWords=null;
+        update();
+      });
+    }
     const paintFrame=(time)=>{
       animation=0;
       if(!player.isConnected||player.paused)return;
