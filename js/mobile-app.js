@@ -77,7 +77,7 @@ window.MobileApp = {
       const magazines=bookRows.filter(row=>row.kind==='magazine').slice(0,4);
       shelves.push(this.section('绘本阅读','#/reading',pictureBooks.length?window.BookReader.bookCards(app,pictureBooks,'',{compact:true}):'<p class="sf-app-empty">暂无精选绘本</p>'));
       shelves.push(this.section('期刊杂志','#/magazines',magazines.length?window.BookReader.bookCards(app,magazines,'',{compact:true}):'<p class="sf-app-empty">暂无精选期刊</p>'));
-    }catch(error){console.warn('首页阅读精选暂不可用',error);}
+    }
     if(location.hash!==route||!this.active)return;
     app.el().innerHTML='<div class="sf-app-dashboard">'+recent+'<div class="sf-app-home-shelves">'+shelves.join('')+'</div></div>';
     window.BookReader?.bindBookCards(app);
