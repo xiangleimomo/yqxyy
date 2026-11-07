@@ -1,0 +1,26 @@
+name: Capture Kung Fu Panda source assets
+on:
+  push:
+    branches: [automation/kfp9502-build]
+    paths: [scripts/kfp9502-inspect.cjs]
+permissions:
+  contents: write
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: automation/kfp9502-build
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node scripts/kfp9502-inspect.cjs
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/movie-kung-fu-panda-1/.inspect
+          git commit -m "Capture Kung Fu Panda HLS and subtitle source for editorial work"
+          git push origin HEAD:automation/kfp9502-build
