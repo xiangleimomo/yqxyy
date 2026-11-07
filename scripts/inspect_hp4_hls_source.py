@@ -114,7 +114,7 @@ def inspect_subtitle_track(track, idx):
     result.update({"status":"fetched","format":"webvtt-segment-playlist","httpStatus":status,
                    "contentType":headers.get("Content-Type"),"segmentCount":len(segments),
                    "duration":round(dur,3),"cueCount":cue_total,"files":files,"samples":sample,
-                   "hasTimestampMap":any("X-TIMESTAMP-MAP" in (OUT/pathlib.Path(x).name).read_text(encoding="utf-8",errors="ignore") for x in files)})
+                   "hasTimestampMap":any("X-TIMESTAMP-MAP" in pathlib.Path(x).read_text(encoding="utf-8",errors="ignore") for x in files)})
     return result
 
 def main():
@@ -127,12 +127,25 @@ def main():
         variants=[{"attrs":{},"url":SOURCE}]
     variants.sort(key=lambda v:int(v["attrs"].get("BANDWIDTH","0")),reverse=True)
     selected=variants[0]
-    video=inspect_media(selected["url"])
-    if video["kind"]=="master":
-        # One more nesting level is supported; choose the highest bandwidth child.
-        nested=video["variants"];nested.sort(key=lambda v:int(v["attrs"].get("BANDWIDTH","0")),reverse=True)
-        selected["nestedVariant"]=nested[0];video=inspect_media(nested[0]["url"])
-    if video["kind"]!="media": raise RuntimeError("Selected video variant did not resolve to a media playlist")
+    variant_reports=[]
+    media_by_variant={}
+    for variant in variants:
+        media_info=inspect_media(variant["url"])
+        if media_info["kind"]=="master":
+            nested=media_info["variants"]
+            nested.sort(key=lambda v:int(v["attrs"].get("BANDWIDTH","0")),reverse=True)
+            variant["nestedVariant"]=nested[0]
+            media_info=inspect_media(nested[0]["url"])
+        if media_info["kind"]!="media":
+            raise RuntimeError("A video variant did not resolve to a media playlist")
+        label=variant["attrs"].get("RESOLUTION","unknown").replace("x","-")
+        filename=f"video-media-{label}.m3u8"
+        (OUT/filename).write_text(media_info["raw"],encoding="utf-8")
+        variant_reports.append({"attrs":variant["attrs"],"url":variant["url"],"mediaPlaylist":filename,
+                                "duration":media_info["duration"],"segmentCount":media_info["segmentCount"],
+                                "encrypted":media_info["encrypted"],"mediaSequence":media_info["mediaSequence"]})
+        media_by_variant[variant["url"]]=media_info
+    video=media_by_variant[selected["url"]]
     (OUT/"video-media.m3u8").write_text(video["raw"],encoding="utf-8")
     variant_attrs=selected["attrs"]
     audio_group=variant_attrs.get("AUDIO")
@@ -158,6 +171,7 @@ def main():
       "masterContentType":master_headers.get("Content-Type"),
       "masterBytes":len(master_body.encode()),
       "variantCount":len(variants),
+      "variants":variant_reports,
       "selectedVariant":selected,
       "video":{"url":video["url"],"duration":video["duration"],"segmentCount":video["segmentCount"],
                "endList":video["endList"],"encrypted":video["encrypted"],"fmp4":video["fmp4"],
