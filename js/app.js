@@ -39,7 +39,7 @@ const App = {
       // The first paint can happen before Supabase has created its client.
       // Refresh dynamic movie shelves once cloud initialization finishes.
       await window.SFCloud.init(this);
-      if(this.route()[0]==='movies' || this.route()[0]==='movie-hub') await this.render();
+      if(this.route()[0]==='movies' || this.route()[0]==='movie-hub' || (this.route()[0]==='home'&&window.MobileApp?.active)) await this.render();
     }
   },
   async globalSearch(){
