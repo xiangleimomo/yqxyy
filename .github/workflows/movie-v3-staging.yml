@@ -33,7 +33,7 @@ jobs:
       - name: Generate first native-source lesson series
         env:
           V3_BATCH_SIZE: '1'
-          V3_MOVIE_ID: kung-fu-panda-4
+          V3_MOVIE_ID: harry-potter-philosophers-stone
         run: node scripts/movie-v3-auto-course.cjs
       - name: Commit source-verified course on staging
         run: |
