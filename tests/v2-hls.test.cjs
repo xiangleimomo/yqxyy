@@ -92,7 +92,7 @@ const implicitRange = [
 const implicitParsed = hls.parseMediaPlaylist(implicitRange, 'https://media.example/range/index.m3u8');
 const implicitCut = hls.buildMediaPlaylist(implicitParsed, hls.selectSegments(implicitParsed, 4, 8));
 assert.match(implicitCut, /#EXT-X-BYTERANGE:1000@1000/);
-assert.ok(implicitCut.indexOf('#EXT-X-BYTERANGE:1000@1000') < implicitCut.indexOf('#EXTINF:4.000000,'));
+assert.ok(implicitCut.indexOf('#EXT-X-BYTERANGE:1000@1000') < implicitCut.indexOf('#EXTINF:4,'));
 assert.doesNotMatch(implicitCut, /#EXT-X-BYTERANGE:1000@0/);
 
 assert.throws(() => hls.parseMediaPlaylist(video.replace('#EXT-X-ENDLIST', ''), 'https://media.example/live.m3u8'), /Live playlists/);
