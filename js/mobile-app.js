@@ -57,9 +57,11 @@ window.MobileApp = {
         const library=await window.MovieClassroom.getLibrary(app);
         if(location.hash!==route||!this.active)return;
         const groups=library.series||[];
+        // Homepage uses the published category catalogue, just like the full movie shelf.
+        // Do not hide a published title merely because its playback mapping is incomplete.
         const featured=(category)=>groups.filter(group=>group.dynamicCategory===category)
           .flatMap(group=>group.films.map(film=>media.movieFilm(group,film,library.playableById)))
-          .filter(item=>!item.disabled).slice(0,4);
+          .slice(0,4);
         const animatedMovies=featured('animated');
         const documentaries=featured('documentary');
         shelves.push(this.section('动画大电影','#/movies/animated',animatedMovies.length?media.cards(app,animatedMovies):'<p class="sf-app-empty">精选动画电影即将呈现</p>'));
