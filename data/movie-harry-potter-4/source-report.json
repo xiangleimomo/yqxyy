@@ -1,0 +1,21 @@
+{
+  "title": "Harry Potter and the Goblet of Fire",
+  "titleZh": "哈利波特与火焰杯",
+  "sourceUrl": "https://api.obj2.top/hls/movie/674/master.m3u8",
+  "durationSeconds": 9437.625,
+  "durationFormatted": "02:37:17.625",
+  "videoResolution": "1920x1080",
+  "videoCodec": "H.264",
+  "audioLanguage": "English",
+  "videoSegments": 2360,
+  "audioSegments": 2360,
+  "enSubtitleTrack": "English [CC]",
+  "enSubtitleCues": 1808,
+  "nativeChineseSubtitleFound": false,
+  "chineseSubtitleStatus": "not present in source; full Chinese translation not yet generated",
+  "subtitleTrackCount": 14,
+  "videoEncrypted": true,
+  "encryption": "AES-128",
+  "sourceInspection": "HTTP 200; structure and playlist content inspected from captured source assets",
+  "actualMediaDecode": "not re-tested in this runtime; external network access unavailable during package generation"
+}
