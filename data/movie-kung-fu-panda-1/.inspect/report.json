@@ -1,0 +1,388 @@
+{
+  "source": "https://api.obj2.top/hls/movie/9502/master.m3u8",
+  "videoVariants": [
+    {
+      "BANDWIDTH": "1800000",
+      "RESOLUTION": "1280x720",
+      "CODECS": "avc1.64001f,mp4a.40.2",
+      "AUDIO": "aud",
+      "SUBTITLES": "subs",
+      "url": "https://api.obj2.top/hls/movie/9502/GUqtgtyjDWF1kNWp/720p/index.m3u8"
+    }
+  ],
+  "selectedVideo": "https://api.obj2.top/hls/movie/9502/GUqtgtyjDWF1kNWp/720p/index.m3u8",
+  "selectedAudio": "https://api.obj2.top/hls/movie/9502/5akMq-1Ph-nlUDly/audio/eng/index.m3u8",
+  "selectedAudioTrack": {
+    "TYPE": "AUDIO",
+    "GROUP-ID": "aud",
+    "NAME": "English",
+    "LANGUAGE": "eng",
+    "DEFAULT": "YES",
+    "AUTOSELECT": "YES",
+    "URI": "/hls/movie/9502/5akMq-1Ph-nlUDly/audio/eng/index.m3u8"
+  },
+  "selectedEnglishTrack": {
+    "TYPE": "SUBTITLES",
+    "GROUP-ID": "subs",
+    "NAME": "English [CC]",
+    "LANGUAGE": "en",
+    "DEFAULT": "NO",
+    "AUTOSELECT": "YES",
+    "FORCED": "NO",
+    "URI": "/hls/movie/9502/qrQUylasfKzCz2Jd/subs/eng_cc/index.m3u8"
+  },
+  "selectedChineseTrack": {
+    "TYPE": "SUBTITLES",
+    "GROUP-ID": "subs",
+    "NAME": "Chinese (Simplified)",
+    "LANGUAGE": "zh",
+    "DEFAULT": "NO",
+    "AUTOSELECT": "YES",
+    "FORCED": "NO",
+    "URI": "/hls/movie/9502/HI2E98mHxPC_FPjQ/subs/chi/index.m3u8"
+  },
+  "allSubtitles": [
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "French",
+      "LANGUAGE": "fr",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/G_OpqaPVXaQPn8If/subs/fre_2/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "English [CC]",
+      "LANGUAGE": "en",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/qrQUylasfKzCz2Jd/subs/eng_cc/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Russian",
+      "LANGUAGE": "ru",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/r8HUZir4BmQFR-Qz/subs/rus/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Polish (European)",
+      "LANGUAGE": "pl",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/U8gqwR6w9pwv9Mbl/subs/pol/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Chinese (Traditional)",
+      "LANGUAGE": "zh",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/U-1zkZky_1wH1AbD/subs/chi_2/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Spanish (European)",
+      "LANGUAGE": "es",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/8HuO02YhHIxL_Lf5/subs/spa_2/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Spanish (Latin American)",
+      "LANGUAGE": "es",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/TOKb46YWbz1b7Ozf/subs/spa/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Portuguese",
+      "LANGUAGE": "pt",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/yy2yci9hi0OoTIQx/subs/por_2/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Portuguese (Brazilian)",
+      "LANGUAGE": "pt",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/qJPDhJ17J3Y7ApUY/subs/por/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Vietnamese",
+      "LANGUAGE": "vi",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/aR2IrqO1g8KEa2u_/subs/vie/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Finnish",
+      "LANGUAGE": "fi",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/MmaVhUnv2wjRhoum/subs/fin/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Arabic",
+      "LANGUAGE": "ar",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/ojVbAooricIQPzIx/subs/ara/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Japanese",
+      "LANGUAGE": "ja",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/XpK3hE2Lgco3putx/subs/jpn/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Danish",
+      "LANGUAGE": "da",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/Y0oxj0Mu6gZS-WsW/subs/dan/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Thai",
+      "LANGUAGE": "th",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/FRJvpNd_kmvnhXUA/subs/tha/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Norwegian Bokmål",
+      "LANGUAGE": "nob",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/j_wGqBktdKuFdID_/subs/nob/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Chinese (Simplified)",
+      "LANGUAGE": "zh",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/HI2E98mHxPC_FPjQ/subs/chi/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Dutch",
+      "LANGUAGE": "nl",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/cETQBEE4vDPtXWOj/subs/dut/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "French (Canadian)",
+      "LANGUAGE": "fr",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/MEBl2lBDIqIlwu9n/subs/fre/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Indonesian",
+      "LANGUAGE": "id",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/MzGIdp8MifJk5yEy/subs/ind/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Hindi",
+      "LANGUAGE": "hi",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/6nbX9h-iggYa23XO/subs/hin/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Italian",
+      "LANGUAGE": "it",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/PN18sJ7BPdJ-LTVc/subs/ita/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Czech",
+      "LANGUAGE": "cs",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/ZGClm4dEeZX1cGiC/subs/cze/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "German",
+      "LANGUAGE": "de",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/Va6C_h45V3eiopwx/subs/ger/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Swedish",
+      "LANGUAGE": "sv",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/jXqSHjcHH405XmWY/subs/swe/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Romanian",
+      "LANGUAGE": "ro",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/Wn0dFC9_XF8RbMaT/subs/rum/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Turkish",
+      "LANGUAGE": "tr",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/sasxVrwHtUaQtV4v/subs/tur/index.m3u8"
+    },
+    {
+      "TYPE": "SUBTITLES",
+      "GROUP-ID": "subs",
+      "NAME": "Malay",
+      "LANGUAGE": "ms",
+      "DEFAULT": "NO",
+      "AUTOSELECT": "YES",
+      "FORCED": "NO",
+      "URI": "/hls/movie/9502/3pLWETnKe0Y0ltZH/subs/may/index.m3u8"
+    }
+  ],
+  "video": {
+    "total": 5559.763066999937,
+    "seq": 0,
+    "segmentCount": 695,
+    "first": {
+      "seq": 0,
+      "dur": 8.008,
+      "at": 0,
+      "uri": "https://s1.obj2.top/hls/movie/9502/GUqtgtyjDWF1kNWp/720p/0.js",
+      "key": "#EXT-X-KEY:METHOD=AES-128,URI=\"/hls/movie/9502/yDllOoKXg6_fQ3XS/key\",IV=0x43A6D967D5C17290D98322F5C8F6660B"
+    },
+    "last": {
+      "seq": 694,
+      "dur": 7.758267,
+      "at": 5552.004799999937,
+      "uri": "https://s2.obj2.top/hls/movie/9502/GUqtgtyjDWF1kNWp/720p/694.js",
+      "key": "#EXT-X-KEY:METHOD=AES-128,URI=\"/hls/movie/9502/yDllOoKXg6_fQ3XS/key\",IV=0x43A6D967D5C17290D98322F5C8F6660B"
+    },
+    "version": "3",
+    "hasMap": false,
+    "hasByteRange": false,
+    "hasDiscontinuity": false
+  },
+  "audio": {
+    "total": 5559.797333,
+    "seq": 0,
+    "segmentCount": 695,
+    "first": {
+      "seq": 0,
+      "dur": 8,
+      "at": 0,
+      "uri": "https://s1.obj2.top/hls/movie/9502/5akMq-1Ph-nlUDly/audio/eng/0.js",
+      "key": "#EXT-X-KEY:METHOD=AES-128,URI=\"/hls/movie/9502/yDllOoKXg6_fQ3XS/key\",IV=0x43A6D967D5C17290D98322F5C8F6660B"
+    },
+    "last": {
+      "seq": 694,
+      "dur": 7.797333,
+      "at": 5552,
+      "uri": "https://s1.obj2.top/hls/movie/9502/5akMq-1Ph-nlUDly/audio/eng/694.js",
+      "key": "#EXT-X-KEY:METHOD=AES-128,URI=\"/hls/movie/9502/yDllOoKXg6_fQ3XS/key\",IV=0x43A6D967D5C17290D98322F5C8F6660B"
+    },
+    "version": "3",
+    "hasMap": false,
+    "hasByteRange": false,
+    "hasDiscontinuity": false
+  },
+  "enFiles": [
+    {
+      "url": "https://api.obj2.top/hls/movie/9502/qrQUylasfKzCz2Jd/subs/eng_cc/0.vtt",
+      "start": 0,
+      "bytes": 67713
+    }
+  ],
+  "zhFiles": [
+    {
+      "url": "https://api.obj2.top/hls/movie/9502/HI2E98mHxPC_FPjQ/subs/chi/0.vtt",
+      "start": 0,
+      "bytes": 33930
+    }
+  ],
+  "target": "Kung Fu Panda (2008)",
+  "inspected": "2026-11-07T05:38:30.701Z"
+}
