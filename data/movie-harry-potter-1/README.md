@@ -1,7 +1,9 @@
-# Harry Potter 1 · 34-episode time-bounded playback
+# Harry Potter 1 - 34 independent HLS lessons
 
-The published `episodes.json` contains 34 sequential clips. Each `video.hlsUrl` points at the same original VOD playlist; `clipStart` and `clipEnd` define the playable portion in the source timeline. No per-episode M3U8 is generated, downloaded or hosted in this directory. Seeking is allowed inside a chapter only; reaching its end pauses playback. The original movie source is not modified.
+Each episode uses its own hls/001.m3u8 through hls/034.m3u8 master, with separate video and English audio playlists. These reference only upstream segments covering the existing reviewed chapter boundaries. Original sequence numbers, AES-128 key URIs and IVs are preserved. Media and key bytes remain on the upstream service; availability still depends on it.
 
-The 34 chapter boundaries are subtitle-dialogue-reviewed, but the source is not frame-by-frame scene-verified. The old 24-chapter derived HLS files and their separate test pages were retired. Their historical alignment/editorial manifest is not used to drive these 34 episodes. Legacy chapter vocabulary and quizzes are not applicable to the new 34-way split, so those modules remain disabled until rebuilt and checked; the existing learning history is not erased.
+The 34 episode VTT files use the selected video segment range's local timeline. clipStart and clipEnd trim segment-edge padding through the existing player. originalStart, originalEnd and timelineOrigin retain the full-film mapping. EXT-X-START also supplies the desired starting offset. These are subtitle-dialogue-reviewed cuts, not frame-accurate re-encodes.
 
-The main application is `/#/series/movie-harry-potter-1`; `js/app.js` implements playback bounds. To check structure run `node tests/movie-study.test.cjs` and `node scripts/test-hls-playback.cjs`. Actual playback, mobile fullscreen and cross-origin HLS availability require an online browser check.
+Rebuild with node scripts/split-hp1-hls.cjs. This reads the preserved chapter boundaries and subtitles/full-film.en.vtt, fetches the current source playlists, and regenerates the lesson playlists and subtitles. hls/manifest.json records segment selection. Repeated runs use original chapter times and full-film subtitles, never previously shifted VTT files.
+
+The application entry is /#/series/movie-harry-potter-1. Existing learning module availability is preserved; retired 24-chapter vocabulary and quizzes remain disabled.

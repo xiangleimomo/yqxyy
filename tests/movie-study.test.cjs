@@ -4,23 +4,24 @@ const dir=path.join(__dirname,'../data/movie-harry-potter-1');
 const read=name=>JSON.parse(fs.readFileSync(path.join(dir,name+'.json'),'utf8'));
 const series=read('series'),episodes=read('episodes');
 assert.equal(episodes.length,34);assert.equal(series.totalEpisodes,34);assert.equal(series.quizStatus,'pending');
-const source=episodes[0].video.hlsUrl;
+const source=episodes[0].video.originalHlsUrl;
 assert(/^https:\/\//.test(source)&&source.endsWith('.m3u8'));
 let end=0;
 for(const [i,ep] of episodes.entries()){
   const video=ep.video;
   assert.equal(ep.episodeId,i+1);
   assert.equal(ep.status,'published');
-  assert.equal(video.hlsUrl,source,'Every episode must use the one full-length source');
-  assert(Math.abs(video.clipStart-end)<.002,'No gap or overlap between episodes');
+  assert.equal(video.originalHlsUrl,source,'Preserve upstream provenance');
+  assert(Math.abs(video.originalStart-end)<.002,'No gap or overlap between episodes');
   assert(video.clipEnd>video.clipStart,'Positive clip length');
   assert(Math.abs(video.duration-(video.clipEnd-video.clipStart))<.005,'Episode duration must be relative');
   assert(ep.modules.watch===true&&ep.modules.quiz===false&&ep.modules.words===false,'Unaligned legacy learning data must not be published');
-  assert(!/\/hls\/\d+\.m3u8/.test(video.hlsUrl),'Do not return to split playlists');
-  end=video.clipEnd;
+  assert(video.hlsUrl.endsWith('/'+String(ep.episodeId).padStart(3,'0')+'.m3u8'));
+  assert(fs.existsSync(path.join(__dirname,'..',video.hlsUrl.slice(1))));
+  end=video.originalEnd;
 }
 assert(end>8000&&end<10000);
-assert(!fs.existsSync(path.join(dir,'hls')),'Legacy HLS clips must be removed');
+assert.equal(fs.readdirSync(path.join(dir,'hls')).filter(f=>f.endsWith('.m3u8')).length,102);
 const app=fs.readFileSync(path.join(__dirname,'../js/app.js'),'utf8');
 assert(app.includes('data-clip-start=')&&app.includes('data-clip-end='));
 assert(app.includes("player.addEventListener('seeking',enforce)"));
@@ -33,5 +34,5 @@ assert.throws(()=>extractSrt(Buffer.from('not a zip')));
 (async()=>{
   const handler=require('../netlify/functions/movie-study-subtitles').handler;
   assert.equal((await handler({httpMethod:'GET',queryStringParameters:{episode:'1'}})).statusCode,404,'Retired 24-chapter subtitles must not be served as 34 chapters');
-  console.log('PASS: 34 time-bounded lessons, single VOD URL, no split HLS, obsolete quizzes disabled, subtitles API isolated.');
+  console.log('PASS: 34 independent HLS lessons with separate audio and local subtitles, obsolete quizzes disabled, subtitles API isolated.');
 })().catch(e=>{console.error(e);process.exitCode=1});

@@ -8,11 +8,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "hlsUrl": "/data/movie-harry-potter-1/hls/001.m3u8",
       "clipStart": 0,
       "clipEnd": 251.084,
       "duration": 251.084,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/001.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/001.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 0,
+      "originalEnd": 251.084,
+      "timelineOrigin": 0
     },
     "modules": {
       "watch": true,
@@ -31,11 +35,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 251.084,
-      "clipEnd": 552.385,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/002.m3u8",
+      "clipStart": 3.084,
+      "clipEnd": 304.385,
       "duration": 301.301,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/002.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/002.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 251.084,
+      "originalEnd": 552.385,
+      "timelineOrigin": 248
     },
     "modules": {
       "watch": true,
@@ -54,11 +62,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 552.385,
-      "clipEnd": 802.51,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/003.m3u8",
+      "clipStart": 0.385,
+      "clipEnd": 250.51,
       "duration": 250.125,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/003.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/003.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 552.385,
+      "originalEnd": 802.51,
+      "timelineOrigin": 552
     },
     "modules": {
       "watch": true,
@@ -77,11 +89,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 802.51,
-      "clipEnd": 1124.04,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/004.m3u8",
+      "clipStart": 2.51,
+      "clipEnd": 324.04,
       "duration": 321.53,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/004.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/004.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 802.51,
+      "originalEnd": 1124.04,
+      "timelineOrigin": 800
     },
     "modules": {
       "watch": true,
@@ -100,11 +116,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 1124.04,
-      "clipEnd": 1238.154,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/005.m3u8",
+      "clipStart": 0.04,
+      "clipEnd": 114.154,
       "duration": 114.114,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/005.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/005.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 1124.04,
+      "originalEnd": 1238.154,
+      "timelineOrigin": 1124
     },
     "modules": {
       "watch": true,
@@ -123,11 +143,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 1238.154,
-      "clipEnd": 1490.698,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/006.m3u8",
+      "clipStart": 1.029,
+      "clipEnd": 253.573,
       "duration": 252.544,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/006.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/006.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 1238.154,
+      "originalEnd": 1490.698,
+      "timelineOrigin": 1237.125
     },
     "modules": {
       "watch": true,
@@ -146,11 +170,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 1490.698,
-      "clipEnd": 1718.8,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/007.m3u8",
+      "clipStart": 1.573,
+      "clipEnd": 229.675,
       "duration": 228.102,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/007.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/007.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 1490.698,
+      "originalEnd": 1718.8,
+      "timelineOrigin": 1489.125
     },
     "modules": {
       "watch": true,
@@ -169,11 +197,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 1718.8,
-      "clipEnd": 1893.141,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/008.m3u8",
+      "clipStart": 1.675,
+      "clipEnd": 176.016,
       "duration": 174.341,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/008.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/008.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 1718.8,
+      "originalEnd": 1893.141,
+      "timelineOrigin": 1717.125
     },
     "modules": {
       "watch": true,
@@ -192,11 +224,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 1893.141,
-      "clipEnd": 2062.978,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/009.m3u8",
+      "clipStart": 0.016,
+      "clipEnd": 169.853,
       "duration": 169.837,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/009.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/009.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 1893.141,
+      "originalEnd": 2062.978,
+      "timelineOrigin": 1893.125
     },
     "modules": {
       "watch": true,
@@ -215,11 +251,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 2062.978,
-      "clipEnd": 2278.526,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/010.m3u8",
+      "clipStart": 1.853,
+      "clipEnd": 217.401,
       "duration": 215.548,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/010.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/010.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 2062.978,
+      "originalEnd": 2278.526,
+      "timelineOrigin": 2061.125
     },
     "modules": {
       "watch": true,
@@ -238,11 +278,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 2278.526,
-      "clipEnd": 2428.426,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/011.m3u8",
+      "clipStart": 1.401,
+      "clipEnd": 151.301,
       "duration": 149.9,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/011.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/011.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 2278.526,
+      "originalEnd": 2428.426,
+      "timelineOrigin": 2277.125
     },
     "modules": {
       "watch": true,
@@ -261,11 +305,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 2428.426,
-      "clipEnd": 2885.299,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/012.m3u8",
+      "clipStart": 0.176,
+      "clipEnd": 457.049,
       "duration": 456.873,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/012.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/012.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 2428.426,
+      "originalEnd": 2885.299,
+      "timelineOrigin": 2428.25
     },
     "modules": {
       "watch": true,
@@ -284,11 +332,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 2885.299,
-      "clipEnd": 3050.631,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/013.m3u8",
+      "clipStart": 1.049,
+      "clipEnd": 166.381,
       "duration": 165.332,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/013.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/013.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 2885.299,
+      "originalEnd": 3050.631,
+      "timelineOrigin": 2884.25
     },
     "modules": {
       "watch": true,
@@ -307,11 +359,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 3050.631,
-      "clipEnd": 3309.932,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/014.m3u8",
+      "clipStart": 2.381,
+      "clipEnd": 261.682,
       "duration": 259.301,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/014.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/014.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 3050.631,
+      "originalEnd": 3309.932,
+      "timelineOrigin": 3048.25
     },
     "modules": {
       "watch": true,
@@ -330,11 +386,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 3309.932,
-      "clipEnd": 3657.904,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/015.m3u8",
+      "clipStart": 1.682,
+      "clipEnd": 349.654,
       "duration": 347.972,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/015.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/015.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 3309.932,
+      "originalEnd": 3657.904,
+      "timelineOrigin": 3308.25
     },
     "modules": {
       "watch": true,
@@ -353,11 +413,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 3657.904,
-      "clipEnd": 3831.578,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/016.m3u8",
+      "clipStart": 0.529,
+      "clipEnd": 174.203,
       "duration": 173.674,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/016.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/016.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 3657.904,
+      "originalEnd": 3831.578,
+      "timelineOrigin": 3657.375
     },
     "modules": {
       "watch": true,
@@ -376,11 +440,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 3831.578,
-      "clipEnd": 4093.673,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/017.m3u8",
+      "clipStart": 2.203,
+      "clipEnd": 264.298,
       "duration": 262.095,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/017.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/017.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 3831.578,
+      "originalEnd": 4093.673,
+      "timelineOrigin": 3829.375
     },
     "modules": {
       "watch": true,
@@ -399,11 +467,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 4093.673,
-      "clipEnd": 4466.712,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/018.m3u8",
+      "clipStart": 0.298,
+      "clipEnd": 373.337,
       "duration": 373.039,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/018.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/018.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 4093.673,
+      "originalEnd": 4466.712,
+      "timelineOrigin": 4093.375
     },
     "modules": {
       "watch": true,
@@ -422,11 +494,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 4466.712,
-      "clipEnd": 4995.157,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/019.m3u8",
+      "clipStart": 1.337,
+      "clipEnd": 529.782,
       "duration": 528.445,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/019.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/019.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 4466.712,
+      "originalEnd": 4995.157,
+      "timelineOrigin": 4465.375
     },
     "modules": {
       "watch": true,
@@ -445,11 +521,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 4995.157,
-      "clipEnd": 5126.705,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/020.m3u8",
+      "clipStart": 2.657,
+      "clipEnd": 134.205,
       "duration": 131.548,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/020.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/020.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 4995.157,
+      "originalEnd": 5126.705,
+      "timelineOrigin": 4992.5
     },
     "modules": {
       "watch": true,
@@ -468,11 +548,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 5126.705,
-      "clipEnd": 5586.998,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/021.m3u8",
+      "clipStart": 2.205,
+      "clipEnd": 462.498,
       "duration": 460.293,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/021.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/021.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 5126.705,
+      "originalEnd": 5586.998,
+      "timelineOrigin": 5124.5
     },
     "modules": {
       "watch": true,
@@ -491,11 +575,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 5586.998,
-      "clipEnd": 5795.873,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/022.m3u8",
+      "clipStart": 2.498,
+      "clipEnd": 211.373,
       "duration": 208.875,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/022.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/022.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 5586.998,
+      "originalEnd": 5795.873,
+      "timelineOrigin": 5584.5
     },
     "modules": {
       "watch": true,
@@ -514,11 +602,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 5795.873,
-      "clipEnd": 5999.911,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/023.m3u8",
+      "clipStart": 2.248,
+      "clipEnd": 206.286,
       "duration": 204.038,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/023.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/023.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 5795.873,
+      "originalEnd": 5999.911,
+      "timelineOrigin": 5793.625
     },
     "modules": {
       "watch": true,
@@ -537,11 +629,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 5999.911,
-      "clipEnd": 6175.419,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/024.m3u8",
+      "clipStart": 2.286,
+      "clipEnd": 177.794,
       "duration": 175.508,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/024.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/024.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 5999.911,
+      "originalEnd": 6175.419,
+      "timelineOrigin": 5997.625
     },
     "modules": {
       "watch": true,
@@ -560,11 +656,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 6175.419,
-      "clipEnd": 6595.798,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/025.m3u8",
+      "clipStart": 1.794,
+      "clipEnd": 422.173,
       "duration": 420.379,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/025.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/025.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 6175.419,
+      "originalEnd": 6595.798,
+      "timelineOrigin": 6173.625
     },
     "modules": {
       "watch": true,
@@ -583,11 +683,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 6595.798,
-      "clipEnd": 6816.435,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/026.m3u8",
+      "clipStart": 2.173,
+      "clipEnd": 222.81,
       "duration": 220.637,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/026.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/026.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 6595.798,
+      "originalEnd": 6816.435,
+      "timelineOrigin": 6593.625
     },
     "modules": {
       "watch": true,
@@ -606,11 +710,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 6816.435,
-      "clipEnd": 7078.446,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/027.m3u8",
+      "clipStart": 2.81,
+      "clipEnd": 264.821,
       "duration": 262.011,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/027.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/027.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 6816.435,
+      "originalEnd": 7078.446,
+      "timelineOrigin": 6813.625
     },
     "modules": {
       "watch": true,
@@ -629,11 +737,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 7078.446,
-      "clipEnd": 7251.995,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/028.m3u8",
+      "clipStart": 1.696,
+      "clipEnd": 175.245,
       "duration": 173.549,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/028.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/028.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 7078.446,
+      "originalEnd": 7251.995,
+      "timelineOrigin": 7076.75
     },
     "modules": {
       "watch": true,
@@ -652,11 +764,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 7251.995,
-      "clipEnd": 7599.967,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/029.m3u8",
+      "clipStart": 3.245,
+      "clipEnd": 351.217,
       "duration": 347.972,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/029.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/029.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 7251.995,
+      "originalEnd": 7599.967,
+      "timelineOrigin": 7248.75
     },
     "modules": {
       "watch": true,
@@ -675,11 +791,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 7599.967,
-      "clipEnd": 7795.621,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/030.m3u8",
+      "clipStart": 3.217,
+      "clipEnd": 198.871,
       "duration": 195.654,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/030.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/030.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 7599.967,
+      "originalEnd": 7795.621,
+      "timelineOrigin": 7596.75
     },
     "modules": {
       "watch": true,
@@ -698,11 +818,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 7795.621,
-      "clipEnd": 8069.186,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/031.m3u8",
+      "clipStart": 2.871,
+      "clipEnd": 276.436,
       "duration": 273.565,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/031.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/031.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 7795.621,
+      "originalEnd": 8069.186,
+      "timelineOrigin": 7792.75
     },
     "modules": {
       "watch": true,
@@ -721,11 +845,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 8069.186,
-      "clipEnd": 8285.778,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/032.m3u8",
+      "clipStart": 1.311,
+      "clipEnd": 217.903,
       "duration": 216.592,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/032.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/032.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 8069.186,
+      "originalEnd": 8285.778,
+      "timelineOrigin": 8067.875
     },
     "modules": {
       "watch": true,
@@ -744,11 +872,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 8285.778,
-      "clipEnd": 8509.668,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/033.m3u8",
+      "clipStart": 1.903,
+      "clipEnd": 225.793,
       "duration": 223.89,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/033.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/033.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 8285.778,
+      "originalEnd": 8509.668,
+      "timelineOrigin": 8283.875
     },
     "modules": {
       "watch": true,
@@ -767,11 +899,15 @@
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "clipStart": 8509.668,
-      "clipEnd": 8604,
+      "hlsUrl": "/data/movie-harry-potter-1/hls/034.m3u8",
+      "clipStart": 1.793,
+      "clipEnd": 96.125,
       "duration": 94.332,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/034.vtt"
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/034.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "originalStart": 8509.668,
+      "originalEnd": 8604,
+      "timelineOrigin": 8507.875
     },
     "modules": {
       "watch": true,

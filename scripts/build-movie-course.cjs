@@ -9,7 +9,7 @@ const [playlistFile,srtFile,planFile='data/movie-harry-potter-1/editorial.json']
 const planPath=path.resolve(root,planFile),dir=path.dirname(planPath);
 assert(dir.startsWith(path.join(root,'data')+path.sep),'Course must be in data/');
 const plan=JSON.parse(fs.readFileSync(planPath,'utf8'));
-if(plan.seriesId==='movie-harry-potter-1')throw new Error('Harry Potter 1 now uses one complete HLS source with 34 timeline chapters. Do not recreate legacy split playlists.');
+if(plan.seriesId==='movie-harry-potter-1')throw new Error('Use node scripts/split-hp1-hls.cjs for the encrypted, separate-audio 34-chapter source.');
 if(!playlistFile||!srtFile) throw new Error('Supply the audited original media playlist and extended English SRT.');
 const text=fs.readFileSync(playlistFile,'utf8');
 assert(text.startsWith('#EXTM3U')&&text.includes('#EXT-X-ENDLIST'),'A complete VOD media playlist is required');

@@ -33,6 +33,11 @@
   included_files = ["data/movie-hub-catalog.json"]
 
 [[headers]]
+  for = "/data/movie-harry-potter-1/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
   for = "/data/movie-harry-potter-2/hls/*"
   [headers.values]
     Content-Type = "application/vnd.apple.mpegurl"
