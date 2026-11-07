@@ -1,19 +1,29 @@
 [
   {
     "episodeId": 1,
-    "title": "Aunt Marge's Visit",
+    "title": "玛姬姑妈来访",
     "titleZh": "玛姬姑妈来访",
+    "titleEn": "Aunt Marge's Visit",
     "summaryEn": "A family visit pushes Harry beyond his patience and sends him out into the night.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-3/hls/001.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-3&episode=1",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
+      "hlsUrl": "/data/movie-harry-potter-3/hls/001.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-3/subtitles/001.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/673/master.m3u8",
       "originalStart": 0,
-      "originalEnd": 433.266165,
-      "duration": 433.266165
+      "originalEnd": 450.493,
+      "timelineOrigin": 0,
+      "clipStart": 0,
+      "clipEnd": 450.493,
+      "duration": 450.493
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-3/subtitles/001.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -25,19 +35,29 @@
   },
   {
     "episodeId": 2,
-    "title": "The Knight Bus",
+    "title": "骑士公共汽车",
     "titleZh": "骑士公共汽车",
+    "titleEn": "The Knight Bus",
     "summaryEn": "An extraordinary bus gives Harry a dramatic introduction to life on the run.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-3/hls/002.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-3&episode=2",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
-      "originalStart": 433.266165,
-      "originalEnd": 720.302916,
-      "duration": 287.036751
+      "hlsUrl": "/data/movie-harry-potter-3/hls/002.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-3/subtitles/002.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/673/master.m3u8",
+      "originalStart": 450.493,
+      "originalEnd": 771.9665,
+      "timelineOrigin": 448,
+      "clipStart": 2.493,
+      "clipEnd": 323.9665,
+      "duration": 321.4735
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-3/subtitles/002.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -49,19 +69,29 @@
   },
   {
     "episodeId": 3,
-    "title": "Warnings at the Leaky Cauldron",
+    "title": "破釜酒吧的警告",
     "titleZh": "破釜酒吧的警告",
+    "titleEn": "Warnings at the Leaky Cauldron",
     "summaryEn": "Harry reunites with friends while adults reveal an urgent danger.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-3/hls/003.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-3&episode=3",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
-      "originalStart": 720.302916,
-      "originalEnd": 1135.425946,
-      "duration": 415.12303
+      "hlsUrl": "/data/movie-harry-potter-3/hls/003.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-3/subtitles/003.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/673/master.m3u8",
+      "originalStart": 771.9665,
+      "originalEnd": 1239.6945,
+      "timelineOrigin": 768,
+      "clipStart": 3.9665,
+      "clipEnd": 471.6945,
+      "duration": 467.728
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-3/subtitles/003.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -73,19 +103,29 @@
   },
   {
     "episodeId": 4,
-    "title": "The Dementor on the Train",
+    "title": "列车上的摄魂怪",
     "titleZh": "列车上的摄魂怪",
+    "titleEn": "The Dementor on the Train",
     "summaryEn": "A railway journey brings Harry face to face with the guards of Azkaban.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-3/hls/004.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-3&episode=4",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
-      "originalStart": 1135.425946,
-      "originalEnd": 1467.549415,
-      "duration": 332.123469
+      "hlsUrl": "/data/movie-harry-potter-3/hls/004.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-3/subtitles/004.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/673/master.m3u8",
+      "originalStart": 1239.6945,
+      "originalEnd": 1625.0145,
+      "timelineOrigin": 1237.208333,
+      "clipStart": 2.486167,
+      "clipEnd": 387.806167,
+      "duration": 385.32
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-3/subtitles/004.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -97,19 +137,29 @@
   },
   {
     "episodeId": 5,
-    "title": "A New Year and a Dark Prediction",
+    "title": "新学年与不祥预言",
     "titleZh": "新学年与不祥预言",
+    "titleEn": "A New Year and a Dark Prediction",
     "summaryEn": "A new school year begins with strict warnings and a troubling prediction.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-3/hls/005.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-3&episode=5",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
-      "originalStart": 1467.549415,
-      "originalEnd": 1915.204947,
-      "duration": 447.655532
+      "hlsUrl": "/data/movie-harry-potter-3/hls/005.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-3/subtitles/005.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/673/master.m3u8",
+      "originalStart": 1625.0145,
+      "originalEnd": 2186.3575,
+      "timelineOrigin": 1621.208333,
+      "clipStart": 3.806167,
+      "clipEnd": 565.149167,
+      "duration": 561.343
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-3/subtitles/005.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -121,19 +171,29 @@
   },
   {
     "episodeId": 6,
-    "title": "Meeting Buckbeak",
+    "title": "认识巴克比克",
     "titleZh": "认识巴克比克",
+    "titleEn": "Meeting Buckbeak",
     "summaryEn": "Hagrid introduces a proud magical creature and teaches the value of patience.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-3/hls/006.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-3&episode=6",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
-      "originalStart": 1915.204947,
-      "originalEnd": 2338.711367,
-      "duration": 423.50642
+      "hlsUrl": "/data/movie-harry-potter-3/hls/006.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-3/subtitles/006.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/673/master.m3u8",
+      "originalStart": 2186.3575,
+      "originalEnd": 2544.367,
+      "timelineOrigin": 2185.208333,
+      "clipStart": 1.149167,
+      "clipEnd": 359.158667,
+      "duration": 358.0095
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-3/subtitles/006.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -145,19 +205,29 @@
   },
   {
     "episodeId": 7,
-    "title": "Facing a Boggart",
+    "title": "面对博格特",
     "titleZh": "面对博格特",
+    "titleEn": "Facing a Boggart",
     "summaryEn": "Lupin helps the class give a different shape to their fears.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-3/hls/007.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-3&episode=7",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
-      "originalStart": 2338.711367,
-      "originalEnd": 2684.515155,
-      "duration": 345.803788
+      "hlsUrl": "/data/movie-harry-potter-3/hls/007.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-3/subtitles/007.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/673/master.m3u8",
+      "originalStart": 2544.367,
+      "originalEnd": 2919.786,
+      "timelineOrigin": 2540.416666,
+      "clipStart": 3.950334,
+      "clipEnd": 379.369334,
+      "duration": 375.419
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-3/subtitles/007.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -169,19 +239,29 @@
   },
   {
     "episodeId": 8,
-    "title": "A Conversation on the Bridge",
+    "title": "桥上的谈话",
     "titleZh": "桥上的谈话",
+    "titleEn": "A Conversation on the Bridge",
     "summaryEn": "Harry stays behind and learns more about the people who knew his parents.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-3/hls/008.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-3&episode=8",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
-      "originalStart": 2684.515155,
-      "originalEnd": 2890.554323,
-      "duration": 206.039168
+      "hlsUrl": "/data/movie-harry-potter-3/hls/008.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-3/subtitles/008.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/673/master.m3u8",
+      "originalStart": 2919.786,
+      "originalEnd": 3115.351,
+      "timelineOrigin": 2916.416666,
+      "clipStart": 3.369334,
+      "clipEnd": 198.934334,
+      "duration": 195.565
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-3/subtitles/008.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -193,19 +273,29 @@
   },
   {
     "episodeId": 9,
-    "title": "The Portrait Is Attacked",
+    "title": "肖像遭袭",
     "titleZh": "肖像遭袭",
+    "titleEn": "The Portrait Is Attacked",
     "summaryEn": "A damaged painting brings the threat of the escaped prisoner inside the castle.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-3/hls/009.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-3&episode=9",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
-      "originalStart": 2890.554323,
-      "originalEnd": 3105.227112,
-      "duration": 214.672789
+      "hlsUrl": "/data/movie-harry-potter-3/hls/009.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-3/subtitles/009.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/673/master.m3u8",
+      "originalStart": 3115.351,
+      "originalEnd": 3372.978,
+      "timelineOrigin": 3112.416666,
+      "clipStart": 2.934334,
+      "clipEnd": 260.561334,
+      "duration": 257.627
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-3/subtitles/009.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -217,19 +307,29 @@
   },
   {
     "episodeId": 10,
-    "title": "Danger Above the Pitch",
+    "title": "球场上空的危险",
     "titleZh": "球场上空的危险",
+    "titleEn": "Danger Above the Pitch",
     "summaryEn": "A substitute lesson and a stormy match expose two different kinds of danger.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-3/hls/010.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-3&episode=10",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
-      "originalStart": 3105.227112,
-      "originalEnd": 3519.682822,
-      "duration": 414.45571
+      "hlsUrl": "/data/movie-harry-potter-3/hls/010.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-3/subtitles/010.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/673/master.m3u8",
+      "originalStart": 3372.978,
+      "originalEnd": 3857.3965,
+      "timelineOrigin": 3372.416666,
+      "clipStart": 0.561334,
+      "clipEnd": 484.979834,
+      "duration": 484.4185
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-3/subtitles/010.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -241,19 +341,29 @@
   },
   {
     "episodeId": 11,
-    "title": "The Marauder's Map",
+    "title": "活点地图",
     "titleZh": "活点地图",
+    "titleEn": "The Marauder's Map",
     "summaryEn": "A gift from the twins opens secret routes through the castle and beyond.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-3/hls/011.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-3&episode=11",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
-      "originalStart": 3519.682822,
-      "originalEnd": 3836.916412,
-      "duration": 317.23359
+      "hlsUrl": "/data/movie-harry-potter-3/hls/011.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-3/subtitles/011.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/673/master.m3u8",
+      "originalStart": 3857.3965,
+      "originalEnd": 4188.1185,
+      "timelineOrigin": 3853.624999,
+      "clipStart": 3.771501,
+      "clipEnd": 334.493501,
+      "duration": 330.722
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-3/subtitles/011.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -265,19 +375,29 @@
   },
   {
     "episodeId": 12,
-    "title": "The Truth About Sirius Black",
+    "title": "小天狼星的往事",
     "titleZh": "小天狼星的往事",
+    "titleEn": "The Truth About Sirius Black",
     "summaryEn": "An overheard conversation changes Harry's understanding of an old friendship.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-3/hls/012.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-3&episode=12",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
-      "originalStart": 3836.916412,
-      "originalEnd": 4029.567203,
-      "duration": 192.650791
+      "hlsUrl": "/data/movie-harry-potter-3/hls/012.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-3/subtitles/012.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/673/master.m3u8",
+      "originalStart": 4188.1185,
+      "originalEnd": 4395.2165,
+      "timelineOrigin": 4185.624999,
+      "clipStart": 2.493501,
+      "clipEnd": 209.591501,
+      "duration": 207.098
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-3/subtitles/012.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -289,19 +409,29 @@
   },
   {
     "episodeId": 13,
-    "title": "Learning the Patronus Charm",
+    "title": "学习守护神咒",
     "titleZh": "学习守护神咒",
+    "titleEn": "Learning the Patronus Charm",
     "summaryEn": "Harry begins difficult training while tensions rise between his friends.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-3/hls/013.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-3&episode=13",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
-      "originalStart": 4029.567203,
-      "originalEnd": 4312.224583,
-      "duration": 282.65738
+      "hlsUrl": "/data/movie-harry-potter-3/hls/013.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-3/subtitles/013.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/673/master.m3u8",
+      "originalStart": 4395.2165,
+      "originalEnd": 4812.481,
+      "timelineOrigin": 4393.624999,
+      "clipStart": 1.591501,
+      "clipEnd": 418.856001,
+      "duration": 417.2645
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-3/subtitles/013.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -313,19 +443,29 @@
   },
   {
     "episodeId": 14,
-    "title": "A Sentence for Buckbeak",
+    "title": "巴克比克的判决",
     "titleZh": "巴克比克的判决",
+    "titleEn": "A Sentence for Buckbeak",
     "summaryEn": "Hagrid describes the decision that threatens Buckbeak's life.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-3/hls/014.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-3&episode=14",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
-      "originalStart": 4312.224583,
-      "originalEnd": 4500.746249,
-      "duration": 188.521666
+      "hlsUrl": "/data/movie-harry-potter-3/hls/014.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-3/subtitles/014.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/673/master.m3u8",
+      "originalStart": 4812.481,
+      "originalEnd": 4970.465,
+      "timelineOrigin": 4809.624999,
+      "clipStart": 2.856001,
+      "clipEnd": 160.840001,
+      "duration": 157.984
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-3/subtitles/014.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -337,19 +477,29 @@
   },
   {
     "episodeId": 15,
-    "title": "A Name on the Map",
+    "title": "地图上的名字",
     "titleZh": "地图上的名字",
+    "titleEn": "A Name on the Map",
     "summaryEn": "A surprising name on a map raises questions that cannot be ignored.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-3/hls/015.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-3&episode=15",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
-      "originalStart": 4500.746249,
-      "originalEnd": 4742.237494,
-      "duration": 241.491245
+      "hlsUrl": "/data/movie-harry-potter-3/hls/015.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-3/subtitles/015.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/673/master.m3u8",
+      "originalStart": 4970.465,
+      "originalEnd": 5157.173,
+      "timelineOrigin": 4968.833332,
+      "clipStart": 1.631668,
+      "clipEnd": 188.339668,
+      "duration": 186.708
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-3/subtitles/015.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -361,19 +511,29 @@
   },
   {
     "episodeId": 16,
-    "title": "A Prophecy and a Last Visit",
+    "title": "预言与最后探访",
     "titleZh": "预言与最后探访",
+    "titleEn": "A Prophecy and a Last Visit",
     "summaryEn": "An unusual prediction precedes a visit to Hagrid at a painful moment.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-3/hls/016.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-3&episode=16",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
-      "originalStart": 4742.237494,
-      "originalEnd": 5211.247708,
-      "duration": 469.010214
+      "hlsUrl": "/data/movie-harry-potter-3/hls/016.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-3/subtitles/016.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/673/master.m3u8",
+      "originalStart": 5157.173,
+      "originalEnd": 5652.298,
+      "timelineOrigin": 5156.833332,
+      "clipStart": 0.339668,
+      "clipEnd": 495.464668,
+      "duration": 495.125
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-3/subtitles/016.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -385,19 +545,29 @@
   },
   {
     "episodeId": 17,
-    "title": "The Shrieking Shack",
+    "title": "尖叫棚屋",
     "titleZh": "尖叫棚屋",
+    "titleEn": "The Shrieking Shack",
     "summaryEn": "The friends follow Ron into a confrontation where familiar identities change.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-3/hls/017.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-3&episode=17",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
-      "originalStart": 5211.247708,
-      "originalEnd": 5841.752592,
-      "duration": 630.504884
+      "hlsUrl": "/data/movie-harry-potter-3/hls/017.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-3/subtitles/017.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/673/master.m3u8",
+      "originalStart": 5652.298,
+      "originalEnd": 6313.5025,
+      "timelineOrigin": 5648.833332,
+      "clipStart": 3.464668,
+      "clipEnd": 664.669168,
+      "duration": 661.2045
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-3/subtitles/017.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -409,19 +579,29 @@
   },
   {
     "episodeId": 18,
-    "title": "A Betrayal and a Full Moon",
+    "title": "背叛与满月",
     "titleZh": "背叛与满月",
+    "titleEn": "A Betrayal and a Full Moon",
     "summaryEn": "Hope for a new home is interrupted by the full moon and a desperate escape.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-3/hls/018.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-3&episode=18",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
-      "originalStart": 5841.752592,
-      "originalEnd": 6280.482544,
-      "duration": 438.729952
+      "hlsUrl": "/data/movie-harry-potter-3/hls/018.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-3/subtitles/018.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/673/master.m3u8",
+      "originalStart": 6313.5025,
+      "originalEnd": 6847.949,
+      "timelineOrigin": 6312.041665,
+      "clipStart": 1.460835,
+      "clipEnd": 535.907335,
+      "duration": 534.4465
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-3/subtitles/018.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -433,19 +613,29 @@
   },
   {
     "episodeId": 19,
-    "title": "A Second Chance",
+    "title": "第二次机会",
     "titleZh": "第二次机会",
+    "titleEn": "A Second Chance",
     "summaryEn": "Harry and Hermione receive a hint that events may offer another chance.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-3/hls/019.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-3&episode=19",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
-      "originalStart": 6280.482544,
-      "originalEnd": 6501.161332,
-      "duration": 220.678788
+      "hlsUrl": "/data/movie-harry-potter-3/hls/019.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-3/subtitles/019.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/673/master.m3u8",
+      "originalStart": 6847.949,
+      "originalEnd": 7099.44,
+      "timelineOrigin": 6844.041665,
+      "clipStart": 3.907335,
+      "clipEnd": 255.398335,
+      "duration": 251.491
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-3/subtitles/019.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -457,19 +647,29 @@
   },
   {
     "episodeId": 20,
-    "title": "Turning Back Time",
+    "title": "时间倒转",
     "titleZh": "时间倒转",
+    "titleEn": "Turning Back Time",
     "summaryEn": "The pair revisit the afternoon and carefully protect a life without being seen.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-3/hls/020.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-3&episode=20",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
-      "originalStart": 6501.161332,
-      "originalEnd": 7053.58821,
-      "duration": 552.426878
+      "hlsUrl": "/data/movie-harry-potter-3/hls/020.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-3/subtitles/020.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/673/master.m3u8",
+      "originalStart": 7099.44,
+      "originalEnd": 7709.4405,
+      "timelineOrigin": 7096.041665,
+      "clipStart": 3.398335,
+      "clipEnd": 613.398835,
+      "duration": 610.0005
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-3/subtitles/020.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -481,19 +681,29 @@
   },
   {
     "episodeId": 21,
-    "title": "Becoming the Rescuer",
+    "title": "成为救援者",
     "titleZh": "成为救援者",
+    "titleEn": "Becoming the Rescuer",
     "summaryEn": "Harry learns that waiting for someone else is not always the answer.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-3/hls/021.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-3&episode=21",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
-      "originalStart": 7053.58821,
-      "originalEnd": 7332.241586,
-      "duration": 278.653376
+      "hlsUrl": "/data/movie-harry-potter-3/hls/021.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-3/subtitles/021.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/673/master.m3u8",
+      "originalStart": 7709.4405,
+      "originalEnd": 8012.6565,
+      "timelineOrigin": 7709.249998,
+      "clipStart": 0.190502,
+      "clipEnd": 303.406502,
+      "duration": 303.216
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-3/subtitles/021.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -505,19 +715,29 @@
   },
   {
     "episodeId": 22,
-    "title": "A Flight to Freedom",
+    "title": "飞向自由",
     "titleZh": "飞向自由",
+    "titleEn": "A Flight to Freedom",
     "summaryEn": "An unexpected flight gives an innocent man a chance to escape.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-3/hls/022.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-3&episode=22",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
-      "originalStart": 7332.241586,
-      "originalEnd": 7581.282039,
-      "duration": 249.040453
+      "hlsUrl": "/data/movie-harry-potter-3/hls/022.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-3/subtitles/022.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/673/master.m3u8",
+      "originalStart": 8012.6565,
+      "originalEnd": 8238.099,
+      "timelineOrigin": 8009.249998,
+      "clipStart": 3.406502,
+      "clipEnd": 228.849002,
+      "duration": 225.4425
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-3/subtitles/022.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -529,19 +749,29 @@
   },
   {
     "episodeId": 23,
-    "title": "Goodbyes and a New Beginning",
+    "title": "告别与新的开始",
     "titleZh": "告别与新的开始",
+    "titleEn": "Goodbyes and a New Beginning",
     "summaryEn": "A difficult goodbye is followed by a gift that points towards a new beginning.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-3/hls/023.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-3&episode=23",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/699198206d820e7bc9de2afc/g40046/index.m3u8",
-      "originalStart": 7581.282039,
-      "originalEnd": 7785.652873,
-      "duration": 204.370834
+      "hlsUrl": "/data/movie-harry-potter-3/hls/023.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-3/subtitles/023.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/673/master.m3u8",
+      "originalStart": 8238.099,
+      "originalEnd": 8502.789,
+      "timelineOrigin": 8237.249998,
+      "clipStart": 0.849002,
+      "clipEnd": 265.539002,
+      "duration": 264.69
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-3/subtitles/023.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,

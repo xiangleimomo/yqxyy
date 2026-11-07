@@ -71,3 +71,243 @@
   for = "/data/movie-harry-potter-order-of-phoenix/hls/*"
   [headers.values]
     Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-harry-potter-deathly-hallows-part-2/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-fantastic-beasts-1/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-narnia-3/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-paddington-1/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-paddington-3/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-toy-story-1/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-toy-story-2/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-toy-story-3/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-toy-story-4/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-toy-story-5/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-dragon-1/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-dragon-2/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-inside-out-1/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-finding-nemo/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-finding-dory/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-incredibles-1/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-monsters-inc/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-cars-1/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-cars-2/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-cars-3/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-frozen-2/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-wreck-it-ralph-1/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-wreck-it-ralph-2/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-despicable-me-2/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-despicable-me-3/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-despicable-me-4/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-minions-1/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-minions-2/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-sing-1/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-pets-1/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-hotel-transylvania-1/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-hotel-transylvania-2/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-hotel-transylvania-3/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-croods-2/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-trolls-1/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-trolls-2/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-trolls-3/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-bad-guys-1/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-peter-rabbit-1/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-sonic-1/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-sonic-2/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-sonic-3/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-ice-age-3/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-ice-age-4/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-ice-age-5/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-ice-age-buck-wild/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-charlie-and-the-chocolate-factory/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-luca/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
