@@ -32,7 +32,7 @@
     stage._sfFullscreenBound = true;
     let placeholder = null;
     let pseudo = false;
-    const isMobile = mobileEnvironment();
+    const isMobile = mobileEnvironment() || !!window.MobileApp?.active;
     const isFull = () => pseudo || document.fullscreenElement === stage;
     const updateButton = () => {
       const full = isFull();

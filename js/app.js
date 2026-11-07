@@ -124,7 +124,13 @@ const App = {
     this.el().classList.remove('movie-study-course');
     document.body.classList.remove('movie-study-page');
     document.documentElement.classList.remove('movie-study-page');
+    window.MobileApp?.sync(this,page,a);
     try{
+      if(window.MobileApp?.active){
+        if(page==='home'&&!a)return await window.MobileApp.home(this);
+        if(page==='mobile-reading')return window.MobileApp.reading(this);
+        if(page==='mobile-me')return window.MobileApp.mine(this);
+      }
       if(page === 'honors') return await window.SFMedals.render(this,a||'works',b||'');
       if(['homework','family','parent','child'].includes(page)) return await window.SFFamily.render(this);
       if((page==='movies'||page==='home')&&!window.MediaShelf?.render){

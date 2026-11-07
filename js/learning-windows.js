@@ -1,6 +1,6 @@
 /* Desktop learning workspaces can coexist with a playing video window. */
 window.LearningWindows = {
-  desktop() { return matchMedia('(min-width:901px) and (pointer:fine)').matches; },
+  desktop() { return !window.MobileApp?.active && matchMedia('(min-width:901px) and (pointer:fine)').matches; },
   enhance(win) {
     if (!this.desktop() || win.dataset.workspaceReady) return;
     win.dataset.workspaceReady = 'true';
