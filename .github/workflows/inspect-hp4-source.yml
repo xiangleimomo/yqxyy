@@ -1,0 +1,40 @@
+name: Inspect HP4 HLS source and embedded subtitles
+on:
+  push:
+    branches: [course/hp4-goblet-fire-20261107]
+    paths:
+      - 'scripts/inspect_hp4_hls_source.py'
+      - '.github/workflows/inspect-hp4-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Inspect master, video, audio and subtitle renditions
+        run: python3 scripts/inspect_hp4_hls_source.py
+      - name: Add inspection summary
+        run: |
+          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          r=json.load(open('hp4-source-inspection/source-report.json'))
+          print('# Harry Potter 4 source inspection')
+          print(f"- Source HTTP: {r['masterHttpStatus']}")
+          print(f"- Video duration: {r['video']['duration']} sec")
+          print(f"- Video segments: {r['video']['segmentCount']}")
+          print(f"- Audio: {r['audio']['available']} / {r['audio']['duration']} sec")
+          print(f"- Subtitle renditions: {r['subtitleTrackCount']}")
+          for t in r['subtitleTracks']:
+              print(f"- {t.get('language')} / {t.get('name')}: {t.get('status')}, {t.get('cueCount',0)} cues")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hp4-source-inspection
+          path: hp4-source-inspection/
+          retention-days: 7
