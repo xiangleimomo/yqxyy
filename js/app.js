@@ -597,9 +597,11 @@ async renderLesson(seriesId, episodeId){
         showControls();
         if(!open) hideControlsLater();
       });
-      // Fullscreen the entire stage (video + DOM subtitles), never the video
-      // alone. iOS receives a fixed body-level fallback with the same caption.
-      window.SFCaptionFullscreen?.attach({stage,player,trigger:fullscreenTrigger,showControls});
+      // Animation stories use this stage-level fullscreen helper. Movie
+      // episodes attach it to the whole lesson panel so the toolbar and
+      // external mobile caption tray remain available in fullscreen.
+      const isMovieEpisode=!!stage.closest('.sf-movie-lesson-player');
+      if(!isMovieEpisode)window.SFCaptionFullscreen?.attach({stage,player,trigger:fullscreenTrigger,showControls});
       stage.addEventListener('focusin',showControls);
       player.addEventListener('play',hideControlsLater);
       player.addEventListener('pause',showControls);
@@ -960,7 +962,18 @@ async renderLesson(seriesId, episodeId){
       const speeds=[1,1.25,1.5,2,0.75];b('speed').onclick=()=>{const n=speeds.findIndex(v=>Math.abs(v-player.playbackRate)<.01);player.playbackRate=speeds[(n+1)%speeds.length];b('speed').querySelector('small').textContent=player.playbackRate+'x';};
       b('captions').onclick=()=>{shown=!shown;tray.hidden=!shown;if(offset)offset.hidden=!shown;b('captions').setAttribute('aria-pressed',String(shown));};
       b('mute').onclick=()=>{player.muted=!player.muted;b('mute').querySelector('small').textContent=player.muted?'静音':'声音';b('mute').querySelector('span').textContent=player.muted?'🔇':'🔊';};
-      b('fullscreen').onclick=()=>{const box=player.closest('.video-wrap');if(document.fullscreenElement)document.exitFullscreen?.();else if(box?.requestFullscreen)box.requestFullscreen().catch(()=>{});else player.webkitEnterFullscreen?.();};
+      // Fullscreen the complete movie lesson panel, not just the video.
+      // This keeps the custom toolbar and the separate mobile subtitle tray
+      // in the same viewport and uses the iOS/Android CSS fallback.
+      const fullscreenButton=b('fullscreen');
+      if(window.SFCaptionFullscreen?.attach){
+        window.SFCaptionFullscreen.attach({
+          stage:root,player,trigger:fullscreenButton,
+          showControls:()=>root.classList.add('sf-movie-controls-visible')
+        });
+      }else{
+        fullscreenButton.onclick=()=>root.requestFullscreen?.().catch(()=>{});
+      }
       b('quiz').onclick=()=>{player.pause();App.activeLessonTab='quiz';App.renderLesson(series,ep);};
     }
     let hlsFallbacks=[];

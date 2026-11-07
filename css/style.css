@@ -1487,3 +1487,52 @@ html.sf-caption-screen-locked,body.sf-caption-screen-locked{overflow:hidden!impo
 .utility-nav .homework-count[hidden]{display:none!important}
 @media(max-width:800px){.utility-nav{width:100%;display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap}.utility-nav a{flex-basis:40px;width:40px;height:40px;min-height:40px}.utility-icon{width:19px;height:19px}}
 @media(max-width:420px){.utility-nav{gap:6px}.utility-nav a{flex-basis:38px;width:38px;height:38px;min-height:38px}.utility-icon{width:18px;height:18px}}
+
+
+/* Mobile movie episodes: keep the complete lesson controls inside fullscreen.
+   The old toolbar fullscreen action targeted only the video element's wrapper;
+   several mobile browsers reject that request without providing a fallback. */
+@media (max-width:900px), (pointer:coarse){
+  .sf-movie-lesson-player .mobile-cc-trigger{display:flex}
+}
+.direct-video-panel.sf-movie-lesson-player.subtitle-page-fullscreen{
+  position:fixed!important;inset:0!important;z-index:2147483000!important;
+  display:flex!important;flex-direction:column!important;
+  box-sizing:border-box!important;width:100vw!important;max-width:none!important;
+  height:100vh!important;height:100dvh!important;max-height:100dvh!important;
+  margin:0!important;padding:0!important;overflow:hidden!important;
+  transform:none!important;border:0!important;border-radius:0!important;
+  background:#000!important;
+}
+.direct-video-panel.sf-movie-lesson-player.subtitle-page-fullscreen>.video-wrap{
+  position:relative!important;flex:1 1 auto!important;min-height:0!important;
+  width:100%!important;height:auto!important;padding-top:0!important;
+  border-radius:0!important;overflow:hidden!important;
+}
+.direct-video-panel.sf-movie-lesson-player.subtitle-page-fullscreen .hls-video-player{
+  position:absolute!important;inset:0!important;width:100%!important;
+  height:100%!important;object-fit:contain!important;
+}
+.direct-video-panel.sf-movie-lesson-player.subtitle-page-fullscreen>.sf-lesson-toolbar{
+  display:flex!important;position:relative!important;flex:0 0 auto!important;
+  z-index:20!important;align-items:center;justify-content:space-around;
+  gap:3px;width:100%;box-sizing:border-box;padding:6px 4px;
+  padding-bottom:calc(6px + env(safe-area-inset-bottom,0px));
+  background:#10233d;color:#fff;
+}
+.direct-video-panel.sf-movie-lesson-player.subtitle-page-fullscreen>.sf-lesson-toolbar button{
+  display:flex;flex:1 1 0;min-width:0;min-height:42px;
+  flex-direction:column;align-items:center;justify-content:center;
+  gap:2px;padding:3px 1px;border:0;border-radius:7px;
+  background:transparent;color:#fff;touch-action:manipulation;
+}
+.direct-video-panel.sf-movie-lesson-player.subtitle-page-fullscreen>.sf-lesson-toolbar button span{font-size:17px;line-height:1.2}
+.direct-video-panel.sf-movie-lesson-player.subtitle-page-fullscreen>.sf-lesson-toolbar button small{font-size:10px;line-height:1.2}
+.direct-video-panel.sf-movie-lesson-player.subtitle-page-fullscreen>.sf-mobile-captions-outside.is-mobile-external{
+  display:block!important;position:relative!important;flex:0 0 auto!important;
+  max-height:22vh;overflow:auto;margin:0!important;border-radius:0!important;
+}
+.direct-video-panel.sf-movie-lesson-player.subtitle-page-fullscreen>.sf-mobile-captions-outside[hidden],
+.direct-video-panel.sf-movie-lesson-player.subtitle-page-fullscreen>.sf-subtitle-offset{
+  display:none!important;
+}
