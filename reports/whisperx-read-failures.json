@@ -13549,6 +13549,16 @@
       "seriesId": "little-fox-the-carter-family-fs0067",
       "episodeId": 100,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-happy-prince-fs0181",
+      "episodeId": 11,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 75.6% matched, 76.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-happy-prince-fs0181",
+      "episodeId": 13,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.3% matched, 7.3% assigned"
     }
   ]
 }

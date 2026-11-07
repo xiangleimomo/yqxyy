@@ -1,422 +1,554 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42375805705",
-  "completedAt": "2026-11-07T13:30:07.087505+00:00",
+  "runId": "42377246672",
+  "completedAt": "2026-11-07T13:57:05.590100+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 26,
-  "rejected": 24,
+  "published": 48,
+  "rejected": 2,
   "websiteCommitRequired": true,
-  "totalWords": 14810,
-  "speechMatchedWords": 14810,
+  "totalWords": 28054,
+  "speechMatchedWords": 28054,
   "success": [
     {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
-      "episodeId": 1,
-      "cues": 83,
-      "words": 591,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 74,
-      "speechWords": 591,
-      "coverage": 0.9966,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
-      "episodeId": 2,
-      "cues": 84,
-      "words": 583,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 77,
-      "speechWords": 583,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
+      "seriesId": "little-fox-the-happy-prince-fs0181",
       "episodeId": 3,
-      "cues": 89,
-      "words": 585,
+      "cues": 63,
+      "words": 400,
       "xmlTextVerified": true,
-      "xmlParagraphs": 76,
-      "speechWords": 585,
-      "coverage": 0.9983,
-      "omittedWords": 1
+      "xmlParagraphs": 53,
+      "speechWords": 400,
+      "coverage": 0.995,
+      "omittedWords": 2
     },
     {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
+      "seriesId": "little-fox-the-happy-prince-fs0181",
       "episodeId": 4,
-      "cues": 86,
-      "words": 582,
+      "cues": 52,
+      "words": 378,
       "xmlTextVerified": true,
-      "xmlParagraphs": 80,
-      "speechWords": 582,
+      "xmlParagraphs": 46,
+      "speechWords": 378,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
+      "seriesId": "little-fox-the-happy-prince-fs0181",
       "episodeId": 5,
-      "cues": 79,
-      "words": 590,
+      "cues": 59,
+      "words": 404,
       "xmlTextVerified": true,
-      "xmlParagraphs": 70,
-      "speechWords": 590,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
-      "episodeId": 6,
-      "cues": 80,
-      "words": 593,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 72,
-      "speechWords": 593,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
-      "episodeId": 7,
-      "cues": 78,
-      "words": 595,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 72,
-      "speechWords": 595,
+      "xmlParagraphs": 49,
+      "speechWords": 404,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
-      "episodeId": 8,
-      "cues": 74,
-      "words": 581,
+      "seriesId": "little-fox-the-happy-prince-fs0181",
+      "episodeId": 6,
+      "cues": 60,
+      "words": 391,
       "xmlTextVerified": true,
-      "xmlParagraphs": 66,
-      "speechWords": 581,
-      "coverage": 0.9966,
-      "omittedWords": 2
+      "xmlParagraphs": 49,
+      "speechWords": 391,
+      "coverage": 1.0,
+      "omittedWords": 0
     },
     {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
-      "episodeId": 9,
-      "cues": 82,
-      "words": 595,
+      "seriesId": "little-fox-the-happy-prince-fs0181",
+      "episodeId": 7,
+      "cues": 68,
+      "words": 392,
       "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 595,
-      "coverage": 0.9966,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
-      "episodeId": 10,
-      "cues": 81,
-      "words": 589,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 589,
-      "coverage": 0.9983,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
-      "episodeId": 11,
-      "cues": 80,
-      "words": 594,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 594,
-      "coverage": 0.9966,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
-      "episodeId": 12,
-      "cues": 76,
-      "words": 598,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 72,
-      "speechWords": 598,
-      "coverage": 0.9967,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
-      "episodeId": 13,
-      "cues": 79,
-      "words": 594,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 76,
-      "speechWords": 594,
-      "coverage": 0.9966,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
-      "episodeId": 14,
-      "cues": 78,
-      "words": 585,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 585,
-      "coverage": 0.9966,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
-      "episodeId": 15,
-      "cues": 81,
-      "words": 580,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 73,
-      "speechWords": 580,
+      "xmlParagraphs": 45,
+      "speechWords": 392,
       "coverage": 0.9949,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-the-happy-prince-fs0181",
+      "episodeId": 8,
+      "cues": 57,
+      "words": 390,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 50,
+      "speechWords": 390,
+      "coverage": 0.9924,
       "omittedWords": 3
     },
     {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
-      "episodeId": 16,
-      "cues": 87,
-      "words": 599,
+      "seriesId": "little-fox-the-happy-prince-fs0181",
+      "episodeId": 9,
+      "cues": 63,
+      "words": 383,
       "xmlTextVerified": true,
-      "xmlParagraphs": 72,
-      "speechWords": 599,
-      "coverage": 0.9967,
-      "omittedWords": 2
+      "xmlParagraphs": 47,
+      "speechWords": 383,
+      "coverage": 0.9922,
+      "omittedWords": 3
     },
     {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
-      "episodeId": 17,
-      "cues": 83,
-      "words": 601,
+      "seriesId": "little-fox-the-happy-prince-fs0181",
+      "episodeId": 10,
+      "cues": 67,
+      "words": 436,
       "xmlTextVerified": true,
-      "xmlParagraphs": 74,
-      "speechWords": 601,
-      "coverage": 0.9983,
+      "xmlParagraphs": 50,
+      "speechWords": 436,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-happy-prince-fs0181",
+      "episodeId": 12,
+      "cues": 65,
+      "words": 394,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 48,
+      "speechWords": 394,
+      "coverage": 0.9899,
+      "omittedWords": 4
+    },
+    {
+      "seriesId": "little-fox-the-happy-prince-fs0181",
+      "episodeId": 14,
+      "cues": 57,
+      "words": 389,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 42,
+      "speechWords": 389,
+      "coverage": 0.9923,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-the-happy-prince-fs0181",
+      "episodeId": 15,
+      "cues": 64,
+      "words": 393,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 50,
+      "speechWords": 393,
+      "coverage": 0.9975,
       "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
-      "episodeId": 18,
-      "cues": 100,
-      "words": 602,
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 1,
+      "cues": 70,
+      "words": 562,
       "xmlTextVerified": true,
-      "xmlParagraphs": 87,
-      "speechWords": 602,
-      "coverage": 0.9983,
+      "xmlParagraphs": 68,
+      "speechWords": 562,
+      "coverage": 0.9982,
       "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
-      "episodeId": 19,
-      "cues": 82,
-      "words": 596,
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 2,
+      "cues": 70,
+      "words": 567,
       "xmlTextVerified": true,
-      "xmlParagraphs": 75,
-      "speechWords": 596,
+      "xmlParagraphs": 58,
+      "speechWords": 567,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 3,
+      "cues": 75,
+      "words": 574,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 574,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 4,
+      "cues": 88,
+      "words": 594,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 594,
       "coverage": 0.995,
       "omittedWords": 3
     },
     {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
-      "episodeId": 20,
-      "cues": 73,
-      "words": 510,
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 5,
+      "cues": 77,
+      "words": 571,
       "xmlTextVerified": true,
-      "xmlParagraphs": 68,
-      "speechWords": 510,
-      "coverage": 0.9942,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
-      "episodeId": 21,
-      "cues": 76,
-      "words": 590,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 69,
-      "speechWords": 590,
-      "coverage": 0.9933,
-      "omittedWords": 4
-    },
-    {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
-      "episodeId": 22,
-      "cues": 72,
-      "words": 582,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 63,
-      "speechWords": 582,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
-      "episodeId": 23,
-      "cues": 76,
-      "words": 577,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 72,
-      "speechWords": 577,
+      "xmlParagraphs": 67,
+      "speechWords": 571,
       "coverage": 0.9983,
       "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-the-enchanted-castle-fs0069",
-      "episodeId": 24,
-      "cues": 61,
-      "words": 560,
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 6,
+      "cues": 74,
+      "words": 566,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 566,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 7,
+      "cues": 83,
+      "words": 567,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 567,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 8,
+      "cues": 68,
+      "words": 545,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 545,
+      "coverage": 0.9963,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 9,
+      "cues": 79,
+      "words": 566,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 66,
+      "speechWords": 566,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 10,
+      "cues": 83,
+      "words": 571,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 571,
+      "coverage": 0.9965,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 11,
+      "cues": 80,
+      "words": 575,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 575,
+      "coverage": 0.9648,
+      "omittedWords": 21
+    },
+    {
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 12,
+      "cues": 88,
+      "words": 588,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 588,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 13,
+      "cues": 76,
+      "words": 585,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 70,
+      "speechWords": 585,
+      "coverage": 0.9932,
+      "omittedWords": 4
+    },
+    {
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 14,
+      "cues": 89,
+      "words": 596,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 596,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 15,
+      "cues": 64,
+      "words": 549,
       "xmlTextVerified": true,
       "xmlParagraphs": 59,
-      "speechWords": 560,
+      "speechWords": 549,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 16,
+      "cues": 70,
+      "words": 558,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 64,
+      "speechWords": 558,
       "coverage": 0.9964,
       "omittedWords": 2
     },
     {
-      "seriesId": "little-fox-the-happy-prince-fs0181",
-      "episodeId": 1,
-      "cues": 47,
-      "words": 377,
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 17,
+      "cues": 68,
+      "words": 576,
       "xmlTextVerified": true,
-      "xmlParagraphs": 41,
-      "speechWords": 377,
-      "coverage": 0.9947,
+      "xmlParagraphs": 62,
+      "speechWords": 576,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 18,
+      "cues": 77,
+      "words": 552,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 552,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 19,
+      "cues": 79,
+      "words": 549,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 549,
+      "coverage": 0.9928,
+      "omittedWords": 4
+    },
+    {
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 20,
+      "cues": 82,
+      "words": 573,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 573,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 21,
+      "cues": 89,
+      "words": 573,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 573,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 22,
+      "cues": 88,
+      "words": 600,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 600,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 23,
+      "cues": 66,
+      "words": 550,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 550,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-jungle-book-fs0097",
+      "episodeId": 24,
+      "cues": 73,
+      "words": 541,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 541,
+      "coverage": 0.9963,
       "omittedWords": 2
     },
     {
-      "seriesId": "little-fox-the-happy-prince-fs0181",
-      "episodeId": 2,
-      "cues": 59,
-      "words": 381,
+      "seriesId": "little-fox-the-lemonade-detectives-fs0055",
+      "episodeId": 1,
+      "cues": 108,
+      "words": 772,
       "xmlTextVerified": true,
-      "xmlParagraphs": 47,
-      "speechWords": 381,
+      "xmlParagraphs": 78,
+      "speechWords": 772,
       "coverage": 0.9948,
+      "omittedWords": 4
+    },
+    {
+      "seriesId": "little-fox-the-lemonade-detectives-fs0055",
+      "episodeId": 2,
+      "cues": 123,
+      "words": 791,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 83,
+      "speechWords": 791,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-lemonade-detectives-fs0055",
+      "episodeId": 3,
+      "cues": 102,
+      "words": 785,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 785,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-lemonade-detectives-fs0055",
+      "episodeId": 4,
+      "cues": 108,
+      "words": 787,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 787,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-lemonade-detectives-fs0055",
+      "episodeId": 5,
+      "cues": 97,
+      "words": 751,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 751,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-lemonade-detectives-fs0055",
+      "episodeId": 6,
+      "cues": 113,
+      "words": 762,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 762,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-lemonade-detectives-fs0055",
+      "episodeId": 7,
+      "cues": 97,
+      "words": 747,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 747,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-lemonade-detectives-fs0055",
+      "episodeId": 8,
+      "cues": 122,
+      "words": 769,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 80,
+      "speechWords": 769,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-lemonade-detectives-fs0055",
+      "episodeId": 9,
+      "cues": 117,
+      "words": 759,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 759,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-lemonade-detectives-fs0055",
+      "episodeId": 10,
+      "cues": 126,
+      "words": 793,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 86,
+      "speechWords": 793,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-lemonade-detectives-fs0055",
+      "episodeId": 11,
+      "cues": 90,
+      "words": 797,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 797,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-lemonade-detectives-fs0055",
+      "episodeId": 12,
+      "cues": 97,
+      "words": 753,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 753,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-lemonade-detectives-fs0055",
+      "episodeId": 13,
+      "cues": 103,
+      "words": 790,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 80,
+      "speechWords": 790,
+      "coverage": 0.9975,
       "omittedWords": 2
     }
   ],
   "failures": [
     {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 77,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.2% matched, 0.0% assigned"
+      "seriesId": "little-fox-the-happy-prince-fs0181",
+      "episodeId": 11,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 75.6% matched, 76.3% assigned"
     },
     {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 78,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 79,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 80,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 81,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 82,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 83,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 84,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 85,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 86,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 87,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 88,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 89,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 90,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 91,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 92,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 93,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 94,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 95,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 96,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 97,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 98,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 99,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-carter-family-fs0067",
-      "episodeId": 100,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
+      "seriesId": "little-fox-the-happy-prince-fs0181",
+      "episodeId": 13,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.3% matched, 7.3% assigned"
     }
   ]
 }
