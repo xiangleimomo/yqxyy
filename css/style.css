@@ -1557,3 +1557,10 @@ html.sf-caption-screen-locked,body.sf-caption-screen-locked{overflow:hidden!impo
 .direct-video-panel.sf-movie-lesson-player.subtitle-page-fullscreen>.sf-subtitle-offset{
   display:none!important;
 }
+
+/* Use the video width rather than shrink-to-fit width when wrapping captions. */
+.subtitle-video-wrap .video-caption{width:max-content;box-sizing:border-box;max-width:94%;font-size:calc(var(--caption-size,20px) * var(--caption-scale,1));white-space:normal;overflow-wrap:normal;word-break:normal}
+.sf-movie-timeline{position:absolute;z-index:15;left:0;right:0;bottom:0;display:flex;align-items:center;gap:12px;padding:18px 16px 10px;background:linear-gradient(transparent,rgba(0,0,0,.8));color:#fff;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s}
+.sf-movie-timeline input{flex:1;min-width:0;accent-color:#ffe05a}
+.sf-movie-timeline output{font:12px system-ui;white-space:nowrap;font-variant-numeric:tabular-nums}
+.subtitle-settings-visible .sf-movie-timeline,.sf-movie-timeline:focus-within{opacity:1;visibility:visible;pointer-events:auto}

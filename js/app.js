@@ -540,7 +540,7 @@ async renderLesson(seriesId, episodeId){
         <div class="subtitle-setting-row"><span>逐词高亮</span><button type="button" class="btn secondary small subtitle-word-toggle" aria-pressed="${prefs.wordHighlight}">${prefs.wordHighlight?'已开启':'已关闭'}</button></div>
         <div class="subtitle-setting-row"><span>字幕位置</span><span class="subtitle-drag-tip">直接拖动字幕</span></div>
         <label class="subtitle-setting-row"><span>字幕颜色</span><input class="subtitle-color" type="color" value="${prefs.color}"></label>
-        <label class="subtitle-setting-row"><span>字幕大小</span><input class="subtitle-size" type="range" min="14" max="32" step="1" value="${prefs.size}"><output>${prefs.size}px</output></label>
+        <label class="subtitle-setting-row"><span>字幕大小</span><input class="subtitle-size" type="range" min="14" max="96" step="1" value="${prefs.size}"><output>${prefs.size}px</output></label>
         <label class="subtitle-setting-row"><span>背景透明度</span><input class="subtitle-opacity" type="range" min="0" max="95" step="5" value="${prefs.opacity}"><output>${prefs.opacity}%</output></label>
       </div>
     </div>`;
@@ -548,7 +548,16 @@ async renderLesson(seriesId, episodeId){
   applySubtitlePreferences(root=document){
     const prefs=this.subtitlePreferences();
     root.querySelectorAll('.video-caption').forEach(caption=>{
-      caption.style.setProperty('--caption-size',`${prefs.size}px`);
+      caption.style.setProperty('--caption-size',`${Math.max(14,Math.min(96,Number(prefs.size)||20))}px`);
+      const stage=caption.closest('.subtitle-video-wrap');
+      if(stage && !stage._captionResize){
+        stage._captionResize=new ResizeObserver(()=>{
+          const width=stage.clientWidth;
+          caption.style.setProperty('--caption-scale',String(Math.max(1,width/860)));
+          caption.style.maxWidth=`${Math.max(0,width*.94-24)}px`;
+        });
+        stage._captionResize.observe(stage);
+      }
       caption.style.setProperty('--caption-color',prefs.color);
       caption.style.setProperty('--caption-opacity',String(prefs.opacity/100));
       caption.style.setProperty('--caption-x',`${prefs.captionX}%`);
@@ -570,12 +579,15 @@ async renderLesson(seriesId, episodeId){
       if(!stage) return;
       window.clearTimeout(hideTimer);
       stage.classList.add('subtitle-settings-visible');
+      stage.querySelector('.sf-movie-timeline')?.removeAttribute('inert');
     };
     const hideControlsLater=()=>{
-      if(!stage || !player || player.paused) return;
+      if(!stage || !player || player.paused || stage.classList.contains('subtitle-settings-open') || controls.matches(':focus-within')) return;
       window.clearTimeout(hideTimer);
       hideTimer=window.setTimeout(()=>{
+        if(stage.classList.contains('subtitle-settings-open') || controls.matches(':focus-within') || stage.querySelector('.sf-movie-timeline')?.matches(':focus-within'))return;
         stage.classList.remove('subtitle-settings-visible','subtitle-settings-open');
+        stage.querySelector('.sf-movie-timeline')?.setAttribute('inert','');
         trigger?.setAttribute('aria-expanded','false');
         trigger?.setAttribute('aria-label','打开字幕设置');
       },1800);
@@ -603,6 +615,30 @@ async renderLesson(seriesId, episodeId){
       // external mobile caption tray remain available in fullscreen.
       const isMovieEpisode=!!stage.closest('.sf-movie-lesson-player');
       if(!isMovieEpisode)window.SFCaptionFullscreen?.attach({stage,player,trigger:fullscreenTrigger,showControls});
+      if(isMovieEpisode){
+        const bar=document.createElement('div');
+        bar.className='sf-movie-timeline';
+        bar.innerHTML='<input type="range" min="0" max="1000" step="1" value="0" aria-label="视频播放进度"><output>0:00 / 0:00</output>';
+        stage.appendChild(bar);
+        const seek=bar.querySelector('input'),time=bar.querySelector('output');
+        const format=value=>{const seconds=Math.max(0,Math.floor(value||0));return `${Math.floor(seconds/60)}:${String(seconds%60).padStart(2,'0')}`;};
+        const refresh=()=>{
+          const start=Number(player.dataset.clipStart)||0;
+          const end=Number(player.dataset.clipEnd)||player.duration;
+          const duration=Number.isFinite(end)?Math.max(0,end-start):0;
+          seek.disabled=!duration;
+          if(duration && !seek.matches(':active'))seek.value=String(Math.max(0,Math.min(1000,(player.currentTime-start)/duration*1000)));
+          time.textContent=`${format(player.currentTime-start)} / ${format(duration)}`;
+        };
+        seek.addEventListener('input',()=>{
+          const start=Number(player.dataset.clipStart)||0,end=Number(player.dataset.clipEnd)||player.duration;
+          if(Number.isFinite(end)&&end>start)player.currentTime=start+(end-start)*Number(seek.value)/1000;
+          refresh();showControls();
+        });
+        bar.addEventListener('focusout',hideControlsLater);
+        ['timeupdate','loadedmetadata','durationchange','seeked'].forEach(name=>player.addEventListener(name,refresh));
+        refresh();showControls();
+      }
       stage.addEventListener('focusin',showControls);
       player.addEventListener('play',hideControlsLater);
       player.addEventListener('pause',showControls);
@@ -787,7 +823,7 @@ async renderLesson(seriesId, episodeId){
       }
       const now=Math.round((player.currentTime-offsetSeconds)*1000);
       const next=cues.findIndex(cue=>now>=cue.startMs && now<=cue.endMs);
-      const wordEnabled=d.seriesId!=='movie-harry-potter-1'&&d.seriesId!=='movie-kung-fu-panda-1'&&d.seriesId!=='movie-kung-fu-panda-2'&&!!syncWords&&this.subtitlePreferences().wordHighlight!==false;
+      const wordEnabled=!!syncWords&&this.subtitlePreferences().wordHighlight!==false;
       if(next!==active||renderedMode!==wordEnabled){
         active=next;renderedMode=wordEnabled;wordView=null;
         if(next<0){
@@ -798,11 +834,6 @@ async renderLesson(seriesId, episodeId){
           caption.dataset.wordTiming=effectiveWords[next].verified?'speech':'estimated';
         }else{
           caption.textContent=cues[next].text;
-          if(d.seriesId==='movie-harry-potter-1'){
-            caption.style.color='#253447';
-            caption.style.fontWeight='500';
-            caption.style.textShadow='none';
-          }
         }
       }
       const visible=caption.dataset.subtitleVisible!=='false';

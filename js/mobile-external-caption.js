@@ -69,7 +69,7 @@
         index=cues.findIndex(cue=>cue.startMs>now);
         if(index<0)index=cues.length-1;
       }
-      const showWords=d.seriesId!=='movie-harry-potter-1'&&!!sync&&wordEnabled&&Array.isArray(prepared)&&prepared[index];
+      const showWords=!!sync&&wordEnabled&&Array.isArray(prepared)&&prepared[index];
       if(index!==active||mode!==String(showWords)){
         active=index;
         mode=String(showWords);
@@ -82,12 +82,8 @@
         }
       }
       line.classList.toggle('is-upcoming',gap);
-      line.style.fontSize=(Number.isFinite(Number(prefs.size))?Math.max(14,Math.min(28,Number(prefs.size))):20)+'px';
-      line.style.setProperty('color',d.seriesId==='movie-harry-potter-1'?'#343a40':(prefs.color||'#ffffff'),'important');
-      if(d.seriesId==='movie-harry-potter-1'){
-        line.style.fontWeight='500';
-        line.style.textShadow='none';
-      }
+      line.style.fontSize=(Number.isFinite(Number(prefs.size))?Math.max(14,Math.min(96,Number(prefs.size))):20)+'px';
+      line.style.setProperty('color',(prefs.color||'#ffffff'),'important');
       if(gap)setHint(now<cues[0].startMs?'开场中，下面显示即将开始的台词':'对白间隙 · 下一句预览');
       else setHint('');
       if(!gap&&wordView)sync.paint(wordView,now,true);
