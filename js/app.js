@@ -129,6 +129,7 @@ const App = {
       if(window.MobileApp?.active){
         if(page==='home'&&!a)return await window.MobileApp.home(this);
         if(page==='mobile-reading')return window.MobileApp.reading(this);
+        if(page==='mobile-audiovisual')return window.MobileApp.visual(this);
         if(page==='mobile-me')return window.MobileApp.mine(this);
       }
       if(page === 'honors') return await window.SFMedals.render(this,a||'works',b||'');
