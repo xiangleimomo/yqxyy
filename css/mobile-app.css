@@ -58,3 +58,5 @@ html.sf-mobile-app.series-fixed-page,body.sf-mobile-app.series-fixed-page{height
   .sf-mobile-app .sf-app-home-shelves .book-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
   .sf-mobile-app .sf-app-visual-choices>a{padding:26px 24px}
 }
+
+.sf-mobile-app .sf-app-home-shelves .book-cover.media-animation-cover{aspect-ratio:4/3}
