@@ -1567,3 +1567,18 @@ html.sf-caption-screen-locked,body.sf-caption-screen-locked{overflow:hidden!impo
 .sf-movie-timeline input{flex:1;min-width:0;accent-color:#ffe05a}
 .sf-movie-timeline output{font:12px system-ui;white-space:nowrap;font-variant-numeric:tabular-nums}
 .subtitle-settings-visible .sf-movie-timeline,.sf-movie-timeline:focus-within{opacity:1;visibility:visible;pointer-events:auto}
+
+/* Movie fullscreen uses the viewport for video; controls float above it. */
+@media (min-width:901px) and (pointer:fine){
+.direct-video-panel.sf-movie-lesson-player:is(:fullscreen,:-webkit-full-screen,.subtitle-page-fullscreen){display:block!important;background:#000!important}
+.direct-video-panel.sf-movie-lesson-player:is(:fullscreen,:-webkit-full-screen,.subtitle-page-fullscreen)>.video-wrap{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-height:0!important;margin:0!important;padding:0!important;background:#000!important}
+.direct-video-panel.sf-movie-lesson-player:is(:fullscreen,:-webkit-full-screen,.subtitle-page-fullscreen)>.sf-lesson-toolbar{position:absolute!important;left:0!important;right:0!important;bottom:0!important;z-index:25!important;background:linear-gradient(transparent,rgba(0,0,0,.8))!important;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s}
+.direct-video-panel.sf-movie-lesson-player:is(:fullscreen,:-webkit-full-screen,.subtitle-page-fullscreen).sf-movie-controls-visible>.sf-lesson-toolbar,
+.direct-video-panel.sf-movie-lesson-player:is(:fullscreen,:-webkit-full-screen,.subtitle-page-fullscreen)>.sf-lesson-toolbar:focus-within{opacity:1;visibility:visible;pointer-events:auto}
+.direct-video-panel.sf-movie-lesson-player:is(:fullscreen,:-webkit-full-screen,.subtitle-page-fullscreen) .sf-movie-timeline{bottom:calc(60px + env(safe-area-inset-bottom,0px));background:linear-gradient(transparent,rgba(0,0,0,.55))}
+.direct-video-panel.sf-movie-lesson-player:is(:fullscreen,:-webkit-full-screen,.subtitle-page-fullscreen)>.movie-subtitle-status{display:none!important}
+}
+.subtitle-video-wrap .video-caption{color:var(--caption-color,#fff)!important;-webkit-text-fill-color:currentColor}
+.video-caption .sf-karaoke-word{-webkit-text-fill-color:currentColor;transition:none}
+.video-caption .sf-karaoke-word:not(.is-karaoke-active){color:var(--caption-color,#fff)!important}
+.video-caption .sf-karaoke-word.is-karaoke-active{color:#ffe05a!important}

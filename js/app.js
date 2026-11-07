@@ -573,7 +573,7 @@ async renderLesson(seriesId, episodeId){
         layout();
       }
       caption.style.setProperty('--caption-color',prefs.color);
-      caption.style.color=prefs.color;
+      caption.style.setProperty('color',prefs.color,'important');
       caption.dataset.wordHighlight=String(prefs.wordHighlight!==false);
       caption.style.setProperty('--caption-opacity',String(prefs.opacity/100));
       caption.style.setProperty('--caption-x',`${prefs.captionX}%`);
@@ -595,6 +595,7 @@ async renderLesson(seriesId, episodeId){
       if(!stage) return;
       window.clearTimeout(hideTimer);
       stage.classList.add('subtitle-settings-visible');
+      stage.closest('.sf-movie-lesson-player')?.classList.add('sf-movie-controls-visible');
       if(player && !stage.closest('.sf-movie-lesson-player')?.querySelector('.sf-lesson-toolbar'))player.controls=true;
       stage.querySelector('.sf-movie-timeline')?.removeAttribute('inert');
     };
@@ -604,6 +605,7 @@ async renderLesson(seriesId, episodeId){
       hideTimer=window.setTimeout(()=>{
         if(stage.classList.contains('subtitle-settings-open') || controls.matches(':focus-within') || stage.querySelector('.sf-movie-timeline')?.matches(':focus-within'))return;
         stage.classList.remove('subtitle-settings-visible','subtitle-settings-open');
+        stage.closest('.sf-movie-lesson-player')?.classList.remove('sf-movie-controls-visible');
         if(player && !stage.closest('.sf-movie-lesson-player')?.querySelector('.sf-lesson-toolbar'))player.controls=false;
         stage.querySelector('.sf-movie-timeline')?.setAttribute('inert','');
         trigger?.setAttribute('aria-expanded','false');
@@ -618,6 +620,15 @@ async renderLesson(seriesId, episodeId){
       stage.addEventListener('touchstart',revealControls,{passive:true});
       stage.addEventListener('pointerdown',revealControls);
       stage.addEventListener('keydown',revealControls);
+      const toolbar=stage.closest('.sf-movie-lesson-player')?.querySelector('.sf-lesson-toolbar');
+      toolbar?.addEventListener('pointermove',revealControls);
+      toolbar?.addEventListener('pointerdown',revealControls);
+      toolbar?.addEventListener('focusin',showControls);
+      toolbar?.addEventListener('focusout',hideControlsLater);
+      toolbar?.addEventListener('click',event=>{
+        if(event.detail>0)event.target.closest('button')?.blur();
+        hideControlsLater();
+      });
       controls.addEventListener('pointerdown',showControls);
       controls.addEventListener('focusin',showControls);
       controls.addEventListener('input',revealControls);
@@ -656,6 +667,7 @@ async renderLesson(seriesId, episodeId){
           refresh();showControls();
         });
         bar.addEventListener('focusout',hideControlsLater);
+        bar.addEventListener('pointerup',()=>{seek.blur();hideControlsLater();});
         ['timeupdate','loadedmetadata','durationchange','seeked'].forEach(name=>player.addEventListener(name,refresh));
         refresh();showControls();
       }
@@ -827,6 +839,9 @@ async renderLesson(seriesId, episodeId){
     // in the mobile tray, so never hide it because of the video's native state.
     const isMobileCaptionTray=()=>!!caption.closest('.subtitle-video-wrap.sf-caption-below');
     const syncNativeTrack=()=>{
+      // HLS can add its own visible native track. Keep a single HTML subtitle
+      // layer so desktop colour and karaoke settings control what is displayed.
+      if(!isNativeFullscreen())for(const track of Array.from(player.textTracks||[]))if(track!==nativeTrack&&track.mode==='showing')track.mode='hidden';
       if(nativeTrack) nativeTrack.mode=isNativeFullscreen() && !isMobileCaptionTray() && this.subtitlePreferences().visible && offsetSeconds===0?'showing':'hidden';
     };
     const syncWords=window.SFWordSync;
@@ -846,7 +861,7 @@ async renderLesson(seriesId, episodeId){
       }
       const now=Math.round((player.currentTime-offsetSeconds)*1000);
       const next=cues.findIndex(cue=>now>=cue.startMs && now<=cue.endMs);
-      const wordEnabled=!['movie-harry-potter-1','movie-kung-fu-panda-1','movie-kung-fu-panda-2'].includes(d.seriesId)&&!String(d.ep?.subtitleTracks?.status||'').startsWith('native-v3')&&!!syncWords&&this.subtitlePreferences().wordHighlight!==false;
+      const wordEnabled=!!syncWords&&this.subtitlePreferences().wordHighlight!==false;
       if(next!==active||renderedMode!==wordEnabled){
         active=next;renderedMode=wordEnabled;wordView=null;
         if(next<0){
@@ -901,6 +916,8 @@ async renderLesson(seriesId, episodeId){
     const startPaint=()=>{if(!animation&&!player.paused)animation=requestAnimationFrame(paintFrame);};
     const stopPaint=()=>{if(animation){cancelAnimationFrame(animation);animation=0;}};
     player.addEventListener('timeupdate',update);
+    player.addEventListener('sfcaptionchange',update);
+    player.textTracks?.addEventListener?.('addtrack',syncNativeTrack);
     player.addEventListener('seeked',update);
     player.addEventListener('play',startPaint);
     player.addEventListener('pause',stopPaint);
@@ -1035,7 +1052,7 @@ async renderLesson(seriesId, episodeId){
       if(window.SFCaptionFullscreen?.attach){
         window.SFCaptionFullscreen.attach({
           stage:root,player,trigger:fullscreenButton,
-          showControls:()=>root.classList.add('sf-movie-controls-visible')
+          showControls:()=>root.querySelector('.video-wrap')?.dispatchEvent(new Event('pointermove'))
         });
       }else{
         fullscreenButton.onclick=()=>root.requestFullscreen?.().catch(()=>{});
