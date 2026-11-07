@@ -50,7 +50,7 @@ async function renderDynamicEpisodePlaylist({episode,courseId,siteOrigin,kind,fe
     const audioPlaylist=resolved.audioTrack?dynamicPlaylistUrl(siteOrigin,courseId,episode.episodeId,'audio'):null;
     return {
       body:hls.buildEpisodeMaster({
-        videoPlaylist,audioPlaylist,audioTrack:resolved.audioTrack,videoVariant:resolved.variant
+        videoPlaylist,audioPlaylist,audioTrack:resolved.audioTrack,videoVariant:resolved.variant,version:episode.video.hlsVersion||7
       }),
       contentType:'application/vnd.apple.mpegurl',
       sourceUrlHash:require('node:crypto').createHash('sha256').update(resolved.sourceUrl).digest('hex')
