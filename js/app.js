@@ -438,6 +438,7 @@ async renderLesson(seriesId, episodeId){
       </div>
       <div class="floating-content">${this.lessonPanel(tab,d)}</div>`;
     this.windowLayer.appendChild(win);
+    if(['listenRead','words','quiz','games'].includes(tab))window.LearningWindows?.enhance(win);
 
     const close=win.querySelector('.floating-close');
     close.onclick=()=>{
@@ -450,6 +451,7 @@ async renderLesson(seriesId, episodeId){
     const header=win.querySelector('.floating-header');
     let dragging=false, ox=0, oy=0;
     header.addEventListener('mousedown',(e)=>{
+      if(win.classList.contains('sf-desktop-workspace'))return;
       dragging=true;
       ox=e.clientX-win.offsetLeft;
       oy=e.clientY-win.offsetTop;
