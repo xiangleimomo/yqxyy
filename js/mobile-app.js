@@ -11,7 +11,7 @@ window.MobileApp = {
     this.header.innerHTML=`<div class="sf-app-header-row"><button class="sf-app-avatar" type="button" data-mobile-account aria-label="我的账户"><img src="assets/icons/account.webp" alt=""></button><a class="sf-app-brand" href="#/home"><strong data-mobile-name>一起学英语</strong><span>让每个故事，成为一次成长</span></a><a class="sf-app-points" href="#/rewards" aria-label="我的积分">⭐ <b data-mobile-points>0</b></a><button class="sf-app-search-toggle" type="button" aria-label="搜索" aria-expanded="false">${this.icon('search')}</button></div><div class="sf-app-search-slot" hidden></div>`;
     document.body.prepend(this.header);
     this.bottom=document.createElement('nav');this.bottom.className='sf-app-bottom';this.bottom.setAttribute('aria-label','移动端主导航');
-    this.bottom.innerHTML=[['home','#/home','首页'],['animation','#/home/all','动画'],['reading','#/mobile-reading','阅读'],['mine','#/mobile-me','我的']].map(([key,url,title])=>`<a href="${url}" data-mobile-tab="${key}">${this.icon(key)}<span>${title}</span></a>`).join('');document.body.appendChild(this.bottom);
+    this.bottom.innerHTML=[['home','#/home','首页'],['audiovisual','#/mobile-audiovisual','视听'],['reading','#/mobile-reading','阅读'],['mine','#/mobile-me','我的']].map(([key,url,title])=>`<a href="${url}" data-mobile-tab="${key}">${this.icon(key)}<span>${title}</span></a>`).join('');document.body.appendChild(this.bottom);
     const search=document.querySelector('.search-box');this.search=search;this.searchMarker=document.createComment('desktop-search');search.before(this.searchMarker);
     this.header.querySelector('.sf-app-search-toggle').onclick=()=>{
       const slot=this.header.querySelector('.sf-app-search-slot'),open=slot.hidden;slot.hidden=!open;
@@ -45,17 +45,37 @@ window.MobileApp = {
   async home(app) {
     const route=location.hash,e=value=>app.escapeHtml(String(value||''));
     app.el().innerHTML='<div class="sf-app-loading" role="status">正在准备你的学习空间…</div>';
-    const list=(await app.getJSON('data/series-list.json')).filter(row=>!row.seriesId.startsWith('movie-')&&row.status!=='coming'&&(!app.isGuest()||!app.isGuestRestrictedLevel(row.level)));
+    const list=(await app.getJSON('data/series-list.json')).filter(row=>!String(row.seriesId).startsWith('movie-')&&row.status!=='coming'&&(!app.isGuest()||!app.isGuestRestrictedLevel(row.level)));
     if(location.hash!==route||!this.active)return;
     const progress=Object.values(app.storage('progress')||{}).filter(row=>list.some(series=>series.seriesId===row.seriesId)).sort((a,b)=>String(b.updatedAt||'').localeCompare(String(a.updatedAt||'')))[0];
     const last=list.find(row=>row.seriesId===progress?.seriesId);
-    const recent=last?`<a class="sf-app-continue" href="#/lesson/${e(last.seriesId)}/${Number(progress.episodeId)}"><img src="${e(last.cover)}" alt=""><div><span class="sf-app-eyebrow">继续上次的学习</span><h3>${e(last.titleZh||last.title)}</h3><p>上次学到第 ${Number(progress.episodeId)} 集</p></div><span class="sf-app-play" aria-hidden="true">▶</span></a>`:`<div class="sf-app-welcome"><div><span class="sf-app-eyebrow">TODAY'S STORY</span><h1>今天，听一个好故事</h1><p>看动画 · 听原声 · 读绘本</p><a href="#/home/all">开始探索 ${this.icon('arrow')}</a></div><img src="assets/nav-icons/animation-story.png" alt=""></div>`;
-    const categories=[['#/home/all','animation-story.png','动画故事','blue'],['#/movies','movie-class.png','光影课堂','orange'],['#/reading','picture-books.png','绘本阅读','mint'],['#/magazines','periodicals.png','期刊杂志','violet']];
-    const quick=`<div class="sf-app-category-grid">${categories.map(([url,image,title,tone])=>`<a href="${url}"><span class="sf-app-category-icon ${tone}"><img src="assets/nav-icons/${image}" alt=""></span><strong>${title}</strong></a>`).join('')}</div>`;
-    const shortcuts=`<div class="sf-app-mini-tools">${[['#/checkin','checkin','每日签到'],['#/homework','homework','学习作业'],['#/honors','honors','荣誉馆'],['#/rewards','rewards','积分奖励']].map(([url,image,title])=>`<a href="${url}"><img src="assets/icons/${image}.webp" alt=""><span>${title}</span></a>`).join('')}</div>`;
-    const grid=`<div class="sf-app-story-grid">${list.slice(0,8).map(row=>`<a href="#/series/${e(row.seriesId)}"><img src="${e(row.cover)}" alt="" loading="lazy"><strong>${e(row.titleZh||row.title)}</strong><span>Level ${Number(row.level)}</span></a>`).join('')}</div>`;
-    const favourites=`<div class="sf-app-feature-links"><a href="#/home/favorites"><span>⭐</span><div><strong>我的收藏</strong><small>喜欢的故事，随时再看</small></div>${this.icon('arrow')}</a><a href="#/home/recent"><span>◷</span><div><strong>观看记录</strong><small>找回上次的精彩</small></div>${this.icon('arrow')}</a></div>`;
-    app.el().innerHTML=`<div class="sf-app-dashboard">${recent}${this.section('探索学习','',quick)}${shortcuts}<div class="sf-app-home-columns">${this.section('故事星球','#/home/all',grid)}${this.section('我的故事角','',favourites+'<a class="sf-app-reading-banner" href="#/mobile-reading"><div><small>READ A LITTLE EVERY DAY</small><strong>打开一本书<br>遇见新的世界</strong><span>去阅读 →</span></div><img src="assets/nav-icons/picture-books.png" alt=""></a>')}</div></div>`;
+    const recent=last?'<a class="sf-app-continue" href="#/lesson/'+e(last.seriesId)+'/'+Number(progress.episodeId)+'"><img src="'+e(last.cover)+'" alt=""><div><span class="sf-app-eyebrow">继续上次的学习</span><h3>'+e(last.titleZh||last.title)+'</h3><p>上次学到第 '+Number(progress.episodeId)+' 集</p></div><span class="sf-app-play" aria-hidden="true">▶</span></a>':'<div class="sf-app-welcome"><div><span class="sf-app-eyebrow">WELCOME TO YQXYY</span><h1>今天，发现一个新世界</h1><p>看故事 · 读绘本 · 探索知识</p></div><img src="assets/nav-icons/animation-story.png" alt=""></div>';
+    const shelves=[],media=window.MediaShelf;
+    if(media){
+      shelves.push(this.section('故事星球','#/home/all',media.cards(app,list.slice(0,4).map(row=>media.animation(row)))));
+      try{
+        const library=await window.MovieClassroom.getLibrary(app);
+        if(location.hash!==route||!this.active)return;
+        const groups=library.series||[];
+        const filmItems=groups.filter(group=>['animated','documentary'].includes(group.dynamicCategory)).flatMap(group=>group.films.map(film=>media.movieFilm(group,film,library.playableById))).filter(item=>!item.disabled);
+        shelves.push(this.section('光影课堂','#/movies',media.cards(app,filmItems.slice(0,4))));
+      }catch(error){console.warn('首页光影精选暂不可用',error);shelves.push(this.section('光影课堂','#/movies','<p class="sf-app-empty">精彩影片即将呈现</p>'));}
+    }
+    try{
+      const books=await window.BookReader.library(app);
+      if(location.hash!==route||!this.active)return;
+      const pictureBooks=books.filter(row=>(row.kind||'book')==='book'&&!row.seriesIds?.length).slice(0,4);
+      const magazines=books.filter(row=>row.kind==='magazine').slice(0,4);
+      shelves.push(this.section('绘本阅读','#/reading',pictureBooks.length?window.BookReader.bookCards(app,pictureBooks,'',{compact:true}):'<p class="sf-app-empty">暂无精选绘本</p>'));
+      shelves.push(this.section('期刊杂志','#/magazines',magazines.length?window.BookReader.bookCards(app,magazines,'',{compact:true}):'<p class="sf-app-empty">暂无精选期刊</p>'));
+    }catch(error){console.warn('首页阅读精选暂不可用',error);}
+    if(location.hash!==route||!this.active)return;
+    app.el().innerHTML='<div class="sf-app-dashboard">'+recent+'<div class="sf-app-home-shelves">'+shelves.join('')+'</div></div>';
+    media?.bindCards(app);
+    window.BookReader?.bindBookCards(app);
+  },
+  visual(app) {
+    app.el().innerHTML='<div class="sf-app-reading-home sf-app-visual-home"><div class="sf-app-page-title"><small>WATCH & LISTEN</small><h1>视听，让故事跃然眼前</h1><p>在影像与声音中学习语言、探索世界。</p></div><div class="sf-app-reading-choices sf-app-visual-choices"><a href="#/home/all" class="blue"><img src="assets/nav-icons/animation-story.png" alt=""><div><span>ANIMATED STORIES</span><h2>动画故事</h2><p>跟随角色，在故事中学习英语</p></div>${this.icon('arrow')}</a><a href="#/movies/animated" class="orange"><img src="assets/nav-icons/movie-class.png" alt=""><div><span>ANIMATED MOVIES</span><h2>动画大电影</h2><p>欣赏经典影片，感受真实表达</p></div>${this.icon('arrow')}</a><a href="#/movies/documentary" class="mint"><img src="assets/nav-icons/periodicals.png" alt=""><div><span>DOCUMENTARIES</span><h2>纪录片</h2><p>认识自然、人文与科学世界</p></div>${this.icon('arrow')}</a></div></div>';
   },
   reading(app) {
     app.el().innerHTML=`<div class="sf-app-reading-home"><div class="sf-app-page-title"><small>READING TIME</small><h1>阅读，让故事继续</h1><p>把喜欢的故事，变成每天的陪伴。</p></div><div class="sf-app-reading-choices"><a href="#/reading" class="mint"><img src="assets/nav-icons/picture-books.png" alt=""><div><span>PICTURE BOOKS</span><h2>绘本阅读</h2><p>翻开故事，探索世界</p></div>${this.icon('arrow')}</a><a href="#/magazines" class="violet"><img src="assets/nav-icons/periodicals.png" alt=""><div><span>MAGAZINES</span><h2>期刊杂志</h2><p>发现新知，拓展视野</p></div>${this.icon('arrow')}</a></div>${this.section('我的阅读','',`<div class="sf-app-service-list"><a href="#/reading/mine/favorites">⭐ 绘本收藏 ${this.icon('arrow')}</a><a href="#/reading/mine/recent">◷ 最近阅读 ${this.icon('arrow')}</a><a href="#/magazines/mine/favorites">📚 期刊收藏 ${this.icon('arrow')}</a><a href="#/reading/local">📂 打开本地绘本 ${this.icon('arrow')}</a></div>`)}</div>`;
