@@ -1,0 +1,353 @@
+WEBVTT
+
+1
+00:00:05.215 --> 00:00:10.299
+As long as people have been able to communicate, they have used codes to pass secret information to
+
+2
+00:00:10.339 --> 00:00:11.499
+their friends and allies.
+
+3
+00:00:12.240 --> 00:00:18.184
+From the battlefields of ancient Sparta to the modern Internet, codes and ciphers have proved essential when security
+
+4
+00:00:18.224 --> 00:00:18.884
+is at stake.
+
+5
+00:00:19.565 --> 00:00:26.810
+Cryptography—from the Greek words kryptos, meaning "hidden," and graphos, meaning "writing"—is the art of converting a message from
+
+6
+00:00:26.870 --> 00:00:29.752
+its original form into one that hides its meaning.
+
+7
+00:00:30.524 --> 00:00:36.469
+The encrypted message is supposed to be understood only by its author and its intended recipient, who knows
+
+8
+00:00:36.529 --> 00:00:37.190
+how to read it.
+
+9
+00:00:37.810 --> 00:00:44.396
+Humans have found ingenious ways not only to create and transmit secret communications, but to intercept and decipher
+
+10
+00:00:44.416 --> 00:00:45.037
+them as well.
+
+11
+00:00:45.897 --> 00:00:50.962
+In order to communicate secretly, people have tried to conceal the very existence of their messages.
+
+12
+00:00:51.582 --> 00:00:57.908
+For example, the ancient Greeks commonly used wax-covered wooden tablets to write on, scratching words into the wax.
+
+13
+00:00:58.496 --> 00:01:02.178
+They would reuse them by simply melting new layers of wax onto the tablets.
+
+14
+00:01:02.798 --> 00:01:07.840
+To keep something secret, they would write a message on the bare wood tablet and only then cover
+
+15
+00:01:07.880 --> 00:01:09.661
+it with wax to make it look unused.
+
+16
+00:01:10.241 --> 00:01:15.423
+When the tablet reached its destination, the recipient would melt the wax off to see the information hidden
+
+17
+00:01:15.483 --> 00:01:21.786
+underneath. A Greek general relayed a message to an ally using a different technique: he shaved the head
+
+18
+00:01:21.826 --> 00:01:24.767
+of a trusted slave and tattooed the information onto his head.
+
+19
+00:01:25.427 --> 00:01:30.501
+After his hair grew out, the message was completely hidden, and the slave was sent to deliver it.
+
+20
+00:01:31.081 --> 00:01:37.883
+Messages sent through methods like these, however, were easily intercepted if someone found out about their presence, so
+
+21
+00:01:37.943 --> 00:01:40.644
+other ways to communicate in secrecy were developed.
+
+22
+00:01:41.964 --> 00:01:46.485
+One of the first documented uses of a cipher was by Hebrew scribes in the ancient Middle East.
+
+23
+00:01:47.085 --> 00:01:53.107
+As early as 600 BC, these scribes encrypted parts of their texts by using the "Atbash cipher," in
+
+24
+00:01:53.147 --> 00:01:57.608
+which they replaced the first letter of the alphabet with the last letter, the second with the second
+
+25
+00:01:57.648 --> 00:01:58.809
+to last, and so on.
+
+26
+00:01:59.529 --> 00:02:04.030
+In the English version of the Atbash cipher, the letter a would instead appear as z.
+
+27
+00:02:04.050 --> 00:02:10.572
+This simple process made text unreadable to anyone who did not have the key—in this case, the fact
+
+28
+00:02:10.612 --> 00:02:12.053
+that the alphabet was reversed.
+
+29
+00:02:12.953 --> 00:02:17.474
+By 500 BC, the Spartans of Greece were using cryptography on the battlefield.
+
+30
+00:02:18.054 --> 00:02:23.676
+They passed messages with a scytale, a thin strip of leather wound tightly around a wooden stick.
+
+31
+00:02:24.388 --> 00:02:28.549
+The secret message was written across the leather after it was wrapped around the stick, from one end
+
+32
+00:02:28.589 --> 00:02:29.550
+of the stick to the other.
+
+33
+00:02:30.310 --> 00:02:36.172
+The leather strip was then unwound, removed from the wood, and carried to its destination—as something as innocent
+
+34
+00:02:36.232 --> 00:02:37.352
+as a belt, for instance.
+
+35
+00:02:38.032 --> 00:02:41.873
+The recipient of the strip would then wind it around another stick of identical size.
+
+36
+00:02:42.433 --> 00:02:47.075
+The letters that formed the message would line up once again, and the message could easily be read;
+
+37
+00:02:47.695 --> 00:02:50.956
+if the stick was not the right size, the text would be incomprehensible.
+
+38
+00:02:52.016 --> 00:02:58.141
+Several hundred years later, Julius Caesar also used a cipher during his many military campaigns to keep his
+
+39
+00:02:58.221 --> 00:02:59.121
+messages secret.
+
+40
+00:02:59.742 --> 00:03:04.745
+For each letter of the message, he substituted the one that appears three letters later in the alphabet.
+
+41
+00:03:05.426 --> 00:03:09.369
+So the letter a would be replaced with d, b with e, and so on.
+
+42
+00:03:09.929 --> 00:03:15.193
+Although the Caesar cipher is simple by today's standards, it gave Caesar a great strategic advantage.
+
+43
+00:03:15.893 --> 00:03:19.176
+The Middle Ages and Renaissance saw a rapid rise in cryptography.
+
+44
+00:03:19.816 --> 00:03:26.100
+The ability to communicate secretly became a priority not only of military commanders, but also of kings and
+
+45
+00:03:26.140 --> 00:03:33.824
+bishops. In the fifteenth century, Leon Battista Alberti, an Italian architect, made a breakthrough in cryptography when he
+
+46
+00:03:33.864 --> 00:03:39.267
+placed together two metal disks—one smaller, one larger—with the alphabet printed on each.
+
+47
+00:03:39.847 --> 00:03:44.029
+The letters of the alphabet on the outer disk were in the correct order, while the letters on
+
+48
+00:03:44.049 --> 00:03:45.450
+the inner circle were mixed up.
+
+49
+00:03:46.251 --> 00:03:52.315
+A key indicated how to line up the disks—for instance, the message sender and its recipient would agree
+
+50
+00:03:52.355 --> 00:03:56.719
+to rotate the inner disk to match its letter c with the letter a on the outer disk.
+
+51
+00:03:57.500 --> 00:04:02.484
+Then, based on the pairings of the letters with the disks in that position, the message could easily
+
+52
+00:04:02.544 --> 00:04:05.086
+be converted into the cipher and back again.
+
+53
+00:04:06.227 --> 00:04:12.633
+Although many mechanical devices were designed for use by cryptographers, few major advances were made in cryptography until
+
+54
+00:04:12.653 --> 00:04:13.694
+the nineteenth century.
+
+55
+00:04:14.495 --> 00:04:21.711
+During the 1830s, Samuel Morse invented a new telegraph and Morse code, a system to encode letters into
+
+56
+00:04:21.771 --> 00:04:23.733
+combinations of dots and dashes.
+
+57
+00:04:24.653 --> 00:04:29.556
+This allowed messages to be tapped out and transmitted over wires in the form of short and long
+
+58
+00:04:29.596 --> 00:04:36.100
+tones. By the beginning of the twentieth century, cryptography was routinely used by governments around the world.
+
+59
+00:04:36.720 --> 00:04:42.304
+The telegraph machine had given way to radio, and the battle to create new methods of encryption intensified,
+
+60
+00:04:42.868 --> 00:04:47.852
+because for every code invented, people known as "code breakers" worked tirelessly to solve the riddle.
+
+61
+00:04:48.593 --> 00:04:55.118
+Governments created special departments to create new ciphers, as well as to intercept and decipher others' secret communications.
+
+62
+00:04:56.059 --> 00:05:01.083
+As World War I loomed in Europe, the ability of nations to send and receive encrypted messages freely
+
+63
+00:05:01.123 --> 00:05:01.743
+was crucial.
+
+64
+00:05:02.704 --> 00:05:08.709
+Portable "cipher machines" first came into use at this time; they enabled military commanders to communicate with their
+
+65
+00:05:08.749 --> 00:05:12.172
+headquarters quickly and securely, even from remote locations.
+
+66
+00:05:12.988 --> 00:05:17.030
+Amid the chaos of the battlefield, the cipher machines had to be protected at all costs.
+
+67
+00:05:17.810 --> 00:05:22.992
+If they fell into enemy hands, information might be revealed that would forever alter the course of events,
+
+68
+00:05:23.452 --> 00:05:24.453
+as history has shown.
+
+69
+00:05:25.253 --> 00:05:30.295
+During World War II, the ability to decipher encrypted communications proved instrumental.
+
+70
+00:05:30.935 --> 00:05:36.458
+The United States won the critical Battle of Midway against the Japanese after breaking the code used by
+
+71
+00:05:36.518 --> 00:05:37.538
+Japan's military.
+
+72
+00:05:38.318 --> 00:05:43.456
+England was able to prepare for and withstand the Germans' air and submarine attacks because the British had
+
+73
+00:05:43.476 --> 00:05:46.517
+broken the ciphers created by the German Enigma machine.
+
+74
+00:05:47.497 --> 00:05:53.219
+The Enigma was so important that, in order to hide the fact it had been broken, England resorted
+
+75
+00:05:53.259 --> 00:05:56.960
+to other explanations for its ability to resist the Germans' assaults.
+
+76
+00:05:57.881 --> 00:06:02.542
+Since World War II, the science of encryption has taken a giant leap forward.
+
+77
+00:06:03.082 --> 00:06:07.704
+The introduction of computers has made codes and ciphers both easier to create and to break.
+
+78
+00:06:08.404 --> 00:06:12.621
+As a result, a whole industry has risen to provide for people's security needs.
+
+79
+00:06:13.362 --> 00:06:18.584
+Today, cryptography is a common part of most people's daily lives, whether they know it or not.
+
+80
+00:06:19.324 --> 00:06:26.107
+Whenever people enter a password on the Internet or punch a PIN (personal identification number) into an ATM,
+
+81
+00:06:26.528 --> 00:06:27.908
+they are using a secret code.
+
+82
+00:06:28.829 --> 00:06:34.351
+Every email message is encrypted after it leaves the computer and deciphered when it arrives at its destination.
+
+83
+00:06:36.204 --> 00:06:42.186
+Hackers—people who try to break into the computer systems of governments or corporations—are actually attempting to break the
+
+84
+00:06:42.226 --> 00:06:43.766
+codes used to write software.
+
+85
+00:06:44.686 --> 00:06:49.428
+The desire for secrecy has been a part of human nature for thousands of years, and as humans
+
+86
+00:06:49.468 --> 00:06:52.409
+have evolved, so has the art of concealing information.
+
+87
+00:06:53.169 --> 00:06:59.631
+As electronic communication becomes an even greater part of our lives, new, tougher codes will be developed, and
+
+88
+00:06:59.671 --> 00:07:03.512
+the importance of cryptography will continue to increase for future generations.
