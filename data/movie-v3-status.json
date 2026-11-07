@@ -3,19 +3,19 @@
   "films": {
     "kung-fu-panda-1": {
       "state": "completed",
-      "at": "2026-11-07T09:17:52.660Z",
+      "at": "2026-11-07T09:22:38.735Z",
       "seriesId": "movie-kung-fu-panda-1",
       "source": "https://api.obj2.top/hls/movie/9502/master.m3u8"
     },
     "kung-fu-panda-2": {
       "state": "completed",
-      "at": "2026-11-07T09:17:52.660Z",
+      "at": "2026-11-07T09:22:38.735Z",
       "seriesId": "movie-kung-fu-panda-2",
       "source": "https://api.obj2.top/hls/movie/49444/master.m3u8"
     },
     "kung-fu-panda-3": {
       "state": "completed",
-      "at": "2026-11-07T09:17:52.660Z",
+      "at": "2026-11-07T09:22:38.735Z",
       "seriesId": "movie-kung-fu-panda-3",
       "source": "https://api.obj2.top/hls/movie/140300/master.m3u8"
     },
@@ -27,22 +27,64 @@
     },
     "harry-potter-philosophers-stone": {
       "state": "completed",
-      "at": "2026-11-07T09:17:52.660Z",
+      "at": "2026-11-07T09:22:38.735Z",
       "seriesId": "movie-harry-potter-1",
-      "chapters": 34,
-      "source": "https://api.obj2.top/hls/movie/671/master.m3u8",
-      "englishCues": 2259,
+      "source": "https://api.obj2.top/hls/movie/671/master.m3u8"
+    },
+    "harry-potter-chamber-of-secrets": {
+      "state": "requires_editorial_migration",
+      "error": "EXISTING_DIFFERENT_SOURCE_REQUIRES_EDITORIAL_MIGRATION",
+      "at": "2026-11-07T09:22:38.735Z",
+      "retryAfter": "2026-11-14T09:22:39.515Z"
+    },
+    "harry-potter-prisoner-of-azkaban": {
+      "state": "requires_editorial_migration",
+      "error": "EXISTING_DIFFERENT_SOURCE_REQUIRES_EDITORIAL_MIGRATION",
+      "at": "2026-11-07T09:22:38.735Z",
+      "retryAfter": "2026-11-14T09:22:39.860Z"
+    },
+    "harry-potter-goblet-of-fire": {
+      "state": "completed",
+      "at": "2026-11-07T09:22:38.735Z",
+      "seriesId": "movie-harry-potter-4",
+      "chapters": 20,
+      "source": "https://api.obj2.top/hls/movie/674/master.m3u8",
+      "englishCues": 1808,
+      "chineseCues": 0
+    },
+    "harry-potter-order-of-phoenix": {
+      "state": "completed",
+      "at": "2026-11-07T09:22:38.735Z",
+      "seriesId": "movie-harry-potter-order-of-phoenix",
+      "chapters": 19,
+      "source": "https://api.obj2.top/hls/movie/675/master.m3u8",
+      "englishCues": 1336,
       "chineseCues": 0
     }
   },
-  "updatedAt": "2026-11-07T09:17:52.660Z",
+  "updatedAt": "2026-11-07T09:22:38.735Z",
   "totalCatalog": 82,
   "lastBatch": [
     {
-      "id": "harry-potter-philosophers-stone",
+      "id": "harry-potter-chamber-of-secrets",
+      "state": "requires_editorial_migration",
+      "error": "EXISTING_DIFFERENT_SOURCE_REQUIRES_EDITORIAL_MIGRATION"
+    },
+    {
+      "id": "harry-potter-prisoner-of-azkaban",
+      "state": "requires_editorial_migration",
+      "error": "EXISTING_DIFFERENT_SOURCE_REQUIRES_EDITORIAL_MIGRATION"
+    },
+    {
+      "id": "harry-potter-goblet-of-fire",
       "state": "completed",
-      "chapters": 34
+      "chapters": 20
+    },
+    {
+      "id": "harry-potter-order-of-phoenix",
+      "state": "completed",
+      "chapters": 19
     }
   ],
-  "pendingEstimate": 78
+  "pendingEstimate": 73
 }

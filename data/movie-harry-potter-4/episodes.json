@@ -11,14 +11,19 @@
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-4/hls/001.m3u8",
-      "clipStart": 0,
-      "clipEnd": 490.41,
-      "duration": 490.41,
       "subtitleUrl": "/data/movie-harry-potter-4/subtitles/001.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/674/master.m3u8",
       "originalStart": 0,
       "originalEnd": 490.41,
-      "timelineOrigin": 0
+      "timelineOrigin": 0,
+      "clipStart": 0,
+      "clipEnd": 490.41,
+      "duration": 490.41
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-4/subtitles/001.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -26,11 +31,6 @@
       "words": true,
       "vocabulary": true,
       "quiz": true
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-4/subtitles/001.en.vtt",
-      "englishChinese": null,
-      "status": "english-ready; chinese-translation-pending"
     }
   },
   {
@@ -45,14 +45,19 @@
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-4/hls/002.m3u8",
-      "clipStart": 2.41,
-      "clipEnd": 500.9,
-      "duration": 498.49,
       "subtitleUrl": "/data/movie-harry-potter-4/subtitles/002.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/674/master.m3u8",
       "originalStart": 490.41,
       "originalEnd": 988.9,
-      "timelineOrigin": 488
+      "timelineOrigin": 488,
+      "clipStart": 2.41,
+      "clipEnd": 500.9,
+      "duration": 498.49
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-4/subtitles/002.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -60,11 +65,6 @@
       "words": true,
       "vocabulary": true,
       "quiz": true
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-4/subtitles/002.en.vtt",
-      "englishChinese": null,
-      "status": "english-ready; chinese-translation-pending"
     }
   },
   {
@@ -79,14 +79,19 @@
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-4/hls/003.m3u8",
-      "clipStart": 0.9,
-      "clipEnd": 348.5,
-      "duration": 347.6,
       "subtitleUrl": "/data/movie-harry-potter-4/subtitles/003.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/674/master.m3u8",
       "originalStart": 988.9,
       "originalEnd": 1336.5,
-      "timelineOrigin": 988
+      "timelineOrigin": 988,
+      "clipStart": 0.9,
+      "clipEnd": 348.5,
+      "duration": 347.6
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-4/subtitles/003.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -94,11 +99,6 @@
       "words": true,
       "vocabulary": true,
       "quiz": true
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-4/subtitles/003.en.vtt",
-      "englishChinese": null,
-      "status": "english-ready; chinese-translation-pending"
     }
   },
   {
@@ -113,14 +113,19 @@
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-4/hls/004.m3u8",
-      "clipStart": 3.333333,
-      "clipEnd": 276.273333,
-      "duration": 272.94,
       "subtitleUrl": "/data/movie-harry-potter-4/subtitles/004.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/674/master.m3u8",
       "originalStart": 1336.5,
       "originalEnd": 1609.44,
-      "timelineOrigin": 1333.166667
+      "timelineOrigin": 1333.166667,
+      "clipStart": 3.333333,
+      "clipEnd": 276.273333,
+      "duration": 272.94
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-4/subtitles/004.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -128,11 +133,6 @@
       "words": true,
       "vocabulary": true,
       "quiz": true
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-4/subtitles/004.en.vtt",
-      "englishChinese": null,
-      "status": "english-ready; chinese-translation-pending"
     }
   },
   {
@@ -147,14 +147,19 @@
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-4/hls/005.m3u8",
-      "clipStart": 0.273333,
-      "clipEnd": 285.313333,
-      "duration": 285.04,
       "subtitleUrl": "/data/movie-harry-potter-4/subtitles/005.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/674/master.m3u8",
       "originalStart": 1609.44,
       "originalEnd": 1894.48,
-      "timelineOrigin": 1609.166667
+      "timelineOrigin": 1609.166667,
+      "clipStart": 0.273333,
+      "clipEnd": 285.313333,
+      "duration": 285.04
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-4/subtitles/005.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -162,11 +167,6 @@
       "words": true,
       "vocabulary": true,
       "quiz": true
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-4/subtitles/005.en.vtt",
-      "englishChinese": null,
-      "status": "english-ready; chinese-translation-pending"
     }
   },
   {
@@ -181,14 +181,19 @@
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-4/hls/006.m3u8",
-      "clipStart": 1.313333,
-      "clipEnd": 272.833333,
-      "duration": 271.52,
       "subtitleUrl": "/data/movie-harry-potter-4/subtitles/006.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/674/master.m3u8",
       "originalStart": 1894.48,
       "originalEnd": 2166,
-      "timelineOrigin": 1893.166667
+      "timelineOrigin": 1893.166667,
+      "clipStart": 1.313333,
+      "clipEnd": 272.833333,
+      "duration": 271.52
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-4/subtitles/006.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -196,11 +201,6 @@
       "words": true,
       "vocabulary": true,
       "quiz": true
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-4/subtitles/006.en.vtt",
-      "englishChinese": null,
-      "status": "english-ready; chinese-translation-pending"
     }
   },
   {
@@ -215,14 +215,19 @@
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-4/hls/007.m3u8",
-      "clipStart": 0.833333,
-      "clipEnd": 356.183333,
-      "duration": 355.35,
       "subtitleUrl": "/data/movie-harry-potter-4/subtitles/007.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/674/master.m3u8",
       "originalStart": 2166,
       "originalEnd": 2521.35,
-      "timelineOrigin": 2165.166667
+      "timelineOrigin": 2165.166667,
+      "clipStart": 0.833333,
+      "clipEnd": 356.183333,
+      "duration": 355.35
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-4/subtitles/007.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -230,11 +235,6 @@
       "words": true,
       "vocabulary": true,
       "quiz": true
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-4/subtitles/007.en.vtt",
-      "englishChinese": null,
-      "status": "english-ready; chinese-translation-pending"
     }
   },
   {
@@ -249,14 +249,19 @@
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-4/hls/008.m3u8",
-      "clipStart": 1.016666,
-      "clipEnd": 294.516666,
-      "duration": 293.5,
       "subtitleUrl": "/data/movie-harry-potter-4/subtitles/008.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/674/master.m3u8",
       "originalStart": 2521.35,
       "originalEnd": 2814.85,
-      "timelineOrigin": 2520.333334
+      "timelineOrigin": 2520.333334,
+      "clipStart": 1.016666,
+      "clipEnd": 294.516666,
+      "duration": 293.5
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-4/subtitles/008.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -264,11 +269,6 @@
       "words": true,
       "vocabulary": true,
       "quiz": true
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-4/subtitles/008.en.vtt",
-      "englishChinese": null,
-      "status": "english-ready; chinese-translation-pending"
     }
   },
   {
@@ -283,14 +283,19 @@
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-4/hls/009.m3u8",
-      "clipStart": 2.516666,
-      "clipEnd": 452.766666,
-      "duration": 450.25,
       "subtitleUrl": "/data/movie-harry-potter-4/subtitles/009.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/674/master.m3u8",
       "originalStart": 2814.85,
       "originalEnd": 3265.1,
-      "timelineOrigin": 2812.333334
+      "timelineOrigin": 2812.333334,
+      "clipStart": 2.516666,
+      "clipEnd": 452.766666,
+      "duration": 450.25
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-4/subtitles/009.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -298,11 +303,6 @@
       "words": true,
       "vocabulary": true,
       "quiz": true
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-4/subtitles/009.en.vtt",
-      "englishChinese": null,
-      "status": "english-ready; chinese-translation-pending"
     }
   },
   {
@@ -317,14 +317,19 @@
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-4/hls/010.m3u8",
-      "clipStart": 0.766666,
-      "clipEnd": 512.356666,
-      "duration": 511.59,
       "subtitleUrl": "/data/movie-harry-potter-4/subtitles/010.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/674/master.m3u8",
       "originalStart": 3265.1,
       "originalEnd": 3776.69,
-      "timelineOrigin": 3264.333334
+      "timelineOrigin": 3264.333334,
+      "clipStart": 0.766666,
+      "clipEnd": 512.356666,
+      "duration": 511.59
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-4/subtitles/010.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -332,11 +337,6 @@
       "words": true,
       "vocabulary": true,
       "quiz": true
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-4/subtitles/010.en.vtt",
-      "englishChinese": null,
-      "status": "english-ready; chinese-translation-pending"
     }
   },
   {
@@ -351,14 +351,19 @@
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-4/hls/011.m3u8",
-      "clipStart": 3.189999,
-      "clipEnd": 579.889999,
-      "duration": 576.7,
       "subtitleUrl": "/data/movie-harry-potter-4/subtitles/011.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/674/master.m3u8",
       "originalStart": 3776.69,
       "originalEnd": 4353.39,
-      "timelineOrigin": 3773.500001
+      "timelineOrigin": 3773.500001,
+      "clipStart": 3.189999,
+      "clipEnd": 579.889999,
+      "duration": 576.7
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-4/subtitles/011.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -366,11 +371,6 @@
       "words": true,
       "vocabulary": true,
       "quiz": true
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-4/subtitles/011.en.vtt",
-      "englishChinese": null,
-      "status": "english-ready; chinese-translation-pending"
     }
   },
   {
@@ -385,14 +385,19 @@
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-4/hls/012.m3u8",
-      "clipStart": 3.889999,
-      "clipEnd": 581.339999,
-      "duration": 577.45,
       "subtitleUrl": "/data/movie-harry-potter-4/subtitles/012.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/674/master.m3u8",
       "originalStart": 4353.39,
       "originalEnd": 4930.84,
-      "timelineOrigin": 4349.500001
+      "timelineOrigin": 4349.500001,
+      "clipStart": 3.889999,
+      "clipEnd": 581.339999,
+      "duration": 577.45
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-4/subtitles/012.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -400,11 +405,6 @@
       "words": true,
       "vocabulary": true,
       "quiz": true
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-4/subtitles/012.en.vtt",
-      "englishChinese": null,
-      "status": "english-ready; chinese-translation-pending"
     }
   },
   {
@@ -419,14 +419,19 @@
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-4/hls/013.m3u8",
-      "clipStart": 2.173332,
-      "clipEnd": 462.383332,
-      "duration": 460.21,
       "subtitleUrl": "/data/movie-harry-potter-4/subtitles/013.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/674/master.m3u8",
       "originalStart": 4930.84,
       "originalEnd": 5391.05,
-      "timelineOrigin": 4928.666668
+      "timelineOrigin": 4928.666668,
+      "clipStart": 2.173332,
+      "clipEnd": 462.383332,
+      "duration": 460.21
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-4/subtitles/013.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -434,11 +439,6 @@
       "words": true,
       "vocabulary": true,
       "quiz": true
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-4/subtitles/013.en.vtt",
-      "englishChinese": null,
-      "status": "english-ready; chinese-translation-pending"
     }
   },
   {
@@ -453,14 +453,19 @@
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-4/hls/014.m3u8",
-      "clipStart": 2.383332,
-      "clipEnd": 493.003332,
-      "duration": 490.62,
       "subtitleUrl": "/data/movie-harry-potter-4/subtitles/014.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/674/master.m3u8",
       "originalStart": 5391.05,
       "originalEnd": 5881.67,
-      "timelineOrigin": 5388.666668
+      "timelineOrigin": 5388.666668,
+      "clipStart": 2.383332,
+      "clipEnd": 493.003332,
+      "duration": 490.62
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-4/subtitles/014.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -468,11 +473,6 @@
       "words": true,
       "vocabulary": true,
       "quiz": true
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-4/subtitles/014.en.vtt",
-      "englishChinese": null,
-      "status": "english-ready; chinese-translation-pending"
     }
   },
   {
@@ -487,14 +487,19 @@
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-4/hls/015.m3u8",
-      "clipStart": 1.003332,
-      "clipEnd": 360.613332,
-      "duration": 359.61,
       "subtitleUrl": "/data/movie-harry-potter-4/subtitles/015.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/674/master.m3u8",
       "originalStart": 5881.67,
       "originalEnd": 6241.28,
-      "timelineOrigin": 5880.666668
+      "timelineOrigin": 5880.666668,
+      "clipStart": 1.003332,
+      "clipEnd": 360.613332,
+      "duration": 359.61
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-4/subtitles/015.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -502,11 +507,6 @@
       "words": true,
       "vocabulary": true,
       "quiz": true
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-4/subtitles/015.en.vtt",
-      "englishChinese": null,
-      "status": "english-ready; chinese-translation-pending"
     }
   },
   {
@@ -521,14 +521,19 @@
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-4/hls/016.m3u8",
-      "clipStart": 3.446665,
-      "clipEnd": 425.656665,
-      "duration": 422.21,
       "subtitleUrl": "/data/movie-harry-potter-4/subtitles/016.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/674/master.m3u8",
       "originalStart": 6241.28,
       "originalEnd": 6663.49,
-      "timelineOrigin": 6237.833335
+      "timelineOrigin": 6237.833335,
+      "clipStart": 3.446665,
+      "clipEnd": 425.656665,
+      "duration": 422.21
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-4/subtitles/016.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -536,11 +541,6 @@
       "words": true,
       "vocabulary": true,
       "quiz": true
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-4/subtitles/016.en.vtt",
-      "englishChinese": null,
-      "status": "english-ready; chinese-translation-pending"
     }
   },
   {
@@ -555,14 +555,19 @@
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-4/hls/017.m3u8",
-      "clipStart": 1.656665,
-      "clipEnd": 540.026665,
-      "duration": 538.37,
       "subtitleUrl": "/data/movie-harry-potter-4/subtitles/017.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/674/master.m3u8",
       "originalStart": 6663.49,
       "originalEnd": 7201.86,
-      "timelineOrigin": 6661.833335
+      "timelineOrigin": 6661.833335,
+      "clipStart": 1.656665,
+      "clipEnd": 540.026665,
+      "duration": 538.37
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-4/subtitles/017.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -570,11 +575,6 @@
       "words": true,
       "vocabulary": true,
       "quiz": true
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-4/subtitles/017.en.vtt",
-      "englishChinese": null,
-      "status": "english-ready; chinese-translation-pending"
     }
   },
   {
@@ -589,14 +589,19 @@
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-4/hls/018.m3u8",
-      "clipStart": 0.859998,
-      "clipEnd": 611.059998,
-      "duration": 610.2,
       "subtitleUrl": "/data/movie-harry-potter-4/subtitles/018.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/674/master.m3u8",
       "originalStart": 7201.86,
       "originalEnd": 7812.06,
-      "timelineOrigin": 7201.000002
+      "timelineOrigin": 7201.000002,
+      "clipStart": 0.859998,
+      "clipEnd": 611.059998,
+      "duration": 610.2
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-4/subtitles/018.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -604,11 +609,6 @@
       "words": true,
       "vocabulary": true,
       "quiz": true
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-4/subtitles/018.en.vtt",
-      "englishChinese": null,
-      "status": "english-ready; chinese-translation-pending"
     }
   },
   {
@@ -623,14 +623,19 @@
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-4/hls/019.m3u8",
-      "clipStart": 3.059998,
-      "clipEnd": 459.759998,
-      "duration": 456.7,
       "subtitleUrl": "/data/movie-harry-potter-4/subtitles/019.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/674/master.m3u8",
       "originalStart": 7812.06,
       "originalEnd": 8268.76,
-      "timelineOrigin": 7809.000002
+      "timelineOrigin": 7809.000002,
+      "clipStart": 3.059998,
+      "clipEnd": 459.759998,
+      "duration": 456.7
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-4/subtitles/019.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -638,11 +643,6 @@
       "words": true,
       "vocabulary": true,
       "quiz": true
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-4/subtitles/019.en.vtt",
-      "englishChinese": null,
-      "status": "english-ready; chinese-translation-pending"
     }
   },
   {
@@ -657,14 +657,19 @@
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-4/hls/020.m3u8",
-      "clipStart": 0.593331,
-      "clipEnd": 317.828331,
-      "duration": 317.235,
       "subtitleUrl": "/data/movie-harry-potter-4/subtitles/020.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/674/master.m3u8",
       "originalStart": 8268.76,
       "originalEnd": 8585.995,
-      "timelineOrigin": 8268.166669
+      "timelineOrigin": 8268.166669,
+      "clipStart": 0.593331,
+      "clipEnd": 317.828331,
+      "duration": 317.235
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-4/subtitles/020.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -672,11 +677,6 @@
       "words": true,
       "vocabulary": true,
       "quiz": true
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-4/subtitles/020.en.vtt",
-      "englishChinese": null,
-      "status": "english-ready; chinese-translation-pending"
     }
   }
 ]
