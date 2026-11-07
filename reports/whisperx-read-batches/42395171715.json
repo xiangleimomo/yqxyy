@@ -1,0 +1,398 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42395171715",
+  "completedAt": "2026-11-07T17:25:11.954097+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 22,
+  "rejected": 28,
+  "websiteCommitRequired": true,
+  "totalWords": 13214,
+  "speechMatchedWords": 13214,
+  "success": [
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 1,
+      "cues": 97,
+      "words": 613,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 613,
+      "coverage": 0.9967,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 2,
+      "cues": 88,
+      "words": 617,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 617,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 3,
+      "cues": 94,
+      "words": 584,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 584,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 4,
+      "cues": 80,
+      "words": 548,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 548,
+      "coverage": 0.9982,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 5,
+      "cues": 78,
+      "words": 563,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 65,
+      "speechWords": 563,
+      "coverage": 0.9947,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 6,
+      "cues": 92,
+      "words": 617,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 617,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 7,
+      "cues": 110,
+      "words": 603,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 89,
+      "speechWords": 603,
+      "coverage": 0.9967,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 8,
+      "cues": 85,
+      "words": 588,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 588,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 9,
+      "cues": 99,
+      "words": 618,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 618,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 10,
+      "cues": 99,
+      "words": 617,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 82,
+      "speechWords": 617,
+      "coverage": 0.9984,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 11,
+      "cues": 84,
+      "words": 619,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 619,
+      "coverage": 0.9984,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 12,
+      "cues": 81,
+      "words": 576,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 576,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 13,
+      "cues": 81,
+      "words": 613,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 613,
+      "coverage": 0.9984,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 14,
+      "cues": 95,
+      "words": 600,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 82,
+      "speechWords": 600,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 15,
+      "cues": 97,
+      "words": 610,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 82,
+      "speechWords": 610,
+      "coverage": 0.9984,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 16,
+      "cues": 84,
+      "words": 573,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 69,
+      "speechWords": 573,
+      "coverage": 0.9965,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 18,
+      "cues": 95,
+      "words": 602,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 602,
+      "coverage": 0.9967,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 19,
+      "cues": 100,
+      "words": 588,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 80,
+      "speechWords": 588,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 20,
+      "cues": 99,
+      "words": 634,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 83,
+      "speechWords": 634,
+      "coverage": 0.9969,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 21,
+      "cues": 112,
+      "words": 619,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 83,
+      "speechWords": 619,
+      "coverage": 0.9984,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 23,
+      "cues": 100,
+      "words": 608,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 86,
+      "speechWords": 608,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 24,
+      "cues": 109,
+      "words": 604,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 604,
+      "coverage": 0.9983,
+      "omittedWords": 1
+    }
+  ],
+  "failures": [
+    {
+      "seriesId": "little-fox-the-velveteen-rabbit-fs0126",
+      "episodeId": 10,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-velveteen-rabbit-fs0126",
+      "episodeId": 11,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-velveteen-rabbit-fs0126",
+      "episodeId": 12,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-velveteen-rabbit-fs0126",
+      "episodeId": 13,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-velveteen-rabbit-fs0126",
+      "episodeId": 14,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-velveteen-rabbit-fs0126",
+      "episodeId": 15,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-velveteen-rabbit-fs0126",
+      "episodeId": 16,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-velveteen-rabbit-fs0126",
+      "episodeId": 17,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-velveteen-rabbit-fs0126",
+      "episodeId": 18,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-velveteen-rabbit-fs0126",
+      "episodeId": 19,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-velveteen-rabbit-fs0126",
+      "episodeId": 20,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 17,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 22,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 25,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 26,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 27,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 28,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 29,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 30,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 31,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 32,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 33,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 34,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 35,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 36,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 37,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 38,
+      "reason": "Missing alignment report"
+    },
+    {
+      "seriesId": "little-fox-the-willow-creek-twins-fs0048",
+      "episodeId": 39,
+      "reason": "Missing alignment report"
+    }
+  ]
+}
