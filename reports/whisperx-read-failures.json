@@ -11084,6 +11084,46 @@
       "seriesId": "little-fox-rocket-girl-fs0065",
       "episodeId": 250,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 3.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-sam-and-lucky-fs0014",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-sam-and-lucky-fs0014",
+      "episodeId": 2,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (114709 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (114709 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (114709 ms, minimum 120000 ms)"
+    },
+    {
+      "seriesId": "little-fox-sam-and-lucky-fs0014",
+      "episodeId": 3,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (112299 ms, minimum 120000 ms); cdn.littlefox.com: insufficient audio (112299 ms, minimum 120000 ms); cdn.littlefox.co.kr: insufficient audio (112299 ms, minimum 120000 ms)"
+    },
+    {
+      "seriesId": "little-fox-sam-and-lucky-fs0014",
+      "episodeId": 4,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-sam-and-lucky-fs0014",
+      "episodeId": 5,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-sam-and-lucky-fs0014",
+      "episodeId": 6,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.5% matched, 3.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-sam-and-lucky-fs0014",
+      "episodeId": 7,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-sam-and-lucky-fs0014",
+      "episodeId": 8,
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (114837 ms, minimum 115830 ms); cdn.littlefox.com: insufficient audio (114837 ms, minimum 115830 ms); cdn.littlefox.co.kr: insufficient audio (114837 ms, minimum 115830 ms)"
     }
   ]
 }
