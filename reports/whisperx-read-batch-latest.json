@@ -1,278 +1,356 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42385125716",
-  "completedAt": "2026-11-07T15:24:21.479926+00:00",
+  "runId": "42386232165",
+  "completedAt": "2026-11-07T15:50:42.406880+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 2,
-  "rejected": 48,
+  "published": 15,
+  "rejected": 35,
   "websiteCommitRequired": true,
-  "totalWords": 2175,
-  "speechMatchedWords": 2175,
+  "totalWords": 12177,
+  "speechMatchedWords": 12177,
   "success": [
     {
       "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
-      "episodeId": 2,
-      "cues": 109,
-      "words": 1082,
+      "episodeId": 24,
+      "cues": 126,
+      "words": 1088,
       "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 1082,
+      "xmlParagraphs": 73,
+      "speechWords": 1088,
+      "coverage": 0.9982,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
+      "episodeId": 25,
+      "cues": 100,
+      "words": 1090,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 63,
+      "speechWords": 1090,
       "coverage": 0.9991,
       "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
-      "episodeId": 4,
-      "cues": 109,
-      "words": 1093,
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
+      "episodeId": 1,
+      "cues": 93,
+      "words": 771,
       "xmlTextVerified": true,
-      "xmlParagraphs": 82,
-      "speechWords": 1093,
-      "coverage": 0.9991,
+      "xmlParagraphs": 73,
+      "speechWords": 771,
+      "coverage": 0.9987,
       "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
+      "episodeId": 2,
+      "cues": 102,
+      "words": 764,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 86,
+      "speechWords": 764,
+      "coverage": 0.9974,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
+      "episodeId": 3,
+      "cues": 86,
+      "words": 772,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 772,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
+      "episodeId": 4,
+      "cues": 96,
+      "words": 777,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 777,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
+      "episodeId": 5,
+      "cues": 88,
+      "words": 752,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 752,
+      "coverage": 0.9973,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
+      "episodeId": 6,
+      "cues": 89,
+      "words": 772,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 772,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
+      "episodeId": 7,
+      "cues": 79,
+      "words": 768,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 768,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
+      "episodeId": 8,
+      "cues": 97,
+      "words": 776,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 776,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
+      "episodeId": 9,
+      "cues": 88,
+      "words": 776,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 776,
+      "coverage": 0.9974,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
+      "episodeId": 10,
+      "cues": 97,
+      "words": 770,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 770,
+      "coverage": 0.9987,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
+      "episodeId": 11,
+      "cues": 87,
+      "words": 771,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 771,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
+      "episodeId": 12,
+      "cues": 91,
+      "words": 761,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 761,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0152",
+      "episodeId": 13,
+      "cues": 88,
+      "words": 769,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 769,
+      "coverage": 1.0,
+      "omittedWords": 0
     }
   ],
   "failures": [
     {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 32,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.1% matched, 0.9% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 33,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 34,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 35,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.6% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 36,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 37,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 38,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 39,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 40,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 41,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 42,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 43,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 44,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 45,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 46,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 47,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 48,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 49,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 50,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 51,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 52,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 53,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 54,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.6% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 55,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 56,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 57,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 58,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 59,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 60,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 61,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 62,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 63,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 64,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 65,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 66,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 67,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 68,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 69,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 70,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 71,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-the-pet-lovers-club-fs0060",
-      "episodeId": 72,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.2% matched, 0.0% assigned"
+      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
+      "episodeId": 10,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
+      "episodeId": 11,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 3.5% matched, 12.1% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
+      "episodeId": 12,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.8% matched, 3.7% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
+      "episodeId": 13,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.8% matched, 5.4% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
+      "episodeId": 14,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.6% matched, 6.6% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
+      "episodeId": 15,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.5% matched, 7.2% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
+      "episodeId": 16,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.6% matched, 9.5% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
+      "episodeId": 17,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.6% matched, 11.5% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
+      "episodeId": 18,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
+      "episodeId": 19,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
+      "episodeId": 20,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
+      "episodeId": 21,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.7% matched, 13.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
+      "episodeId": 22,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.7% matched, 17.2% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
+      "episodeId": 23,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.7% matched, 15.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
+      "episodeId": 26,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.7% matched, 22.4% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
       "episodeId": 1,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 98.6% assigned"
     },
     {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
+      "episodeId": 2,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.9% matched, 100.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
       "episodeId": 3,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.7% matched, 97.3% assigned"
     },
     {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
+      "episodeId": 4,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 100.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
       "episodeId": 5,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.5% matched, 2.9% assigned"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.3% matched, 92.2% assigned"
     },
     {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
       "episodeId": 6,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 100.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
       "episodeId": 7,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.3% matched, 98.6% assigned"
     },
     {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
       "episodeId": 8,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 100.0% assigned"
     },
     {
-      "seriesId": "little-fox-the-phantom-of-the-opera-fs0115",
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
       "episodeId": 9,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.0% matched, 0.0% assigned"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 100.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
+      "episodeId": 10,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 92.2% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
+      "episodeId": 11,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 91.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
+      "episodeId": 12,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 96.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
+      "episodeId": 13,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.1% matched, 91.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
+      "episodeId": 14,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.4% matched, 98.8% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
+      "episodeId": 15,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.6% matched, 92.4% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
+      "episodeId": 16,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.4% matched, 92.2% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
+      "episodeId": 17,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 100.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
+      "episodeId": 18,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.9% matched, 93.8% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
+      "episodeId": 19,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 97.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-prince-and-the-pauper-fs0015",
+      "episodeId": 20,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.9% matched, 98.6% assigned"
     }
   ]
 }
