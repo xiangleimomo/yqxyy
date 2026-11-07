@@ -3,574 +3,543 @@
   "films": {
     "kung-fu-panda-1": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-kung-fu-panda-1",
       "source": "https://api.obj2.top/hls/movie/9502/master.m3u8"
     },
     "kung-fu-panda-2": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-kung-fu-panda-2",
       "source": "https://api.obj2.top/hls/movie/49444/master.m3u8"
     },
     "kung-fu-panda-3": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-kung-fu-panda-3",
       "source": "https://api.obj2.top/hls/movie/140300/master.m3u8"
     },
     "kung-fu-panda-4": {
       "state": "source_error",
       "error": "Movie audio does not match video; no aligned audio track in selected audio group",
-      "at": "2026-11-07T09:50:29.057Z",
-      "retryAfter": "2026-11-08T09:50:32.020Z"
+      "at": "2026-11-07T09:52:44.076Z",
+      "retryAfter": "2026-11-08T09:52:45.717Z"
     },
     "harry-potter-philosophers-stone": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-harry-potter-1",
       "source": "https://api.obj2.top/hls/movie/671/master.m3u8"
     },
     "harry-potter-chamber-of-secrets": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-harry-potter-2",
-      "chapters": 28,
-      "source": "https://api.obj2.top/hls/movie/672/master.m3u8",
-      "englishCues": 2183,
-      "chineseCues": 0
+      "source": "https://api.obj2.top/hls/movie/672/master.m3u8"
     },
     "harry-potter-prisoner-of-azkaban": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-harry-potter-3",
       "source": "https://api.obj2.top/hls/movie/673/master.m3u8"
     },
     "harry-potter-goblet-of-fire": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-harry-potter-4",
       "source": "https://api.obj2.top/hls/movie/674/master.m3u8"
     },
     "harry-potter-order-of-phoenix": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-harry-potter-order-of-phoenix",
       "source": "https://api.obj2.top/hls/movie/675/master.m3u8"
     },
     "harry-potter-half-blood-prince": {
-      "state": "source_error",
-      "error": "Less than five translatable words in episode",
-      "at": "2026-11-07T09:50:29.057Z",
-      "retryAfter": "2026-11-08T09:50:29.919Z"
+      "state": "completed",
+      "at": "2026-11-07T09:52:44.076Z",
+      "seriesId": "movie-harry-potter-half-blood-prince",
+      "chapters": 22,
+      "source": "https://api.obj2.top/hls/movie/767/master.m3u8",
+      "englishCues": 1884,
+      "chineseCues": 0
     },
     "harry-potter-deathly-hallows-part-1": {
-      "state": "source_error",
-      "error": "Insufficient English captions in 021",
-      "at": "2026-11-07T09:50:29.057Z",
-      "retryAfter": "2026-11-08T09:50:30.260Z"
+      "state": "completed",
+      "at": "2026-11-07T09:52:44.076Z",
+      "seriesId": "movie-harry-potter-deathly-hallows-part-1",
+      "chapters": 20,
+      "source": "https://api.obj2.top/hls/movie/12444/master.m3u8",
+      "englishCues": 1973,
+      "chineseCues": 0
     },
     "harry-potter-deathly-hallows-part-2": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-harry-potter-deathly-hallows-part-2",
       "source": "https://api.obj2.top/hls/movie/12445/master.m3u8"
     },
     "fantastic-beasts-1": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-fantastic-beasts-1",
       "source": "https://api.obj2.top/hls/movie/259316/master.m3u8"
     },
     "fantastic-beasts-2": {
-      "state": "source_error",
-      "error": "Insufficient English captions in 020",
-      "at": "2026-11-07T09:50:29.057Z",
-      "retryAfter": "2026-11-08T09:50:30.558Z"
+      "state": "completed",
+      "at": "2026-11-07T09:52:44.076Z",
+      "seriesId": "movie-fantastic-beasts-2",
+      "chapters": 19,
+      "source": "https://api.obj2.top/hls/movie/338952/master.m3u8",
+      "englishCues": 1506,
+      "chineseCues": 0
     },
     "fantastic-beasts-3": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-fantastic-beasts-3",
-      "chapters": 20,
-      "source": "https://api.obj2.top/hls/movie/338953/master.m3u8",
-      "englishCues": 1849,
-      "chineseCues": 0
+      "source": "https://api.obj2.top/hls/movie/338953/master.m3u8"
     },
     "narnia-1": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-narnia-1",
-      "chapters": 21,
-      "source": "https://api.obj2.top/hls/movie/411/master.m3u8",
-      "englishCues": 1284,
-      "chineseCues": 1070
+      "source": "https://api.obj2.top/hls/movie/411/master.m3u8"
     },
     "narnia-2": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-narnia-2",
-      "chapters": 21,
-      "source": "https://api.obj2.top/hls/movie/2454/master.m3u8",
-      "englishCues": 1074,
-      "chineseCues": 911
+      "source": "https://api.obj2.top/hls/movie/2454/master.m3u8"
     },
     "narnia-3": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-narnia-3",
       "source": "https://api.obj2.top/hls/movie/10140/master.m3u8"
     },
     "paddington-1": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-paddington-1",
       "source": "https://api.obj2.top/hls/movie/116149/master.m3u8"
     },
     "paddington-2": {
       "state": "no_english",
       "error": "NO_ENGLISH_TRACK",
-      "at": "2026-11-07T09:50:29.057Z",
-      "retryAfter": "2026-11-14T09:50:31.507Z"
+      "at": "2026-11-07T09:52:44.076Z",
+      "retryAfter": "2026-11-14T09:52:45.473Z"
     },
     "paddington-3": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-paddington-3",
       "source": "https://api.obj2.top/hls/movie/516729/master.m3u8"
     },
     "toy-story-1": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-toy-story-1",
       "source": "https://api.obj2.top/hls/movie/862/master.m3u8"
     },
     "toy-story-2": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-toy-story-2",
       "source": "https://api.obj2.top/hls/movie/863/master.m3u8"
     },
     "toy-story-3": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-toy-story-3",
       "source": "https://api.obj2.top/hls/movie/10193/master.m3u8"
     },
     "toy-story-4": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-toy-story-4",
       "source": "https://api.obj2.top/hls/movie/301528/master.m3u8"
     },
     "toy-story-5": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-toy-story-5",
       "source": "https://api.obj2.top/hls/movie/1084244/master.m3u8"
     },
     "dragon-1": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-dragon-1",
       "source": "https://api.obj2.top/hls/movie/10191/master.m3u8"
     },
     "dragon-2": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-dragon-2",
       "source": "https://api.obj2.top/hls/movie/82702/master.m3u8"
     },
     "dragon-3": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-dragon-3",
-      "chapters": 14,
-      "source": "https://api.obj2.top/hls/movie/166428/master.m3u8",
-      "englishCues": 1584,
-      "chineseCues": 0
+      "source": "https://api.obj2.top/hls/movie/166428/master.m3u8"
     },
     "zootopia-1": {
       "state": "source_error",
       "error": "Less than five translatable words in episode",
-      "at": "2026-11-07T09:50:29.057Z",
-      "retryAfter": "2026-11-08T09:50:32.347Z"
+      "at": "2026-11-07T09:52:44.076Z",
+      "retryAfter": "2026-11-08T09:52:46.017Z"
     },
     "zootopia-2": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-zootopia-2",
-      "chapters": 16,
-      "source": "https://api.obj2.top/hls/movie/1084242/master.m3u8",
-      "englishCues": 2144,
-      "chineseCues": 0
+      "source": "https://api.obj2.top/hls/movie/1084242/master.m3u8"
     },
     "inside-out-1": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-inside-out-1",
       "source": "https://api.obj2.top/hls/movie/150540/master.m3u8"
     },
     "inside-out-2": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-inside-out-2",
-      "chapters": 14,
-      "source": "https://api.obj2.top/hls/movie/1022789/master.m3u8",
-      "englishCues": 2146,
-      "chineseCues": 0
+      "source": "https://api.obj2.top/hls/movie/1022789/master.m3u8"
     },
     "finding-nemo": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-finding-nemo",
       "source": "https://api.obj2.top/hls/movie/12/master.m3u8"
     },
     "finding-dory": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-finding-dory",
       "source": "https://api.obj2.top/hls/movie/127380/master.m3u8"
     },
     "incredibles-1": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-incredibles-1",
       "source": "https://api.obj2.top/hls/movie/9806/master.m3u8"
     },
     "incredibles-2": {
-      "state": "source_error",
-      "error": "Less than five translatable words in episode",
-      "at": "2026-11-07T09:50:29.057Z",
-      "retryAfter": "2026-11-08T09:50:33.793Z"
+      "state": "completed",
+      "at": "2026-11-07T09:52:44.076Z",
+      "seriesId": "movie-incredibles-2",
+      "chapters": 17,
+      "source": "https://api.obj2.top/hls/movie/260513/master.m3u8",
+      "englishCues": 2316,
+      "chineseCues": 0
     },
     "monsters-inc": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-monsters-inc",
       "source": "https://api.obj2.top/hls/movie/585/master.m3u8"
     },
     "monsters-university": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-monsters-university",
-      "chapters": 16,
-      "source": "https://api.obj2.top/hls/movie/62211/master.m3u8",
-      "englishCues": 1849,
-      "chineseCues": 0
+      "source": "https://api.obj2.top/hls/movie/62211/master.m3u8"
     },
     "cars-1": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-cars-1",
       "source": "https://api.obj2.top/hls/movie/920/master.m3u8"
     },
     "cars-2": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-cars-2",
       "source": "https://api.obj2.top/hls/movie/49013/master.m3u8"
     },
     "cars-3": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-cars-3",
       "source": "https://api.obj2.top/hls/movie/260514/master.m3u8"
     },
     "frozen-1": {
       "state": "source_error",
       "error": "Less than five translatable words in episode",
-      "at": "2026-11-07T09:50:29.057Z",
-      "retryAfter": "2026-11-08T09:50:34.344Z"
+      "at": "2026-11-07T09:52:44.076Z",
+      "retryAfter": "2026-11-08T09:52:46.577Z"
     },
     "frozen-2": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-frozen-2",
       "source": "https://api.obj2.top/hls/movie/330457/master.m3u8"
     },
     "wreck-it-ralph-1": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-wreck-it-ralph-1",
       "source": "https://api.obj2.top/hls/movie/82690/master.m3u8"
     },
     "wreck-it-ralph-2": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-wreck-it-ralph-2",
       "source": "https://api.obj2.top/hls/movie/404368/master.m3u8"
     },
     "despicable-me-1": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-despicable-me-1",
-      "chapters": 13,
-      "source": "https://api.obj2.top/hls/movie/20352/master.m3u8",
-      "englishCues": 930,
-      "chineseCues": 0
+      "source": "https://api.obj2.top/hls/movie/20352/master.m3u8"
     },
     "despicable-me-2": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-despicable-me-2",
       "source": "https://api.obj2.top/hls/movie/93456/master.m3u8"
     },
     "despicable-me-3": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-despicable-me-3",
       "source": "https://api.obj2.top/hls/movie/324852/master.m3u8"
     },
     "despicable-me-4": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-despicable-me-4",
       "source": "https://api.obj2.top/hls/movie/519182/master.m3u8"
     },
     "minions-1": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-minions-1",
       "source": "https://api.obj2.top/hls/movie/211672/master.m3u8"
     },
     "minions-2": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-minions-2",
       "source": "https://api.obj2.top/hls/movie/438148/master.m3u8"
     },
     "minions-3": {
       "state": "source_error",
       "error": "Less than five translatable words in episode",
-      "at": "2026-11-07T09:50:29.057Z",
-      "retryAfter": "2026-11-08T09:50:34.827Z"
+      "at": "2026-11-07T09:52:44.076Z",
+      "retryAfter": "2026-11-08T09:52:46.823Z"
     },
     "sing-1": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-sing-1",
       "source": "https://api.obj2.top/hls/movie/335797/master.m3u8"
     },
     "sing-2": {
       "state": "source_error",
       "error": "Less than five translatable words in episode",
-      "at": "2026-11-07T09:50:29.057Z",
-      "retryAfter": "2026-11-08T09:50:35.107Z"
+      "at": "2026-11-07T09:52:44.076Z",
+      "retryAfter": "2026-11-08T09:52:47.103Z"
     },
     "pets-1": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-pets-1",
       "source": "https://api.obj2.top/hls/movie/328111/master.m3u8"
     },
     "pets-2": {
-      "state": "source_error",
-      "error": "Less than five translatable words in episode",
-      "at": "2026-11-07T09:50:29.057Z",
-      "retryAfter": "2026-11-08T09:50:35.366Z"
+      "state": "completed",
+      "at": "2026-11-07T09:52:44.076Z",
+      "seriesId": "movie-pets-2",
+      "chapters": 12,
+      "source": "https://api.obj2.top/hls/movie/412117/master.m3u8",
+      "englishCues": 2471,
+      "chineseCues": 0
     },
     "hotel-transylvania-1": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-hotel-transylvania-1",
       "source": "https://api.obj2.top/hls/movie/76492/master.m3u8"
     },
     "hotel-transylvania-2": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-hotel-transylvania-2",
       "source": "https://api.obj2.top/hls/movie/159824/master.m3u8"
     },
     "hotel-transylvania-3": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-hotel-transylvania-3",
       "source": "https://api.obj2.top/hls/movie/400155/master.m3u8"
     },
     "hotel-transylvania-4": {
-      "state": "source_error",
-      "error": "Less than five translatable words in episode",
-      "at": "2026-11-07T09:50:29.057Z",
-      "retryAfter": "2026-11-08T09:50:35.639Z"
+      "state": "completed",
+      "at": "2026-11-07T09:52:44.076Z",
+      "seriesId": "movie-hotel-transylvania-4",
+      "chapters": 12,
+      "source": "https://api.obj2.top/hls/movie/585083/master.m3u8",
+      "englishCues": 1878,
+      "chineseCues": 1149
     },
     "croods-1": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-croods-1",
-      "chapters": 15,
-      "source": "https://api.obj2.top/hls/movie/49519/master.m3u8",
-      "englishCues": 1669,
-      "chineseCues": 1082
+      "source": "https://api.obj2.top/hls/movie/49519/master.m3u8"
     },
     "croods-2": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-croods-2",
       "source": "https://api.obj2.top/hls/movie/529203/master.m3u8"
     },
     "trolls-1": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-trolls-1",
       "source": "https://api.obj2.top/hls/movie/136799/master.m3u8"
     },
     "trolls-2": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-trolls-2",
       "source": "https://api.obj2.top/hls/movie/446893/master.m3u8"
     },
     "trolls-3": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-trolls-3",
       "source": "https://api.obj2.top/hls/movie/901362/master.m3u8"
     },
     "bad-guys-1": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-bad-guys-1",
       "source": "https://api.obj2.top/hls/movie/629542/master.m3u8"
     },
     "bad-guys-2": {
-      "state": "source_error",
-      "error": "Not enough spoken dialogue for 5 questions",
-      "at": "2026-11-07T09:50:29.057Z",
-      "retryAfter": "2026-11-08T09:50:36.188Z"
+      "state": "completed",
+      "at": "2026-11-07T09:52:44.076Z",
+      "seriesId": "movie-bad-guys-2",
+      "chapters": 15,
+      "source": "https://api.obj2.top/hls/movie/1175942/master.m3u8",
+      "englishCues": 1894,
+      "chineseCues": 0
     },
     "peter-rabbit-1": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-peter-rabbit-1",
       "source": "https://api.obj2.top/hls/movie/381719/master.m3u8"
     },
     "peter-rabbit-2": {
-      "state": "source_error",
-      "error": "Insufficient English captions in 014",
-      "at": "2026-11-07T09:50:29.057Z",
-      "retryAfter": "2026-11-08T09:50:36.463Z"
+      "state": "completed",
+      "at": "2026-11-07T09:52:44.076Z",
+      "seriesId": "movie-peter-rabbit-2",
+      "chapters": 13,
+      "source": "https://api.obj2.top/hls/movie/522478/master.m3u8",
+      "englishCues": 1991,
+      "chineseCues": 0
     },
     "sonic-1": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-sonic-1",
       "source": "https://api.obj2.top/hls/movie/454626/master.m3u8"
     },
     "sonic-2": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-sonic-2",
       "source": "https://api.obj2.top/hls/movie/675353/master.m3u8"
     },
     "sonic-3": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-sonic-3",
       "source": "https://api.obj2.top/hls/movie/939243/master.m3u8"
     },
     "ice-age-1": {
       "state": "source_error",
       "error": "Less than five translatable words in episode",
-      "at": "2026-11-07T09:50:29.057Z",
-      "retryAfter": "2026-11-08T09:50:36.707Z"
+      "at": "2026-11-07T09:52:44.076Z",
+      "retryAfter": "2026-11-08T09:52:48.394Z"
     },
     "ice-age-2": {
       "state": "source_error",
       "error": "Less than five translatable words in episode",
-      "at": "2026-11-07T09:50:29.057Z",
-      "retryAfter": "2026-11-08T09:50:36.974Z"
+      "at": "2026-11-07T09:52:44.076Z",
+      "retryAfter": "2026-11-08T09:52:48.687Z"
     },
     "ice-age-3": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-ice-age-3",
       "source": "https://api.obj2.top/hls/movie/8355/master.m3u8"
     },
     "ice-age-4": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-ice-age-4",
       "source": "https://api.obj2.top/hls/movie/57800/master.m3u8"
     },
     "ice-age-5": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-ice-age-5",
       "source": "https://api.obj2.top/hls/movie/278154/master.m3u8"
     },
     "ice-age-buck-wild": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-ice-age-buck-wild",
       "source": "https://api.obj2.top/hls/movie/774825/master.m3u8"
     },
     "charlie-and-the-chocolate-factory": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-charlie-and-the-chocolate-factory",
       "source": "https://api.obj2.top/hls/movie/118/master.m3u8"
     },
     "up": {
       "state": "source_error",
       "error": "Less than five translatable words in episode",
-      "at": "2026-11-07T09:50:29.057Z",
-      "retryAfter": "2026-11-08T09:50:37.208Z"
+      "at": "2026-11-07T09:52:44.076Z",
+      "retryAfter": "2026-11-08T09:52:48.918Z"
     },
     "luca": {
       "state": "completed",
-      "at": "2026-11-07T09:50:29.057Z",
+      "at": "2026-11-07T09:52:44.076Z",
       "seriesId": "movie-luca",
       "source": "https://api.obj2.top/hls/movie/508943/master.m3u8"
     }
   },
-  "updatedAt": "2026-11-07T09:50:29.057Z",
+  "updatedAt": "2026-11-07T09:52:44.076Z",
   "totalCatalog": 82,
   "lastBatch": [
     {
-      "id": "harry-potter-chamber-of-secrets",
-      "state": "completed",
-      "chapters": 28
-    },
-    {
       "id": "harry-potter-half-blood-prince",
-      "state": "source_error",
-      "error": "Less than five translatable words in episode"
+      "state": "completed",
+      "chapters": 22
     },
     {
       "id": "harry-potter-deathly-hallows-part-1",
-      "state": "source_error",
-      "error": "Insufficient English captions in 021"
-    },
-    {
-      "id": "fantastic-beasts-2",
-      "state": "source_error",
-      "error": "Insufficient English captions in 020"
-    },
-    {
-      "id": "fantastic-beasts-3",
       "state": "completed",
       "chapters": 20
     },
     {
-      "id": "narnia-1",
+      "id": "fantastic-beasts-2",
       "state": "completed",
-      "chapters": 21
-    },
-    {
-      "id": "narnia-2",
-      "state": "completed",
-      "chapters": 21
+      "chapters": 19
     },
     {
       "id": "paddington-2",
       "state": "no_english",
       "error": "NO_ENGLISH_TRACK"
-    },
-    {
-      "id": "dragon-3",
-      "state": "completed",
-      "chapters": 14
     },
     {
       "id": "kung-fu-panda-4",
@@ -583,34 +552,14 @@
       "error": "Less than five translatable words in episode"
     },
     {
-      "id": "zootopia-2",
-      "state": "completed",
-      "chapters": 16
-    },
-    {
-      "id": "inside-out-2",
-      "state": "completed",
-      "chapters": 14
-    },
-    {
       "id": "incredibles-2",
-      "state": "source_error",
-      "error": "Less than five translatable words in episode"
-    },
-    {
-      "id": "monsters-university",
       "state": "completed",
-      "chapters": 16
+      "chapters": 17
     },
     {
       "id": "frozen-1",
       "state": "source_error",
       "error": "Less than five translatable words in episode"
-    },
-    {
-      "id": "despicable-me-1",
-      "state": "completed",
-      "chapters": 13
     },
     {
       "id": "minions-3",
@@ -624,28 +573,23 @@
     },
     {
       "id": "pets-2",
-      "state": "source_error",
-      "error": "Less than five translatable words in episode"
+      "state": "completed",
+      "chapters": 12
     },
     {
       "id": "hotel-transylvania-4",
-      "state": "source_error",
-      "error": "Less than five translatable words in episode"
+      "state": "completed",
+      "chapters": 12
     },
     {
-      "id": "croods-1",
+      "id": "bad-guys-2",
       "state": "completed",
       "chapters": 15
     },
     {
-      "id": "bad-guys-2",
-      "state": "source_error",
-      "error": "Not enough spoken dialogue for 5 questions"
-    },
-    {
       "id": "peter-rabbit-2",
-      "state": "source_error",
-      "error": "Insufficient English captions in 014"
+      "state": "completed",
+      "chapters": 13
     },
     {
       "id": "ice-age-1",

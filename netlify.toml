@@ -356,3 +356,43 @@
   for = "/data/movie-croods-1/hls/*"
   [headers.values]
     Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-harry-potter-half-blood-prince/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-harry-potter-deathly-hallows-part-1/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-fantastic-beasts-2/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-incredibles-2/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-pets-2/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-hotel-transylvania-4/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-bad-guys-2/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-peter-rabbit-2/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
