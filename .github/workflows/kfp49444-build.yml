@@ -2,7 +2,7 @@ name: Build Kung Fu Panda 2 lesson assets on staging branch
 on:
   push:
     branches: [automation/kfp49444-build]
-    paths: [scripts/build-kfp49444-course.cjs]
+    paths: [scripts/build-kfp49444-course.cjs, .github/workflows/kfp49444-build.yml]
 permissions:
   contents: write
 jobs:
