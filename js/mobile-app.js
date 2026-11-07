@@ -37,7 +37,7 @@ window.MobileApp = {
   },
   sync(app,page,a) {
     this.app=app;this.refreshIdentity();document.body.dataset.mobilePage=page;
-    const selected=page==='home'&&!a?'home':['reading','reader','magazines','magazine-reader','series-books','mobile-reading'].includes(page)?'reading':['mobile-me','account','checkin','homework','family','wordbank','writing','honors','rewards'].includes(page)?'mine':'animation';
+    const selected=page==='home'&&!a?'home':['reading','reader','magazines','magazine-reader','series-books','mobile-reading'].includes(page)?'reading':['mobile-me','account','checkin','homework','family','wordbank','writing','honors','rewards'].includes(page)?'mine':'audiovisual';
     this.bottom.querySelectorAll('a').forEach(link=>{const on=link.dataset.mobileTab===selected;if(on)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');});
     this.header.querySelector('.sf-app-search-slot').hidden=true;this.header.querySelector('.sf-app-search-toggle').setAttribute('aria-expanded','false');
   },
