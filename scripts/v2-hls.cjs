@@ -21,6 +21,7 @@ function safeResolve(uri, base) {
 function parseMaster(text, baseUrl) {
   if (!String(text).trimStart().startsWith('#EXTM3U')) throw new Error('Invalid HLS master');
   const lines = String(text).replace(/^\uFEFF/, '').split(/\r?\n/).map(x => x.trim());
+  if (lines.some(line => line.startsWith('#EXT-X-SESSION-KEY:'))) throw new Error('Session-level encryption is not supported by this worker');
   const media = [], variants = [];
   let pending = null;
   for (let i = 0; i < lines.length; i++) {
@@ -59,8 +60,8 @@ function chooseVariant(master) {
     return y[0] - x[0] || y[1] - x[1] || y[2] - x[2];
   })[0];
 }
-function chooseTrack(master, type, preferred = 'en') {
-  const rows = (master.media || []).filter(x => x.TYPE === type && x.uri);
+function chooseTrack(master, type, preferred = 'en', groupId = null) {
+  const rows = (master.media || []).filter(x => x.TYPE === type && x.uri && (!groupId || x['GROUP-ID'] === groupId));
   if (!rows.length) return null;
   const lang = row => String(row.LANGUAGE || '').toLowerCase();
   const english = row => /^(en|eng)(-|$)/.test(lang(row)) || /^english/i.test(row.NAME || '');
@@ -125,6 +126,8 @@ function parseMediaPlaylist(text, baseUrl) {
       at += duration;
       duration = null;
       prefix = [];
+    } else if (line.startsWith('#EXT-X-DATERANGE:')) {
+      throw new Error('EXT-X-DATERANGE needs event-aware trimming before course cutting');
     } else if (line.startsWith('#EXT-X-KEY:')) {
       const a = attrs(line);
       if (!['AES-128', 'NONE'].includes(a.METHOD)) {
@@ -150,9 +153,7 @@ function parseMediaPlaylist(text, baseUrl) {
       pendingRange = { length: Number(m[1]), offset: m[2] === undefined ? null : Number(m[2]) };
     } else if (line.startsWith('#EXT-X-PROGRAM-DATE-TIME:') ||
                line === '#EXT-X-GAP' ||
-               line.startsWith('#EXT-X-DATERANGE:') ||
-               line.startsWith('#EXT-X-INDEPENDENT-SEGMENTS') ||
-               line.startsWith('#EXT-X-DEFINE:')) {
+               line.startsWith('#EXT-X-INDEPENDENT-SEGMENTS')) {
       prefix.push(line);
     } else if (line.startsWith('#EXT-X-') && !/^#EXT-X-(?:ALLOW-CACHE|SERVER-CONTROL|SKIP|RENDITION-REPORT|I-FRAME-STREAM-INF|SESSION-DATA|SESSION-KEY)(?::|$)/.test(line)) {
       // Keep unclassified tags attached to the next segment rather than silently dropping them.
