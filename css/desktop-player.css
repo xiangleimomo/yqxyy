@@ -1,4 +1,4 @@
-.sf-desktop-player-controls,.sf-desktop-player-title{display:none}
+.sf-desktop-player-controls,.sf-desktop-player-title,.sf-desktop-seek{display:none}
 @media (min-width:901px) and (pointer:fine){
   .sf-movie-lesson-player{background:#000;color:#fff}
   .sf-movie-lesson-player>.video-wrap{background:#000;border-radius:0}
@@ -17,16 +17,19 @@
   .sf-desktop-volume{display:flex;align-items:center;gap:5px}
   .sf-desktop-volume input{width:0;opacity:0;accent-color:#70af2d;transition:width .15s,opacity .15s}
   .sf-desktop-volume:hover input,.sf-desktop-volume:focus-within input{width:70px;opacity:1}
-  .sf-movie-lesson-player .sf-movie-timeline{left:28px!important;right:28px!important;bottom:54px!important;padding:8px 0!important;background:transparent!important;height:18px;box-sizing:border-box}
-  .sf-movie-lesson-player .sf-movie-timeline output{display:none}
-  .sf-movie-lesson-player .sf-movie-timeline input{appearance:none;-webkit-appearance:none;display:block;height:4px;margin:0;border:0;border-radius:3px;background:linear-gradient(to right,#70af2d 0%,#70af2d var(--seek-progress,0%),#ffffff3d var(--seek-progress,0%),#ffffff3d 100%);cursor:pointer}
-  .sf-movie-timeline input::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:10px;height:10px;border:0;border-radius:50%;background:#83bd44;opacity:0}
-  .sf-movie-timeline input:hover::-webkit-slider-thumb,.sf-movie-timeline input:focus-visible::-webkit-slider-thumb{opacity:1}
-  .sf-movie-timeline input::-moz-range-thumb{width:10px;height:10px;border:0;background:#83bd44}
+  .sf-movie-lesson-player .sf-movie-timeline{display:none!important}
+  .sf-movie-lesson-player .sf-desktop-seek{position:absolute;z-index:24;display:flex;opacity:0;visibility:hidden;pointer-events:none;left:28px!important;right:28px!important;bottom:54px!important;padding:8px 0!important;background:transparent!important;height:18px;box-sizing:border-box}
+  .sf-movie-lesson-player .sf-desktop-seek output{display:none}
+  .sf-movie-lesson-player .sf-desktop-seek input{appearance:none;-webkit-appearance:none;display:block;height:4px;margin:0;border:0;border-radius:3px;background:linear-gradient(to right,#70af2d 0%,#70af2d var(--seek-progress,0%),#ffffff3d var(--seek-progress,0%),#ffffff3d 100%);cursor:pointer}
+  .sf-desktop-seek input::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:10px;height:10px;border:0;border-radius:50%;background:#83bd44;opacity:0}
+  .sf-desktop-seek input:hover::-webkit-slider-thumb,.sf-desktop-seek input:focus-visible::-webkit-slider-thumb{opacity:1}
+  .sf-desktop-seek input::-moz-range-thumb{width:10px;height:10px;border:0;background:#83bd44}
   .sf-movie-lesson-player .subtitle-settings-dock{bottom:78px;top:auto;transform:none;right:24px;z-index:30}
   .sf-movie-lesson-player .subtitle-settings-dock>.subtitle-settings-trigger{display:none!important}
   .sf-movie-lesson-player .subtitle-controls-overlay{bottom:0;top:auto;right:0;transform:none;left:auto}
   .sf-movie-lesson-player .video-caption{border-radius:4px;text-shadow:0 2px 4px #000,0 0 3px #000;font-weight:600}
+  .sf-movie-lesson-player .subtitle-settings-visible .sf-desktop-seek,
+  .sf-movie-lesson-player .sf-desktop-seek:focus-within,
   .sf-movie-lesson-player .subtitle-settings-visible .sf-desktop-player-title,
   .sf-movie-lesson-player .subtitle-settings-visible .sf-desktop-player-controls,
   .sf-movie-lesson-player .sf-desktop-player-controls:focus-within{opacity:1;visibility:visible;pointer-events:auto}

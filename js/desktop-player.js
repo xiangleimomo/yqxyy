@@ -24,6 +24,11 @@ window.SFDesktopPlayer = {
     bar.setAttribute('role', 'toolbar'); bar.setAttribute('aria-label', '视频播放控制');
     bar.innerHTML = `${button('play','播放','play')}${button('back','后退 10 秒')}${button('forward','前进 10 秒')}<div class="sf-desktop-volume">${button('volume','静音','volume')}<input aria-label="音量" type="range" min="0" max="1" step=".05" value="1"></div><output class="sf-desktop-clock">0:00 / 0:00</output><span class="sf-desktop-control-spacer"></span>${button('prev','上一集')}${button('next','下一集')}<button type="button" data-desktop-act="speed" title="播放速度" aria-label="播放速度">1x</button>${button('quiz','本集测验')}${button('captions','显示或隐藏字幕')}${button('settings','字幕设置')}${button('fullscreen','全屏')}`;
     stage.appendChild(bar);
+    const progress = document.createElement('div');
+    progress.className = 'sf-desktop-seek';
+    progress.innerHTML = '<input type="range" min="0" max="1000" step="1" value="0" aria-label="视频播放进度">';
+    stage.appendChild(progress);
+    const seek = progress.querySelector('input');
     const get = action => bar.querySelector(`[data-desktop-act="${action}"]`);
     const proxy = action => panel.querySelector(`.sf-lesson-toolbar [data-act="${action}"]`);
     const time = value => {
@@ -42,8 +47,10 @@ window.SFDesktopPlayer = {
       bar.querySelector('output').textContent = `${time(player.currentTime-start)} / ${time(Number.isFinite(end)?end-start:0)}`;
       for(const action of ['prev','next'])get(action).disabled = !!proxy(action)?.disabled;
       get('captions').setAttribute('aria-pressed', String(stage.querySelector('.video-caption')?.dataset.subtitleVisible !== 'false'));
-      const seek = stage.querySelector('.sf-movie-timeline input');
-      seek?.style.setProperty('--seek-progress', `${Number(seek.value)/10}%`);
+      const duration=Number.isFinite(end)?Math.max(0,end-start):0;
+      seek.disabled=!duration;
+      if(duration&&!seek.matches(':active'))seek.value=String(Math.max(0,Math.min(1000,(player.currentTime-start)/duration*1000)));
+      seek.style.setProperty('--seek-progress', `${Number(seek.value)/10}%`);
     };
     get('play').onclick = () => player.paused ? player.play().catch(()=>{}) : player.pause();
     for(const [action,delta] of [['back',-10],['forward',10]])get(action).onclick = () => {
@@ -52,6 +59,11 @@ window.SFDesktopPlayer = {
     };
     get('volume').onclick = () => {player.muted=!player.muted;refresh();};
     bar.querySelector('input').oninput = event => {player.volume=Number(event.target.value);player.muted=!player.volume;refresh();};
+    seek.oninput = () => {const {start,end}=bounds();if(Number.isFinite(end)&&end>start)player.currentTime=start+(end-start)*Number(seek.value)/1000;refresh();showControls();};
+    progress.addEventListener('pointermove',()=>{showControls();hideControlsLater();});
+    progress.addEventListener('focusin',showControls);
+    seek.addEventListener('pointerup',()=>{seek.blur();hideControlsLater();});
+    seek.addEventListener('focusout',hideControlsLater);
     for(const action of ['prev','next','speed','quiz','fullscreen'])get(action).onclick = () => proxy(action)?.click();
     get('captions').onclick = () => stage.querySelector('.subtitle-toggle')?.click();
     get('settings').onclick = () => stage.querySelector('.subtitle-settings-trigger')?.click();
