@@ -24,6 +24,8 @@ const fetcher=async raw=>{
  assert.equal(result.seasonCount,2);
  assert.equal(result.episodeCount,3);
  assert.equal(result.episodes[0].key,'tv:123:s0:e1');
+ assert.equal(result.episodes[0].courseEpisodeId,1);
+ assert.equal(result.episodes[2].courseEpisodeId,3);
  assert.equal(result.episodes[2].episodeTitle,'The Next Day');
  await assert.rejects(()=>expandTvSeries({tmdbId:123,title:'Different Show',apiKey:'test',fetcher}),/title does not match/);
  console.log('V2 TV catalogue expansion tests passed');
