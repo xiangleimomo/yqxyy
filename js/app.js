@@ -503,12 +503,10 @@ async renderLesson(seriesId, episodeId){
   hlsVideoPanel(d, completionModule='hlsVideo'){
     const url=d.ep.video?.hlsUrl;
     if(!url) return `<div class="empty">本集 HLS 视频源暂未添加。</div>`;
-    // Every new Watch session starts with English subtitles + word highlighting
-    // enabled, even when a previous session saved both switches as OFF.
-    // The user may still switch them off during the current session.
+    // Keep the saved word-highlight choice when opening another episode.
     const currentPrefs=this.subtitlePreferences();
-    if(currentPrefs.visible!==true || currentPrefs.wordHighlight!==true){
-      try{localStorage.setItem('storyfox-subtitle-preferences',JSON.stringify({...currentPrefs,visible:true,wordHighlight:true}));}catch{}
+    if(currentPrefs.visible!==true){
+      try{localStorage.setItem('storyfox-subtitle-preferences',JSON.stringify({...currentPrefs,visible:true}));}catch{}
     }
     const backupHls=d.ep.video?.backupHlsUrl || '';
     const hls720=d.ep.video?.hls720Url || '';
@@ -523,7 +521,10 @@ async renderLesson(seriesId, episodeId){
     try{
       const saved=JSON.parse(localStorage.getItem('storyfox-subtitle-preferences')||'{}') || {};
       const legacyY={top:16,middle:50,bottom:84}[saved.position];
-      return {...defaults,...saved,...(!Number.isFinite(saved.captionY) && legacyY!==undefined?{captionY:legacyY}:{} )};
+      const prefs={...defaults,...saved,...(!Number.isFinite(saved.captionY) && legacyY!==undefined?{captionY:legacyY}:{} )};
+      prefs.size=Math.max(14,Math.min(64,Number(prefs.size)||20));
+      prefs.color=/^#[0-9a-f]{6}$/i.test(prefs.color)?prefs.color:defaults.color;
+      return prefs;
     }catch{return defaults;}
   },
   subtitleControls(d=null){
@@ -540,7 +541,7 @@ async renderLesson(seriesId, episodeId){
         <div class="subtitle-setting-row"><span>逐词高亮</span><button type="button" class="btn secondary small subtitle-word-toggle" aria-pressed="${prefs.wordHighlight}">${prefs.wordHighlight?'已开启':'已关闭'}</button></div>
         <div class="subtitle-setting-row"><span>字幕位置</span><span class="subtitle-drag-tip">直接拖动字幕</span></div>
         <label class="subtitle-setting-row"><span>字幕颜色</span><input class="subtitle-color" type="color" value="${prefs.color}"></label>
-        <label class="subtitle-setting-row"><span>字幕大小</span><input class="subtitle-size" type="range" min="14" max="96" step="1" value="${prefs.size}"><output>${prefs.size}px</output></label>
+        <label class="subtitle-setting-row"><span>字幕大小</span><input class="subtitle-size" type="range" min="14" max="64" step="1" value="${prefs.size}"><output>${prefs.size}px</output></label>
         <label class="subtitle-setting-row"><span>背景透明度</span><input class="subtitle-opacity" type="range" min="0" max="95" step="5" value="${prefs.opacity}"><output>${prefs.opacity}%</output></label>
       </div>
     </div>`;
@@ -548,17 +549,32 @@ async renderLesson(seriesId, episodeId){
   applySubtitlePreferences(root=document){
     const prefs=this.subtitlePreferences();
     root.querySelectorAll('.video-caption').forEach(caption=>{
-      caption.style.setProperty('--caption-size',`${Math.max(14,Math.min(96,Number(prefs.size)||20))}px`);
+      caption.style.setProperty('--caption-size',`${prefs.size}px`);
       const stage=caption.closest('.subtitle-video-wrap');
-      if(stage && !stage._captionResize){
-        stage._captionResize=new ResizeObserver(()=>{
-          const width=stage.clientWidth;
+      if(stage){
+        const layout=()=>{
+          const video=stage.querySelector('video');
+          let width=stage.clientWidth;
+          if(video?.videoWidth && video.videoHeight && video.clientHeight)width=Math.min(width,video.clientHeight*video.videoWidth/video.videoHeight);
+          const available=Math.max(1,width*.94);
           caption.style.setProperty('--caption-scale',String(Math.max(1,width/860)));
-          caption.style.maxWidth=`${Math.max(0,width*.94-24)}px`;
-        });
-        stage._captionResize.observe(stage);
+          caption.style.setProperty('--caption-width',`${available}px`);
+          caption.style.maxWidth=`${available}px`;
+          const half=Math.min(available,caption.getBoundingClientRect().width||available)/2;
+          const x=Math.max(half,Math.min(stage.clientWidth-half,stage.clientWidth*Number(this.subtitlePreferences().captionX)/100));
+          caption.style.left=`${x}px`;
+        };
+        stage._captionLayout=layout;
+        if(!stage._captionResize){
+          stage._captionResize=new ResizeObserver(()=>stage._captionLayout?.());
+          stage._captionResize.observe(stage);
+          stage.querySelector('video')?.addEventListener('loadedmetadata',()=>stage._captionLayout?.());
+        }
+        layout();
       }
       caption.style.setProperty('--caption-color',prefs.color);
+      caption.style.color=prefs.color;
+      caption.dataset.wordHighlight=String(prefs.wordHighlight!==false);
       caption.style.setProperty('--caption-opacity',String(prefs.opacity/100));
       caption.style.setProperty('--caption-x',`${prefs.captionX}%`);
       caption.style.setProperty('--caption-y',`${prefs.captionY}%`);
@@ -579,6 +595,7 @@ async renderLesson(seriesId, episodeId){
       if(!stage) return;
       window.clearTimeout(hideTimer);
       stage.classList.add('subtitle-settings-visible');
+      if(player && !stage.closest('.sf-movie-lesson-player')?.querySelector('.sf-lesson-toolbar'))player.controls=true;
       stage.querySelector('.sf-movie-timeline')?.removeAttribute('inert');
     };
     const hideControlsLater=()=>{
@@ -587,6 +604,7 @@ async renderLesson(seriesId, episodeId){
       hideTimer=window.setTimeout(()=>{
         if(stage.classList.contains('subtitle-settings-open') || controls.matches(':focus-within') || stage.querySelector('.sf-movie-timeline')?.matches(':focus-within'))return;
         stage.classList.remove('subtitle-settings-visible','subtitle-settings-open');
+        if(player && !stage.closest('.sf-movie-lesson-player')?.querySelector('.sf-lesson-toolbar'))player.controls=false;
         stage.querySelector('.sf-movie-timeline')?.setAttribute('inert','');
         trigger?.setAttribute('aria-expanded','false');
         trigger?.setAttribute('aria-label','打开字幕设置');
@@ -598,6 +616,8 @@ async renderLesson(seriesId, episodeId){
       stage.addEventListener('pointermove',revealControls);
       stage.addEventListener('pointerleave',hideControlsLater);
       stage.addEventListener('touchstart',revealControls,{passive:true});
+      stage.addEventListener('pointerdown',revealControls);
+      stage.addEventListener('keydown',revealControls);
       controls.addEventListener('pointerdown',showControls);
       controls.addEventListener('focusin',showControls);
       controls.addEventListener('input',revealControls);
@@ -643,8 +663,9 @@ async renderLesson(seriesId, episodeId){
       player.addEventListener('play',hideControlsLater);
       player.addEventListener('pause',showControls);
       player.addEventListener('ended',showControls);
+      showControls();
     }
-    const save=patch=>{const next={...this.subtitlePreferences(),...patch};localStorage.setItem('storyfox-subtitle-preferences',JSON.stringify(next));this.applySubtitlePreferences(root);this.applySubtitlePreferences(stage);return next;};
+    const save=patch=>{const next={...this.subtitlePreferences(),...patch};localStorage.setItem('storyfox-subtitle-preferences',JSON.stringify(next));this.applySubtitlePreferences(root);if(stage)this.applySubtitlePreferences(stage);player?.dispatchEvent(new Event('sfcaptionchange'));return next;};
     const ccTrigger=dock?.querySelector('.mobile-cc-trigger');
     const syncCC=()=>{
       if(!ccTrigger)return;
@@ -668,7 +689,9 @@ async renderLesson(seriesId, episodeId){
     [['.subtitle-size','size','px'],['.subtitle-opacity','opacity','%']].forEach(([selector,key,suffix])=>{
       const input=controls.querySelector(selector);input.addEventListener('input',()=>{input.nextElementSibling.textContent=`${input.value}${suffix}`;save({[key]:Number(input.value)});});
     });
-    controls.querySelector('.subtitle-color').addEventListener('input',event=>save({color:event.target.value}));
+    const changeColor=event=>save({color:event.target.value});
+    controls.querySelector('.subtitle-color').addEventListener('input',changeColor);
+    controls.querySelector('.subtitle-color').addEventListener('change',changeColor);
     controls.querySelector('.subtitle-reset-position').addEventListener('click',()=>{
       const prefs=save({visible:true,wordHighlight:true,size:20,color:'#ffffff',captionX:50,captionY:84,opacity:72});
       toggle.textContent='已开启';
@@ -835,6 +858,7 @@ async renderLesson(seriesId, episodeId){
         }else{
           caption.textContent=cues[next].text;
         }
+        caption.closest('.subtitle-video-wrap')?._captionLayout?.();
       }
       const visible=caption.dataset.subtitleVisible!=='false';
       caption.hidden=next<0 || !visible;
@@ -864,7 +888,7 @@ async renderLesson(seriesId, episodeId){
           trackElement.label=languagePicker.value==='bilingual'?'English + 中文':'English';
         }
         caption.style.whiteSpace='pre-line';
-        active=-1;renderedMode=null;effectiveWords=null;
+        active=-1;renderedMode=null;effectiveWords=languagePicker.value==='bilingual'?syncWords?.prepare(cues,null):prepared;
         update();
       });
     }
@@ -961,23 +985,7 @@ async renderLesson(seriesId, episodeId){
       // without adding a second playback bar below the player.
       let initialized=false;
       const clamp=time=>Math.min(clipEnd,Math.max(clipStart,time));
-      // Hide native controls when idle; reveal on pointer/touch interaction.
-      // Retain native playback controls, rather than adding a second toolbar.
-      let hideControlsTimer=null;
-      const showControls=()=>{
-        if(player.closest('.sf-movie-lesson-player')?.querySelector('.sf-lesson-toolbar'))return;
-        player.controls=true;
-        clearTimeout(hideControlsTimer);
-        hideControlsTimer=setTimeout(()=>{if(!player.matches(':hover'))player.controls=false;},3500);
-      };
-      player.controls=false;
-      player.addEventListener('pointerenter',showControls);
-      player.addEventListener('pointermove',showControls);
-      player.addEventListener('pointerdown',showControls);
-      player.addEventListener('touchstart',showControls,{passive:true});
-      player.addEventListener('focus',showControls);
-      player.addEventListener('keydown',showControls);
-      player.addEventListener('play',()=>{clearTimeout(hideControlsTimer);hideControlsTimer=setTimeout(()=>{player.controls=false;},3500);});
+      // Stage-level subtitle controls own the single idle/reveal timer.
       const initialize=()=>{
         if(initialized||player.readyState<1)return;
         initialized=true;

@@ -82,7 +82,8 @@
         }
       }
       line.classList.toggle('is-upcoming',gap);
-      line.style.fontSize=(Number.isFinite(Number(prefs.size))?Math.max(14,Math.min(96,Number(prefs.size))):20)+'px';
+      line.style.fontSize=(Number.isFinite(Number(prefs.size))?Math.max(14,Math.min(64,Number(prefs.size))):20)+'px';
+      line.dataset.wordHighlight=String(wordEnabled);
       line.style.setProperty('color',(prefs.color||'#ffffff'),'important');
       if(gap)setHint(now<cues[0].startMs?'开场中，下面显示即将开始的台词':'对白间隙 · 下一句预览');
       else setHint('');
@@ -100,7 +101,7 @@
         animation=requestAnimationFrame(animate);
     };
     const stop=()=>{if(animation){cancelAnimationFrame(animation);animation=0;}};
-    ['timeupdate','seeked','loadedmetadata','durationchange','playing','pause','ratechange'].forEach(type=>
+    ['timeupdate','seeked','loadedmetadata','durationchange','playing','pause','ratechange','sfcaptionchange'].forEach(type=>
       player.addEventListener(type,repaint));
     player.addEventListener('play',start);
     player.addEventListener('pause',stop);

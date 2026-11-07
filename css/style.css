@@ -1559,7 +1559,10 @@ html.sf-caption-screen-locked,body.sf-caption-screen-locked{overflow:hidden!impo
 }
 
 /* Use the video width rather than shrink-to-fit width when wrapping captions. */
-.subtitle-video-wrap .video-caption{width:max-content;box-sizing:border-box;max-width:94%;font-size:calc(var(--caption-size,20px) * var(--caption-scale,1));white-space:normal;overflow-wrap:normal;word-break:normal}
+.subtitle-video-wrap .video-caption{width:max-content;box-sizing:border-box;max-width:var(--caption-width,94%);font-size:calc(var(--caption-size,20px) * var(--caption-scale,1));color:var(--caption-color,#fff);white-space:normal;overflow-wrap:break-word;word-break:normal}
+.subtitle-video-wrap.sf-caption-below .video-caption{font-size:var(--caption-size,20px)}
+.video-caption .sf-karaoke-word,.sf-mobile-caption-line .sf-karaoke-word{font-size:inherit;color:inherit}
+.video-caption[data-word-highlight="false"] .sf-karaoke-word,.sf-mobile-caption-line[data-word-highlight="false"] .sf-karaoke-word{color:inherit!important;background:transparent;text-shadow:inherit;font-weight:inherit}
 .sf-movie-timeline{position:absolute;z-index:15;left:0;right:0;bottom:0;display:flex;align-items:center;gap:12px;padding:18px 16px 10px;background:linear-gradient(transparent,rgba(0,0,0,.8));color:#fff;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s}
 .sf-movie-timeline input{flex:1;min-width:0;accent-color:#ffe05a}
 .sf-movie-timeline output{font:12px system-ui;white-space:nowrap;font-variant-numeric:tabular-nums}
