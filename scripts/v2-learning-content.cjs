@@ -66,7 +66,7 @@ function validateLearningContent(content,episode,cues){
   }
   const quizTypes=new Set();
   for(const [index,q] of content.quiz.entries()){
-    if(!['story','detail','vocabulary','inference'].includes(q.type))throw new Error('Invalid quiz type at question '+(index+1));
+    if(!['story','detail','cause_effect','sequence','inference'].includes(q.type))throw new Error('Invalid quiz type at question '+(index+1));
     quizTypes.add(q.type);
     if(!q.questionEn||!q.questionZh||!q.explanationZh)throw new Error('Quiz text is incomplete at question '+(index+1));
     if(!Array.isArray(q.options)||q.options.length!==4)throw new Error('Each quiz question must have four options at question '+(index+1));
