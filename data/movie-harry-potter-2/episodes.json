@@ -1,19 +1,29 @@
 [
   {
     "episodeId": 1,
-    "title": "An Unwelcome Visitor",
+    "title": "不速之客",
     "titleZh": "不速之客",
+    "titleEn": "An Unwelcome Visitor",
     "summaryEn": "Harry's lonely summer is interrupted by a visitor with an alarming warning.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/001.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=1",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
+      "hlsUrl": "/data/movie-harry-potter-2/hls/001.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/001.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
       "originalStart": 0,
-      "originalEnd": 574.699123,
-      "duration": 574.699123
+      "originalEnd": 519.78,
+      "timelineOrigin": 0,
+      "clipStart": 0,
+      "clipEnd": 519.78,
+      "duration": 519.78
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/001.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -25,19 +35,29 @@
   },
   {
     "episodeId": 2,
-    "title": "Escape to the Burrow",
+    "title": "逃往陋居",
     "titleZh": "逃往陋居",
+    "titleEn": "Escape to the Burrow",
     "summaryEn": "A late-night rescue brings Harry to a lively magical household.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/002.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=2",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 574.699123,
-      "originalEnd": 889.722164,
-      "duration": 315.023041
+      "hlsUrl": "/data/movie-harry-potter-2/hls/002.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/002.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 519.78,
+      "originalEnd": 922.856,
+      "timelineOrigin": 516,
+      "clipStart": 3.78,
+      "clipEnd": 406.856,
+      "duration": 403.076
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/002.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -49,19 +69,29 @@
   },
   {
     "episodeId": 3,
-    "title": "Trouble in Diagon Alley",
+    "title": "对角巷风波",
     "titleZh": "对角巷风波",
+    "titleEn": "Trouble in Diagon Alley",
     "summaryEn": "A shopping trip introduces new surprises, uncomfortable encounters, and hidden tensions.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/003.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=3",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 889.722164,
-      "originalEnd": 1555.262038,
-      "duration": 665.539874
+      "hlsUrl": "/data/movie-harry-potter-2/hls/003.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/003.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 922.856,
+      "originalEnd": 1496.712,
+      "timelineOrigin": 920,
+      "clipStart": 2.856,
+      "clipEnd": 576.712,
+      "duration": 573.856
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/003.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -73,19 +103,29 @@
   },
   {
     "episodeId": 4,
-    "title": "The Flying Car",
+    "title": "会飞的汽车",
     "titleZh": "会飞的汽车",
+    "titleEn": "The Flying Car",
     "summaryEn": "A blocked gateway forces Harry and Ron to choose a risky route to school.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/004.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=4",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 1555.262038,
-      "originalEnd": 1975.348366,
-      "duration": 420.086328
+      "hlsUrl": "/data/movie-harry-potter-2/hls/004.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/004.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 1496.712,
+      "originalEnd": 1873.458,
+      "timelineOrigin": 1493.208333,
+      "clipStart": 3.503667,
+      "clipEnd": 380.249667,
+      "duration": 376.746
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/004.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -97,19 +137,29 @@
   },
   {
     "episodeId": 5,
-    "title": "Consequences at Hogwarts",
+    "title": "霍格沃茨的处罚",
     "titleZh": "霍格沃茨的处罚",
+    "titleEn": "Consequences at Hogwarts",
     "summaryEn": "Harry and Ron face the consequences of their unusual arrival.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/005.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=5",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 1975.348366,
-      "originalEnd": 2125.039578,
-      "duration": 149.691212
+      "hlsUrl": "/data/movie-harry-potter-2/hls/005.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/005.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 1873.458,
+      "originalEnd": 2109.237,
+      "timelineOrigin": 1873.208333,
+      "clipStart": 0.249667,
+      "clipEnd": 236.028667,
+      "duration": 235.779
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/005.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -121,19 +171,29 @@
   },
   {
     "episodeId": 6,
-    "title": "Mandrakes and Pixies",
+    "title": "曼德拉草与小精灵",
     "titleZh": "曼德拉草与小精灵",
+    "titleEn": "Mandrakes and Pixies",
     "summaryEn": "New lessons introduce extraordinary plants, noisy surprises, and troublesome creatures.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/006.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=6",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 2125.039578,
-      "originalEnd": 2618.657698,
-      "duration": 493.61812
+      "hlsUrl": "/data/movie-harry-potter-2/hls/006.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/006.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 2109.237,
+      "originalEnd": 2623.947,
+      "timelineOrigin": 2109.208333,
+      "clipStart": 0.028667,
+      "clipEnd": 514.738667,
+      "duration": 514.71
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/006.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -145,19 +205,29 @@
   },
   {
     "episodeId": 7,
-    "title": "Rivalry on the Practice Field",
+    "title": "训练场上的冲突",
     "titleZh": "训练场上的冲突",
+    "titleEn": "Rivalry on the Practice Field",
     "summaryEn": "A practice session exposes rivalry and prejudice in the school teams.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/007.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=7",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 2618.657698,
-      "originalEnd": 2843.215364,
-      "duration": 224.557666
+      "hlsUrl": "/data/movie-harry-potter-2/hls/007.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/007.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 2623.947,
+      "originalEnd": 2858.159,
+      "timelineOrigin": 2620.416666,
+      "clipStart": 3.530334,
+      "clipEnd": 237.742334,
+      "duration": 234.212
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/007.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -169,19 +239,29 @@
   },
   {
     "episodeId": 8,
-    "title": "A Voice in the Walls",
+    "title": "墙里的声音",
     "titleZh": "墙里的声音",
+    "titleEn": "A Voice in the Walls",
     "summaryEn": "A mysterious voice leads Harry towards a disturbing discovery.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/008.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=8",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 2843.215364,
-      "originalEnd": 3207.829607,
-      "duration": 364.614243
+      "hlsUrl": "/data/movie-harry-potter-2/hls/008.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/008.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 2858.159,
+      "originalEnd": 3205.1145,
+      "timelineOrigin": 2856.416666,
+      "clipStart": 1.742334,
+      "clipEnd": 348.697834,
+      "duration": 346.9555
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/008.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -193,19 +273,29 @@
   },
   {
     "episodeId": 9,
-    "title": "The Legend of the Chamber",
+    "title": "密室的传说",
     "titleZh": "密室的传说",
+    "titleEn": "The Legend of the Chamber",
     "summaryEn": "The students learn a legend that makes the latest attack more frightening.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/009.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=9",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 3207.829607,
-      "originalEnd": 3490.695528,
-      "duration": 282.865921
+      "hlsUrl": "/data/movie-harry-potter-2/hls/009.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/009.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 3205.1145,
+      "originalEnd": 3410.2545,
+      "timelineOrigin": 3204.416666,
+      "clipStart": 0.697834,
+      "clipEnd": 205.837834,
+      "duration": 205.14
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/009.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -217,19 +307,29 @@
   },
   {
     "episodeId": 10,
-    "title": "A Potion Plan and a Rogue Bludger",
+    "title": "魔药计划与失控的游走球",
     "titleZh": "魔药计划与失控的游走球",
+    "titleEn": "A Potion Plan and a Rogue Bludger",
     "summaryEn": "The friends prepare a risky disguise while danger follows Harry onto the pitch.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/010.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=10",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 3490.695528,
-      "originalEnd": 3923.919979,
-      "duration": 433.224451
+      "hlsUrl": "/data/movie-harry-potter-2/hls/010.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/010.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 3410.2545,
+      "originalEnd": 3928.337,
+      "timelineOrigin": 3408.416666,
+      "clipStart": 1.837834,
+      "clipEnd": 519.920334,
+      "duration": 518.0825
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/010.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -241,19 +341,29 @@
   },
   {
     "episodeId": 11,
-    "title": "Warnings and a Witness",
+    "title": "警告与目击者",
     "titleZh": "警告与目击者",
+    "titleEn": "Warnings and a Witness",
     "summaryEn": "A hospital visit brings a confession, another attack, and a new witness.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/011.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=11",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 3923.919979,
-      "originalEnd": 4233.187267,
-      "duration": 309.267288
+      "hlsUrl": "/data/movie-harry-potter-2/hls/011.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/011.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 3928.337,
+      "originalEnd": 4122.988,
+      "timelineOrigin": 3925.624999,
+      "clipStart": 2.712001,
+      "clipEnd": 197.363001,
+      "duration": 194.651
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/011.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -265,19 +375,29 @@
   },
   {
     "episodeId": 12,
-    "title": "The Dueling Club",
+    "title": "决斗俱乐部",
     "titleZh": "决斗俱乐部",
+    "titleEn": "The Dueling Club",
     "summaryEn": "A public demonstration reveals an ability Harry had never thought unusual.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/012.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=12",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 4233.187267,
-      "originalEnd": 4593.046763,
-      "duration": 359.859496
+      "hlsUrl": "/data/movie-harry-potter-2/hls/012.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/012.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 4122.988,
+      "originalEnd": 4503.259,
+      "timelineOrigin": 4121.624999,
+      "clipStart": 1.363001,
+      "clipEnd": 381.634001,
+      "duration": 380.271
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/012.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -289,19 +409,29 @@
   },
   {
     "episodeId": 13,
-    "title": "Under Suspicion",
+    "title": "受到怀疑",
     "titleZh": "受到怀疑",
+    "titleEn": "Under Suspicion",
     "summaryEn": "Rumours and new victims place Harry under growing suspicion.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/013.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=13",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 4593.046763,
-      "originalEnd": 4940.727433,
-      "duration": 347.68067
+      "hlsUrl": "/data/movie-harry-potter-2/hls/013.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/013.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 4503.259,
+      "originalEnd": 4839.182,
+      "timelineOrigin": 4501.624999,
+      "clipStart": 1.634001,
+      "clipEnd": 337.557001,
+      "duration": 335.923
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/013.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -313,19 +443,29 @@
   },
   {
     "episodeId": 14,
-    "title": "The Phoenix and the Headmaster",
+    "title": "凤凰与校长",
     "titleZh": "凤凰与校长",
+    "titleEn": "The Phoenix and the Headmaster",
     "summaryEn": "A visit to the headmaster offers reassurance and an extraordinary discovery.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/014.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=14",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 4940.727433,
-      "originalEnd": 5260.29669,
-      "duration": 319.569257
+      "hlsUrl": "/data/movie-harry-potter-2/hls/014.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/014.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 4839.182,
+      "originalEnd": 5094.371,
+      "timelineOrigin": 4836.833332,
+      "clipStart": 2.348668,
+      "clipEnd": 257.537668,
+      "duration": 255.189
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/014.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -337,19 +477,29 @@
   },
   {
     "episodeId": 15,
-    "title": "Borrowed Faces",
+    "title": "借来的面孔",
     "titleZh": "借来的面孔",
+    "titleEn": "Borrowed Faces",
     "summaryEn": "A Christmas disguise lets the friends test their suspicions about Malfoy.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/015.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=15",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 5260.29669,
-      "originalEnd": 5805.257774,
-      "duration": 544.961084
+      "hlsUrl": "/data/movie-harry-potter-2/hls/015.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/015.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 5094.371,
+      "originalEnd": 5702.2395,
+      "timelineOrigin": 5092.833332,
+      "clipStart": 1.537668,
+      "clipEnd": 609.406168,
+      "duration": 607.8685
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/015.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -361,19 +511,29 @@
   },
   {
     "episodeId": 16,
-    "title": "A Blank Diary",
+    "title": "空白日记",
     "titleZh": "空白日记",
+    "titleEn": "A Blank Diary",
     "summaryEn": "An old diary offers a puzzling connection to the school's past.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/016.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=16",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 5805.257774,
-      "originalEnd": 6011.213527,
-      "duration": 205.955753
+      "hlsUrl": "/data/movie-harry-potter-2/hls/016.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/016.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 5702.2395,
+      "originalEnd": 5871.2345,
+      "timelineOrigin": 5700.833332,
+      "clipStart": 1.406168,
+      "clipEnd": 170.401168,
+      "duration": 168.995
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/016.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -385,19 +545,29 @@
   },
   {
     "episodeId": 17,
-    "title": "Inside Tom Riddle's Memory",
+    "title": "走进汤姆的记忆",
     "titleZh": "走进汤姆的记忆",
+    "titleEn": "Inside Tom Riddle's Memory",
     "summaryEn": "Harry is drawn into a memory that seems to explain an earlier tragedy.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/017.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=17",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 6011.213527,
-      "originalEnd": 6330.198863,
-      "duration": 318.985336
+      "hlsUrl": "/data/movie-harry-potter-2/hls/017.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/017.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 5871.2345,
+      "originalEnd": 6175.6255,
+      "timelineOrigin": 5868.833332,
+      "clipStart": 2.401168,
+      "clipEnd": 306.792168,
+      "duration": 304.391
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/017.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -409,19 +579,29 @@
   },
   {
     "episodeId": 18,
-    "title": "Another Friend in Danger",
+    "title": "又一位朋友遇险",
     "titleZh": "又一位朋友遇险",
+    "titleEn": "Another Friend in Danger",
     "summaryEn": "The danger reaches someone close to Harry while the school tightens its rules.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/018.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=18",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 6330.198863,
-      "originalEnd": 6690.809105,
-      "duration": 360.610242
+      "hlsUrl": "/data/movie-harry-potter-2/hls/018.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/018.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 6175.6255,
+      "originalEnd": 6613.9985,
+      "timelineOrigin": 6172.041665,
+      "clipStart": 3.583835,
+      "clipEnd": 441.956835,
+      "duration": 438.373
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/018.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -433,19 +613,29 @@
   },
   {
     "episodeId": 19,
-    "title": "Hagrid's Last Clue",
+    "title": "海格留下的线索",
     "titleZh": "海格留下的线索",
+    "titleEn": "Hagrid's Last Clue",
     "summaryEn": "The removal of two trusted adults leaves the boys with one strange clue.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/019.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=19",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 6690.809105,
-      "originalEnd": 6935.553604,
-      "duration": 244.744499
+      "hlsUrl": "/data/movie-harry-potter-2/hls/019.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/019.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 6613.9985,
+      "originalEnd": 6796.9635,
+      "timelineOrigin": 6612.041665,
+      "clipStart": 1.956835,
+      "clipEnd": 184.921835,
+      "duration": 182.965
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/019.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -457,19 +647,29 @@
   },
   {
     "episodeId": 20,
-    "title": "Follow the Spiders",
+    "title": "跟随蜘蛛",
     "titleZh": "跟随蜘蛛",
+    "titleEn": "Follow the Spiders",
     "summaryEn": "A trail leads into the forest and a meeting with Hagrid's old friend.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/020.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=20",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 6935.553604,
-      "originalEnd": 7406.524105,
-      "duration": 470.970501
+      "hlsUrl": "/data/movie-harry-potter-2/hls/020.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/020.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 6796.9635,
+      "originalEnd": 7228.6775,
+      "timelineOrigin": 6796.041665,
+      "clipStart": 0.921835,
+      "clipEnd": 432.635835,
+      "duration": 431.714
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/020.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -481,19 +681,29 @@
   },
   {
     "episodeId": 21,
-    "title": "The Monster's Secret",
+    "title": "怪物的秘密",
     "titleZh": "怪物的秘密",
+    "titleEn": "The Monster's Secret",
     "summaryEn": "A page of research connects the victims and explains how the monster travels.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/021.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=21",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 7406.524105,
-      "originalEnd": 7610.185907,
-      "duration": 203.661802
+      "hlsUrl": "/data/movie-harry-potter-2/hls/021.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/021.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 7228.6775,
+      "originalEnd": 7441.912,
+      "timelineOrigin": 7228.041665,
+      "clipStart": 0.635835,
+      "clipEnd": 213.870335,
+      "duration": 213.2345
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/021.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -505,19 +715,29 @@
   },
   {
     "episodeId": 22,
-    "title": "Ginny Is Missing",
+    "title": "金妮失踪了",
     "titleZh": "金妮失踪了",
+    "titleEn": "Ginny Is Missing",
     "summaryEn": "Ginny's disappearance forces the boys to confront their unreliable teacher.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/022.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=22",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 7610.185907,
-      "originalEnd": 7897.097528,
-      "duration": 286.911621
+      "hlsUrl": "/data/movie-harry-potter-2/hls/022.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/022.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 7441.912,
+      "originalEnd": 7683.5885,
+      "timelineOrigin": 7441.249998,
+      "clipStart": 0.662002,
+      "clipEnd": 242.338502,
+      "duration": 241.6765
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/022.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -529,19 +749,29 @@
   },
   {
     "episodeId": 23,
-    "title": "Down into the Chamber",
+    "title": "深入密室",
     "titleZh": "深入密室",
+    "titleEn": "Down into the Chamber",
     "summaryEn": "The journey underground separates the friends and reveals another hidden danger.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/023.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=23",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 7897.097528,
-      "originalEnd": 8231.348109,
-      "duration": 334.250581
+      "hlsUrl": "/data/movie-harry-potter-2/hls/023.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/023.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 7683.5885,
+      "originalEnd": 7991.004,
+      "timelineOrigin": 7681.249998,
+      "clipStart": 2.338502,
+      "clipEnd": 309.754002,
+      "duration": 307.4155
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/023.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -553,19 +783,29 @@
   },
   {
     "episodeId": 24,
-    "title": "The Heir Revealed",
+    "title": "继承人的真相",
     "titleZh": "继承人的真相",
+    "titleEn": "The Heir Revealed",
     "summaryEn": "Harry meets the person behind the diary and learns how Ginny was manipulated.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/024.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=24",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 8231.348109,
-      "originalEnd": 8581.155913,
-      "duration": 349.807804
+      "hlsUrl": "/data/movie-harry-potter-2/hls/024.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/024.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 7991.004,
+      "originalEnd": 8278.9225,
+      "timelineOrigin": 7989.249998,
+      "clipStart": 1.754002,
+      "clipEnd": 289.672502,
+      "duration": 287.9185
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/024.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -577,19 +817,29 @@
   },
   {
     "episodeId": 25,
-    "title": "The Basilisk and the Sword",
+    "title": "蛇怪与宝剑",
     "titleZh": "蛇怪与宝剑",
+    "titleEn": "The Basilisk and the Sword",
     "summaryEn": "Help arrives as Harry faces the creature inside the Chamber.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/025.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=25",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 8581.155913,
-      "originalEnd": 9079.612201,
-      "duration": 498.456288
+      "hlsUrl": "/data/movie-harry-potter-2/hls/025.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/025.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 8278.9225,
+      "originalEnd": 8831.148,
+      "timelineOrigin": 8277.249998,
+      "clipStart": 1.672502,
+      "clipEnd": 553.898002,
+      "duration": 552.2255
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/025.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -601,19 +851,29 @@
   },
   {
     "episodeId": 26,
-    "title": "The Choices We Make",
+    "title": "我们的选择",
     "titleZh": "我们的选择",
+    "titleEn": "The Choices We Make",
     "summaryEn": "Harry discusses identity, loyalty, and the decisions that shape a person.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/026.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=26",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 9079.612201,
-      "originalEnd": 9430.504412,
-      "duration": 350.892211
+      "hlsUrl": "/data/movie-harry-potter-2/hls/026.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/026.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 8831.148,
+      "originalEnd": 9069.843,
+      "timelineOrigin": 8828.458331,
+      "clipStart": 2.689669,
+      "clipEnd": 241.384669,
+      "duration": 238.695
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/026.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -625,19 +885,29 @@
   },
   {
     "episodeId": 27,
-    "title": "A Gift of Freedom",
+    "title": "自由的礼物",
     "titleZh": "自由的礼物",
+    "titleEn": "A Gift of Freedom",
     "summaryEn": "Harry finds a clever way to repay a friend who has lived without freedom.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/027.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=27",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 9430.504412,
-      "originalEnd": 9631.872243,
-      "duration": 201.367831
+      "hlsUrl": "/data/movie-harry-potter-2/hls/027.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/027.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 9069.843,
+      "originalEnd": 9369.49,
+      "timelineOrigin": 9068.458331,
+      "clipStart": 1.384669,
+      "clipEnd": 301.031669,
+      "duration": 299.647
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/027.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
@@ -649,19 +919,29 @@
   },
   {
     "episodeId": 28,
-    "title": "Welcome Home, Hagrid",
+    "title": "欢迎回来，海格",
     "titleZh": "欢迎回来，海格",
+    "titleEn": "Welcome Home, Hagrid",
     "summaryEn": "The school celebrates recovery, reunion, and the return of a trusted friend.",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
-      "hlsUrl": "data/movie-harry-potter-2/hls/028.m3u8",
-      "subtitleUrl": "/.netlify/functions/movie-study-subtitles?course=movie-harry-potter-2&episode=28",
-      "originalHlsUrl": "https://mujizybf08.com/videos/202602/15/6991a28eca01177c0d9c77ea/g974ag/index.m3u8",
-      "originalStart": 9631.872243,
-      "originalEnd": 9907.689443,
-      "duration": 275.8172
+      "hlsUrl": "/data/movie-harry-potter-2/hls/028.m3u8",
+      "subtitleUrl": "/data/movie-harry-potter-2/subtitles/028.en.vtt",
+      "originalHlsUrl": "https://api.obj2.top/hls/movie/672/master.m3u8",
+      "originalStart": 9369.49,
+      "originalEnd": 9644.277,
+      "timelineOrigin": 9368.458331,
+      "clipStart": 1.031669,
+      "clipEnd": 275.818669,
+      "duration": 274.787
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-2/subtitles/028.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,

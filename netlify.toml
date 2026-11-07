@@ -311,3 +311,48 @@
   for = "/data/movie-luca/hls/*"
   [headers.values]
     Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-fantastic-beasts-3/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-narnia-1/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-narnia-2/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-dragon-3/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-zootopia-2/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-inside-out-2/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-monsters-university/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-despicable-me-1/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
+
+[[headers]]
+  for = "/data/movie-croods-1/hls/*"
+  [headers.values]
+    Content-Type = "application/vnd.apple.mpegurl"
