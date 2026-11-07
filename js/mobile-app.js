@@ -59,11 +59,15 @@ window.MobileApp = {
         const groups=library.series||[];
         // Homepage uses the published category catalogue, just like the full movie shelf.
         // Do not hide a published title merely because its playback mapping is incomplete.
-        const featured=(category)=>groups.filter(group=>group.dynamicCategory===category)
+        // Match the existing full "动画大电影" shelf: its curated legacy movie collections
+        // are stored in movie-series.json, not in the dynamic movie_library table.
+        const animatedMovies=groups.filter(group=>!group.dynamicCategory)
           .flatMap(group=>group.films.map(film=>media.movieFilm(group,film,library.playableById)))
           .slice(0,4);
-        const animatedMovies=featured('animated');
-        const documentaries=featured('documentary');
+        // Documentaries are separately managed in the dynamic movie_library category.
+        const documentaries=groups.filter(group=>group.dynamicCategory==='documentary')
+          .flatMap(group=>group.films.map(film=>media.movieFilm(group,film,library.playableById)))
+          .slice(0,4);
         shelves.push(this.section('动画大电影','#/movies/animated',animatedMovies.length?media.cards(app,animatedMovies):'<p class="sf-app-empty">精选动画电影即将呈现</p>'));
         shelves.push(this.section('纪录片','#/movies/documentary',documentaries.length?media.cards(app,documentaries):'<p class="sf-app-empty">精选纪录片即将呈现</p>'));
       }catch(error){
