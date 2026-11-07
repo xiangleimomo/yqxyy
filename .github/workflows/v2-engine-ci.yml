@@ -1,0 +1,34 @@
+name: V2 engine validation
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/v2-*.cjs'
+      - 'docs/v2-engine/**'
+      - 'data/v2-engine-state.json'
+      - '.github/workflows/v2-*.yml'
+  push:
+    branches: [feature/v2-quality-first-engine]
+    paths:
+      - 'scripts/v2-*.cjs'
+      - 'docs/v2-engine/**'
+      - 'data/v2-engine-state.json'
+      - '.github/workflows/v2-*.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax-check V2 scripts
+        run: |
+          node --check scripts/v2-catalog-scan.cjs
+      - name: Validate JSON inputs and state
+        run: |
+          node -e "const fs=require('node:fs'); for (const p of ['data/movie-hub-catalog.json','data/v2-engine-state.json']) JSON.parse(fs.readFileSync(p,'utf8'));"
+      - name: Ensure V3 workflow is retired
+        run: test ! -f .github/workflows/movie-v3.yml
