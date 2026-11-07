@@ -18,7 +18,12 @@ function safeResolve(uri, base) {
   }
   return value.href;
 }
-function parseMaster(text, baseUrl) {
+function parseMaster(text, baseUrl, options = {}) {
+  const resolve = uri => {
+    const absolute = safeResolve(uri, baseUrl);
+    const transformed = options.uriTransform ? options.uriTransform(absolute, baseUrl) : absolute;
+    return safeResolve(transformed, baseUrl);
+  };
   if (!String(text).trimStart().startsWith('#EXTM3U')) throw new Error('Invalid HLS master');
   const lines = String(text).replace(/^\uFEFF/, '').split(/\r?\n/).map(x => x.trim());
   if (lines.some(line => line.startsWith('#EXT-X-SESSION-KEY:'))) throw new Error('Session-level encryption is not supported by this worker');
@@ -29,11 +34,11 @@ function parseMaster(text, baseUrl) {
     if (line.startsWith('#EXT-X-MEDIA:')) {
       const a = attrs(line);
       if (!['AUDIO', 'SUBTITLES', 'VIDEO', 'CLOSED-CAPTIONS'].includes(a.TYPE)) continue;
-      media.push({ ...a, uri: a.URI ? safeResolve(a.URI, baseUrl) : null, raw: line });
+      media.push({ ...a, uri: a.URI ? resolve(a.URI) : null, raw: line });
     } else if (line.startsWith('#EXT-X-STREAM-INF:')) {
       pending = { ...attrs(line), raw: line };
     } else if (pending && line && !line.startsWith('#')) {
-      variants.push({ ...pending, uri: safeResolve(line, baseUrl) });
+      variants.push({ ...pending, uri: resolve(line) });
       pending = null;
     } else if (line.startsWith('#EXT-X-I-FRAME-STREAM-INF:')) {
       // I-frame playlists are preview-only, never selected as the main video.
@@ -73,7 +78,12 @@ function chooseTrack(master, type, preferred = 'en', groupId = null) {
   }
   return pool.find(x => x.DEFAULT === 'YES') || pool.find(x => x.AUTOSELECT === 'YES') || pool[0];
 }
-function parseMediaPlaylist(text, baseUrl) {
+function parseMediaPlaylist(text, baseUrl, options = {}) {
+  const resolve = uri => {
+    const absolute = safeResolve(uri, baseUrl);
+    const transformed = options.uriTransform ? options.uriTransform(absolute, baseUrl) : absolute;
+    return safeResolve(transformed, baseUrl);
+  };
   const raw = String(text).replace(/^\uFEFF/, '');
   if (!raw.trimStart().startsWith('#EXTM3U')) throw new Error('Invalid HLS media playlist');
   if (/#EXT-X-(?:PART|PRELOAD-HINT|RENDITION-REPORT|SKIP|DEFINE|SESSION-KEY)(?::|$)/m.test(raw)) {
@@ -101,7 +111,7 @@ function parseMediaPlaylist(text, baseUrl) {
       prefix.push(line);
     } else if (line && !line.startsWith('#')) {
       if (duration === null) throw new Error('Media URI without EXTINF');
-      const uri = safeResolve(line, baseUrl);
+      const uri = resolve(line);
       let normalizedRange = null;
       if (pendingRange) {
         const offset = pendingRange.offset === null ? previousRangeEnd.get(uri) : pendingRange.offset;
@@ -136,14 +146,14 @@ function parseMediaPlaylist(text, baseUrl) {
       }
       if (a.METHOD === 'AES-128') {
         if (!a.URI) throw new Error('AES-128 key URI missing');
-        const keyUri = safeResolve(a.URI, baseUrl);
+        const keyUri = resolve(a.URI);
         currentKey = line.replace(/URI="([^"]+)"/, 'URI="' + keyUri + '"');
       } else currentKey = '#EXT-X-KEY:METHOD=NONE';
       prefix.push(currentKey);
     } else if (line.startsWith('#EXT-X-MAP:')) {
       const a = attrs(line);
       if (!a.URI) throw new Error('EXT-X-MAP URI missing');
-      const mapUri = safeResolve(a.URI, baseUrl);
+      const mapUri = resolve(a.URI);
       currentMap = line.replace(/URI="([^"]+)"/, 'URI="' + mapUri + '"');
       prefix.push(currentMap);
     } else if (line === '#EXT-X-DISCONTINUITY') {
