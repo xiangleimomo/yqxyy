@@ -8,9 +8,9 @@ const STORY_SCHEMA = {
     logline:{type:'string'}, storyArc:{type:'string'},
     episodes:{type:'array',items:{
       type:'object',additionalProperties:false,
-      required:['titleEn','titleZh','summaryZh','startCueId','endCueId','boundaryReason','storyPurpose'],
+      required:['titleEn','titleZh','summaryEn','summaryZh','startCueId','endCueId','boundaryReason','storyPurpose'],
       properties:{
-        titleEn:{type:'string'},titleZh:{type:'string'},summaryZh:{type:'string'},
+        titleEn:{type:'string'},titleZh:{type:'string'},summaryEn:{type:'string'},summaryZh:{type:'string'},
         startCueId:{type:'integer'},endCueId:{type:'integer'},
         boundaryReason:{type:'string'},storyPurpose:{type:'string'}
       }
@@ -49,7 +49,7 @@ const SYSTEM_STORY = [
 '- Boundaries may only be placed between cues. Do not split a cue or sentence.',
 '- Use only facts supported by this transcript. Do not invent visual-only events or use later-story spoilers in an episode summary.',
 '- Episode titles must describe the episode actual story, not quote the first subtitle line.',
-'- Summaries should explain what happens and why it matters, not repeat generic wording.',
+'- Summaries in both English and Chinese should explain what happens and why it matters, not repeat generic wording.',
 '- Write age-appropriate Chinese summaries for English learners aged roughly 10–12.',
 'Return the smallest natural set of story episodes that preserves the film narrative flow.'
 ].join('\n');
@@ -79,14 +79,14 @@ function validatePlan(plan,cues,duration){
   const normalized=episodes.map((episode,index)=>{
     const id=index+1;
     if(!Number.isInteger(episode.startCueId)||!Number.isInteger(episode.endCueId)||episode.startCueId!==nextCue||episode.endCueId<episode.startCueId||episode.endCueId>cues.length)throw new Error('Story boundaries do not cover cues exactly once and in order at episode '+id);
-    if(![episode.titleEn,episode.titleZh,episode.summaryZh,episode.boundaryReason,episode.storyPurpose].every(value=>typeof value==='string'&&value.trim()))throw new Error('Episode '+id+' is missing a required story field');
+    if(![episode.titleEn,episode.titleZh,episode.summaryEn,episode.summaryZh,episode.boundaryReason,episode.storyPurpose].every(value=>typeof value==='string'&&value.trim()))throw new Error('Episode '+id+' is missing a required story field');
     const nextEpisode=episodes[index+1];
     const start=index===0?0:Number(cues[episode.startCueId-1].start);
     const end=nextEpisode?Number(cues[nextEpisode.startCueId-1].start):duration;
     if(!(end>start))throw new Error('Episode '+id+' has a non-positive duration');
     nextCue=episode.endCueId+1;
     return {
-      episodeId:id,titleEn:episode.titleEn.trim(),titleZh:episode.titleZh.trim(),summaryZh:episode.summaryZh.trim(),
+      episodeId:id,titleEn:episode.titleEn.trim(),titleZh:episode.titleZh.trim(),summaryEn:episode.summaryEn.trim(),summaryZh:episode.summaryZh.trim(),
       startCueId:episode.startCueId,endCueId:episode.endCueId,start,end,durationSeconds:end-start,
       startCue:cueText(cues[episode.startCueId-1]),endCue:cueText(cues[episode.endCueId-1]),
       precedingCue:episode.startCueId>1?cueText(cues[episode.startCueId-2]):'',
