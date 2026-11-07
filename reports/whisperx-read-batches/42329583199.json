@@ -1,0 +1,338 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42329583199",
+  "completedAt": "2026-11-07T02:46:50.539337+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 12,
+  "rejected": 38,
+  "websiteCommitRequired": true,
+  "totalWords": 10458,
+  "speechMatchedWords": 10458,
+  "success": [
+    {
+      "seriesId": "little-fox-pollyanna-fs0116",
+      "episodeId": 28,
+      "cues": 83,
+      "words": 708,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 708,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-pollyanna-fs0116",
+      "episodeId": 29,
+      "cues": 75,
+      "words": 707,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 61,
+      "speechWords": 707,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-pollyanna-fs0116",
+      "episodeId": 30,
+      "cues": 93,
+      "words": 711,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 60,
+      "speechWords": 711,
+      "coverage": 0.9986,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-pollyanna-fs0116",
+      "episodeId": 31,
+      "cues": 86,
+      "words": 700,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 53,
+      "speechWords": 700,
+      "coverage": 0.9972,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-pollyanna-fs0116",
+      "episodeId": 32,
+      "cues": 78,
+      "words": 708,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 708,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-qt-s-science-adventures-fs0047",
+      "episodeId": 1,
+      "cues": 119,
+      "words": 1082,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 80,
+      "speechWords": 1082,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-qt-s-science-adventures-fs0047",
+      "episodeId": 2,
+      "cues": 120,
+      "words": 979,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 979,
+      "coverage": 0.998,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-qt-s-science-adventures-fs0047",
+      "episodeId": 3,
+      "cues": 109,
+      "words": 980,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 980,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-qt-s-science-adventures-fs0047",
+      "episodeId": 4,
+      "cues": 104,
+      "words": 989,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 989,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-qt-s-science-adventures-fs0047",
+      "episodeId": 5,
+      "cues": 104,
+      "words": 980,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 980,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-qt-s-science-adventures-fs0047",
+      "episodeId": 6,
+      "cues": 96,
+      "words": 948,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 68,
+      "speechWords": 948,
+      "coverage": 0.9989,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-qt-s-science-adventures-fs0047",
+      "episodeId": 7,
+      "cues": 105,
+      "words": 966,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 71,
+      "speechWords": 966,
+      "coverage": 0.9979,
+      "omittedWords": 2
+    }
+  ],
+  "failures": [
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 2,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 3,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 4,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 5,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 6,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 7,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 8,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 9,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 10,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 11,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 12,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 13,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 14,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 15,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 16,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 17,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 18,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 19,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 20,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 21,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 22,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 23,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 24,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 2,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 3,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 4,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 5,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 6,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 7,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 8,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 9,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 10,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 11,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 12,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 13,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 14,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    }
+  ]
+}

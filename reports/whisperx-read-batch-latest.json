@@ -1,565 +1,338 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42327256064",
-  "completedAt": "2026-11-07T02:30:21.060777+00:00",
+  "runId": "42329583199",
+  "completedAt": "2026-11-07T02:46:50.539337+00:00",
   "batchSize": 50,
   "selected": 50,
-  "published": 50,
-  "rejected": 0,
+  "published": 12,
+  "rejected": 38,
   "websiteCommitRequired": true,
-  "totalWords": 29083,
-  "speechMatchedWords": 29083,
+  "totalWords": 10458,
+  "speechMatchedWords": 10458,
   "success": [
     {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 106,
-      "cues": 69,
-      "words": 460,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 64,
-      "speechWords": 460,
-      "coverage": 0.9978,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 107,
-      "cues": 64,
-      "words": 455,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 57,
-      "speechWords": 455,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 108,
-      "cues": 60,
-      "words": 451,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 56,
-      "speechWords": 451,
-      "coverage": 0.9978,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 109,
-      "cues": 63,
-      "words": 448,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 59,
-      "speechWords": 448,
-      "coverage": 0.9978,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 110,
-      "cues": 57,
-      "words": 444,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 53,
-      "speechWords": 444,
-      "coverage": 0.9978,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 111,
-      "cues": 61,
-      "words": 427,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 55,
-      "speechWords": 427,
-      "coverage": 0.9977,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 112,
-      "cues": 66,
-      "words": 415,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 57,
-      "speechWords": 415,
-      "coverage": 0.9976,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 113,
-      "cues": 59,
-      "words": 415,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 51,
-      "speechWords": 415,
-      "coverage": 0.9976,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 114,
-      "cues": 62,
-      "words": 456,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 57,
-      "speechWords": 456,
-      "coverage": 0.9978,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 115,
-      "cues": 55,
-      "words": 417,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 48,
-      "speechWords": 417,
-      "coverage": 0.9976,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 116,
-      "cues": 66,
-      "words": 464,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 60,
-      "speechWords": 464,
-      "coverage": 0.9978,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 117,
-      "cues": 68,
-      "words": 440,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 62,
-      "speechWords": 440,
-      "coverage": 0.9977,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 118,
-      "cues": 64,
-      "words": 414,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 58,
-      "speechWords": 414,
-      "coverage": 0.9976,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 119,
-      "cues": 78,
-      "words": 420,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 63,
-      "speechWords": 420,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 120,
-      "cues": 67,
-      "words": 414,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 61,
-      "speechWords": 414,
-      "coverage": 0.9976,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 121,
-      "cues": 65,
-      "words": 419,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 57,
-      "speechWords": 419,
-      "coverage": 0.9976,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 122,
-      "cues": 65,
-      "words": 401,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 56,
-      "speechWords": 401,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 123,
-      "cues": 61,
-      "words": 434,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 58,
-      "speechWords": 434,
-      "coverage": 0.9977,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 124,
-      "cues": 64,
-      "words": 444,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 61,
-      "speechWords": 444,
-      "coverage": 0.9955,
-      "omittedWords": 2
-    },
-    {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 125,
-      "cues": 63,
-      "words": 469,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 58,
-      "speechWords": 469,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 126,
-      "cues": 67,
-      "words": 441,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 56,
-      "speechWords": 441,
-      "coverage": 0.9977,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 127,
-      "cues": 57,
-      "words": 430,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 58,
-      "speechWords": 430,
-      "coverage": 0.9977,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-photo-travels-fs0042",
-      "episodeId": 128,
-      "cues": 76,
-      "words": 498,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 64,
-      "speechWords": 498,
-      "coverage": 0.998,
-      "omittedWords": 1
-    },
-    {
       "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 1,
-      "cues": 73,
-      "words": 712,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 60,
-      "speechWords": 712,
-      "coverage": 0.9986,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 2,
-      "cues": 80,
-      "words": 685,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 61,
-      "speechWords": 685,
-      "coverage": 0.9985,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 3,
-      "cues": 84,
-      "words": 706,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 71,
-      "speechWords": 706,
-      "coverage": 0.9986,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 4,
-      "cues": 82,
-      "words": 715,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 70,
-      "speechWords": 715,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 5,
-      "cues": 86,
-      "words": 706,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 66,
-      "speechWords": 706,
-      "coverage": 0.9986,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 6,
-      "cues": 80,
+      "episodeId": 28,
+      "cues": 83,
       "words": 708,
       "xmlTextVerified": true,
-      "xmlParagraphs": 68,
+      "xmlParagraphs": 61,
       "speechWords": 708,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
       "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 7,
-      "cues": 64,
-      "words": 695,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 60,
-      "speechWords": 695,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 8,
-      "cues": 89,
-      "words": 714,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 68,
-      "speechWords": 714,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 9,
-      "cues": 84,
-      "words": 705,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 68,
-      "speechWords": 705,
-      "coverage": 0.9986,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 10,
-      "cues": 72,
+      "episodeId": 29,
+      "cues": 75,
       "words": 707,
       "xmlTextVerified": true,
       "xmlParagraphs": 61,
       "speechWords": 707,
-      "coverage": 0.9986,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 11,
-      "cues": 76,
-      "words": 696,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 65,
-      "speechWords": 696,
-      "coverage": 0.9986,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 12,
-      "cues": 76,
-      "words": 706,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 62,
-      "speechWords": 706,
-      "coverage": 0.9986,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 13,
-      "cues": 73,
-      "words": 714,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 63,
-      "speechWords": 714,
-      "coverage": 0.9986,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 14,
-      "cues": 83,
-      "words": 709,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 62,
-      "speechWords": 709,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
       "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 15,
-      "cues": 88,
-      "words": 706,
+      "episodeId": 30,
+      "cues": 93,
+      "words": 711,
       "xmlTextVerified": true,
-      "xmlParagraphs": 66,
-      "speechWords": 706,
+      "xmlParagraphs": 60,
+      "speechWords": 711,
       "coverage": 0.9986,
       "omittedWords": 1
     },
     {
       "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 16,
-      "cues": 96,
-      "words": 717,
+      "episodeId": 31,
+      "cues": 86,
+      "words": 700,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 53,
+      "speechWords": 700,
+      "coverage": 0.9972,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-pollyanna-fs0116",
+      "episodeId": 32,
+      "cues": 78,
+      "words": 708,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 57,
+      "speechWords": 708,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-qt-s-science-adventures-fs0047",
+      "episodeId": 1,
+      "cues": 119,
+      "words": 1082,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 80,
+      "speechWords": 1082,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-qt-s-science-adventures-fs0047",
+      "episodeId": 2,
+      "cues": 120,
+      "words": 979,
       "xmlTextVerified": true,
       "xmlParagraphs": 72,
-      "speechWords": 717,
+      "speechWords": 979,
+      "coverage": 0.998,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-qt-s-science-adventures-fs0047",
+      "episodeId": 3,
+      "cues": 109,
+      "words": 980,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 980,
       "coverage": 1.0,
       "omittedWords": 0
     },
     {
-      "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 17,
-      "cues": 82,
-      "words": 675,
+      "seriesId": "little-fox-qt-s-science-adventures-fs0047",
+      "episodeId": 4,
+      "cues": 104,
+      "words": 989,
       "xmlTextVerified": true,
       "xmlParagraphs": 67,
-      "speechWords": 675,
-      "coverage": 0.9602,
-      "omittedWords": 28
+      "speechWords": 989,
+      "coverage": 1.0,
+      "omittedWords": 0
     },
     {
-      "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 18,
-      "cues": 85,
-      "words": 699,
+      "seriesId": "little-fox-qt-s-science-adventures-fs0047",
+      "episodeId": 5,
+      "cues": 104,
+      "words": 980,
       "xmlTextVerified": true,
-      "xmlParagraphs": 63,
-      "speechWords": 699,
-      "coverage": 0.9986,
+      "xmlParagraphs": 68,
+      "speechWords": 980,
+      "coverage": 0.999,
       "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 19,
-      "cues": 88,
-      "words": 719,
+      "seriesId": "little-fox-qt-s-science-adventures-fs0047",
+      "episodeId": 6,
+      "cues": 96,
+      "words": 948,
       "xmlTextVerified": true,
-      "xmlParagraphs": 65,
-      "speechWords": 719,
-      "coverage": 1.0,
-      "omittedWords": 0
+      "xmlParagraphs": 68,
+      "speechWords": 948,
+      "coverage": 0.9989,
+      "omittedWords": 1
     },
     {
-      "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 20,
-      "cues": 87,
-      "words": 690,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 67,
-      "speechWords": 690,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 21,
-      "cues": 97,
-      "words": 718,
+      "seriesId": "little-fox-qt-s-science-adventures-fs0047",
+      "episodeId": 7,
+      "cues": 105,
+      "words": 966,
       "xmlTextVerified": true,
       "xmlParagraphs": 71,
-      "speechWords": 718,
-      "coverage": 0.9986,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 22,
-      "cues": 93,
-      "words": 714,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 72,
-      "speechWords": 714,
-      "coverage": 0.9986,
-      "omittedWords": 1
-    },
-    {
-      "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 23,
-      "cues": 94,
-      "words": 700,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 65,
-      "speechWords": 700,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 24,
-      "cues": 86,
-      "words": 709,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 64,
-      "speechWords": 709,
-      "coverage": 0.9958,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 25,
-      "cues": 77,
-      "words": 709,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 61,
-      "speechWords": 709,
-      "coverage": 1.0,
-      "omittedWords": 0
-    },
-    {
-      "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 26,
-      "cues": 87,
-      "words": 700,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 59,
-      "speechWords": 700,
-      "coverage": 0.9957,
-      "omittedWords": 3
-    },
-    {
-      "seriesId": "little-fox-pollyanna-fs0116",
-      "episodeId": 27,
-      "cues": 89,
-      "words": 673,
-      "xmlTextVerified": true,
-      "xmlParagraphs": 58,
-      "speechWords": 673,
-      "coverage": 0.9985,
-      "omittedWords": 1
+      "speechWords": 966,
+      "coverage": 0.9979,
+      "omittedWords": 2
     }
   ],
-  "failures": []
+  "failures": [
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 2,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 3,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 4,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 5,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 6,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 7,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 8,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 9,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 10,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 11,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 12,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 13,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 14,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 15,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 16,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 17,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 18,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 19,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 20,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 21,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 22,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 23,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-puss-in-boots-fs0105",
+      "episodeId": 24,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 2,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 3,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 4,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 5,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 6,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 7,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 8,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 9,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 10,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 11,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 12,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 13,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rapunzel-fs0125",
+      "episodeId": 14,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    }
+  ]
 }
