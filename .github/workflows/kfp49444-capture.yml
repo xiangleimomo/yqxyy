@@ -1,0 +1,27 @@
+name: Inspect Kung Fu Panda 2 HLS subtitles
+on:
+  push:
+    branches: [automation/kfp49444-build]
+    paths: [scripts/kfp49444-inspect.cjs]
+permissions:
+  contents: write
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: automation/kfp49444-build
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Read source HLS and subtitles
+        run: node scripts/kfp49444-inspect.cjs
+      - name: Store inspection on staging branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/movie-kung-fu-panda-2/.inspect
+          git commit -m "Capture Kung Fu Panda 2 original HLS and subtitle tracks"
+          git push origin HEAD:automation/kfp49444-build
