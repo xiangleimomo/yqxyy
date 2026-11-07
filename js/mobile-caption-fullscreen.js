@@ -117,14 +117,16 @@
     player.setAttribute('controlslist', 'nofullscreen noremoteplayback');
     player.setAttribute('disablepictureinpicture', '');
     let mobileFullscreenButton = null;
+    const movieToolbar = !!player.closest('.sf-movie-lesson-player')?.querySelector('.sf-lesson-toolbar');
     if (!isMobile) {
-      // Preserve the existing desktop native play/seek controls.
-      player.setAttribute('controls', '');
-      player.controls = true;
+      // Movie lessons already have desktop cinema controls. Re-enabling
+      // browser controls here adds a second bar, especially while paused.
+      player.controls = !movieToolbar;
+      if (movieToolbar) player.removeAttribute('controls');
+      else player.setAttribute('controls', '');
     }
     // Movie lessons have their own 8-button toolbar; do not inject the legacy
     // mobile seek/play/mute/fullscreen bar a second time.
-    const movieToolbar = !!player.closest('.sf-movie-lesson-player')?.querySelector('.sf-lesson-toolbar');
     if (isMobile && !movieToolbar) {
       stage.classList.add('sf-touch-stage', 'sf-caption-below');
       player.removeAttribute('controls');

@@ -24,6 +24,7 @@ This is a static English-learning site. GitHub `main` is deployed automatically 
 5. Do not add access tokens, API keys, or private URLs to source control. Keep `.env` files untracked.
 6. Keep the interface bilingual where the existing screen is bilingual.
 7. Prefer a small, focused commit per user request. Do not force-push or overwrite remote work.
+8. Player UI changes default to desktop only. Modify mobile behavior only when the user explicitly requests it.
 
 ## Verification
 
