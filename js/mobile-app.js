@@ -44,8 +44,14 @@ window.MobileApp = {
   section(title,url,content) {return `<section class="sf-app-section"><div class="sf-app-section-head"><h2>${title}</h2>${url?`<a href="${url}">查看全部 ›</a>`:''}</div>${content}</section>`;},
   async home(app) {
     const route=location.hash,e=value=>app.escapeHtml(String(value||''));
-    app.el().innerHTML='<div class="sf-app-loading" role="status">正在准备你的学习空间…</div>';
-    const list=(await app.getJSON('data/series-list.json')).filter(row=>!String(row.seriesId).startsWith('movie-')&&row.status!=='coming'&&(!app.isGuest()||!app.isGuestRestrictedLevel(row.level)));
+    // Keep the current shell in place while the homepage data loads; avoid a visible
+    // full-page loading flash on mobile. Load independent catalogues concurrently.
+    const [seriesRows,movieLibrary,bookRows]=await Promise.all([
+      app.getJSON('data/series-list.json'),
+      window.MovieClassroom.getLibrary(app).catch(error=>{console.warn('首页影视精选暂不可用',error);return null;}),
+      window.BookReader.library(app).catch(error=>{console.warn('首页阅读精选暂不可用',error);return null;})
+    ]);
+    const list=seriesRows.filter(row=>!String(row.seriesId).startsWith('movie-')&&row.status!=='coming'&&(!app.isGuest()||!app.isGuestRestrictedLevel(row.level)));
     if(location.hash!==route||!this.active)return;
     const progress=Object.values(app.storage('progress')||{}).filter(row=>list.some(series=>series.seriesId===row.seriesId)).sort((a,b)=>String(b.updatedAt||'').localeCompare(String(a.updatedAt||'')))[0];
     const last=list.find(row=>row.seriesId===progress?.seriesId);
@@ -53,34 +59,22 @@ window.MobileApp = {
     const shelves=[],media=window.MediaShelf;
     if(media){
       shelves.push(this.section('动画故事','#/home/all',media.cards(app,list.slice(0,4).map(row=>media.animation(row)))));
-      try{
-        const library=await window.MovieClassroom.getLibrary(app);
-        if(location.hash!==route||!this.active)return;
-        const groups=library.series||[];
-        // Homepage uses the published category catalogue, just like the full movie shelf.
-        // Do not hide a published title merely because its playback mapping is incomplete.
-        // Match the existing full "动画大电影" shelf: its curated legacy movie collections
-        // are stored in movie-series.json, not in the dynamic movie_library table.
-        const animatedMovies=groups.filter(group=>!group.dynamicCategory)
-          .flatMap(group=>group.films.map(film=>media.movieFilm(group,film,library.playableById)))
-          .slice(0,4);
-        // Documentaries are separately managed in the dynamic movie_library category.
-        const documentaries=groups.filter(group=>group.dynamicCategory==='documentary')
-          .flatMap(group=>group.films.map(film=>media.movieFilm(group,film,library.playableById)))
-          .slice(0,4);
-        shelves.push(this.section('动画大电影','#/movies/animated',animatedMovies.length?media.cards(app,animatedMovies):'<p class="sf-app-empty">精选动画电影即将呈现</p>'));
-        shelves.push(this.section('纪录片','#/movies/documentary',documentaries.length?media.cards(app,documentaries):'<p class="sf-app-empty">精选纪录片即将呈现</p>'));
-      }catch(error){
-        console.warn('首页影视精选暂不可用',error);
-        shelves.push(this.section('动画大电影','#/movies/animated','<p class="sf-app-empty">精选动画电影即将呈现</p>'));
-        shelves.push(this.section('纪录片','#/movies/documentary','<p class="sf-app-empty">精选纪录片即将呈现</p>'));
-      }
+      const groups=movieLibrary?.series||[];
+      // Curated animated features live in the original movie-series catalogue and are
+      // identified by their genre; newer additions live in movie_library.category=animated.
+      const animatedMovies=groups.filter(group=>group.dynamicCategory==='animated'||String(group.genre||'').includes('动画'))
+        .flatMap(group=>group.films.map(film=>media.movieFilm(group,film,movieLibrary?.playableById||new Map())))
+        .slice(0,4);
+      const documentaries=groups.filter(group=>group.dynamicCategory==='documentary')
+        .flatMap(group=>group.films.map(film=>media.movieFilm(group,film,movieLibrary?.playableById||new Map())))
+        .slice(0,4);
+      shelves.push(this.section('动画大电影','#/movies/animated',animatedMovies.length?media.cards(app,animatedMovies):'<p class="sf-app-empty">精选动画电影即将呈现</p>'));
+      shelves.push(this.section('纪录片','#/movies/documentary',documentaries.length?media.cards(app,documentaries):'<p class="sf-app-empty">精选纪录片即将呈现</p>'));
     }
-    try{
-      const books=await window.BookReader.library(app);
+    if(bookRows){
       if(location.hash!==route||!this.active)return;
-      const pictureBooks=books.filter(row=>(row.kind||'book')==='book'&&!row.seriesIds?.length).slice(0,4);
-      const magazines=books.filter(row=>row.kind==='magazine').slice(0,4);
+      const pictureBooks=bookRows.filter(row=>(row.kind||'book')==='book'&&!row.seriesIds?.length).slice(0,4);
+      const magazines=bookRows.filter(row=>row.kind==='magazine').slice(0,4);
       shelves.push(this.section('绘本阅读','#/reading',pictureBooks.length?window.BookReader.bookCards(app,pictureBooks,'',{compact:true}):'<p class="sf-app-empty">暂无精选绘本</p>'));
       shelves.push(this.section('期刊杂志','#/magazines',magazines.length?window.BookReader.bookCards(app,magazines,'',{compact:true}):'<p class="sf-app-empty">暂无精选期刊</p>'));
     }catch(error){console.warn('首页阅读精选暂不可用',error);}
