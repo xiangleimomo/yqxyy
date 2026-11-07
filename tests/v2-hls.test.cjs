@@ -88,7 +88,7 @@ const implicitRange = [
   '#EXT-X-BYTERANGE:1000@0', '#EXTINF:4,', 'single.mp4',
   '#EXT-X-BYTERANGE:1000', '#EXTINF:4,', 'single.mp4',
   '#EXT-X-ENDLIST'
-].join('\\n');
+].join('\n');
 const implicitParsed = hls.parseMediaPlaylist(implicitRange, 'https://media.example/range/index.m3u8');
 const implicitCut = hls.buildMediaPlaylist(implicitParsed, hls.selectSegments(implicitParsed, 4, 8));
 assert.match(implicitCut, /#EXT-X-BYTERANGE:1000@1000/);
