@@ -1,0 +1,265 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42374866538",
+  "completedAt": "2026-11-07T13:11:09.723471+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 0,
+  "rejected": 50,
+  "websiteCommitRequired": true,
+  "totalWords": 0,
+  "speechMatchedWords": 0,
+  "success": [],
+  "failures": [
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 27,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 28,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 29,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 30,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 31,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 32,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 33,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 34,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 35,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 36,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 37,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 38,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 39,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 40,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 41,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 42,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 43,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 44,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 45,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 46,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 47,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 48,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 49,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 50,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 51,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 52,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 53,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 54,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 55,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 56,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 57,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 58,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 59,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 60,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 61,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 62,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 63,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 64,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 65,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 66,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 67,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 68,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 69,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 70,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 71,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 72,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 73,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 74,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 75,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-carter-family-fs0067",
+      "episodeId": 76,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.0% matched, 0.0% assigned"
+    }
+  ]
+}
