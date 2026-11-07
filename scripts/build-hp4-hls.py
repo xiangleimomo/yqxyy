@@ -26,7 +26,7 @@ def resolve_source():
             if uri:
                 bw=re.search(r'BANDWIDTH=(\d+)',line)
                 res=re.search(r'RESOLUTION=(\d+)x(\d+)',line)
-                variants.append((int(bw.group(1)) if bw else 0,int(res.group(1)) if res else 0,absolute(SOURCE,uri),line))
+                variants.append((int(bw.group(1)) if bw else 0,int(res.group(2)) if res else 0,absolute(SOURCE,uri),line))
     if not variants: raise RuntimeError("No video variants in source master")
     chosen=next((v for v in variants if v[1]==1080),max(variants,key=lambda v:v[0]))
     audio=[]
