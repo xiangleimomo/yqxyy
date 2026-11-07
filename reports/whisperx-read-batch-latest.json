@@ -1,7 +1,7 @@
 {
   "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
-  "runId": "42361211552",
-  "completedAt": "2026-11-07T09:58:32.819881+00:00",
+  "runId": "42361953216",
+  "completedAt": "2026-11-07T10:11:55.858100+00:00",
   "batchSize": 50,
   "selected": 50,
   "published": 0,
@@ -12,253 +12,253 @@
   "success": [],
   "failures": [
     {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 8,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 9,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
+      "seriesId": "little-fox-space-patrol-fs0104",
       "episodeId": 10,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.3% matched, 0.0% assigned"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-south-street-school-fs0054",
+      "seriesId": "little-fox-space-patrol-fs0104",
       "episodeId": 11,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.2% matched, 0.0% assigned"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-south-street-school-fs0054",
+      "seriesId": "little-fox-space-patrol-fs0104",
       "episodeId": 12,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.8% matched, 0.0% assigned"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-south-street-school-fs0054",
+      "seriesId": "little-fox-space-patrol-fs0104",
       "episodeId": 13,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.9% matched, 0.0% assigned"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.1% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-south-street-school-fs0054",
+      "seriesId": "little-fox-space-patrol-fs0104",
       "episodeId": 14,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.4% matched, 0.0% assigned"
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.4% matched, 0.0% assigned"
     },
     {
-      "seriesId": "little-fox-south-street-school-fs0054",
+      "seriesId": "little-fox-space-patrol-fs0104",
       "episodeId": 15,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.8% matched, 0.0% assigned"
+      "reason": "RuntimeError: Could not extract complete approved HLS audio: cdn.littlefox.com: insufficient audio (73536 ms, minimum 120000 ms); cdn.littlefox.com: ffmpeg failed; cdn.littlefox.co.kr: ffmpeg failed"
     },
     {
-      "seriesId": "little-fox-south-street-school-fs0054",
+      "seriesId": "little-fox-space-patrol-fs0104",
       "episodeId": 16,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 17,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.6% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 18,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 19,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 20,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.2% matched, 3.4% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 21,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.5% matched, 0.2% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 22,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 23,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.7% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 24,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.1% matched, 2.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 25,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 26,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 27,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.6% matched, 0.7% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 28,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 29,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 30,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 31,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 32,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 33,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 34,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.5% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 35,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.1% matched, 2.8% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 36,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.6% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 37,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 38,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.1% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 39,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 0.8% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 40,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 41,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.3% matched, 0.5% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 42,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 43,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.3% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 44,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 1.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 45,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 46,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.0% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 47,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.2% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-south-street-school-fs0054",
-      "episodeId": 48,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.4% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 1,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 2.9% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 2,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.6% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 3,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 4,
-      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.9% matched, 0.0% assigned"
-    },
-    {
-      "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 5,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.0% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 6,
+      "episodeId": 17,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 18,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 19,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 20,
+      "reason": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 21,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 22,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 23,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 24,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 25,
+      "reason": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 26,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 27,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 28,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 29,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 7,
+      "episodeId": 30,
+      "reason": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 31,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 8,
+      "episodeId": 32,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 1.7% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 33,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 34,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 35,
+      "reason": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 36,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 37,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 38,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 39,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 40,
+      "reason": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 41,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 42,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 43,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 44,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 45,
+      "reason": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 46,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.2% matched, 0.0% assigned"
     },
     {
       "seriesId": "little-fox-space-patrol-fs0104",
-      "episodeId": 9,
+      "episodeId": 47,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 48,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 49,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 50,
+      "reason": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 51,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 52,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 53,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 54,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 55,
+      "reason": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 56,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 57,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 58,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-space-patrol-fs0104",
+      "episodeId": 59,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.7% matched, 0.0% assigned"
     }
   ]
