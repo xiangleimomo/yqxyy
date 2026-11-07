@@ -530,7 +530,7 @@ async renderLesson(seriesId, episodeId){
   subtitleControls(d=null){
     const prefs=this.subtitlePreferences();
     const option=(value,label,current)=>`<option value="${value}"${value===current?' selected':''}>${label}</option>`;
-    return `${d?.seriesId?.startsWith('movie-')?`<div class="sf-desktop-player-title">${this.escapeHtml(d.series?.seriesTitle || d.series?.title || d.ep?.title || '')}</div>`:''}<div class="subtitle-settings-dock">
+    return `<div class="sf-desktop-player-title">${this.escapeHtml(d?.series?.seriesTitle || d?.series?.title || d?.ep?.title || '')}</div><div class="subtitle-settings-dock">
       <button type="button" class="mobile-cc-trigger" aria-label="${prefs.visible?'关闭字幕 CC':'开启字幕 CC'}" aria-pressed="${prefs.visible}">CC<span>字幕</span></button>
       <button type="button" class="subtitle-settings-trigger" aria-label="打开字幕设置" aria-expanded="false">⚙<span>字幕</span></button>
       <button type="button" class="video-fullscreen-trigger" aria-label="全屏观看（保留字幕设置）" title="全屏观看（保留字幕设置）">⛶<span>全屏</span></button>
@@ -581,7 +581,7 @@ async renderLesson(seriesId, episodeId){
       caption.dataset.subtitleVisible=String(prefs.visible);
     });
   },
-  bindSubtitleControls(root=document){
+  bindSubtitleControls(root=document,d=null){
     const controls=root.querySelector('.subtitle-controls');
     if(!controls || controls.dataset.bound) return;
     controls.dataset.bound='1';
@@ -596,7 +596,7 @@ async renderLesson(seriesId, episodeId){
       window.clearTimeout(hideTimer);
       stage.classList.add('subtitle-settings-visible');
       stage.closest('.sf-movie-lesson-player')?.classList.add('sf-movie-controls-visible');
-      if(player && !stage.closest('.sf-movie-lesson-player')?.querySelector('.sf-lesson-toolbar'))player.controls=true;
+      if(player && !stage.querySelector('.sf-desktop-player-controls') && !stage.closest('.sf-movie-lesson-player')?.querySelector('.sf-lesson-toolbar'))player.controls=true;
       stage.querySelector('.sf-movie-timeline')?.removeAttribute('inert');
     };
     const hideControlsLater=()=>{
@@ -669,9 +669,10 @@ async renderLesson(seriesId, episodeId){
         bar.addEventListener('focusout',hideControlsLater);
         bar.addEventListener('pointerup',()=>{seek.blur();hideControlsLater();});
         ['timeupdate','loadedmetadata','durationchange','seeked'].forEach(name=>player.addEventListener(name,refresh));
-        window.SFDesktopPlayer?.attach({stage,player,showControls,hideControlsLater});
+        window.SFDesktopPlayer?.attach({stage,player,showControls,hideControlsLater,lesson:d});
         refresh();showControls();
       }
+      if(!isMovieEpisode)window.SFDesktopPlayer?.attach({stage,player,showControls,hideControlsLater,lesson:d});
       stage.addEventListener('focusin',showControls);
       player.addEventListener('play',hideControlsLater);
       player.addEventListener('pause',showControls);
@@ -1566,7 +1567,7 @@ bindLessonPanel(tab,d,root=document){
     }
   });
   this.applySubtitlePreferences(root);
-  this.bindSubtitleControls(root);
+  this.bindSubtitleControls(root,d);
   document.querySelectorAll('.hls-audio-player').forEach(player=>this.initializeHlsAudio(player));
   if(tab==='listenRead')this.bindTimedSentenceStudy(root,d);
   document.querySelectorAll('.mark-complete').forEach(btn=>btn.addEventListener('click', e=>{e.preventDefault(); this.markComplete(btn.dataset.series, btn.dataset.episode, btn.dataset.module); btn.textContent='已完成 ✓';}));

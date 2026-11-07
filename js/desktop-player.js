@@ -1,8 +1,13 @@
-/* Desktop movie chrome. Playback and mobile controls keep their existing owners. */
+/* Shared desktop cinema controls for movies and animation stories. */
 window.SFDesktopPlayer = {
-  attach({stage, player, showControls, hideControlsLater}) {
+  attach({stage, player, showControls, hideControlsLater, lesson}) {
     if (stage.querySelector('.sf-desktop-player-controls')) return;
-    const panel = stage.closest('.sf-movie-lesson-player');
+    const panel = stage.closest('.direct-video-panel');
+    if (!panel) return;
+    const isMovie=panel.classList.contains('sf-movie-lesson-player');
+    const desktop=window.matchMedia('(min-width:901px) and (pointer:fine)');
+    if(!isMovie&&!desktop.matches)return;
+    if(!isMovie){panel.classList.add('sf-desktop-story-player');stage.classList.add('sf-desktop-story-player');}
     const svg = body => `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${body}</svg>`;
     const icons = {
       play: svg('<path fill="currentColor" stroke="none" d="m7 4 14 8-14 8z"/>'),
@@ -31,6 +36,13 @@ window.SFDesktopPlayer = {
     const seek = progress.querySelector('input');
     const get = action => bar.querySelector(`[data-desktop-act="${action}"]`);
     const proxy = action => panel.querySelector(`.sf-lesson-toolbar [data-act="${action}"]`);
+    const app=typeof App==='undefined'?null:App;
+    const episodes=app?.cache?.[`data/${lesson?.seriesId}/episodes.json`]||[];
+    const index=episodes.findIndex(episode=>Number(episode.episodeId)===Number(lesson?.ep?.episodeId));
+    const neighbor=action=>index>=0?episodes[index+(action==='prev'?-1:1)]:null;
+    const ownNativeControls=()=>{if(desktop.matches){player.controls=false;player.removeAttribute('controls');}};
+    ownNativeControls();
+    player.addEventListener('pause',ownNativeControls);
     const time = value => {
       const seconds = Math.max(0, Math.floor(value || 0)), minutes = Math.floor(seconds / 60);
       return minutes >= 60 ? `${Math.floor(minutes / 60)}:${String(minutes % 60).padStart(2,'0')}:${String(seconds % 60).padStart(2,'0')}` : `${minutes}:${String(seconds % 60).padStart(2,'0')}`;
@@ -45,7 +57,8 @@ window.SFDesktopPlayer = {
       get('speed').textContent = player.playbackRate + 'x';
       const {start,end} = bounds();
       bar.querySelector('output').textContent = `${time(player.currentTime-start)} / ${time(Number.isFinite(end)?end-start:0)}`;
-      for(const action of ['prev','next'])get(action).disabled = !!proxy(action)?.disabled;
+      for(const action of ['prev','next'])get(action).disabled = proxy(action)?proxy(action).disabled:!neighbor(action);
+      get('quiz').hidden=!isMovie&&!lesson?.ep?.modules?.quiz;
       get('captions').setAttribute('aria-pressed', String(stage.querySelector('.video-caption')?.dataset.subtitleVisible !== 'false'));
       const duration=Number.isFinite(end)?Math.max(0,end-start):0;
       seek.disabled=!duration;
@@ -64,7 +77,15 @@ window.SFDesktopPlayer = {
     progress.addEventListener('focusin',showControls);
     seek.addEventListener('pointerup',()=>{seek.blur();hideControlsLater();});
     seek.addEventListener('focusout',hideControlsLater);
-    for(const action of ['prev','next','speed','quiz','fullscreen'])get(action).onclick = () => proxy(action)?.click();
+    for(const action of ['prev','next','speed','quiz','fullscreen'])get(action).onclick = () => {
+      const target=proxy(action);
+      if(target){target.click();return;}
+      if(action==='fullscreen'){stage.querySelector('.video-fullscreen-trigger')?.click();return;}
+      if(action==='speed'){const speeds=[1,1.25,1.5,2,.75],index=speeds.indexOf(player.playbackRate);player.playbackRate=speeds[(index+1)%speeds.length];refresh();return;}
+      if(action==='quiz'){player.pause();app?.openLearningModal('quiz',lesson.seriesId,lesson.ep.episodeId);return;}
+      const episode=neighbor(action);
+      if(episode){player.pause();location.hash=`#/lesson/${lesson.seriesId}/${episode.episodeId}`;}
+    };
     get('captions').onclick = () => stage.querySelector('.subtitle-toggle')?.click();
     get('settings').onclick = () => stage.querySelector('.subtitle-settings-trigger')?.click();
     bar.addEventListener('pointermove',()=>{showControls();hideControlsLater();});
