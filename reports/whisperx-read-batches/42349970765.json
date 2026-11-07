@@ -1,0 +1,265 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42349970765",
+  "completedAt": "2026-11-07T07:22:50.140688+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 0,
+  "rejected": 50,
+  "websiteCommitRequired": true,
+  "totalWords": 0,
+  "speechMatchedWords": 0,
+  "success": [],
+  "failures": [
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 183,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 6.9% matched, 32.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 184,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 3.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 185,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.3% matched, 20.8% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 186,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.1% matched, 98.8% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 187,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.4% matched, 47.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 188,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.3% matched, 28.4% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 189,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 6.9% matched, 5.6% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 190,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 191,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 10.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 192,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.4% matched, 12.1% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 193,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 194,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 195,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.0% matched, 13.8% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 196,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 197,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 3.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 198,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 9.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 199,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 3.2% matched, 2.2% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 200,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 201,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 3.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 202,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.3% matched, 0.5% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 203,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.9% matched, 16.5% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 204,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 205,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 6.6% matched, 5.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 206,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.6% matched, 9.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 207,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.3% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 208,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 209,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 6.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 210,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 6.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 211,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.7% matched, 23.6% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 212,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.5% matched, 5.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 213,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 214,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.5% matched, 92.2% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 215,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 2.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 216,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 3.2% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 217,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.0% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 218,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.8% matched, 33.8% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 219,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 220,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.6% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 221,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 6.9% matched, 21.7% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 222,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 8.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 223,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 224,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 6.5% matched, 23.6% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 225,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 5.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 226,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.7% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 227,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 6.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 228,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 7.4% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 229,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.9% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 230,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 4.8% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 231,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 3.1% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-rocket-girl-fs0065",
+      "episodeId": 232,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 3.9% matched, 0.0% assigned"
+    }
+  ]
+}
