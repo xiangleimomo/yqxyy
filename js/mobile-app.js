@@ -3,7 +3,7 @@ window.MobileApp = {
   media: matchMedia('(max-width:1100px), (pointer:coarse) and (max-width:1400px)'),
   get active() { return this.media.matches; },
   icon(name) {
-    const paths={home:'<path d="m3 10 9-7 9 7v10H3zM9 20v-7h6v7"/>',animation:'<rect x="3" y="4" width="18" height="16" rx="4"/><path d="m10 8 6 4-6 4z"/>',reading:'<path d="M12 6C8 3 3 4 3 4v15s5-1 9 2c4-3 9-2 9-2V4s-5-1-9 2zm0 0v15"/>',mine:'<circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/>',search:'<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/>',arrow:'<path d="m9 5 7 7-7 7"/>'};
+    const paths={home:'<path d="m3 10 9-7 9 7v10H3zM9 20v-7h6v7"/>',audiovisual:'<rect x="3" y="4" width="18" height="16" rx="3"/><path d="m10 8 6 4-6 4z"/><path d="M7 4v3M17 4v3M7 17v3M17 17v3"/>',animation:'<rect x="3" y="4" width="18" height="16" rx="4"/><path d="m10 8 6 4-6 4z"/>',reading:'<path d="M12 6C8 3 3 4 3 4v15s5-1 9 2c4-3 9-2 9-2V4s-5-1-9 2zm0 0v15"/>',mine:'<circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/>',search:'<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/>',arrow:'<path d="m9 5 7 7-7 7"/>'};
     return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name]||paths.home}</svg>`;
   },
   init() {
