@@ -24,6 +24,8 @@ jobs:
           mkdir -p /tmp/hp4-course data/movie-harry-potter-4
           tar -xJf /tmp/hp4-course.tar.xz -C /tmp/hp4-course
           cp -a /tmp/hp4-course/harry-potter-4-course/. data/movie-harry-potter-4/
+      - name: Rebuild all episode HLS manifests from the supplied source
+        run: python3 scripts/build-hp4-hls.py
       - name: Register the study course on the existing Goblet of Fire movie card
         run: |
           python3 - <<'PY'
