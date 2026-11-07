@@ -530,6 +530,7 @@ async renderLesson(seriesId, episodeId){
     const prefs=this.subtitlePreferences();
     const option=(value,label,current)=>`<option value="${value}"${value===current?' selected':''}>${label}</option>`;
     return `<div class="subtitle-settings-dock">
+      <button type="button" class="mobile-cc-trigger" aria-label="${prefs.visible?'关闭字幕 CC':'开启字幕 CC'}" aria-pressed="${prefs.visible}">CC<span>字幕</span></button>
       <button type="button" class="subtitle-settings-trigger" aria-label="打开字幕设置" aria-expanded="false">⚙<span>字幕</span></button>
       <button type="button" class="video-fullscreen-trigger" aria-label="全屏观看（保留字幕设置）" title="全屏观看（保留字幕设置）">⛶<span>全屏</span></button>
       <div class="subtitle-controls subtitle-controls-overlay" aria-label="字幕设置">
@@ -605,9 +606,24 @@ async renderLesson(seriesId, episodeId){
       player.addEventListener('ended',showControls);
     }
     const save=patch=>{const next={...this.subtitlePreferences(),...patch};localStorage.setItem('storyfox-subtitle-preferences',JSON.stringify(next));this.applySubtitlePreferences(root);this.applySubtitlePreferences(stage);return next;};
+    const ccTrigger=dock?.querySelector('.mobile-cc-trigger');
+    const syncCC=()=>{
+      if(!ccTrigger)return;
+      const visible=this.subtitlePreferences().visible!==false;
+      ccTrigger.setAttribute('aria-pressed',String(visible));
+      ccTrigger.setAttribute('aria-label',visible?'关闭字幕 CC':'开启字幕 CC');
+    };
     const refreshCaption=()=>{root.querySelectorAll('.hls-video-player').forEach(el=>el.dispatchEvent(new Event('timeupdate')));if(!root.contains(player))player.dispatchEvent(new Event('timeupdate'));};
+    ccTrigger?.addEventListener('click',()=>{
+      const prefs=save({visible:this.subtitlePreferences().visible===false});
+      syncCC();
+      refreshCaption();
+      showControls();
+    });
+    player?.addEventListener('sfcaptionchange',syncCC);
+    syncCC();
     const toggle=controls.querySelector('.subtitle-toggle');
-    toggle.addEventListener('click',()=>{const prefs=save({visible:!this.subtitlePreferences().visible});toggle.textContent=prefs.visible?'已开启':'已关闭';toggle.setAttribute('aria-pressed',String(prefs.visible));refreshCaption();});
+    toggle.addEventListener('click',()=>{const prefs=save({visible:!this.subtitlePreferences().visible});toggle.textContent=prefs.visible?'已开启':'已关闭';toggle.setAttribute('aria-pressed',String(prefs.visible));syncCC();refreshCaption();});
     const wordToggle=controls.querySelector('.subtitle-word-toggle');
     wordToggle?.addEventListener('click',()=>{const prefs=save({wordHighlight:!this.subtitlePreferences().wordHighlight});wordToggle.textContent=prefs.wordHighlight?'已开启':'已关闭';wordToggle.setAttribute('aria-pressed',String(prefs.wordHighlight));refreshCaption();});
     [['.subtitle-size','size','px'],['.subtitle-opacity','opacity','%']].forEach(([selector,key,suffix])=>{
@@ -618,6 +634,7 @@ async renderLesson(seriesId, episodeId){
       const prefs=save({visible:true,wordHighlight:true,size:20,color:'#ffffff',captionX:50,captionY:84,opacity:72});
       toggle.textContent='已开启';
       toggle.setAttribute('aria-pressed','true');
+      syncCC();
       if(wordToggle){wordToggle.textContent='已开启';wordToggle.setAttribute('aria-pressed','true');}
       controls.querySelector('.subtitle-size').value=prefs.size;
       controls.querySelector('.subtitle-size').nextElementSibling.textContent=`${prefs.size}px`;
