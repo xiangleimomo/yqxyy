@@ -42,6 +42,7 @@ async function expandTvSeries({tmdbId,title,titleZh='',year=null,apiKey,accessTo
       if(!Number.isInteger(episodeNumber)||episodeNumber<1||seen.has(episodeNumber))throw new Error('Invalid or duplicate episode number in season '+seasonNumber);
       seen.add(episodeNumber);
       episodes.push({
+        courseEpisodeId:episodes.length+1,
         key:'tv:'+id+':s'+seasonNumber+':e'+episodeNumber,
         mediaType:'tv',scope:'episode',tmdbId:id,
         title:tmdbTitle,titleZh:titleZh||'',seasonNumber,episodeNumber,
