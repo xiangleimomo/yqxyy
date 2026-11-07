@@ -1,0 +1,63 @@
+name: V2 engine validation
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/v2-*.cjs'
+      - 'tests/v2-*.cjs'
+      - 'docs/v2-engine/**'
+      - 'data/v2-engine-state.json'
+      - '.github/workflows/v2-*.yml'
+  push:
+    branches: [feature/v2-quality-first-engine]
+    paths:
+      - 'scripts/v2-*.cjs'
+      - 'docs/v2-engine/**'
+      - 'data/v2-engine-state.json'
+      - '.github/workflows/v2-*.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax-check V2 scripts
+        run: |
+          node --check scripts/v2-catalog-scan.cjs
+          node --check scripts/v2-hls.cjs
+          node --check scripts/v2-story-analysis.cjs
+          node --check scripts/v2-learning-content.cjs
+          node --check scripts/v2-subtitles.cjs
+          node --check scripts/v2-source-resolver.cjs
+          node --check scripts/v2-tv-catalog.cjs
+          node --check scripts/v2-project-adapter.cjs
+          node --check tests/v2-hls.test.cjs
+          node --check tests/v2-story-analysis.test.cjs
+          node --check tests/v2-learning-content.test.cjs
+          node --check tests/v2-subtitles.test.cjs
+          node --check tests/v2-source-resolver.test.cjs
+          node --check tests/v2-tv-catalog.test.cjs
+          node --check tests/v2-project-adapter.test.cjs
+      - name: Run HLS parser fixtures
+        run: node tests/v2-hls.test.cjs
+      - name: Run story boundary validator fixtures
+        run: node tests/v2-story-analysis.test.cjs
+      - name: Run learning content fixtures
+        run: node tests/v2-learning-content.test.cjs
+      - name: Run subtitle fixtures
+        run: node tests/v2-subtitles.test.cjs
+      - name: Run source resolver fixtures
+        run: node tests/v2-source-resolver.test.cjs
+      - name: Run TV catalogue fixtures
+        run: node tests/v2-tv-catalog.test.cjs
+      - name: Run project schema adapter fixtures
+        run: node tests/v2-project-adapter.test.cjs
+      - name: Validate JSON inputs and state
+        run: |
+          node -e "const fs=require('node:fs'); for (const p of ['data/movie-hub-catalog.json','data/v2-engine-state.json']) JSON.parse(fs.readFileSync(p,'utf8'));"
+      - name: Ensure V3 workflow is retired
+        run: test ! -f .github/workflows/movie-v3.yml
