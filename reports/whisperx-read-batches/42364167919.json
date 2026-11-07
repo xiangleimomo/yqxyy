@@ -1,0 +1,470 @@
+{
+  "pipeline": "whisperx-asr-xml-text-only-forced-alignment",
+  "runId": "42364167919",
+  "completedAt": "2026-11-07T10:58:41.372368+00:00",
+  "batchSize": 50,
+  "selected": 50,
+  "published": 34,
+  "rejected": 16,
+  "websiteCommitRequired": true,
+  "totalWords": 36551,
+  "speechMatchedWords": 36551,
+  "success": [
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 15,
+      "cues": 132,
+      "words": 1074,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 1074,
+      "coverage": 0.9981,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 16,
+      "cues": 139,
+      "words": 1099,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 85,
+      "speechWords": 1099,
+      "coverage": 0.9982,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 17,
+      "cues": 124,
+      "words": 1051,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 1051,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 18,
+      "cues": 132,
+      "words": 1062,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 89,
+      "speechWords": 1062,
+      "coverage": 0.9981,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 19,
+      "cues": 137,
+      "words": 1066,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 1066,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 20,
+      "cues": 140,
+      "words": 1081,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 89,
+      "speechWords": 1081,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 21,
+      "cues": 144,
+      "words": 1088,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 94,
+      "speechWords": 1088,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 22,
+      "cues": 134,
+      "words": 1045,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 80,
+      "speechWords": 1045,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 23,
+      "cues": 144,
+      "words": 1089,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 89,
+      "speechWords": 1089,
+      "coverage": 0.9973,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 24,
+      "cues": 142,
+      "words": 1085,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 90,
+      "speechWords": 1085,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 25,
+      "cues": 152,
+      "words": 1092,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 92,
+      "speechWords": 1092,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 26,
+      "cues": 149,
+      "words": 1051,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 1051,
+      "coverage": 0.9972,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 27,
+      "cues": 148,
+      "words": 1082,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 87,
+      "speechWords": 1082,
+      "coverage": 0.9972,
+      "omittedWords": 3
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 28,
+      "cues": 134,
+      "words": 1098,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 79,
+      "speechWords": 1098,
+      "coverage": 0.9982,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 29,
+      "cues": 128,
+      "words": 1069,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 1069,
+      "coverage": 0.9981,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 30,
+      "cues": 137,
+      "words": 1090,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 1090,
+      "coverage": 0.9982,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 31,
+      "cues": 153,
+      "words": 1110,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 96,
+      "speechWords": 1110,
+      "coverage": 0.9964,
+      "omittedWords": 4
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 32,
+      "cues": 167,
+      "words": 1089,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 1089,
+      "coverage": 0.9982,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 33,
+      "cues": 125,
+      "words": 1087,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 1087,
+      "coverage": 0.9963,
+      "omittedWords": 4
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 34,
+      "cues": 111,
+      "words": 1064,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 1064,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 35,
+      "cues": 132,
+      "words": 1086,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 1086,
+      "coverage": 0.9982,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 36,
+      "cues": 119,
+      "words": 1062,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 72,
+      "speechWords": 1062,
+      "coverage": 0.9953,
+      "omittedWords": 5
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 37,
+      "cues": 135,
+      "words": 1104,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 80,
+      "speechWords": 1104,
+      "coverage": 0.9982,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 38,
+      "cues": 111,
+      "words": 1040,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 67,
+      "speechWords": 1040,
+      "coverage": 0.9962,
+      "omittedWords": 4
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 39,
+      "cues": 124,
+      "words": 1057,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 75,
+      "speechWords": 1057,
+      "coverage": 0.9991,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 40,
+      "cues": 131,
+      "words": 1033,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 73,
+      "speechWords": 1033,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 41,
+      "cues": 156,
+      "words": 1098,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 92,
+      "speechWords": 1098,
+      "coverage": 0.9982,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 42,
+      "cues": 131,
+      "words": 1076,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 76,
+      "speechWords": 1076,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 43,
+      "cues": 151,
+      "words": 1082,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 1082,
+      "coverage": 0.9982,
+      "omittedWords": 2
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 44,
+      "cues": 125,
+      "words": 1078,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 1078,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 45,
+      "cues": 133,
+      "words": 1043,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 74,
+      "speechWords": 1043,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 46,
+      "cues": 141,
+      "words": 1028,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 77,
+      "speechWords": 1028,
+      "coverage": 0.999,
+      "omittedWords": 1
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 47,
+      "cues": 150,
+      "words": 1093,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 81,
+      "speechWords": 1093,
+      "coverage": 1.0,
+      "omittedWords": 0
+    },
+    {
+      "seriesId": "little-fox-sports-stories-fs0085",
+      "episodeId": 48,
+      "cues": 125,
+      "words": 1099,
+      "xmlTextVerified": true,
+      "xmlParagraphs": 78,
+      "speechWords": 1099,
+      "coverage": 1.0,
+      "omittedWords": 0
+    }
+  ],
+  "failures": [
+    {
+      "seriesId": "little-fox-spotlight-fs0098",
+      "episodeId": 1,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.5% matched, 95.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-spotlight-fs0098",
+      "episodeId": 2,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.3% matched, 93.8% assigned"
+    },
+    {
+      "seriesId": "little-fox-spotlight-fs0098",
+      "episodeId": 3,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 100.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-spotlight-fs0098",
+      "episodeId": 4,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.6% matched, 100.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-spotlight-fs0098",
+      "episodeId": 5,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.3% matched, 96.8% assigned"
+    },
+    {
+      "seriesId": "little-fox-spotlight-fs0098",
+      "episodeId": 6,
+      "reason": "ValueError: Missing late-episode speech; candidate withheld"
+    },
+    {
+      "seriesId": "little-fox-spotlight-fs0098",
+      "episodeId": 7,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 91.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-spotlight-fs0098",
+      "episodeId": 8,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 15.6% matched, 95.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-spotlight-fs0098",
+      "episodeId": 9,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.1% matched, 95.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-spotlight-fs0098",
+      "episodeId": 10,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 12.5% matched, 95.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-spotlight-fs0098",
+      "episodeId": 11,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.5% matched, 100.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-spotlight-fs0098",
+      "episodeId": 12,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.5% matched, 100.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-spotlight-fs0098",
+      "episodeId": 13,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.5% matched, 100.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-spotlight-fs0098",
+      "episodeId": 14,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 13.4% matched, 91.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-spotlight-fs0098",
+      "episodeId": 15,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.3% matched, 100.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-spotlight-fs0098",
+      "episodeId": 16,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 11.9% matched, 91.0% assigned"
+    }
+  ]
+}
