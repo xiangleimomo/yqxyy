@@ -1,13 +1,14 @@
 {
   "seriesId": "movie-harry-potter-1",
   "seriesTitle": "Harry Potter and the Philosopher's Stone",
-  "seriesTitleZh": "哈利·波特与魔法石 · 剧情分集学习",
+  "seriesTitleZh": "哈利波特与魔法石 · 剧情分集学习",
   "level": 5,
   "language": "en",
   "status": "completed",
   "totalEpisodes": 34,
-  "description": "34集根据剧情分段，视频、英文音频和原生English [CC]字幕全部来自同一M3U8；保留对白与音效提示。",
+  "description": "视频、英文CC和可选中文均取自同一M3U8；保留音效说明。",
   "coverImage": "https://media.themoviedb.org/t/p/w500/wuMc08IPKEatf9rnMNXvIDxqP4W.jpg",
   "movieId": "harry-potter-philosophers-stone",
-  "quizStatus": "pending"
+  "quizStatus": "ready",
+  "generation": "v3-native-source"
 }

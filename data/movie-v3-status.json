@@ -1,0 +1,48 @@
+{
+  "version": 3,
+  "films": {
+    "kung-fu-panda-1": {
+      "state": "completed",
+      "at": "2026-11-07T09:17:52.660Z",
+      "seriesId": "movie-kung-fu-panda-1",
+      "source": "https://api.obj2.top/hls/movie/9502/master.m3u8"
+    },
+    "kung-fu-panda-2": {
+      "state": "completed",
+      "at": "2026-11-07T09:17:52.660Z",
+      "seriesId": "movie-kung-fu-panda-2",
+      "source": "https://api.obj2.top/hls/movie/49444/master.m3u8"
+    },
+    "kung-fu-panda-3": {
+      "state": "completed",
+      "at": "2026-11-07T09:17:52.660Z",
+      "seriesId": "movie-kung-fu-panda-3",
+      "source": "https://api.obj2.top/hls/movie/140300/master.m3u8"
+    },
+    "kung-fu-panda-4": {
+      "state": "source_error",
+      "error": "Movie audio does not match video",
+      "at": "2026-11-07T09:14:53.213Z",
+      "retryAfter": "2026-11-08T09:14:54.078Z"
+    },
+    "harry-potter-philosophers-stone": {
+      "state": "completed",
+      "at": "2026-11-07T09:17:52.660Z",
+      "seriesId": "movie-harry-potter-1",
+      "chapters": 34,
+      "source": "https://api.obj2.top/hls/movie/671/master.m3u8",
+      "englishCues": 2259,
+      "chineseCues": 0
+    }
+  },
+  "updatedAt": "2026-11-07T09:17:52.660Z",
+  "totalCatalog": 82,
+  "lastBatch": [
+    {
+      "id": "harry-potter-philosophers-stone",
+      "state": "completed",
+      "chapters": 34
+    }
+  ],
+  "pendingEstimate": 78
+}
