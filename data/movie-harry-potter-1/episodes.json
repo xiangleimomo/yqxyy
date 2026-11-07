@@ -3,1088 +3,1156 @@
     "episodeId": 1,
     "title": "大难不死的男孩",
     "titleZh": "大难不死的男孩",
+    "titleEn": "I SHOULD HAVE KNOWN THAT YOU WOULD BE HERE...",
     "summaryEn": "婴儿哈利被送到德思礼家",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/001.m3u8",
-      "clipStart": 0,
-      "clipEnd": 251.084,
-      "duration": 251.084,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/001.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/001.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 0,
       "originalEnd": 251.084,
-      "timelineOrigin": 0
+      "timelineOrigin": 0,
+      "clipStart": 0,
+      "clipEnd": 251.084,
+      "duration": 251.084
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/001.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/001.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 2,
     "title": "动物园里的魔法",
     "titleZh": "动物园里的魔法",
+    "titleEn": "Aunt Petunia: UP. GET UP.",
     "summaryEn": "哈利在德思礼家生活，动物园玻璃意外消失",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/002.m3u8",
-      "clipStart": 3.084,
-      "clipEnd": 304.385,
-      "duration": 301.301,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/002.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/002.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 251.084,
       "originalEnd": 552.385,
-      "timelineOrigin": 248
+      "timelineOrigin": 248,
+      "clipStart": 3.084,
+      "clipEnd": 304.385,
+      "duration": 301.301
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/002.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/002.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 3,
     "title": "霍格沃茨来信",
     "titleZh": "霍格沃茨来信",
+    "titleEn": "DAD, LOOK, HARRY'S GOT A LETTER!",
     "summaryEn": "神秘信件接连出现，德思礼一家逃离",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/003.m3u8",
-      "clipStart": 0.385,
-      "clipEnd": 250.51,
-      "duration": 250.125,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/003.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/003.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 552.385,
       "originalEnd": 802.51,
-      "timelineOrigin": 552
+      "timelineOrigin": 552,
+      "clipStart": 0.385,
+      "clipEnd": 250.51,
+      "duration": 250.125
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/003.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/003.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 4,
     "title": "海格揭开身世",
     "titleZh": "海格揭开身世",
+    "titleEn": "I DEMAND THAT YOU LEAVE AT ONCE, SIR!",
     "summaryEn": "海格闯入小屋，告诉哈利他是巫师",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/004.m3u8",
-      "clipStart": 2.51,
-      "clipEnd": 324.04,
-      "duration": 321.53,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/004.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/004.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 802.51,
       "originalEnd": 1124.04,
-      "timelineOrigin": 800
+      "timelineOrigin": 800,
+      "clipStart": 2.51,
+      "clipEnd": 324.04,
+      "duration": 321.53
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/004.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/004.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 5,
     "title": "破釜酒吧与对角巷",
     "titleZh": "破釜酒吧与对角巷",
+    "titleEn": "IF YOU KNOW WHERE TO GO.",
     "summaryEn": "哈利初见巫师世界，进入对角巷",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/005.m3u8",
-      "clipStart": 0.04,
-      "clipEnd": 114.154,
-      "duration": 114.114,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/005.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/005.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 1124.04,
       "originalEnd": 1238.154,
-      "timelineOrigin": 1124
+      "timelineOrigin": 1124,
+      "clipStart": 0.04,
+      "clipEnd": 114.154,
+      "duration": 114.114
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/005.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/005.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 6,
     "title": "古灵阁的秘密",
     "titleZh": "古灵阁的秘密",
+    "titleEn": "WELCOME, HARRY, TO DIAGON ALLEY.",
     "summaryEn": "哈利取出父母遗产，海格领取神秘包裹",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/006.m3u8",
-      "clipStart": 1.029,
-      "clipEnd": 253.573,
-      "duration": 252.544,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/006.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/006.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 1238.154,
       "originalEnd": 1490.698,
-      "timelineOrigin": 1237.125
+      "timelineOrigin": 1237.125,
+      "clipStart": 1.029,
+      "clipEnd": 253.573,
+      "duration": 252.544
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/006.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/006.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 7,
     "title": "魔杖选择巫师",
     "titleZh": "魔杖选择巫师",
+    "titleEn": "WELL, YOU WANT OLLIVANDERS.",
     "summaryEn": "奥利凡德为哈利挑选魔杖",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/007.m3u8",
-      "clipStart": 1.573,
-      "clipEnd": 229.675,
-      "duration": 228.102,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/007.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/007.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 1490.698,
       "originalEnd": 1718.8,
-      "timelineOrigin": 1489.125
+      "timelineOrigin": 1489.125,
+      "clipStart": 1.573,
+      "clipEnd": 229.675,
+      "duration": 228.102
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/007.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/007.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 8,
     "title": "伏地魔的往事",
     "titleZh": "伏地魔的往事",
+    "titleEn": "YOU ALL RIGHT, HARRY?",
     "summaryEn": "海格解释伤疤、父母和伏地魔",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/008.m3u8",
-      "clipStart": 1.675,
-      "clipEnd": 176.016,
-      "duration": 174.341,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/008.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/008.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 1718.8,
       "originalEnd": 1893.141,
-      "timelineOrigin": 1717.125
+      "timelineOrigin": 1717.125,
+      "clipStart": 1.675,
+      "clipEnd": 176.016,
+      "duration": 174.341
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/008.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/008.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 9,
     "title": "九又四分之三站台",
     "titleZh": "九又四分之三站台",
+    "titleEn": "BUT, HAGRID, THERE MUST BE A MISTAKE.",
     "summaryEn": "哈利寻找并穿过魔法站台",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/009.m3u8",
-      "clipStart": 0.016,
-      "clipEnd": 169.853,
-      "duration": 169.837,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/009.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/009.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 1893.141,
       "originalEnd": 2062.978,
-      "timelineOrigin": 1893.125
+      "timelineOrigin": 1893.125,
+      "clipStart": 0.016,
+      "clipEnd": 169.853,
+      "duration": 169.837
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/009.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/009.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 10,
     "title": "火车上的新朋友",
     "titleZh": "火车上的新朋友",
+    "titleEn": "Ron: EXCUSE ME. DO YOU MIND?",
     "summaryEn": "哈利与罗恩、赫敏相识",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/010.m3u8",
-      "clipStart": 1.853,
-      "clipEnd": 217.401,
-      "duration": 215.548,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/010.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/010.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 2062.978,
       "originalEnd": 2278.526,
-      "timelineOrigin": 2061.125
+      "timelineOrigin": 2061.125,
+      "clipStart": 1.853,
+      "clipEnd": 217.401,
+      "duration": 215.548
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/010.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/010.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 11,
     "title": "初见霍格沃茨",
     "titleZh": "初见霍格沃茨",
+    "titleEn": "RIGHT, THEN! FIRST YEARS, THIS WAY, PLEASE!",
     "summaryEn": "新生抵达城堡，认识学院制度",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/011.m3u8",
-      "clipStart": 1.401,
-      "clipEnd": 151.301,
-      "duration": 149.9,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/011.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/011.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 2278.526,
       "originalEnd": 2428.426,
-      "timelineOrigin": 2277.125
+      "timelineOrigin": 2277.125,
+      "clipStart": 1.401,
+      "clipEnd": 151.301,
+      "duration": 149.9
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/011.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/011.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 12,
     "title": "马尔福与分院仪式",
     "titleZh": "马尔福与分院仪式",
+    "titleEn": "THE SORTING CEREMONY WILL BEGIN MOMENTARILY.",
     "summaryEn": "哈利拒绝马尔福，分院帽决定学院",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/012.m3u8",
-      "clipStart": 0.176,
-      "clipEnd": 457.049,
-      "duration": 456.873,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/012.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/012.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 2428.426,
       "originalEnd": 2885.299,
-      "timelineOrigin": 2428.25
+      "timelineOrigin": 2428.25,
+      "clipStart": 0.176,
+      "clipEnd": 457.049,
+      "duration": 456.873
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/012.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/012.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 13,
     "title": "格兰芬多公共休息室",
     "titleZh": "格兰芬多公共休息室",
+    "titleEn": "Percy: GRYFFINDORS, FOLLOW ME, PLEASE.",
     "summaryEn": "新生进入宿舍，认识会变化的楼梯和画像",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/013.m3u8",
-      "clipStart": 1.049,
-      "clipEnd": 166.381,
-      "duration": 165.332,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/013.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/013.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 2885.299,
       "originalEnd": 3050.631,
-      "timelineOrigin": 2884.25
+      "timelineOrigin": 2884.25,
+      "clipStart": 1.049,
+      "clipEnd": 166.381,
+      "duration": 165.332
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/013.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/013.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 14,
     "title": "魔药课上的斯内普",
     "titleZh": "魔药课上的斯内普",
+    "titleEn": "ON OLD McGONAGALL'S FACE IF WE WERE LATE?",
     "summaryEn": "哈利开始上课，发现古灵阁被闯入",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/014.m3u8",
-      "clipStart": 2.381,
-      "clipEnd": 261.682,
-      "duration": 259.301,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/014.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/014.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 3050.631,
       "originalEnd": 3309.932,
-      "timelineOrigin": 3048.25
+      "timelineOrigin": 3048.25,
+      "clipStart": 2.381,
+      "clipEnd": 261.682,
+      "duration": 259.301
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/014.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/014.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 15,
     "title": "第一次飞行课",
     "titleZh": "第一次飞行课",
+    "titleEn": "Class: GOOD AFTERNOON, MADAME HOOCH.",
     "summaryEn": "纳威摔伤，哈利展现飞行天赋",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/015.m3u8",
-      "clipStart": 1.682,
-      "clipEnd": 349.654,
-      "duration": 347.972,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/015.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/015.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 3309.932,
       "originalEnd": 3657.904,
-      "timelineOrigin": 3308.25
+      "timelineOrigin": 3308.25,
+      "clipStart": 1.682,
+      "clipEnd": 349.654,
+      "duration": 347.972
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/015.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/015.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 16,
     "title": "三头犬的秘密",
     "titleZh": "三头犬的秘密",
+    "titleEn": "I'M TELLING YOU, IT'S SPOOKY.",
     "summaryEn": "误入禁区，发现活板门与三头犬",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/016.m3u8",
-      "clipStart": 0.529,
-      "clipEnd": 174.203,
-      "duration": 173.674,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/016.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/016.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 3657.904,
       "originalEnd": 3831.578,
-      "timelineOrigin": 3657.375
+      "timelineOrigin": 3657.375,
+      "clipStart": 0.529,
+      "clipEnd": 174.203,
+      "duration": 173.674
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/016.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/016.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 17,
     "title": "魁地奇训练与漂浮咒",
     "titleZh": "魁地奇训练与漂浮咒",
+    "titleEn": "3 CHASERS, 2 BEATERS,",
     "summaryEn": "哈利学习魁地奇，赫敏在魔咒课展示能力",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/017.m3u8",
-      "clipStart": 2.203,
-      "clipEnd": 264.298,
-      "duration": 262.095,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/017.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/017.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 3831.578,
       "originalEnd": 4093.673,
-      "timelineOrigin": 3829.375
+      "timelineOrigin": 3829.375,
+      "clipStart": 2.203,
+      "clipEnd": 264.298,
+      "duration": 262.095
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/017.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/017.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 18,
     "title": "万圣节巨怪",
     "titleZh": "万圣节巨怪",
+    "titleEn": "PARVATI PATIL SAID THAT SHE WOULDN'T COME OUT",
     "summaryEn": "三人合力救出赫敏，成为朋友",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/018.m3u8",
-      "clipStart": 0.298,
-      "clipEnd": 373.337,
-      "duration": 373.039,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/018.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/018.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 4093.673,
       "originalEnd": 4466.712,
-      "timelineOrigin": 4093.375
+      "timelineOrigin": 4093.375,
+      "clipStart": 0.298,
+      "clipEnd": 373.337,
+      "duration": 373.039
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/018.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/018.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 19,
     "title": "第一场魁地奇比赛",
     "titleZh": "第一场魁地奇比赛",
+    "titleEn": "SO HE COULD TRY AND GET PAST",
     "summaryEn": "哈利的扫帚失控，最终抓住金色飞贼",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/019.m3u8",
-      "clipStart": 1.337,
-      "clipEnd": 529.782,
-      "duration": 528.445,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/019.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/019.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 4466.712,
       "originalEnd": 4995.157,
-      "timelineOrigin": 4465.375
+      "timelineOrigin": 4465.375,
+      "clipStart": 1.337,
+      "clipEnd": 529.782,
+      "duration": 528.445
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/019.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/019.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 20,
     "title": "尼可·勒梅的线索",
     "titleZh": "尼可·勒梅的线索",
+    "titleEn": "Crowd: GO, GO, GRYFFINDOR!",
     "summaryEn": "比赛后怀疑斯内普，海格说漏嘴",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/020.m3u8",
-      "clipStart": 2.657,
-      "clipEnd": 134.205,
-      "duration": 131.548,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/020.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/020.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 4995.157,
       "originalEnd": 5126.705,
-      "timelineOrigin": 4992.5
+      "timelineOrigin": 4992.5,
+      "clipStart": 2.657,
+      "clipEnd": 134.205,
+      "duration": 131.548
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/020.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/020.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 21,
     "title": "圣诞节与夜间探索",
     "titleZh": "圣诞节与夜间探索",
+    "titleEn": "Ghosts: ♪ MERRY CHRISTMAS",
     "summaryEn": "圣诞节收到隐形衣，夜间探索学校走廊",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/021.m3u8",
-      "clipStart": 2.205,
-      "clipEnd": 462.498,
-      "duration": 460.293,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/021.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/021.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 5126.705,
       "originalEnd": 5586.998,
-      "timelineOrigin": 5124.5
+      "timelineOrigin": 5124.5,
+      "clipStart": 2.205,
+      "clipEnd": 462.498,
+      "duration": 460.293
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/021.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/021.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 22,
     "title": "厄里斯魔镜",
     "titleZh": "厄里斯魔镜",
+    "titleEn": "Harry: RON, YOU'VE REALLY GOT TO SEE THIS!",
     "summaryEn": "哈利在魔镜里见到家人，邓布利多解释",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/022.m3u8",
-      "clipStart": 2.498,
-      "clipEnd": 211.373,
-      "duration": 208.875,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/022.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/022.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 5586.998,
       "originalEnd": 5795.873,
-      "timelineOrigin": 5584.5
+      "timelineOrigin": 5584.5,
+      "clipStart": 2.498,
+      "clipEnd": 211.373,
+      "duration": 208.875
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/022.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/022.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 23,
     "title": "魔法石的真相",
     "titleZh": "魔法石的真相",
+    "titleEn": "AND FORGET TO LIVE.",
     "summaryEn": "三人发现尼可·勒梅与魔法石的联系",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/023.m3u8",
-      "clipStart": 2.248,
-      "clipEnd": 206.286,
-      "duration": 204.038,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/023.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/023.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 5795.873,
       "originalEnd": 5999.911,
-      "timelineOrigin": 5793.625
+      "timelineOrigin": 5793.625,
+      "clipStart": 2.248,
+      "clipEnd": 206.286,
+      "duration": 204.038
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/023.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/023.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 24,
     "title": "海格的小龙诺伯",
     "titleZh": "海格的小龙诺伯",
+    "titleEn": "UH, HAGRID, WHAT EXACTLY IS THAT?",
     "summaryEn": "海格孵出小龙，学生违反校规",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/024.m3u8",
-      "clipStart": 2.286,
-      "clipEnd": 177.794,
-      "duration": 175.508,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/024.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/024.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 5999.911,
       "originalEnd": 6175.419,
-      "timelineOrigin": 5997.625
+      "timelineOrigin": 5997.625,
+      "clipStart": 2.286,
+      "clipEnd": 177.794,
+      "duration": 175.508
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/024.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/024.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 25,
     "title": "禁林里的独角兽",
     "titleZh": "禁林里的独角兽",
+    "titleEn": "YOU'LL BE SERVING DETENTION WITH HAGRID TONIGHT.",
     "summaryEn": "学生受罚，哈利遇见吸食独角兽血的黑影",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/025.m3u8",
-      "clipStart": 1.794,
-      "clipEnd": 422.173,
-      "duration": 420.379,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/025.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/025.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 6175.419,
       "originalEnd": 6595.798,
-      "timelineOrigin": 6173.625
+      "timelineOrigin": 6173.625,
+      "clipStart": 1.794,
+      "clipEnd": 422.173,
+      "duration": 420.379
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/025.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/025.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 26,
     "title": "魔法石危机与行动",
     "titleZh": "魔法石危机与行动",
+    "titleEn": "AS LONG AS DUMBLEDORE'S AROUND,",
     "summaryEn": "海格泄露秘密，邓布利多离校，三人决定夜闯禁区",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/026.m3u8",
-      "clipStart": 2.173,
-      "clipEnd": 222.81,
-      "duration": 220.637,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/026.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/026.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 6595.798,
       "originalEnd": 6816.435,
-      "timelineOrigin": 6593.625
+      "timelineOrigin": 6593.625,
+      "clipStart": 2.173,
+      "clipEnd": 222.81,
+      "duration": 220.637
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/026.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/026.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 27,
     "title": "闯入活板门与魔鬼网",
     "titleZh": "闯入活板门与魔鬼网",
+    "titleEn": "TREVOR, SHH, GO! YOU SHOULDN'T BE HERE.",
     "summaryEn": "三人制服三头犬、跳下活板门，赫敏解除魔鬼网",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/027.m3u8",
-      "clipStart": 2.81,
-      "clipEnd": 264.821,
-      "duration": 262.011,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/027.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/027.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 6816.435,
       "originalEnd": 7078.446,
-      "timelineOrigin": 6813.625
+      "timelineOrigin": 6813.625,
+      "clipStart": 2.81,
+      "clipEnd": 264.821,
+      "duration": 262.011
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/027.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/027.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 28,
     "title": "飞翔的钥匙",
     "titleZh": "飞翔的钥匙",
+    "titleEn": "LUCKY HERMIONE PAYS ATTENTION IN HERBOLOGY.",
     "summaryEn": "哈利骑扫帚找到钥匙，进入巫师棋房间",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/028.m3u8",
-      "clipStart": 1.696,
-      "clipEnd": 175.245,
-      "duration": 173.549,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/028.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/028.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 7078.446,
       "originalEnd": 7251.995,
-      "timelineOrigin": 7076.75
+      "timelineOrigin": 7076.75,
+      "clipStart": 1.696,
+      "clipEnd": 175.245,
+      "duration": 173.549
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/028.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/028.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 29,
     "title": "巫师棋的牺牲",
     "titleZh": "巫师棋的牺牲",
+    "titleEn": "THIS IS NO GRAVEYARD.",
     "summaryEn": "罗恩下棋并牺牲自己让哈利前进",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/029.m3u8",
-      "clipStart": 3.245,
-      "clipEnd": 351.217,
-      "duration": 347.972,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/029.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/029.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 7251.995,
       "originalEnd": 7599.967,
-      "timelineOrigin": 7248.75
+      "timelineOrigin": 7248.75,
+      "clipStart": 3.245,
+      "clipEnd": 351.217,
+      "duration": 347.972
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/029.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/029.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 30,
     "title": "奇洛的真实身份",
     "titleZh": "奇洛的真实身份",
+    "titleEn": "AND, HARRY, JUST BE CAREFUL.",
     "summaryEn": "哈利发现奇洛才是幕后窃贼",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/030.m3u8",
-      "clipStart": 3.217,
-      "clipEnd": 198.871,
-      "duration": 195.654,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/030.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/030.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 7599.967,
       "originalEnd": 7795.621,
-      "timelineOrigin": 7596.75
+      "timelineOrigin": 7596.75,
+      "clipStart": 3.217,
+      "clipEnd": 198.871,
+      "duration": 195.654
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/030.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/030.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 31,
     "title": "魔镜中的魔法石",
     "titleZh": "魔镜中的魔法石",
+    "titleEn": "I HAVE STRENGTH ENOUGH FOR THIS.",
     "summaryEn": "伏地魔现身，哈利守护魔法石",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/031.m3u8",
-      "clipStart": 2.871,
-      "clipEnd": 276.436,
-      "duration": 273.565,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/031.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/031.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 7795.621,
       "originalEnd": 8069.186,
-      "timelineOrigin": 7792.75
+      "timelineOrigin": 7792.75,
+      "clipStart": 2.871,
+      "clipEnd": 276.436,
+      "duration": 273.565
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/031.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/031.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 32,
     "title": "医务室里的答案",
     "titleZh": "医务室里的答案",
+    "titleEn": "TOKENS FROM YOUR ADMIRERS?",
     "summaryEn": "邓布利多解释魔法石与母爱的保护",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/032.m3u8",
-      "clipStart": 1.311,
-      "clipEnd": 217.903,
-      "duration": 216.592,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/032.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/032.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 8069.186,
       "originalEnd": 8285.778,
-      "timelineOrigin": 8067.875
+      "timelineOrigin": 8067.875,
+      "clipStart": 1.311,
+      "clipEnd": 217.903,
+      "duration": 216.592
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/032.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/032.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 33,
     "title": "学院杯的逆转",
     "titleZh": "学院杯的逆转",
+    "titleEn": "AND NOW, AS I UNDERSTAND IT,",
     "summaryEn": "格兰芬多凭借最后加分赢得学院杯",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/033.m3u8",
-      "clipStart": 1.903,
-      "clipEnd": 225.793,
-      "duration": 223.89,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/033.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/033.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 8285.778,
       "originalEnd": 8509.668,
-      "timelineOrigin": 8283.875
+      "timelineOrigin": 8283.875,
+      "clipStart": 1.903,
+      "clipEnd": 225.793,
+      "duration": 223.89
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/033.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/033.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   },
   {
     "episodeId": 34,
     "title": "告别霍格沃茨",
     "titleZh": "告别霍格沃茨",
+    "titleEn": "HURRY UP. YOU'LL BE LATE.",
     "summaryEn": "哈利与朋友乘火车返家",
+    "summaryZh": "按电影原声对白中的自然停顿划分，保留字幕与本段剧情。",
     "status": "published",
     "sourceType": "hls",
     "video": {
       "source": "hls",
       "hlsUrl": "/data/movie-harry-potter-1/hls/034.m3u8",
-      "clipStart": 1.793,
-      "clipEnd": 96.125,
-      "duration": 94.332,
-      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/034.vtt",
+      "subtitleUrl": "/data/movie-harry-potter-1/subtitles/034.en.vtt",
       "originalHlsUrl": "https://api.obj2.top/hls/movie/671/master.m3u8",
       "originalStart": 8509.668,
       "originalEnd": 8604,
-      "timelineOrigin": 8507.875
+      "timelineOrigin": 8507.875,
+      "clipStart": 1.793,
+      "clipEnd": 96.125,
+      "duration": 94.332
+    },
+    "subtitleTracks": {
+      "english": "/data/movie-harry-potter-1/subtitles/034.en.vtt",
+      "englishChinese": null,
+      "status": "native-v3-english"
     },
     "modules": {
       "watch": true,
       "read": false,
-      "words": false,
-      "vocabulary": false,
-      "quiz": false
-    },
-    "subtitleTracks": {
-      "english": "/data/movie-harry-potter-1/subtitles/034.vtt",
-      "englishChinese": null,
-      "status": "native-english-cc"
+      "words": true,
+      "vocabulary": true,
+      "quiz": true
     }
   }
 ]
