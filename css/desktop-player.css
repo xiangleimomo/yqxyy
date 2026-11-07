@@ -1,7 +1,7 @@
 .sf-desktop-player-controls,.sf-desktop-player-title,.sf-desktop-seek{display:none}
 @media (min-width:901px) and (pointer:fine){
-  .sf-movie-lesson-player{background:#000;color:#fff}
-  .sf-movie-lesson-player>.video-wrap{background:#000;border-radius:0}
+  .sf-movie-lesson-player{background:#000!important;color:#fff}
+  .sf-movie-lesson-player>.video-wrap,.sf-movie-lesson-player .hls-video-player{background:#000!important;border-radius:0}
   .sf-movie-lesson-player>.sf-lesson-toolbar{display:none!important}
   .direct-video-panel.sf-movie-lesson-player:is(:fullscreen,:-webkit-full-screen,.subtitle-page-fullscreen)>.sf-lesson-toolbar{display:none!important}
   .sf-movie-lesson-player>.movie-subtitle-status,.sf-movie-lesson-player>.sf-subtitle-offset{display:none!important}
@@ -20,7 +20,7 @@
   .sf-movie-lesson-player .sf-movie-timeline{display:none!important}
   .sf-movie-lesson-player .sf-desktop-seek{position:absolute;z-index:24;display:flex;opacity:0;visibility:hidden;pointer-events:none;left:28px!important;right:28px!important;bottom:54px!important;padding:8px 0!important;background:transparent!important;height:18px;box-sizing:border-box}
   .sf-movie-lesson-player .sf-desktop-seek output{display:none}
-  .sf-movie-lesson-player .sf-desktop-seek input{appearance:none;-webkit-appearance:none;display:block;height:4px;margin:0;border:0;border-radius:3px;background:linear-gradient(to right,#70af2d 0%,#70af2d var(--seek-progress,0%),#ffffff3d var(--seek-progress,0%),#ffffff3d 100%);cursor:pointer}
+  .sf-movie-lesson-player .sf-desktop-seek input{appearance:none;-webkit-appearance:none;display:block;flex:1;width:100%;min-width:0;height:4px;margin:0;border:0;border-radius:3px;background:linear-gradient(to right,#70af2d 0%,#70af2d var(--seek-progress,0%),#ffffff3d var(--seek-progress,0%),#ffffff3d 100%);cursor:pointer}
   .sf-desktop-seek input::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:10px;height:10px;border:0;border-radius:50%;background:#83bd44;opacity:0}
   .sf-desktop-seek input:hover::-webkit-slider-thumb,.sf-desktop-seek input:focus-visible::-webkit-slider-thumb{opacity:1}
   .sf-desktop-seek input::-moz-range-thumb{width:10px;height:10px;border:0;background:#83bd44}
