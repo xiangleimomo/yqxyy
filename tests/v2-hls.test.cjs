@@ -17,6 +17,12 @@ assert.equal(hls.chooseTrack(parsedMaster, 'AUDIO').LANGUAGE, 'en');
 assert.equal(hls.chooseTrack(parsedMaster, 'SUBTITLES').NAME, 'English');
 assert.equal(hls.chooseVariant(parsedMaster).uri, 'https://media.example/movie/video/720.m3u8');
 
+const transformedMaster = hls.parseMaster(master, 'https://media.example/movie/master.m3u8', {
+  uriTransform: raw => { const u = new URL(raw); u.searchParams.set('handoff', 'opaque'); return u.href; }
+});
+assert.match(transformedMaster.variants[0].uri, /handoff=opaque/);
+assert.match(transformedMaster.media[0].uri, /handoff=opaque/);
+
 const video = [
   '#EXTM3U', '#EXT-X-VERSION:6', '#EXT-X-TARGETDURATION:6',
   '#EXT-X-MEDIA-SEQUENCE:900', '#EXT-X-DISCONTINUITY-SEQUENCE:3',
