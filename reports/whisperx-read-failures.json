@@ -13559,6 +13559,16 @@
       "seriesId": "little-fox-the-happy-prince-fs0181",
       "episodeId": 13,
       "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 14.3% matched, 7.3% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-lemonade-detectives-fs0055",
+      "episodeId": 49,
+      "reason": "ValueError: ASR vs official XML Text mismatch or truncated audio: 34.5% matched, 0.0% assigned"
+    },
+    {
+      "seriesId": "little-fox-the-lemonade-detectives-fs0055",
+      "episodeId": 63,
+      "reason": "URLError: <urlopen error [Errno 111] Connection refused>"
     }
   ]
 }
