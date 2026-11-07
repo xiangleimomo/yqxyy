@@ -31,15 +31,19 @@ jobs:
           node --check scripts/v2-hls.cjs
           node --check scripts/v2-story-analysis.cjs
           node --check scripts/v2-learning-content.cjs
+          node --check scripts/v2-subtitles.cjs
           node --check tests/v2-hls.test.cjs
           node --check tests/v2-story-analysis.test.cjs
           node --check tests/v2-learning-content.test.cjs
+          node --check tests/v2-subtitles.test.cjs
       - name: Run HLS parser fixtures
         run: node tests/v2-hls.test.cjs
       - name: Run story boundary validator fixtures
         run: node tests/v2-story-analysis.test.cjs
       - name: Run learning content fixtures
         run: node tests/v2-learning-content.test.cjs
+      - name: Run subtitle fixtures
+        run: node tests/v2-subtitles.test.cjs
       - name: Validate JSON inputs and state
         run: |
           node -e "const fs=require('node:fs'); for (const p of ['data/movie-hub-catalog.json','data/v2-engine-state.json']) JSON.parse(fs.readFileSync(p,'utf8'));"
