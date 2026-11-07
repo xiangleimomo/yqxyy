@@ -75,14 +75,15 @@ function chooseTrack(master, type, preferred = 'en') {
 function parseMediaPlaylist(text, baseUrl) {
   const raw = String(text).replace(/^\uFEFF/, '');
   if (!raw.trimStart().startsWith('#EXTM3U')) throw new Error('Invalid HLS media playlist');
-  if (/#EXT-X-(?:PART|PRELOAD-HINT|RENDITION-REPORT)(?::|$)/m.test(raw)) {
+  if (/#EXT-X-(?:PART|PRELOAD-HINT|RENDITION-REPORT|SKIP|DEFINE|SESSION-KEY)(?::|$)/m.test(raw)) {
     throw new Error('Low-latency HLS requires a dedicated parser');
   }
   const lines = raw.split(/\r?\n/).map(x => x.trim());
   const globalTags = [];
   const segments = [];
   let mediaSequence = 0, discontinuitySequence = 0, duration = null, at = 0;
-  let prefix = [], currentKey = null, currentMap = null, targetDuration = null;
+  let prefix = [], currentKey = null, currentMap = null, targetDuration = null, pendingRange = null;
+  const previousRangeEnd = new Map();
   let endList = false, playlistType = null, version = null;
   for (const line of lines) {
     if (!line) continue;
@@ -100,6 +101,15 @@ function parseMediaPlaylist(text, baseUrl) {
     } else if (line && !line.startsWith('#')) {
       if (duration === null) throw new Error('Media URI without EXTINF');
       const uri = safeResolve(line, baseUrl);
+      let normalizedRange = null;
+      if (pendingRange) {
+        const offset = pendingRange.offset === null ? previousRangeEnd.get(uri) : pendingRange.offset;
+        if (!Number.isSafeInteger(offset) || offset < 0) throw new Error('Implicit byte range has no preceding range for this resource');
+        normalizedRange = '#EXT-X-BYTERANGE:' + pendingRange.length + '@' + offset;
+        previousRangeEnd.set(uri, offset + pendingRange.length);
+        prefix.push(normalizedRange);
+        pendingRange = null;
+      }
       segments.push({
         index: segments.length,
         sequence: mediaSequence + segments.length,
@@ -109,7 +119,8 @@ function parseMediaPlaylist(text, baseUrl) {
         uri,
         tags: prefix,
         key: currentKey,
-        map: currentMap
+        map: currentMap,
+        byteRange: normalizedRange
       });
       at += duration;
       duration = null;
@@ -134,11 +145,12 @@ function parseMediaPlaylist(text, baseUrl) {
     } else if (line === '#EXT-X-DISCONTINUITY') {
       prefix.push(line);
     } else if (line.startsWith('#EXT-X-BYTERANGE:')) {
-      prefix.push(line);
+      const m = line.match(/^#EXT-X-BYTERANGE:(\d+)(?:@(\d+))?$/);
+      if (!m || pendingRange) throw new Error('Invalid or duplicate byte range');
+      pendingRange = { length: Number(m[1]), offset: m[2] === undefined ? null : Number(m[2]) };
     } else if (line.startsWith('#EXT-X-PROGRAM-DATE-TIME:') ||
                line === '#EXT-X-GAP' ||
                line.startsWith('#EXT-X-DATERANGE:') ||
-               line.startsWith('#EXT-X-START:') ||
                line.startsWith('#EXT-X-INDEPENDENT-SEGMENTS') ||
                line.startsWith('#EXT-X-DEFINE:')) {
       prefix.push(line);
@@ -150,6 +162,7 @@ function parseMediaPlaylist(text, baseUrl) {
     }
   }
   if (duration !== null) throw new Error('Playlist ended before segment URI');
+  if (pendingRange) throw new Error('Playlist ended before byte-range segment URI');
   if (!segments.length) throw new Error('Media playlist contains no segments');
   if (!endList) throw new Error('Live playlists are not accepted for course production');
   const discontinuitiesBefore = [];
@@ -194,8 +207,27 @@ function buildMediaPlaylist(media, selection) {
   for (const tag of media.globalTags || []) {
     if (tag.startsWith('#EXT-X-INDEPENDENT-SEGMENTS')) out.push(tag);
   }
+  let emittedKey = null, emittedMap = null;
   for (const segment of rows) {
-    for (const tag of segment.tags) out.push(tag);
+    const hasKeyTag = segment.tags.some(tag => tag.startsWith('#EXT-X-KEY:'));
+    const hasMapTag = segment.tags.some(tag => tag.startsWith('#EXT-X-MAP:'));
+    if (!hasKeyTag && segment.key && segment.key !== emittedKey) {
+      out.push(segment.key);
+      emittedKey = segment.key;
+    }
+    if (!hasKeyTag && !segment.key && emittedKey) {
+      out.push('#EXT-X-KEY:METHOD=NONE');
+      emittedKey = '#EXT-X-KEY:METHOD=NONE';
+    }
+    if (!hasMapTag && segment.map && segment.map !== emittedMap) {
+      out.push(segment.map);
+      emittedMap = segment.map;
+    }
+    for (const tag of segment.tags) {
+      out.push(tag);
+      if (tag.startsWith('#EXT-X-KEY:')) emittedKey = tag;
+      if (tag.startsWith('#EXT-X-MAP:')) emittedMap = tag;
+    }
     out.push(segment.uri);
   }
   out.push('#EXT-X-ENDLIST', '');
