@@ -1,0 +1,27 @@
+name: yqxyy TMDB HLS discovery
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/discover-movie-hls.cjs
+      - .github/workflows/discover-movie-hls.yml
+  schedule:
+    - cron: '21 17 * * 0'
+permissions:
+  contents: read
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check movie HLS and source subtitles
+        run: node scripts/discover-movie-hls.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: movie-hls-discovery
+          path: movie-course-discovery-report.json
+          if-no-files-found: warn
+          retention-days: 30
