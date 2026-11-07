@@ -1,5 +1,7 @@
 name: yqxyy V3 TMDB Movie Auto Lessons
 on:
+  # V3 is paused pending a full story-first segmentation redesign.
+  # Keep manual dispatch available for controlled testing only.
   workflow_dispatch:
     inputs:
       batch_size:
@@ -10,11 +12,6 @@ on:
         description: Optional movie ID from catalog
         required: false
         default: ''
-  push:
-    branches: [main]
-    paths:
-      - scripts/movie-v3-auto-course.cjs
-      - .github/workflows/movie-v3.yml
 permissions:
   contents: write
 concurrency:
