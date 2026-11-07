@@ -76,6 +76,24 @@ const fmp4Out = hls.buildMediaPlaylist(parsedFmp4, hls.selectSegments(parsedFmp4
 assert.match(fmp4Out, /#EXT-X-MAP:URI="https:\/\/media\.example\/fmp4\/init\.mp4"/);
 assert.match(fmp4Out, /#EXT-X-BYTERANGE:1000@1000/);
 
+// A cut beginning in the middle of a key/map/byte-range run must carry the
+// effective initialization and encryption state into the new playlist.
+const midFmp4 = hls.buildMediaPlaylist(parsedFmp4, hls.selectSegments(parsedFmp4, 4, 8));
+assert.match(midFmp4, /#EXT-X-MAP:URI="https:\/\/media\.example\/fmp4\/init\.mp4"/);
+assert.match(midFmp4, /#EXT-X-BYTERANGE:1000@1000/);
+assert.doesNotMatch(midFmp4, /#EXT-X-BYTERANGE:1000@0/);
+
+const implicitRange = [
+  '#EXTM3U', '#EXT-X-TARGETDURATION:4', '#EXT-X-MEDIA-SEQUENCE:7',
+  '#EXT-X-BYTERANGE:1000@0', '#EXTINF:4,', 'single.mp4',
+  '#EXT-X-BYTERANGE:1000', '#EXTINF:4,', 'single.mp4',
+  '#EXT-X-ENDLIST'
+].join('\\n');
+const implicitParsed = hls.parseMediaPlaylist(implicitRange, 'https://media.example/range/index.m3u8');
+const implicitCut = hls.buildMediaPlaylist(implicitParsed, hls.selectSegments(implicitParsed, 4, 8));
+assert.match(implicitCut, /#EXT-X-BYTERANGE:1000@1000/);
+assert.doesNotMatch(implicitCut, /#EXT-X-BYTERANGE:1000@0/);
+
 assert.throws(() => hls.parseMediaPlaylist(video.replace('#EXT-X-ENDLIST', ''), 'https://media.example/live.m3u8'), /Live playlists/);
 assert.throws(() => hls.parseMediaPlaylist(video.replace('AES-128', 'SAMPLE-AES'), 'https://media.example/drm.m3u8'), /Unsupported or DRM/);
 assert.throws(() => hls.parseMediaPlaylist('#EXTM3U\n#EXT-X-PART:DURATION=0.3,URI="part.m4s"', 'https://media.example/ll.m3u8'), /Low-latency/);
