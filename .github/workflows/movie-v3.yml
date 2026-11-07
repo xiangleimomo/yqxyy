@@ -3,9 +3,9 @@ on:
   workflow_dispatch:
     inputs:
       batch_size:
-        description: Films to check in this batch (1-24)
+        description: Films to process in this run (1-82)
         required: false
-        default: '8'
+        default: '82'
       movie_id:
         description: Optional movie ID from catalog
         required: false
@@ -15,8 +15,6 @@ on:
     paths:
       - scripts/movie-v3-auto-course.cjs
       - .github/workflows/movie-v3.yml
-  schedule:
-    - cron: '7,27,47 * * * *'
 permissions:
   contents: write
 concurrency:
@@ -25,7 +23,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 70
+    timeout-minutes: 300
     steps:
       - uses: actions/checkout@v4
         with:
@@ -37,8 +35,9 @@ jobs:
           node-version: '22'
       - name: Discover TMDB source and produce verified native movie lessons
         env:
-          V3_BATCH_SIZE: ${{ github.event_name == 'push' && '4' || (inputs.batch_size || '8') }}
+          V3_BATCH_SIZE: ${{ inputs.batch_size || '82' }}
           V3_MOVIE_ID: ${{ inputs.movie_id || '' }}
+          V3_RETRY_FAILED: '1'
         run: node scripts/movie-v3-auto-course.cjs
       - name: Commit one complete movie batch
         run: |

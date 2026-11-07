@@ -4,7 +4,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const ROOT=path.resolve(__dirname,'..'),DATA=path.join(ROOT,'data'),BASE='https://api.obj2.top/hls/movie/';
 const CATALOG=JSON.parse(fs.readFileSync(path.join(DATA,'movie-hub-catalog.json'),'utf8'));
 const STATUS=path.join(DATA,'movie-v3-status.json'),NOW=new Date().toISOString();
-const LIMIT=Math.max(1,Math.min(24,Number(process.env.V3_BATCH_SIZE||8))),ONLY=process.env.V3_MOVIE_ID||'';
+const LIMIT=Math.max(1,Math.min(100,Number(process.env.V3_BATCH_SIZE||82))),ONLY=process.env.V3_MOVIE_ID||'';
 const round=n=>Math.round(n*1e6)/1e6;
 const sec=s=>s.split(':').map(Number).reduce((a,b)=>a*60+b,0);
 const ts=n=>{const t=Math.max(0,Math.round(n*1000));return String(Math.floor(t/3600000)).padStart(2,'0')+':'+String(Math.floor(t/60000)%60).padStart(2,'0')+':'+String(Math.floor(t/1000)%60).padStart(2,'0')+'.'+String(t%1000).padStart(3,'0');};
@@ -54,20 +54,34 @@ function track(master,language){
 }
 
 function boundaries(cues,last,old,source){
- if(old.length>=4&&old[0].video?.originalHlsUrl===source){
- const vals=[old[0].video.originalStart,...old.map(x=>x.video.originalEnd)].map(Number);
- if(vals.every((n,i)=>Number.isFinite(n)&&(!i||n>vals[i-1]))&&vals.at(-1)<=last+105)return {points:vals,preserve:true};
+ const sameSource=old.length>=4&&old[0].video?.originalHlsUrl===source;
+ if(sameSource){
+  const vals=[old[0].video.originalStart,...old.map(x=>x.video.originalEnd)].map(Number);
+  if(vals.every((n,i)=>Number.isFinite(n)&&(!i||n>vals[i-1]))&&vals.at(-1)<=last+105)
+   return {points:vals,preserve:true,migrated:false};
  }
- // Locate conversational/scene pauses near regularly spaced chapter targets.
- const count=Math.min(26,Math.max(8,Math.round(last/400))),points=[0],options=[];
- for(let i=0;i<cues.length-1;i++){const c=cues[i],next=cues[i+1],gap=next.start-c.end;if(gap<.4||c.end<150||c.end>last-150)continue;
- options.push({t:(c.end+next.start)/2,score:Math.min(20,gap)*3+(/[.!?]["')\]]?$/.test(c.text.trim())?4:0)});}
- for(let i=1;i<count;i++){const ideal=last*i/count,min=points.at(-1)+140,max=last-(count-i)*140;
- const nearby=options.filter(x=>x.t>=Math.max(min,ideal-100)&&x.t<=Math.min(max,ideal+100));
- nearby.sort((a,b)=>(b.score-Math.abs(b.t-ideal)/5)-(a.score-Math.abs(a.t-ideal)/5));
- points.push(round(nearby[0]?.t||Math.max(min,Math.min(max,ideal))));}
- points.push(round(last));assert(points.every((x,i)=>!i||x>points[i-1]+80),'Chapter time boundaries invalid');
- return {points,preserve:false};
+ // When upgrading an existing film to its TMDB source, retain its episode count
+ // and map the old chapter boundaries proportionally onto the new caption timeline.
+ const migrated=old.length>=4,count=migrated?old.length:Math.min(26,Math.max(8,Math.round(last/400)));
+ const oldEnd=migrated?Number(old.at(-1).video?.originalEnd||0):0;
+ const points=[0],options=[];
+ for(let i=0;i<cues.length-1;i++){
+  const c=cues[i],next=cues[i+1],gap=next.start-c.end;
+  if(gap<.4||c.end<150||c.end>last-150)continue;
+  options.push({t:(c.end+next.start)/2,score:Math.min(20,gap)*3+(/[.!?]["')\]]?$/.test(c.text.trim())?4:0)});
+ }
+ for(let i=1;i<count;i++){
+  const oldEndAt=migrated?Number(old[i-1].video?.originalEnd||0):0;
+  const target=migrated&&oldEnd>0&&oldEndAt>0?last*oldEndAt/oldEnd:last*i/count;
+  const min=points.at(-1)+140,max=last-(count-i)*140;
+  const tolerance=migrated?Math.max(90,last/count*.32):100;
+  const nearby=options.filter(x=>x.t>=Math.max(min,target-tolerance)&&x.t<=Math.min(max,target+tolerance));
+  nearby.sort((a,b)=>(b.score-Math.abs(b.t-target)/5)-(a.score-Math.abs(a.t-target)/5));
+  points.push(round(nearby[0]?.t||Math.max(min,Math.min(max,target))));
+ }
+ points.push(round(last));
+ assert(points.every((x,i)=>!i||x>points[i-1]+80),'Chapter time boundaries invalid');
+ return {points,preserve:false,migrated};
 }
 const clip=(cc,a,b)=>cc.filter(x=>x.end>a&&x.start<b).map(x=>({...x,start:Math.max(a,x.start),end:Math.min(b,x.end)})).filter(x=>x.end>x.start);
 function matchChinese(en,zh){let best=null,score=0;for(const c of zh){if(c.end<en.start-1)continue;if(c.start>en.end+1)break;
@@ -131,25 +145,25 @@ async function build(item){
  const last=Math.min(video.total,Math.max(relevant.at(-1).end+9,video.total*.75));
  const seriesId=movie.studyCourse?.seriesId||'movie-'+row.id,dir=path.join(DATA,seriesId);
  const previous=exists(path.join(dir,'episodes.json'))?read(path.join(dir,'episodes.json')):[];
- if(previous.length&&previous[0].video?.originalHlsUrl!==source)throw Error('EXISTING_DIFFERENT_SOURCE_REQUIRES_EDITORIAL_MIGRATION');
  const layout=boundaries(en,last,previous,source),oldV=exists(path.join(dir,'vocabulary.json'))?read(path.join(dir,'vocabulary.json')):{};
  const oldQ=exists(path.join(dir,'quiz.json'))?read(path.join(dir,'quiz.json')):{};
  const output=new Map(),stage=(rel,text)=>output.set(path.join(dir,rel),text),stageJson=(rel,obj)=>stage(rel,JSON.stringify(obj,null,2)+'\n');
  const episodes=[],vocabulary={},quiz={};
  for(let i=0;i<layout.points.length-1;i++){
- const episodeId=i+1,id=String(episodeId).padStart(3,'0'),start=layout.points[i],end=layout.points[i+1],old=layout.preserve?previous[i]:null;
+ const episodeId=i+1,id=String(episodeId).padStart(3,'0'),start=layout.points[i],end=layout.points[i+1],old=(layout.preserve||layout.migrated)?previous[i]:null;
  const vr=video.rows.filter(r=>r.end>start+1e-6&&r.start<end-1e-6),origin=vr[0]?.start;
  assert(vr.length,'No video segments in episode '+id);
  const ar=sound?.rows.filter(r=>r.end>origin+1e-6&&r.start<vr.at(-1).end-1e-6)||[];
  if(sound)assert(ar.length,'No audio segments in episode '+id);
  const captions=clip(en,start,end);
  assert(captions.length>=12,'Insufficient English captions in '+id);
- const previousWords=layout.preserve&&oldV[episodeId]?.length===5?oldV[episodeId]:null;
- const previousQuiz=layout.preserve&&oldQ[episodeId]?.questions?.length===5&&oldQ[episodeId].questions.every(q=>q.options?.length===4)?oldQ[episodeId]:null;
+ const keepPrevious=layout.preserve||layout.migrated;
+ const previousWords=keepPrevious&&oldV[episodeId]?.length>=5?oldV[episodeId].slice(0,5):null;
+ const previousQuiz=keepPrevious&&oldQ[episodeId]?.questions?.length===5&&oldQ[episodeId].questions.every(q=>q.options?.length>=3)?oldQ[episodeId]:null;
  vocabulary[episodeId]=previousWords||words(captions,episodeId,origin,seriesId,zh);
  quiz[episodeId]=previousQuiz||fiveQuestions(captions,en,episodeId,start);
  const titleZh=old?.titleZh||('第'+String(episodeId).padStart(2,'0')+'集 · 剧情场景');
- const titleEn=old?.titleEn||spoken(captions.find(x=>spoken(x))||captions[0])?.slice(0,55)||'Story Scene '+episodeId;
+ const titleEn=old?.titleEn||old?.title||spoken(captions.find(x=>spoken(x))||captions[0])?.slice(0,55)||'Story Scene '+episodeId;
  const enPath='/data/'+seriesId+'/subtitles/'+id+'.en.vtt',zhPath='/data/'+seriesId+'/subtitles/'+id+'.en-zh.vtt';
  stage('subtitles/'+id+'.en.vtt',writeVtt(captions,origin,[]));
  if(zh.length)stage('subtitles/'+id+'.en-zh.vtt',writeVtt(captions,origin,zh));
@@ -195,7 +209,7 @@ async function main(){
  const source=BASE+id+'/master.m3u8',seriesId=found.movie.studyCourse?.seriesId||'movie-'+row.id;
  if(completed(found.movie,source,path.join(DATA,seriesId))){state.films[row.id]={state:'completed',at:NOW,seriesId,source};continue;}
  const retry=Date.parse(state.films[row.id]?.retryAfter||'');
- if(!ONLY&&retry>Date.now())continue;
+ if(!ONLY&&process.env.V3_RETRY_FAILED!=='1'&&retry>Date.now())continue;
  pending.push({...found,row,source,hasCourse:Boolean(found.movie.studyCourse)});}
  pending.sort((a,b)=>Number(b.hasCourse)-Number(a.hasCourse));
  const list=ONLY?pending.filter(x=>x.row.id===ONLY):pending.slice(0,LIMIT);
@@ -204,7 +218,7 @@ async function main(){
  const results=[];
  for(const item of list){try{
  const result=await build(item);state.films[item.row.id]={state:'completed',at:NOW,...result};results.push({id:item.row.id,state:'completed',chapters:result.chapters});}
- catch(e){const msg=String(e.message||e).slice(0,230),kind=/EXISTING_DIFFERENT_SOURCE/.test(msg)?'requires_editorial_migration':/HTTP 404/.test(msg)?'source_not_found':/NO_ENGLISH_TRACK/.test(msg)?'no_english':'source_error';
+ catch(e){const msg=String(e.message||e).slice(0,230),kind=/HTTP 404/.test(msg)?'source_not_found':/NO_ENGLISH_TRACK/.test(msg)?'no_english':'source_error';
  state.films[item.row.id]={state:kind,error:msg,at:NOW,retryAfter:new Date(Date.now()+(kind==='source_error'?24:168)*3600000).toISOString()};
  console.warn('V3_FILM_SKIP '+JSON.stringify({id:item.row.id,state:kind,error:msg}));results.push({id:item.row.id,state:kind,error:msg});}}
  state.lastBatch=results;state.pendingEstimate=Math.max(0,pending.length-list.length);saveJSON(STATUS,state);
