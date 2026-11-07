@@ -107,7 +107,6 @@ function validateSubtitleCues(cues,meta={}){
     if(!Number.isFinite(cue.start)||!Number.isFinite(cue.end)||cue.start<0||cue.end<=cue.start||cue.start+0.001<last||!formatText(cue.text))throw new Error('Invalid subtitle cue timeline at cue '+(i+1));
     last=cue.start;
   }
-  if(meta.playlistDuration&&cues[cues.length-1].start>meta.playlistDuration+120)throw new Error('Subtitle timestamps exceed the subtitle playlist duration');
   return {cues,sourceKind:meta.sourceKind||'unknown',cueCount:cues.length,firstCueAt:cues[0].start,lastCueAt:cues[cues.length-1].end,playlistDuration:meta.playlistDuration||null};
 }
 module.exports={parseVttTime,parseVtt,parseSubtitlePlaylist,acquireSubtitleTrack,validateSubtitleCues};
