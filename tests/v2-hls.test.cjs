@@ -97,6 +97,6 @@ assert.doesNotMatch(implicitCut, /#EXT-X-BYTERANGE:1000@0/);
 
 assert.throws(() => hls.parseMediaPlaylist(video.replace('#EXT-X-ENDLIST', ''), 'https://media.example/live.m3u8'), /Live playlists/);
 assert.throws(() => hls.parseMediaPlaylist(video.replace('AES-128', 'SAMPLE-AES'), 'https://media.example/drm.m3u8'), /Unsupported or DRM/);
-assert.throws(() => hls.parseMediaPlaylist('#EXTM3U\n#EXT-X-PART:DURATION=0.3,URI="part.m4s"', 'https://media.example/ll.m3u8'), /Low-latency/);
+assert.throws(() => hls.parseMediaPlaylist('#EXTM3U\n#EXT-X-PART:DURATION=0.3,URI="part.m4s"', 'https://media.example/ll.m3u8'), /Unsupported HLS/);
 
 console.log('V2 HLS parser tests passed');
