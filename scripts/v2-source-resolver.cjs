@@ -61,7 +61,7 @@ async function inspectHlsSource({sourceUrl,provider='existing',descriptor,fetche
   let audioTrack=null,audio=null;
   if(variant.AUDIO){
     audioTrack=hls.chooseTrack(master,'AUDIO','en',variant.AUDIO);
-    if(!audioTrack)throw new Error('Selected video variant references an unavailable audio rendition');
+    if(!audioTrack||!isEnglishTrack(audioTrack))throw new Error('Selected video variant has no verified English audio rendition');
     const audioText=await fetchBody(audioTrack.uri,fetcher,'application/vnd.apple.mpegurl,application/x-mpegURL,*/*');
     audio=hls.parseMediaPlaylist(audioText,audioTrack.uri,{uriTransform:transform||undefined});
     if(Math.abs(audio.duration-video.duration)>2.5)throw new Error('Audio/video playlist durations differ by more than 2.5 seconds');
