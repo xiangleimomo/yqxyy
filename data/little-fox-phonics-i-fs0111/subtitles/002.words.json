@@ -1,0 +1,831 @@
+{
+  "seriesId": "little-fox-phonics-i-fs0111",
+  "episodeId": 2,
+  "sourceContentId": "C0005183",
+  "mediaPath": "/contents_5/hls/1080/5ab42d7ab7/16335906600b229b5ea84cc5f79dcaf2984efb7e45/stream.m3u8",
+  "mediaFingerprint": "f3951bb76a0bee8410a1c87c9241eef25ac3d4d0a3b6d9b2a64ffe31a0de09e2",
+  "subtitleSha256": "84ed43d2a914c0eca8f6472fd161f4c0d31e6bb14fc669e53d87498046630b9c",
+  "method": "whisperx-asr-xml-text-only-forced-alignment",
+  "textAuthority": "littlefox-xml-paragraph-text",
+  "xmlTextSha256": "4e32199cd39198ebd1902ab2ff7422de151ef3dbdd6cbd2a5f45ce4697c58a07",
+  "xmlParagraphCount": 22,
+  "recognizer": "small.en",
+  "cueCount": 21,
+  "totalWords": 123,
+  "captionedWords": 121,
+  "omittedUnalignedWords": 2,
+  "speechMatchedWords": 121,
+  "speechMatchedFraction": 0.9837,
+  "cues": [
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 7469,
+          "endMs": 7549,
+          "source": "speech"
+        },
+        {
+          "text": "had",
+          "startMs": 7649,
+          "endMs": 7990,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 8070,
+          "endMs": 8090,
+          "source": "speech"
+        },
+        {
+          "text": "bat,",
+          "startMs": 8270,
+          "endMs": 8830,
+          "source": "speech"
+        },
+        {
+          "text": "but",
+          "startMs": 9410,
+          "endMs": 9630,
+          "source": "speech"
+        },
+        {
+          "text": "Pat",
+          "startMs": 9870,
+          "endMs": 10390,
+          "source": "speech"
+        },
+        {
+          "text": "took",
+          "startMs": 10730,
+          "endMs": 11050,
+          "source": "speech"
+        },
+        {
+          "text": "my",
+          "startMs": 11190,
+          "endMs": 11430,
+          "source": "speech"
+        },
+        {
+          "text": "bat.",
+          "startMs": 11691,
+          "endMs": 12171,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 13111,
+          "endMs": 13231,
+          "source": "speech"
+        },
+        {
+          "text": "am",
+          "startMs": 13351,
+          "endMs": 13491,
+          "source": "speech"
+        },
+        {
+          "text": "sad.",
+          "startMs": 13811,
+          "endMs": 14471,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 14491,
+          "endMs": 14511,
+          "source": "speech"
+        },
+        {
+          "text": "had",
+          "startMs": 17992,
+          "endMs": 18392,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 18492,
+          "endMs": 18532,
+          "source": "speech"
+        },
+        {
+          "text": "mat,",
+          "startMs": 18692,
+          "endMs": 19273,
+          "source": "speech"
+        },
+        {
+          "text": "but",
+          "startMs": 19893,
+          "endMs": 20113,
+          "source": "speech"
+        },
+        {
+          "text": "Pat",
+          "startMs": 20373,
+          "endMs": 20833,
+          "source": "speech"
+        },
+        {
+          "text": "took",
+          "startMs": 21313,
+          "endMs": 21673,
+          "source": "speech"
+        },
+        {
+          "text": "my",
+          "startMs": 21833,
+          "endMs": 22133,
+          "source": "speech"
+        },
+        {
+          "text": "mat.",
+          "startMs": 22273,
+          "endMs": 22774,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 23914,
+          "endMs": 24034,
+          "source": "speech"
+        },
+        {
+          "text": "am",
+          "startMs": 24174,
+          "endMs": 24294,
+          "source": "speech"
+        },
+        {
+          "text": "sad.",
+          "startMs": 24514,
+          "endMs": 25254,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 28455,
+          "endMs": 28555,
+          "source": "speech"
+        },
+        {
+          "text": "had",
+          "startMs": 28675,
+          "endMs": 29095,
+          "source": "speech"
+        },
+        {
+          "text": "an",
+          "startMs": 29175,
+          "endMs": 29255,
+          "source": "speech"
+        },
+        {
+          "text": "apple,",
+          "startMs": 29635,
+          "endMs": 30116,
+          "source": "speech"
+        },
+        {
+          "text": "but",
+          "startMs": 30656,
+          "endMs": 30856,
+          "source": "speech"
+        },
+        {
+          "text": "Pat",
+          "startMs": 31036,
+          "endMs": 31456,
+          "source": "speech"
+        },
+        {
+          "text": "took",
+          "startMs": 31956,
+          "endMs": 32276,
+          "source": "speech"
+        },
+        {
+          "text": "my",
+          "startMs": 32417,
+          "endMs": 32677,
+          "source": "speech"
+        },
+        {
+          "text": "apple.",
+          "startMs": 32937,
+          "endMs": 33417,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 33437,
+          "endMs": 33458,
+          "source": "speech"
+        },
+        {
+          "text": "am",
+          "startMs": 34779,
+          "endMs": 34919,
+          "source": "speech"
+        },
+        {
+          "text": "sad.",
+          "startMs": 35219,
+          "endMs": 35900,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 39363,
+          "endMs": 39463,
+          "source": "speech"
+        },
+        {
+          "text": "had",
+          "startMs": 39583,
+          "endMs": 39983,
+          "source": "speech"
+        },
+        {
+          "text": "an",
+          "startMs": 40043,
+          "endMs": 40143,
+          "source": "speech"
+        },
+        {
+          "text": "ant,",
+          "startMs": 40604,
+          "endMs": 40884,
+          "source": "speech"
+        },
+        {
+          "text": "but",
+          "startMs": 41485,
+          "endMs": 41685,
+          "source": "speech"
+        },
+        {
+          "text": "Pat",
+          "startMs": 41985,
+          "endMs": 42506,
+          "source": "speech"
+        },
+        {
+          "text": "took",
+          "startMs": 42926,
+          "endMs": 43286,
+          "source": "speech"
+        },
+        {
+          "text": "my",
+          "startMs": 43466,
+          "endMs": 43807,
+          "source": "speech"
+        },
+        {
+          "text": "ant.",
+          "startMs": 44187,
+          "endMs": 44447,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 45848,
+          "endMs": 45989,
+          "source": "speech"
+        },
+        {
+          "text": "am",
+          "startMs": 46389,
+          "endMs": 46569,
+          "source": "speech"
+        },
+        {
+          "text": "sad.",
+          "startMs": 46849,
+          "endMs": 47570,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 50953,
+          "endMs": 51053,
+          "source": "speech"
+        },
+        {
+          "text": "had",
+          "startMs": 51173,
+          "endMs": 51614,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 51694,
+          "endMs": 51734,
+          "source": "speech"
+        },
+        {
+          "text": "cat,",
+          "startMs": 51894,
+          "endMs": 52474,
+          "source": "speech"
+        },
+        {
+          "text": "but",
+          "startMs": 53015,
+          "endMs": 53195,
+          "source": "speech"
+        },
+        {
+          "text": "Pat",
+          "startMs": 53395,
+          "endMs": 53876,
+          "source": "speech"
+        },
+        {
+          "text": "took",
+          "startMs": 54356,
+          "endMs": 54776,
+          "source": "speech"
+        },
+        {
+          "text": "my",
+          "startMs": 54896,
+          "endMs": 55197,
+          "source": "speech"
+        },
+        {
+          "text": "cat.",
+          "startMs": 55357,
+          "endMs": 55997,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 57178,
+          "endMs": 57299,
+          "source": "speech"
+        },
+        {
+          "text": "am",
+          "startMs": 57479,
+          "endMs": 57619,
+          "source": "speech"
+        },
+        {
+          "text": "sad.",
+          "startMs": 57899,
+          "endMs": 58580,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 61972,
+          "endMs": 62072,
+          "source": "speech"
+        },
+        {
+          "text": "had",
+          "startMs": 62172,
+          "endMs": 62613,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 62753,
+          "endMs": 62813,
+          "source": "speech"
+        },
+        {
+          "text": "hat,",
+          "startMs": 62913,
+          "endMs": 63414,
+          "source": "speech"
+        },
+        {
+          "text": "but",
+          "startMs": 63994,
+          "endMs": 64194,
+          "source": "speech"
+        },
+        {
+          "text": "Pat",
+          "startMs": 64354,
+          "endMs": 64835,
+          "source": "speech"
+        },
+        {
+          "text": "took",
+          "startMs": 65195,
+          "endMs": 65535,
+          "source": "speech"
+        },
+        {
+          "text": "my",
+          "startMs": 65716,
+          "endMs": 66036,
+          "source": "speech"
+        },
+        {
+          "text": "hat.",
+          "startMs": 66136,
+          "endMs": 66616,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 67797,
+          "endMs": 67897,
+          "source": "speech"
+        },
+        {
+          "text": "am",
+          "startMs": 68078,
+          "endMs": 68238,
+          "source": "speech"
+        },
+        {
+          "text": "sad.",
+          "startMs": 68478,
+          "endMs": 69279,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 72762,
+          "endMs": 72862,
+          "source": "speech"
+        },
+        {
+          "text": "had",
+          "startMs": 72962,
+          "endMs": 73322,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 73422,
+          "endMs": 73462,
+          "source": "speech"
+        },
+        {
+          "text": "pan,",
+          "startMs": 73622,
+          "endMs": 74223,
+          "source": "speech"
+        },
+        {
+          "text": "but",
+          "startMs": 75063,
+          "endMs": 75284,
+          "source": "speech"
+        },
+        {
+          "text": "Pat",
+          "startMs": 75484,
+          "endMs": 75924,
+          "source": "speech"
+        },
+        {
+          "text": "took",
+          "startMs": 76385,
+          "endMs": 76705,
+          "source": "speech"
+        },
+        {
+          "text": "my",
+          "startMs": 76845,
+          "endMs": 77125,
+          "source": "speech"
+        },
+        {
+          "text": "pan.",
+          "startMs": 77265,
+          "endMs": 77786,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 77806,
+          "endMs": 77826,
+          "source": "speech"
+        },
+        {
+          "text": "am",
+          "startMs": 79768,
+          "endMs": 79968,
+          "source": "speech"
+        },
+        {
+          "text": "sad.",
+          "startMs": 80248,
+          "endMs": 80868,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 84492,
+          "endMs": 84592,
+          "source": "speech"
+        },
+        {
+          "text": "had",
+          "startMs": 84692,
+          "endMs": 85052,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 85152,
+          "endMs": 85192,
+          "source": "speech"
+        },
+        {
+          "text": "bag,",
+          "startMs": 85392,
+          "endMs": 85993,
+          "source": "speech"
+        },
+        {
+          "text": "but",
+          "startMs": 86513,
+          "endMs": 86713,
+          "source": "speech"
+        },
+        {
+          "text": "Pat",
+          "startMs": 86954,
+          "endMs": 87434,
+          "source": "speech"
+        },
+        {
+          "text": "took",
+          "startMs": 87914,
+          "endMs": 88275,
+          "source": "speech"
+        },
+        {
+          "text": "my",
+          "startMs": 88435,
+          "endMs": 88695,
+          "source": "speech"
+        },
+        {
+          "text": "bag.",
+          "startMs": 88815,
+          "endMs": 89256,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "I",
+          "startMs": 90868,
+          "endMs": 90988,
+          "source": "speech"
+        },
+        {
+          "text": "am",
+          "startMs": 91308,
+          "endMs": 91569,
+          "source": "speech"
+        },
+        {
+          "text": "sad.",
+          "startMs": 91889,
+          "endMs": 92849,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Dad!",
+          "startMs": 94330,
+          "endMs": 95050,
+          "source": "speech"
+        },
+        {
+          "text": "Catch",
+          "startMs": 95450,
+          "endMs": 95990,
+          "source": "speech"
+        },
+        {
+          "text": "him",
+          "startMs": 96050,
+          "endMs": 96331,
+          "source": "speech"
+        },
+        {
+          "text": "if",
+          "startMs": 96771,
+          "endMs": 96871,
+          "source": "speech"
+        },
+        {
+          "text": "you",
+          "startMs": 96931,
+          "endMs": 97111,
+          "source": "speech"
+        },
+        {
+          "text": "can!",
+          "startMs": 97191,
+          "endMs": 97891,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Look!",
+          "startMs": 100893,
+          "endMs": 101293,
+          "source": "speech"
+        },
+        {
+          "text": "Dad",
+          "startMs": 101913,
+          "endMs": 102493,
+          "source": "speech"
+        },
+        {
+          "text": "got",
+          "startMs": 102893,
+          "endMs": 103314,
+          "source": "speech"
+        },
+        {
+          "text": "Pat!",
+          "startMs": 103474,
+          "endMs": 104074,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Pat",
+          "startMs": 105014,
+          "endMs": 105515,
+          "source": "speech"
+        },
+        {
+          "text": "is",
+          "startMs": 105855,
+          "endMs": 105995,
+          "source": "speech"
+        },
+        {
+          "text": "a",
+          "startMs": 106095,
+          "endMs": 106135,
+          "source": "speech"
+        },
+        {
+          "text": "bad",
+          "startMs": 106415,
+          "endMs": 107175,
+          "source": "speech"
+        },
+        {
+          "text": "man.",
+          "startMs": 107656,
+          "endMs": 108276,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Dad",
+          "startMs": 110657,
+          "endMs": 111177,
+          "source": "speech"
+        },
+        {
+          "text": "put",
+          "startMs": 111497,
+          "endMs": 111757,
+          "source": "speech"
+        },
+        {
+          "text": "him",
+          "startMs": 111837,
+          "endMs": 112057,
+          "source": "speech"
+        },
+        {
+          "text": "in",
+          "startMs": 112338,
+          "endMs": 112478,
+          "source": "speech"
+        },
+        {
+          "text": "the",
+          "startMs": 112538,
+          "endMs": 112698,
+          "source": "speech"
+        },
+        {
+          "text": "van.",
+          "startMs": 112778,
+          "endMs": 113418,
+          "source": "speech"
+        }
+      ]
+    },
+    {
+      "words": [
+        {
+          "text": "Now",
+          "startMs": 114238,
+          "endMs": 114679,
+          "source": "speech"
+        },
+        {
+          "text": "I",
+          "startMs": 115679,
+          "endMs": 115839,
+          "source": "speech"
+        },
+        {
+          "text": "am",
+          "startMs": 116279,
+          "endMs": 116499,
+          "source": "speech"
+        },
+        {
+          "text": "happy.",
+          "startMs": 116820,
+          "endMs": 117500,
+          "source": "speech"
+        }
+      ]
+    }
+  ]
+}
