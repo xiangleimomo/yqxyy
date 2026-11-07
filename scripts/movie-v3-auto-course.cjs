@@ -112,10 +112,10 @@ function wordLemma(raw){
  return candidates.find(x=>dict[x])||null;
 }
 function words(cues,id,origin,courseId,zh){
- const selected=new Map();
- for(const cue of cues){for(const token of cue.text.match(/[a-zA-Z]{3,}/g)||[]){const word=wordLemma(token);if(!word)continue;
-  const x=selected.get(word)||{count:0,cue,spoken:token};x.count++;selected.set(word,x);}}
+ const selected=new Map(),unknown=new Map();
+ for(const cue of cues){for(const token of cue.text.match(/[a-zA-Z]{3,}/g)||[]){const word=wordLemma(token);if(!word){const raw=token.toLowerCase();if(raw.length>=4&&!/^(the|this|that|with|from|your|have|what|when|where|which|there|their|they|them|then|than|would|could|should|about|because|really|just|only|very|some|more|most|into|over|back|here|were|been|being|will|shall|does|did|also|only|much|many|such|very|very|even|ever|upon|unto|each|much|many)$/.test(raw)){const u=unknown.get(raw)||{count:0,cue};u.count++;unknown.set(raw,u);}}else{const x=selected.get(word)||{count:0,cue,spoken:token};x.count++;selected.set(word,x);}}}
  const best=[...selected].sort((a,b)=>Number(b[0].length>=6)-Number(a[0].length>=6)||b[1].count-a[1].count).slice(0,5);
+ if(best.length<5)console.warn('V3_WORD_DIAG '+JSON.stringify({episode:id,known:[...selected.keys()],unknown:[...unknown].sort((a,b)=>b[1].count-a[1].count).slice(0,35).map(([word,x])=>({word,count:x.count,example:x.cue.text.slice(0,100)}))}));
  assert(best.length===5,'Less than five translatable words in episode');
  return best.map(([word,hit],j)=>({id:courseId+'-'+id+'-'+(j+1),word,partOfSpeech:'word',meaningZh:dict[word],
   definitionEn:'A word used in the original dialogue; its meaning is supported by the Chinese gloss and example.',
