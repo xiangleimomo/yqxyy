@@ -2,7 +2,17 @@ name: Mobile karaoke fullscreen checks
 on:
   push:
     branches:
+      - main
       - 'fix/mobile-karaoke-fullscreen-*'
+    paths:
+      - 'js/mobile-caption-fullscreen.js'
+      - 'js/app.js'
+      - 'css/style.css'
+      - 'index.html'
+      - 'tests/mobile-caption-fullscreen.test.cjs'
+      - 'tests/mobile-caption-tray-display.test.cjs'
+      - 'tests/movie-mobile-fullscreen.test.cjs'
+      - '.github/workflows/mobile-caption-fullscreen-check.yml'
   pull_request:
     paths:
       - 'js/mobile-caption-fullscreen.js'
@@ -11,6 +21,7 @@ on:
       - 'index.html'
       - 'tests/mobile-caption-fullscreen.test.cjs'
       - 'tests/mobile-caption-tray-display.test.cjs'
+      - 'tests/movie-mobile-fullscreen.test.cjs'
       - '.github/workflows/mobile-caption-fullscreen-check.yml'
 permissions:
   contents: read
@@ -23,4 +34,4 @@ jobs:
         with:
           node-version: '22'
       - run: node --check js/app.js && node --check js/mobile-caption-fullscreen.js
-      - run: node --test tests/mobile-caption-fullscreen.test.cjs tests/mobile-caption-tray-display.test.cjs tests/word-sync-karaoke.test.cjs
+      - run: node --test tests/mobile-caption-fullscreen.test.cjs tests/mobile-caption-tray-display.test.cjs tests/movie-mobile-fullscreen.test.cjs tests/word-sync-karaoke.test.cjs
