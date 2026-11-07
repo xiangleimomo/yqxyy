@@ -54,6 +54,7 @@ class FakeNode {
   }
   querySelector(selector) { return selector === 'span' ? this.label || null : null; }
   matches() { return false; }
+  closest() { return null; }
 }
 
 function makeHarness({touch = true, fullscreenAPI = false, agent = ''} = {}) {

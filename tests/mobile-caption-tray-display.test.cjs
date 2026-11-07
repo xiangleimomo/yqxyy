@@ -96,7 +96,7 @@ test('mobile subtitle preference disabled shows a useful message instead of blan
 test('mobile subtitle fetch/parse failure is visible in tray',async()=>{
   const s=makeScene({hasCues:false});
   await s.run();
-  assert.match(s.message.textContent,/加载失败/);
+  assert.match(s.message.textContent,/字幕未提供|XML不允许跨域读取/);
   assert.equal(s.message.hidden,false);
 });
 
