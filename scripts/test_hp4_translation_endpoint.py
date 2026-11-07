@@ -6,10 +6,9 @@ samples=[
  "The Dark Lord has returned.",
  "This is the Triwizard Tournament."
 ]
-for s in samples:
-    q=urllib.parse.urlencode({"client":"gtx","sl":"en","tl":"zh-CN","dt":"t","q":s})
-    req=urllib.request.Request("https://translate.googleapis.com/translate_a/single?"+q,headers={"User-Agent":"Mozilla/5.0"})
-    with urllib.request.urlopen(req,timeout=20) as r:
-        data=json.loads(r.read().decode("utf-8"))
-    translated="".join(x[0] for x in data[0] if x and x[0])
-    print(json.dumps({"en":s,"zh":translated},ensure_ascii=False))
+params=[("client","gtx"),("sl","en"),("tl","zh-CN"),("dt","t")]+[("q",s) for s in samples]
+url="https://translate.googleapis.com/translate_a/single?"+urllib.parse.urlencode(params)
+req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0"})
+with urllib.request.urlopen(req,timeout=20) as r:
+    data=json.loads(r.read().decode("utf-8"))
+print(json.dumps({"responseType":type(data).__name__,"outerLength":len(data),"raw":data},ensure_ascii=False)[:5000])
