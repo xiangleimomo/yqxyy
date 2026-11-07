@@ -108,7 +108,7 @@ function parseMediaPlaylist(text, baseUrl) {
         if (!Number.isSafeInteger(offset) || offset < 0) throw new Error('Implicit byte range has no preceding range for this resource');
         normalizedRange = '#EXT-X-BYTERANGE:' + pendingRange.length + '@' + offset;
         previousRangeEnd.set(uri, offset + pendingRange.length);
-        prefix.push(normalizedRange);
+        prefix[pendingRange.prefixIndex] = normalizedRange;
         pendingRange = null;
       }
       segments.push({
@@ -130,6 +130,7 @@ function parseMediaPlaylist(text, baseUrl) {
       throw new Error('EXT-X-DATERANGE needs event-aware trimming before course cutting');
     } else if (line.startsWith('#EXT-X-KEY:')) {
       const a = attrs(line);
+      if (a.KEYFORMAT && a.KEYFORMAT !== 'identity') throw new Error('Non-identity HLS key format is unsupported');
       if (!['AES-128', 'NONE'].includes(a.METHOD)) {
         throw new Error('Unsupported or DRM encryption method: ' + a.METHOD);
       }
@@ -150,11 +151,15 @@ function parseMediaPlaylist(text, baseUrl) {
     } else if (line.startsWith('#EXT-X-BYTERANGE:')) {
       const m = line.match(/^#EXT-X-BYTERANGE:(\d+)(?:@(\d+))?$/);
       if (!m || pendingRange) throw new Error('Invalid or duplicate byte range');
-      pendingRange = { length: Number(m[1]), offset: m[2] === undefined ? null : Number(m[2]) };
-    } else if (line.startsWith('#EXT-X-PROGRAM-DATE-TIME:') ||
-               line === '#EXT-X-GAP' ||
-               line.startsWith('#EXT-X-INDEPENDENT-SEGMENTS')) {
+      pendingRange = { length: Number(m[1]), offset: m[2] === undefined ? null : Number(m[2]), prefixIndex: prefix.length };
+      prefix.push(null);
+    } else if (line.startsWith('#EXT-X-PROGRAM-DATE-TIME:') || line === '#EXT-X-GAP') {
       prefix.push(line);
+    } else if (line.startsWith('#EXT-X-START:')) {
+      // A source-playlist start offset is invalid after trimming to a new story origin.
+      continue;
+    } else if (line.startsWith('#EXT-X-INDEPENDENT-SEGMENTS')) {
+      globalTags.push(line);
     } else if (line.startsWith('#EXT-X-') && !/^#EXT-X-(?:ALLOW-CACHE|SERVER-CONTROL|SKIP|RENDITION-REPORT|I-FRAME-STREAM-INF|SESSION-DATA|SESSION-KEY)(?::|$)/.test(line)) {
       // Keep unclassified tags attached to the next segment rather than silently dropping them.
       prefix.push(line);
@@ -162,6 +167,7 @@ function parseMediaPlaylist(text, baseUrl) {
       globalTags.push(line);
     }
   }
+  if (playlistType === 'EVENT') throw new Error('EVENT playlists are not accepted for VOD course production');
   if (duration !== null) throw new Error('Playlist ended before segment URI');
   if (pendingRange) throw new Error('Playlist ended before byte-range segment URI');
   if (!segments.length) throw new Error('Media playlist contains no segments');
