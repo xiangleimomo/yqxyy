@@ -34,12 +34,13 @@ const App = {
     window.SFFamily?.init(this);
     window.SFMedals?.init(this);
     this.updateUtilityNav();
+    // On phone/tablet, initialize the cloud catalogue before the first render.
+    // This avoids painting an incomplete homepage and then visibly rendering it again.
+    if(window.MobileApp?.active&&window.SFCloud) await window.SFCloud.init(this);
     await this.render();
-    if(window.SFCloud){
-      // The first paint can happen before Supabase has created its client.
-      // Refresh dynamic movie shelves once cloud initialization finishes.
+    if(window.SFCloud&&!window.MobileApp?.active){
       await window.SFCloud.init(this);
-      if(this.route()[0]==='movies' || this.route()[0]==='movie-hub' || (this.route()[0]==='home'&&window.MobileApp?.active)) await this.render();
+      if(this.route()[0]==='movies' || this.route()[0]==='movie-hub') await this.render();
     }
   },
   async globalSearch(){
