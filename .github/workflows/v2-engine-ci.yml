@@ -35,6 +35,8 @@ jobs:
           node --check scripts/v2-source-resolver.cjs
           node --check scripts/v2-tv-catalog.cjs
           node --check scripts/v2-project-adapter.cjs
+          node --check scripts/v2-dynamic-hls.cjs
+          node --check netlify/functions/v2-episode-hls.js
           node --check tests/v2-hls.test.cjs
           node --check tests/v2-story-analysis.test.cjs
           node --check tests/v2-learning-content.test.cjs
@@ -42,6 +44,7 @@ jobs:
           node --check tests/v2-source-resolver.test.cjs
           node --check tests/v2-tv-catalog.test.cjs
           node --check tests/v2-project-adapter.test.cjs
+          node --check tests/v2-dynamic-hls.test.cjs
       - name: Run HLS parser fixtures
         run: node tests/v2-hls.test.cjs
       - name: Run story boundary validator fixtures
@@ -56,6 +59,8 @@ jobs:
         run: node tests/v2-tv-catalog.test.cjs
       - name: Run project schema adapter fixtures
         run: node tests/v2-project-adapter.test.cjs
+      - name: Run dynamic HLS descriptor fixtures
+        run: node tests/v2-dynamic-hls.test.cjs
       - name: Validate JSON inputs and state
         run: |
           node -e "const fs=require('node:fs'); for (const p of ['data/movie-hub-catalog.json','data/v2-engine-state.json']) JSON.parse(fs.readFileSync(p,'utf8'));"
