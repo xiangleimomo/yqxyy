@@ -131,6 +131,7 @@ async function build(item){
  const last=Math.min(video.total,Math.max(relevant.at(-1).end+9,video.total*.75));
  const seriesId=movie.studyCourse?.seriesId||'movie-'+row.id,dir=path.join(DATA,seriesId);
  const previous=exists(path.join(dir,'episodes.json'))?read(path.join(dir,'episodes.json')):[];
+ if(previous.length&&previous[0].video?.originalHlsUrl!==source)throw Error('EXISTING_DIFFERENT_SOURCE_REQUIRES_EDITORIAL_MIGRATION');
  const layout=boundaries(en,last,previous,source),oldV=exists(path.join(dir,'vocabulary.json'))?read(path.join(dir,'vocabulary.json')):{};
  const oldQ=exists(path.join(dir,'quiz.json'))?read(path.join(dir,'quiz.json')):{};
  const output=new Map(),stage=(rel,text)=>output.set(path.join(dir,rel),text),stageJson=(rel,obj)=>stage(rel,JSON.stringify(obj,null,2)+'\n');
@@ -199,10 +200,11 @@ async function main(){
  pending.sort((a,b)=>Number(b.hasCourse)-Number(a.hasCourse));
  const list=ONLY?pending.filter(x=>x.row.id===ONLY):pending.slice(0,LIMIT);
  if(ONLY&&!list.length)throw Error('Selected movie not pending or not published: '+ONLY);
+ if(!list.length){console.log('V3_IDLE no eligible movies for this cycle');return;}
  const results=[];
  for(const item of list){try{
  const result=await build(item);state.films[item.row.id]={state:'completed',at:NOW,...result};results.push({id:item.row.id,state:'completed',chapters:result.chapters});}
- catch(e){const msg=String(e.message||e).slice(0,230),kind=/HTTP 404/.test(msg)?'source_not_found':/NO_ENGLISH_TRACK/.test(msg)?'no_english':'source_error';
+ catch(e){const msg=String(e.message||e).slice(0,230),kind=/EXISTING_DIFFERENT_SOURCE/.test(msg)?'requires_editorial_migration':/HTTP 404/.test(msg)?'source_not_found':/NO_ENGLISH_TRACK/.test(msg)?'no_english':'source_error';
  state.films[item.row.id]={state:kind,error:msg,at:NOW,retryAfter:new Date(Date.now()+(kind==='source_error'?24:168)*3600000).toISOString()};
  console.warn('V3_FILM_SKIP '+JSON.stringify({id:item.row.id,state:kind,error:msg}));results.push({id:item.row.id,state:kind,error:msg});}}
  state.lastBatch=results;state.pendingEstimate=Math.max(0,pending.length-list.length);saveJSON(STATUS,state);
