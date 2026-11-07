@@ -77,6 +77,7 @@ function makeTvJob(row) {
     titleZh: row.title_zh || '',
     year: row.year ? Number(row.year) : null,
     category: row.category || '',
+    catalogUpdatedAt: row.updated_at || null,
     status: 'queued',
     stage: 'discovered',
     qualityStatus: 'not_started',
@@ -114,6 +115,16 @@ function main() {
             next[key] = value;
             changed = true;
           }
+        }
+        const tvCatalogueChanged = candidate.mediaType === 'tv' &&
+          candidate.catalogUpdatedAt &&
+          previous.catalogUpdatedAt !== candidate.catalogUpdatedAt;
+        if (tvCatalogueChanged && ['expanded', 'completed', 'blocked', 'failed'].includes(previous.status)) {
+          next.status = 'queued';
+          next.stage = 'catalog_refresh';
+          next.qualityStatus = 'not_started';
+          next.history = [...(next.history || []), { at: now(), event: 'catalog_updated', detail: 'Re-enumerate TMDB seasons and episodes' }];
+          changed = true;
         }
         if (changed) {
           next.updatedAt = now();
