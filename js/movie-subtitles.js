@@ -4,7 +4,8 @@ window.MovieSubtitles = {
     const panel = document.createElement('section');
     panel.className = 'movie-subtitles';
     panel.innerHTML = `<h2>英文字幕 · English subtitles</h2><form><label>片名 / Title <input name="query" maxlength="100" required></label><label>年份 / Year <input name="year" type="number" min="1900" max="2100"></label><button class="btn" type="submit">查找英文字幕</button></form><div class="movie-subtitle-controls"><label>字幕 / Track <select name="track"><option value="off">关闭字幕 / Off</option></select></label><label>导入 SRT / VTT <input name="file" type="file" accept=".srt,.vtt"></label><label>延迟 / Delay（秒）<input name="offset" type="number" step="0.1" value="0"></label></div><p role="status" aria-live="polite">按片名和年份查找，选择与当前片源匹配的字幕版本。正数使字幕延后。</p><div class="movie-subtitle-results"></div>`;
-    root.querySelector('.movie-watch-actions').after(panel);
+    const anchor = root.querySelector('.movie-watch-actions') || root.querySelector('.movie-watch-frame');
+    if (anchor) anchor.after(panel); else root.append(panel);
     const field = name => panel.querySelector(`[name="${name}"]`);
     const status = panel.querySelector('[role="status"]');
     const results = panel.querySelector('.movie-subtitle-results');
@@ -12,8 +13,95 @@ window.MovieSubtitles = {
     field('year').value = movie.year || '';
     const abort = new AbortController(), blobs = [], tracks = [];
     let disposed = false, request = 0, download = 0, hlsBound;
+    const frame = root.querySelector('.movie-watch-frame');
+    let ccButton = null, ccMenu = null;
     const say = text => { if (!disposed) status.textContent = text; };
     const current = token => !disposed && token === request;
+
+    if (frame) {
+      ccButton = document.createElement('button');
+      ccButton.type = 'button';
+      ccButton.className = 'movie-cc-button';
+      ccButton.textContent = 'CC';
+      ccButton.setAttribute('aria-label', '字幕 CC');
+      ccButton.setAttribute('aria-haspopup', 'menu');
+      ccButton.setAttribute('aria-expanded', 'false');
+      ccButton.setAttribute('aria-pressed', 'false');
+
+      ccMenu = document.createElement('div');
+      ccMenu.className = 'movie-cc-menu';
+      ccMenu.setAttribute('role', 'menu');
+      ccMenu.setAttribute('aria-label', '选择字幕');
+      ccMenu.hidden = true;
+      frame.append(ccButton, ccMenu);
+    }
+
+    function closeCCMenu() {
+      if (!ccMenu || !ccButton) return;
+      ccMenu.hidden = true;
+      ccButton.setAttribute('aria-expanded', 'false');
+    }
+
+    function syncCCMenu() {
+      if (!ccMenu || !ccButton) return;
+      const select = field('track');
+      ccMenu.replaceChildren();
+      const options = Array.from(select.options);
+      if (options.length <= 1) {
+        const empty = document.createElement('p');
+        empty.className = 'movie-cc-empty';
+        empty.textContent = '暂未检测到字幕轨道';
+        ccMenu.append(empty);
+        const find = document.createElement('button');
+        find.type = 'button';
+        find.className = 'movie-cc-find';
+        find.textContent = '查找英文字幕';
+        find.addEventListener('click', () => {
+          closeCCMenu();
+          panel.scrollIntoView({behavior: 'smooth', block: 'start'});
+          field('query').focus({preventScroll: true});
+        });
+        ccMenu.append(find);
+      } else {
+        options.forEach(option => {
+          const item = document.createElement('button');
+          item.type = 'button';
+          item.className = 'movie-cc-option';
+          item.setAttribute('role', 'menuitemradio');
+          item.setAttribute('aria-checked', String(option.value === select.value));
+          item.textContent = option.textContent;
+          item.addEventListener('click', () => {
+            select.value = option.value;
+            select.dispatchEvent(new Event('change', {bubbles: true}));
+            closeCCMenu();
+          });
+          ccMenu.append(item);
+        });
+      }
+      ccButton.setAttribute('aria-pressed', String(select.value !== 'off'));
+    }
+
+    function toggleCCMenu() {
+      if (!ccMenu || !ccButton) return;
+      const open = ccMenu.hidden;
+      if (open) syncCCMenu();
+      ccMenu.hidden = !open;
+      ccButton.setAttribute('aria-expanded', String(open));
+    }
+
+    const onOutsideCC = event => {
+      if (frame && !frame.contains(event.target)) closeCCMenu();
+    };
+    const onEscapeCC = event => {
+      if (event.key === 'Escape' && ccMenu && !ccMenu.hidden) {
+        closeCCMenu();
+        ccButton?.focus();
+      }
+    };
+    ccButton?.addEventListener('click', toggleCCMenu);
+    ccMenu?.addEventListener('click', event => event.stopPropagation());
+    document.addEventListener('pointerdown', onOutsideCC);
+    document.addEventListener('keydown', onEscapeCC);
     async function api(body) {
       const response = await fetch('/.netlify/functions/source-explorer-api', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body), signal: abort.signal});
       const data = await response.json();
@@ -33,11 +121,13 @@ window.MovieSubtitles = {
         const showing = Array.from(video.textTracks).findIndex(t => t.mode === 'showing');
         if (showing >= 0) select.value = `text:${showing}`;
       }
+      syncCCMenu();
     }
     function choose() {
       const value = field('track').value, hls = getHls();
       if (hls) { hls.subtitleTrack = value.startsWith('hls:') ? Number(value.slice(4)) : -1; hls.subtitleDisplay = value.startsWith('hls:'); }
       Array.from(video.textTracks).forEach((t, i) => { t.mode = value === `text:${i}` ? 'showing' : 'disabled'; });
+      syncCCMenu();
     }
     function offset() {
       const seconds = Number(field('offset').value) || 0;
@@ -118,6 +208,8 @@ window.MovieSubtitles = {
     refresh();
     return () => {
       disposed = true; ++request; ++download; abort.abort(); clearInterval(timer);
+      document.removeEventListener('pointerdown', onOutsideCC); document.removeEventListener('keydown', onEscapeCC);
+      ccButton?.removeEventListener('click', toggleCCMenu);
       video.textTracks.removeEventListener('addtrack', refresh); video.removeEventListener('loadedmetadata', refresh);
       const event = window.Hls?.Events?.SUBTITLE_TRACKS_UPDATED;
       if (hlsBound && event) hlsBound.off(event, refresh);

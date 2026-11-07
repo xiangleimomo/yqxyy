@@ -75,3 +75,96 @@
 
 /* Keep movie watch pages visually minimal: player first, no metadata/status controls. */
 .movie-player-status{display:none!important}
+
+
+/* Mobile in-player closed captions menu for the movie classroom player. */
+.movie-cc-button,
+.movie-cc-menu { display: none; }
+
+@media (max-width: 700px) {
+  .movie-watch-frame { position: relative; }
+  .movie-cc-button {
+    display: inline-flex;
+    position: absolute;
+    z-index: 8;
+    top: 10px;
+    right: 10px;
+    min-width: 44px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    border: 1px solid #ffffff80;
+    border-radius: 8px;
+    background: #101b2bd9;
+    color: #fff;
+    box-shadow: 0 2px 10px #0005;
+    font: 700 13px/1 system-ui, sans-serif;
+    letter-spacing: .3px;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  .movie-cc-button[aria-pressed="true"] {
+    border-color: #ffd36b;
+    background: #ffd36b;
+    color: #17263a;
+  }
+  .movie-cc-button:focus-visible,
+  .movie-cc-menu button:focus-visible {
+    outline: 2px solid #ffd36b;
+    outline-offset: 2px;
+  }
+  .movie-cc-menu {
+    display: flex;
+    position: absolute;
+    z-index: 9;
+    top: 54px;
+    right: 10px;
+    width: min(230px, calc(100% - 20px));
+    max-height: min(58%, 260px);
+    flex-direction: column;
+    overflow: auto;
+    overscroll-behavior: contain;
+    padding: 6px;
+    border: 1px solid #ffffff30;
+    border-radius: 10px;
+    background: #101b2bf2;
+    box-shadow: 0 8px 24px #0008;
+    color: #fff;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+  .movie-cc-menu[hidden] { display: none !important; }
+  .movie-cc-menu .movie-cc-option,
+  .movie-cc-menu .movie-cc-find {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: #fff;
+    text-align: left;
+    font: 500 14px/1.35 system-ui, sans-serif;
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+  .movie-cc-menu .movie-cc-option[aria-checked="true"] {
+    background: #ffffff20;
+    color: #ffdb83;
+    font-weight: 700;
+  }
+  .movie-cc-menu .movie-cc-find {
+    background: #ffffff18;
+    color: #ffdb83;
+    font-weight: 700;
+  }
+  .movie-cc-empty {
+    margin: 0;
+    padding: 12px;
+    color: #d6dfeb;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}
