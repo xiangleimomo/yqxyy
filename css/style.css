@@ -1582,3 +1582,6 @@ html.sf-caption-screen-locked,body.sf-caption-screen-locked{overflow:hidden!impo
 .video-caption .sf-karaoke-word{-webkit-text-fill-color:currentColor;transition:none}
 .video-caption .sf-karaoke-word:not(.is-karaoke-active){color:var(--caption-color,#fff)!important}
 .video-caption .sf-karaoke-word.is-karaoke-active{color:#ffe05a!important}
+@media (min-width:901px) and (pointer:fine){
+  .book-reading-tabs[aria-label="动画故事书架"]>a[href="#/home/direct"]{display:none}
+}
