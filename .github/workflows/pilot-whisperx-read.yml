@@ -1,0 +1,68 @@
+name: Pilot - WhisperX audio to Read-corrected karaoke
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'pilot/whisperx-read-alignment-*'
+    paths:
+      - 'scripts/pilot-run.flag'
+permissions:
+  contents: read
+concurrency:
+  group: pilot-whisperx-read-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  unit-tests:
+    name: Verify pilot output and safeguards
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test quality and Read correction (offline)
+        run: |
+          python -m py_compile scripts/whisperx-read-pilot.py
+          python -m unittest discover -s tests -p 'test_whisperx_read_pilot.py' -v
+  pilot:
+    name: WhisperX + Read / episode ${{ matrix.episode }}
+    needs: unit-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        episode: [1, 24, 48, 56]
+    env:
+      HF_HOME: /tmp/yqxyy-pilot-hf
+      OMP_NUM_THREADS: '4'
+      TOKENIZERS_PARALLELISM: 'false'
+      HF_HUB_DISABLE_TELEMETRY: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Prepare audio tools and CPU ML dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          ffmpeg -version | head -n 1
+          python -m pip install --upgrade pip
+          python -m pip install --no-cache-dir 'torch==2.8.0' 'torchvision==0.23.0' 'torchaudio==2.8.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'whisperx==3.8.6'
+      - name: Transcribe audio, correct from Read, forced-align, and validate
+        run: |
+          python scripts/whisperx-read-pilot.py \
+            --series journey-to-the-west --episode ${{ matrix.episode }} \
+            --model small.en --output pilot-whisperx-results
+      - name: Always upload reports and candidates; never overwrite website subtitles
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pilot-whisperx-read-episode-${{ matrix.episode }}
+          path: pilot-whisperx-results/
+          if-no-files-found: warn
+          retention-days: 7
